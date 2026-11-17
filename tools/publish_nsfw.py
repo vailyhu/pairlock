@@ -69,7 +69,13 @@ def main():
         from huggingface_hub import HfApi
         api = HfApi()
         api.create_repo(repo, repo_type='dataset', exist_ok=True)
-        api.upload_file(path_or_fileobj=CARD.encode(), path_in_repo='README.md', repo_id=repo, repo_type='dataset', commit_message='Dataset card')
+        try:
+            from huggingface_hub import hf_hub_download
+            current = open(hf_hub_download(repo, 'README.md', repo_type='dataset'), encoding='utf-8').read()
+        except Exception:
+            current = None
+        if current != CARD:
+            api.upload_file(path_or_fileobj=CARD.encode(), path_in_repo='README.md', repo_id=repo, repo_type='dataset', commit_message='Dataset card')
         for gid in named or games:
             print(f'uploading {gid} ...', flush=True)
             api.upload_folder(folder_path=os.path.join(GAMES, gid), path_in_repo=gid, repo_id=repo, repo_type='dataset',
