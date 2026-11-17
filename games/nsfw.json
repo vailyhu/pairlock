@@ -1,0 +1,1100 @@
+{
+ "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
+ "revision": "52c8ba3d24135ea23f41856dbadcd4f4d1d8db28",
+ "games": {
+  "a_modell": {
+   "GAME.md": [
+    2367,
+    "3b134d9049d2c56adc58b60ab81abbad43f40322ea968c7d92ccb3793d66e930"
+   ],
+   "game.json": [
+    5993,
+    "cb64a5b1275d4a78dcf8f7d302048f026b628822e5abcc88f821ebbdd0319917"
+   ],
+   "icons/i_brass_key.png": [
+    105979,
+    "adf9a3fa9e779101ae40d0b06de286a6608dafb9bbc58595e9acc5c29ebfb34a"
+   ],
+   "icons/i_klara_note.png": [
+    104981,
+    "8dcfb00b0271cc1bd176a3b0fd9125a3cf85e271c257b36e0a0e78b5808fc5b4"
+   ],
+   "icons/i_letter_emma.png": [
+    111333,
+    "9c3190fee9a7337e01312b7bcb9c57678abae671c6371fe6db3f3fbf6fa9911c"
+   ],
+   "icons/i_letter_erika.png": [
+    110823,
+    "f8343f9c517f85292b1746bcb38476659eb4a6f558841b6c933496e42211a97c"
+   ],
+   "icons/i_letter_gizella.png": [
+    80205,
+    "25b828b796d3b753de8d767470849f82fa39328fb790581063f10b9d8fc3a3cb"
+   ],
+   "icons/i_letter_greta.png": [
+    100700,
+    "a8c3f078b84210ef993805b06fe473f403562a8694ee8fd0e842e4e059462f3b"
+   ],
+   "icons/i_letter_lenke.png": [
+    109618,
+    "67c2e54d1565cfcdef8e566551a0adbce769168fb2d4fb929cb4a822b99beb60"
+   ],
+   "icons/i_letter_rozalia.png": [
+    102160,
+    "b2746455c165b409883a1f8ee2afff82c06d221bb69e30c15442bebcadeeadd5"
+   ],
+   "icons/i_painter_letter.png": [
+    112043,
+    "ca5da9f193137278e716377390c781d074cce5b841c16f20c26cbf0d21ce25b7"
+   ],
+   "icons/i_polaroid.png": [
+    102708,
+    "9ace6c86fe327b60fefb9724757f5cda2243d4caf56f66688bb446eb1900623c"
+   ],
+   "icons/i_rooftops.png": [
+    112423,
+    "ca944756537cf3e2907c7fa0e6eef678c1be5900a39360cd674aac16c9d50b72"
+   ],
+   "icons/i_scalpel.png": [
+    96951,
+    "835c61dda4f8b882422bb03533b9b00dad6c6710809ff26031b605bcb3e2d4f4"
+   ],
+   "icons/i_sketchbook.png": [
+    110561,
+    "04856496587bea85c8e01b13d5d371940ddfbcdf0034fab0a9465467cf6029d6"
+   ],
+   "icons/i_solvent.png": [
+    88982,
+    "a9c835401f48523c66edea2e549953798aa84b2f78bd3e8a11bbdfebcfbf87e6"
+   ],
+   "icons/i_sunday.png": [
+    108493,
+    "b3cabbed64522c2bd8625dadd8bbfe178bdd9541229b72adddae3314b7818f69"
+   ],
+   "icons/i_uv_lamp.png": [
+    93412,
+    "4fbe1f2250b392353d83b74b2ea735936b145de818941db0da069f0f6ee2796f"
+   ],
+   "images/after_bath.jpg": [
+    127514,
+    "d9d0fb5cc0d15928deacb4cec0185c7a581bcf218370ab48c41be096d8fb26de"
+   ],
+   "images/after_bath_sketch.jpg": [
+    161435,
+    "dd07904b1337ee675f550d700ca61b91fb64af61c0af893ac6e4a8dd574853fe"
+   ],
+   "images/after_divan.jpg": [
+    118476,
+    "cec882652b131838cc330f6f0cec3f100cb370f914797d129d4bf4ff5d16e31c"
+   ],
+   "images/after_divan_sketch.jpg": [
+    162247,
+    "d1704cf6010d8748de7577691839d658b678d01bf77cff80f69d20b9c7a2e81e"
+   ],
+   "images/after_eyes.jpg": [
+    130987,
+    "9fba06cf64d499beb3620dbcc1b901e80b3808e924cd89522f7ba763334d88e4"
+   ],
+   "images/after_eyes_sketch.jpg": [
+    164463,
+    "d15ed6150826ae4abaa88f2d58fed55f227f05dfd0ab5296edcabe99314d4c21"
+   ],
+   "images/after_hung.jpg": [
+    170988,
+    "63d4f6fdea795989db313a88a8f25ee885d1ae3f32454cb70910ae48d6430a57"
+   ],
+   "images/after_ribbon.jpg": [
+    129869,
+    "1002e51b84b75a57227f8ae1f439380b984d826f855dd8ccf00efaf9ae336e15"
+   ],
+   "images/after_ribbon_sketch.jpg": [
+    162407,
+    "d0f615297286bbdc12936501342dbf20ffe4121464baff29c6130314353f3e3a"
+   ],
+   "images/after_window.jpg": [
+    128123,
+    "858f9293c46243f2e48b538b2bfa2afb7c3870cf32d2848588c563940b0decf7"
+   ],
+   "images/after_window_sketch.jpg": [
+    150441,
+    "d7e3147cd7213a0c88169aa86173f774202ed0daec58b879ae7b397096b54114"
+   ],
+   "images/bedroom.jpg": [
+    144245,
+    "56d2acf4d469a0707b3e8de9915b5c1465d2afe02382aa723b5b9a5e3f1570c4"
+   ],
+   "images/bookshelf.jpg": [
+    153829,
+    "3bad42afaa007979e9d065017b66d4cfe6c5b65df1156f7ffc70e5bf599e30e1"
+   ],
+   "images/bookshelf_moved.jpg": [
+    123499,
+    "e318c83c6736ec57c96617b47693578a18fbbe3be85c1aa67bc40522659a08bb"
+   ],
+   "images/cabinet.jpg": [
+    114592,
+    "cc50b0929007c6fc6e55abf271a80eaf167a54fb99ea4a3089170b80353a6d95"
+   ],
+   "images/cabinet_done.jpg": [
+    115788,
+    "e08de9b77f8bbb32bae634b7a5b8de6cc4ec69496f9ea22c774be770d823c6c0"
+   ],
+   "images/catalogue.jpg": [
+    100339,
+    "c2b3d06566b5a0e05f713b0fe9858a45f24b9ab3e832438eddabe9cdb2378249"
+   ],
+   "images/catalogue_p1.jpg": [
+    110697,
+    "91972c5419882887572ed50017bba322c0e44af1e711d16825d18283af9deeb5"
+   ],
+   "images/catalogue_p2.jpg": [
+    115474,
+    "18d5023949bbe0e08e1edd0baaa942b7b01eecccd329d288270d5649129e699c"
+   ],
+   "images/catalogue_p3.jpg": [
+    118529,
+    "06e1f1f7acaef664d64254dfae0437548351fb86b705460ceb1ceddbc01b4cd3"
+   ],
+   "images/commission_book.jpg": [
+    133168,
+    "31a1f2dfbb7440567db47c6a66f816cc26a8dd7c324b1360cb5e05a15cec257f"
+   ],
+   "images/cover.jpg": [
+    354174,
+    "07a49f29fae1569ad463ce53fbcc79657c5eabe3ef994d44e66991beea6c9593"
+   ],
+   "images/diary.jpg": [
+    126154,
+    "d451aee5bae5d349947db84c9489c52c3f479efe40f1f2281281d2c4d7d914b9"
+   ],
+   "images/diary_page.jpg": [
+    164891,
+    "c18f135e759682946c0b69c70d2f4e9de650275f54258c2bdc98e4c2cdc941e7"
+   ],
+   "images/divan.jpg": [
+    104822,
+    "5ba502b40e89ec4b670bc6cb3198c2713e3da8cab5d336a938ff96b5e116f563"
+   ],
+   "images/easel.jpg": [
+    90588,
+    "5baf5ae60104a3a9c98713d36ae50796c4425215c9495209c21a3564b9ce345e"
+   ],
+   "images/ending_wall.jpg": [
+    128068,
+    "0f7d87f7dee123774c6b7f5c3f3fa0ed275ddca37c943fea0c9fe61d5c526fb0"
+   ],
+   "images/exterior.jpg": [
+    204922,
+    "76938130b048708735db07207b241250ec28b219eacf8ed153351427a5ef9933"
+   ],
+   "images/gizella_book.jpg": [
+    137407,
+    "e846d2dcc17077723e035b2f51e56579bfb3353c444f826663b9a5c6864d1c91"
+   ],
+   "images/hall.jpg": [
+    170440,
+    "54d38fdc8b585a9e44168de5a735b7be381975e1db09b3d809d2a668a132adb6"
+   ],
+   "images/i_brass_key.jpg": [
+    96804,
+    "790aa63c636490444b123061c4566ead4a6d0d79cba4417fc111776c8447e555"
+   ],
+   "images/i_klara_note.jpg": [
+    87511,
+    "ed9c503408a949941d50b5630667e9d314e37260141f7185da6d25472d396d90"
+   ],
+   "images/i_letter_emma.jpg": [
+    196831,
+    "c360247c4601057e59848bb52a39fd204bdb39d26583fee12ba1eafbc0c5904f"
+   ],
+   "images/i_letter_erika.jpg": [
+    191329,
+    "bcaf4e1584955c417a046bbce4f82358de4c59e148563c565b24df4255150e96"
+   ],
+   "images/i_letter_gizella.jpg": [
+    143344,
+    "4f0c5a72ca281cdc33378131e725e286b49b488ceaf889b8be0fee67663335ac"
+   ],
+   "images/i_letter_greta.jpg": [
+    184542,
+    "99facc00059e4f1796b8caacb350cb4fe77917c20339632461a914c553e88549"
+   ],
+   "images/i_letter_lenke.jpg": [
+    180689,
+    "1cd7abdfa22c1ebf6cd828a204ed260bce1a67376cfa53b32ae2354917454490"
+   ],
+   "images/i_letter_rozalia.jpg": [
+    176321,
+    "ff2d4464a578a9b8c829a9e7c5f68d451338cfb7679df2df79f35b5c6e68bcc9"
+   ],
+   "images/i_painter_letter.jpg": [
+    196008,
+    "1eb6c74441fc080b975edfa77ac68e4fd7c0ed2ffcd1ac97a5f703decc2845a0"
+   ],
+   "images/i_polaroid.jpg": [
+    96617,
+    "f44850c9e7deff82becd32c9386b8a36d8c71e582b2c40fdf55ec763cf06f546"
+   ],
+   "images/i_rooftops.jpg": [
+    149647,
+    "e7bcec26a23ca4f78e65bfbe2389e7c60d1fde312a6f0fa5c7f548f9729ffc92"
+   ],
+   "images/i_scalpel.jpg": [
+    87844,
+    "a710155d4a4cd577ca11127d4670a49405941bc12493a76820113cb4e8e9c68b"
+   ],
+   "images/i_sketchbook.jpg": [
+    109022,
+    "f25cd1bd05615cf6dda03e128b75c42f70cd7744af223abc799cda41b056b546"
+   ],
+   "images/i_solvent.jpg": [
+    75027,
+    "3d5f5fdff5f91d0e6260dc5aec5ef0e5cbdb0095ad97e4017eb57bc87008892e"
+   ],
+   "images/i_sunday.jpg": [
+    130624,
+    "872a46650d811436227a7bfb413a04625a3cdec870bc5afb0812eaa6952d4eb8"
+   ],
+   "images/i_uv_lamp.jpg": [
+    78297,
+    "391332c471d0b37f65d79537f6b1d9c7bc89428103dcbb3d7503eff00b828d5c"
+   ],
+   "images/kitchen.jpg": [
+    162334,
+    "4c4b5200165f3fb9676990ba1394ca5ee4f855fbda6b3a04e09adafee7d5ef95"
+   ],
+   "images/lacquer_box.jpg": [
+    86736,
+    "9f234396763ae8ddae376478b7291db001815e60f69f32dae8da11eab59fcc62"
+   ],
+   "images/ledger_page.jpg": [
+    144395,
+    "5318cebbcd36f601501b0bfb6b6ba2fdd9e32b272497761f6ab6e4d3cadfe1c5"
+   ],
+   "images/living_room.jpg": [
+    167075,
+    "db3c7fb85111f56b1619c58758ea9e07d245e6c1691025894800e5e5e1771e61"
+   ],
+   "images/muse_letters.jpg": [
+    89301,
+    "9c5102ed9552aadd57fe02c8c175cc0ec2598f3a650525453f0dbbb20016a025"
+   ],
+   "images/nightstand.jpg": [
+    105352,
+    "485171b3478fdadd8150bae8c78642f7d86c8c7268cf7125615935cef860b321"
+   ],
+   "images/paint_table.jpg": [
+    157164,
+    "1b4dc67ccf9021eb2025f70ebdfc3acf61f751f9bd409723389e5f78c2269146"
+   ],
+   "images/painter_letter.jpg": [
+    115765,
+    "2c3b9780a0bb333734954ba1386ff8ed6784975afd4a099d0fb2c21278d0eda3"
+   ],
+   "images/painter_letter_back.jpg": [
+    142836,
+    "aaef070624caac065d56d6756d0ff8ffb9b409c14497b829d03228f211089cdc"
+   ],
+   "images/piano.jpg": [
+    116851,
+    "02f8ceedb007ca8f8cefb1ffc0908c74225b59282d01f515f7243b7c0d8c9043"
+   ],
+   "images/piano_plaque.jpg": [
+    92614,
+    "7162360c2955eb91d1e86675d9c9441729af327cd00d19cae0d475202a6548d2"
+   ],
+   "images/plan_chest.jpg": [
+    109901,
+    "2cf9ec6ec66eff26f890c8ac6947174f4542900c1030ccd7313f2dad03f1e008"
+   ],
+   "images/record_player.jpg": [
+    87773,
+    "f98de5a773f79738fd713a32aeb584b399fb877c47bdde3694bd79163f92cd3e"
+   ],
+   "images/rooftops.jpg": [
+    249877,
+    "f0a74e5865b339f0bd9318f327300472ec88ef1dd203696b137f72e61a30274b"
+   ],
+   "images/series_friday.jpg": [
+    201326,
+    "752be7ad3cef3907e279b19373742d40215c32c4acf3037c3ffcd08d656f84ac"
+   ],
+   "images/series_monday.jpg": [
+    171196,
+    "181cdc9d5ba7a7920bbefd5fff06b0963744003006237d57f08395944cfa4c24"
+   ],
+   "images/series_saturday.jpg": [
+    191975,
+    "532aea00ddc6e710794a1916fc43671e5b723f672d9dda1b655d4cca881b4032"
+   ],
+   "images/series_sunday.jpg": [
+    182985,
+    "a9e3ba654c8905595eb08cb5e3c1979ea38c77eacdad7c811e6405315b974952"
+   ],
+   "images/series_thursday.jpg": [
+    194618,
+    "151904acc5eeb5bb1bf3271c970fd2211eefe15de88cb39eca66d1ff8267a2cc"
+   ],
+   "images/series_tuesday.jpg": [
+    170148,
+    "1eb460bd967a0a1822ff61b8cd52a34565c12279801babe761a307c2c39503f1"
+   ],
+   "images/series_wall.jpg": [
+    96139,
+    "6df2f21244017ca4048afc8e828e25508b3276d503c339c1a06b55e6ea2ded0e"
+   ],
+   "images/series_wednesday.jpg": [
+    163334,
+    "c5a56c59998589371d6cd3b373ec409e0b355ec9cc22c832cbc138459b8fda1f"
+   ],
+   "images/sketchbook.jpg": [
+    107365,
+    "abdf6b2cb75c84760e478d1756e8b4572dd62a60fc2d02c65c522aa9b0a6b6b6"
+   ],
+   "images/small_nudes.jpg": [
+    98064,
+    "0e5cd8a0ec5ea4096668d484e31d6bfa0bafa2060d1ed9ed0c425192cd408997"
+   ],
+   "images/smock.jpg": [
+    96189,
+    "aecf5f683ed0ae173fd9bef74e0ab7aa6e9bac060f01d051c7dd1c0971cc754e"
+   ],
+   "images/studio.jpg": [
+    200346,
+    "5ca03b4da377a02b73c5ecad833ce78d8b76acfa6420d4a1b6dfa8244f353c45"
+   ],
+   "images/studio_sketch.jpg": [
+    137488,
+    "0166e9bb221c42e81f060c3ff0bf00988339257ed55a49afe137e17fab8c5601"
+   ],
+   "images/studio_sketch_now.jpg": [
+    220314,
+    "77a40f81a3198010b30948176e608820ba0a7aad159eb00f88169ba020092514"
+   ],
+   "images/tin_box.jpg": [
+    108296,
+    "e0925ff39eff2b09375330a8c4260341f1b18efc27c30088be41edff2c83ab1a"
+   ],
+   "images/two_cups.jpg": [
+    79682,
+    "8573977efe6233d7a7afebc97e9dd3021e5215ab99397c20e4714060d90b744e"
+   ],
+   "images/uv_lamp.jpg": [
+    95769,
+    "b699e500189b79c6a2f43e5407918c5a9192c8a20842243eec3bcb7ef6cec7c7"
+   ],
+   "images/wardrobe.jpg": [
+    150157,
+    "52224db09f2cf1bce539506e4b1ef16b099815ce538f7d40e64519c8a91a4315"
+   ],
+   "panels.json": [
+    8488,
+    "7e85fc050e1c0b2d239e3d83e6541385a2dc89eb9ec530983617fe597e0b4673"
+   ],
+   "theme.css": [
+    299,
+    "dab85b7f46c671ec978aa271404473628e5b18d5aaa85bceeefd38447d64cda4"
+   ],
+   "world.json": [
+    55228,
+    "918ebb1e07341ec4d1d0cb265e0952799bbdf3b3b75ff0244c4b50b48342e275"
+   ]
+  },
+  "kek_szalon": {
+   "GAME.md": [
+    2275,
+    "ab597923572d15f0a7aeba97b8127c8cac039ea38e2dce5d725967fba466cd4e"
+   ],
+   "game.json": [
+    6661,
+    "c1b1090b0bf730c9495e3533c2f82dd186fcbe984e7eadbd65dd776ee6ccb8f0"
+   ],
+   "icons/i_blue_book.png": [
+    104699,
+    "5e958de70db06adde8780aca3be61c64d84da38113e80e473f3e137e2d2aa903"
+   ],
+   "icons/i_card_left.png": [
+    114858,
+    "6cf3b6510ae10c7f5c912fccbb9d05b42beb64e54e5c9f97d1b924693b3bf261"
+   ],
+   "icons/i_card_right.png": [
+    111520,
+    "d3a6d5674f5e366720660b1deb24c4b45c2c7383fb9697b68a84aa9def0bdfdd"
+   ],
+   "icons/i_cipher_disc.png": [
+    116398,
+    "1973f42df3a8ce40c191ec588fac547492bd3d88ad27bfe2a2c72e4a9d8e5195"
+   ],
+   "icons/i_letter_liliom.png": [
+    76073,
+    "e1aaa44d203b39e226cf1a888678d10c761595c7f3d36328bb6f5b02c8e4d134"
+   ],
+   "icons/i_matches.png": [
+    91639,
+    "9b601fdfa84bc1d799e3aec8e903d734cf3d36c06d1bf6b2aa29bcadc03b6805"
+   ],
+   "icons/i_plate.png": [
+    93160,
+    "28c08a178d9e8bd5ef272f89d18ccbae53336d7f0727d89474ced1c66ef934b4"
+   ],
+   "images/album.jpg": [
+    226293,
+    "a288aa60f0732a00e0f40b7ea9c10bd7f26708dbcd60f23563b26a735f2d8d1b"
+   ],
+   "images/album_ibolya.jpg": [
+    296179,
+    "90c32f40b6b30fb34e26122eedcc9f9546743efad2f40054a5b2463341ed60ea"
+   ],
+   "images/album_kamelia.jpg": [
+    263716,
+    "0a9458d0d0cd0f9e3f370a17497bf8da3456d91e704f7f16c933d4920db2cad1"
+   ],
+   "images/album_liliom.jpg": [
+    275044,
+    "a9cc5bd9847ee2422bc597ef75a2f4f38483a6bc5b4b45a637fadbdcc16bdb77"
+   ],
+   "images/album_orgona.jpg": [
+    261242,
+    "54f17681bf7a23395f075ab7bf9fcc1b1a75df9b5bba9a92830720c1dab7d8e9"
+   ],
+   "images/album_rozsa.jpg": [
+    264599,
+    "623006b016521346f11797207fffc697fd524c02a66c34b7c86480a2e2970a9e"
+   ],
+   "images/album_tulipan.jpg": [
+    272877,
+    "8ea57c87d22d667a17b3f5b75c69cc18f54ee515a8d957e6ffbc62eb0fdc6cd5"
+   ],
+   "images/bar.jpg": [
+    308201,
+    "c2e755f59df3dfd458286b4392b3f66ce5ef8f95442a9e159d085ec859abba22"
+   ],
+   "images/bath.jpg": [
+    342401,
+    "1ec06974dc378090e036b98eb93bb2740cfa0895af7159876d0e5a753eb0ec4c"
+   ],
+   "images/bell_push.jpg": [
+    217662,
+    "07b482969d6a0f9e6c0b5ece76cc5802cca6cb58740c268fbc394509415383b0"
+   ],
+   "images/bellboard.jpg": [
+    282982,
+    "cb8e1f50101bb84e492a4f25c2ec76ec1b8528f1a2c8ce171ec5428dcd0236d1"
+   ],
+   "images/bellboard_I.jpg": [
+    213009,
+    "697a6e5b38af0ee1f1f99381479fa8558d9fde660e162996e62e7e5b981803d5"
+   ],
+   "images/bellboard_II.jpg": [
+    212852,
+    "224f42b8fff4a5ec7fd11edab3e4ba66f58ffd94cb31b342d5394e8ee12c078c"
+   ],
+   "images/bellboard_III.jpg": [
+    212697,
+    "574dcf52abfb06c807b8a3820cc24afc021e0e4cf3208bea2c31f81475243c3a"
+   ],
+   "images/bellboard_IV.jpg": [
+    212783,
+    "8025e404a6789d55327fad4da29f31b2c35abdda4b223cab7c96903e6bcbe3d6"
+   ],
+   "images/bellboard_V.jpg": [
+    212751,
+    "bea7bb2cea7fd71f36c9be352d9d1446f3f24631979174d448aba51e022282d0"
+   ],
+   "images/bellboard_VI.jpg": [
+    213004,
+    "2b9cbd45830102d6a9973ea2553385a666592f86523e9a514656d97fcc9b1f8e"
+   ],
+   "images/blue_door.jpg": [
+    240727,
+    "38869c3c1b4fae9c129b56259c49797b8ccccce3aa1ac73e4cebfb7c0e84393e"
+   ],
+   "images/canopy_bed.jpg": [
+    299675,
+    "1bbd6dd1b2b87cf72362fb83f4a88c8f1ff560eb9bdeafd1327ffc05eb975799"
+   ],
+   "images/canopy_box.jpg": [
+    169715,
+    "566cbe469407f49fb6a77f3428a2a810aa95ae0e77a0679706b0780db16983a4"
+   ],
+   "images/canopy_box_open.jpg": [
+    153933,
+    "84a2792bda583e493717c404952a63ca5d37d2940eae1755067cb8185073b624"
+   ],
+   "images/cipher_disc.jpg": [
+    285863,
+    "0dd87919741eeef72801e3f5eb2c1fc3934323d79b93d40b61f1401d74fac1a4"
+   ],
+   "images/cover.jpg": [
+    527011,
+    "f3dc6e44b1a7e631d3af45d5f1b72a9aeca166bdf06829e3063fe2677ead75b1"
+   ],
+   "images/darkroom.jpg": [
+    346691,
+    "aa71dc3459e2a92d466591242b7187a99c73833292f75f1d51376e5527bbc763"
+   ],
+   "images/decoy_book.jpg": [
+    228220,
+    "9e50435fdbd793c65fc5e7ad5e5fa30f11d1a039296a6bc086b505b60ac2d0fb"
+   ],
+   "images/decoy_page.jpg": [
+    206292,
+    "72e89724e7517ae1d93248c6814281655061cd28b753286dfd6dd0c02c7d143a"
+   ],
+   "images/desk.jpg": [
+    216755,
+    "3f277076a31c70fcddc55e30e19de31c4be3ff5e4c6b87ca7f4343565e2639f6"
+   ],
+   "images/dressing.jpg": [
+    335845,
+    "bb4f927e98fd59558dff1eab7789c69de8afbe8c4d01e74b659c164cac459b90"
+   ],
+   "images/dressing_mirror.jpg": [
+    246983,
+    "2b9006a5aded56d95998c373b3d0c4743bec5e07431a04f6c10ecf7c60dc73ca"
+   ],
+   "images/dressing_mirror_empty.jpg": [
+    294922,
+    "76471d5ca3deafe4e8ab8c61d1ac195cd934119605cb826ef90cdbb374745285"
+   ],
+   "images/ending.jpg": [
+    298422,
+    "69226b1d399f75c64b9ba80d698374b4d785e962ef2e311758b48817649a4856"
+   ],
+   "images/engraving_1.jpg": [
+    444246,
+    "7069077481d79c22a40663d5e2102075c6617fa6bc951fa9b979d59231aa9a77"
+   ],
+   "images/engraving_2.jpg": [
+    530760,
+    "26b4fb33ae3534640bdc50cd7ab339c1f9623f8515e17517d25cbb8ee6d545ef"
+   ],
+   "images/engraving_3.jpg": [
+    396414,
+    "1327f7567f0cd3594dc3e68e0ece5fe9b2132b70527d98572ca051b8f4896f75"
+   ],
+   "images/exterior.jpg": [
+    522367,
+    "c3fac69e46b20d100e6e84b29ff0812be4f58cf791cfaa8d1f41b95a8bf6dce6"
+   ],
+   "images/hall.jpg": [
+    319498,
+    "fe4d2cb0ad9697fe716d81fb35fea4fd7c08dca5d58114337f088c0998ba6e50"
+   ],
+   "images/i_blue_book.jpg": [
+    240020,
+    "8f60e4a1f818d4ea8fef6a1432e168faf8fe5378b512e945f69f7ad7d05470b5"
+   ],
+   "images/i_card_left.jpg": [
+    140754,
+    "850e275f313e31afc17bd2628fefeba110be2ccb7122150f7bf31e47322d884e"
+   ],
+   "images/i_card_right.jpg": [
+    135020,
+    "85a7922ddc1aa3e11bcd1be7cdd38550ca1aa218101d450ef99a57fa0ce7709a"
+   ],
+   "images/i_cipher_disc.jpg": [
+    282632,
+    "96e75e062b51b927c18dbe68d22bc904cfafbaa1518767702688e723dd40eb8d"
+   ],
+   "images/i_letter_liliom.jpg": [
+    256066,
+    "9f22e6f42503cbc0b3b5a6555c87bfd69b9d46fa0a03a8892e8f513e43d6f093"
+   ],
+   "images/i_matches.jpg": [
+    164087,
+    "da871daeab8f0e6654d648bff807fe92b31eda56f8cc438db313e3631261f1c9"
+   ],
+   "images/i_plate.jpg": [
+    147747,
+    "7ac4c5adb21259ffae85a7530210a0df823e2bdae64ba1bdb3b6867195ef5e2d"
+   ],
+   "images/jib_wall.jpg": [
+    443158,
+    "d4c7053751ecf535f3b2edd03790017a98cff3621797ab799b49617b9d5f6ec0"
+   ],
+   "images/ledger.jpg": [
+    301430,
+    "32e8f6b8f73e11fd23d000cf9cca6bbfd2959a69d99e3d3ff484098742f1e0eb"
+   ],
+   "images/letter_liliom.jpg": [
+    256066,
+    "9f22e6f42503cbc0b3b5a6555c87bfd69b9d46fa0a03a8892e8f513e43d6f093"
+   ],
+   "images/love_chair.jpg": [
+    301568,
+    "a19b1872dfe0f7fd39ca38808cd27d2924f9551ecac89a3b564afabd1c0efcac"
+   ],
+   "images/mirror.jpg": [
+    335057,
+    "7a0467584219c12d2027eb97c9b403d30d1ca62d359e3fc834d0bee59cdec873"
+   ],
+   "images/mirror_lit.jpg": [
+    326398,
+    "253784d4991a622f46dbc7e0c4ef26a1ca1cc553c64b656babc5925b242d96e2"
+   ],
+   "images/office.jpg": [
+    314855,
+    "f5bc7034e7ae53e328ac9d15ff2322ffbf82b69b172a29f43beae158e2c68b1b"
+   ],
+   "images/office_fireplace.jpg": [
+    384127,
+    "35d63a28ea3901b2fcc1d9e6bb25a57d9ff041662d256b31377ee928e4536fcf"
+   ],
+   "images/office_fireplace_open.jpg": [
+    319448,
+    "381fff38fd15fa27a2c2bd8966e1a9201d7cc165c7c2e6e88c4ddc275f0119fa"
+   ],
+   "images/oriental.jpg": [
+    411341,
+    "c3b48f37080b94730c349da336d95638a0431b669ca97903c00fc100af8d3e0a"
+   ],
+   "images/peephole_bath.jpg": [
+    164514,
+    "a76ec55a1cde307c27a872777c74dbac613acdbdb060199e8eb976d8a87eff2e"
+   ],
+   "images/peephole_mirror_dark.jpg": [
+    136760,
+    "b41dfff2d31e3f3a9278a5569212335f00c4d9f36f8ff2218eb83cc1fbd52065"
+   ],
+   "images/peephole_mirror_lit.jpg": [
+    240087,
+    "0361d053c78208a12de7a8765a4da9a8ee9768a7d26f4cc9f461d75ab4f8fb06"
+   ],
+   "images/peephole_office.jpg": [
+    129582,
+    "b128337d60d6c46c82c041f270ba52dc4980e40c9a115c0bb8e3628415507b77"
+   ],
+   "images/peephole_oriental.jpg": [
+    231908,
+    "7345101f3855963e45072b34c44632f869085e82c4dd6436c8025614d4503f60"
+   ],
+   "images/piano.jpg": [
+    303174,
+    "68a3fe0f717df43485696f5b2b45f72fab2d92135b7cbc1b7adaa44b80e0e7dd"
+   ],
+   "images/plate_box.jpg": [
+    196694,
+    "8b3dab4f521475bb9eafe0e09199f7ad331bc30885843d318cd21b8c7376b7e6"
+   ],
+   "images/plate_box_open.jpg": [
+    206390,
+    "cb6b17817cfd1e97a12707f55026cfd8d8c7ef40690dbdae093fad8ba3cc9538"
+   ],
+   "images/plate_developed.jpg": [
+    267489,
+    "721c875849c1c0f54ea8220cd5a4620b30bf6f9a6883b83399613cb6d053a83e"
+   ],
+   "images/porter_log.jpg": [
+    197497,
+    "7cd681ba69f78f8eb3887278eee2f6e212693f46197616d26563fe63b9e098fa"
+   ],
+   "images/portrait.jpg": [
+    442796,
+    "0fdeac86d7a3ded048a92f4587dc8b26d9bfe3493d9288e0cc81db1c68138020"
+   ],
+   "images/portrait_locket.jpg": [
+    123051,
+    "ff5ea0ce7bb9cb4b98d03b4a1a13b105f8675f604d9650193f40c56b34452795"
+   ],
+   "images/recipe.jpg": [
+    179882,
+    "c6667e2f7778468954810094c92b110add5241cb50386cc530dd018127e009f6"
+   ],
+   "images/salon.jpg": [
+    327845,
+    "3d81c231fe0ba1a76f6a8eebc3d2b7f9d076dfccd203d27f70d2766e7cc98756"
+   ],
+   "images/salon_fireplace.jpg": [
+    334059,
+    "7b14cee85a0cc799e967f6bbc74d74ac6824620e1498aa3e64f1a45b9b42888f"
+   ],
+   "images/salon_jib_open.jpg": [
+    309500,
+    "350b3bcc1c83bc2622c5b823c813af25368c45934e269bb0b91320cda959472e"
+   ],
+   "images/staff.jpg": [
+    262622,
+    "552849d8c09c0cef13a62579e17cbfa4c27ee681178024188925c67085d8fe78"
+   ],
+   "images/stairs.jpg": [
+    344628,
+    "0fbd8c925322520a8a9e48d2f0be487de7ddbafd843cc9667bac30ea10c35faa"
+   ],
+   "images/stereo_left.jpg": [
+    248363,
+    "5c6785ab265113e49f73d6c35fe9acc5984c6cb1dac8c1b59fc6199561068f53"
+   ],
+   "images/stereo_right.jpg": [
+    229515,
+    "6be0676d5260f7c75285e7506d44b2f4d5d3568554aa97fe45e9332a2fad16a1"
+   ],
+   "images/stereoscope.jpg": [
+    224870,
+    "287260c9321ae5ab673bccc999bd7746eff37b5bec693bbf56b4c83b4d6e1de7"
+   ],
+   "panels.json": [
+    6079,
+    "3f1d2aabe60b33410030b351078cc3eb9bfbb9bdec738c59e9f235e7e77857c3"
+   ],
+   "theme.css": [
+    832,
+    "4d0fe70994e6a9746edabcd0a8617dbd43c7882fa28c7f74d2555c61f6fb4cef"
+   ],
+   "world.json": [
+    60457,
+    "ac85ad52a5ecd890d3c06164ac73d4ad5b00b054fd11d72ddd2819fe33c24cf4"
+   ]
+  },
+  "szimulacio": {
+   "GAME.md": [
+    2271,
+    "7bdea5aaf4c439f63060c26b51d41d1e81a534be0f71e3d38ab0d59294dcea2c"
+   ],
+   "game.json": [
+    6000,
+    "dcc9769cedc94c039ea11e9c1a37dbb3d2a32b3714587a60b02e6f9b884c2edd"
+   ],
+   "icons/i_crop.png": [
+    67892,
+    "55fdd72a657aa65d1a82874a84e58c11a40a4f2e60cba4441ff2487112c55077"
+   ],
+   "icons/i_envelope.png": [
+    74257,
+    "41a3f782b80afdc1eb6891bdfc0fd7c8bf72f7d86384ff2c3d57d1948be3455a"
+   ],
+   "icons/i_keycard.png": [
+    72622,
+    "7831dcabfdcbbe248736389a66b4b6225378d8a262b1ba5b95af5f6bd0542344"
+   ],
+   "icons/i_polaroid.png": [
+    100885,
+    "43a8ee76cc36d797058b44211ca8161b4e1af6bdaee3c3ec204dd997a373dc86"
+   ],
+   "icons/i_wristband.png": [
+    68725,
+    "81f4d822c72b787de892d670b9dbad8f0f0845abdbfbbec3edf6f0ead0b23bef"
+   ],
+   "images/beach_night.jpg": [
+    218051,
+    "ddef00cec94476265362e35664f63069df587c15f5a2dd6f018fa966f7c2f220"
+   ],
+   "images/beach_night_dark.jpg": [
+    231186,
+    "eb6a4604949bae37ed97144bfcf63ef3ee63b2b64000a8710ce86b1a7f6dd0d4"
+   ],
+   "images/beach_torches.jpg": [
+    368638,
+    "b7cfee9e677d2eab5fdfe6117a78d0d6bca72894c46284ea60d7812a0850d311"
+   ],
+   "images/beach_unlit.jpg": [
+    422785,
+    "cf104200a852eddf3c5a17b2b0344c605497cb46b3b3cfbadc5498b836673889"
+   ],
+   "images/boss_desk.jpg": [
+    180056,
+    "58902b4e7004655c97b7e0ae3186f1c7f9a381ee69d5d1c6daaeec9408fa3036"
+   ],
+   "images/boss_office.jpg": [
+    221206,
+    "d20b30ed6d74ce94d5d3ba856f79211026ab8b59c1d52298aac2bf08136c0035"
+   ],
+   "images/bungalow.jpg": [
+    331165,
+    "d04a43f7b697fc3e7beb89eb6e723284d2281eff02ef6ddf3bf94785f9016a81"
+   ],
+   "images/cabin.jpg": [
+    328807,
+    "bcdfbd62118439e9bce7e369e41ff159c380b30efdbb9f34ca8ba48bb3981403"
+   ],
+   "images/cabin_closer.jpg": [
+    215670,
+    "b8225a927a4af38c1ffbd726cf96d0dc27eccc24dd3b10836d61ab03ecb28594"
+   ],
+   "images/cabin_mark.jpg": [
+    202369,
+    "82d48391875baf8e5e9fd9417dc10ee7fa39443aa60c3bea095f91a47a6cb21c"
+   ],
+   "images/cabin_polaroid.jpg": [
+    201578,
+    "e11245355afc07beaf459c1d2ae448b27b4eead374e0a9496382f447bd82b0ac"
+   ],
+   "images/cabin_scene.jpg": [
+    203622,
+    "a4a05d8a05d7cf9043b8310cd5a0528b1e80bb52bfa5e070371e470c2d3767a8"
+   ],
+   "images/calendar.jpg": [
+    81395,
+    "d5d901869f263cf442573fcc66b28775dc892e26c9fceae4fbae95d37ebc5371"
+   ],
+   "images/client_dora.jpg": [
+    263472,
+    "22177b5759f7568828aeee413ac42323604fb44aecb37f9be4ff7adfe6ae6cd6"
+   ],
+   "images/client_eszter.jpg": [
+    183936,
+    "4f17f08e46ddd091276accd7f743f76244731aee8bf8238b8513d5ba31c83c9d"
+   ],
+   "images/client_gergo.jpg": [
+    158449,
+    "bf2794792c4fac583dc06891ae83cbbd80c18d0800e5ee38d221e037f62a8dc6"
+   ],
+   "images/client_kelemen.jpg": [
+    280555,
+    "f935bc9dacc7fdeb39c5594b3b0187eb5eb65fc44e6cd4fa70c490f2ae066d44"
+   ],
+   "images/client_tamas.jpg": [
+    184585,
+    "b79d8059528afe3b624e240c3e340dacf60223163bcaf1b1e7a2b74ba247f391"
+   ],
+   "images/computer_screen.jpg": [
+    201352,
+    "4306dfc5c8202496eb5152126ebc5b2282389c87fccfad9d0d813847a56bf33b"
+   ],
+   "images/console.jpg": [
+    164807,
+    "663fbcdfd624c95b0c51bfbbcc13e63f27dadbb13c56de4156f66cd421cd02be"
+   ],
+   "images/control.jpg": [
+    205837,
+    "08a6b51fb5650f6b267e367094e0c59385e64c08af93161945d8b94e8fe3f7bc"
+   ],
+   "images/cover.jpg": [
+    244600,
+    "ffba75af5454aad395c36ce4cf996f2aded3923cc27e5ac0d2697959bc3f8ca4"
+   ],
+   "images/crop_whip.jpg": [
+    112860,
+    "2517048f70b6e2b553e6bc3b3277d38c7506f1fcb5001306b48842ae80620172"
+   ],
+   "images/dj_desk.jpg": [
+    161055,
+    "2991b910a738dae430f99e8cd501261afe15e7ac80f6b2c326a196053494fab2"
+   ],
+   "images/ending.jpg": [
+    168941,
+    "3b5ff9fd7cbef332cde79098eb36d7526d3e1ec6efcbbaf787e433cdf8bc832a"
+   ],
+   "images/final_roof.jpg": [
+    292998,
+    "4d1e3e98082881bf01f602e5f1a227457aedcd362b323f7ff84a0f4a733d3c0b"
+   ],
+   "images/fireplace_pieces.jpg": [
+    163854,
+    "da0022a1fadf61541b83751e5d8a4270f837b3797bc9214e9730e1849ce72577"
+   ],
+   "images/i_envelope.jpg": [
+    142490,
+    "735169c5871035518699fcf553b6235268e56d57ef54a61f957d79a955cf9b57"
+   ],
+   "images/island_closer.jpg": [
+    201348,
+    "9ac8daea9c31457d0ea903c41aec08d216a478d24911a446d444436800918ee0"
+   ],
+   "images/island_mark_scene.jpg": [
+    156588,
+    "43b1b3290d93589f9fed54dcd988b9a2b4b508040a3f1332f6b989d3c109fd66"
+   ],
+   "images/island_scene.jpg": [
+    226282,
+    "282f522264416052006ebb9412466d2741bc79d425e10cba43b3cc57f5b0013d"
+   ],
+   "images/keycard.jpg": [
+    83639,
+    "34ac072ba423d938d2c1db606b22ad990d146790645d42fede5b2db8ed3ed33c"
+   ],
+   "images/lobby.jpg": [
+    126563,
+    "c656641fca99580dfd409d7b214263de064da8f51bb607292464a9e1e485c161"
+   ],
+   "images/lobby_open.jpg": [
+    134128,
+    "1b818367a8b10ac5faacc80a31c481ffecfec984a324a064cc4cb7d096f74f93"
+   ],
+   "images/lobby_terminal.jpg": [
+    40885,
+    "0afcd6a0a59e10afb8c5e503401b671e5c34756b5393a66306d51621caca15b7"
+   ],
+   "images/office_closer.jpg": [
+    202060,
+    "b264e73385ee8e85fad380e6ec1bfa602e250c86ca9cb431c456553fa1f2e1c7"
+   ],
+   "images/office_floor.jpg": [
+    218022,
+    "598236849ffe6764c5cb6d8694cf3e9501e5915d49fada53431b1a2838baf2ed"
+   ],
+   "images/office_mark.jpg": [
+    231092,
+    "8745688c806241a0c88f53ab8cebfd810607c5bec7f1ff3afb2ee11925546231"
+   ],
+   "images/office_scene.jpg": [
+    157650,
+    "4c4d21c6654bcb3fca773f2db3d9594dbbf9bb6101b612c301871ef1b222ef24"
+   ],
+   "images/office_sign.jpg": [
+    138428,
+    "817d204ebf74036fcda5ac90579562f175c24c6b0f816c6ee6703dec3b0080e4"
+   ],
+   "images/office_tray.jpg": [
+    165192,
+    "bd65b24dda9c1f3f5c0e1e796dafb9329b89569e4724222fe985fb2dcbc13039"
+   ],
+   "images/pad_blue.jpg": [
+    3929,
+    "009be2fc8d853460189fd8dd85746e0ba8149135d8aa1c4b78d0fb117aa0da87"
+   ],
+   "images/pad_gold.jpg": [
+    5115,
+    "b13bdb55369a019cdd015a53c6a22c45c4d977463ba911928c652dcc17eb849b"
+   ],
+   "images/pad_magenta.jpg": [
+    4229,
+    "303c6192b5986d4f773fb5effec7a535c13a1f8bdf24dc069d950b581b4b2137"
+   ],
+   "images/pad_uv.jpg": [
+    3765,
+    "a4f8fdee4502bb2d5e0aceb562fe1915405933582465707bb949c1c6f199ce62"
+   ],
+   "images/play_cabinet.jpg": [
+    136744,
+    "879598afdd56928e06f8ad4331d9e06ee24ded52ff8769e50275bfc208a6e1f9"
+   ],
+   "images/play_cabinet_open.jpg": [
+    225237,
+    "3ac911c766bdbf039adb9809dc55478b341c0bf14772c53b6288cb47cc66ffca"
+   ],
+   "images/play_closer.jpg": [
+    188671,
+    "474f47a17a8914fb51c272fbe4b082fcdf5a0a704f63cd05e1b34dbeff6ce663"
+   ],
+   "images/play_mark.jpg": [
+    205046,
+    "1dcb11cc5d353a114e4bafea7636c8752dc2335f349b365c8e4dca407b5a5899"
+   ],
+   "images/play_ring.jpg": [
+    301651,
+    "3a90d9245a236000bb5aea46fee7ca0a495d1f2faadb017902dedb159744832f"
+   ],
+   "images/play_scene.jpg": [
+    149896,
+    "38481448ee49571de8e67a4b7f615bade866fa5c54c1dcff762e820d0f263fd4"
+   ],
+   "images/play_wall_rules.jpg": [
+    261046,
+    "85799015dc0cf0b97a37486d7ab2210c945e7b83f58d07db393076184d1bfb0b"
+   ],
+   "images/playroom.jpg": [
+    212763,
+    "24655ce583959adc7b5f47f28d295c0d2c6679aeba5ddd4b6792d594169f7a90"
+   ],
+   "images/pod_empty.jpg": [
+    128081,
+    "a70b20da083a43f38c3db133de202d26df40a0591b832f0eec0f2b5df5ca0088"
+   ],
+   "images/pod_eszter.jpg": [
+    156225,
+    "7ab2672f424ac7f563c77868c42d5f20bda3dd5849fa0e2d5c37117e9d4a2c37"
+   ],
+   "images/pods.jpg": [
+    232258,
+    "2909f705c07921b30f11ea1481b8d3c31ec5f2309f7a8b41e7f64cb0533cee4e"
+   ],
+   "images/portal_cabin.jpg": [
+    164091,
+    "e87599b69268a7984368277f928c3f542361999c627cb746dffa49c2076ef7dc"
+   ],
+   "images/portal_island.jpg": [
+    142684,
+    "7f26ffdf4c7a6f0a1066ebffa75f92401f4b159af34402f6de7b5dc867249af5"
+   ],
+   "images/portal_office.jpg": [
+    145888,
+    "6082a5f1b2c01626eabe7dc0079f86bf08caafce498c45893c317250e2706dc9"
+   ],
+   "images/portal_playroom.jpg": [
+    146910,
+    "2e4640b092d56c94c1a1ea46d3e1da30c7bdb113f1dbb4b9c65079b93c7c44d4"
+   ],
+   "images/portal_vip.jpg": [
+    160587,
+    "24be08ee86efdd72bdcca96f90bf3812423bec60950cae4f92169937d4e66071"
+   ],
+   "images/tablet.jpg": [
+    91050,
+    "0b6168e104e1771fd0a958341f809d475eca8f42308ccf0d69791ad143f42bad"
+   ],
+   "images/thumb_cabin.jpg": [
+    45992,
+    "a331f9cd1a6cbee1d8033de5cde0a376b25d38cf24969683457263b388f319c0"
+   ],
+   "images/thumb_island.jpg": [
+    54281,
+    "b27c80cdcd585ff67958889eadef3bf5c1ebb3debdb0342bbcdc28ef8c2731ca"
+   ],
+   "images/thumb_office.jpg": [
+    30049,
+    "d9b860fd31493f8260e73bc063b29254df0569d25127e8300189a74692ef1e16"
+   ],
+   "images/thumb_playroom.jpg": [
+    31204,
+    "4a79e5865b9041c1d823a64fa043c145ad436c2404ba27315d5efcd812af3da0"
+   ],
+   "images/thumb_vip.jpg": [
+    41133,
+    "5bbc328fe90c42c4984cabbbf813cfa40505b778c0269b442cfcf2179ec6c5a7"
+   ],
+   "images/vip.jpg": [
+    272901,
+    "6d3042a4b2e7160911e91c59911648d9ee3d82c3e24e52a3f756953615023f3f"
+   ],
+   "images/vip_booth.jpg": [
+    217492,
+    "bade636ca7aadbd252c724ab6a3caae937e7d95767f041c74161b416d1174388"
+   ],
+   "images/vip_booth_uv.jpg": [
+    155928,
+    "64400867ea5c456be1a24a536d3522c8e42a37fd01e058971be4a8e935b9bd64"
+   ],
+   "images/vip_bowl.jpg": [
+    173005,
+    "1167675b5bb918161624b5838694b3b0c434e93bc7aee807f8a05c9d23a88307"
+   ],
+   "images/vip_closer.jpg": [
+    224793,
+    "5798138f830c59757cbe7f070e49a34ca5f8fa0e1a0ed35da05b823f440e6d51"
+   ],
+   "images/vip_mark.jpg": [
+    253127,
+    "95a43992b4aae92a217d99cfd2055dc262b0adf5ef0049aabea84e33d0743630"
+   ],
+   "images/vip_original.jpg": [
+    254517,
+    "6a850306c5a679e61d6459a1c9295f726e8967acf3168167b9a54a83354f991b"
+   ],
+   "images/vip_scene.jpg": [
+    163430,
+    "7c3db406212c54f3f5062162000063cb5ebebea5c6577ec4668a572f6b6bd9b5"
+   ],
+   "images/welcome_card_written.jpg": [
+    256120,
+    "3a29623254c1e76b6d3d26169e9b8f39a236918894b644244a1ab306d39c6db7"
+   ],
+   "images/wristband_sand.jpg": [
+    176681,
+    "d35bf94b49a0a6d0eded2e85a0c3d8b47d0ba23ac0a11f1e3140d2eed888c1f9"
+   ],
+   "panels.json": [
+    11456,
+    "cb3fa611c0246b3b846a4ab40ecdf9fceda2e947468fe8be76345789f1405d1e"
+   ],
+   "theme.css": [
+    806,
+    "ddd0b5f9b73cd1b68e2394906b5d78e06ee443ac8da8ec76a9822928c720d751"
+   ],
+   "world.json": [
+    59310,
+    "aaf1a71567eadb909c58970c2fecbcf2e77ef14dce500e6ee0dfc365a599aa7e"
+   ]
+  }
+ }
+}

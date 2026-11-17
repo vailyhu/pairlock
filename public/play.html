@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title></title><link rel="icon" href="/public/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/public/favicon.png"><link rel="stylesheet" href="/public/style.css"></head>
+<body data-tab="story"><div id="app">
+<header><h1 id="title"></h1><span id="clock" data-s-tip="page.clock" data-s-aria="page.clockLabel">0:00:00</span><div class="chips" id="chips"></div><span class="sp"></span><span class="who" id="who"></span><button id="helpb" data-s="page.helpButton"></button></header>
+<main>
+ <section id="story" data-s-aria="page.story"><div id="log" aria-live="polite"></div>
+  <div id="bar"><div id="round"></div><textarea id="in" data-s-placeholder="page.input" data-s-aria="page.inputLabel"></textarea>
+  <div class="acts"><button class="send" id="sendb" data-s="page.send"></button><button id="passb" data-s="page.pass" data-s-tip="page.passTitle"></button><button id="gotob" data-s="page.goto" data-s-tip="page.gotoTitle"></button><span id="gb" style="display:contents"></span></div></div></section>
+ <section id="stage" data-s-aria="page.stage">
+  <div id="view"><button class="nav" id="prev" data-s-aria="page.prev">‹</button><button class="nav" id="next" data-s-aria="page.next">›</button></div>
+  <div id="strip" data-s-aria="page.gallery"></div>
+  <div id="inventory" data-s-aria="page.inventory"><span class="l" data-s="page.inventory"></span></div>
+  <div id="notebook"><div class="tabs"><button id="tmine" class="cur" data-s="page.myNote"></button><button id="tshared" data-s="page.sharedNote"></button><button id="tcoll" data-s="page.collapse" data-s-tip="page.collapseTitle"></button><span class="saved" id="saved"></span></div><textarea id="note" data-s-aria="page.note"></textarea></div>
+ </section>
+</main>
+<nav id="mobnav"><button data-t="story" data-s="page.tabStory"></button><button data-t="stage" data-s="page.tabStage"></button></nav>
+</div>
+<dialog id="help"><h2 data-s="page.goal"></h2><p id="hgoal"></p><h2 data-s="page.help"></h2><p id="htext"></p><div id="hbtns" class="acts"></div><form method="dialog" style="margin-top:10px"><button data-s="page.close"></button></form></dialog>
+<dialog id="goto"><h2 data-s="page.gotoHead"></h2><div id="golist"></div><form method="dialog"><button data-s="page.close"></button></form></dialog>
+<dialog id="panels"><h2 data-s="page.panelsHead"></h2><div id="plist"></div><form method="dialog"><button data-s="page.close"></button></form></dialog>
+<script src="/public/strings.js"></script>
+<script src="/public/tip.js"></script>
+<script src="/public/modules.js"></script>
+<script src="/public/play.js"></script></body></html>

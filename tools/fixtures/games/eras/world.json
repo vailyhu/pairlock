@@ -1,0 +1,56 @@
+{
+ "start": [
+  "hall74",
+  "hall"
+ ],
+ "inventoryPerPlayer": true,
+ "vars": {
+  "capsule": "none",
+  "alarm": "none"
+ },
+ "status": "{loc0} / {loc1} / {capsule}",
+ "rooms": {
+  "hall74": {
+   "name": "Hall 1974",
+   "text": "old hall"
+  },
+  "hall": {
+   "name": "Hall",
+   "text": "new hall"
+  }
+ },
+ "items": [
+  {
+   "id": "desk",
+   "name": "desk",
+   "location": "hall74",
+   "text": "a desk"
+  }
+ ],
+ "inventory": [
+  {
+   "id": "key",
+   "name": "Key",
+   "p": 0
+  },
+  {
+   "id": "torch",
+   "name": "Torch",
+   "p": 1
+  }
+ ],
+ "onMessage": [
+  {
+   "match": "\\(GAME: CAPSULE (\\w+) (\\w+)\\)",
+   "setVar": {
+    "capsule": "$1@$2"
+   }
+  },
+  {
+   "match": "\\(GAME: ALARM (\\w+)\\)",
+   "setVar": {
+    "alarm": "$1"
+   }
+  }
+ ]
+}

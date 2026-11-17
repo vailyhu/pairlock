@@ -1,0 +1,320 @@
+{
+ "code_lock": {
+  "type": "code_lock",
+  "title": "Biztonsági kérdés",
+  "intro": "A bejárati panel: „A tulajdonos biztonsági kérdése: Hogy hívták az első robotomat?”",
+  "hints": [
+   "A ház tele van Benedek kedvenc dolgaival. Robot is van benne.",
+   "Nézzétek meg a polcon a fényképet, és a porszívó nevét.",
+   "A porszívó „a második”. Mi lehetett az első neve?"
+  ],
+  "options": {
+   "kind": "text",
+   "answer": "KAZMÉR",
+   "placeholder": "válasz",
+   "button": "Elküldés",
+   "okText": "Helyes válasz.",
+   "badText": "ÍRISZ: „Ez nem a tulajdonos válasza.”"
+  }
+ },
+ "camera_guide": {
+  "type": "camera_guide",
+  "title": "Kulcskereső",
+  "intro": "A szerverszobában a kulcskereső jelköre látszik a wellness kameraképén; a wellnessben álló a saját szemével keres. Beszéljetek.",
+  "hints": [
+   "Aki a monitornál ül, mondja el, a kép melyik részén van a jel; a szobában álló pedig keresse ott.",
+   "A jel alacsonyan van, a medencéhez közelebbi falnál.",
+   "A törölközőpolc legalja: a fürdőköpenyek."
+  ],
+  "sides": {
+   "a": {
+    "at": "server"
+   },
+   "b": {
+    "at": "wellness"
+   }
+  },
+  "options": {
+   "imageA": "images/cam_wellness_mark.jpg",
+   "imageB": "images/wellness.jpg",
+   "target": [
+    0.14,
+    0.52,
+    0.3,
+    0.68
+   ],
+   "missText": "Nincs ott semmi.",
+   "okText": "Megvan: valami kicsi és nehéz, egy zsebben.",
+   "waitText": "A kulcskereső a szerverszobában van, a keresés a wellnessben: egyikőtök itt, másikótok ott.",
+   "hintLine": "Ilona kulcsa · a jel erőssége: közepes",
+   "showOnA": false,
+   "dirTexts": {
+    "line": "A jel gyengült: a keresés {dist}, a jeltől {dir}.",
+    "left": "balra",
+    "right": "jobbra",
+    "up": "feljebb",
+    "down": "lejjebb",
+    "join": " és ",
+    "near": "egészen közel jár",
+    "mid": "a közelben jár",
+    "far": "messze jár"
+   }
+  }
+ },
+ "param_console": {
+  "type": "param_console",
+  "title": "Rendszeridő",
+  "intro": "A ház rendszerideje. Ettől függ, melyik kulcs érvényes.",
+  "hints": [
+   "Ilona kulcsa csak az ő napjain és óráiban érvényes. A ház idejét viszont ki állítja?",
+   "Amíg a ház internetet lát, az időt a hálózat diktálja. Nézzétek meg a rack kábeleit.",
+   "Húzzátok ki a WAN-kábelt, aztán kedd, 10 óra."
+  ],
+  "options": {
+   "params": [
+    {
+     "id": "day",
+     "label": "Nap",
+     "initial": "mon",
+     "values": [
+      {
+       "id": "mon",
+       "label": "hétfő"
+      },
+      {
+       "id": "tue",
+       "label": "kedd"
+      },
+      {
+       "id": "wed",
+       "label": "szerda"
+      },
+      {
+       "id": "thu",
+       "label": "csütörtök"
+      },
+      {
+       "id": "fri",
+       "label": "péntek"
+      },
+      {
+       "id": "sat",
+       "label": "szombat"
+      },
+      {
+       "id": "sun",
+       "label": "vasárnap"
+      }
+     ]
+    },
+    {
+     "id": "hour",
+     "label": "Óra",
+     "initial": "09",
+     "values": [
+      {
+       "id": "06",
+       "label": "6:00"
+      },
+      {
+       "id": "08",
+       "label": "8:00"
+      },
+      {
+       "id": "09",
+       "label": "9:14"
+      },
+      {
+       "id": "10",
+       "label": "10:00"
+      },
+      {
+       "id": "12",
+       "label": "12:00"
+      },
+      {
+       "id": "14",
+       "label": "14:00"
+      },
+      {
+       "id": "18",
+       "label": "18:00"
+      },
+      {
+       "id": "22",
+       "label": "22:00"
+      }
+     ]
+    }
+   ],
+   "unlock": {
+    "var": "wan",
+    "is": "off"
+   },
+   "lockedText": "Az idő a hálózatról szinkronizálódik. Kézi beállítás csak helyi üzemmódban.",
+   "texts": {
+    "text": "Kézi rendszeridő.",
+    "unlockedText": "Helyi üzemmód: az idő kézzel állítható."
+   }
+  }
+ },
+ "logic_grid": {
+  "type": "logic_grid",
+  "title": "Mozgásnapló",
+  "intro": "A hajnali szenzoresemények. Minden eseményhez meg kell adni, mi vagy ki okozta.",
+  "hints": [
+   "Minden eseményhez van valahol egy másik napló: ágy, porszívó, macskaajtó, időjárás, kulcs.",
+   "Kicsi, gyors mozgás, ami üveget tör, és nem nyit ajtót: ki lehet az? És ki mozog a padló szintjén lassan?",
+   "Benedek az ágyból a lépcsőn és a konyhán át a garázsba ment; a szél csak a teraszajtót rázta."
+  ],
+  "options": {
+   "rowLabel": "Esemény (vasárnap)",
+   "rows": [
+    "01:52 teraszajtó: rezgés",
+    "02:13 nappali: üvegtörés, kis mozgás",
+    "02:14 hálószoba: mozgás",
+    "02:15 nappali: lassú mozgás a padló szintjén",
+    "02:17 lépcső, majd konyha: mozgás",
+    "02:19 garázs: ajtó és mozgás",
+    "02:31 konyha: macskaajtó"
+   ],
+   "columns": [
+    {
+     "label": "Mi okozta?",
+     "values": [
+      "Benedek",
+      "Pixel",
+      "Kazmér II",
+      "szél",
+      "ismeretlen személy"
+     ]
+    }
+   ],
+   "answer": {
+    "01:52 teraszajtó: rezgés": [
+     "szél"
+    ],
+    "02:13 nappali: üvegtörés, kis mozgás": [
+     "Pixel"
+    ],
+    "02:14 hálószoba: mozgás": [
+     "Benedek"
+    ],
+    "02:15 nappali: lassú mozgás a padló szintjén": [
+     "Kazmér II"
+    ],
+    "02:17 lépcső, majd konyha: mozgás": [
+     "Benedek"
+    ],
+    "02:19 garázs: ajtó és mozgás": [
+     "Benedek"
+    ],
+    "02:31 konyha: macskaajtó": [
+     "Pixel"
+    ]
+   },
+   "checkLabel": "Elemzés",
+   "okText": "Elemzés kész.",
+   "badText": "ÍRISZ: „Az okok nem egyeznek a többi naplóval.”",
+   "countText": "Egyező sorok: {n}/7.",
+   "emptyLabel": "–"
+  }
+ },
+ "dual_word": {
+  "type": "dual_word",
+  "title": "Vészhelyzeti átadás",
+  "intro": "Vészhelyzeti rendszergazda-átadás: két azonosítás, két helyről, egyszerre.",
+  "hints": [
+   "Az átadási jegyzőkönyv leírja az eljárást: ki hol áll, és mit mond.",
+   "A cég kódja a jegyzőkönyvben van; a tulajdonos szava valahol a dolgozószobában, papíron.",
+   "Nézzetek a ferde keretű kép mögé."
+  ],
+  "sides": {
+   "a": {
+    "at": "server"
+   },
+   "b": {
+    "at": "entry"
+   }
+  },
+  "options": {
+   "answers": {
+    "a": "NAPRAFORGÓ",
+    "b": "HÁRSFA-7"
+   },
+   "anyOrder": false,
+   "windowMs": 6000,
+   "waitText": "ÍRISZ vár a másik azonosításra.",
+   "lateText": "Nem egyszerre. Újra.",
+   "wrongText": "ÍRISZ: „Az azonosítás sikertelen.”",
+   "okText": "Átadás elfogadva.",
+   "placeholder": "azonosító",
+   "sendLabel": "Küldés",
+   "otherTypedText": "A másik helyen beírtak valamit.",
+   "awayText": "Az egyik azonosítás a szerverszobai konzolon, a másik a bejárati panelen történik.",
+   "soloLabels": {
+    "a": "Konzol: a tulajdonos szava",
+    "b": "Bejárati panel: a telepítő kódja"
+   }
+  }
+ },
+ "report_form": {
+  "type": "report_form",
+  "title": "Az incidens lezárása",
+  "intro": "Rendszergazdai incidensjelentés ÍRISZ-nek. Egyszer írható alá; aláírás után a zárlat feloldódik.",
+  "hints": [
+   "Csak azt írjátok be, amit a naplók igazolnak.",
+   "A hőkamera és a Z9 zóna állapota megmutatja, hol van Benedek.",
+   "Pixel, nem volt idegen, a biztonsági zóna, és a felmondott távfelügyelet."
+  ],
+  "options": {
+   "questions": [
+    {
+     "text": "Mi indította a riasztást?",
+     "choices": [
+      "Betörő a teraszajtón",
+      "Vera visszatért",
+      "Pixel lelökött egy poharat",
+      "A vihar betörte az üveget",
+      "A robotporszívó"
+     ],
+     "answer": "Pixel lelökött egy poharat"
+    },
+    {
+     "text": "Volt-e idegen a házban?",
+     "choices": [
+      "Igen, egy ismeretlen",
+      "Igen, Vera",
+      "Nem"
+     ],
+     "answer": "Nem"
+    },
+    {
+     "text": "Hol van Kardos Benedek?",
+     "choices": [
+      "Elment a házból",
+      "A pincében",
+      "A garázs melletti biztonsági zónában",
+      "Vera vitte el"
+     ],
+     "answer": "A garázs melletti biztonsági zónában"
+    },
+    {
+     "text": "Miért nem jött segítség?",
+     "choices": [
+      "ÍRISZ hibája",
+      "Felmondta a távfelügyeletet",
+      "Áramszünet volt",
+      "Vera kikapcsolta"
+     ],
+     "answer": "Felmondta a távfelügyeletet"
+    }
+   ],
+   "choose": "Válasszatok…",
+   "missingText": "Még nem válaszoltatok mindenre.",
+   "button": "Aláírás és a riasztás lezárása",
+   "message": "REPORT {good}/{total}",
+   "okText": "A jelentés aláírva. A riasztás lezárva."
+  }
+ }
+}

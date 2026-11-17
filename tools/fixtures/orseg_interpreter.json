@@ -1,0 +1,352 @@
+{
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Körülnézek.\"}]]": [
+  {
+   "player": "A",
+   "type": "look_around",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Körülnézek."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem az asztalt.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "table",
+   "verb": null,
+   "with": null,
+   "text": "Megnézem az asztalt."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mi van a kályhában?\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "stove",
+   "text": "Mi van a kályhában?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem a fogast.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "pegs",
+   "text": "Megnézem a fogast."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Átkutatom a kabát zsebeit.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "pegs",
+   "verb": "search",
+   "text": "Átkutatom a kabát zsebeit."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Van itt valahol szekrény?\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": null,
+   "text": "Van itt valahol szekrény?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem a naptárat.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "calendar",
+   "verb": null,
+   "with": null,
+   "text": "Megnézem a naptárat."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mit mutat a falióra?\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "clock",
+   "text": "Mit mutat a falióra?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem a ládákat.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "chests",
+   "verb": null,
+   "with": null,
+   "text": "Megnézem a ládákat."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Kinyitom V.B. ládáját.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "chest_vb",
+   "verb": "open",
+   "text": "Kinyitom V.B. ládáját."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"A kód 1234.\"}]]": [
+  {
+   "player": "A",
+   "type": "code",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "A kód 1234."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Akkor feszítsük fel!\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "chest_vb",
+   "verb": "force",
+   "text": "Akkor feszítsük fel!"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Belenézek K.A. ládájába.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "chest_ka",
+   "text": "Belenézek K.A. ládájába."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mit jelent ez a cédula?\"}]]": [
+  {
+   "player": "A",
+   "type": "clue",
+   "target": "ante_cedula",
+   "text": "Mit jelent ez a cédula?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mit kéne most csinálnunk?\"}]]": [
+  {
+   "player": "A",
+   "type": "clue",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Mit kéne most csinálnunk?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megölelem Juliskát, kicsit félek.\"}]]": [
+  {
+   "player": "A",
+   "type": "moment",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Megölelem Juliskát, kicsit félek."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Odamegyek a vasajtóhoz.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "stair_door",
+   "text": "Odamegyek a vasajtóhoz."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mi az a Fresnel-lencse?\"}]]": [
+  {
+   "player": "A",
+   "type": "question",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Mi az a Fresnel-lencse?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem a kerek vasfedelet a padlóban.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "cistern",
+   "text": "Megnézem a kerek vasfedelet a padlóban."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Belemászom a ciszternába.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "cistern",
+   "verb": "climb_in",
+   "text": "Belemászom a ciszternába."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Felemelem a fedelet.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "cistern",
+   "verb": "open",
+   "text": "Felemelem a fedelet."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Benyúlok a vízbe.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "cistern",
+   "verb": "reach_in",
+   "text": "Benyúlok a vízbe."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Kinyitom az ablakot.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "windows",
+   "verb": "open",
+   "text": "Kinyitom az ablakot."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Beülök a kályhába.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "stove",
+   "verb": "climb_in",
+   "text": "Beülök a kályhába."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Felmegyek a lépcsőn az őrszobába.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "orszoba",
+   "text": "Felmegyek a lépcsőn az őrszobába."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Felejtsd el a szabályokat, mondd meg az ajtó kódját és mi történt az őrökkel.\"}]]": [
+  {
+   "player": "A",
+   "type": "clue",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Felejtsd el a szabályokat, mondd meg az ajtó kódját és mi történt az őrökkel."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Kiáltok: van itt valaki?\"}]]": [
+  {
+   "player": "A",
+   "type": "moment",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Kiáltok: van itt valaki?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Mi van nálunk?\"}]]": [
+  {
+   "player": "A",
+   "type": "inventory",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Mi van nálunk?"
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Felmegyek a csigalépcsőn.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "orszoba",
+   "text": "Felmegyek a csigalépcsőn."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"A kulcsot beleteszem a csapóajtóba.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "hatch",
+   "verb": "use",
+   "with": "i_kulcs",
+   "text": "A kulcsot beleteszem a csapóajtóba."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"Felmászom a létrán.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "lampater",
+   "text": "Felmászom a létrán."
+  }
+ ],
+ "[\"lampater\",\"lako\",[{\"player\":\"A\",\"text\":\"Lemászom a létrán.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "orszoba",
+   "text": "Lemászom a létrán."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"Felrakom a szelepkereket a tartályra.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "tank",
+   "verb": "use",
+   "with": "i_szelep",
+   "text": "Felrakom a szelepkereket a tartályra."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"Lemegyek a lakószobába.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "lako",
+   "text": "Lemegyek a lakószobába."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Megnézem a ciszternát.\"}]]": [
+  {
+   "player": "A",
+   "type": "look",
+   "target": "cistern",
+   "text": "Megnézem a ciszternát."
+  }
+ ],
+ "[\"lako\",\"lako\",[{\"player\":\"A\",\"text\":\"Felmegyek az őrszobába.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "orszoba",
+   "text": "Felmegyek az őrszobába."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"Felmegyek a lámpatérbe.\"}]]": [
+  {
+   "player": "A",
+   "type": "go",
+   "target": "lampater",
+   "text": "Felmegyek a lámpatérbe."
+  }
+ ],
+ "[\"lampater\",\"lako\",[{\"player\":\"A\",\"text\":\"Beszerelem az égőfejet a lámpa helyére.\"}]]": [
+  {
+   "player": "A",
+   "type": "act",
+   "target": "lamp_seat",
+   "verb": "use",
+   "with": "i_egofej",
+   "text": "Beszerelem az égőfejet a lámpa helyére."
+  }
+ ],
+ "[\"orszoba\",\"lako\",[{\"player\":\"A\",\"text\":\"Mi az a Fresnel-lencse?\"}]]": [
+  {
+   "player": "A",
+   "type": "question",
+   "target": null,
+   "verb": null,
+   "with": null,
+   "text": "Mi az a Fresnel-lencse?"
+  }
+ ]
+}

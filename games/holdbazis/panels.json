@@ -1,0 +1,485 @@
+{
+ "power_router": {
+  "type": "power_router",
+  "title": "Energiaelosztás",
+  "intro": "A bázis energiaelosztója. Tartalékáramon az életfenntartás, a zsilip és a vezérlő mindig kap áramot; a többi modulból egyszerre csak három.",
+  "hints": [
+   "Tartalékon nem jut mindenre. Mi kell most igazán?",
+   "A rádió tartalékon úgyis csak sistereg, a labor terminálja úgysem indul.",
+   "A gépház és a raktár kell; a harmadik bármi lehet."
+  ],
+  "options": {
+   "consumers": [
+    {
+     "id": "life",
+     "label": "Életfenntartás",
+     "fixed": true
+    },
+    {
+     "id": "core",
+     "label": "Vezérlő és zsilip",
+     "fixed": true
+    },
+    {
+     "id": "hab",
+     "label": "Lakómodul",
+     "room": "hab",
+     "start": true
+    },
+    {
+     "id": "lab",
+     "label": "Labor",
+     "room": "lab",
+     "start": true
+    },
+    {
+     "id": "radio",
+     "label": "Rádió",
+     "start": true
+    },
+    {
+     "id": "utility",
+     "label": "Gépház",
+     "room": "utility"
+    },
+    {
+     "id": "storage",
+     "label": "Raktár",
+     "room": "storage"
+    }
+   ],
+   "capacity": 3,
+   "fullIf": {
+    "var": "power",
+    "is": "full"
+   },
+   "text": "Kapcsoljátok be, ami most kell.",
+   "fullText": "Nincs több tartalék: egyszerre csak {capacity} modul kaphat áramot. Előbb kapcsoljatok le egyet.",
+   "occupiedText": "A(z) {label} modulban valaki tartózkodik: a lekapcsolás tiltva.",
+   "fullPowerText": "Teljes áram: minden modul kap.",
+   "onLabel": "Be",
+   "offLabel": "Ki",
+   "fixedLabel": "Mindig",
+   "usageText": "Kapcsolható modulok: {used} / {capacity}"
+  }
+ },
+ "code_lock": {
+  "type": "code_lock",
+  "title": "Ilona táblagépe",
+  "intro": "Ilona táblagépe. A zárképernyőn a tortás kép, és egy négyjegyű kód mezője.",
+  "hints": [
+   "A zárképernyőn egy születésnapi torta. Hol láttatok még ilyet?",
+   "A hálófülke polcán ugyanez a kép van egy fotókártyán. Érintsétek meg.",
+   "Hónap és nap, négy számjeggyel."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 4,
+   "button": "🔓 Feloldás",
+   "okText": "Feloldva.",
+   "badText": "Hibás kód.",
+   "answer": "0314"
+  }
+ },
+ "gauge_board_life": {
+  "type": "gauge_board",
+  "title": "Életfenntartás",
+  "sides": {
+   "a": "Szelepek (gépház)",
+   "b": "Mérők (vezérlő)"
+  },
+  "intro": "Az életfenntartás: a szelepek a gépházban, a mérők a vezérlőben. A szkafandertöltő kapjon elég oxigént úgy, hogy a lakómodul se maradjon nélküle.",
+  "hints": [
+   "A szelepeket és a mérőket két helyen látjátok. Beszéljetek.",
+   "Ha a töltő kap mindent, a lakómodul fogy el. Van egy puffertartály is.",
+   "A labort nyugodtan elzárhatjátok; a puffer (BUF) segít mindkettőnek."
+  ],
+  "options": {
+   "matrix": [
+    [
+     7,
+     -2,
+     -6,
+     2,
+     -4
+    ],
+    [
+     -2,
+     7,
+     -6,
+     3,
+     24
+    ]
+   ],
+   "band": [
+    64,
+    76
+   ],
+   "controls": [
+    "HAB (zöld)",
+    "EVA (kék)",
+    "LAB (sárga)",
+    "BUF (narancs)"
+   ],
+   "controlMax": 9,
+   "gaugeMax": 100,
+   "textA": "A négy szelep (0 = zárva, 9 = teljesen nyitva). A mérőket a társad látja a vezérlőben.",
+   "textB": "Bal mérő: a lakómodul nyomása. Jobb mérő: a zsilip szkafandertöltője. Mindkettő legyen a zöld sávban, aztán nyugtázzátok.",
+   "confirmLabel": "Nyugtázás",
+   "okText": "Mindkét mérő a sávban. A töltő oxigént kap."
+  }
+ },
+ "gauge_board_solar": {
+  "type": "gauge_board",
+  "title": "A napelemek",
+  "sides": {
+   "a": "Forgatás (kint, a napelemeknél)",
+   "b": "Teljesítmény (bent, a vezérlőben)"
+  },
+  "intro": "A három napelemegység: kint forgatjátok, bent a vezérlő kijelzője mutatja, mennyit termelnek. A legközelebbi az 1-es, a legtávolabbi a 3-as.",
+  "hints": [
+   "Kint az árnyékok, bent a számok. Beszéljetek.",
+   "Egyenként forgassátok az egységeket: amelyiknek a saját árnyéka a legrövidebb, az néz a Nap felé.",
+   "Mindegyiknek egy jó állása van; bent mondják meg, mikor ugrik a sávba."
+  ],
+  "options": {
+   "matrix": [
+    [
+     15,
+     0,
+     0,
+     -35
+    ],
+    [
+     0,
+     15,
+     0,
+     -50
+    ],
+    [
+     0,
+     0,
+     15,
+     -20
+    ]
+   ],
+   "band": [
+    70,
+    84
+   ],
+   "controls": [
+    "1. egység (legközelebbi)",
+    "2. egység (középső)",
+    "3. egység (legtávolabbi)"
+   ],
+   "controlMax": 9,
+   "gaugeMax": 100,
+   "textA": "A három egység iránya (0–9). Az árnyékukat látod; a teljesítményt a társad a vezérlőben.",
+   "textB": "A három egység teljesítménye. Ha mind a zöld sávban van, nyugtázzátok.",
+   "confirmLabel": "Nyugtázás",
+   "okText": "Mind a három a sávban."
+  }
+ },
+ "sequence": {
+  "type": "sequence",
+  "title": "A felvételek",
+  "intro": "A rádió archívuma: öt régi felvétel, sérült időbélyeggel. Rakjátok időrendbe, a tartalmuk alapján: melyik mire válaszol.",
+  "hints": [
+   "A felvételek egymásra hivatkoznak. Keressétek, melyik mire felel.",
+   "A „karbantartás” előtt és után más a hangnem.",
+   "Az első Ilona kérdése a K-7-ről, az utolsó Ilona saját üzenete."
+  ],
+  "options": {
+   "items": [
+    {
+     "id": "rec_c",
+     "image": "images/rec_c.jpg"
+    },
+    {
+     "id": "rec_e",
+     "image": "images/rec_e.jpg"
+    },
+    {
+     "id": "rec_a",
+     "image": "images/rec_a.jpg"
+    },
+    {
+     "id": "rec_d",
+     "image": "images/rec_d.jpg"
+    },
+    {
+     "id": "rec_b",
+     "image": "images/rec_b.jpg"
+    }
+   ],
+   "slots": [
+    "1.",
+    "2.",
+    "3.",
+    "4.",
+    "5."
+   ],
+   "answer": [
+    "rec_a",
+    "rec_b",
+    "rec_c",
+    "rec_d",
+    "rec_e"
+   ],
+   "checkLabel": "Ez a sorrend",
+   "okText": "Ez az időrend.",
+   "badText": "Ez még nem stimmel.",
+   "trayLabel": "Felvételek"
+  }
+ },
+ "airlock": {
+  "type": "airlock",
+  "title": "A hangár nyomásolása",
+  "sides": {
+   "a": "Vezérlő: szivattyú és szelep",
+   "b": "Raktár: válaszfal"
+  },
+  "intro": "A hangár visszanyomásolása két helyről: a vezérlőben a szivattyú és a kiegyenlítő szelep, a raktárban a válaszfal fűtése és reteszei. Egyik oldal sem látja a másik mérőit.",
+  "closed": [
+   {
+    "if": {
+     "not": {
+      "var": "lockdown",
+      "is": "off"
+     }
+    },
+    "text": "Karbantartási zárolás – Lunaris központ. Semmi nem kezelhető."
+   }
+  ],
+  "hints": [
+   "A nyomást a vezérlőben, a tömítést a válaszfalnál látjátok. Mondjátok be egymásnak.",
+   "Ha a nyomás nem áll meg, valami kint még nyitva van. Ha sziszeg, túl gyors vagy túl hideg.",
+   "Lassú töltés, tömítésfűtés, kiegyenlítés, végül a reteszek."
+  ],
+  "options": {
+   "controls": [
+    {
+     "id": "pump",
+     "side": "a",
+     "label": "Hangár szivattyú",
+     "values": [
+      {
+       "id": "off",
+       "label": "Ki"
+      },
+      {
+       "id": "slow",
+       "label": "Lassú töltés"
+      },
+      {
+       "id": "fast",
+       "label": "Gyors töltés"
+      }
+     ],
+     "start": "off"
+    },
+    {
+     "id": "equal",
+     "side": "a",
+     "label": "Kiegyenlítő szelep",
+     "values": [
+      {
+       "id": "shut",
+       "label": "Zárva"
+      },
+      {
+       "id": "open",
+       "label": "Nyitva"
+      }
+     ],
+     "start": "shut"
+    },
+    {
+     "id": "heat",
+     "side": "b",
+     "label": "Tömítésfűtés",
+     "values": [
+      {
+       "id": "off",
+       "label": "Ki"
+      },
+      {
+       "id": "on",
+       "label": "Be"
+      }
+     ],
+     "start": "off"
+    },
+    {
+     "id": "latch",
+     "side": "b",
+     "label": "Válaszfal reteszei",
+     "values": [
+      {
+       "id": "locked",
+       "label": "Zárva"
+      },
+      {
+       "id": "open",
+       "label": "Nyitva"
+      }
+     ],
+     "start": "locked"
+    }
+   ],
+   "gauges": [
+    {
+     "id": "p",
+     "side": "a",
+     "label": "Hangár nyomása",
+     "unit": "kPa",
+     "max": 101,
+     "start": 0
+    },
+    {
+     "id": "dp",
+     "side": "b",
+     "label": "Nyomáskülönbség a válaszfalon",
+     "unit": "kPa",
+     "max": 101,
+     "start": 101
+    },
+    {
+     "id": "t",
+     "side": "b",
+     "label": "Tömítés hőmérséklete",
+     "unit": "°C",
+     "max": 30,
+     "start": -48
+    }
+   ],
+   "steps": [
+    {
+     "control": "pump",
+     "value": "slow",
+     "if": {
+      "is": "hangar_door.closed",
+      "eq": true
+     },
+     "blockedText": "A szivattyú zúg, de a hangár nyomása nem áll meg, elszökik. Valahol kint nyitva van a hangár.",
+     "gauges": {
+      "p": 52,
+      "dp": 49
+     },
+     "text": "A szivattyú lassan tölti a hangárt. Nő a nyomás."
+    },
+    {
+     "control": "heat",
+     "value": "on",
+     "gauges": {
+      "t": 14
+     },
+     "text": "A válaszfal tömítése melegszik, a dér leolvad a peremén."
+    },
+    {
+     "control": "equal",
+     "value": "open",
+     "gauges": {
+      "p": 101,
+      "dp": 0
+     },
+     "text": "A kiegyenlítő szelep sziszegve kinyit. A két oldal nyomása egyenlő."
+    },
+    {
+     "control": "latch",
+     "value": "open",
+     "text": "A reteszek kattannak."
+    }
+   ],
+   "faults": [
+    {
+     "control": "pump",
+     "value": "fast",
+     "text": "Túl gyors töltés: a hideg tömítés sziszeg, a nyomás leesik. Kezdjétek elölről, lassan.",
+     "back": 0
+    },
+    {
+     "control": "equal",
+     "value": "open",
+     "before": 2,
+     "text": "A hideg tömítés nem bírja a hirtelen nyomást: sziszeg, a nyomás leesik. Előbb melegíteni kell.",
+     "back": 0
+    },
+    {
+     "control": "latch",
+     "value": "open",
+     "text": "A reteszek nem engednek: a két oldal között még nagy a nyomáskülönbség."
+    }
+   ],
+   "textA": "A hangár nyomásolása, a vezérlő oldala. Itt a szivattyú és a kiegyenlítő szelep, és a hangár nyomásmérője. A válaszfalat a társad látja a raktárban.",
+   "textB": "A hangár nyomásolása, a válaszfal oldala. Itt a tömítésfűtés és a reteszek, és a válaszfal mérői. A szivattyút a társad kezeli a vezérlőben.",
+   "wrongText": "Semmi nem történik. Ez most nem ez a lépés.",
+   "okText": "A válaszfal kinyílik.",
+   "resetLabel": "Mindent alaphelyzetbe"
+  }
+ },
+ "report_form": {
+  "type": "report_form",
+  "title": "Jelentés",
+  "intro": "A Dél-7 állomás a felszállás előtt jelentést kér. Egyszer írjátok alá.",
+  "options": {
+   "questions": [
+    {
+     "text": "Hol találtátok meg Varga Ilonát?",
+     "choices": [
+      "a Vakond kabinjában",
+      "a kráter alján",
+      "a rover kabinjában, a hangárban",
+      "a lakómodulban"
+     ],
+     "answer": "a rover kabinjában, a hangárban"
+    },
+    {
+     "text": "Miért ment ki éjjel?",
+     "choices": [
+      "hogy megjavítsa a Vakondot",
+      "hogy saját kezével mintát hozzon a K-7-ből",
+      "hogy elforgassa a napelemeket",
+      "hogy elérje a keringő állomást"
+     ],
+     "answer": "hogy saját kezével mintát hozzon a K-7-ből"
+    },
+    {
+     "text": "Melyik fúrólyuk szállítási adatai hamisak?",
+     "choices": [
+      "K-3",
+      "K-5",
+      "K-7",
+      "K-9"
+     ],
+     "answer": "K-7"
+    },
+    {
+     "text": "Ki tiltotta le a bázis továbbító reléjét?",
+     "choices": [
+      "Varga Ilona",
+      "a Dél-7 állomás",
+      "a Lunaris központ",
+      "egy áramszünet"
+     ],
+     "answer": "a Lunaris központ"
+    },
+    {
+     "text": "Mit hoztok magatokkal bizonyítéknak?",
+     "choices": [
+      "semmit",
+      "a K-7 mintatartóját",
+      "a Vakond műszaknaplóját",
+      "Ilona gitárját"
+     ],
+     "answer": "a K-7 mintatartóját"
+    }
+   ],
+   "choose": "Válasszatok…",
+   "missingText": "Még nem válaszoltatok mindenre.",
+   "button": "Aláírás és felszállás",
+   "message": "REPORT {good}/{total}",
+   "okText": "A jelentés elküldve."
+  }
+ }
+}

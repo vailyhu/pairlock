@@ -1,0 +1,3550 @@
+{
+ "start": "entry",
+ "rooms": {
+  "entry": {
+   "name": "Előtér",
+   "into": "az előtérbe",
+   "inside": "az előtérben",
+   "image": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "image": "entry_now"
+    },
+    {
+     "image": "entry"
+    }
+   ],
+   "text": "Az előtér. Balra padlótól mennyezetig érő üvegfal a borús kertre. Elöl a magas tölgy bejárati ajtó, mellette jobbra a keskeny fekete fali panel ÍRISZ fénygyűrűjével. A falon fogasok, kabátokkal, alattuk alacsony cipősszekrény, rajta egy kulcstál. A lábtörlőn egy barna csomag. Mögöttetek a lépcső: lefelé a pincébe, felfelé az emeletre; mindkét üvegajtó mellett kártyaolvasó. Innen nyílik a nappali és a konyha.",
+   "exits": {
+    "living": {
+     "aliases": [
+      "nappali"
+     ]
+    },
+    "kitchen": {
+     "aliases": [
+      "konyha"
+     ]
+    },
+    "server": {
+     "aliases": [
+      "pince",
+      "le",
+      "lefelé",
+      "szerverszoba"
+     ],
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "A pincelépcső ajtaja zárva. ÍRISZ: „A pince szerviz jogosultsághoz kötött.”"
+    },
+    "wellness": {
+     "aliases": [
+      "wellness"
+     ],
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "A pincelépcső ajtaja zárva. ÍRISZ: „A pince szerviz jogosultsághoz kötött.”"
+    },
+    "bedroom": {
+     "aliases": [
+      "emelet",
+      "fel",
+      "felfelé",
+      "hálószoba"
+     ],
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az emeleti lépcső ajtaja zárva. ÍRISZ: „Az emelet lakói jogosultsághoz kötött.”"
+    },
+    "office": {
+     "aliases": [
+      "dolgozószoba"
+     ],
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az emeleti lépcső ajtaja zárva. ÍRISZ: „Az emelet lakói jogosultsághoz kötött.”"
+    }
+   },
+   "aliases": [
+    "előszoba",
+    "bejárat"
+   ],
+   "details": [
+    "beton és tölgy",
+    "szürke, szórt reggeli fény az üvegen",
+    "hideg LED-sáv a mennyezeten",
+    "csend, csak a fénygyűrű halk zümmögése"
+   ]
+  },
+  "living": {
+   "name": "Nappali",
+   "into": "a nappaliba",
+   "inside": "a nappaliban",
+   "image": "living",
+   "text": "A nappali. Balra a betonfalon tölgy falipolc, alatta kandalló, mellette ÍRISZ kerek hangszórója. Hosszú szürke kanapé, előtte alacsony tölgy dohányzóasztal egy álló pohárral és egy üveg borral. Mellette a padlón törött pohár egy vörösborfoltban, és a belefutott robotporszívó. Jobbra macskafa, mögötte üvegfal a teraszra és a kertre.",
+   "exits": {
+    "entry": {
+     "aliases": [
+      "előtér"
+     ]
+    },
+    "kitchen": {
+     "aliases": [
+      "konyha"
+     ]
+    }
+   },
+   "details": [
+    "borús fény az üvegfalon",
+    "hideg kandalló",
+    "áporodott borszag",
+    "eső utáni csend a kertben"
+   ]
+  },
+  "kitchen": {
+   "name": "Konyha",
+   "into": "a konyhába",
+   "inside": "a konyhába",
+   "image": "kitchen",
+   "text": "A konyha. Balra magas tölgyszekrények, köztük a beépített sötét hűtő és két sütő. A betonfalon egy kis falitablet, alatta a fal tövében a robotporszívó üres dokkolója. Középen betonlapos sziget két székkel, hátul pult kávégéppel. Elöl egy fehér automata macskaetető. Jobbra üveg teraszajtó, az alján macskaajtó. Innen nyílik a garázs is.",
+   "exits": {
+    "entry": {
+     "aliases": [
+      "előtér"
+     ]
+    },
+    "living": {
+     "aliases": [
+      "nappali"
+     ]
+    },
+    "garage": {
+     "aliases": [
+      "garázs"
+     ],
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "A garázsajtó zárva. ÍRISZ: „A garázs szerviz jogosultsághoz kötött.”"
+    }
+   },
+   "details": [
+    "pultvilágítás hideg fénycsíkja",
+    "kávé- és citromillat",
+    "a hűtő halk zúgása"
+   ]
+  },
+  "server": {
+   "name": "Szerverszoba",
+   "into": "a szerverszobába",
+   "inside": "a szerverszobában",
+   "image": "server_lit",
+   "text": "A pincei szerverszoba, ablaktalan betonhelyiség. Balra a nyitott hálózati rack. A hátsó falon hat képernyő két sorban: a ház kamerái. Alattuk fekete asztal a konzollal, előtte szék. Innen minden látszik, de semmihez nem lehet hozzányúlni.",
+   "exits": {
+    "wellness": {
+     "aliases": [
+      "wellness"
+     ]
+    },
+    "entry": {
+     "aliases": [
+      "fel",
+      "előtér",
+      "földszint"
+     ]
+    }
+   },
+   "aliases": [
+    "szerver"
+   ],
+   "details": [
+    "ventilátorok zúgása",
+    "hideg LED a mennyezeten",
+    "kábeltálca a fejetek fölött"
+   ]
+  },
+  "wellness": {
+   "name": "Wellness",
+   "into": "a wellnessbe",
+   "inside": "a wellnessben",
+   "image": "wellness",
+   "text": "A pincei wellness. Balra nyitott tölgy törölközőpolc, középen kis medence mozdulatlan türkiz vízzel. Hátul üvegfalú szauna és esőzuhany, egy magas növény; jobbra szürke gépészeti szekrényajtók. Üvegfal a lejtős kertre.",
+   "exits": {
+    "server": {
+     "aliases": [
+      "szerverszoba"
+     ]
+    },
+    "entry": {
+     "aliases": [
+      "fel",
+      "előtér",
+      "földszint"
+     ]
+    }
+   },
+   "aliases": [
+    "spa"
+   ],
+   "details": [
+    "klórszag",
+    "meleg, párás levegő",
+    "a víz halk csobogása a szűrőben"
+   ]
+  },
+  "garage": {
+   "name": "Garázs",
+   "into": "a garázsba",
+   "inside": "a garázsban",
+   "image": "garage",
+   "text": "A garázs. Balra egy fehér villanyautó, mellette a falon fekete töltőoszlop, fölötte két kerékpár. A hátsó fal jobb részét mennyezetig érő beépített polcfal foglalja el. Jobbra ablak a kertre.",
+   "exits": {
+    "kitchen": {
+     "aliases": [
+      "konyha"
+     ]
+    }
+   },
+   "details": [
+    "hideg betonpadló",
+    "gumi- és festékszag",
+    "LED-sávok fehér fénye"
+   ]
+  },
+  "bedroom": {
+   "name": "Hálószoba",
+   "into": "a hálószobába",
+   "inside": "a hálószobában",
+   "image": "bedroom",
+   "text": "A hálószoba az emeleten. Széles, alacsony ágy, a szürke takaró félredobva. Balra éjjeliszekrény telefonnal, szemüveggel és lámpával; mellette tölgy gardróbajtók. A falon ÍRISZ hangszórója. Jobbra nagy ablak a ködös erdőre.",
+   "exits": {
+    "office": {
+     "aliases": [
+      "dolgozószoba"
+     ]
+    },
+    "entry": {
+     "aliases": [
+      "le",
+      "lefelé",
+      "földszint",
+      "előtér"
+     ]
+    }
+   },
+   "details": [
+    "ködös erdő az ablakban",
+    "hűvös levegő",
+    "gyűrött ágynemű illata"
+   ]
+  },
+  "office": {
+   "name": "Dolgozószoba",
+   "into": "a dolgozószobába",
+   "inside": "a dolgozószobában",
+   "image": "office_board",
+   "text": "A dolgozószoba. A hátsó falon balra fehértábla, jobbra egy bekeretezett macskarajz, kicsit ferdén. Elöl nagy tölgy íróasztal papírokkal, levéllel, laptoppal. Jobbra magas könyvespolc, balra keskeny ablaksáv az erdőre.",
+   "exits": {
+    "bedroom": {
+     "aliases": [
+      "hálószoba"
+     ]
+    },
+    "entry": {
+     "aliases": [
+      "le",
+      "lefelé",
+      "földszint",
+      "előtér"
+     ]
+    }
+   },
+   "aliases": [
+    "dolgozó"
+   ],
+   "details": [
+    "papír- és tintaszag",
+    "szürke erdei fény",
+    "kihűlt tea"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "i_protocol",
+   "name": "átadási jegyzőkönyv",
+   "location": "entry",
+   "text": "Az átadási jegyzőkönyv, átlátszó tasakban:\n\nHÁRSHEGYI VILLA · ÁTADÁSI JEGYZŐKÖNYV\n2026. április 14. · Rendszer: ÍRISZ 3.2 · Tulajdonos és rendszergazda: Kardos Benedek\n\n1. Szerviz-hozzáférés: a tulajdonos az átadáskor felfüggesztette. Újraaktiválás a bejárati panelen, a tulajdonos biztonsági kérdésére adott válasszal. A kérdés: „Hogy hívták az első robotomat?”\n2. Jogosultsági szintek: vendég · szerviz · lakó · rendszergazda.\n3. Zónák: Z1–Z8 lakótér. Z9: biztonsági zóna, külső kivitelező (Erőd Kft.), csak rendszergazda.\n4. Vészhelyzeti rendszergazda-átadás, ha a tulajdonos nem érhető el, és behatoló kizárható: két azonosítás egyszerre, két helyről. A szerverszobai konzolon a tulajdonos vészhelyzeti szava, a bejárati panelen a telepítő vészkódja: HÁRSFA-7.\n5. Melléklet: földszinti alaprajz. A garázs belső hossza: 8,4 m.",
+   "images": [
+    "protocol"
+   ],
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "jegyzőkönyv",
+    "tasak",
+    "melléklet",
+    "alaprajz",
+    "tervrajz"
+   ]
+  },
+  {
+   "id": "i_service_card",
+   "name": "szervizkártyák",
+   "location": "entry",
+   "text": "A két szervizkártyátok: fehér műanyag, vékony türkiz csíkkal.",
+   "images": [
+    "i_service_card"
+   ],
+   "carry": {},
+   "aliases": [
+    "szervizkártya",
+    "kártya",
+    "kártyák"
+   ]
+  },
+  {
+   "id": "front_door",
+   "name": "bejárati ajtó",
+   "location": "entry",
+   "text": "A magas tölgy bejárati ajtó. Zárlat alatt nem nyílik; a kilincs meg sem mozdul.",
+   "aliases": [
+    "ajtó",
+    "kilincs",
+    "bejárat"
+   ],
+   "actions": {
+    "open": {
+     "say": "Az ajtó nem enged. ÍRISZ halkan: „Zárlat alatt senki nem hagyhatja el a házat. Elnézést a kellemetlenségért.”"
+    },
+    "force": {
+     "say": "Az ajtó nem enged. ÍRISZ halkan: „Zárlat alatt senki nem hagyhatja el a házat. Elnézést a kellemetlenségért.”"
+    }
+   }
+  },
+  {
+   "id": "entry_panel",
+   "name": "fali panel",
+   "location": "entry",
+   "aliases": [
+    "panel",
+    "írisz",
+    "fénygyűrű",
+    "gyűrű",
+    "kijelző",
+    "olvasó",
+    "kártyaolvasó"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A fénygyűrű hidegfehéren világít. A kijelzőn: „Jogosultság: rendszergazda. Zárlat aktív: incidensjelentés szükséges.”"
+    },
+    {
+     "if": {
+      "var": "access",
+      "is": "lakó"
+     },
+     "text": "ÍRISZ gyűrűje pirosan világít. A kijelzőn: „ZÁRLAT · vas. 02:13 óta. Jogosultság: lakó.” Alul a kártyaolvasó."
+    },
+    {
+     "if": {
+      "var": "access",
+      "is": "szerviz"
+     },
+     "text": "ÍRISZ gyűrűje pirosan világít. A kijelzőn: „ZÁRLAT · vas. 02:13 óta. Jogosultság: szerviz.” Alul a kártyaolvasó."
+    },
+    {
+     "text": "Keskeny fekete üvegpanel az ajtó mellett. Fent ÍRISZ fénygyűrűje pirosan világít, alatta a kijelző: „ZÁRLAT · vas. 02:13 óta. Jogosultság: vendég. Szerviz-hozzáférés felfüggesztve: újraaktiválás a tulajdonos biztonsági kérdésével.” Alul kártyaolvasó."
+    }
+   ],
+   "images": [
+    "entry_panel_screen"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "code_lock",
+    "label": "Biztonsági kérdés",
+    "if": {
+     "not": {
+      "solved": "Biztonsági kérdés"
+     }
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "images": [
+      "entry_panel_white"
+     ]
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "solved": "Mozgásnapló"
+       },
+       {
+        "not": {
+         "solved": "Vészhelyzeti átadás"
+        }
+       }
+      ]
+     },
+     "panel": {
+      "id": "dual_word",
+      "label": "Vészhelyzeti átadás"
+     }
+    }
+   ],
+   "actions": {
+    "use:i_service_card": {
+     "say": "A panel csippan: „Szervizkártya. A jogosultságotok a kijelzőn és az állapotsorban látszik.”"
+    },
+    "use:i_fob": {
+     "emit": "fob_entry"
+    }
+   }
+  },
+  {
+   "id": "parcel",
+   "name": "csomag",
+   "location": "entry",
+   "text": "Barna kartondoboz a lábtörlőn, ragasztószalaggal. A címke szerint Kardos Benedeknek jött, pénteken: „Macskafa-alkatrész, 2/2.”",
+   "images": [
+    "parcel"
+   ],
+   "aliases": [
+    "doboz",
+    "karton",
+    "címke"
+   ],
+   "actions": {
+    "open": {
+     "say": "Kibontjátok: egy szizállal tekert oszlop és egy csomag csavar. Egy macskafa darabja, semmi más."
+    },
+    "force": {
+     "say": "Kibontjátok: egy szizállal tekert oszlop és egy csomag csavar. Egy macskafa darabja, semmi más."
+    }
+   }
+  },
+  {
+   "id": "doormat",
+   "name": "lábtörlő",
+   "location": "entry",
+   "text": "Sötét lábtörlő a küszöb előtt. Alatta semmi.",
+   "aliases": [
+    "szőnyeg"
+   ]
+  },
+  {
+   "id": "coats",
+   "name": "kabátok",
+   "location": "entry",
+   "text": "Négy kabát a fali fogasokon: parka, esőkabát, két dzseki. A zsebekben zsebkendő és egy parkolójegy szeptemberből.",
+   "aliases": [
+    "kabát",
+    "fogas",
+    "fogasok",
+    "zsebek"
+   ]
+  },
+  {
+   "id": "shoe_cabinet",
+   "name": "cipősszekrény",
+   "location": "entry",
+   "text": "Alacsony tölgy cipősszekrény. Bent sportcipők, egy pár gumicsizma, cipőkrém.",
+   "aliases": [
+    "szekrény",
+    "cipők"
+   ]
+  },
+  {
+   "id": "key_bowl",
+   "name": "kulcstál",
+   "location": "entry",
+   "text": "Lapos fekete tál a cipősszekrényen. Üres; ebben a házban senki nem használ kulcsot.",
+   "aliases": [
+    "tál"
+   ]
+  },
+  {
+   "id": "stairs_down",
+   "name": "pinceajtó",
+   "location": "entry",
+   "aliases": [
+    "pince",
+    "lépcső le",
+    "lefelé",
+    "pincelépcső"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A pincelépcső üvegajtaja nyitva; lent hideg LED-fény."
+    },
+    {
+     "text": "A pincelépcső üvegajtaja zárva, mellette kártyaolvasó, piros jelzőfénnyel."
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az ajtó zárva. ÍRISZ: „A pince szerviz jogosultsághoz kötött.”",
+     "goTo": "server"
+    },
+    "enter": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az ajtó zárva. ÍRISZ: „A pince szerviz jogosultsághoz kötött.”",
+     "goTo": "server"
+    },
+    "use:i_service_card": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az olvasó pirosan villan: „Szerviz-hozzáférés felfüggesztve.”",
+     "goTo": "server"
+    },
+    "use:i_fob": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "szerviz"
+       },
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az olvasó pirosan villan.",
+     "goTo": "server"
+    }
+   }
+  },
+  {
+   "id": "stairs_up",
+   "name": "emeleti ajtó",
+   "location": "entry",
+   "aliases": [
+    "emelet",
+    "lépcső fel",
+    "felfelé",
+    "emeleti lépcső",
+    "lépcsőajtó",
+    "emeleti olvasó"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "Az emeleti lépcső üvegajtaja nyitva."
+    },
+    {
+     "text": "Az emeleti lépcső üvegajtaja zárva, mellette kártyaolvasó. ÍRISZ felirata: „Emelet: lakói szint.”"
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az ajtó zárva. ÍRISZ: „Az emelet lakói jogosultsághoz kötött.”",
+     "goTo": "bedroom"
+    },
+    "enter": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "Az ajtó zárva. ÍRISZ: „Az emelet lakói jogosultsághoz kötött.”",
+     "goTo": "bedroom"
+    },
+    "use:i_service_card": {
+     "say": "Az olvasó pirosan villan: „Szerviz-kártya. Az emelethez lakói jogosultság szükséges.”"
+    },
+    "use:i_fob": {
+     "emit": "fob_up"
+    }
+   }
+  },
+  {
+   "id": "shelf",
+   "name": "falipolc",
+   "location": "living",
+   "text": "Tölgy falipolc a kandalló fölött: fent könyvek és egy váza, középen egy növény és egy bekeretezett régi fénykép, lent egy vitorlásos fotó és két könyv.",
+   "images": [
+    "shelf"
+   ],
+   "aliases": [
+    "polc",
+    "könyvek",
+    "váza",
+    "növény",
+    "képek",
+    "fényképek"
+   ]
+  },
+  {
+   "id": "robot_photo",
+   "name": "robotos fénykép",
+   "location": "shelf",
+   "rel": "on",
+   "aliases": [
+    "fénykép",
+    "fotó",
+    "régi fénykép",
+    "robot",
+    "keret",
+    "hátoldal",
+    "kép hátulja"
+   ],
+   "props": {
+    "turned": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "robot_photo.turned",
+      "eq": true
+     },
+     "text": "Elfakult fotó fekete keretben: egy húszas évei elején járó, szemüveges fiatalember, Benedek, egy kartondobozokból épített robot mellett. A hátoldalán tollal: „BME robotverseny, 1999. Én és az első.”"
+    },
+    {
+     "text": "Elfakult fotó fekete keretben: egy húszas évei elején járó, szemüveges fiatalember, Benedek, egy kartondobozokból épített robot mellett, büszkén. A keret hátoldala kitámasztós, levehető."
+    }
+   ],
+   "images": [
+    "photo_robot"
+   ],
+   "literal": true,
+   "carry": {
+    "name": "robotos fénykép"
+   },
+   "actions": {
+    "turn": {
+     "set": {
+      "robot_photo.turned": true
+     },
+     "say": "Megfordítjátok a keretet. A barna kartonon tollal: „BME robotverseny, 1999. Én és az első.”",
+     "images": [
+      "photo_back"
+     ]
+    },
+    "flip": {
+     "set": {
+      "robot_photo.turned": true
+     },
+     "say": "Megfordítjátok a keretet. A barna kartonon tollal: „BME robotverseny, 1999. Én és az első.”",
+     "images": [
+      "photo_back"
+     ]
+    },
+    "read": {
+     "set": {
+      "robot_photo.turned": true
+     },
+     "say": "Megfordítjátok a keretet. A barna kartonon tollal: „BME robotverseny, 1999. Én és az első.”",
+     "images": [
+      "photo_back"
+     ]
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "robot_photo.turned",
+      "eq": true
+     },
+     "images": [
+      "photo_back"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sailing_photo",
+   "name": "vitorlásos fotó",
+   "location": "shelf",
+   "text": "Egy vitorlás a Balatonon, napfényben. Hátul semmi.",
+   "rel": "on",
+   "aliases": [
+    "vitorlás"
+   ]
+  },
+  {
+   "id": "fireplace",
+   "name": "kandalló",
+   "location": "living",
+   "text": "Beépített, alacsony betonkandalló. Hideg, a hamu régi.",
+   "aliases": [
+    "hamu"
+   ]
+  },
+  {
+   "id": "living_speaker",
+   "name": "hangszóró",
+   "location": "living",
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "ÍRISZ kerek hangszórója. Lakói szinten az előzmények: „ÍRISZ, Pixel vacsora” minden este 19:00 · szo. 23:30 „ÍRISZ, éjszakai mód” · október 24.: „ÍRISZ, mondd fel a távfelügyeletet. Úgyis itt vagy te.”"
+    },
+    {
+     "text": "ÍRISZ kerek fekete hangszórója vékony fénygyűrűvel. Ha kérdezitek: „Az előzmények lakói jogosultsággal érhetők el.”"
+    }
+   ],
+   "aliases": [
+    "írisz hangszórója",
+    "előzmények",
+    "hangasszisztens"
+   ],
+   "literal": true
+  },
+  {
+   "id": "sofa",
+   "name": "kanapé",
+   "location": "living",
+   "text": "Hosszú szürke kanapé. A párnák rendben. Alóla valami figyel.",
+   "aliases": [
+    "párnák",
+    "kanapé alja"
+   ]
+  },
+  {
+   "id": "pixel",
+   "name": "Pixel",
+   "location": "living",
+   "aliases": [
+    "macska",
+    "cica",
+    "kanapé alatt"
+   ],
+   "text": "A kanapé alól két zöld szem és két fehér mancs kandikál ki: Pixel, a karcsú, ezüstszürke cirmos. Nem jön elő; ha nyúltok felé, hátrébb húzódik. Éhesnek tűnik.",
+   "images": [
+    "pixel_sofa"
+   ],
+   "visibleIf": {
+    "not": {
+     "item": "feeder",
+     "state": "full"
+    }
+   },
+   "actions": {
+    "take": {
+     "say": "Pixel fúj egyet, és mélyebbre húzódik a kanapé alá. Nem így fogjátok előcsalni."
+    },
+    "pet": {
+     "say": "Pixel fúj egyet, és mélyebbre húzódik a kanapé alá. Nem így fogjátok előcsalni."
+    },
+    "force": {
+     "say": "Pixel fúj egyet, és mélyebbre húzódik a kanapé alá. Nem így fogjátok előcsalni."
+    }
+   }
+  },
+  {
+   "id": "coffee_table",
+   "name": "dohányzóasztal",
+   "location": "living",
+   "text": "Alacsony tölgy dohányzóasztal. Rajta egy álló borospohár és egy címke nélküli üveg vörösbor. Mellette a padlón törött pohár egy vörösborfoltban, és a robotporszívó, belefutva.",
+   "images": [
+    "coffee_table"
+   ],
+   "aliases": [
+    "asztal"
+   ]
+  },
+  {
+   "id": "glass_standing",
+   "name": "álló pohár",
+   "location": "coffee_table",
+   "text": "Egy talpas borospohár, alján egy korty bor. A peremén rúzsnyom, sötétpiros.",
+   "rel": "on",
+   "aliases": [
+    "pohár",
+    "rúzsnyom",
+    "rúzs"
+   ],
+   "literal": true
+  },
+  {
+   "id": "bottle",
+   "name": "borosüveg",
+   "location": "coffee_table",
+   "text": "Címke nélküli vörösbor, félig üres.",
+   "rel": "on",
+   "aliases": [
+    "üveg",
+    "bor"
+   ]
+  },
+  {
+   "id": "broken_glass",
+   "name": "törött pohár",
+   "location": "living",
+   "text": "Egy talpas pohár szilánkjai a padlón, a vörösborfolt közepén. A szilánkok az asztal szélétől szóródtak szét, mintha onnan esett volna le.",
+   "images": [
+    "coffee_table"
+   ],
+   "aliases": [
+    "szilánkok",
+    "üvegszilánk",
+    "törött üveg"
+   ],
+   "literal": true
+  },
+  {
+   "id": "stain",
+   "name": "borfolt",
+   "location": "living",
+   "text": "Beszáradt vörösborfolt a tölgypadlón. Apró, kerek mancsnyomok vezetnek ki belőle a macskafa felé.",
+   "aliases": [
+    "folt",
+    "mancsnyomok",
+    "nyomok",
+    "lábnyomok"
+   ],
+   "literal": true
+  },
+  {
+   "id": "vacuum",
+   "name": "robotporszívó",
+   "location": "living",
+   "aliases": [
+    "porszívó",
+    "kazmér",
+    "robot porszívó"
+   ],
+   "text": "Kerek fekete robotporszívó, belefutott a borfoltba és a szilánkokba, és megállt. A tetején apró nyomtatott név: KAZMÉR II. Piros fény villog rajta: hiba.",
+   "images": [
+    "vacuum"
+   ],
+   "literal": true,
+   "actions": {
+    "use": {
+     "say": "Kazmér II zúg egyet, megbillen a szilánkokon, és újra megáll. „Hiba: kerék elakadt.”"
+    },
+    "push": {
+     "say": "Kazmér II zúg egyet, megbillen a szilánkokon, és újra megáll. „Hiba: kerék elakadt.”"
+    },
+    "turn_on": {
+     "say": "Kazmér II zúg egyet, megbillen a szilánkokon, és újra megáll. „Hiba: kerék elakadt.”"
+    }
+   }
+  },
+  {
+   "id": "cat_tree",
+   "name": "macskafa",
+   "location": "living",
+   "text": "Magas macskafa tölgyből és szürke filcből, szizálos oszlopokkal és egy kis odúval. Az odú üres, egy-két szürke szőrszál.",
+   "images": [
+    "cat_tree"
+   ],
+   "aliases": [
+    "odú",
+    "kaparófa"
+   ]
+  },
+  {
+   "id": "living_glass",
+   "name": "üvegfal",
+   "location": "living",
+   "text": "Padlótól mennyezetig érő üvegfal a teraszra és a gondozott kertre. Kint a vihar letört ágai a nyírt gyepen. Az ajtó zárlat alatt zárva.",
+   "images": [
+    "garden"
+   ],
+   "aliases": [
+    "terasz",
+    "kert",
+    "teraszajtó",
+    "ablak"
+   ]
+  },
+  {
+   "id": "fridge",
+   "name": "hűtő",
+   "location": "kitchen",
+   "aliases": [
+    "hűtőszekrény",
+    "hűtő kijelzője",
+    "naptár",
+    "jegyzetek",
+    "hűtőkijelző"
+   ],
+   "text": "Beépített sötét hűtő. A felső ajtaján érintésre világító kijelző:\n\nJEGYZETEK\n· tej, kávé, Pixel-táp!\n· kedd 10:00 tárgyalás (Nóra)\n· Vera: NE most\nNAPTÁR\nK, P: Ilona 9–13",
+   "images": [
+    "fridge_screen"
+   ],
+   "literal": true
+  },
+  {
+   "id": "fridge_inside",
+   "name": "hűtő belseje",
+   "location": "fridge",
+   "text": "Bent tej, sajt, egy fél torta folpackban és két üveg pezsgő.",
+   "rel": "part",
+   "aliases": [
+    "tej",
+    "torta",
+    "pezsgő"
+   ]
+  },
+  {
+   "id": "tablet",
+   "name": "falitablet",
+   "location": "kitchen",
+   "aliases": [
+    "tablet",
+    "térkép",
+    "porszívótérkép",
+    "takarítási térkép"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A falitableten Kazmér II takarítási térképe. Vas. 02:15: dokkoló → nappali, a dohányzóasztal mellett „elakadt 02:17”. A térkép az egész földszintet ismeri, a garázzsal együtt: a garázs belső hossza a térképen 6,8 m."
+    },
+    {
+     "text": "Fekete keretes tablet a betonfalon. A képernyőn: „Lakói jogosultság szükséges.”"
+    }
+   ],
+   "images": [
+    "tablet_locked"
+   ],
+   "literal": true,
+   "when": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "images": [
+      "tablet_map"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dock",
+   "name": "dokkoló",
+   "location": "kitchen",
+   "text": "A robotporszívó dokkolója a fal tövében, üresen. A tetején fehér címkecsík: „KAZMÉR II”.",
+   "images": [
+    "dock_label"
+   ],
+   "aliases": [
+    "címke",
+    "töltő",
+    "állomás"
+   ],
+   "literal": true
+  },
+  {
+   "id": "feeder",
+   "name": "macskaetető",
+   "location": "kitchen",
+   "aliases": [
+    "etető",
+    "tál",
+    "tartály"
+   ],
+   "state": {
+    "initial": "empty",
+    "values": [
+     "empty",
+     "full"
+    ]
+   },
+   "text": {
+    "empty": "Fehér automata macskaetető átlátszó tartállyal. A tartály és a tál is üres. Kijelzője nincs; a konzol szerint „üres”.",
+    "full": "Az etető tartálya tele, a tálban táp. Pixel mellette eszik."
+   },
+   "images": [
+    "feeder"
+   ],
+   "actions": {
+    "use:i_catfood": {
+     "requires": {
+      "has": "i_catfood"
+     },
+     "otherwise": "Nincs mivel megtölteni. Táp valahol a konyhában lehet.",
+     "setState": "full",
+     "remove": [
+      "i_catfood"
+     ],
+     "say": "Beleöntitek a tápot a tartályba. Az etető zümmög, és megtölti a tálat. Pár másodperc múlva szürke árnyék suhan át a konyhán: Pixel előbújik, és enni kezd. A nyakörvén kis kerek medál.",
+     "images": [
+      "feeder_now",
+      "pixel_feeder"
+     ]
+    },
+    "fill": {
+     "requires": {
+      "has": "i_catfood"
+     },
+     "otherwise": "Nincs mivel megtölteni. Táp valahol a konyhában lehet.",
+     "setState": "full",
+     "remove": [
+      "i_catfood"
+     ],
+     "say": "Beleöntitek a tápot a tartályba. Az etető zümmög, és megtölti a tálat. Pár másodperc múlva szürke árnyék suhan át a konyhán: Pixel előbújik, és enni kezd. A nyakörvén kis kerek medál.",
+     "images": [
+      "feeder_now",
+      "pixel_feeder"
+     ]
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "item": "feeder",
+      "state": "full"
+     },
+     "images": [
+      "feeder_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pantry",
+   "name": "kamraszekrény",
+   "location": "kitchen",
+   "text": "Az egyik magas tölgyszekrény kamra: konzervek, tészta, kávé, és egy barna papírzacskó macskatáp.",
+   "aliases": [
+    "kamra",
+    "tölgyszekrény",
+    "szekrények",
+    "konzervek"
+   ]
+  },
+  {
+   "id": "i_catfood",
+   "name": "macskatáp",
+   "location": "pantry",
+   "text": "Kis barna papírzacskó száraz macskatáppal.",
+   "images": [
+    "i_catfood"
+   ],
+   "rel": "in",
+   "carry": {},
+   "aliases": [
+    "táp",
+    "zacskó"
+   ]
+  },
+  {
+   "id": "pixel_fed",
+   "name": "Pixel",
+   "location": "kitchen",
+   "aliases": [
+    "macska",
+    "cica",
+    "nyakörv",
+    "medál",
+    "chip"
+   ],
+   "text": "Pixel az etető mellett eszik, néha felnéz rátok. Vékony fekete nyakörvén kis kerek medál, rajta a macskaajtó chipje: „PIXEL · #4471”.",
+   "images": [
+    "pixel_feeder"
+   ],
+   "visibleIf": {
+    "item": "feeder",
+    "state": "full"
+   },
+   "literal": true,
+   "actions": {
+    "pet": {
+     "say": "Pixel hagyja, hogy megsimogassátok, aztán eszik tovább."
+    },
+    "take": {
+     "say": "Pixel hagyja, hogy megsimogassátok, aztán eszik tovább."
+    }
+   }
+  },
+  {
+   "id": "cat_flap",
+   "name": "macskaajtó",
+   "location": "kitchen",
+   "text": "A teraszajtó alján kis macskaajtó, chipolvasóval. Ki-be jártait a konzol naplózza.",
+   "aliases": [
+    "macskaajtó naplója"
+   ]
+  },
+  {
+   "id": "coffee_machine",
+   "name": "kávégép",
+   "location": "kitchen",
+   "text": "Fekete kávégép a pulton. Utolsó kávé: szo. 19:02, dupla eszpresszó.",
+   "aliases": [
+    "kávé"
+   ]
+  },
+  {
+   "id": "island",
+   "name": "konyhasziget",
+   "location": "kitchen",
+   "text": "Betonlapos sziget tölgyfa korpusszal, két magas székkel. Rajta semmi.",
+   "aliases": [
+    "sziget",
+    "pult",
+    "székek"
+   ]
+  },
+  {
+   "id": "ovens",
+   "name": "sütők",
+   "location": "kitchen",
+   "text": "Két beépített fekete sütő. Hidegek, üresek.",
+   "aliases": [
+    "sütő"
+   ]
+  },
+  {
+   "id": "fruit_bowl",
+   "name": "gyümölcstál",
+   "location": "kitchen",
+   "text": "Néhány citrom egy tálban a pulton.",
+   "aliases": [
+    "citrom"
+   ]
+  },
+  {
+   "id": "kitchen_door",
+   "name": "teraszajtó",
+   "location": "kitchen",
+   "text": "Üvegajtó a teraszra. Zárlat alatt zárva.",
+   "aliases": [
+    "ajtó",
+    "terasz"
+   ]
+  },
+  {
+   "id": "rack",
+   "name": "rack",
+   "location": "server",
+   "aliases": [
+    "hálózati szekrény",
+    "kábelek",
+    "switch",
+    "szerver",
+    "router",
+    "címkék"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "text": "A nyitott rack: switchek, kis szerver, tápegység. Fent a fehér szolgáltatói router; a sárga WAN-kábel kihúzva lóg alatta."
+    },
+    {
+     "text": "Nyitott üvegajtós fekete rack: switchek szürke és kék kábelekkel, kis szerver, tápegység zöld fényekkel. Fent külön egy fehér szolgáltatói router, egyetlen sárga kábellel. A kábeleken kis címkék: „kamerák”, „zárak”, „konzol”, és a sárgán: „WAN – internet (szolgáltatói router)”."
+    }
+   ],
+   "images": [
+    "rack"
+   ],
+   "literal": true,
+   "when": [
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "images": [
+      "rack_unplugged"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wan_cable",
+   "name": "sárga kábel",
+   "location": "rack",
+   "rel": "part",
+   "aliases": [
+    "wan",
+    "wan-kábel",
+    "internetkábel",
+    "internet",
+    "sárga"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "text": "A sárga WAN-kábel kihúzva."
+    },
+    {
+     "text": "A sárga kábel a routerbe fut. Címkéje: „WAN – internet (szolgáltatói router)”."
+    }
+   ],
+   "literal": true,
+   "actions": {
+    "pull": {
+     "requires": {
+      "not": {
+       "var": "wan",
+       "is": "off"
+      }
+     },
+     "otherwise": "Már ki van húzva.",
+     "setVar": {
+      "wan": "off"
+     },
+     "images": [
+      "rack_unplugged"
+     ],
+     "say": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”",
+     "emit": "iris_wan"
+    },
+    "unplug": {
+     "requires": {
+      "not": {
+       "var": "wan",
+       "is": "off"
+      }
+     },
+     "otherwise": "Már ki van húzva.",
+     "setVar": {
+      "wan": "off"
+     },
+     "images": [
+      "rack_unplugged"
+     ],
+     "say": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”",
+     "emit": "iris_wan"
+    }
+   }
+  },
+  {
+   "id": "monitor_wall",
+   "name": "monitorfal",
+   "location": "server",
+   "aliases": [
+    "monitorok",
+    "kamerák",
+    "kameraképek",
+    "képernyők",
+    "hat képernyő"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "thermal",
+      "is": "on"
+     },
+     "text": "A hat képernyőn hőkép: kék és lila falak. A garázs képén, a polcfal mögött egy fekvő, meleg emberalak."
+    },
+    {
+     "text": "Hat képernyő két sorban: az előtér, a nappali, a konyha, a wellness, a garázs és a kert kamerája, fekete-fehérben, halszemoptikával. A hálószoba és a dolgozószoba kamerája: „magánzóna, kikapcsolva”."
+    }
+   ],
+   "images": [
+    "monitor_wall"
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "thermal",
+      "is": "on"
+     },
+     "images": [
+      "monitor_wall_thermal"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "garden_cam",
+   "name": "kert kamerája",
+   "location": "monitor_wall",
+   "rel": "part",
+   "aliases": [
+    "kert",
+    "kertkamera",
+    "felvétel",
+    "archívum"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A kert élő képe, és lakói szinten az archívum: vas. 02:10, a hátsó kerítésnél két világító szem, egy kis, karcsú állat halvány alakja."
+    },
+    {
+     "text": "A kert élő képe: nyírt gyep, letört ágak, mögötte erdő. Az archívum lakói jogosultsághoz kötött."
+    }
+   ],
+   "images": [
+    "cam_garden"
+   ],
+   "when": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "images": [
+      "cam_garden_fox"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cam_entry_view",
+   "name": "Előtér kamerája",
+   "location": "monitor_wall",
+   "text": "A előtér élő képe, fekete-fehérben.",
+   "images": [
+    "cam_entry"
+   ],
+   "rel": "part",
+   "aliases": [
+    "előtér"
+   ]
+  },
+  {
+   "id": "cam_living_view",
+   "name": "Nappali kamerája",
+   "location": "monitor_wall",
+   "text": "A nappali élő képe, fekete-fehérben.",
+   "images": [
+    "cam_living"
+   ],
+   "rel": "part",
+   "aliases": [
+    "nappali"
+   ]
+  },
+  {
+   "id": "cam_kitchen_view",
+   "name": "Konyha kamerája",
+   "location": "monitor_wall",
+   "text": "A konyha élő képe, fekete-fehérben.",
+   "images": [
+    "cam_kitchen"
+   ],
+   "rel": "part",
+   "aliases": [
+    "konyha"
+   ]
+  },
+  {
+   "id": "cam_wellness_view",
+   "name": "Wellness kamerája",
+   "location": "monitor_wall",
+   "text": "A wellness élő képe, fekete-fehérben.",
+   "images": [
+    "cam_wellness"
+   ],
+   "rel": "part",
+   "aliases": [
+    "wellness"
+   ]
+  },
+  {
+   "id": "cam_garage_view",
+   "name": "Garázs kamerája",
+   "location": "monitor_wall",
+   "text": "A garázs élő képe, fekete-fehérben.",
+   "images": [
+    "cam_garage"
+   ],
+   "rel": "part",
+   "aliases": [
+    "garázs"
+   ]
+  },
+  {
+   "id": "thermal",
+   "name": "hőkép-mód",
+   "location": "monitor_wall",
+   "rel": "part",
+   "aliases": [
+    "hőkép",
+    "hőkamera",
+    "infra"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "thermal",
+      "is": "on"
+     },
+     "text": "Hőkép bekapcsolva."
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A monitorfal sarkában egy gomb: „Hőkép-mód”."
+    },
+    {
+     "text": "A monitorfal sarkában egy szürke gomb: „Hőkép-mód: rendszergazda”."
+    }
+   ],
+   "actions": {
+    "use": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "ÍRISZ: „A hőkép-mód rendszergazdai jogosultsághoz kötött.”",
+     "setVar": {
+      "thermal": "on"
+     },
+     "say": "A hat kép elszíneződik: kék falak, lila padló. A garázs képén, a polcfal mögött, ahol a tervrajz szerint még garázsnak kellene lennie, egy fekvő, sárga-narancs emberalak. Él, és alszik.",
+     "images": [
+      "thermal_garage"
+     ]
+    },
+    "turn_on": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "ÍRISZ: „A hőkép-mód rendszergazdai jogosultsághoz kötött.”",
+     "setVar": {
+      "thermal": "on"
+     },
+     "say": "A hat kép elszíneződik: kék falak, lila padló. A garázs képén, a polcfal mögött, ahol a tervrajz szerint még garázsnak kellene lennie, egy fekvő, sárga-narancs emberalak. Él, és alszik.",
+     "images": [
+      "thermal_garage"
+     ]
+    },
+    "press": {
+     "requires": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "otherwise": "ÍRISZ: „A hőkép-mód rendszergazdai jogosultsághoz kötött.”",
+     "setVar": {
+      "thermal": "on"
+     },
+     "say": "A hat kép elszíneződik: kék falak, lila padló. A garázs képén, a polcfal mögött, ahol a tervrajz szerint még garázsnak kellene lennie, egy fekvő, sárga-narancs emberalak. Él, és alszik.",
+     "images": [
+      "thermal_garage"
+     ]
+    }
+   }
+  },
+  {
+   "id": "console",
+   "name": "konzol",
+   "location": "server",
+   "aliases": [
+    "monitor",
+    "billentyűzet",
+    "kulcslista",
+    "eszközlista",
+    "napló",
+    "macskaajtó-napló",
+    "időjárás-állomás"
+   ],
+   "text": [
+    {
+     "if": {
+      "all": [
+       {
+        "any": [
+         {
+          "var": "access",
+          "is": "rendszergazda"
+         }
+        ]
+       },
+       {
+        "var": "thermal",
+        "is": "on"
+       }
+      ]
+     },
+     "text": "ÍRISZ KONZOL · jogosultság: rendszergazda\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: nincs, helyi üzemmód. Rendszeridő: kézi.\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: megtöltve\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel vas. 02:19, garázs\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMacskaajtó: vas. 02:31 ki, 05:48 be, 07:10 ki · chip #4471\nMozgásnapló: elemezve. Azonosítatlan személy: nem volt.\nVészhelyzeti rendszergazda-átadás: elérhető (két hely, egyszerre).\nZ9 biztonsági zóna: zárva vas. 02:21 óta. Ajtószenzor: zárva. Belső mozgás: igen.\nHőkép-mód: bekapcsolva · Incidens: lezárásra vár (jelentés)."
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "ÍRISZ KONZOL · jogosultság: rendszergazda\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: nincs, helyi üzemmód. Rendszeridő: kézi.\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: megtöltve\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel vas. 02:19, garázs\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMacskaajtó: vas. 02:31 ki, 05:48 be, 07:10 ki · chip #4471\nMozgásnapló: elemezve. Azonosítatlan személy: nem volt.\nVészhelyzeti rendszergazda-átadás: elérhető (két hely, egyszerre).\nZ9 biztonsági zóna: zárva vas. 02:21 óta. Ajtószenzor: zárva. Belső mozgás: igen.\nHőkép-mód: elérhető · Incidens: lezárásra vár (jelentés)."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "any": [
+         {
+          "var": "access",
+          "is": "lakó"
+         },
+         {
+          "var": "access",
+          "is": "rendszergazda"
+         }
+        ]
+       },
+       {
+        "solved": "Mozgásnapló"
+       }
+      ]
+     },
+     "text": "ÍRISZ KONZOL · jogosultság: lakó\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: nincs, helyi üzemmód. Rendszeridő: kézi.\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: megtöltve\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel vas. 02:19, garázs\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMacskaajtó: vas. 02:31 ki, 05:48 be, 07:10 ki · chip #4471\nMozgásnapló: elemezve. Azonosítatlan személy: nem volt.\nVészhelyzeti rendszergazda-átadás: elérhető (két hely, egyszerre)."
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "ÍRISZ KONZOL · jogosultság: lakó\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: nincs, helyi üzemmód. Rendszeridő: kézi.\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: üres\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel vas. 02:19, garázs\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMacskaajtó: vas. 02:31 ki, 05:48 be, 07:10 ki · chip #4471\nMozgásnapló: 7 esemény, ok nélkül.\nVészhelyzeti átadás: nem elérhető, amíg behatoló nem zárható ki."
+    },
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "text": "ÍRISZ KONZOL · jogosultság: szerviz\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: nincs, helyi üzemmód. Rendszeridő: kézi.\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: üres\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel: lakói szint szükséges\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMozgásnapló, macskaajtó-napló: lakói szint szükséges."
+    },
+    {
+     "text": "ÍRISZ KONZOL · jogosultság: szerviz\nZárlat: aktív, vas. 02:13 óta (üvegtörés, nappali).\nInternet: kapcsolódva. Rendszeridő: hétfő 9:14 (hálózatról).\nEszközök: 8 kamera (6 élő, 2 magánzóna kikapcsolva) · időjárás-állomás: éjjeli széllökés max. 78 km/h, vas. 01:50 · robotporszívó Kazmér II: hiba, elakadt · macskaetető: üres\nKulcslista:\n  Kardos Benedek, rendszergazda: utolsó jel: lakói szint szükséges\n  Ilona (takarítás), lakó, érvényes K, P 9–13: utolsó jel P 12:48, wellness; a kulcs jele aktív [Kulcskereső]\n  Szűts Vera, vendég: utolsó használat szo. 22:41 (kilépés), azóta nem használt\nMozgásnapló, macskaajtó-napló: lakói szint szükséges."
+    }
+   ],
+   "images": [
+    "console_service"
+   ],
+   "literal": true,
+   "when": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "images": [
+      "console_admin"
+     ]
+    },
+    {
+     "if": {
+      "solved": "Mozgásnapló"
+     },
+     "images": [
+      "console_handover"
+     ]
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "images": [
+      "console_resident"
+     ]
+    },
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "images": [
+      "console_local"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "console_keyfinder",
+   "name": "kulcskereső",
+   "location": "console",
+   "rel": "part",
+   "aliases": [
+    "kulcskereső",
+    "ilona kulcsa",
+    "jelkör"
+   ],
+   "text": [
+    {
+     "if": {
+      "has": "i_fob"
+     },
+     "text": "A kulcskereső: „Ilona kulcsa: a jel mozog.”"
+    },
+    {
+     "text": "A kulcskereső a wellness kameraképén egy jelkört rajzol: ott van Ilona kulcsa. Aki a wellnessben áll, a saját szemével keresheti."
+    }
+   ],
+   "panel": {
+    "id": "camera_guide",
+    "label": "Kulcskereső",
+    "if": {
+     "not": {
+      "has": "i_fob"
+     }
+    }
+   }
+  },
+  {
+   "id": "console_time",
+   "name": "rendszeridő",
+   "location": "console",
+   "rel": "part",
+   "aliases": [
+    "idő",
+    "óra",
+    "rendszeróra",
+    "dátum"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "wan",
+      "is": "off"
+     },
+     "text": "Rendszeridő: kézi beállítás, nap és óra."
+    },
+    {
+     "text": "Rendszeridő: hétfő 9:14. „Az idő a hálózatról szinkronizálódik. Kézi beállítás csak helyi üzemmódban.”"
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "param_console",
+    "label": "Rendszeridő"
+   }
+  },
+  {
+   "id": "console_log",
+   "name": "mozgásnapló",
+   "location": "console",
+   "rel": "part",
+   "aliases": [
+    "mozgásnapló",
+    "események",
+    "szenzorok"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Mozgásnapló"
+     },
+     "text": "A mozgásnapló elemezve: „Azonosítatlan személy nem tartózkodott a házban.”"
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "lakó"
+       },
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "A hajnali mozgásnapló, hét esemény ok nélkül: 01:52 teraszajtó: rezgés · 02:13 nappali: üvegtörés, kis mozgás · 02:14 hálószoba: mozgás · 02:15 nappali: lassú mozgás a padló szintjén · 02:17 lépcső, majd konyha: mozgás · 02:19 garázs: ajtó és mozgás · 02:31 konyha: macskaajtó. „Rendeljen okot minden eseményhez.”"
+    },
+    {
+     "text": "A mozgásnapló lakói jogosultsághoz kötött."
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "logic_grid",
+    "label": "Mozgásnapló",
+    "if": {
+     "any": [
+      {
+       "var": "access",
+       "is": "lakó"
+      },
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "console_handover",
+   "name": "vészhelyzeti átadás",
+   "location": "console",
+   "rel": "part",
+   "aliases": [
+    "átadás",
+    "rendszergazda-átadás",
+    "vészhelyzeti szó"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Vészhelyzeti átadás"
+     },
+     "text": "Átadás megtörtént: rendszergazda."
+    },
+    {
+     "if": {
+      "solved": "Mozgásnapló"
+     },
+     "text": "Vészhelyzeti rendszergazda-átadás: „Itt a tulajdonos vészhelyzeti szava, a bejárati panelen a telepítő vészkódja. Egyszerre.”"
+    },
+    {
+     "text": "Vészhelyzeti átadás: „Nem elérhető, amíg behatoló nem zárható ki.”"
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "dual_word",
+    "label": "Vészhelyzeti átadás",
+    "if": {
+     "all": [
+      {
+       "solved": "Mozgásnapló"
+      },
+      {
+       "not": {
+        "solved": "Vészhelyzeti átadás"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "console_report",
+   "name": "incidensjelentés",
+   "location": "console",
+   "rel": "part",
+   "aliases": [
+    "jelentés",
+    "incidens",
+    "riasztás lezárása",
+    "lezárás"
+   ],
+   "text": [
+    {
+     "if": {
+      "any": [
+       {
+        "var": "access",
+        "is": "rendszergazda"
+       }
+      ]
+     },
+     "text": "Incidensjelentés: négy kérdés, egyszer írható alá. Aláírás után a zárlat feloldódik."
+    },
+    {
+     "text": "Az incidens lezárása rendszergazdai jogosultsághoz kötött."
+    }
+   ],
+   "panel": {
+    "id": "report_form",
+    "label": "Az incidens lezárása",
+    "if": {
+     "any": [
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "server_chair",
+   "name": "szék",
+   "location": "server",
+   "text": "Fekete irodai szék az asztalnál.",
+   "aliases": [
+    "asztal"
+   ]
+  },
+  {
+   "id": "towel_shelf",
+   "name": "törölközőpolc",
+   "location": "wellness",
+   "text": "Nyitott tölgy polc a betonfalon. Fent feltekert fehér törölközők, legalul két összehajtott szürke fürdőköpeny. Az alsó köpeny zsebe kicsit lehúzza a hajtást.",
+   "images": [
+    "towel_shelf"
+   ],
+   "aliases": [
+    "polc",
+    "törölközők",
+    "törölköző"
+   ]
+  },
+  {
+   "id": "robes",
+   "name": "fürdőköpenyek",
+   "location": "towel_shelf",
+   "rel": "on",
+   "aliases": [
+    "köpeny",
+    "köpenyek",
+    "alsó köpeny",
+    "zseb",
+    "fürdőköpeny"
+   ],
+   "text": [
+    {
+     "if": {
+      "has": "i_fob"
+     },
+     "text": "Két összehajtott szürke köpeny. A zsebek üresek."
+    },
+    {
+     "text": "Két összehajtott szürke köpeny. Az alsó zsebében valami kicsi és nehéz."
+    }
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "not": {
+       "has": "i_fob"
+      }
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_fob"
+     ],
+     "take": [
+      "i_fob"
+     ],
+     "say": "Az alsó köpeny zsebéből egy kis fekete kulcstartó-chip kerül elő, acélkarikán, egy apró rózsaszín filcvirággal. Ilona kulcsa.",
+     "images": [
+      "i_fob"
+     ]
+    },
+    "open": {
+     "requires": {
+      "not": {
+       "has": "i_fob"
+      }
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_fob"
+     ],
+     "take": [
+      "i_fob"
+     ],
+     "say": "Az alsó köpeny zsebéből egy kis fekete kulcstartó-chip kerül elő, acélkarikán, egy apró rózsaszín filcvirággal. Ilona kulcsa.",
+     "images": [
+      "i_fob"
+     ]
+    },
+    "take": {
+     "requires": {
+      "not": {
+       "has": "i_fob"
+      }
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_fob"
+     ],
+     "take": [
+      "i_fob"
+     ],
+     "say": "Az alsó köpeny zsebéből egy kis fekete kulcstartó-chip kerül elő, acélkarikán, egy apró rózsaszín filcvirággal. Ilona kulcsa.",
+     "images": [
+      "i_fob"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_fob",
+   "name": "Ilona kulcsa",
+   "location": "robes",
+   "text": "Kis fekete kulcstartó-chip acélkarikán, egy apró rózsaszín filcvirággal. Felirat nincs.",
+   "images": [
+    "i_fob"
+   ],
+   "rel": "in",
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "kulcstartó",
+    "chip",
+    "fob",
+    "kulcs"
+   ]
+  },
+  {
+   "id": "pool",
+   "name": "medence",
+   "location": "wellness",
+   "text": "Kis négyszögletes medence a betonpadlóba süllyesztve. A víz mozdulatlan, halvány türkiz. Az alján semmi.",
+   "aliases": [
+    "víz"
+   ]
+  },
+  {
+   "id": "sauna",
+   "name": "szauna",
+   "location": "wellness",
+   "text": "Üvegfalú szauna világos fapadokkal, hidegen. Bent semmi.",
+   "aliases": [
+    "padok",
+    "üvegfal"
+   ]
+  },
+  {
+   "id": "shower",
+   "name": "zuhany",
+   "location": "wellness",
+   "text": "Esőzuhany a sarokban. Száraz."
+  },
+  {
+   "id": "plants",
+   "name": "növények",
+   "location": "wellness",
+   "text": "Két magas zöld növény cserépben. Valaki rendszeresen locsolja őket.",
+   "aliases": [
+    "növény",
+    "cserép"
+   ]
+  },
+  {
+   "id": "plant_room",
+   "name": "gépészeti szekrény",
+   "location": "wellness",
+   "text": "Szürke szekrényajtók: szivattyúk, szűrők, a medence vezérlője. „Medence: 28 °C. Szauna: ki.”",
+   "aliases": [
+    "gépészet",
+    "szekrényajtók",
+    "vezérlő"
+   ]
+  },
+  {
+   "id": "wellness_cam",
+   "name": "wellness kamerája",
+   "location": "wellness",
+   "aliases": [
+    "kamera",
+    "sarokkamera"
+   ],
+   "text": "A mennyezet sarkában apró kamera, zöld LED-del. A szerverszobában ezt a képet látják.",
+   "panel": {
+    "id": "camera_guide",
+    "label": "Kulcskereső",
+    "if": {
+     "not": {
+      "has": "i_fob"
+     }
+    }
+   }
+  },
+  {
+   "id": "car",
+   "name": "villanyautó",
+   "location": "garage",
+   "text": "Fehér elektromos autó, zárva. Benne semmi feltűnő; a műszerfal sötét.",
+   "aliases": [
+    "autó",
+    "kocsi"
+   ],
+   "actions": {
+    "open": {
+     "say": "Az autó zárva, és Benedek kulcsa nélkül nem nyílik."
+    },
+    "force": {
+     "say": "Az autó zárva, és Benedek kulcsa nélkül nem nyílik."
+    }
+   }
+  },
+  {
+   "id": "charger",
+   "name": "töltőoszlop",
+   "location": "garage",
+   "text": "Fekete fali töltő. A kijelzője csak a töltéseket mutatja: utoljára péntek este.",
+   "aliases": [
+    "töltő",
+    "fali töltő"
+   ]
+  },
+  {
+   "id": "bikes",
+   "name": "kerékpárok",
+   "location": "garage",
+   "text": "Két országúti kerékpár a falon. Tiszták, a gumik kemények.",
+   "aliases": [
+    "bicikli",
+    "biciklik",
+    "kerékpár"
+   ]
+  },
+  {
+   "id": "garage_gate",
+   "name": "garázskapu",
+   "location": "garage",
+   "text": "A kertre nyíló szekcionált kapu. Zárlat alatt zárva.",
+   "aliases": [
+    "kapu"
+   ]
+  },
+  {
+   "id": "shelf_wall",
+   "name": "polcfal",
+   "location": "garage",
+   "aliases": [
+    "polcok",
+    "polc",
+    "dobozok",
+    "hátsó fal",
+    "olvasó",
+    "kis olvasó"
+   ],
+   "text": [
+    {
+     "if": {
+      "seen": "tablet"
+     },
+     "text": "Mennyezetig érő beépített polcfal fekete fémből és tölgyből: szürke dobozok, slag, festékes dobozok. A jobb szélén a falon apró fekete olvasó, jelzőfény nélkül. A tervrajz szerint a garázs 8,4 méter, a porszívó térképe szerint 6,8: a polcfal mögött még van hely."
+    },
+    {
+     "text": "Mennyezetig érő beépített polcfal fekete fémből és tölgyből: szürke dobozok, szerszámok, slag, festékes dobozok. A jobb szélén a falon apró fekete olvasó, jelzőfény nélkül."
+    }
+   ],
+   "images": [
+    "shelf_wall"
+   ],
+   "literal": true,
+   "actions": {
+    "knock": {
+     "say": "Kopogtok a polcfal mögötti falon. Tompa, vastag hang. Aztán, alig hallhatóan, visszakopog valaki, és egy halk, rekedt hang szól ki, de a szavakat elnyeli a beton."
+    },
+    "open": {
+     "say": "A polcfal nem mozdul; mélyen a falba van csavarozva."
+    },
+    "force": {
+     "say": "A polcfal nem mozdul; mélyen a falba van csavarozva."
+    },
+    "push": {
+     "say": "A polcfal nem mozdul; mélyen a falba van csavarozva."
+    },
+    "pull": {
+     "say": "A polcfal nem mozdul; mélyen a falba van csavarozva."
+    },
+    "use:i_fob": {
+     "say": "Az olvasó nem reagál. Ez nem ÍRISZ olvasója."
+    },
+    "use:i_service_card": {
+     "say": "Az olvasó nem reagál. Ez nem ÍRISZ olvasója."
+    }
+   }
+  },
+  {
+   "id": "bed",
+   "name": "ágy",
+   "location": "bedroom",
+   "text": "Széles, alacsony ágy, a szürke takaró félredobva, mintha valaki sietve kelt volna fel. Az ágy mellett egy kis kijelző: „Ágyszenzor: ágy elhagyva vas. 02:14.”",
+   "aliases": [
+    "takaró",
+    "ágyszenzor",
+    "párna",
+    "párnák"
+   ],
+   "literal": true
+  },
+  {
+   "id": "nightstand",
+   "name": "éjjeliszekrény",
+   "location": "bedroom",
+   "text": "Tölgy éjjeliszekrény: rajta Benedek telefonja a töltőn, összehajtott fekete szemüveg és egy kis lámpa.",
+   "images": [
+    "nightstand"
+   ],
+   "aliases": [
+    "éjjeli"
+   ]
+  },
+  {
+   "id": "phone",
+   "name": "telefon",
+   "location": "nightstand",
+   "text": "Benedek telefonja a töltőn, teljesen feltöltve, lezárva. A lezárt képernyőn:\n\n9:14\nhétfő, november 16.\n\nÍRISZ · vas. 02:13\nÜvegtörés: Nappali\n\nÍRISZ · vas. 02:14\nMozgás: földszint\n\nÍRISZ · vas. 02:21\nZ9 biztonsági zóna: zárva\n\nNem fogadott hívás: Vera (vas. 10:02, 18:40)\nNem fogadott hívás: Nóra (H 8:55, 9:01)",
+   "images": [
+    "phone_screen"
+   ],
+   "rel": "on",
+   "literal": true,
+   "aliases": [
+    "mobil",
+    "képernyő",
+    "értesítések",
+    "töltő"
+   ],
+   "actions": {
+    "open": {
+     "say": "A telefon arcot vagy kódot kér. Egyik sincs nálatok."
+    },
+    "use": {
+     "say": "A telefon arcot vagy kódot kér. Egyik sincs nálatok."
+    },
+    "unlock": {
+     "say": "A telefon arcot vagy kódot kér. Egyik sincs nálatok."
+    }
+   }
+  },
+  {
+   "id": "glasses",
+   "name": "szemüveg",
+   "location": "nightstand",
+   "text": "Fekete keretes szemüveg, erős dioptriával. Aki ezt itt hagyta, nem lát élesen.",
+   "rel": "on"
+  },
+  {
+   "id": "lamp",
+   "name": "éjjeli lámpa",
+   "location": "nightstand",
+   "text": "Kis fekete lámpa, kikapcsolva.",
+   "rel": "on",
+   "aliases": [
+    "lámpa"
+   ]
+  },
+  {
+   "id": "wardrobe",
+   "name": "gardrób",
+   "location": "bedroom",
+   "text": "Tölgy gardróbajtók. Bent ingek, öltönyök, pulóverek rendben; egy üres vállfa.",
+   "aliases": [
+    "szekrény",
+    "vállfa"
+   ]
+  },
+  {
+   "id": "bedroom_window",
+   "name": "ablak",
+   "location": "bedroom",
+   "text": "Ablak a ködös erdőre. Zárva.",
+   "aliases": [
+    "erdő"
+   ]
+  },
+  {
+   "id": "bedroom_speaker",
+   "name": "hangszóró",
+   "location": "bedroom",
+   "text": "ÍRISZ hangszórója a falon. Innen szólt hajnalban.",
+   "aliases": [
+    "írisz"
+   ]
+  },
+  {
+   "id": "desk",
+   "name": "íróasztal",
+   "location": "office",
+   "text": "Nagy tölgy íróasztal: szétszórt papírok, egy levél, csukott laptop, lámpa, csésze.",
+   "images": [
+    "desk_office"
+   ],
+   "aliases": [
+    "asztal",
+    "papírok"
+   ]
+  },
+  {
+   "id": "contract",
+   "name": "szerződéstervezet",
+   "location": "desk",
+   "text": "A cég eladásának szerződéstervezete. A margón piros, dühös kézírás: „Ezt nem írhatod alá!”, „ÉS A CSAPAT??”, „Beszélünk még. V.”",
+   "rel": "on",
+   "aliases": [
+    "szerződés",
+    "tervezet",
+    "kézírás",
+    "piros firka"
+   ],
+   "literal": true
+  },
+  {
+   "id": "letter",
+   "name": "levél",
+   "location": "desk",
+   "text": "Vigil Távfelügyelet Zrt.\nKardos Benedek úr részére\n\nTárgy: távfelügyeleti szerződés megszűnése\n\nTisztelt Kardos Úr!\n\nVisszaigazoljuk felmondását. A Hárshegyi villa távfelügyelete, a riasztások fogadása és a biztonsági zóna belső segélyvonala 2026. október 31-én megszűnik.\n\nKöszönjük eddigi bizalmát.",
+   "images": [
+    "letter"
+   ],
+   "rel": "on",
+   "aliases": [
+    "felmondás",
+    "vigil",
+    "kinyomtatott levél"
+   ],
+   "literal": true
+  },
+  {
+   "id": "laptop",
+   "name": "laptop",
+   "location": "desk",
+   "text": "Csukott laptop. Jelszót kér.",
+   "rel": "on",
+   "actions": {
+    "open": {
+     "say": "A laptop jelszót kér, és nem tudjátok."
+    },
+    "use": {
+     "say": "A laptop jelszót kér, és nem tudjátok."
+    }
+   }
+  },
+  {
+   "id": "cup",
+   "name": "csésze",
+   "location": "desk",
+   "text": "Egy kihűlt tea maradéka.",
+   "rel": "on"
+  },
+  {
+   "id": "desk_lamp",
+   "name": "asztali lámpa",
+   "location": "desk",
+   "text": "Fekete asztali lámpa.",
+   "rel": "on"
+  },
+  {
+   "id": "whiteboard",
+   "name": "fehértábla",
+   "location": "office",
+   "aliases": [
+    "tábla",
+    "rajz",
+    "vázlat",
+    "teendők"
+   ],
+   "text": "Bal oldalt teendőlista: „TEENDŐK – Pixel: oltás – tárgyalás, kedd – Vigil felmondva, kész – macskafa alkatrész”. Jobbra filces alaprajzvázlat: egy garázs autóval, a hátsó falnál sraffozott csík és egy nyíl: „polc: méretre!”",
+   "images": [
+    "whiteboard_written"
+   ],
+   "literal": true
+  },
+  {
+   "id": "pixel_drawing",
+   "name": "macskarajz",
+   "location": "office",
+   "aliases": [
+    "rajz",
+    "kép",
+    "keret",
+    "bekeretezett kép",
+    "ferde kép",
+    "pixel rajza"
+   ],
+   "props": {
+    "lifted": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "pixel_drawing.lifted",
+      "eq": true
+     },
+     "text": "A keretet felemeltétek; mögötte a falra ragasztva egy kis fehér kártya."
+    },
+    {
+     "text": "Bekeretezett ceruzarajz Pixelről. Kicsit ferdén lóg, és a bal alsó sarka elállt a faltól, mintha valami lenne mögötte."
+    }
+   ],
+   "images": [
+    "pixel_drawing"
+   ],
+   "actions": {
+    "lift": {
+     "set": {
+      "pixel_drawing.lifted": true
+     },
+     "reveal": [
+      "emergency_card"
+     ],
+     "images": [
+      "pixel_drawing_open"
+     ],
+     "say": "Felemelitek a keretet. Mögötte a falra ragasztva egy kis fehér kártya."
+    },
+    "move": {
+     "set": {
+      "pixel_drawing.lifted": true
+     },
+     "reveal": [
+      "emergency_card"
+     ],
+     "images": [
+      "pixel_drawing_open"
+     ],
+     "say": "Felemelitek a keretet. Mögötte a falra ragasztva egy kis fehér kártya."
+    },
+    "take": {
+     "set": {
+      "pixel_drawing.lifted": true
+     },
+     "reveal": [
+      "emergency_card"
+     ],
+     "images": [
+      "pixel_drawing_open"
+     ],
+     "say": "Felemelitek a keretet. Mögötte a falra ragasztva egy kis fehér kártya."
+    },
+    "turn": {
+     "set": {
+      "pixel_drawing.lifted": true
+     },
+     "reveal": [
+      "emergency_card"
+     ],
+     "images": [
+      "pixel_drawing_open"
+     ],
+     "say": "Felemelitek a keretet. Mögötte a falra ragasztva egy kis fehér kártya."
+    },
+    "straighten": {
+     "set": {
+      "pixel_drawing.lifted": true
+     },
+     "reveal": [
+      "emergency_card"
+     ],
+     "images": [
+      "pixel_drawing_open"
+     ],
+     "say": "Felemelitek a keretet. Mögötte a falra ragasztva egy kis fehér kártya."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "pixel_drawing.lifted",
+      "eq": true
+     },
+     "images": [
+      "pixel_drawing_open"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "emergency_card",
+   "name": "kártya",
+   "location": "office",
+   "text": "Kis fehér kártya, Benedek kézírásával: „Vészhelyzeti szó: NAPRAFORGÓ”",
+   "images": [
+    "card"
+   ],
+   "hidden": true,
+   "literal": true,
+   "carry": {
+    "name": "vészhelyzeti kártya"
+   },
+   "aliases": [
+    "fehér kártya",
+    "vészhelyzeti kártya"
+   ]
+  },
+  {
+   "id": "bookshelf",
+   "name": "könyvespolc",
+   "location": "office",
+   "text": "Magas tölgy könyvespolc: üzleti könyvek, sci-fi, robotikai tankönyvek. Az egyik polcon egy fekete dosszié: „Erőd Kft. · Biztonsági zóna · Kezelési útmutató”.",
+   "aliases": [
+    "könyvek",
+    "polc"
+   ]
+  },
+  {
+   "id": "manual",
+   "name": "Erőd-kézikönyv",
+   "location": "bookshelf",
+   "text": "ERŐD KFT. · BIZTONSÁGI ZÓNA · KEZELÉSI ÚTMUTATÓ\n\nBelső nyitás: csak akkor, ha a házrendszer nem jelez aktív riasztást (megrendelői kérés).\nRiasztás lezárása: kizárólag rendszergazda, írásos indoklással (incidensjelentés).\nEllátás: víz, tartós élelmiszer, takaró, fekhely.\nKommunikáció: árnyékolt falak; belső segélyvonal a távfelügyeleti szolgáltatóhoz.",
+   "images": [
+    "manual"
+   ],
+   "rel": "on",
+   "aliases": [
+    "kézikönyv",
+    "dosszié",
+    "útmutató",
+    "erőd"
+   ],
+   "literal": true
+  },
+  {
+   "id": "office_window",
+   "name": "ablak",
+   "location": "office",
+   "text": "Keskeny ablaksáv az erdőre.",
+   "aliases": [
+    "erdő"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:Biztonsági kérdés",
+   "do": {
+    "setVar": {
+     "access": "szerviz"
+    },
+    "say": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”",
+    "emit": "iris_service"
+   }
+  },
+  {
+   "on": "solved:Kulcskereső",
+   "do": {
+    "reveal": [
+     "i_fob"
+    ],
+    "take": [
+     "i_fob"
+    ],
+    "images": [
+     "i_fob"
+    ],
+    "say": "Az alsó fürdőköpeny zsebéből egy kis fekete kulcstartó-chip kerül elő, acélkarikán, egy apró rózsaszín filcvirággal. Ilona kulcsa."
+   }
+  },
+  {
+   "on": "fob_up",
+   "if": {
+    "any": [
+     {
+      "var": "access",
+      "is": "lakó"
+     },
+     {
+      "var": "access",
+      "is": "rendszergazda"
+     }
+    ]
+   },
+   "do": {
+    "say": "Az olvasó zölden villan, az emeleti ajtó nyitva."
+   }
+  },
+  {
+   "on": "fob_up",
+   "if": {
+    "all": [
+     {
+      "all": [
+       {
+        "var": "wan",
+        "is": "off"
+       },
+       {
+        "any": [
+         {
+          "var": "sys_day",
+          "is": "tue"
+         },
+         {
+          "var": "sys_day",
+          "is": "fri"
+         }
+        ]
+       },
+       {
+        "any": [
+         {
+          "var": "sys_hour",
+          "is": "09"
+         },
+         {
+          "var": "sys_hour",
+          "is": "10"
+         },
+         {
+          "var": "sys_hour",
+          "is": "12"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "var": "access",
+      "is": "szerviz"
+     }
+    ]
+   },
+   "do": {
+    "setVar": {
+     "access": "lakó"
+    },
+    "say": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”",
+    "emit": "iris_ilona"
+   }
+  },
+  {
+   "on": "fob_up",
+   "if": {
+    "all": [
+     {
+      "not": {
+       "all": [
+        {
+         "var": "wan",
+         "is": "off"
+        },
+        {
+         "any": [
+          {
+           "var": "sys_day",
+           "is": "tue"
+          },
+          {
+           "var": "sys_day",
+           "is": "fri"
+          }
+         ]
+        },
+        {
+         "any": [
+          {
+           "var": "sys_hour",
+           "is": "09"
+          },
+          {
+           "var": "sys_hour",
+           "is": "10"
+          },
+          {
+           "var": "sys_hour",
+           "is": "12"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "not": {
+       "var": "wan",
+       "is": "off"
+      }
+     }
+    ]
+   },
+   "do": {
+    "say": "Az olvasó pirosan villan: „Ez a kulcs most nem érvényes. Érvényes: kedden és pénteken, 9 és 13 óra között. Rendszeridő: hétfő 9:14.”"
+   }
+  },
+  {
+   "on": "fob_up",
+   "if": {
+    "all": [
+     {
+      "not": {
+       "all": [
+        {
+         "var": "wan",
+         "is": "off"
+        },
+        {
+         "any": [
+          {
+           "var": "sys_day",
+           "is": "tue"
+          },
+          {
+           "var": "sys_day",
+           "is": "fri"
+          }
+         ]
+        },
+        {
+         "any": [
+          {
+           "var": "sys_hour",
+           "is": "09"
+          },
+          {
+           "var": "sys_hour",
+           "is": "10"
+          },
+          {
+           "var": "sys_hour",
+           "is": "12"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "var": "wan",
+      "is": "off"
+     }
+    ]
+   },
+   "do": {
+    "say": "Az olvasó pirosan villan: „Ez a kulcs most nem érvényes. Érvényes: kedden és pénteken, 9 és 13 óra között. A rendszeridő a konzolon.”"
+   }
+  },
+  {
+   "on": "fob_entry",
+   "if": {
+    "all": [
+     {
+      "var": "wan",
+      "is": "off"
+     },
+     {
+      "any": [
+       {
+        "var": "sys_day",
+        "is": "tue"
+       },
+       {
+        "var": "sys_day",
+        "is": "fri"
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "var": "sys_hour",
+        "is": "09"
+       },
+       {
+        "var": "sys_hour",
+        "is": "10"
+       },
+       {
+        "var": "sys_hour",
+        "is": "12"
+       }
+      ]
+     }
+    ]
+   },
+   "do": {
+    "say": "A panel: „Ilona kulcsa, érvényes. A bejárati ajtó zárlat alatt zárva marad.”"
+   }
+  },
+  {
+   "on": "fob_entry",
+   "if": {
+    "not": {
+     "all": [
+      {
+       "var": "wan",
+       "is": "off"
+      },
+      {
+       "any": [
+        {
+         "var": "sys_day",
+         "is": "tue"
+        },
+        {
+         "var": "sys_day",
+         "is": "fri"
+        }
+       ]
+      },
+      {
+       "any": [
+        {
+         "var": "sys_hour",
+         "is": "09"
+        },
+        {
+         "var": "sys_hour",
+         "is": "10"
+        },
+        {
+         "var": "sys_hour",
+         "is": "12"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "do": {
+    "say": "Az olvasó pirosan villan: „Ez a kulcs most nem érvényes. Érvényes: kedden és pénteken, 9 és 13 óra között.”"
+   }
+  },
+  {
+   "on": "solved:Mozgásnapló",
+   "do": {
+    "say": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”",
+    "emit": "iris_log"
+   }
+  },
+  {
+   "on": "solved:Vészhelyzeti átadás",
+   "do": {
+    "setVar": {
+     "access": "rendszergazda"
+    },
+    "images": [
+     "entry_panel_white"
+    ],
+    "say": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”",
+    "emit": "iris_admin"
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "entry",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "living",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "kitchen",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "server",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "wellness",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "garage",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "bedroom",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_wan",
+   "do": {
+    "notify": {
+     "at": "office",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az internetkapcsolat megszakadt. Helyi üzemmód. Kérem, ne aggódjanak: én itt vagyok.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "entry",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "living",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "kitchen",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "server",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "wellness",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "garage",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "bedroom",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_service",
+   "do": {
+    "notify": {
+     "at": "office",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Szerviz-hozzáférés visszaállítva. Üdv újra, kedves telepítők.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "entry",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "living",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "kitchen",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "server",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "wellness",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "garage",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "bedroom",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_ilona",
+   "do": {
+    "notify": {
+     "at": "office",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Jó reggelt, Ilona. Lakói hozzáférés. Az emelet nyitva.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "entry",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "living",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "kitchen",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "server",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "wellness",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "garage",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "bedroom",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_log",
+   "do": {
+    "notify": {
+     "at": "office",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Az elemzés szerint a házban nem tartózkodott azonosítatlan személy. A vészhelyzeti rendszergazda-átadás elérhető.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "entry",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "living",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "kitchen",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "server",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "wellness",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "garage",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "bedroom",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  },
+  {
+   "on": "iris_admin",
+   "do": {
+    "notify": {
+     "at": "office",
+     "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
+    }
+   }
+  }
+ ],
+ "onMessage": [
+  {
+   "match": "^\\(GAME: PARAM day (\\w+)\\)$",
+   "setVar": {
+    "sys_day": "$1"
+   }
+  },
+  {
+   "match": "^\\(GAME: PARAM hour (\\w+)\\)$",
+   "setVar": {
+    "sys_hour": "$1"
+   }
+  }
+ ],
+ "inventory": [
+  {
+   "id": "i_protocol",
+   "name": "átadási jegyzőkönyv"
+  },
+  {
+   "id": "i_service_card",
+   "name": "szervizkártyák"
+  }
+ ],
+ "vars": {
+  "access": "vendég",
+  "wan": "on",
+  "sys_day": "mon",
+  "sys_hour": "09",
+  "thermal": "off"
+ },
+ "status": "ÍRISZ: {access} · Hely: {loc0} / {loc1}",
+ "panelTitles": {
+  "code_lock": "Biztonsági kérdés",
+  "camera_guide": "Kulcskereső",
+  "param_console": "Rendszeridő",
+  "logic_grid": "Mozgásnapló",
+  "dual_word": "Vészhelyzeti átadás",
+  "report_form": "Az incidens lezárása"
+ },
+ "panelIds": [
+  "code_lock",
+  "camera_guide",
+  "param_console",
+  "logic_grid",
+  "dual_word",
+  "report_form"
+ ],
+ "panelAvail": {
+  "code_lock": {
+   "all": [
+    {
+     "not": {
+      "solved": "Biztonsági kérdés"
+     }
+    },
+    {
+     "player": "any",
+     "at": "entry"
+    }
+   ]
+  },
+  "camera_guide": {
+   "all": [
+    {
+     "any": [
+      {
+       "var": "access",
+       "is": "szerviz"
+      },
+      {
+       "var": "access",
+       "is": "lakó"
+      },
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    },
+    {
+     "seen": "console"
+    },
+    {
+     "not": {
+      "has": "i_fob"
+     }
+    },
+    {
+     "any": [
+      {
+       "player": "any",
+       "at": "server"
+      },
+      {
+       "player": "any",
+       "at": "wellness"
+      }
+     ]
+    }
+   ]
+  },
+  "param_console": {
+   "all": [
+    {
+     "any": [
+      {
+       "var": "access",
+       "is": "szerviz"
+      },
+      {
+       "var": "access",
+       "is": "lakó"
+      },
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    },
+    {
+     "player": "any",
+     "at": "server"
+    }
+   ]
+  },
+  "logic_grid": {
+   "all": [
+    {
+     "any": [
+      {
+       "var": "access",
+       "is": "lakó"
+      },
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    },
+    {
+     "player": "any",
+     "at": "server"
+    }
+   ]
+  },
+  "dual_word": {
+   "all": [
+    {
+     "solved": "Mozgásnapló"
+    },
+    {
+     "any": [
+      {
+       "player": "any",
+       "at": "server"
+      },
+      {
+       "player": "any",
+       "at": "entry"
+      }
+     ]
+    }
+   ]
+  },
+  "report_form": {
+   "all": [
+    {
+     "any": [
+      {
+       "var": "access",
+       "is": "rendszergazda"
+      }
+     ]
+    },
+    {
+     "player": "any",
+     "at": "server"
+    }
+   ]
+  }
+ },
+ "mustReach": [
+  {
+   "solved": "Biztonsági kérdés"
+  },
+  {
+   "solved": "Mozgásnapló"
+  },
+  {
+   "solved": "Vészhelyzeti átadás"
+  },
+  {
+   "var": "access",
+   "is": "lakó"
+  }
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "kód",
+  "jelszó",
+  "rejtett",
+  "titkos",
+  "mögötte",
+  "zseb",
+  "biztonsági zóna",
+  "pánikszoba",
+  "napraforgó",
+  "hársfa",
+  "kazmér",
+  "ember",
+  "alak"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

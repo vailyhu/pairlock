@@ -1,0 +1,127 @@
+{
+ "title": "Az Éjszakai Expressz",
+ "description": "1938 decembere, a Budapest–Isztambul hálókocsis expressz a havas szerb hegyek között. Az éjszaka közepén ébredtek a vonat két végén: se utas, se kalauz, és a vonat nem lassít. Nyomozás és logika két játékosnak, egymás felé haladva.",
+ "goal": "Állítsátok meg a vonatot. A játék akkor ér véget, amikor a szerelvény megáll, és leszálltok a hóba.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "1938 decembere. A Budapest–Isztambul hálókocsis expressz valahol a havas szerb hegyek között.\n\n[img:exterior]\n\nKetten utaztok, de az utolsó pillanatban vett jegyekkel a szerelvény két végén kaptatok helyet: Juliska elöl, a 3-as fülkében, Jancsi hátul, a 12-esben. Vacsoránál még együtt ültetek az étkezőkocsiban, egy csendes angol úr asztala mellett, aki rögtön a vacsora után eltűnt.\n\nAz éjszaka közepén ébredtek, zúgó fejjel. A vonat megállás nélkül robog, egyre gyorsabban. Se kalauz, se utas. Valami nagyon nincs rendben, és a vonat nem lassít.\n\nJancsi ajtaja zárva. Juliska ajtaja nyitva áll a folyosóra.\n\n[img:compartment_a]\n\n[img:compartment_b]\n\n```\nHely: A 12-es fülke / A 3-as fülke · A hídig: 64 km\n```\nLeltár: ",
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "help": "Külön kezdtek, a vonat két végén: mindenki a saját szálán halad, és egymás felé jöttök. Amit az egyikőtök talál, gyakran a másiknál nyit valamit: beszéljetek. A zárak és szerkezetek gombok a chatben, bármikor megnyithatók; a 💡 Tipp a szerkezetek ablakában van, és ingyenes. Fent az állapotsorban látjátok, mennyi út van még a hídig. Időkorlát nincs.",
+ "panelDone": {
+  "typewriter_ribbon": "\\(GAME: SOLVED, Az írógépszalag\\)",
+  "code_lock_salon": "\\(GAME: SOLVED, A szalon lakatja\\)",
+  "logic_grid": "\\(GAME: SOLVED, A félbehagyott parti\\)",
+  "code_lock_vogt": "\\(GAME: SOLVED, Vogt bőröndje\\)",
+  "locomotive": "\\(GAME: SOLVED, A mozdony\\)"
+ },
+ "panelDoneLabel": {},
+ "scripted": [
+  {
+   "re": "\\(GAME: SOLVED, A mozdony\\)",
+   "text": "A fék teljes erővel fog. A kerekek csikorognak, a kocsik nyikorogva összetorlódnak, a sebességmérő tűje lassan visszahanyatlik. Aztán csend. A vonat áll.\n\nKiléptek a mozdonyból a hóba. Előttetek, alig néhány száz méterre, egy előjelző, mögötte a félig elbontott Ibar-híd, keresztben egy deszkasorompóval. A szurdok fölött hajnalodik.\n\n[img:ending]\n\nEgy pályaőr talál rátok, lámpással, döbbent arccal. Délre visszaér a mentőmozdony Lapovóra. A karanténváróban, a többi utas között, egy angol úr ül egy padon. Amikor meglátja nálatok a kis fém filmdobozt, lehunyja a szemét, és csak annyit mond: „Thank God.”\n\nVége."
+  }
+ ],
+ "endPattern": "\\(GAME: SOLVED, A mozdony\\)",
+ "tailRules": [
+  {
+   "if": "\\(GAME: SOLVED, A mozdony\\)",
+   "text": "THE GAME IS OVER. The ending has already been told in the chat, and it contains the whole truth of the story. If the players ask anything, answer openly in plain Hungarian, as yourself outside the story: Hale was a journalist carrying microfilm evidence of an arms deal; Vogt, an agent, bribed the conductor, the waiter and the driver; the passengers were taken off at Lapovo for a fake quarantine; the train was sent down the closed branch line towards the half-dismantled bridge. Do not continue the story or invent new events."
+  }
+ ],
+ "model": {
+  "temperature": 1,
+  "top_p": 0.95,
+  "frequency_penalty": 0.3,
+  "presence_penalty": 0.2,
+  "max_tokens": 500
+ },
+ "colorize": {
+  "on": false,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Tense, quiet, nocturnal; an empty luxury sleeping-car express racing through snowy mountains in 1938; short plain sentences."
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg abban a kocsiban, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "exterior": "Az expressz",
+  "compartment_a": "A 12-es fülke",
+  "compartment_a_open": "A nyitott ajtó",
+  "compartment_door": "A fülke ajtaja",
+  "keyhole": "A kulcslyuk",
+  "newspaper": "Újság",
+  "pen": "Töltőtoll",
+  "square_key": "A kulcs az újságon",
+  "i_square_key": "Négyszögkulcs",
+  "brake_handle_cut": "Vészfék",
+  "sleeper_rear": "Hátsó hálókocsi",
+  "conductor": "Kalauzfülke",
+  "wall_phone": "Falitelefon",
+  "manifest": "Menetlevél",
+  "manifest_back": "A menetlevél hátoldala",
+  "order": "Szolgálati utasítás",
+  "compartment_hale": "A 11-es fülke",
+  "typewriter": "Írógép",
+  "ribbon": "Írógépszalag",
+  "bill_left": "Félszámla, a fogások",
+  "compartment_klara": "A 10-es fülke",
+  "salon": "Szalonkocsi",
+  "piano": "Pianínó",
+  "piano_open": "A pianínó belseje",
+  "i_film": "Filmdoboz",
+  "hale_note": "Hale cetlije",
+  "card_table": "Kártyaasztal",
+  "score": "Pontozólap",
+  "compartment_b": "A 3-as fülke",
+  "sleeper_front": "Első hálókocsi",
+  "dining": "Étkezőkocsi",
+  "wine_carafe": "Boroskancsó",
+  "ashtray": "Hamutartó",
+  "bill_right": "Félszámla, az árak",
+  "menu": "Étlap",
+  "kitchen": "Konyha",
+  "order_pad": "Mihajlo blokkja",
+  "salon_padlock": "Lakat",
+  "salon_padlock_open": "A nyitott lakat",
+  "compartment_vogt": "A 4-es fülke",
+  "compartment_vogt_case": "Vogt bőröndje",
+  "vogt_case_open": "A nyitott bőrönd",
+  "map": "Térkép",
+  "profile": "A térkép hátoldala",
+  "i_mail_key": "Postakulcs",
+  "i_chain_key": "Kis lakatkulcs",
+  "mail_door": "A postakocsi ajtaja",
+  "mail": "Postakocsi",
+  "parcel": "Ajánlott csomag",
+  "tender": "Szerkocsi",
+  "toolbox": "Szerszámláda",
+  "toolbox_open": "A nyitott láda",
+  "i_brake_handle": "Fékkar",
+  "cab": "Mozdony",
+  "cab_ready": "A mozdony, készen",
+  "regulator_chained": "Szabályozókar",
+  "regulator_free": "A szabad szabályozó",
+  "brake_valve": "Fékszelep",
+  "brake_valve_fixed": "A fékszelep karral",
+  "brake_card": "Fékutasítás",
+  "ending": "Hajnal"
+ }
+}

@@ -1,0 +1,11 @@
+/* Az Éjszakai Expressz: an art deco sleeping car at night; midnight blue, polished brass, ivory, a touch of signal red. */
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Josefin+Sans:wght@400;600&display=swap');
+:root {
+  --bg:#0b0f1a; --panel:#121a2b; --panel2:#1a2540; --ink:#efe6d2; --muted:#9aa3b8; --line:#2c3a5c; --accent:#d6aa5c; --ok:#8fce8a;
+  --send:#9c2f25; --send-line:#c9483a; --send-ink:#fff6ea; --tool:#2a2516; --tool-line:#b08a45; --tool-ink:#f3e2bb; --view:#05070c;
+  --serif:"Poiret One",Georgia,serif; --ui:"Josefin Sans","Avenir Next",system-ui,sans-serif; --radius:2px;
+}
+body { font-size:17.5px; }
+header h1 { font-family:var(--serif); font-size:22px; letter-spacing:.06em; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

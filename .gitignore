@@ -1,0 +1,21 @@
+# Secrets: the AI key (home page settings), written mode 600
+settings.json
+settings.json.tmp
+
+# Runs, logs and test outputs: personal and full of spoilers
+saves/
+
+# OS and tooling
+.DS_Store
+node_modules/
+*.tmp
+
+# Local notes for Claude Code: paths, addresses, history
+CLAUDE.local.md
+
+# 18+ games: not in git, published to Hugging Face (tools/publish_nsfw.py), fetched with --nsfw (games/nsfw.json)
+games/a_modell/
+games/kek_szalon/
+games/szimulacio/
+games/.nsfw-state.json
+*.part

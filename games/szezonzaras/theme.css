@@ -1,0 +1,11 @@
+/* Szezonzárás: a 1965 Riviera casino after closing; night-blue sea, green baize, cream marble, brass, a 1960s travel-poster title. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&display=swap');
+:root {
+  --bg:#0b1218; --panel:#122028; --panel2:#18303a; --ink:#f1e8d6; --muted:#9db0b2; --line:#29434d; --accent:#e0b25c; --ok:#7fc9a0;
+  --send:#1f5a48; --send-line:#c9a35a; --send-ink:#fbf4e4; --tool:#2c2316; --tool-line:#b8904a; --tool-ink:#f5e7c8; --view:#05090c;
+  --serif:"Playfair Display",Georgia,serif; --ui:"Josefin Sans","Avenir Next",system-ui,sans-serif; --radius:3px;
+}
+body { font-size:17.5px; }
+header h1 { font-family:var(--ui); font-weight:600; font-size:20px; letter-spacing:.22em; text-transform:uppercase; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

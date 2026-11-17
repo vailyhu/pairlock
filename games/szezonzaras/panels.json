@@ -1,0 +1,614 @@
+{
+ "guard_round": {
+  "type": "guard_round",
+  "title": "A CASSA kulcs",
+  "sides": {
+   "a": {
+    "at": "gallery"
+   },
+   "b": {
+    "at": "hall"
+   }
+  },
+  "intro": "A kampós gereblyével a rácson át le lehet akasztani a CASSA kulcsot. Négy lépés. A teraszról viszont jól látni a rácsot: ha Beppe épp ott jár, meglát.",
+  "hints": [
+   "A teraszon járó őr belát a nagyterem üvegajtóin. Valakinek figyelnie kellene, vagy tudni kellene, mikor jár ott.",
+   "A galéria ablakaiból a kert felülről látszik, a lámpa is. Az öltöző szemetesében ott az őr tegnapi ellenőrzőóra-szalagja.",
+   "Akkor nyúljatok, amikor a lámpa nem a Teraszon és nem a Teraszajtónál jár: a falióra szerint :09 és :15 között és :24 és :27 között ne (fél órával később ugyanígy)."
+  ],
+  "options": {
+   "stations": [
+    {
+     "id": "gate",
+     "label": "Kapu",
+     "x": 0.1,
+     "y": 0.48,
+     "danger": false
+    },
+    {
+     "id": "cypress",
+     "label": "Ciprussor",
+     "x": 0.26,
+     "y": 0.4,
+     "danger": false
+    },
+    {
+     "id": "fountain",
+     "label": "Szökőkút",
+     "x": 0.38,
+     "y": 0.64,
+     "danger": false
+    },
+    {
+     "id": "terrace",
+     "label": "Terasz",
+     "x": 0.74,
+     "y": 0.9,
+     "danger": true
+    },
+    {
+     "id": "terrace_door",
+     "label": "Teraszajtó",
+     "x": 0.56,
+     "y": 0.95,
+     "danger": true
+    },
+    {
+     "id": "roses",
+     "label": "Rózsakert",
+     "x": 0.7,
+     "y": 0.6,
+     "danger": false
+    },
+    {
+     "id": "boat_stairs",
+     "label": "Csónakház-lépcső",
+     "x": 0.93,
+     "y": 0.72,
+     "danger": false
+    },
+    {
+     "id": "lookout",
+     "label": "Kilátó",
+     "x": 0.82,
+     "y": 0.46,
+     "danger": false
+    },
+    {
+     "id": "terrace2",
+     "label": "Terasz",
+     "x": 0.74,
+     "y": 0.9,
+     "danger": true
+    },
+    {
+     "id": "fountain2",
+     "label": "Szökőkút",
+     "x": 0.38,
+     "y": 0.64,
+     "danger": false
+    }
+   ],
+   "stepSeconds": 6,
+   "clock": {
+    "startMinute": 1410,
+    "minutesPerStation": 3
+   },
+   "steps": [
+    "Átnyúlni a rácson",
+    "A kampót a karika alá",
+    "Leakasztani",
+    "Behúzni"
+   ],
+   "stepTexts": [
+    "A gereblye halkan átsiklik a rácson.",
+    "A kampó a kulcskarika alá akad.",
+    "A kulcs leválik a kampóról, és a gereblyén lóg.",
+    "Lassan, a padló fölött behúzzátok."
+   ],
+   "caughtText": "A teraszról lámpafény vág be az üvegajtón! A pult mögé lapultok, a kulcs visszalendül a helyére. A lámpa sokáig áll, aztán továbbmegy. Riadalom +1.",
+   "caughtMessage": "GUARD CAUGHT",
+   "doneText": "A kulcs a kezetekben. Beppe lámpája odakint a rózsák között jár.",
+   "watchText": "Az ablakból a kert: a lámpa állomásról állomásra halad. Szóljatok le, mikor tiszta a terasz.",
+   "workText": "A rács előtt álltok, a falióra a bár mellett. A teraszt innen nem látjátok, csak a hátatok mögötti üvegajtókat.",
+   "background": "images/garden.jpg"
+  }
+ },
+ "code_lock_cashbox": {
+  "type": "code_lock",
+  "title": "Rosa néni kazettája",
+  "intro": "Hat számtárcsa a zöld kazettán.",
+  "hints": [
+   "Rosa néni nem bízott a memóriájában. Valahol felírta.",
+   "A naptára egy krupié szerencseszámait említi. Kinek a szekrényében van tétlap?",
+   "Gino tétlapja: 7, 23, 32, ebben a sorrendben, két-két jeggyel: 072332."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 6,
+   "answer": "072332",
+   "button": "Kinyit",
+   "okText": "Kattan a fedél.",
+   "badText": "A fedél nem mozdul."
+  }
+ },
+ "gauge_board_lift": {
+  "type": "gauge_board",
+  "title": "A pénzfelvonó",
+  "sides": {
+   "a": {
+    "at": "cage"
+   },
+   "b": {
+    "at": "lift"
+   }
+  },
+  "intro": "Egyikőtök a fülkében, a másik a pénztárban a hajtókarnál. A fenti a csörlőt és a féket látja, a lenti a küszöböt és azt, hogy leng-e a fülke.",
+  "hints": [
+   "A fülkében ülő látja a küszöböt, a fenti a csörlőt. Beszéljetek.",
+   "A befalazott nyílás nem az a szint: azon túl kell tekerni.",
+   "A küszöb egy vonalban (1-es mérő a zöldben), és a fék legyen behúzva (2-es mérő a zöldben), mielőtt lentről megerősítitek."
+  ],
+  "options": {
+   "matrix": [
+    [
+     10,
+     0,
+     0
+    ],
+    [
+     0,
+     8,
+     0
+    ]
+   ],
+   "band": [
+    64,
+    76
+   ],
+   "controls": [
+    "Csörlő (fordulat)",
+    "Fék"
+   ],
+   "controlMax": 9,
+   "gaugeMax": 100,
+   "textA": "A hajtókar dobja (hány fordulatnyit engedtétek le a fülkét) és a fék. A fülkét a társad látja.",
+   "textB": "1-es mérő: a fülke padlója az alsó küszöbhöz képest (félúton, 40 körül, egy befalazott nyílás téglafala áll előtted). 2-es mérő: mennyire áll nyugodtan a fülke. Ha mindkettő a zöld sávban, nyugtázd.",
+   "confirmLabel": "Kiszállok",
+   "okText": "A küszöb egy vonalban, a fülke nem leng."
+  }
+ },
+ "typewriter_ribbon": {
+  "type": "typewriter_ribbon",
+  "title": "Az írógép szalagja",
+  "keepAfterSolved": true,
+  "intro": "A használt festékszalagon fordítva, egymásba csúszva látszanak az utolsó leütések. Conti diktált, a titkárnő gépelt.",
+  "hints": [
+   "A gép szalagja megőrzi, amit utoljára írtak rajta.",
+   "Fordítva látszik: kapcsoljátok be a tükrözést, és tekerjétek végig. Három levél van rajta.",
+   "Olvassátok el a Liviának szóló levelet: a széfet egy napra állíttatta, betűvel írva."
+  ],
+  "options": {
+   "text": "A Belvedere Rt. tisztelt részvényeseinek. A nagy rulett idén is kiválóan teljesített. A Securitas úrnak: a szállítás hétfőn reggel hét órakor. Drága Livia, holnap zárunk, és végre csak a miénk az ősz. A széfet is a mi napunkra állíttattam, augusztus tizennegyedikére, hogy minden reggel rád gondoljak. A.",
+   "lineLength": 22,
+   "noise": 0.3,
+   "answer": "TIZENNEGYEDIK",
+   "image": "images/typewriter.jpg",
+   "answerLabel": "Mire állíttatta Conti a széfet? Írjátok be betűvel, ahogy a szalagon áll.",
+   "answerButton": "Ez áll rajta",
+   "mirrorLabel": "⇋ Tükrözés",
+   "help": "A nyilakkal tekeritek a szalagot, a tükrözéssel megfordítjátok a betűket.",
+   "okText": "Ez az. A szalag kiolvasva.",
+   "badText": "Nem ez áll a szalagon. Betűvel írjátok, ahogy olvassátok."
+  }
+ },
+ "code_lock_safe": {
+  "type": "code_lock",
+  "title": "A fali széf",
+  "intro": "Négy számtárcsa a kis fali széfen.",
+  "hints": [
+   "A széf egy dátumra nyílik.",
+   "Nem a feleségéé. Kinek a fényképe áll az asztalán, és mit diktált neki?",
+   "Augusztus 14.: 1408."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 4,
+   "answer": "1408",
+   "button": "Kinyit",
+   "okText": "A széf kinyílik.",
+   "badText": "A tárcsák visszaugranak."
+  }
+ },
+ "roulette": {
+  "type": "roulette",
+  "title": "A nagy rulett",
+  "sides": {
+   "a": {
+    "at": "cellar"
+   },
+   "b": {
+    "at": "hall"
+   }
+  },
+  "intro": "Lent a vezérlőpult, fent a kerék. A pincében álló nem látja a kereket, a teremben álló nem látja a pultot.",
+  "hints": [
+   "A szerkezet a kereket irányítja; valakinek fent kell pörgetnie, és megmondania, hová esett a golyó.",
+   "A szektorok a kerék sorrendjét követik a nulla után, hatosával; a finom tárcsa a szektoron belüli helyet adja. Mágnes nélkül a golyó oda esik, ahová akar.",
+   "A célszám a napló utolsó oldalán áll: 17. Az a B szektor második zsebe: B, finom 2, mágnes be, aztán pörgetés."
+  ],
+  "options": {
+   "pockets": [
+    {
+     "n": 0,
+     "color": "green"
+    },
+    {
+     "n": 32,
+     "color": "red"
+    },
+    {
+     "n": 15,
+     "color": "black"
+    },
+    {
+     "n": 19,
+     "color": "red"
+    },
+    {
+     "n": 4,
+     "color": "black"
+    },
+    {
+     "n": 21,
+     "color": "red"
+    },
+    {
+     "n": 2,
+     "color": "black"
+    },
+    {
+     "n": 25,
+     "color": "red"
+    },
+    {
+     "n": 17,
+     "color": "black"
+    },
+    {
+     "n": 34,
+     "color": "red"
+    },
+    {
+     "n": 6,
+     "color": "black"
+    },
+    {
+     "n": 27,
+     "color": "red"
+    },
+    {
+     "n": 13,
+     "color": "black"
+    },
+    {
+     "n": 36,
+     "color": "red"
+    },
+    {
+     "n": 11,
+     "color": "black"
+    },
+    {
+     "n": 30,
+     "color": "red"
+    },
+    {
+     "n": 8,
+     "color": "black"
+    },
+    {
+     "n": 23,
+     "color": "red"
+    },
+    {
+     "n": 10,
+     "color": "black"
+    },
+    {
+     "n": 5,
+     "color": "red"
+    },
+    {
+     "n": 24,
+     "color": "black"
+    },
+    {
+     "n": 16,
+     "color": "red"
+    },
+    {
+     "n": 33,
+     "color": "black"
+    },
+    {
+     "n": 1,
+     "color": "red"
+    },
+    {
+     "n": 20,
+     "color": "black"
+    },
+    {
+     "n": 14,
+     "color": "red"
+    },
+    {
+     "n": 31,
+     "color": "black"
+    },
+    {
+     "n": 9,
+     "color": "red"
+    },
+    {
+     "n": 22,
+     "color": "black"
+    },
+    {
+     "n": 18,
+     "color": "red"
+    },
+    {
+     "n": 29,
+     "color": "black"
+    },
+    {
+     "n": 7,
+     "color": "red"
+    },
+    {
+     "n": 28,
+     "color": "black"
+    },
+    {
+     "n": 12,
+     "color": "red"
+    },
+    {
+     "n": 35,
+     "color": "black"
+    },
+    {
+     "n": 3,
+     "color": "red"
+    },
+    {
+     "n": 26,
+     "color": "black"
+    }
+   ],
+   "sectors": [
+    {
+     "label": "A",
+     "pockets": [
+      32,
+      15,
+      19,
+      4,
+      21,
+      2
+     ]
+    },
+    {
+     "label": "B",
+     "pockets": [
+      25,
+      17,
+      34,
+      6,
+      27,
+      13
+     ]
+    },
+    {
+     "label": "C",
+     "pockets": [
+      36,
+      11,
+      30,
+      8,
+      23,
+      10
+     ]
+    },
+    {
+     "label": "D",
+     "pockets": [
+      5,
+      24,
+      16,
+      33,
+      1,
+      20
+     ]
+    },
+    {
+     "label": "E",
+     "pockets": [
+      14,
+      31,
+      9,
+      22,
+      18,
+      29
+     ]
+    },
+    {
+     "label": "F",
+     "pockets": [
+      7,
+      28,
+      12,
+      35,
+      3,
+      26
+     ]
+    }
+   ],
+   "target": 17,
+   "labels": {
+    "sector": "Forgókapcsoló",
+    "fine": "Tárcsa",
+    "magnet": "Kar",
+    "spin": "Pörgetés"
+   },
+   "spinText": "A golyó kering, pattog, és megáll: {n}.",
+   "notMagnetText": "A golyó szabadon fut.",
+   "doneText": "A golyó a 17-esben. Lent egy retesz kattan."
+  }
+ },
+ "gears_timelock": {
+  "type": "gears",
+  "title": "Az időzár",
+  "intro": "A kurbli tengelyére és az óraművek tengelyére egy-egy kerék kerül a dobozból. Bal: a kurbli tengelye. Jobb: az óraműveké.",
+  "hints": [
+   "Az óraművek hétfőt várják; a kurbli siettetheti őket, ha jó az áttétel.",
+   "A réztábla szerint a kurbli egy fordulatára az óraművek tengelye négyszer forduljon. A nagy kerék hajtja a kicsit, vagy fordítva?",
+   "A kurbli tengelyére a 48 fogú, az óraművekére a 12 fogú."
+  ],
+  "closed": [
+   {
+    "if": {
+     "var": "timelock",
+     "is": "run"
+    },
+    "text": "Az óraművek nullán állnak. Kész."
+   }
+  ],
+  "options": {
+   "teeth": [
+    12,
+    15,
+    20,
+    24,
+    30,
+    36,
+    40,
+    45,
+    48
+   ],
+   "sum": 60,
+   "start": [
+    30,
+    30
+   ],
+   "base": 60,
+   "var": "gearPeriod",
+   "labelA": "Kurbli tengelye: ",
+   "labelB": "Óraművek tengelye: ",
+   "meshText": "A két kerék összekapcsolódik.",
+   "tooBigText": "Túl nagyok: nem férnek el a tengelytávon.",
+   "tooSmallText": "Túl kicsik: nem érnek össze.",
+   "button": "⚙️ Beszerelés és tekerés",
+   "message": "TIMELOCK {a} {b} {period}",
+   "okText": "Beszerelve. Tekeritek a kurblit."
+  }
+ },
+ "dual_word_vault": {
+  "type": "dual_word",
+  "title": "A páncélajtó",
+  "sidesByPlayer": true,
+  "intro": "Két kulcslyuk, két méterre egymástól. A KULCSOKAT EGYSZERRE.",
+  "hints": [
+   "Két kulcs, két ember.",
+   "Egyszerre kell fordítani; egyedül nem éritek el mindkettőt.",
+   "Számoljatok háromig, és háromra fordítsátok."
+  ],
+  "options": {
+   "mode": "press",
+   "windowMs": 1500,
+   "pressLabel": "Fordít",
+   "requires": {
+    "a": {
+     "has": "i_key_a"
+    },
+    "b": {
+     "has": "i_key_b"
+    }
+   },
+   "noKeyText": "Nincs nálad kulcs.",
+   "blockedIf": {
+    "not": {
+     "var": "timelock",
+     "is": "run"
+    }
+   },
+   "blockedText": "A kulcsok elfordulnak, de a reteszek nem mozdulnak: az időzár tartja őket.",
+   "missText": "Az egyik zár visszaugrik. Nem egyszerre.",
+   "waitText": "A kulcs elfordítva, tartod…",
+   "okText": "A reteszek visszahúzódnak.",
+   "soloLabels": {
+    "a": "Bal zár (A)",
+    "b": "Jobb zár (B)"
+   }
+  }
+ },
+ "sequence_engine": {
+  "type": "sequence",
+  "title": "A motor",
+  "intro": "A motor indítása: öt lépés. A gyári kártya a műszerfalon, üveg alatt.",
+  "hints": [
+   "A kártyán a lépések rajzai, alattuk feliratok. A rajzok nem sorban állnak.",
+   "Üzemanyag előbb, mint a szikra; gáz csak a végén.",
+   "Csap, pumpa, szivató, kulcs, gáz."
+  ],
+  "options": {
+   "items": [
+    {
+     "id": "key",
+     "image": "images/step_key.jpg",
+     "label": "indítókulcs"
+    },
+    {
+     "id": "tap",
+     "image": "images/step_tap.jpg",
+     "label": "üzemanyagcsap"
+    },
+    {
+     "id": "throttle",
+     "image": "images/step_throttle.jpg",
+     "label": "gázkar"
+    },
+    {
+     "id": "choke",
+     "image": "images/step_choke.jpg",
+     "label": "szivató"
+    },
+    {
+     "id": "bulb",
+     "image": "images/step_bulb.jpg",
+     "label": "pumpáló gumi"
+    }
+   ],
+   "slots": [
+    "1.",
+    "2.",
+    "3.",
+    "4.",
+    "5."
+   ],
+   "answer": [
+    "tap",
+    "bulb",
+    "choke",
+    "key",
+    "throttle"
+   ],
+   "checkLabel": "Indítás",
+   "okText": "A motor köhög egyet, aztán mélyen, egyenletesen dorombol.",
+   "badText": "A motor köhög, és lefullad.",
+   "trayLabel": "Lépések"
+  }
+ }
+}

@@ -1,0 +1,11 @@
+/* A Holdbázis: a modern lunar base at night; graphite, cool white, regolith grey, one amber accent. */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Inter:wght@400;600&display=swap');
+:root {
+  --bg:#0b0d10; --panel:#14181d; --panel2:#1c2229; --ink:#e8ecef; --muted:#9aa4ad; --line:#2c343d; --accent:#e0a84a; --ok:#7fd1a0;
+  --send:#2f6d8f; --send-line:#4a93b8; --send-ink:#f2f8fb; --tool:#1d2630; --tool-line:#5d7a8f; --tool-ink:#dfe8ee; --view:#050607;
+  --serif:"Exo 2","Avenir Next",system-ui,sans-serif; --ui:"Inter","Avenir Next",system-ui,sans-serif; --radius:6px;
+}
+body { font-size:17px; }
+header h1 { font-family:var(--serif); font-size:21px; letter-spacing:.08em; text-transform:uppercase; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

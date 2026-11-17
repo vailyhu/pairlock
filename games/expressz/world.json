@@ -1,0 +1,2922 @@
+{
+ "start": [
+  "compartment_a",
+  "compartment_b"
+ ],
+ "rooms": {
+  "compartment_a": {
+   "name": "A 12-es fülke",
+   "into": "a 12-es fülkébe",
+   "inside": "a 12-es fülkében",
+   "image": "compartment_a",
+   "text": [
+    {
+     "if": {
+      "is": "door_12.open",
+      "eq": true
+     },
+     "text": "A 12-es fülkében ezt látjátok: az ágy, a lehajtható mosdó, a bőröndöd a csomagtartón, az ablak alatt egy asztalka{contents@window_table_12:, rajta }, a falon a menetrend, a csengő és a vészfék. Az ajtó nyitva a folyosóra."
+    },
+    {
+     "text": "A 12-es fülkében ezt látjátok: az ágy, a lehajtható mosdó, a bőröndöd a csomagtartón, az ablak alatt egy asztalka{contents@window_table_12:, rajta }, a falon a menetrend, a csengő és a vészfék. Az ajtó zárva."
+    }
+   ],
+   "exits": {
+    "sleeper_rear": {
+     "requires": {
+      "is": "door_12.open",
+      "eq": true
+     },
+     "otherwise": "Az ajtó zárva, kívülről. A kilincs nem enged.",
+     "aliases": [
+      "folyosó",
+      "ki",
+      "ajtó"
+     ]
+    }
+   },
+   "aliases": [
+    "fülkém",
+    "12-es",
+    "tizenkettes",
+    "fülke"
+   ],
+   "details": [
+    "intarziás diófa falak",
+    "sárgaréz lámpák meleg fénye",
+    "a kerekek egyenletes zakatolása",
+    "hó csapódik az ablakra"
+   ]
+  },
+  "sleeper_rear": {
+   "name": "Hátsó hálókocsi",
+   "into": "a hátsó folyosóra",
+   "inside": "a hátsó folyosón",
+   "image": "sleeper_rear",
+   "text": "A hátsó hálókocsi folyosóján ezt látjátok: kék bársonypad az ablakok alatt, a fülkeajtók, a 9-es résnyire nyitva, a 10-es nyitva, a 11-es zárva, a 12-es a tiétek. Hátul a kalauzfülke, elöl az átjáró a szalonkocsiba. A mennyezet alatt az elvágott vészfékzsinór.",
+   "exits": {
+    "compartment_a": {
+     "aliases": [
+      "12-es",
+      "fülkém"
+     ]
+    },
+    "compartment_klara": {
+     "aliases": [
+      "10-es",
+      "tízes",
+      "klára"
+     ]
+    },
+    "compartment_hale": {
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 11-es fülke zárva, négyszögzárral. A kalauz kulcsa kellene.",
+     "aliases": [
+      "11-es",
+      "tizenegyes",
+      "hale"
+     ]
+    },
+    "conductor": {
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A kalauzfülke zárva, négyszögzárral. A kalauz kulcsa kellene.",
+     "aliases": [
+      "kalauzfülke",
+      "kalauz"
+     ]
+    },
+    "salon": {
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "Az átjáró a szalonkocsiba zárva, négyszögzárral. A kalauz kulcsa kellene.",
+     "aliases": [
+      "szalon",
+      "szalonkocsi",
+      "átjáró",
+      "előre"
+     ]
+    }
+   },
+   "aliases": [
+    "folyosó",
+    "hátsó folyosó",
+    "hálókocsi"
+   ],
+   "details": [
+    "kék bársonypad",
+    "intarziás ajtók sora",
+    "a padló enyhén ring"
+   ]
+  },
+  "conductor": {
+   "name": "Kalauzfülke",
+   "into": "a kalauzfülkébe",
+   "inside": "a kalauzfülkében",
+   "image": "conductor",
+   "text": "A kalauzfülkében ezt látjátok: egy kis pult a menetlevéllel és egy jegylyukasztóval, a falon a kulcstábla és egy falitelefon, a fogason a kalauz kabátja. A kalauz sehol.",
+   "exits": {
+    "sleeper_rear": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "kalauz"
+   ],
+   "details": [
+    "szűk fülke",
+    "tinta és dohány szaga",
+    "sárgaréz lámpa"
+   ]
+  },
+  "compartment_hale": {
+   "name": "A 11-es fülke",
+   "into": "a 11-es fülkébe",
+   "inside": "a 11-es fülkében",
+   "image": "compartment_hale",
+   "text": "A 11-es fülkében, Hale fülkéjében ezt látjátok: az ablak alatti asztalkán egy hordozható írógép, mellette pipa, dohány és angol könyvek, a fogason egy tweedzakó, feldúlt ágy, a padlón egy nyitott, üres aktatáska és szétszórt papírok. Valaki már átkutatta.",
+   "exits": {
+    "sleeper_rear": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "hale fülkéje",
+    "11-es"
+   ],
+   "firstText": "A négyszögkulcs nyitja a zárat. Hale fülkéje: valaki járt itt előttetek.",
+   "details": [
+    "pipadohány szaga",
+    "feldúlt holmik",
+    "hó az ablakon"
+   ]
+  },
+  "compartment_klara": {
+   "name": "A 10-es fülke",
+   "into": "a 10-es fülkébe",
+   "inside": "a 10-es fülkében",
+   "image": "compartment_klara",
+   "text": "A 10-es fülkében, Ványai Klára fülkéjében ezt látjátok: estélyi ruhák a fogason, egy prémstóla, a piperepolcon púderdoboz, rúzsok, kotta és rajongói levelek, rózsaszín szalaggal.",
+   "exits": {
+    "sleeper_rear": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "klára fülkéje",
+    "10-es"
+   ],
+   "details": [
+    "púder és parfüm illata",
+    "flitterek csillogása"
+   ]
+  },
+  "salon": {
+   "name": "Szalonkocsi",
+   "into": "a szalonkocsiba",
+   "inside": "a szalonkocsiban",
+   "image": "salon",
+   "text": [
+    {
+     "if": {
+      "solved": "A szalon lakatja"
+     },
+     "text": "A szalonkocsiban ezt látjátok: pianínó, a kártyaasztal a félbehagyott partival, kék bársonyfotelek, íves bárpult, a falon egy útvonaltérkép. Az elülső ajtó nyitva az étkezőkocsiba."
+    },
+    {
+     "text": "A szalonkocsiban ezt látjátok: pianínó, a kártyaasztal a félbehagyott partival, kék bársonyfotelek, íves bárpult, a falon egy útvonaltérkép. Az elülső ajtó az étkezőkocsi felé kívülről le van láncolva."
+    }
+   ],
+   "exits": {
+    "sleeper_rear": {
+     "aliases": [
+      "hátsó folyosó",
+      "hátra",
+      "hálókocsi"
+     ]
+    },
+    "dining": {
+     "requires": {
+      "solved": "A szalon lakatja"
+     },
+     "otherwise": "Az elülső ajtó résnyire enged, aztán megakad: kívülről, az étkezőkocsi felől lánc és lakat tartja.",
+     "aliases": [
+      "étkező",
+      "étkezőkocsi",
+      "előre"
+     ]
+    }
+   },
+   "aliases": [
+    "szalon"
+   ],
+   "firstText": "A szalonkocsi. Égnek a lámpák, a poharak az asztalon, a parti félbehagyva, mintha a társaság csak kiment volna.",
+   "details": [
+    "mélykék bársony",
+    "krómozott bárszékek",
+    "pálma egy cserépben",
+    "tompa zongorahangok emléke"
+   ]
+  },
+  "dining": {
+   "name": "Étkezőkocsi",
+   "into": "az étkezőkocsiba",
+   "inside": "az étkezőkocsiban",
+   "image": "dining",
+   "text": [
+    {
+     "if": {
+      "solved": "A szalon lakatja"
+     },
+     "text": "Az étkezőkocsiban ezt látjátok: a megterített asztalok, köztük a tiétek a boroskancsóval és a 11-es Hale asztala, a pult az étlappal, a falitelefon, a végében a konyha. Hátul a szalonkocsi ajtaja nyitva."
+    },
+    {
+     "text": "Az étkezőkocsiban ezt látjátok: a megterített asztalok, köztük a tiétek a boroskancsóval és a 11-es Hale asztala, a pult az étlappal, a falitelefon, a végében a konyha. Hátul a szalonkocsi ajtaja: láncon egy lakat."
+    }
+   ],
+   "exits": {
+    "sleeper_front": {
+     "aliases": [
+      "első hálókocsi",
+      "előre",
+      "folyosó"
+     ]
+    },
+    "salon": {
+     "requires": {
+      "solved": "A szalon lakatja"
+     },
+     "otherwise": "A szalonkocsi ajtaja láncon, a lakaton háromjegyű számzár.",
+     "panel": {
+      "id": "code_lock_salon",
+      "label": "A lakat számzára"
+     },
+     "aliases": [
+      "szalon",
+      "szalonkocsi",
+      "hátra"
+     ]
+    }
+   },
+   "aliases": [
+    "étkező",
+    "étterem"
+   ],
+   "firstText": "Az étkezőkocsi. Még ég a villany, a kávé illata a konyhából. Senki.",
+   "details": [
+    "fehér abroszok",
+    "rózsaszín lámpaernyők",
+    "kávéillat a konyhából"
+   ]
+  },
+  "sleeper_front": {
+   "name": "Első hálókocsi",
+   "into": "az első folyosóra",
+   "inside": "az első folyosón",
+   "image": "sleeper_front",
+   "text": "Az első hálókocsi folyosóján ezt látjátok: vörös futószőnyeg, az 1-es és a 2-es fülke nyitva, a 3-as a tiéd, a 4-es zárva, a kalauz üres ülése, a mennyezet alatt az elvágott vészfékzsinór. Elöl a postakocsi acélajtaja, hátul az étkezőkocsi.",
+   "exits": {
+    "compartment_b": {
+     "aliases": [
+      "3-as",
+      "fülkém",
+      "hármas"
+     ]
+    },
+    "dining": {
+     "aliases": [
+      "étkező",
+      "étkezőkocsi",
+      "hátra"
+     ]
+    },
+    "compartment_vogt": {
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 4-es fülke zárva, négyszögzárral. A kalauz kulcsa kellene.",
+     "aliases": [
+      "4-es",
+      "négyes",
+      "vogt"
+     ]
+    },
+    "mail": {
+     "requires": {
+      "has": "i_mail_key"
+     },
+     "otherwise": "A postakocsi ajtaja plombált, ólomzáras. Csak a postakulccsal nyílik.",
+     "aliases": [
+      "postakocsi",
+      "posta",
+      "előre"
+     ]
+    }
+   },
+   "aliases": [
+    "első folyosó",
+    "folyosó"
+   ],
+   "details": [
+    "vörös futószőnyeg",
+    "sárgaréz fali lámpák",
+    "hó az ablakokon"
+   ]
+  },
+  "compartment_b": {
+   "name": "A 3-as fülke",
+   "into": "a 3-as fülkébe",
+   "inside": "a 3-as fülkében",
+   "image": "compartment_b",
+   "text": "A 3-as fülkében ezt látjátok: a holmid, ahogy hagytad, az ablak, a csengő és a vészfék. Az ajtó nyitva áll a folyosóra.",
+   "exits": {
+    "sleeper_front": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "fülkém",
+    "3-as"
+   ],
+   "details": [
+    "intarziás fa",
+    "meleg lámpafény"
+   ]
+  },
+  "compartment_vogt": {
+   "name": "A 4-es fülke",
+   "into": "a 4-es fülkébe",
+   "inside": "a 4-es fülkében",
+   "image": "compartment_vogt",
+   "text": "A 4-es fülkében, Vogt fülkéjében ezt látjátok: az ágyon egy disznóbőr aktabőrönd, a fogason teveszőr kabát és homburg, az asztalkán ezüst szivartárca és egy üveg konyak. Minden rendben, mint egy szállodai szobában.",
+   "exits": {
+    "sleeper_front": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "vogt fülkéje",
+    "4-es"
+   ],
+   "firstText": "A négyszögkulcs nyitja a kalauz zárát, a fülke saját zárja nincs bezárva.",
+   "details": [
+    "konyak és szivar illata",
+    "rendezett holmik"
+   ]
+  },
+  "mail": {
+   "name": "Postakocsi",
+   "into": "a postakocsiba",
+   "inside": "a postakocsiban",
+   "image": "mail",
+   "text": "A postakocsiban ezt látjátok: postazsákok a padlón, rekeszes polcok a falon, egy válogatóasztal ajánlott küldeményekkel, köztük egy piros pecsétes csomag. Elöl egy ajtó a szerkocsi felé.",
+   "exits": {
+    "sleeper_front": {
+     "aliases": [
+      "hálókocsi",
+      "hátra"
+     ]
+    },
+    "tender": {
+     "aliases": [
+      "szerkocsi",
+      "előre"
+     ]
+    }
+   },
+   "aliases": [
+    "posta"
+   ],
+   "firstText": "A postakulcs elfordul, az ólomplomba leszakad. Hideg, csend, papírszag.",
+   "details": [
+    "vászonzsákok és pecsétviasz szaga",
+    "hideg levegő"
+   ]
+  },
+  "tender": {
+   "name": "Szerkocsi",
+   "into": "a szerkocsira",
+   "inside": "a szerkocsin",
+   "image": "tender",
+   "text": "A szerkocsin ezt látjátok: a havas szénhegy, mellette keskeny járópalló korláttal, a vízszekrény, a pallón egy szerszámláda. Elöl izzik a mozdony fülkéje.",
+   "exits": {
+    "mail": {
+     "aliases": [
+      "postakocsi",
+      "hátra"
+     ]
+    },
+    "cab": {
+     "aliases": [
+      "mozdony",
+      "fülke",
+      "előre"
+     ]
+    }
+   },
+   "aliases": [
+    "szén"
+   ],
+   "firstText": "Kiléptek a szerkocsira. Jeges szél, hó, a kerekek dübörgése. A mozdony füstje elszáll fölöttetek.",
+   "details": [
+    "jeges szél",
+    "szénpor és hó",
+    "a mozdony füstje"
+   ]
+  },
+  "cab": {
+   "name": "Mozdony",
+   "into": "a mozdonyra",
+   "inside": "a mozdonyon",
+   "image": "cab",
+   "text": [
+    {
+     "if": {
+      "all": [
+       {
+        "is": "regulator.state",
+        "eq": "free"
+       },
+       {
+        "is": "brake_valve.state",
+        "eq": "fixed"
+       }
+      ]
+     },
+     "text": "A mozdony fülkéjében ezt látjátok: az izzó tűzszekrény, a mérők, a falon a fékutasítás. A szabályozókar szabad, a fékszelepen a kar. Most már irányíthatjátok."
+    },
+    {
+     "text": "A mozdony fülkéjében ezt látjátok: az izzó tűzszekrény, a mérők, a falon a fékutasítás, a szabályozókar és a fékszelep. Senki nincs itt."
+    }
+   ],
+   "exits": {
+    "tender": {
+     "aliases": [
+      "szerkocsi",
+      "hátra"
+     ]
+    }
+   },
+   "aliases": [
+    "mozdony",
+    "gépház",
+    "fülke"
+   ],
+   "firstText": "A mozdony fülkéje. Senki. A tűz izzik, a sebességmérő a hetvenen túl. A szabályozókar lánccal nyitva rögzítve, a fékszelepről hiányzik a kar.",
+   "details": [
+    "izzó parázs hősége",
+    "olaj és gőz szaga",
+    "a kerekek dübörgése"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "door_12",
+   "name": "a fülke ajtaja",
+   "location": "compartment_a",
+   "aliases": [
+    "ajtó",
+    "fülkeajtó",
+    "kilincs",
+    "zár",
+    "ajtó alja",
+    "ajtórés",
+    "rés"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    },
+    "paper": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "door_12.open",
+      "eq": true
+     },
+     "text": "A fülke ajtaja nyitva, kint a folyosó."
+    },
+    {
+     "if": {
+      "is": "door_12.paper",
+      "eq": true
+     },
+     "text": "A fülke ajtaja zárva. Alatta a résen át kicsúszik az újság széle a folyosóra. A kulcslyukban kintről ott a kulcs."
+    },
+    {
+     "text": "Fényezett fa ajtó, sárgaréz kilinccsel. Zárva van, kívülről: a kilincs lenyomva sem enged. Alatta széles rés, a folyosó fénye beszűrődik. A kulcslyuk sötét, valami van benne kintről."
+    }
+   ],
+   "images": [
+    "compartment_door"
+   ],
+   "when": [
+    {
+     "if": {
+      "is": "door_12.open",
+      "eq": true
+     },
+     "images": [
+      "compartment_a_open"
+     ]
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "Rángatod a kilincset. Kívülről zárták be, a kulcs kint van a zárban.",
+     "set": {
+      "door_12.open": true
+     },
+     "say": "A négyszögkulcs illik a zárba belülről is. Fordul, kattan: az ajtó kinyílik a folyosóra.",
+     "images": [
+      "compartment_a_open"
+     ]
+    },
+    "use:i_square_key": {
+     "requires": {
+      "not": {
+       "is": "door_12.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "door_12.open": true
+     },
+     "say": "A négyszögkulcs illik a zárba belülről is. Fordul, kattan: az ajtó kinyílik a folyosóra.",
+     "images": [
+      "compartment_a_open"
+     ]
+    },
+    "use:i_newspaper": {
+     "requires": {
+      "not": {
+       "is": "door_12.paper",
+       "eq": true
+      }
+     },
+     "otherwise": "Az újság már az ajtó alatt van, a széle kint a folyosón.",
+     "set": {
+      "door_12.paper": true
+     },
+     "moveTo": {
+      "i_newspaper": "door_12"
+     },
+     "say": "Kihajtod az újságot, és a rés alatt kitolod a folyosóra, pont a kulcslyuk alá. A sarkát bent tartod."
+    },
+    "use:i_pen": {
+     "requires": {
+      "is": "door_12.paper",
+      "eq": true
+     },
+     "otherwise": "A tollal meglököd a kulcsot a zárban. Megmozdul. Ha most kiesik, a folyosón marad, és sosem éred el. Valamit előbb alá kellene tenni, amivel visszahúzhatod.",
+     "set": {
+      "door_12.paper": false
+     },
+     "reveal": [
+      "i_square_key"
+     ],
+     "take": [
+      "i_square_key",
+      "i_newspaper"
+     ],
+     "say": "A tollat a kulcslyukba dugod, és óvatosan nyomod. Kint halk koppanás: a kulcs leesett. Lassan visszahúzod az újságot, és ott fekszik rajta: a kalauz sárgaréz négyszögkulcsa.",
+     "images": [
+      "square_key"
+     ]
+    },
+    "force": {
+     "forbidden": "Nekifeszülsz, de az ajtó tömör, a zár erős. A vonat zajában senki nem hallja a dörömbölést."
+    },
+    "knock": {
+     "say": "Kopogsz, aztán dörömbölsz. Csak a kerekek zakatolása felel."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "keyhole",
+   "name": "kulcslyuk",
+   "location": "door_12",
+   "text": "Belenézel a kulcslyukba. Kintről benne hagytak egy kulcsot: egy sárgaréz négyszögkulcs szára tölti ki a lyukat, a fogója kint lóg a folyosón.",
+   "images": [
+    "keyhole"
+   ],
+   "rel": "part",
+   "aliases": [
+    "kulcs",
+    "zár lyuka",
+    "lyuk"
+   ],
+   "literal": true,
+   "actions": {
+    "use:i_pen": {
+     "requires": {
+      "is": "door_12.paper",
+      "eq": true
+     },
+     "otherwise": "A tollal meglököd a kulcsot a zárban. Megmozdul. Ha most kiesik, a folyosón marad, és sosem éred el. Valamit előbb alá kellene tenni, amivel visszahúzhatod.",
+     "set": {
+      "door_12.paper": false
+     },
+     "reveal": [
+      "i_square_key"
+     ],
+     "take": [
+      "i_square_key",
+      "i_newspaper"
+     ],
+     "say": "A tollat a kulcslyukba dugod, és óvatosan nyomod. Kint halk koppanás: a kulcs leesett. Lassan visszahúzod az újságot, és ott fekszik rajta: a kalauz sárgaréz négyszögkulcsa.",
+     "images": [
+      "square_key"
+     ]
+    },
+    "use:i_newspaper": {
+     "requires": {
+      "not": {
+       "is": "door_12.paper",
+       "eq": true
+      }
+     },
+     "otherwise": "Az újság már az ajtó alatt van, a széle kint a folyosón.",
+     "set": {
+      "door_12.paper": true
+     },
+     "moveTo": {
+      "i_newspaper": "door_12"
+     },
+     "say": "Kihajtod az újságot, és a rés alatt kitolod a folyosóra, pont a kulcslyuk alá. A sarkát bent tartod."
+    },
+    "use:i_square_key": {
+     "requires": {
+      "not": {
+       "is": "door_12.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "door_12.open": true
+     },
+     "say": "A négyszögkulcs illik a zárba belülről is. Fordul, kattan: az ajtó kinyílik a folyosóra.",
+     "images": [
+      "compartment_a_open"
+     ]
+    },
+    "force": {
+     "forbidden": "Nekifeszülsz, de az ajtó tömör, a zár erős. A vonat zajában senki nem hallja a dörömbölést."
+    }
+   }
+  },
+  {
+   "id": "i_newspaper",
+   "name": "újság",
+   "location": "window_table_12",
+   "rel": "on",
+   "mention": "egy összehajtott újság",
+   "carry": {
+    "name": "Újság"
+   },
+   "aliases": [
+    "napilap",
+    "lap",
+    "pesti esti krónika"
+   ],
+   "text": "Pesti Esti Krónika, december 14. A címlapon: „HÓVIHAR A BALKÁNON. Késnek a nemzetközi gyorsvonatok.” Nagy, kihajtható lap.",
+   "images": [
+    "newspaper"
+   ]
+  },
+  {
+   "id": "i_pen",
+   "name": "töltőtoll",
+   "location": "window_table_12",
+   "rel": "on",
+   "mention": "egy fekete töltőtoll",
+   "carry": {
+    "name": "Töltőtoll"
+   },
+   "aliases": [
+    "toll"
+   ],
+   "text": "Fekete töltőtoll, vékony aranyozott heggyel. A tiéd, vacsoránál még írtál vele.",
+   "images": [
+    "pen"
+   ]
+  },
+  {
+   "id": "window_table_12",
+   "name": "ablakasztalka",
+   "location": "compartment_a",
+   "text": "Lehajtható kis asztal az ablak alatt{contents:. Rajta }.",
+   "aliases": [
+    "asztalka",
+    "kisasztal",
+    "asztal"
+   ]
+  },
+  {
+   "id": "brake_12",
+   "name": "vészfék",
+   "location": "compartment_a",
+   "text": "Piros vészfékfogantyú a falon. Lötyög: meghúzod, és semmi nem történik. A zsinórját valahol kint elvágták.",
+   "images": [
+    "brake_handle_cut"
+   ],
+   "aliases": [
+    "vészfékfogantyú",
+    "fogantyú",
+    "zsinór",
+    "vészfékzsinór"
+   ],
+   "actions": {
+    "pull": {
+     "say": "Teljes erőből meghúzod. A fogantyú lötyögve lejön ütközésig, és semmi. A vonat nem lassít."
+    },
+    "use": {
+     "say": "Teljes erőből meghúzod. A fogantyú lötyögve lejön ütközésig, és semmi. A vonat nem lassít."
+    }
+   }
+  },
+  {
+   "id": "timetable_12",
+   "name": "menetrend",
+   "location": "compartment_a",
+   "text": "Bekeretezett menetrend a falon: Budapest 19:15, Szabadka, Beograd 23:50, Lapovo 01:40, Niš, Szófia, Isztambul. A karórád szerint most 03:10 van.",
+   "aliases": [
+    "menetrend a falon",
+    "keret"
+   ],
+   "literal": true
+  },
+  {
+   "id": "bed_12",
+   "name": "ágy",
+   "location": "compartment_a",
+   "text": "Fehér lepedő, kék takaró, a párna gyűrött. Úgy aludtál el, ahogy vacsora után ledőltél. A fejed még most is zúg.",
+   "aliases": [
+    "takaró",
+    "párna",
+    "lepedő"
+   ],
+   "actions": {
+    "search": {
+     "say": "Átnézed az ágyat. Csak a saját melegedet találod."
+    }
+   }
+  },
+  {
+   "id": "washstand_12",
+   "name": "mosdó",
+   "location": "compartment_a",
+   "text": "Lehajtható diófa mosdó tükörrel. A víz hideg, jólesik az arcodra.",
+   "aliases": [
+    "tükör",
+    "csap",
+    "víz"
+   ],
+   "actions": {
+    "use": {
+     "say": "Megmosod az arcod a hideg vízben. Egy kicsit kitisztul a fejed."
+    }
+   }
+  },
+  {
+   "id": "suitcase_12",
+   "name": "bőrönd",
+   "location": "compartment_a",
+   "text": "A saját bőröndöd a csomagtartón, ahogy feltetted. Semmi hasznos nincs benne az útra: ingek, borotva, egy könyv.",
+   "aliases": [
+    "csomagtartó",
+    "bőröndöm"
+   ]
+  },
+  {
+   "id": "bell_12",
+   "name": "csengő",
+   "location": "compartment_a",
+   "text": "Porcelán csengőgomb a kalauznak. Megnyomod: a folyosó végén halkan szól, de senki nem jön.",
+   "aliases": [
+    "csengőgomb",
+    "gomb"
+   ],
+   "actions": {
+    "press": {
+     "say": "Megnyomod. A folyosó végén halkan cseng. Senki nem jön."
+    }
+   }
+  },
+  {
+   "id": "window_12",
+   "name": "ablak",
+   "location": "compartment_a",
+   "text": "Dupla üveg, a redőny félig lehúzva. Kint hó és sötét, fenyők suhannak el. A vonat egyre gyorsabban megy, és nem fékez.",
+   "aliases": [
+    "redőny",
+    "hó"
+   ],
+   "actions": {
+    "open": {
+     "say": "Csak résnyire nyílik. Jeges szél és hó vágódik be, a kerekek zaja dübörög. Visszahúzod."
+    }
+   }
+  },
+  {
+   "id": "door_9",
+   "name": "a 9-es fülke",
+   "location": "sleeper_rear",
+   "text": "A 9-es fülke ajtaja résnyire nyitva: dr. Pongrácz. Bent egy nyitott orvosi táska, üvegcsék, egy sztetoszkóp, és egy üres gyógyszeres üveg, a címkéje leszakítva.",
+   "aliases": [
+    "9-es",
+    "kilences",
+    "pongrácz",
+    "orvosi táska",
+    "táska",
+    "gyógyszeres üveg"
+   ],
+   "actions": {
+    "search": {
+     "say": "Átnézed a táskát. Kötszer, fecskendő, üvegcsék. Az üres üveg altatónak látszik, a címkéje leszakítva."
+    }
+   }
+  },
+  {
+   "id": "door_10_rear",
+   "name": "a 10-es fülke ajtaja",
+   "location": "sleeper_rear",
+   "text": "A 10-es fülke ajtaja nyitva, illatfelhő jön ki rajta.",
+   "aliases": [
+    "10-es",
+    "tízes"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "compartment_klara"
+    },
+    "enter": {
+     "goTo": "compartment_klara"
+    }
+   }
+  },
+  {
+   "id": "door_11",
+   "name": "a 11-es fülke ajtaja",
+   "location": "sleeper_rear",
+   "text": [
+    {
+     "if": {
+      "visited": "compartment_hale"
+     },
+     "text": "A 11-es fülke ajtaja, E. Hale fülkéje. Nyitva hagytátok."
+    },
+    {
+     "text": "A 11-es fülke ajtaja zárva. A kalauz négyszögzárja van rajta."
+    }
+   ],
+   "aliases": [
+    "11-es",
+    "tizenegyes"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "compartment_hale",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 11-es fülke zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "enter": {
+     "goTo": "compartment_hale",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 11-es fülke zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "use:i_square_key": {
+     "goTo": "compartment_hale"
+    }
+   }
+  },
+  {
+   "id": "conductor_door",
+   "name": "a kalauzfülke ajtaja",
+   "location": "sleeper_rear",
+   "text": "A folyosó végén a kalauzfülke ajtaja, négyszögzárral.",
+   "aliases": [
+    "kalauzfülke",
+    "kalauz ajtaja"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "conductor",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A kalauzfülke zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "enter": {
+     "goTo": "conductor",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A kalauzfülke zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "use:i_square_key": {
+     "goTo": "conductor"
+    }
+   }
+  },
+  {
+   "id": "salon_back_door",
+   "name": "a szalonkocsi ajtaja",
+   "location": "sleeper_rear",
+   "text": "A kocsi elején az átjáró a szalonkocsiba. Az ajtón négyszögzár.",
+   "aliases": [
+    "átjáró",
+    "szalon ajtaja",
+    "hátsó ajtó"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "salon",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "Az átjáró a szalonkocsiba zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "enter": {
+     "goTo": "salon",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "Az átjáró a szalonkocsiba zárva, négyszögzárral. A kalauz kulcsa kellene."
+    },
+    "use:i_square_key": {
+     "goTo": "salon"
+    }
+   }
+  },
+  {
+   "id": "cord_rear",
+   "name": "vészfékzsinór",
+   "location": "sleeper_rear",
+   "text": "A folyosó mennyezete alatt fut a vészfékzsinór. A kalauzfülke előtt tisztán el van vágva, a vége lóg.",
+   "aliases": [
+    "zsinór",
+    "elvágott zsinór"
+   ],
+   "literal": true
+  },
+  {
+   "id": "manifest",
+   "name": "menetlevél",
+   "location": "conductor",
+   "text": "A kalauz pultján a menetlevél: ki melyik fülkében utazik. A hátoldalán is írás van.",
+   "images": [
+    "manifest",
+    "manifest_back"
+   ],
+   "aliases": [
+    "utaslista",
+    "lista",
+    "hátoldal"
+   ],
+   "literal": true
+  },
+  {
+   "id": "key_board",
+   "name": "kulcstábla",
+   "location": "conductor",
+   "text": "Kis fali kulcstábla számozott kampókkal: 1-től 12-ig a fülkék pótkulcsai. A 4-es kampó üres.",
+   "aliases": [
+    "kulcsok",
+    "pótkulcsok",
+    "kampók"
+   ],
+   "literal": true
+  },
+  {
+   "id": "coat",
+   "name": "a kalauz kabátja",
+   "location": "conductor",
+   "text": [
+    {
+     "if": {
+      "where": "i_order",
+      "at": "coat"
+     },
+     "text": "A fogason a kalauz sötétkék egyenkabátja lóg, rézgombokkal. Az egyik zsebből papír sarka kandikál ki."
+    },
+    {
+     "text": "A fogason a kalauz sötétkék egyenkabátja. A zsebei üresek."
+    }
+   ],
+   "aliases": [
+    "kabát",
+    "egyenkabát",
+    "zseb",
+    "zsebek",
+    "fogas"
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "where": "i_order",
+      "at": "coat"
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_order"
+     ],
+     "take": [
+      "i_order"
+     ],
+     "say": "A zsebben egy összehajtott szolgálati papír.",
+     "images": [
+      "order"
+     ]
+    },
+    "reach_in": {
+     "requires": {
+      "where": "i_order",
+      "at": "coat"
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_order"
+     ],
+     "take": [
+      "i_order"
+     ],
+     "say": "A zsebben egy összehajtott szolgálati papír.",
+     "images": [
+      "order"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_order",
+   "name": "szolgálati utasítás",
+   "location": "coat",
+   "hidden": true,
+   "carry": {
+    "name": "Szolgálati utasítás"
+   },
+   "aliases": [
+    "utasítás",
+    "papír",
+    "cetli"
+   ],
+   "text": "Vasúti szolgálati utasítás, sárgás papíron.",
+   "images": [
+    "order"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wall_phone_c",
+   "name": "falitelefon",
+   "location": "conductor",
+   "text": "Fekete falitelefon a vonat belső vonalán. A tárcsa helyén csak egy kar: „ÉTKEZŐKOCSI”.",
+   "images": [
+    "wall_phone"
+   ],
+   "aliases": [
+    "telefon",
+    "kagyló"
+   ],
+   "actions": {
+    "use": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, az étkezőkocsiban, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "dining",
+      "text": "A konyha melletti falitelefon élesen csörögni kezd. Valaki a kalauzfülkéből hív."
+     }
+    },
+    "call": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, az étkezőkocsiban, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "dining",
+      "text": "A konyha melletti falitelefon élesen csörögni kezd. Valaki a kalauzfülkéből hív."
+     }
+    },
+    "ring": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, az étkezőkocsiban, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "dining",
+      "text": "A konyha melletti falitelefon élesen csörögni kezd. Valaki a kalauzfülkéből hív."
+     }
+    }
+   }
+  },
+  {
+   "id": "beer_bottles",
+   "name": "üres sörösüvegek",
+   "location": "conductor",
+   "text": "A kalauz pultja alatt két üres sörösüveg, barna címkével. A kalauz kedvenc itala, úgy látszik.",
+   "aliases": [
+    "sörösüveg",
+    "sör",
+    "üvegek"
+   ],
+   "literal": true
+  },
+  {
+   "id": "punch",
+   "name": "jegylyukasztó",
+   "location": "conductor",
+   "text": "A kalauz jegylyukasztója a pulton.",
+   "aliases": [
+    "lyukasztó"
+   ]
+  },
+  {
+   "id": "typewriter",
+   "name": "írógép",
+   "location": "compartment_hale",
+   "text": "Fekete hordozható írógép az ablak alatti asztalkán. A papírt kitépték belőle, csak egy keskeny csík maradt a henger alatt. A szalag benne van: használt, fekete.",
+   "images": [
+    "typewriter",
+    "ribbon"
+   ],
+   "aliases": [
+    "gép",
+    "szalag",
+    "írógépszalag",
+    "henger"
+   ],
+   "panel": {
+    "id": "typewriter_ribbon",
+    "label": "Az írógép szalagja"
+   }
+  },
+  {
+   "id": "hale_jacket",
+   "name": "tweedzakó",
+   "location": "compartment_hale",
+   "text": [
+    {
+     "if": {
+      "where": "i_bill_left",
+      "at": "hale_jacket"
+     },
+     "text": "Hale tweedzakója a fogason. A belső zsebből egy papír széle látszik."
+    },
+    {
+     "text": "Hale tweedzakója a fogason. A zsebei üresek."
+    }
+   ],
+   "aliases": [
+    "zakó",
+    "zseb",
+    "belső zseb",
+    "fogas"
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "where": "i_bill_left",
+      "at": "hale_jacket"
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_bill_left"
+     ],
+     "take": [
+      "i_bill_left"
+     ],
+     "say": "A belső zsebben egy félbetépett számla: a vacsoráé, az étkezőkocsiból.",
+     "images": [
+      "bill_left"
+     ]
+    },
+    "reach_in": {
+     "requires": {
+      "where": "i_bill_left",
+      "at": "hale_jacket"
+     },
+     "otherwise": "A zsebek üresek.",
+     "reveal": [
+      "i_bill_left"
+     ],
+     "take": [
+      "i_bill_left"
+     ],
+     "say": "A belső zsebben egy félbetépett számla: a vacsoráé, az étkezőkocsiból.",
+     "images": [
+      "bill_left"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_bill_left",
+   "name": "félszámla (a fogások)",
+   "location": "hale_jacket",
+   "hidden": true,
+   "carry": {
+    "name": "Félszámla, a fogások"
+   },
+   "aliases": [
+    "számla",
+    "félszámla",
+    "fél számla"
+   ],
+   "text": "Az étkezőkocsi számlájának bal fele: a fogások és a darabszám. Az árak a leszakadt felén voltak.",
+   "images": [
+    "bill_left"
+   ],
+   "literal": true
+  },
+  {
+   "id": "hale_books",
+   "name": "angol könyvek",
+   "location": "compartment_hale",
+   "text": "Egy halom angol könyv: útikönyv a Balkánról, egy detektívregény, egy gyorsírás-tankönyv.",
+   "aliases": [
+    "könyvek",
+    "könyv",
+    "útikönyv"
+   ]
+  },
+  {
+   "id": "hale_pipe",
+   "name": "pipa és dohány",
+   "location": "compartment_hale",
+   "text": "Egy rövid pipa és egy doboz angol dohány az asztalkán. Hidegek.",
+   "aliases": [
+    "pipa",
+    "dohány",
+    "dohányszelence"
+   ]
+  },
+  {
+   "id": "hale_briefcase",
+   "name": "aktatáska",
+   "location": "compartment_hale",
+   "text": "Bőr aktatáska a padlón, nyitva és üresen. A papírok szanaszét: valaki gyorsan és dühösen átkutatta.",
+   "aliases": [
+    "táska",
+    "papírok",
+    "szétszórt papírok"
+   ],
+   "actions": {
+    "search": {
+     "say": "Átnézed a szétszórt papírokat: újságkivágások, menetjegyek, jegyzetek gyorsírással. Bármit kerestek itt, elvitték, vagy nem találták."
+    }
+   }
+  },
+  {
+   "id": "hale_bed",
+   "name": "ágy",
+   "location": "compartment_hale",
+   "text": "Feldúlt ágy, a matrac félrehúzva. Valaki ezt is átnézte.",
+   "aliases": [
+    "matrac",
+    "takaró"
+   ],
+   "actions": {
+    "search": {
+     "say": "A matrac alatt nincs semmi. Aki előttetek járt, alapos volt."
+    }
+   }
+  },
+  {
+   "id": "klara_dresses",
+   "name": "estélyi ruhák",
+   "location": "compartment_klara",
+   "text": "Két estélyi ruha a fogason, egy fekete bársony és egy ezüst flitteres, mellettük egy rókaprém stóla.",
+   "aliases": [
+    "ruhák",
+    "ruha",
+    "stóla",
+    "prém"
+   ]
+  },
+  {
+   "id": "klara_table",
+   "name": "piperepolc",
+   "location": "compartment_klara",
+   "text": "Púderdoboz, rúzsok, egy kis tükör, egy kotta, és egy rózsaszín szalaggal átkötött köteg levél.",
+   "aliases": [
+    "púderdoboz",
+    "kotta",
+    "kottafüzet",
+    "rúzs",
+    "tükör"
+   ],
+   "actions": {
+    "search": {
+     "say": "Kotta egy operettből, ceruzás bejegyzésekkel. A púder illata betölti a fülkét."
+    }
+   }
+  },
+  {
+   "id": "fan_letters",
+   "name": "rajongói levelek",
+   "location": "compartment_klara",
+   "text": "Rajongói levelek Ványai Klárának, rózsaszín szalaggal átkötve. „Drága Művésznő…” Mind ugyanígy kezdődik.",
+   "aliases": [
+    "levelek",
+    "szalag",
+    "köteg"
+   ],
+   "actions": {
+    "read": {
+     "say": "Beleolvasol néhányba. Virágok, szonett, egy házassági ajánlat. Semmi, ami ide tartozna."
+    }
+   }
+  },
+  {
+   "id": "piano",
+   "name": "pianínó",
+   "location": "salon",
+   "aliases": [
+    "zongora",
+    "billentyűk",
+    "billentyű",
+    "húrok",
+    "fedél",
+    "teteje"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": [
+     {
+      "if": {
+       "solved": "Az írógépszalag"
+      },
+      "text": "Világos fa pianínó a szalon falánál, nyitott kottával. Két billentyűje nem szól, csak tompán koppan. A teteje felhajtható."
+     },
+     {
+      "text": "Világos fa pianínó a szalon falánál, nyitott kottával. Hangolatlan. Két billentyűje nem szól, csak tompán koppan, mintha valami a húroknál akadna."
+     }
+    ],
+    "open": "A pianínó teteje felhajtva. A húrok mögül kivettétek a filmdobozt."
+   },
+   "images": {
+    "closed": [
+     "piano"
+    ],
+    "open": [
+     "piano_open"
+    ]
+   },
+   "actions": {
+    "play": {
+     "say": "Leütsz néhány hangot. Hamis, és két billentyű csak tompán koppan."
+    },
+    "open": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az írógépszalag"
+       },
+       {
+        "is": "piano.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Felhajtjátok a tetejét, belenéztek: húrok, filc, por. Nem tudjátok, mit kellene keresni benne.",
+     "setState": "open",
+     "reveal": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "take": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "say": "Felhajtjátok a pianínó tetejét. A húrok mögé szorítva egy kis kerek fém filmdoboz. Ezért nem szólt a két billentyű. Benne egy tekercs mikrofilm, és egy összehajtott cetli.",
+     "images": [
+      "piano_open",
+      "i_film",
+      "hale_note"
+     ]
+    },
+    "search": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az írógépszalag"
+       },
+       {
+        "is": "piano.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Felhajtjátok a tetejét, belenéztek: húrok, filc, por. Nem tudjátok, mit kellene keresni benne.",
+     "setState": "open",
+     "reveal": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "take": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "say": "Felhajtjátok a pianínó tetejét. A húrok mögé szorítva egy kis kerek fém filmdoboz. Ezért nem szólt a két billentyű. Benne egy tekercs mikrofilm, és egy összehajtott cetli.",
+     "images": [
+      "piano_open",
+      "i_film",
+      "hale_note"
+     ]
+    },
+    "lift": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az írógépszalag"
+       },
+       {
+        "is": "piano.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Felhajtjátok a tetejét, belenéztek: húrok, filc, por. Nem tudjátok, mit kellene keresni benne.",
+     "setState": "open",
+     "reveal": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "take": [
+      "i_film",
+      "i_hale_note"
+     ],
+     "say": "Felhajtjátok a pianínó tetejét. A húrok mögé szorítva egy kis kerek fém filmdoboz. Ezért nem szólt a két billentyű. Benne egy tekercs mikrofilm, és egy összehajtott cetli.",
+     "images": [
+      "piano_open",
+      "i_film",
+      "hale_note"
+     ]
+    }
+   }
+  },
+  {
+   "id": "card_table",
+   "name": "kártyaasztal",
+   "location": "salon",
+   "aliases": [
+    "asztal",
+    "kártyák",
+    "lapok",
+    "parti",
+    "ulti",
+    "zöld posztó",
+    "szivar",
+    "pipa",
+    "szilvórium",
+    "pohár",
+    "sörösüveg",
+    "sör",
+    "hamutartó"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "A félbehagyott parti"
+     },
+     "text": "A félbehagyott parti. A szivar helyén megfordítottátok a három lapot: hetes, ász, kilences."
+    },
+    {
+     "text": "Zöld posztós kártyaasztal, négy hely, félbehagyott parti. Mindegyik helyen lefordított lapok. Az egyik helyen hamutartóban egy félig szívott szivar, piros-arany gyűrűvel, előtte három lefordított lap szépen sorban. A másikon egy pipa, a harmadikon egy kis pohár szilvórium, a negyediken egy sörösüveg, a lapokra borulva. A szélén egy pontozólap."
+    }
+   ],
+   "images": [
+    "card_table"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "logic_grid",
+    "label": "A parti: ki hol ült"
+   },
+   "actions": {
+    "turn_cards": {
+     "requires": {
+      "solved": "A félbehagyott parti"
+     },
+     "otherwise": "Megfordítanátok a lapokat, de melyik hely számít? Ha rossz lapokat fordítotok fel, összekeveritek a partit. Előbb tudjátok meg, ki nyert, és hol ült.",
+     "say": "A szivar helyén, Vogt helyén megfordítjátok a három lapot: hetes, ász, kilences."
+    }
+   }
+  },
+  {
+   "id": "score_sheet",
+   "name": "pontozólap",
+   "location": "card_table",
+   "text": "Ceruzás pontozólap négy monogrammal: V., M., Sz., P. Öt leosztás, az utolsó sor a végeredmény.",
+   "images": [
+    "score"
+   ],
+   "rel": "on",
+   "aliases": [
+    "pontok",
+    "monogramok",
+    "lap"
+   ],
+   "literal": true
+  },
+  {
+   "id": "route_map",
+   "name": "útvonaltérkép",
+   "location": "salon",
+   "text": "Bekeretezett útvonaltérkép a falon: a fővonal Beogradtól Lapovón, Nišen át Szófia felé, a folyóvölgyben. Mellékvonal nincs rajta.",
+   "aliases": [
+    "térkép",
+    "térkép a falon",
+    "útvonal"
+   ],
+   "literal": true
+  },
+  {
+   "id": "salon_bar",
+   "name": "bárpult",
+   "location": "salon",
+   "text": "Íves bárpult krómozott székekkel, mögötte üvegek: konyak, gin, szilvórium. Két pohár félig töltve maradt.",
+   "aliases": [
+    "bár",
+    "üvegek",
+    "italok",
+    "pult"
+   ],
+   "actions": {
+    "drink": {
+     "say": "Jobb nem inni semmit ezen a vonaton, aminek a kancsójában ott volt az altató."
+    }
+   }
+  },
+  {
+   "id": "salon_armchairs",
+   "name": "fotelek",
+   "location": "salon",
+   "text": "Mélykék bársonyfotelek és egy pamlag, kissé elfordítva, mintha a társaság sietve állt volna fel.",
+   "aliases": [
+    "fotel",
+    "pamlag",
+    "kanapé"
+   ]
+  },
+  {
+   "id": "salon_front_door",
+   "name": "a szalon elülső ajtaja",
+   "location": "salon",
+   "text": [
+    {
+     "if": {
+      "solved": "A szalon lakatja"
+     },
+     "text": "Az elülső ajtó nyitva, át az étkezőkocsiba."
+    },
+    {
+     "text": "Az elülső ajtó az étkezőkocsi felé. Résnyire enged, aztán megakad: kívülről lánc és lakat tartja. Innen nem lehet kinyitni."
+    }
+   ],
+   "aliases": [
+    "elülső ajtó",
+    "lánc",
+    "lakat",
+    "ajtó"
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "A lánc vastag, a lakat kint lóg. Résnyire nyílik, ennyi."
+    }
+   }
+  },
+  {
+   "id": "reka_things",
+   "name": "a holmid",
+   "location": "compartment_b",
+   "text": "A kis bőröndöd, a kardigánod az ágyon, a könyved a könyvjelzővel, a kesztyűd. Minden ott, ahová vacsora után tetted.",
+   "aliases": [
+    "bőrönd",
+    "kardigán",
+    "könyv",
+    "kesztyű"
+   ]
+  },
+  {
+   "id": "brake_3",
+   "name": "vészfék",
+   "location": "compartment_b",
+   "text": "Piros vészfékfogantyú a falon. Lötyög: meghúzod, és semmi. A zsinórját elvágták.",
+   "images": [
+    "brake_handle_cut"
+   ],
+   "aliases": [
+    "fogantyú",
+    "zsinór"
+   ],
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. A fogantyú lötyögve lejön, és semmi. A vonat nem lassít."
+    },
+    "use": {
+     "say": "Meghúzod. A fogantyú lötyögve lejön, és semmi. A vonat nem lassít."
+    }
+   }
+  },
+  {
+   "id": "bell_3",
+   "name": "csengő",
+   "location": "compartment_b",
+   "text": "Porcelán csengőgomb a kalauznak. Megnyomod: senki nem jön.",
+   "aliases": [
+    "gomb"
+   ],
+   "actions": {
+    "press": {
+     "say": "Megnyomod. A folyosón halkan cseng. Senki nem jön."
+    }
+   }
+  },
+  {
+   "id": "window_3",
+   "name": "ablak",
+   "location": "compartment_b",
+   "text": "Kint hó és sötét. A vonat nem lassít, sőt.",
+   "aliases": [
+    "redőny"
+   ]
+  },
+  {
+   "id": "bed_3",
+   "name": "ágy",
+   "location": "compartment_b",
+   "text": "Gyűrött ágy. Úgy aludtál el, ahogy ledőltél, és a fejed még zúg.",
+   "aliases": [
+    "takaró",
+    "párna"
+   ]
+  },
+  {
+   "id": "door_1",
+   "name": "az 1-es fülke",
+   "location": "sleeper_front",
+   "text": "Az 1-es fülke nyitva: Jovanović atya. Az ágyon egy breviárium, a párnán egy rózsafüzér.",
+   "aliases": [
+    "1-es",
+    "egyes",
+    "breviárium",
+    "rózsafüzér",
+    "atya"
+   ]
+  },
+  {
+   "id": "door_2",
+   "name": "a 2-es fülke",
+   "location": "sleeper_front",
+   "text": "A 2-es fülke nyitva: Kertész úr, az órakereskedő. Egy nyitott mintakoffer, tele zsebórákkal, mindegyik más időt mutat.",
+   "aliases": [
+    "2-es",
+    "kettes",
+    "mintakoffer",
+    "órák",
+    "zsebórák",
+    "órakereskedő"
+   ],
+   "actions": {
+    "search": {
+     "say": "Végignézed az órákat. Húsz óra, húszféle idő. Egyik sem mond semmit."
+    }
+   }
+  },
+  {
+   "id": "door_4",
+   "name": "a 4-es fülke ajtaja",
+   "location": "sleeper_front",
+   "text": [
+    {
+     "if": {
+      "visited": "compartment_vogt"
+     },
+     "text": "A 4-es fülke ajtaja, K. Vogt fülkéje."
+    },
+    {
+     "text": "A 4-es fülke ajtaja zárva. Két zár van rajta: a fülke saját zárja, és a kalauz négyszögzárja."
+    }
+   ],
+   "aliases": [
+    "4-es",
+    "négyes",
+    "vogt"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "compartment_vogt",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 4-es fülke zárva. A kalauz négyszögzárja van rajta."
+    },
+    "enter": {
+     "goTo": "compartment_vogt",
+     "requires": {
+      "has": "i_square_key"
+     },
+     "otherwise": "A 4-es fülke zárva. A kalauz négyszögzárja van rajta."
+    },
+    "use:i_square_key": {
+     "goTo": "compartment_vogt"
+    }
+   }
+  },
+  {
+   "id": "conductor_seat",
+   "name": "a kalauz helye",
+   "location": "sleeper_front",
+   "text": "A folyosó végén a kalauz kis lehajtható ülése, üresen. A fogason nincs kabát.",
+   "aliases": [
+    "ülés",
+    "kalauz"
+   ]
+  },
+  {
+   "id": "cord_front",
+   "name": "vészfékzsinór",
+   "location": "sleeper_front",
+   "text": "A mennyezet alatt futó vészfékzsinór itt is el van vágva.",
+   "aliases": [
+    "zsinór"
+   ],
+   "literal": true
+  },
+  {
+   "id": "mail_door",
+   "name": "a postakocsi ajtaja",
+   "location": "sleeper_front",
+   "text": [
+    {
+     "if": {
+      "visited": "mail"
+     },
+     "text": "A postakocsi ajtaja, a plomba letépve."
+    },
+    {
+     "text": "A kocsi elején a postakocsi acélajtaja. Plombált, ólomzárral: csak a postakulccsal nyílik."
+    }
+   ],
+   "images": [
+    "mail_door"
+   ],
+   "aliases": [
+    "postakocsi",
+    "plomba",
+    "acélajtó",
+    "elülső ajtó"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "mail",
+     "requires": {
+      "has": "i_mail_key"
+     },
+     "otherwise": "A postakocsi ajtaja plombált, ólomzáras. Csak a postakulccsal nyílik."
+    },
+    "enter": {
+     "goTo": "mail",
+     "requires": {
+      "has": "i_mail_key"
+     },
+     "otherwise": "A postakocsi ajtaja plombált, ólomzáras. Csak a postakulccsal nyílik."
+    },
+    "use:i_mail_key": {
+     "goTo": "mail"
+    }
+   }
+  },
+  {
+   "id": "vogt_case",
+   "name": "Vogt bőröndje",
+   "location": "compartment_vogt",
+   "aliases": [
+    "bőrönd",
+    "aktatáska",
+    "számzár",
+    "koffer"
+   ],
+   "state": {
+    "initial": "locked",
+    "values": [
+     "locked",
+     "open"
+    ]
+   },
+   "text": {
+    "locked": "Disznóbőr aktabőrönd sárgaréz sarkokkal az ágyon. Háromtárcsás számzár.",
+    "open": "Vogt bőröndje nyitva. Egy pár bőrkesztyű maradt benne."
+   },
+   "images": {
+    "locked": [
+     "compartment_vogt_case"
+    ],
+    "open": [
+     "vogt_case_open"
+    ]
+   },
+   "panel": {
+    "id": "code_lock_vogt",
+    "label": "A bőrönd számzára"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Vogt bőröndje"
+     },
+     "panel": null
+    }
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "A sárgaréz zár erős, a bőr vastag. Kód kell hozzá."
+    }
+   }
+  },
+  {
+   "id": "cigar_case",
+   "name": "szivartárca",
+   "location": "compartment_vogt",
+   "text": "Ezüst szivartárca az asztalkán. Benne három szivar, piros-arany gyűrűvel.",
+   "aliases": [
+    "szivar",
+    "szivarok",
+    "tárca"
+   ],
+   "literal": true
+  },
+  {
+   "id": "vogt_coat",
+   "name": "teveszőr kabát",
+   "location": "compartment_vogt",
+   "text": "Teveszőr kabát és egy fekete homburg kalap a fogason. A zsebek üresek.",
+   "aliases": [
+    "kabát",
+    "kalap",
+    "homburg"
+   ],
+   "actions": {
+    "search": {
+     "say": "A zsebek üresek, csak egy beogradi szálloda gyufája."
+    }
+   }
+  },
+  {
+   "id": "vogt_brandy",
+   "name": "konyak",
+   "location": "compartment_vogt",
+   "text": "Egy üveg francia konyak, félig üresen.",
+   "aliases": [
+    "üveg",
+    "pálinka"
+   ]
+  },
+  {
+   "id": "our_table",
+   "name": "a ti asztalotok",
+   "location": "dining",
+   "text": "A ti asztalotok, ahogy vacsora után otthagytátok: két tányér, morzsák, a boroskancsó.",
+   "aliases": [
+    "asztalunk",
+    "tányérok"
+   ]
+  },
+  {
+   "id": "carafe",
+   "name": "boroskancsó",
+   "location": "our_table",
+   "text": "A boroskancsóban kevés vörösbor maradt. Az alján finom, fehér üledék.",
+   "images": [
+    "wine_carafe"
+   ],
+   "rel": "on",
+   "aliases": [
+    "kancsó",
+    "bor",
+    "üledék"
+   ],
+   "literal": true,
+   "actions": {
+    "drink": {
+     "forbidden": "Az üledék nem a borból van. Ebből ittatok vacsoránál, és utána aludtatok el."
+    }
+   }
+  },
+  {
+   "id": "hale_table",
+   "name": "a 11-es asztal",
+   "location": "dining",
+   "text": "A szomszéd asztal, a 11-es: ott ült Hale. Üres kávéscsészék, egy nehéz kristály hamutartó.",
+   "aliases": [
+    "11-es asztal",
+    "hale asztala",
+    "szomszéd asztal"
+   ]
+  },
+  {
+   "id": "ashtray",
+   "name": "hamutartó",
+   "location": "hale_table",
+   "rel": "on",
+   "aliases": [
+    "kristály hamutartó",
+    "szivarcsikk"
+   ],
+   "text": [
+    {
+     "if": {
+      "where": "i_bill_right",
+      "at": "ashtray"
+     },
+     "text": "Nehéz kristály hamutartó, benne egy szivarcsikk. Alóla egy papír széle kandikál ki."
+    },
+    {
+     "text": "Nehéz kristály hamutartó, benne egy szivarcsikk."
+    }
+   ],
+   "images": [
+    "ashtray"
+   ],
+   "actions": {
+    "lift": {
+     "requires": {
+      "where": "i_bill_right",
+      "at": "ashtray"
+     },
+     "otherwise": "A hamutartó alatt már nincs semmi.",
+     "reveal": [
+      "i_bill_right"
+     ],
+     "take": [
+      "i_bill_right"
+     ],
+     "say": "Felemelitek a hamutartót. Alatta egy félbetépett számla, a jobb fele: csak számok, és egy borfolt.",
+     "images": [
+      "bill_right"
+     ]
+    },
+    "move": {
+     "requires": {
+      "where": "i_bill_right",
+      "at": "ashtray"
+     },
+     "otherwise": "A hamutartó alatt már nincs semmi.",
+     "reveal": [
+      "i_bill_right"
+     ],
+     "take": [
+      "i_bill_right"
+     ],
+     "say": "Felemelitek a hamutartót. Alatta egy félbetépett számla, a jobb fele: csak számok, és egy borfolt.",
+     "images": [
+      "bill_right"
+     ]
+    },
+    "search": {
+     "requires": {
+      "where": "i_bill_right",
+      "at": "ashtray"
+     },
+     "otherwise": "A hamutartó alatt már nincs semmi.",
+     "reveal": [
+      "i_bill_right"
+     ],
+     "take": [
+      "i_bill_right"
+     ],
+     "say": "Felemelitek a hamutartót. Alatta egy félbetépett számla, a jobb fele: csak számok, és egy borfolt.",
+     "images": [
+      "bill_right"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_bill_right",
+   "name": "félszámla (az árak)",
+   "location": "ashtray",
+   "rel": "under",
+   "hidden": true,
+   "carry": {
+    "name": "Félszámla, az árak"
+   },
+   "aliases": [
+    "számla",
+    "félszámla",
+    "borfolt"
+   ],
+   "text": "Az étkezőkocsi számlájának jobb fele: fölül „Asztal: 11”, alatta az összegek oszlopa, de vörösbor ömlött rá: csak két szám olvasható. Az összesen sor is a folt alatt van.",
+   "images": [
+    "bill_right"
+   ],
+   "literal": true
+  },
+  {
+   "id": "menu",
+   "name": "étlap",
+   "location": "dining",
+   "text": "Az étlap a pulton, keményített kartonon: fogások és árak, dinárban.",
+   "images": [
+    "menu"
+   ],
+   "aliases": [
+    "menü",
+    "árlap",
+    "pult"
+   ],
+   "literal": true
+  },
+  {
+   "id": "kitchen",
+   "name": "konyha",
+   "location": "dining",
+   "text": "A kocsi végén a konyha. A tűzhelyen meleg a kávé, a kenyér felszeletelve. Mintha a pincér csak egy percre lépett volna ki. A pulton Mihajlo rendelőblokkja.",
+   "images": [
+    "kitchen"
+   ],
+   "aliases": [
+    "kávé",
+    "tűzhely",
+    "kenyér",
+    "pincér"
+   ],
+   "actions": {
+    "drink": {
+     "say": "Iszol egy korty kávét. Erős, és még meleg. Jólesik a zúgó fejednek."
+    }
+   }
+  },
+  {
+   "id": "order_pad",
+   "name": "rendelőblokk",
+   "location": "kitchen",
+   "text": "Mihajlo, a pincér rendelőblokkja, ceruzával írva.",
+   "images": [
+    "order_pad"
+   ],
+   "rel": "on",
+   "aliases": [
+    "blokk",
+    "rendelések",
+    "mihajlo blokkja"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wall_phone_d",
+   "name": "falitelefon",
+   "location": "dining",
+   "text": "Fekete falitelefon a konyha mellett, a belső vonalon. A karon: „KALAUZ”.",
+   "images": [
+    "wall_phone"
+   ],
+   "aliases": [
+    "telefon",
+    "kagyló"
+   ],
+   "actions": {
+    "use": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, a hátsó kalauzfülkében, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "conductor",
+      "text": "A falitelefon élesen csörögni kezd. Valaki az étkezőkocsiból hív."
+     }
+    },
+    "call": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, a hátsó kalauzfülkében, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "conductor",
+      "text": "A falitelefon élesen csörögni kezd. Valaki az étkezőkocsiból hív."
+     }
+    },
+    "ring": {
+     "say": "Felveszed a kagylót és megtekered a kart. A vonal túlsó végén, a hátsó kalauzfülkében, csörögni kezd a másik készülék.",
+     "notify": {
+      "at": "conductor",
+      "text": "A falitelefon élesen csörögni kezd. Valaki az étkezőkocsiból hív."
+     }
+    }
+   }
+  },
+  {
+   "id": "salon_padlock",
+   "name": "lakat a szalon ajtaján",
+   "location": "dining",
+   "aliases": [
+    "lakat",
+    "lánc",
+    "szalon ajtaja",
+    "szalonkocsi ajtaja",
+    "számzár"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "A szalon lakatja"
+     },
+     "text": "A lakat nyitva lóg, a lánc lecsúszott a kilincsekről. Az ajtó a szalonkocsiba nyitva."
+    },
+    {
+     "text": "A szalonkocsi felé vezető ajtó két kilincsén lánc, rajta egy háromjegyű számzáras lakat."
+    }
+   ],
+   "images": [
+    "salon_padlock"
+   ],
+   "panel": {
+    "id": "code_lock_salon",
+    "label": "A lakat számzára"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "A szalon lakatja"
+     },
+     "images": [
+      "salon_padlock_open"
+     ],
+     "panel": null
+    }
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "A lánc vastag, a lakat erős. Kód kell."
+    }
+   }
+  },
+  {
+   "id": "mail_sacks",
+   "name": "postazsákok",
+   "location": "mail",
+   "text": "Lepecsételt vászonzsákok a padlón, egymásra dobálva. Isztambulba, Szófiába, Athénba.",
+   "aliases": [
+    "zsákok",
+    "zsák",
+    "levelek"
+   ],
+   "actions": {
+    "search": {
+     "say": "Kinyitotok egy zsákot. Levelek, levelek, képeslapok. Ez nem a ti dolgotok."
+    }
+   }
+  },
+  {
+   "id": "mail_shelves",
+   "name": "rekeszes polcok",
+   "location": "mail",
+   "text": "Rekeszes polcok a falon, tele szétválogatott levelekkel.",
+   "aliases": [
+    "polcok",
+    "rekeszek",
+    "polc"
+   ]
+  },
+  {
+   "id": "parcel",
+   "name": "ajánlott csomag",
+   "location": "mail",
+   "aliases": [
+    "csomag",
+    "pecsét",
+    "viaszpecsét"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Barna papírba csomagolt, zsineggel átkötött ajánlott csomag, piros viaszpecséttel. A címke szerint: K. Vogt, Isztambul, Pera Palace.",
+    "open": "A felbontott csomag: egy doboz szivar és egy névjegy."
+   },
+   "images": [
+    "parcel"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "is": "parcel.state",
+      "eq": "closed"
+     },
+     "otherwise": "Már felbontottátok.",
+     "setState": "open",
+     "say": "Feltöritek a pecsétet. Benne egy doboz szivar, piros-arany gyűrűvel, és egy névjegy: „Konrad Vogt, Import–Export, Wien”. Ennyi."
+    },
+    "force": {
+     "requires": {
+      "is": "parcel.state",
+      "eq": "closed"
+     },
+     "otherwise": "Már felbontottátok.",
+     "setState": "open",
+     "say": "Feltöritek a pecsétet. Benne egy doboz szivar, piros-arany gyűrűvel, és egy névjegy: „Konrad Vogt, Import–Export, Wien”. Ennyi."
+    }
+   }
+  },
+  {
+   "id": "mail_front_door",
+   "name": "a szerkocsi felőli ajtó",
+   "location": "mail",
+   "text": "A postakocsi elején egy ajtó a szerkocsi felé. Nincs bezárva.",
+   "aliases": [
+    "ajtó",
+    "elülső ajtó"
+   ]
+  },
+  {
+   "id": "toolbox",
+   "name": "szerszámláda",
+   "location": "tender",
+   "aliases": [
+    "láda",
+    "acélláda",
+    "ujjnyomok",
+    "fedél",
+    "lakat"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Hosszú acél szerszámláda a járópallón, havas fedéllel. A fedelén friss, olajos ujjnyomok. A lakat csak bele van akasztva a pántba, nincs bezárva.",
+    "open": "A szerszámláda fedele felnyitva: villáskulcsok, olajoskannák."
+   },
+   "images": {
+    "closed": [
+     "toolbox"
+    ],
+    "open": [
+     "toolbox_open"
+    ]
+   },
+   "literal": true,
+   "actions": {
+    "open": {
+     "requires": {
+      "is": "toolbox.state",
+      "eq": "closed"
+     },
+     "otherwise": "Már nyitva van.",
+     "setState": "open",
+     "reveal": [
+      "i_brake_handle"
+     ],
+     "take": [
+      "i_brake_handle"
+     ],
+     "say": "Leakasztjátok a lakatot, és felhajtjátok a fedelet. A villáskulcsok között egy hosszú acélkar: a fékszelep karja.",
+     "images": [
+      "toolbox_open"
+     ]
+    },
+    "search": {
+     "requires": {
+      "is": "toolbox.state",
+      "eq": "closed"
+     },
+     "otherwise": "Már nyitva van.",
+     "setState": "open",
+     "reveal": [
+      "i_brake_handle"
+     ],
+     "take": [
+      "i_brake_handle"
+     ],
+     "say": "Leakasztjátok a lakatot, és felhajtjátok a fedelet. A villáskulcsok között egy hosszú acélkar: a fékszelep karja.",
+     "images": [
+      "toolbox_open"
+     ]
+    },
+    "lift": {
+     "requires": {
+      "is": "toolbox.state",
+      "eq": "closed"
+     },
+     "otherwise": "Már nyitva van.",
+     "setState": "open",
+     "reveal": [
+      "i_brake_handle"
+     ],
+     "take": [
+      "i_brake_handle"
+     ],
+     "say": "Leakasztjátok a lakatot, és felhajtjátok a fedelet. A villáskulcsok között egy hosszú acélkar: a fékszelep karja.",
+     "images": [
+      "toolbox_open"
+     ]
+    }
+   }
+  },
+  {
+   "id": "coal",
+   "name": "szén",
+   "location": "tender",
+   "text": "A szénhegy csúcsa hóval belepve. A szél jeges, a mozdony fülkéje előttetek izzik.",
+   "aliases": [
+    "szénhegy",
+    "hó"
+   ]
+  },
+  {
+   "id": "water_tank",
+   "name": "vízszekrény",
+   "location": "tender",
+   "text": "A vízszekrény fedele csukva. A szintjelző szerint van még víz bőven.",
+   "aliases": [
+    "víz",
+    "tartály"
+   ]
+  },
+  {
+   "id": "walkway",
+   "name": "járópalló",
+   "location": "tender",
+   "text": "Keskeny, csúszós vaspalló korláttal a szén mellett, előre a mozdonyhoz.",
+   "aliases": [
+    "palló",
+    "korlát"
+   ]
+  },
+  {
+   "id": "regulator",
+   "name": "szabályozókar",
+   "location": "cab",
+   "aliases": [
+    "szabályozó",
+    "kar",
+    "gőzkar",
+    "lánc",
+    "lakat"
+   ],
+   "state": {
+    "initial": "chained",
+    "values": [
+     "chained",
+     "free"
+    ]
+   },
+   "text": {
+    "chained": "A szabályozókar teljesen nyitva, vastag lánccal a korláthoz kötve, egy kis sárgaréz lakattal. Nem lehet elmozdítani.",
+    "free": "A szabályozókar szabad, a lánc a padlón."
+   },
+   "images": {
+    "chained": [
+     "regulator_chained"
+    ],
+    "free": [
+     "regulator_free"
+    ]
+   },
+   "actions": {
+    "use:i_chain_key": {
+     "requires": {
+      "is": "regulator.state",
+      "eq": "chained"
+     },
+     "otherwise": "A lánc már lent van.",
+     "setState": "free",
+     "remove": [
+      "i_chain_key"
+     ],
+     "say": "A kis kulcs illik a lakatba. Kattan, a lánc csörögve lehull. A szabályozó szabad.",
+     "images": [
+      "regulator_free"
+     ]
+    },
+    "force": {
+     "forbidden": "A lánc vastag, a lakat erős. Feszítővas sincs, amivel nekimehetnétek."
+    }
+   }
+  },
+  {
+   "id": "brake_valve",
+   "name": "fékszelep",
+   "location": "cab",
+   "aliases": [
+    "fék",
+    "szelep",
+    "négyszögcsap",
+    "csap"
+   ],
+   "state": {
+    "initial": "bare",
+    "values": [
+     "bare",
+     "fixed"
+    ]
+   },
+   "text": {
+    "bare": "A sárgaréz fékszelep a fülke jobb oldalán. A karja hiányzik: csak a csupasz négyszögcsap áll ki belőle.",
+    "fixed": "A fékszelepen a helyén a kar."
+   },
+   "images": {
+    "bare": [
+     "brake_valve"
+    ],
+    "fixed": [
+     "brake_valve_fixed"
+    ]
+   },
+   "actions": {
+    "use:i_brake_handle": {
+     "requires": {
+      "is": "brake_valve.state",
+      "eq": "bare"
+     },
+     "otherwise": "A kar már a helyén van.",
+     "setState": "fixed",
+     "remove": [
+      "i_brake_handle"
+     ],
+     "say": "A kar pontosan ráillik a négyszögcsapra. A fékszelep újra kezelhető.",
+     "images": [
+      "brake_valve_fixed"
+     ]
+    },
+    "use:i_square_key": {
+     "say": "A négyszögkulcs túl kicsi ehhez a csaphoz. Ide a saját kar kell."
+    }
+   }
+  },
+  {
+   "id": "brake_card",
+   "name": "fékutasítás",
+   "location": "cab",
+   "text": "A fülke falán, üveg alatt a gyári fékutasítás.",
+   "images": [
+    "brake_card"
+   ],
+   "aliases": [
+    "utasítás",
+    "tábla",
+    "kártya"
+   ],
+   "literal": true
+  },
+  {
+   "id": "gauges",
+   "name": "mérők",
+   "location": "cab",
+   "text": "Nyomásmérők, vízállásüveg, sebességmérő. A tű a hetvenen túl jár. A kilométeróra szerint kevés van hátra.",
+   "aliases": [
+    "nyomásmérő",
+    "sebességmérő",
+    "kilométeróra",
+    "mérő"
+   ],
+   "actions": {}
+  },
+  {
+   "id": "firebox",
+   "name": "tűzszekrény",
+   "location": "cab",
+   "text": "A tűzszekrény ajtaja mögött vörösen izzik a parázs. A hőség az arcodba csap.",
+   "aliases": [
+    "tűz",
+    "kazán",
+    "parázs"
+   ],
+   "actions": {
+    "open": {
+     "say": "Kinyitod a tűzszekrény ajtaját. Vakító izzás, aztán becsukod."
+    }
+   }
+  },
+  {
+   "id": "controls",
+   "name": "a mozdony karjai",
+   "location": "cab",
+   "aliases": [
+    "karok",
+    "vezetés",
+    "mozdony",
+    "homokoló"
+   ],
+   "text": [
+    {
+     "if": {
+      "all": [
+       {
+        "is": "regulator.state",
+        "eq": "free"
+       },
+       {
+        "is": "brake_valve.state",
+        "eq": "fixed"
+       }
+      ]
+     },
+     "text": "A szabályozó szabad, a fékszelepen a kar. Most már irányíthatjátok a mozdonyt: ketten, két karral."
+    },
+    {
+     "text": "Amíg a szabályozó le van láncolva, és a fékszelepnek nincs karja, semmit nem tudtok irányítani."
+    }
+   ],
+   "panel": {
+    "id": "locomotive",
+    "label": "A mozdony vezetése",
+    "if": {
+     "all": [
+      {
+       "is": "regulator.state",
+       "eq": "free"
+      },
+      {
+       "is": "brake_valve.state",
+       "eq": "fixed"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_brake_handle",
+   "name": "fékkar",
+   "location": "toolbox",
+   "aliases": [
+    "kar",
+    "acélkar",
+    "fékszelep karja"
+   ],
+   "text": "Hosszú acélkar, a végén négyszögletes fészek: a fékszelep karja.",
+   "images": [
+    "i_brake_handle"
+   ],
+   "hidden": true,
+   "carry": {
+    "name": "Fékkar"
+   }
+  },
+  {
+   "id": "i_square_key",
+   "name": "négyszögkulcs",
+   "location": "keyhole",
+   "aliases": [
+    "kulcs",
+    "kalauzkulcs"
+   ],
+   "text": "A kalauz sárgaréz négyszögkulcsa. A kocsik, a fülkék és az átjárók négyszögzárait nyitja.",
+   "images": [
+    "i_square_key"
+   ],
+   "hidden": true,
+   "carry": {
+    "name": "Négyszögkulcs"
+   }
+  },
+  {
+   "id": "i_film",
+   "name": "filmdoboz",
+   "location": "piano",
+   "aliases": [
+    "mikrofilm",
+    "film",
+    "doboz"
+   ],
+   "text": "Kis kerek fém filmdoboz, benne egy tekercs mikrofilm. Ezt vitte Hale Isztambulba.",
+   "images": [
+    "i_film"
+   ],
+   "hidden": true,
+   "carry": {
+    "name": "Filmdoboz"
+   }
+  },
+  {
+   "id": "i_hale_note",
+   "name": "Hale cetlije",
+   "location": "piano",
+   "aliases": [
+    "cetli",
+    "cédula"
+   ],
+   "text": "Hale cetlije a filmdobozból.",
+   "images": [
+    "hale_note"
+   ],
+   "literal": true,
+   "hidden": true,
+   "carry": {
+    "name": "Hale cetlije"
+   }
+  },
+  {
+   "id": "i_map",
+   "name": "térkép",
+   "location": "vogt_case",
+   "aliases": [
+    "vasúti térkép",
+    "hátoldal",
+    "pálya leírása"
+   ],
+   "text": "Vogt összehajtott vasúti térképe. A fővonal mellett egy vékony mellékvonal kanyarodik le a hegyekbe, egy szurdokig, ahol egy híd van, piros körrel: „LEZÁRVA”. A hátoldalán ceruzás kézírás.",
+   "images": [
+    "map",
+    "profile"
+   ],
+   "literal": true,
+   "hidden": true,
+   "carry": {
+    "name": "Térkép"
+   }
+  },
+  {
+   "id": "i_mail_key",
+   "name": "postakulcs",
+   "location": "vogt_case",
+   "aliases": [
+    "nehéz kulcs",
+    "ólomzáras kulcs"
+   ],
+   "text": "Nehéz vaskulcs ólomplombás címkével: a postakocsi ajtajáé.",
+   "images": [
+    "i_mail_key"
+   ],
+   "hidden": true,
+   "carry": {
+    "name": "Postakulcs"
+   }
+  },
+  {
+   "id": "i_chain_key",
+   "name": "kis lakatkulcs",
+   "location": "vogt_case",
+   "aliases": [
+    "lakatkulcs",
+    "kis kulcs",
+    "karika"
+   ],
+   "text": "Egy kis sárgaréz lakatkulcs karikán.",
+   "images": [
+    "i_chain_key"
+   ],
+   "hidden": true,
+   "carry": {
+    "name": "Kis lakatkulcs"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:Az írógépszalag",
+   "do": {
+    "say": "A szalagról kiolvasott utolsó sorok, Hale gépelése: „HA EZT OLVASOD: A FILM A SZALON ZONGORÁJÁBAN. VOGT. A GÉPÉSZ IS.”"
+   }
+  },
+  {
+   "on": "solved:A szalon lakatja",
+   "do": {
+    "say": "A lakat kattan, a lánc lecsúszik a kilincsekről. A szalonkocsi ajtaja kinyílik.",
+    "images": [
+     "salon_padlock_open"
+    ]
+   }
+  },
+  {
+   "on": "solved:A félbehagyott parti",
+   "do": {
+    "say": "Megvan: a szivar helyén Vogt ült, és ő nyert. Megfordítjátok az előtte hagyott három lefordított lapot: hetes, ász, kilences."
+   }
+  },
+  {
+   "on": "solved:Vogt bőröndje",
+   "do": {
+    "say": "A számzár kattan, a bőrönd kinyílik. Benne egy összehajtott vasúti térkép, egy nehéz kulcs ólomplombás címkével, egy kis sárgaréz lakatkulcs karikán, és egy pár bőrkesztyű.",
+    "images": [
+     "vogt_case_open"
+    ],
+    "setItem": {
+     "item": "vogt_case",
+     "state": "open"
+    },
+    "reveal": [
+     "i_map",
+     "i_mail_key",
+     "i_chain_key"
+    ],
+    "take": [
+     "i_map",
+     "i_mail_key",
+     "i_chain_key"
+    ]
+   }
+  },
+  {
+   "on": "leave:compartment_a",
+   "once": true,
+   "if": {
+    "var": "km",
+    "is": "64"
+   },
+   "do": {
+    "setVar": {
+     "km": "58"
+    }
+   }
+  },
+  {
+   "on": "leave:compartment_b",
+   "once": true,
+   "if": {
+    "var": "km",
+    "is": "64"
+   },
+   "do": {
+    "setVar": {
+     "km": "58"
+    }
+   }
+  },
+  {
+   "on": "solved:A szalon lakatja",
+   "if": {
+    "any": [
+     {
+      "var": "km",
+      "is": "64"
+     },
+     {
+      "var": "km",
+      "is": "58"
+     }
+    ]
+   },
+   "do": {
+    "setVar": {
+     "km": "46"
+    }
+   }
+  },
+  {
+   "on": "solved:Vogt bőröndje",
+   "if": {
+    "not": {
+     "any": [
+      {
+       "var": "km",
+       "is": "28"
+      },
+      {
+       "var": "km",
+       "is": "20"
+      }
+     ]
+    }
+   },
+   "do": {
+    "setVar": {
+     "km": "36"
+    }
+   }
+  },
+  {
+   "on": "enter:mail",
+   "once": true,
+   "if": {
+    "not": {
+     "var": "km",
+     "is": "20"
+    }
+   },
+   "do": {
+    "setVar": {
+     "km": "28"
+    }
+   }
+  },
+  {
+   "on": "enter:tender",
+   "once": true,
+   "do": {
+    "setVar": {
+     "km": "20"
+    }
+   }
+  },
+  {
+   "on": "solved:A mozdony",
+   "do": {
+    "setVar": {
+     "km": "0"
+    }
+   }
+  }
+ ],
+ "inventory": [],
+ "vars": {
+  "km": "64"
+ },
+ "status": "Hely: {loc0} / {loc1} · A hídig: {km} km",
+ "panelTitles": {
+  "typewriter_ribbon": "Az írógépszalag",
+  "code_lock_salon": "A szalon lakatja",
+  "logic_grid": "A félbehagyott parti",
+  "code_lock_vogt": "Vogt bőröndje",
+  "locomotive": "A mozdony"
+ },
+ "panelIds": [
+  "typewriter_ribbon",
+  "code_lock_salon",
+  "logic_grid",
+  "code_lock_vogt",
+  "locomotive"
+ ],
+ "panelAvail": {
+  "typewriter_ribbon": {
+   "visited": "compartment_hale"
+  },
+  "logic_grid": {
+   "visited": "salon"
+  },
+  "code_lock_vogt": {
+   "visited": "compartment_vogt"
+  },
+  "code_lock_salon": {
+   "visited": "dining"
+  },
+  "locomotive": {
+   "all": [
+    {
+     "is": "regulator.state",
+     "eq": "free"
+    },
+    {
+     "is": "brake_valve.state",
+     "eq": "fixed"
+    }
+   ]
+  }
+ },
+ "mustReach": [
+  {
+   "solved": "A mozdony"
+  }
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "kód",
+  "számla",
+  "film",
+  "térkép",
+  "titkos",
+  "rejtett",
+  "altató",
+  "kar",
+  "lánc"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

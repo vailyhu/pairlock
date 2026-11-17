@@ -1,0 +1,11 @@
+/* The last watch: a stormy night at sea, brass and kerosene light, old printed type. */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap');
+:root {
+  --bg:#0a1419; --panel:#102029; --panel2:#17303b; --ink:#ece4d0; --muted:#8fa6ad; --line:#274350; --accent:#e3b663; --ok:#8fce8a;
+  --send:#a9762a; --send-line:#d7a24c; --send-ink:#fff8e8; --tool:#2f2a1a; --tool-line:#a38748; --tool-ink:#f4e4bd; --view:#050a0d;
+  --serif:"Old Standard TT",Georgia,serif; --ui:"Alegreya Sans","Avenir Next",system-ui,sans-serif; --radius:3px;
+}
+body { font-size:17.5px; }
+header h1 { font-family:var(--serif); font-size:20px; letter-spacing:.02em; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

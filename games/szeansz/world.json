@@ -1,0 +1,2855 @@
+{
+ "start": "garden",
+ "rooms": {
+  "garden": {
+   "name": "A kert",
+   "into": "a kertbe",
+   "inside": "a kertben",
+   "image": "garden",
+   "text": "A kertben ezt látjátok: kovácsoltvas kapu, elvadult rózsák, avaros kavicsút, a végén a szecessziós villa üvegezett verandával és kis toronnyal. Minden ablak sötét. Lent a völgyben gyúlnak a város fényei.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "villa",
+      "ház",
+      "veranda",
+      "be",
+      "előcsarnok"
+     ]
+    }
+   },
+   "aliases": [
+    "kert",
+    "kapu"
+   ],
+   "details": [
+    "avar a kavicson",
+    "hideg, nyirkos alkonyat",
+    "a város fényei lent"
+   ]
+  },
+  "hall": {
+   "name": "Előcsarnok",
+   "into": "az előcsarnokba",
+   "inside": "az előcsarnokban",
+   "image": "hall",
+   "text": [
+    {
+     "if": {
+      "is": "cellar_door.state",
+      "eq": "open"
+     },
+     "text": "Az előcsarnokban ezt látjátok: fekete-fehér márványpadló porral, szemben Vera nagy olajportréja, balra egy olvasóállvány a vendégkönyvvel, jobbra egy fogas egy kabáttal, mögötte lépcső fel. A bal falon a nyitott pinceajtó, az ajtó alatt egy postakupac, egy falipolcon telefon. Ajtók a szalonba, a szeánszterembe és a dolgozószobába."
+    },
+    {
+     "text": "Az előcsarnokban ezt látjátok: fekete-fehér márványpadló porral, szemben Vera nagy olajportréja, balra egy olvasóállvány a vendégkönyvvel, jobbra egy fogas egy kabáttal, mögötte lépcső fel. A bal falon egy zárt pinceajtó, az ajtó alatt egy postakupac, egy falipolcon telefon. Ajtók a szalonba, a szeánszterembe és a dolgozószobába."
+    }
+   ],
+   "exits": {
+    "garden": {
+     "aliases": [
+      "kert",
+      "ki",
+      "veranda"
+     ]
+    },
+    "salon": {
+     "aliases": [
+      "szalon"
+     ]
+    },
+    "seance": {
+     "aliases": [
+      "szeánszterem",
+      "szeánsz",
+      "terem"
+     ]
+    },
+    "office": {
+     "aliases": [
+      "dolgozószoba",
+      "dolgozó",
+      "iroda"
+     ]
+    },
+    "boudoir": {
+     "requires": {
+      "visited": "boudoir"
+     },
+     "otherwise": "Felmentek a lépcsőn. Vera öltözőjének ajtaja zárva, és a kulcsa nincs meg.",
+     "aliases": [
+      "öltöző",
+      "emelet",
+      "fel",
+      "lépcső"
+     ]
+    },
+    "darkroom": {
+     "requires": {
+      "is": "cellar_door.state",
+      "eq": "open"
+     },
+     "otherwise": "A pinceajtó zárva.",
+     "aliases": [
+      "pince",
+      "le",
+      "pinceajtó",
+      "sötétkamra"
+     ]
+    }
+   },
+   "aliases": [
+    "előcsarnok",
+    "csarnok"
+   ],
+   "firstText": "Hét éve senki nem járt itt. A levegő hideg és áporodott, a por puhán nyeli el a lépteiteket. A portréról Vera néz le rátok.",
+   "details": [
+    "márványpadló porral",
+    "áporodott, hideg levegő",
+    "csend"
+   ]
+  },
+  "salon": {
+   "name": "Szalon",
+   "into": "a szalonba",
+   "inside": "a szalonban",
+   "image": [
+    {
+     "if": {
+      "is": "liquor.state",
+      "eq": "open"
+     },
+     "image": "salon_open"
+    },
+    {
+     "image": "salon"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "liquor.state",
+      "eq": "open"
+     },
+     "text": "A szalonban ezt látjátok: sötétzöld selyemtapéta, balra a kifordult likőrösszekrény, mögötte sötét nyílás a falban, jobbra négy keretes fénykép, egy zöld bársonyfotel, elöl egy tölcséres gramofon."
+    },
+    {
+     "text": "A szalonban ezt látjátok: sötétzöld selyemtapéta, balra egy magas diófa likőrösszekrény, jobbra a falon négy keretes fénykép, köztük egy zöld bársonyfotel, elöl egy tölcséres gramofon. Itt vártak a vendégek."
+    }
+   ],
+   "exits": {
+    "hall": {
+     "aliases": [
+      "előcsarnok",
+      "vissza",
+      "ki"
+     ]
+    },
+    "passage": {
+     "requires": {
+      "is": "liquor.state",
+      "eq": "open"
+     },
+     "otherwise": "Arra csak a fal van.",
+     "aliases": [
+      "járat",
+      "nyílás",
+      "rejtett járat",
+      "szekrény mögé"
+     ]
+    }
+   },
+   "aliases": [
+    "szalon"
+   ],
+   "details": [
+    "zöld selyem",
+    "por a kristályokon",
+    "nehéz függönyök"
+   ]
+  },
+  "seance": {
+   "name": "Szeánszterem",
+   "into": "a szeánszterembe",
+   "inside": "a szeánszteremben",
+   "image": [
+    {
+     "if": {
+      "solved": "Az utolsó lemez"
+     },
+     "image": "seance_changed"
+    },
+    {
+     "if": {
+      "is": "trapdoor.state",
+      "eq": "open"
+     },
+     "image": "seance_trapdoor"
+    },
+    {
+     "if": {
+      "is": "cabinet.state",
+      "eq": "open"
+     },
+     "image": "seance_open"
+    },
+    {
+     "image": "seance"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Az utolsó lemez"
+     },
+     "text": "A szeánszteremben ezt látjátok: vörös bársonyfalak, fekete függönyök, középen a kerek asztal a betűtáblával, a mutató most az E betűn. A három gyertya ég. Hátul a kabinet, a függönye behúzva, pedig nem ti húztátok be. Jobbra a kellékes asztalka."
+    },
+    {
+     "text": "A szeánszteremben ezt látjátok: vörös bársonyfalak, fekete függönyök a magas ablakokon, középen a kerek asztal vörös terítővel, betűtáblával, háromkarú gyertyatartóval és hét székkel, hátul a függönyös szellemkabinet, jobbra egy asztalka kellékekkel. A gyertyák égnek. Hét éve zárták le a házat, és a gyertyák égnek."
+    }
+   ],
+   "exits": {
+    "hall": {
+     "aliases": [
+      "előcsarnok",
+      "ki",
+      "vissza"
+     ]
+    },
+    "crawl": {
+     "requires": {
+      "is": "trapdoor.state",
+      "eq": "open"
+     },
+     "otherwise": "Arra nincs út.",
+     "aliases": [
+      "csapóajtó",
+      "le",
+      "lépcső",
+      "kabinet alá"
+     ]
+    }
+   },
+   "aliases": [
+    "szeánszterem",
+    "terem"
+   ],
+   "firstText": "A szeánszterem. Ebben a szobában tűnt el Vera. A levegő mozdulatlan, és a gyertyák égnek.",
+   "details": [
+    "vörös bársony",
+    "gyertyafény",
+    "mozdulatlan levegő"
+   ]
+  },
+  "passage": {
+   "name": "Járat a falak között",
+   "into": "a járatba",
+   "inside": "a járatban",
+   "image": "passage",
+   "text": "A járatban ezt látjátok: vállszélességnyi rés a falak között, csupasz gerendák és vakolatlécek, poros deszkapadló. A végfalon balra egy fényképezőgép, jobbra egy zsinóros deszka, mellettük egy kukucskáló és a vakolaton egy halvány ceruzás rács. Jobb hátul meredek lépcső fel.",
+   "exits": {
+    "salon": {
+     "aliases": [
+      "szalon",
+      "szekrény",
+      "vissza",
+      "ki"
+     ]
+    },
+    "boudoir": {
+     "aliases": [
+      "lépcső",
+      "fel",
+      "emelet",
+      "öltöző"
+     ]
+    }
+   },
+   "aliases": [
+    "járat",
+    "rejtett járat"
+   ],
+   "firstText": "A szekrény mögött szűk, poros járat. Innen szóltak a falak. Pókháló, gyertyacsonk, és a falakon apró lyukak, amelyeken át beszűrődik a szobák fénye.",
+   "details": [
+    "pókháló",
+    "csupasz léc és vakolat",
+    "szűk hely"
+   ]
+  },
+  "crawl": {
+   "name": "A kabinet alatt",
+   "into": "a kabinet alá",
+   "inside": "a kabinet alatt",
+   "image": "trapdoor_below",
+   "text": "A kabinet alatt ezt látjátok: meredek, keskeny lépcső, por, egy elejtett fekete kesztyű és egy elszakadt bőröndcímke. Lent a falak közé vezet, a kert felé.",
+   "exits": {
+    "seance": {
+     "aliases": [
+      "fel",
+      "szeánszterem",
+      "vissza",
+      "kabinet"
+     ]
+    }
+   },
+   "aliases": [
+    "lépcső a kabinet alatt"
+   ],
+   "details": [
+    "por",
+    "szűk, meredek lépcső"
+   ]
+  },
+  "office": {
+   "name": "Dolgozószoba",
+   "into": "a dolgozószobába",
+   "inside": "a dolgozószobában",
+   "image": "office",
+   "text": "A dolgozószobában ezt látjátok: középen egy nehéz mahagóni íróasztal zöld ernyős lámpával, főkönyvvel, két levéllel és egy ezüstkeretes fényképpel, könyvespolcok, egy iratszekrény, egy kis bőrkanapé, behúzott függönyök.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "előcsarnok",
+      "ki",
+      "vissza"
+     ]
+    }
+   },
+   "aliases": [
+    "dolgozószoba",
+    "iroda"
+   ],
+   "details": [
+    "bőr és papír szaga",
+    "mahagóni",
+    "csend"
+   ]
+  },
+  "boudoir": {
+   "name": "Vera öltözője",
+   "into": "Vera öltözőjébe",
+   "inside": "Vera öltözőjében",
+   "image": "boudoir",
+   "text": "Vera öltözőjében ezt látjátok: szemben egy hármas tükrös fésülködőasztal egy ékszerdobozzal, balra egy magas ruhásszekrény, jobbra baldachinos ágy, a lábánál egy üres bőröndtartó, egy festett paraván.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "előcsarnok",
+      "le",
+      "ajtó",
+      "lépcső le"
+     ]
+    },
+    "passage": {
+     "aliases": [
+      "szekrény",
+      "járat",
+      "falak közé",
+      "rejtett lépcső"
+     ]
+    }
+   },
+   "aliases": [
+    "öltöző",
+    "hálószoba"
+   ],
+   "firstText": "A lépcső tetején a szekrény hátfala kifelé nyílik: Vera öltözőjében álltok. Az ajtó belülről kinyitható.",
+   "details": [
+    "parfüm halvány illata",
+    "por a bársonyon"
+   ]
+  },
+  "darkroom": {
+   "name": "Sötétkamra",
+   "into": "a sötétkamrába",
+   "inside": "a sötétkamrában",
+   "image": [
+    {
+     "if": {
+      "solved": "Az utolsó lemez"
+     },
+     "image": "darkroom_red"
+    },
+    {
+     "image": "darkroom"
+    }
+   ],
+   "text": "A sötétkamrában ezt látjátok: csupasz téglaboltozat, hátul egy pult kis nagyítóval, három zománctállal és vegyszeres üvegekkel, fölötte vörös lámpa és egy falra tűzött papír, balra kőmosogató, jobbra lemezpolcok és a fekete függönyös ajtó.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "fel",
+      "előcsarnok",
+      "ki",
+      "lépcső"
+     ]
+    }
+   },
+   "aliases": [
+    "sötétkamra",
+    "pince"
+   ],
+   "firstText": "Ernő sötétkamrája. Itt halt meg. Azóta senki nem kapcsolta fel a vörös lámpát.",
+   "details": [
+    "vegyszerszag",
+    "tégla",
+    "hideg"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "gate",
+   "name": "kapu",
+   "location": "garden",
+   "text": "Kovácsoltvas kapu, résnyire nyitva. A zár rozsdás, de már nem számít.",
+   "aliases": [
+    "vaskapu",
+    "rács"
+   ]
+  },
+  {
+   "id": "villa",
+   "name": "villa",
+   "location": "garden",
+   "text": "Kétszintes szecessziós villa a domboldalon: szürkére fakult vakolat, sötétzöld zsalugáterek, üvegezett veránda, kis kerek torony. Minden ablak sötét.",
+   "images": [
+    "garden"
+   ],
+   "aliases": [
+    "ház",
+    "homlokzat",
+    "torony",
+    "ablakok",
+    "zsalugáterek"
+   ]
+  },
+  {
+   "id": "roses",
+   "name": "rózsák",
+   "location": "garden",
+   "text": "Elvadult rózsabokrok, néhány késői, fonnyadt virággal. Hét éve senki nem metszette őket.",
+   "aliases": [
+    "rózsa",
+    "bokrok",
+    "kert"
+   ]
+  },
+  {
+   "id": "veranda_door",
+   "name": "verandaajtó",
+   "location": "garden",
+   "aliases": [
+    "ajtó",
+    "veranda",
+    "bejárat",
+    "bejárati ajtó"
+   ],
+   "text": "Üvegezett verandaajtó, a poros üveg mögött sötét. A zár illik a kulcskarika nagy kulcsához.",
+   "actions": {
+    "open": {
+     "goTo": "hall",
+     "say": "A nagy kulcs nehezen fordul, aztán enged. Az ajtó nyikorogva befelé nyílik, áporodott, hideg levegő csap ki."
+    },
+    "enter": {
+     "goTo": "hall",
+     "say": "A nagy kulcs nehezen fordul, aztán enged. Az ajtó nyikorogva befelé nyílik, áporodott, hideg levegő csap ki."
+    },
+    "use:i_keyring": {
+     "goTo": "hall",
+     "say": "A nagy kulcs nehezen fordul, aztán enged. Az ajtó nyikorogva befelé nyílik, áporodott, hideg levegő csap ki."
+    }
+   }
+  },
+  {
+   "id": "portrait",
+   "name": "Vera portréja",
+   "location": "hall",
+   "text": "Olajportré nehéz aranyozott keretben: Ilosvay Vera, sápadt arc, fekete bubifrizura, nagy sötét szem, fekete magas nyakú ruha, jettgyöngysor. Egyenesen rátok néz, és nem mosolyog.",
+   "images": [
+    "portrait_vera"
+   ],
+   "aliases": [
+    "portré",
+    "festmény",
+    "kép",
+    "vera",
+    "médium"
+   ],
+   "literal": true
+  },
+  {
+   "id": "guestbook",
+   "name": "vendégkönyv",
+   "location": "hall",
+   "aliases": [
+    "könyv",
+    "olvasóállvány",
+    "állvány",
+    "névsor",
+    "ültetés",
+    "szabályok"
+   ],
+   "text": "Vastag bőrkötésű vendégkönyv egy faragott olvasóállványon. Az elején Vera szabályai és egy ültetési rajz, a végén az utolsó este névsora.",
+   "images": [
+    "guestbook",
+    "guestbook_first",
+    "guestbook_last"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "logic_grid",
+    "label": "Az ültetés"
+   }
+  },
+  {
+   "id": "coat",
+   "name": "kabát",
+   "location": "hall",
+   "text": "Egy hajlított fa fogason sötétszürke férfikabát és szürke kalap, a vállán vastag por. 1923 óta itt lóg: a gazdája aznap este kabát nélkül ment el.",
+   "images": [
+    "coat"
+   ],
+   "aliases": [
+    "fogas",
+    "kalap",
+    "férfikabát",
+    "esernyő",
+    "kabátzseb",
+    "zseb",
+    "zsebek"
+   ],
+   "props": {
+    "searched": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "actions": {
+    "search": {
+     "requires": {
+      "is": "coat.searched",
+      "eq": false
+     },
+     "otherwise": "A zsebek most már üresek.",
+     "set": {
+      "coat.searched": true
+     },
+     "reveal": [
+      "i_press_card"
+     ],
+     "take": [
+      "i_press_card"
+     ],
+     "say": "A belső zsebben egy összehajtott sajtóigazolvány: Kardos Pál, Az Est munkatársa. A külső zsebben egy üres szemüvegtok, drótkeretes szemüveghez.",
+     "images": [
+      "i_press_card"
+     ]
+    },
+    "open": {
+     "requires": {
+      "is": "coat.searched",
+      "eq": false
+     },
+     "otherwise": "A zsebek most már üresek.",
+     "set": {
+      "coat.searched": true
+     },
+     "reveal": [
+      "i_press_card"
+     ],
+     "take": [
+      "i_press_card"
+     ],
+     "say": "A belső zsebben egy összehajtott sajtóigazolvány: Kardos Pál, Az Est munkatársa. A külső zsebben egy üres szemüvegtok, drótkeretes szemüveghez.",
+     "images": [
+      "i_press_card"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_press_card",
+   "name": "sajtóigazolvány",
+   "location": "coat",
+   "hidden": true,
+   "carry": {
+    "name": "Sajtóigazolvány"
+   },
+   "aliases": [
+    "igazolvány",
+    "kardos",
+    "szemüvegtok"
+   ],
+   "text": "Kardos Pál hírlapíró, Az Est. Mellette a kabátban egy üres szemüvegtok volt: a gazdája kerek, drótkeretes szemüveget hordott.",
+   "images": [
+    "i_press_card"
+   ],
+   "literal": true
+  },
+  {
+   "id": "mail",
+   "name": "postakupac",
+   "location": "hall",
+   "aliases": [
+    "posta",
+    "levelek",
+    "borítékok",
+    "levélbedobó",
+    "kupac"
+   ],
+   "props": {
+    "searched": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Hét év postája a levélbedobó alatt: megsárgult borítékok, számlák, részvétlevelek, néhány képeslap.",
+   "images": [
+    "mail"
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "is": "mail.searched",
+      "eq": false
+     },
+     "otherwise": "A többi csak számla és részvétlevél.",
+     "set": {
+      "mail.searched": true
+     },
+     "reveal": [
+      "i_postcard"
+     ],
+     "take": [
+      "i_postcard"
+     ],
+     "say": "Átlapozod a kupacot. Számlák, részvétlevelek. Egy képeslapnál megállsz: bécsi bélyegző, 1924. Ernőnek címezték, és a szövege csupa szám.",
+     "images": [
+      "postcard_back"
+     ]
+    },
+    "take": {
+     "requires": {
+      "is": "mail.searched",
+      "eq": false
+     },
+     "otherwise": "A többi csak számla és részvétlevél.",
+     "set": {
+      "mail.searched": true
+     },
+     "reveal": [
+      "i_postcard"
+     ],
+     "take": [
+      "i_postcard"
+     ],
+     "say": "Átlapozod a kupacot. Számlák, részvétlevelek. Egy képeslapnál megállsz: bécsi bélyegző, 1924. Ernőnek címezték, és a szövege csupa szám.",
+     "images": [
+      "postcard_back"
+     ]
+    },
+    "read": {
+     "requires": {
+      "is": "mail.searched",
+      "eq": false
+     },
+     "otherwise": "A többi csak számla és részvétlevél.",
+     "set": {
+      "mail.searched": true
+     },
+     "reveal": [
+      "i_postcard"
+     ],
+     "take": [
+      "i_postcard"
+     ],
+     "say": "Átlapozod a kupacot. Számlák, részvétlevelek. Egy képeslapnál megállsz: bécsi bélyegző, 1924. Ernőnek címezték, és a szövege csupa szám.",
+     "images": [
+      "postcard_back"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_postcard",
+   "name": "képeslap",
+   "location": "mail",
+   "hidden": true,
+   "carry": {
+    "name": "Bécsi képeslap"
+   },
+   "aliases": [
+    "bécsi képeslap",
+    "számok",
+    "lap"
+   ],
+   "text": "Bécsi képeslap, 1924. Elöl az Operaház, hátul Ernő neve és címe, és egy üzenet, csupa kétjegyű szám. Aláírás nincs.",
+   "images": [
+    "postcard_front",
+    "postcard_back"
+   ],
+   "literal": true
+  },
+  {
+   "id": "cellar_door",
+   "name": "pinceajtó",
+   "location": "hall",
+   "aliases": [
+    "pince",
+    "nehéz ajtó",
+    "lefelé"
+   ],
+   "state": {
+    "initial": "locked",
+    "values": [
+     "locked",
+     "open"
+    ]
+   },
+   "text": {
+    "locked": "Nehéz, sötét ajtó vaskulcslyukkal a bal falon: lefelé, a pincébe. Zárva, és egyik kulcs sem illik bele.",
+    "open": "A pinceajtó nyitva, keskeny lépcső vezet le a sötétbe."
+   },
+   "actions": {
+    "use:i_basement_key": {
+     "requires": {
+      "is": "cellar_door.state",
+      "eq": "locked"
+     },
+     "otherwise": "Már nyitva.",
+     "setState": "open",
+     "say": "A címkés vaskulcs illik a zárba. Nyikorogva fordul."
+    },
+    "open": {
+     "requires": {
+      "is": "cellar_door.state",
+      "eq": "open"
+     },
+     "otherwise": "Zárva. A kulcskarika kulcsai nem illenek bele.",
+     "goTo": "darkroom"
+    },
+    "force": {
+     "forbidden": "Tölgyfa és vas. Nem enged."
+    }
+   }
+  },
+  {
+   "id": "phone",
+   "name": "telefon",
+   "location": "hall",
+   "text": "Fekete gyertyatartó telefon egy falipolcon. Felemeled a kagylót: néma.",
+   "aliases": [
+    "kagyló",
+    "telefonkészülék"
+   ],
+   "actions": {
+    "use": {
+     "say": "A kagyló néma. Nem is lehetne másképp."
+    }
+   }
+  },
+  {
+   "id": "stairs",
+   "name": "lépcső",
+   "location": "hall",
+   "text": "Sötét tölgyfa lépcső fel az emeletre. Fent Vera öltözőjének ajtaja.",
+   "aliases": [
+    "emelet",
+    "fel",
+    "lépcsőház"
+   ]
+  },
+  {
+   "id": "liquor",
+   "name": "likőrösszekrény",
+   "location": "salon",
+   "aliases": [
+    "szekrény",
+    "vitrin",
+    "kristálykancsók",
+    "poharak",
+    "kopásnyom",
+    "nyom a parkettán",
+    "rozetták"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Magas diófa likőrösszekrény, üvegajtó mögött kristálykancsók. A homlokzat négy sarkában egy-egy faragott rozetta. Előtte a parkettán, a porban egy ív alakú kopásnyom, mintha a szekrényt sokszor elfordították volna.",
+    "open": "A likőrösszekrény jobb fele ajtóként kifordult. Mögötte keskeny, sötét nyílás a falban."
+   },
+   "images": {
+    "closed": [
+     "cabinet_liquor"
+    ],
+    "open": [
+     "cabinet_liquor_open"
+    ]
+   },
+   "literal": true,
+   "actions": {
+    "push": {
+     "say": "Meglököd. Nehéz, és nem mozdul, mintha valami tartaná."
+    },
+    "pull": {
+     "say": "Meghúzod. Nem enged."
+    },
+    "force": {
+     "forbidden": "Nem akarjátok szétverni."
+    }
+   }
+  },
+  {
+   "id": "rosette",
+   "name": "bal felső rozetta",
+   "location": "liquor",
+   "rel": "part",
+   "aliases": [
+    "rozetta",
+    "felső rozetta",
+    "bal rozetta",
+    "faragás"
+   ],
+   "text": "Faragott fa rozetta a szekrény bal felső sarkában. Kicsit fényesebb, mint a másik három.",
+   "literal": true,
+   "actions": {
+    "press": {
+     "requires": {
+      "all": [
+       {
+        "seen": "erno_photo"
+       },
+       {
+        "is": "liquor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Megnyomod. Faragott fa, nem enged.",
+     "setItem": {
+      "item": "liquor",
+      "state": "open"
+     },
+     "images": [
+      "cabinet_liquor_open"
+     ],
+     "say": "Ernő keze a fotón pontosan itt volt. Erősebben nyomod, a rozetta besüllyed, kattan valami, és a szekrény jobb fele ajtóként kifordul. Mögötte keskeny, sötét járat."
+    },
+    "push": {
+     "requires": {
+      "all": [
+       {
+        "seen": "erno_photo"
+       },
+       {
+        "is": "liquor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Megnyomod. Faragott fa, nem enged.",
+     "setItem": {
+      "item": "liquor",
+      "state": "open"
+     },
+     "images": [
+      "cabinet_liquor_open"
+     ],
+     "say": "Ernő keze a fotón pontosan itt volt. Erősebben nyomod, a rozetta besüllyed, kattan valami, és a szekrény jobb fele ajtóként kifordul. Mögötte keskeny, sötét járat."
+    },
+    "turn": {
+     "requires": {
+      "all": [
+       {
+        "seen": "erno_photo"
+       },
+       {
+        "is": "liquor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Megnyomod. Faragott fa, nem enged.",
+     "setItem": {
+      "item": "liquor",
+      "state": "open"
+     },
+     "images": [
+      "cabinet_liquor_open"
+     ],
+     "say": "Ernő keze a fotón pontosan itt volt. Erősebben nyomod, a rozetta besüllyed, kattan valami, és a szekrény jobb fele ajtóként kifordul. Mögötte keskeny, sötét járat."
+    }
+   }
+  },
+  {
+   "id": "photo_wall",
+   "name": "fényképek",
+   "location": "salon",
+   "aliases": [
+    "fotók",
+    "szellemfotók",
+    "képek",
+    "képek a falon",
+    "keretek",
+    "csoportkép"
+   ],
+   "text": "Négy keretes fénykép a falon. Középen egy csoportkép az utolsó estéről: hat vendég a szeánszasztal körül, mögöttük a behúzott függönyű kabinet. Körülötte három szellemfotó: gyászoló emberek, a vállukon ködös, áttetsző arcokkal.",
+   "images": [
+    "spirit_wall",
+    "photo_group",
+    "spirit_1",
+    "spirit_2",
+    "spirit_3"
+   ],
+   "literal": true
+  },
+  {
+   "id": "gramophone",
+   "name": "gramofon",
+   "location": "salon",
+   "text": "Tölcséres gramofon egy kis szekrényen, a tányéron egy lemez.",
+   "images": [
+    "gramophone"
+   ],
+   "aliases": [
+    "lemez",
+    "tölcsér"
+   ],
+   "actions": {
+    "play": {
+     "say": "Felhúzod és ráengeded a tűt. Recsegve megszólal egy tangó, lassan, mintha fáradt volna. A szalon üres."
+    },
+    "use": {
+     "say": "Felhúzod. Egy régi tangó szól, recsegve."
+    }
+   }
+  },
+  {
+   "id": "armchair",
+   "name": "fotel",
+   "location": "salon",
+   "text": "Zöld bársonyfotel, a karfáján por.",
+   "aliases": [
+    "bársonyfotel",
+    "szék"
+   ],
+   "actions": {
+    "sit": {
+     "say": "Leülsz. A fotel nyikorog, és por száll fel belőle."
+    }
+   }
+  },
+  {
+   "id": "table",
+   "name": "szeánszasztal",
+   "location": "seance",
+   "text": "Kerek asztal a földig érő vörös bársonyterítővel. Közepén a betűtábla a szív alakú mutatóval, mellette háromkarú gyertyatartó. Körülötte hét magas támlájú szék, úgy hátratolva, ahogy hét éve felálltak róluk.",
+   "images": [
+    "table"
+   ],
+   "aliases": [
+    "asztal",
+    "terítő",
+    "gyertyatartó",
+    "gyertyák"
+   ]
+  },
+  {
+   "id": "board",
+   "name": "betűtábla",
+   "location": "table",
+   "rel": "on",
+   "aliases": [
+    "tábla",
+    "planchette",
+    "mutató",
+    "szív",
+    "szellemtábla",
+    "betűk"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Az utolsó lemez"
+     },
+     "text": "A betűtábla. A szív alakú mutató felcsúszott a betűsorra, és most az E betűn áll. Senki nem nyúlt hozzá."
+    },
+    {
+     "text": "Fa szellemtábla arany betűkkel: két ívben az ábécé, alatta a számok, a sarkokban IGEN és NEM, alul VISZLÁT. A szív alakú mutató a tábla alján pihen."
+    }
+   ],
+   "images": [
+    "table"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "planchette",
+    "label": "Az utolsó szeánsz",
+    "if": {
+     "all": [
+      {
+       "solved": "Az utolsó lemez"
+      },
+      {
+       "player": "both",
+       "at": "seance"
+      }
+     ]
+    }
+   },
+   "actions": {
+    "use": {
+     "requires": {
+      "solved": "Az utolsó lemez"
+     },
+     "otherwise": "Ráteszed az ujjad a mutatóra. Nem mozdul, és ti sem tudjátok, mit kérdeznétek."
+    }
+   }
+  },
+  {
+   "id": "chairs",
+   "name": "székek",
+   "location": "seance",
+   "text": "Hét egyforma, magas támlájú faragott szék, a támlákon üres rézlapocska. Egyformák, amíg nem tudjátok, ki hol ült.",
+   "aliases": [
+    "szék",
+    "támla",
+    "hét szék",
+    "rézlap"
+   ]
+  },
+  {
+   "id": "chair_5",
+   "name": "ötös szék",
+   "location": "seance",
+   "hidden": true,
+   "aliases": [
+    "5-ös szék",
+    "kardos széke",
+    "kardos széke alatt",
+    "szék alatt",
+    "ötödik szék"
+   ],
+   "props": {
+    "searched": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "chair_5.searched",
+      "eq": true
+     },
+     "text": "Az ötös szék, Kardos helye. Alatta már csak a por."
+    },
+    {
+     "text": "Az ötös szék, Kardos helye. Alatta a szőnyegen, a porban egy kis fekete notesz."
+    }
+   ],
+   "images": [
+    "chair5"
+   ],
+   "onLook": {
+    "requires": {
+     "is": "chair_5.searched",
+     "eq": false
+    },
+    "set": {
+     "chair_5.searched": true
+    },
+    "reveal": [
+     "i_notebook"
+    ],
+    "take": [
+     "i_notebook"
+    ],
+    "say": "Lehajolsz, és kiveszed a szék alól a noteszt. Kardos Pál jegyzetei, az utolsó oldalon az este percről percre.",
+    "images": [
+     "notebook"
+    ]
+   },
+   "actions": {
+    "search": {
+     "requires": {
+      "is": "chair_5.searched",
+      "eq": false
+     },
+     "otherwise": "A szék alatt már nincs semmi.",
+     "set": {
+      "chair_5.searched": true
+     },
+     "reveal": [
+      "i_notebook"
+     ],
+     "take": [
+      "i_notebook"
+     ],
+     "say": "Lehajolsz, és kiveszed a szék alól a noteszt. Kardos Pál jegyzetei, az utolsó oldalon az este percről percre.",
+     "images": [
+      "notebook"
+     ]
+    },
+    "take": {
+     "requires": {
+      "is": "chair_5.searched",
+      "eq": false
+     },
+     "otherwise": "A szék alatt már nincs semmi.",
+     "set": {
+      "chair_5.searched": true
+     },
+     "reveal": [
+      "i_notebook"
+     ],
+     "take": [
+      "i_notebook"
+     ],
+     "say": "Lehajolsz, és kiveszed a szék alól a noteszt. Kardos Pál jegyzetei, az utolsó oldalon az este percről percre.",
+     "images": [
+      "notebook"
+     ]
+    },
+    "look_under": {
+     "requires": {
+      "is": "chair_5.searched",
+      "eq": false
+     },
+     "otherwise": "A szék alatt már nincs semmi.",
+     "set": {
+      "chair_5.searched": true
+     },
+     "reveal": [
+      "i_notebook"
+     ],
+     "take": [
+      "i_notebook"
+     ],
+     "say": "Lehajolsz, és kiveszed a szék alól a noteszt. Kardos Pál jegyzetei, az utolsó oldalon az este percről percre.",
+     "images": [
+      "notebook"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_notebook",
+   "name": "Kardos notesze",
+   "location": "chair_5",
+   "hidden": true,
+   "carry": {
+    "name": "Kardos notesze"
+   },
+   "aliases": [
+    "notesz",
+    "jegyzetek",
+    "füzet",
+    "kopogó ábécé",
+    "tábla a noteszben"
+   ],
+   "text": "Kardos Pál zsebnotesze. Az utolsó oldalon az este idővonala, alatta egy betűtábla: a kopogás nyitja.",
+   "images": [
+    "notebook"
+   ],
+   "literal": true
+  },
+  {
+   "id": "cabinet",
+   "name": "szellemkabinet",
+   "location": "seance",
+   "aliases": [
+    "kabinet",
+    "szekrény",
+    "fülke",
+    "függöny",
+    "bársonyfüggöny"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Magas, keskeny faragott tölgyfülke a hátsó fal előtt, a tetején háromszögbe faragott szem. Elejét két fekete bársonyfüggöny zárja. Ebbe ült be Vera, és innen tűnt el.",
+    "open": "A kabinet függönye elhúzva. Bent egyetlen üres szék, alatta sötét deszkapadló."
+   },
+   "images": {
+    "closed": [
+     "cabinet"
+    ],
+    "open": [
+     "cabinet_open"
+    ]
+   },
+   "literal": true,
+   "actions": {
+    "open": {
+     "requires": {
+      "is": "cabinet.state",
+      "eq": "closed"
+     },
+     "otherwise": "A függöny már el van húzva.",
+     "setState": "open",
+     "say": "Elhúzod a függönyt. Por száll. Bent egyetlen üres szék.",
+     "images": [
+      "cabinet_open"
+     ]
+    },
+    "pull": {
+     "requires": {
+      "is": "cabinet.state",
+      "eq": "closed"
+     },
+     "otherwise": "A függöny már el van húzva.",
+     "setState": "open",
+     "say": "Elhúzod a függönyt. Por száll. Bent egyetlen üres szék.",
+     "images": [
+      "cabinet_open"
+     ]
+    },
+    "close": {
+     "requires": {
+      "is": "cabinet.state",
+      "eq": "open"
+     },
+     "otherwise": "Be van húzva.",
+     "setState": "closed",
+     "say": "Behúzod a függönyt."
+    },
+    "enter": {
+     "say": "Beülsz a kabinet székébe, és behúzod magad előtt a függönyt. Sötét. Csak a saját lélegzeted hallod. Aztán kijössz."
+    }
+   }
+  },
+  {
+   "id": "cabinet_floor",
+   "name": "a kabinet padlója",
+   "location": "cabinet",
+   "rel": "part",
+   "aliases": [
+    "padló",
+    "deszkák",
+    "deszkapadló",
+    "csapóajtó",
+    "négyzet"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "cord_7.pulled",
+      "eq": true
+     },
+     "text": "A kabinet padlójában egy négyzetnyi deszka most egy ujjnyit kiemelkedik. Csapóajtó, és a retesze kioldott."
+    },
+    {
+     "text": "Sötét deszkapadló. A szék alatt egy négyzetben a deszkák kicsit másképp illeszkednek, mint körülöttük. Megnyomod: nem mozdul, mintha alulról tartaná valami."
+    }
+   ],
+   "literal": true,
+   "visibleIf": {
+    "is": "cabinet.state",
+    "eq": "open"
+   }
+  },
+  {
+   "id": "trapdoor",
+   "name": "csapóajtó",
+   "location": "cabinet",
+   "hidden": true,
+   "aliases": [
+    "csapóajtó a kabinetben",
+    "lépcső le",
+    "nyílás a padlón"
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Négyzet alakú csapóajtó a kabinet padlójában, a retesze kioldva.",
+    "open": "A kabinet padlójában nyitott csapóajtó, alatta meredek lépcső le a sötétbe."
+   },
+   "images": {
+    "closed": [
+     "cabinet_open"
+    ],
+    "open": [
+     "cabinet_trapdoor"
+    ]
+   },
+   "actions": {
+    "open": {
+     "requires": {
+      "all": [
+       {
+        "is": "cabinet.state",
+        "eq": "open"
+       },
+       {
+        "is": "trapdoor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Már nyitva.",
+     "setState": "open",
+     "images": [
+      "cabinet_trapdoor"
+     ],
+     "say": "Félretolod a széket, és felemeled a deszkát. A csapóajtó nyikorogva felnyílik. Alatta keskeny, meredek lépcső vezet le a sötétbe."
+    },
+    "pull": {
+     "requires": {
+      "all": [
+       {
+        "is": "cabinet.state",
+        "eq": "open"
+       },
+       {
+        "is": "trapdoor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Már nyitva.",
+     "setState": "open",
+     "images": [
+      "cabinet_trapdoor"
+     ],
+     "say": "Félretolod a széket, és felemeled a deszkát. A csapóajtó nyikorogva felnyílik. Alatta keskeny, meredek lépcső vezet le a sötétbe."
+    },
+    "lift": {
+     "requires": {
+      "all": [
+       {
+        "is": "cabinet.state",
+        "eq": "open"
+       },
+       {
+        "is": "trapdoor.state",
+        "eq": "closed"
+       }
+      ]
+     },
+     "otherwise": "Már nyitva.",
+     "setState": "open",
+     "images": [
+      "cabinet_trapdoor"
+     ],
+     "say": "Félretolod a széket, és felemeled a deszkát. A csapóajtó nyikorogva felnyílik. Alatta keskeny, meredek lépcső vezet le a sötétbe."
+    }
+   }
+  },
+  {
+   "id": "props",
+   "name": "kellékek",
+   "location": "seance",
+   "text": "Kis kerek asztalkán ezüsttálca: egy rézcsengő, egy hosszú, kihúzható alumíniumtrombita halvány világító csíkokkal, és egy csörgődob. A csengő nyeléhez vékony fekete cérna van kötve, ami lelóg az asztalról, és a lambéria egy apró lyukában tűnik el.",
+   "images": [
+    "props"
+   ],
+   "aliases": [
+    "tálca",
+    "csengő",
+    "trombita",
+    "csörgődob",
+    "asztalka",
+    "cérna",
+    "lyuk",
+    "lambéria"
+   ],
+   "literal": true,
+   "actions": {
+    "pull": {
+     "say": "Meghúzod a cérnát. A csengő megcsördül. A cérna a falba fut, valahová a lambéria mögé."
+    }
+   }
+  },
+  {
+   "id": "seance_wall",
+   "name": "falburkolat",
+   "location": "seance",
+   "aliases": [
+    "fal",
+    "falak",
+    "kopogás",
+    "hátsó fal",
+    "vörös bársony"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Az ékszerdoboz"
+     },
+     "text": "Vörös bársony és sötét tölgylambéria. A fal csendes."
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "all": [
+         {
+          "player": 0,
+          "at": "seance"
+         },
+         {
+          "player": 1,
+          "at": "passage"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "player": 1,
+          "at": "seance"
+         },
+         {
+          "player": 0,
+          "at": "passage"
+         }
+        ]
+       }
+      ]
+     },
+     "text": "A lambéria mögül kopogás hallatszik, lassan, csoportokban. Nem te kopogsz."
+    },
+    {
+     "text": "Vörös bársonnyal borított fal, alul sötét tölgylambéria. Megkopogtatod: helyenként üregesen kong."
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "knocking",
+    "label": "A kopogás",
+    "if": {
+     "all": [
+      {
+       "any": [
+        {
+         "all": [
+          {
+           "player": 0,
+           "at": "seance"
+          },
+          {
+           "player": 1,
+           "at": "passage"
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "player": 1,
+           "at": "seance"
+          },
+          {
+           "player": 0,
+           "at": "passage"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "not": {
+        "solved": "Az ékszerdoboz"
+       }
+      }
+     ]
+    }
+   },
+   "actions": {
+    "knock": {
+     "say": "Bekopogsz a falon. Egy pillanatig csend. Aztán mintha valahol mélyebben visszakopogna valami."
+    },
+    "listen": {
+     "requires": {
+      "any": [
+       {
+        "all": [
+         {
+          "player": 0,
+          "at": "seance"
+         },
+         {
+          "player": 1,
+          "at": "passage"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "player": 1,
+          "at": "seance"
+         },
+         {
+          "player": 0,
+          "at": "passage"
+         }
+        ]
+       }
+      ]
+     },
+     "otherwise": "Csend.",
+     "panel": {
+      "id": "knocking",
+      "label": "A kopogás"
+     }
+    }
+   }
+  },
+  {
+   "id": "windows_curtains",
+   "name": "függönyök",
+   "location": "seance",
+   "text": "Nehéz fekete bársonyfüggönyök a magas ablakokon. Résein alig szűrődik be valami.",
+   "aliases": [
+    "ablak",
+    "ablakok",
+    "fekete függöny"
+   ]
+  },
+  {
+   "id": "chandelier",
+   "name": "csillár",
+   "location": "seance",
+   "text": "Sötét kristálycsillár az asztal fölött, pókhálóval.",
+   "aliases": [
+    "lámpa"
+   ]
+  },
+  {
+   "id": "cord_1",
+   "name": "egyes zsinór",
+   "location": "passage",
+   "aliases": [
+    "1-es zsinór",
+    "első zsinór",
+    "egyes"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Egyes zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. A falon túlról halk csilingelés.",
+     "notify": {
+      "at": "seance",
+      "text": "A tálcán magától megszólal a rézcsengő."
+     }
+    },
+    "use": {
+     "say": "Meghúzod. A falon túlról halk csilingelés.",
+     "notify": {
+      "at": "seance",
+      "text": "A tálcán magától megszólal a rézcsengő."
+     }
+    },
+    "push": {
+     "say": "Meghúzod. A falon túlról halk csilingelés.",
+     "notify": {
+      "at": "seance",
+      "text": "A tálcán magától megszólal a rézcsengő."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_2",
+   "name": "kettes zsinór",
+   "location": "passage",
+   "aliases": [
+    "2-es zsinór",
+    "második zsinór",
+    "kettes"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Kettes zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. Odaát mintha valami fémes megmozdulna.",
+     "notify": {
+      "at": "seance",
+      "text": "A trombita a tálcán megbillen, és lassan felemelkedik egy vékony drót végén, aztán visszaereszkedik."
+     }
+    },
+    "use": {
+     "say": "Meghúzod. Odaát mintha valami fémes megmozdulna.",
+     "notify": {
+      "at": "seance",
+      "text": "A trombita a tálcán megbillen, és lassan felemelkedik egy vékony drót végén, aztán visszaereszkedik."
+     }
+    },
+    "push": {
+     "say": "Meghúzod. Odaát mintha valami fémes megmozdulna.",
+     "notify": {
+      "at": "seance",
+      "text": "A trombita a tálcán megbillen, és lassan felemelkedik egy vékony drót végén, aztán visszaereszkedik."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_3",
+   "name": "hármas zsinór",
+   "location": "passage",
+   "aliases": [
+    "3-as zsinór",
+    "harmadik zsinór",
+    "hármas"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Hármas zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. Tompa csörgés a falon túl.",
+     "notify": {
+      "at": "seance",
+      "text": "A csörgődob magától megcsörren a tálcán."
+     }
+    },
+    "use": {
+     "say": "Meghúzod. Tompa csörgés a falon túl.",
+     "notify": {
+      "at": "seance",
+      "text": "A csörgődob magától megcsörren a tálcán."
+     }
+    },
+    "push": {
+     "say": "Meghúzod. Tompa csörgés a falon túl.",
+     "notify": {
+      "at": "seance",
+      "text": "A csörgődob magától megcsörren a tálcán."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_4",
+   "name": "négyes zsinór",
+   "location": "passage",
+   "aliases": [
+    "4-es zsinór",
+    "negyedik zsinór",
+    "négyes"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Négyes zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. Nehéz, nyikorgó ellenállás.",
+     "notify": {
+      "at": "seance",
+      "text": "A szeánszasztal egyik oldala megemelkedik, a gyertyatartó megbillen, aztán az asztal visszadöccen."
+     }
+    },
+    "use": {
+     "say": "Meghúzod. Nehéz, nyikorgó ellenállás.",
+     "notify": {
+      "at": "seance",
+      "text": "A szeánszasztal egyik oldala megemelkedik, a gyertyatartó megbillen, aztán az asztal visszadöccen."
+     }
+    },
+    "push": {
+     "say": "Meghúzod. Nehéz, nyikorgó ellenállás.",
+     "notify": {
+      "at": "seance",
+      "text": "A szeánszasztal egyik oldala megemelkedik, a gyertyatartó megbillen, aztán az asztal visszadöccen."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_5",
+   "name": "ötös zsinór",
+   "location": "passage",
+   "aliases": [
+    "5-ös zsinór",
+    "ötödik zsinór",
+    "ötös"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Ötös zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. Puha suhogás odaát.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet fekete függönye megremeg, mintha valaki megérintette volna belülről."
+     }
+    },
+    "use": {
+     "say": "Meghúzod. Puha suhogás odaát.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet fekete függönye megremeg, mintha valaki megérintette volna belülről."
+     }
+    },
+    "push": {
+     "say": "Meghúzod. Puha suhogás odaát.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet fekete függönye megremeg, mintha valaki megérintette volna belülről."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_6",
+   "name": "elszakadt zsinór",
+   "location": "passage",
+   "aliases": [
+    "hatodik zsinór",
+    "6-os zsinór",
+    "csonk",
+    "hatos"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "A hatodik zsinór elszakadt, rövid csonkja lóg a csiga alól.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod a csonkot. Semmi.",
+     "notify": {
+      "at": "seance",
+      "text": "Semmi nem mozdul."
+     }
+    },
+    "use": {
+     "say": "Meghúzod a csonkot. Semmi.",
+     "notify": {
+      "at": "seance",
+      "text": "Semmi nem mozdul."
+     }
+    },
+    "push": {
+     "say": "Meghúzod a csonkot. Semmi.",
+     "notify": {
+      "at": "seance",
+      "text": "Semmi nem mozdul."
+     }
+    }
+   }
+  },
+  {
+   "id": "cord_7",
+   "name": "hetedik zsinór",
+   "location": "passage",
+   "aliases": [
+    "üres címkés zsinór",
+    "7-es zsinór",
+    "utolsó zsinór",
+    "jobb szélső zsinór",
+    "hetes"
+   ],
+   "props": {
+    "pulled": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": "Hetedik zsinór a deszkán: vékony sötét zsinór a csiga alatt, a végén fa fogantyú.",
+   "actions": {
+    "pull": {
+     "say": "Meghúzod. A falon túl, lent, halk kattanás, mint egy retesz.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet felől, a padló felől halk kattanás hallatszik."
+     },
+     "set": {
+      "cord_7.pulled": true
+     },
+     "reveal": [
+      "trapdoor"
+     ]
+    },
+    "use": {
+     "say": "Meghúzod. A falon túl, lent, halk kattanás, mint egy retesz.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet felől, a padló felől halk kattanás hallatszik."
+     },
+     "set": {
+      "cord_7.pulled": true
+     },
+     "reveal": [
+      "trapdoor"
+     ]
+    },
+    "push": {
+     "say": "Meghúzod. A falon túl, lent, halk kattanás, mint egy retesz.",
+     "notify": {
+      "at": "seance",
+      "text": "A kabinet felől, a padló felől halk kattanás hallatszik."
+     },
+     "set": {
+      "cord_7.pulled": true
+     },
+     "reveal": [
+      "trapdoor"
+     ]
+    }
+   }
+  },
+  {
+   "id": "cord_board",
+   "name": "zsinóros deszka",
+   "location": "passage",
+   "text": "Durva deszka a falon, a tetején hét rézcsiga, mindegyikről egy zsinór lóg fa fogantyúval. Az első öt alatt számozott rézcímke, a hatodik zsinór elszakadt, a hetedik címkéje üres. Mellette egy szögön filces kalapács.",
+   "images": [
+    "pulleys"
+   ],
+   "aliases": [
+    "deszka",
+    "zsinórok",
+    "csigák",
+    "címkék",
+    "kalapács",
+    "filces kalapács"
+   ],
+   "literal": true,
+   "actions": {
+    "use": {
+     "say": "A filces kalapácsot végighúzod a falon: tompa, puha koppanások. Ezzel kopogtak."
+    }
+   }
+  },
+  {
+   "id": "camera",
+   "name": "fényképezőgép",
+   "location": "passage",
+   "aliases": [
+    "gép",
+    "kamera",
+    "doboz",
+    "lencse"
+   ],
+   "props": {
+    "emptied": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "camera.emptied",
+      "eq": true
+     },
+     "text": "Fadobozos fényképezőgép a végfalon, elejével a falba nyomva. Üres, a kazettát kivettétek."
+    },
+    {
+     "text": "Fadobozos fényképezőgép egy konzolon a végfalon, az eleje egy lyukba nyomva: a szeánszterembe néz. Hátul betolt lemezkazetta, a záron egy zsinór. Valaki ezzel fényképezett, falon át."
+    }
+   ],
+   "images": [
+    "camera"
+   ],
+   "literal": true,
+   "actions": {
+    "open": {
+     "requires": {
+      "is": "camera.emptied",
+      "eq": false
+     },
+     "otherwise": "A kazettát már kivettétek.",
+     "set": {
+      "camera.emptied": true
+     },
+     "reveal": [
+      "i_plate_holder"
+     ],
+     "take": [
+      "i_plate_holder"
+     ],
+     "say": "Óvatosan kihúzod a lemezkazettát. A tolólap zárva: a lemez benne még sosem látott fényt az exponálás óta. A kazetta oldalán ceruzával: „1923. XI. 2.”",
+     "images": [
+      "i_plate_holder"
+     ]
+    },
+    "take": {
+     "requires": {
+      "is": "camera.emptied",
+      "eq": false
+     },
+     "otherwise": "A kazettát már kivettétek.",
+     "set": {
+      "camera.emptied": true
+     },
+     "reveal": [
+      "i_plate_holder"
+     ],
+     "take": [
+      "i_plate_holder"
+     ],
+     "say": "Óvatosan kihúzod a lemezkazettát. A tolólap zárva: a lemez benne még sosem látott fényt az exponálás óta. A kazetta oldalán ceruzával: „1923. XI. 2.”",
+     "images": [
+      "i_plate_holder"
+     ]
+    },
+    "search": {
+     "requires": {
+      "is": "camera.emptied",
+      "eq": false
+     },
+     "otherwise": "A kazettát már kivettétek.",
+     "set": {
+      "camera.emptied": true
+     },
+     "reveal": [
+      "i_plate_holder"
+     ],
+     "take": [
+      "i_plate_holder"
+     ],
+     "say": "Óvatosan kihúzod a lemezkazettát. A tolólap zárva: a lemez benne még sosem látott fényt az exponálás óta. A kazetta oldalán ceruzával: „1923. XI. 2.”",
+     "images": [
+      "i_plate_holder"
+     ]
+    }
+   }
+  },
+  {
+   "id": "i_plate_holder",
+   "name": "lemezkazetta",
+   "location": "camera",
+   "hidden": true,
+   "carry": {
+    "name": "Lemezkazetta"
+   },
+   "aliases": [
+    "kazetta",
+    "lemez",
+    "üveglemez"
+   ],
+   "text": "Fa lemezkazetta, a tolólap zárva. Oldalán ceruzával: „1923. XI. 2.” Ki kellene hívni.",
+   "images": [
+    "i_plate_holder"
+   ],
+   "literal": true
+  },
+  {
+   "id": "peephole",
+   "name": "kukucskáló",
+   "location": "passage",
+   "text": "A gép mellett egy apró lyuk a falban. Belenézel: odaát a szeánszterem, az asztal, a kabinet.",
+   "images": [
+    "peephole"
+   ],
+   "aliases": [
+    "lyuk",
+    "lyukak",
+    "nyílás"
+   ],
+   "literal": true
+  },
+  {
+   "id": "knock_wall",
+   "name": "ceruzás rács",
+   "location": "passage",
+   "text": "A vakolaton halvány ceruzás rács, öt sor, öt oszlop, a széleken számok. A négyzetek üresek, elmosódtak.",
+   "images": [
+    "knock_wall"
+   ],
+   "aliases": [
+    "rács",
+    "vakolat",
+    "ceruzarajz",
+    "számok a falon"
+   ],
+   "literal": true
+  },
+  {
+   "id": "passage_wall",
+   "name": "végfal",
+   "location": "passage",
+   "aliases": [
+    "fal",
+    "falak",
+    "kopogás",
+    "deszkafal"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Az ékszerdoboz"
+     },
+     "text": "Vakolat és léc. A fal csendes."
+    },
+    {
+     "if": {
+      "any": [
+       {
+        "all": [
+         {
+          "player": 0,
+          "at": "seance"
+         },
+         {
+          "player": 1,
+          "at": "passage"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "player": 1,
+          "at": "seance"
+         },
+         {
+          "player": 0,
+          "at": "passage"
+         }
+        ]
+       }
+      ]
+     },
+     "text": "A végfal túloldaláról, a szeánszterem felől kopogás hallatszik, lassan, csoportokban. Nem te kopogsz."
+    },
+    {
+     "text": "Vakolatlan léc és vakolat. Túloldalt a szeánszterem."
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "knocking",
+    "label": "A kopogás",
+    "if": {
+     "all": [
+      {
+       "any": [
+        {
+         "all": [
+          {
+           "player": 0,
+           "at": "seance"
+          },
+          {
+           "player": 1,
+           "at": "passage"
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "player": 1,
+           "at": "seance"
+          },
+          {
+           "player": 0,
+           "at": "passage"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "not": {
+        "solved": "Az ékszerdoboz"
+       }
+      }
+     ]
+    }
+   },
+   "actions": {
+    "knock": {
+     "say": "Bekopogsz. A hang elnyelődik a falban."
+    },
+    "listen": {
+     "requires": {
+      "any": [
+       {
+        "all": [
+         {
+          "player": 0,
+          "at": "seance"
+         },
+         {
+          "player": 1,
+          "at": "passage"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "player": 1,
+          "at": "seance"
+         },
+         {
+          "player": 0,
+          "at": "passage"
+         }
+        ]
+       }
+      ]
+     },
+     "otherwise": "Csend.",
+     "panel": {
+      "id": "knocking",
+      "label": "A kopogás"
+     }
+    }
+   }
+  },
+  {
+   "id": "narrow_stairs",
+   "name": "keskeny lépcső",
+   "location": "passage",
+   "text": "Meredek, keskeny falépcső fel a sötétbe, a falak között.",
+   "aliases": [
+    "lépcső",
+    "fel",
+    "falépcső"
+   ]
+  },
+  {
+   "id": "i_glove",
+   "name": "kesztyű",
+   "location": "crawl",
+   "mention": "egy fekete női kesztyű",
+   "carry": {
+    "name": "Kesztyű"
+   },
+   "aliases": [
+    "női kesztyű",
+    "fekete kesztyű"
+   ],
+   "text": "Vékony fekete női kecskebőr kesztyű. Ugyanilyen van a portrén Vera kezén.",
+   "images": [
+    "i_glove"
+   ]
+  },
+  {
+   "id": "i_label",
+   "name": "bőröndcímke",
+   "location": "crawl",
+   "mention": "egy elszakadt bőröndcímke",
+   "carry": {
+    "name": "Bőröndcímke"
+   },
+   "aliases": [
+    "címke",
+    "karton",
+    "hotel"
+   ],
+   "text": "Elszakadt kartoncímke zsineggel: „HOTEL KÄRNTNERHOF – WIEN”. Egy bőröndről szakadt le, ezen a szűk lépcsőn.",
+   "images": [
+    "trapdoor_below"
+   ],
+   "literal": true
+  },
+  {
+   "id": "crawl_steps",
+   "name": "lépcső",
+   "location": "crawl",
+   "text": "Meredek, keskeny lépcső a kabinet padlója alatt. Lent a falak közé vezet, a ház alá, a kert felé. Valaki itt ment le, sietve.",
+   "aliases": [
+    "lépcsők",
+    "le",
+    "alja"
+   ]
+  },
+  {
+   "id": "desk",
+   "name": "íróasztal",
+   "location": "office",
+   "text": "Nehéz mahagóni íróasztal: zöld ernyős lámpa, egy csukott főkönyv, két felbontott levél a borítékja mellett, tintatartó, levélbontó. Hátul ezüstkeretben egy fénykép.",
+   "images": [
+    "desk"
+   ],
+   "aliases": [
+    "asztal",
+    "lámpa",
+    "tintatartó",
+    "levélbontó",
+    "fiókok"
+   ]
+  },
+  {
+   "id": "erno_photo",
+   "name": "Ernő fényképe",
+   "location": "office",
+   "text": "Ezüstkeretes fénykép: Ilosvay Ernő, Vera bátyja, a szalonban áll a likőrösszekrény mellett, jobb kezét a szekrény bal felső sarkára teszi, a rozettára. Halványan mosolyog.",
+   "images": [
+    "erno_photo"
+   ],
+   "aliases": [
+    "fénykép",
+    "fotó",
+    "keret",
+    "ernő",
+    "ezüstkeret",
+    "férfi a képen"
+   ],
+   "literal": true
+  },
+  {
+   "id": "ledger",
+   "name": "főkönyv",
+   "location": "office",
+   "text": "Vera számlakönyve 1923-ból.",
+   "images": [
+    "ledger"
+   ],
+   "aliases": [
+    "számlakönyv",
+    "könyv",
+    "számlák"
+   ],
+   "literal": true
+  },
+  {
+   "id": "letter_kardos",
+   "name": "Kardos levele",
+   "location": "office",
+   "text": "Kardos Pál levele Verának, 1923 októberéből.",
+   "images": [
+    "letter_kardos"
+   ],
+   "aliases": [
+    "levél",
+    "első levél",
+    "újságíró levele"
+   ],
+   "literal": true
+  },
+  {
+   "id": "letter_barczy",
+   "name": "Bárczy levele",
+   "location": "office",
+   "text": "Bárczy Gedeon levele Verának.",
+   "images": [
+    "letter_barczy"
+   ],
+   "aliases": [
+    "második levél",
+    "bankár levele",
+    "követelés"
+   ],
+   "literal": true
+  },
+  {
+   "id": "bookshelf",
+   "name": "könyvespolc",
+   "location": "office",
+   "text": "Bőrkötésű könyvek: spiritizmus, mesmerizmus, Swedenborg, Conan Doyle, egy sor fotográfiai kézikönyv. Mind poros.",
+   "aliases": [
+    "könyvek",
+    "polc"
+   ]
+  },
+  {
+   "id": "sofa",
+   "name": "kanapé",
+   "location": "office",
+   "text": "Kis bőrkanapé, rajta egy összehajtott takaró.",
+   "aliases": [
+    "bőrkanapé",
+    "takaró"
+   ]
+  },
+  {
+   "id": "vanity",
+   "name": "fésülködőasztal",
+   "location": "boudoir",
+   "text": "Fésülködőasztal hármas tükörrel: kristály parfümös üvegek, púderdoboz, ezüstkefe, kézitükör, hajtűk. Jobbra egy kis fekete lakkozott ékszerdoboz. A tükrökben csak a sötét szoba.",
+   "images": [
+    "vanity"
+   ],
+   "aliases": [
+    "tükör",
+    "tükrök",
+    "parfüm",
+    "púder",
+    "kefe",
+    "hajtűk"
+   ],
+   "literal": true
+  },
+  {
+   "id": "jewelbox",
+   "name": "ékszerdoboz",
+   "location": "boudoir",
+   "aliases": [
+    "doboz",
+    "betűzár",
+    "zár",
+    "lakkdoboz"
+   ],
+   "state": {
+    "initial": "locked",
+    "values": [
+     "locked",
+     "open"
+    ]
+   },
+   "text": {
+    "locked": "Kis fekete lakkozott ékszerdoboz arany vonalakkal. Elején rézlemez négy kis ablakkal, mindegyikben egy forgatható betűhenger.",
+    "open": "A nyitott ékszerdoboz, a bársonya üres."
+   },
+   "images": {
+    "locked": [
+     "jewelbox"
+    ],
+    "open": [
+     "jewelbox_open"
+    ]
+   },
+   "panel": {
+    "id": "code_lock_box",
+    "label": "A betűzár"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Az ékszerdoboz"
+     },
+     "panel": null
+    }
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "Vera ékszerdoboza. Nem töritek fel."
+    }
+   }
+  },
+  {
+   "id": "i_basement_key",
+   "name": "pincekulcs",
+   "location": "jewelbox",
+   "hidden": true,
+   "carry": {
+    "name": "Pincekulcs"
+   },
+   "aliases": [
+    "kulcs",
+    "vaskulcs",
+    "címkés kulcs"
+   ],
+   "text": "Régi vaskulcs, papírcímkéjén Ernő kézírásával: „E. — sötétkamra”.",
+   "images": [
+    "i_basement_key"
+   ],
+   "literal": true
+  },
+  {
+   "id": "i_death_notice",
+   "name": "gyászjelentés",
+   "location": "jewelbox",
+   "hidden": true,
+   "carry": {
+    "name": "Gyászjelentés"
+   },
+   "aliases": [
+    "fekete szegélyű kártya",
+    "kártya"
+   ],
+   "text": "Ernő gyászjelentése, fekete szegéllyel.",
+   "images": [
+    "death_notice"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wardrobe",
+   "name": "ruhásszekrény",
+   "location": "boudoir",
+   "text": "Magas sötét szekrény: fekete estélyik, és egy halom halvány muszlin, ami a sötétben zöldesen derenglik. A hátfala elmozdítható: mögötte a falak közötti lépcső.",
+   "aliases": [
+    "szekrény",
+    "ruhák",
+    "estélyik",
+    "muszlin",
+    "ektoplazma"
+   ]
+  },
+  {
+   "id": "i_timetable",
+   "name": "menetrend",
+   "location": "vanity",
+   "rel": "on",
+   "mention": "egy összehajtott menetrend",
+   "carry": {
+    "name": "Menetrend"
+   },
+   "aliases": [
+    "vasúti menetrend",
+    "mávmenetrend"
+   ],
+   "text": "MÁV-menetrend, Budapest–Wien. A reggeli gyors ceruzával bekarikázva.",
+   "images": [
+    "timetable"
+   ],
+   "literal": true
+  },
+  {
+   "id": "luggage_stand",
+   "name": "bőröndtartó",
+   "location": "boudoir",
+   "text": "Összecsukható bőröndtartó az ágy lábánál. Üres. A porban rajta két négyszögletes, tisztább folt, ahol bőröndök álltak.",
+   "aliases": [
+    "tartó",
+    "bőrönd"
+   ],
+   "literal": true
+  },
+  {
+   "id": "bed",
+   "name": "ágy",
+   "location": "boudoir",
+   "text": "Baldachinos ágy, bevetve, porosan. Senki nem aludt benne november 2. óta.",
+   "aliases": [
+    "baldachin",
+    "párna"
+   ]
+  },
+  {
+   "id": "bench",
+   "name": "pult",
+   "location": "darkroom",
+   "text": "Fa pult a hátsó falnál: kis asztali nagyító, három fehér zománctál, barna vegyszeres üvegek, csipesz. Fölötte vörös üvegű lámpa.",
+   "images": [
+    "enlarger"
+   ],
+   "aliases": [
+    "tálak",
+    "nagyító",
+    "üvegek",
+    "vegyszerek",
+    "vörös lámpa",
+    "lámpa",
+    "csipesz"
+   ],
+   "panel": {
+    "id": "darkroom",
+    "label": "Előhívás",
+    "if": {
+     "has": "i_plate_holder"
+    }
+   }
+  },
+  {
+   "id": "recipe",
+   "name": "recept",
+   "location": "darkroom",
+   "text": "A falra tűzött, vegyszerfoltos papír: Ernő receptje.",
+   "images": [
+    "recipe"
+   ],
+   "aliases": [
+    "papír",
+    "papír a falon",
+    "cetli"
+   ],
+   "literal": true
+  },
+  {
+   "id": "plate_shelves",
+   "name": "lemezpolcok",
+   "location": "darkroom",
+   "text": "Polcok tele üveglemezekkel és lemezdobozokkal: portrék, szellemfotók, próbák. Ernő évei. Egyik sem számít már.",
+   "aliases": [
+    "polc",
+    "polcok",
+    "lemezek",
+    "lemezdobozok"
+   ]
+  },
+  {
+   "id": "sink",
+   "name": "mosogató",
+   "location": "darkroom",
+   "text": "Mély kőmosogató sárgaréz csappal. Elfordítod: rozsdás víz köhög ki, aztán tisztul.",
+   "aliases": [
+    "csap",
+    "víz"
+   ]
+  },
+  {
+   "id": "path",
+   "name": "kavicsút",
+   "location": "garden",
+   "text": "Avaros kavicsút a kaputól a veranda lépcsőjéig. Lábnyom nincs rajta, csak a tiétek.",
+   "aliases": [
+    "út",
+    "avar",
+    "lépcső",
+    "város",
+    "fények",
+    "völgy"
+   ]
+  },
+  {
+   "id": "beams",
+   "name": "gerendák",
+   "location": "passage",
+   "text": "Csupasz gerendák, vakolatlécek, pókháló. A deszkapadlón régi lábnyomok a porban, és egy elfeketedett gyertyacsonk egy párkányon.",
+   "aliases": [
+    "léc",
+    "vakolatlécek",
+    "deszkapadló",
+    "padló",
+    "gyertyacsonk",
+    "gyertya",
+    "pókháló",
+    "lábnyomok"
+   ]
+  },
+  {
+   "id": "office_curtains",
+   "name": "függönyök",
+   "location": "office",
+   "text": "Nehéz, behúzott függönyök. Mögöttük az ablakon por, odakint sötét kert.",
+   "aliases": [
+    "függöny",
+    "ablak"
+   ]
+  },
+  {
+   "id": "filing_cabinet",
+   "name": "iratszekrény",
+   "location": "office",
+   "text": "Sötét iratszekrény: szerződések, nyugták, újságkivágások Vera szeánszairól. Semmi, ami ma még számít.",
+   "aliases": [
+    "iratok",
+    "nyugták",
+    "szerződések"
+   ]
+  },
+  {
+   "id": "screen",
+   "name": "paraván",
+   "location": "boudoir",
+   "text": "Festett selyem paraván, darvakkal és nádassal. Mögötte senki.",
+   "aliases": [
+    "spanyolfal"
+   ]
+  },
+  {
+   "id": "darkroom_curtain",
+   "name": "fekete függöny",
+   "location": "darkroom",
+   "text": "Vastag fekete fényzáró függöny az ajtón.",
+   "aliases": [
+    "függöny",
+    "ajtó"
+   ]
+  },
+  {
+   "id": "hall_floor",
+   "name": "márványpadló",
+   "location": "hall",
+   "text": "Fekete-fehér márványkockák, vastag porral. A lábnyomaitok élesen látszanak benne.",
+   "aliases": [
+    "padló",
+    "por",
+    "ajtók"
+   ]
+  },
+  {
+   "id": "i_keyring",
+   "name": "kulcskarika",
+   "location": "garden",
+   "carry": {
+    "name": "Kulcskarika"
+   },
+   "aliases": [
+    "kulcsok",
+    "kulcs"
+   ],
+   "text": "Az ügyvéd kulcskarikája két kulccsal: a nagy a bejárati ajtóé, a kicsi a dolgozószobáé.",
+   "images": [
+    "i_keyring"
+   ]
+  },
+  {
+   "id": "i_inventory",
+   "name": "leltár",
+   "location": "garden",
+   "carry": {
+    "name": "Leltár"
+   },
+   "aliases": [
+    "ügyvéd levele",
+    "leltárlista"
+   ],
+   "text": "Az ügyvéd hagyatéki leltára.",
+   "images": [
+    "inventory"
+   ],
+   "literal": true
+  },
+  {
+   "id": "i_article",
+   "name": "újságcikk",
+   "location": "garden",
+   "carry": {
+    "name": "Újságcikk"
+   },
+   "aliases": [
+    "cikk",
+    "kivágás",
+    "pesti napló"
+   ],
+   "text": "Kivágás a Pesti Naplóból, 1923. november 4.",
+   "images": [
+    "article"
+   ],
+   "literal": true
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:Az ültetés",
+   "do": {
+    "say": "Összeállt az ültetés. Kardos Pál, az újságíró, az ötös széken ült, a kabinettel szemben, a kukucskáló felé.",
+    "reveal": [
+     "chair_5"
+    ]
+   }
+  },
+  {
+   "on": "solved:Az ékszerdoboz",
+   "do": {
+    "say": "A betűhengerek a helyükre kattannak, a fedél felpattan. A bársonyon egy címkés vaskulcs és egy fekete szegélyű kártya: Ilosvay Ernő gyászjelentése. 1922. április 9. Egy évvel az utolsó szeánsz előtt.",
+    "images": [
+     "jewelbox_open",
+     "death_notice"
+    ],
+    "setItem": {
+     "item": "jewelbox",
+     "state": "open"
+    },
+    "reveal": [
+     "i_basement_key",
+     "i_death_notice"
+    ],
+    "take": [
+     "i_basement_key",
+     "i_death_notice"
+    ],
+    "notify": {
+     "at": "passage",
+     "text": "A kopogás abbamarad. A fal csendes."
+    }
+   }
+  },
+  {
+   "on": "solved:Az utolsó lemez",
+   "do": {
+    "say": "A fixírből kiemelt lemezen tisztán ott a kép: a szeánszterem azon az estén, a kukucskálóból. A hat vendég csukott szemmel, kézen fogva ül. A kabinet függönye behúzva. És a kabinet mellett, a fal előtt, áll valaki: sovány férfi sötét öltönyben, az arca csak egy halvány folt.",
+    "images": [
+     "plate_last"
+    ],
+    "setItem": {
+     "item": "cabinet",
+     "state": "closed"
+    },
+    "notify": {
+     "at": "seance",
+     "text": "A szeánszteremben halk súrlódás: a betűtáblán a mutató megmozdul, és felcsúszik a betűkre. A gyertyák lángja meg sem rezdül."
+    }
+   }
+  }
+ ],
+ "inventory": [
+  {
+   "id": "i_keyring",
+   "name": "Kulcskarika"
+  },
+  {
+   "id": "i_inventory",
+   "name": "Leltár"
+  },
+  {
+   "id": "i_article",
+   "name": "Újságcikk"
+  }
+ ],
+ "vars": {},
+ "status": "Hely: {loc0} / {loc1}",
+ "panelTitles": {
+  "logic_grid": "Az ültetés",
+  "knocking": "A kopogás",
+  "code_lock_box": "Az ékszerdoboz",
+  "darkroom": "Az utolsó lemez",
+  "planchette": "Az utolsó szeánsz"
+ },
+ "panelIds": [
+  "logic_grid",
+  "knocking",
+  "code_lock_box",
+  "darkroom",
+  "planchette"
+ ],
+ "panelAvail": {
+  "logic_grid": {
+   "visited": "hall"
+  },
+  "knocking": {
+   "all": [
+    {
+     "any": [
+      {
+       "all": [
+        {
+         "player": 0,
+         "at": "seance"
+        },
+        {
+         "player": 1,
+         "at": "passage"
+        }
+       ]
+      },
+      {
+       "all": [
+        {
+         "player": 1,
+         "at": "seance"
+        },
+        {
+         "player": 0,
+         "at": "passage"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "not": {
+      "solved": "Az ékszerdoboz"
+     }
+    }
+   ]
+  },
+  "code_lock_box": {
+   "visited": "boudoir"
+  },
+  "darkroom": {
+   "all": [
+    {
+     "has": "i_plate_holder"
+    },
+    {
+     "player": "any",
+     "at": "darkroom"
+    }
+   ]
+  },
+  "planchette": {
+   "all": [
+    {
+     "solved": "Az utolsó lemez"
+    },
+    {
+     "player": "both",
+     "at": "seance"
+    }
+   ]
+  }
+ },
+ "mustReach": [
+  {
+   "solved": "Az utolsó szeánsz"
+  }
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "kód",
+  "titkos",
+  "rejtett",
+  "csapóajtó",
+  "zsinór",
+  "kopogás",
+  "lemez",
+  "notesz",
+  "járat",
+  "rozetta"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

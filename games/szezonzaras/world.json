@@ -1,0 +1,3610 @@
+{
+ "start": "salon",
+ "rooms": {
+  "salon": {
+   "name": "Hölgyek szalonja",
+   "into": "a szalonba",
+   "inside": "a szalonban",
+   "image": [
+    {
+     "if": {
+      "is": "salon_door.open",
+      "eq": true
+     },
+     "image": "salon_now"
+    },
+    {
+     "image": "salon"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "salon_door.open",
+      "eq": true
+     },
+     "text": "A hölgyek szalonja. Balra a nyitott ajtó a nagyterembe. Jobbra márványlapos fésülködőasztalok aranykeretes tükrökkel, rózsaszín lámpák, bordó bársonyfotelek; az egyik asztalon egy elfelejtett retikül. Középen a takarítónő kocsija, balra elöl a ruhatári pult egy nercstólával."
+    },
+    {
+     "text": "A hölgyek szalonja. Balra a krémszínű ajtó, kívülről bezárva; alatta keskeny fénycsík. Jobbra márványlapos fésülködőasztalok aranykeretes tükrökkel, rózsaszín lámpák, bordó bársonyfotelek; az egyik asztalon egy elfelejtett retikül. Középen a takarítónő kocsija, balra elöl a ruhatári pult egy nercstólával."
+    }
+   ],
+   "exits": {
+    "hall": {
+     "aliases": [
+      "nagyterem",
+      "terem",
+      "ki",
+      "kifelé"
+     ],
+     "requires": {
+      "is": "salon_door.open",
+      "eq": true
+     },
+     "otherwise": "A szalon ajtaja kívülről zárva."
+    }
+   },
+   "aliases": [
+    "szalon",
+    "mosdó"
+   ],
+   "details": [
+    "rózsaszín lámpafény",
+    "parfüm és púder illata",
+    "csend, csak a lámpák zümmögnek"
+   ]
+  },
+  "hall": {
+   "name": "Nagyterem",
+   "into": "a nagyterembe",
+   "inside": "a nagyteremben",
+   "image": [
+    {
+     "if": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "image": "hall_now"
+    },
+    {
+     "image": "hall"
+    }
+   ],
+   "text": "A nagyterem. Elöl a nagy rulett, letakaratlanul, mögötte vörös szőnyeg. Fent a kristálycsillár és a körbefutó galéria. Balra a bár és a magas falióra, mellette boltív: a lépcső lefelé, kovácsoltvas ráccsal. Jobbra hátul a pénztár aranyozott rácsa. A többi asztal a terem túlsó végén, porlepedő alatt. Mögöttetek a terasz magas üvegajtói. Innen nyílik a szalon, a galéria lépcsője és a krupiék öltözője.",
+   "exits": {
+    "salon": {
+     "aliases": [
+      "szalon"
+     ]
+    },
+    "gallery": {
+     "aliases": [
+      "galéria",
+      "fel",
+      "karzat"
+     ]
+    },
+    "staff": {
+     "aliases": [
+      "öltöző",
+      "krupiék öltözője"
+     ]
+    },
+    "cage": {
+     "aliases": [
+      "pénztár"
+     ],
+     "requires": {
+      "has": "i_key_cassa"
+     },
+     "otherwise": "A pénztár ajtaja zárva. Biztonsági zár."
+    },
+    "corridor": {
+     "aliases": [
+      "le",
+      "lefelé",
+      "lépcső",
+      "alsó folyosó",
+      "folyosó"
+     ],
+     "requires": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "otherwise": "A lépcsőrács zárva. A lakat lent van, a túloldalon."
+    }
+   },
+   "aliases": [
+    "terem",
+    "játékterem"
+   ],
+   "details": [
+    "félig égő csillár",
+    "zöld posztó és vörös szőnyeg",
+    "a falióra ketyegése",
+    "holdfény az üvegajtókon"
+   ]
+  },
+  "gallery": {
+   "name": "Galéria",
+   "into": "a galériára",
+   "inside": "a galérián",
+   "image": "gallery",
+   "text": "A galéria, keskeny karzat a terem fölött, zöld szőnyeggel. Balra három magas ablak a kertre. Jobbra a korlátnál a felügyelő magas, piros bőrös széke. Hátul a zenekari dobogó, rajta egy zongora.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "le",
+      "nagyterem",
+      "terem"
+     ]
+    }
+   },
+   "aliases": [
+    "karzat"
+   ],
+   "details": [
+    "holdfény az ablakokon",
+    "zöld szőnyeg",
+    "lent a terem csendje"
+   ]
+  },
+  "staff": {
+   "name": "Krupiék öltözője",
+   "into": "az öltözőbe",
+   "inside": "az öltözőben",
+   "image": "staff",
+   "text": "A krupiék öltözője. A hátsó falon öt nyitott szekrény névkártyákkal. Jobbra a falon a gereblyetartó. Balra egy kis tükör, a falon a beosztás, a szék mellett egy szemetes. Elöl hosszú pad.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "nagyterem",
+      "terem",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "öltöző"
+   ],
+   "details": [
+    "egyetlen falilámpa",
+    "kávé- és dohányszag",
+    "linóleum"
+   ]
+  },
+  "cage": {
+   "name": "Pénztár",
+   "into": "a pénztárba",
+   "inside": "a pénztárban",
+   "image": "cage",
+   "text": "A pénztár, ablaktalan kis szoba. Balra fent Rosa néni naptára, alatta a kulcstábla. Középen a pénzfelvonó acélajtaja, fölötte a kapcsolódoboz, mellette a hajtókar. Jobbra a zsetonállvány. Elöl Rosa néni asztala zöld lámpával, rajta a pénzkazetta és a pénztárnapló.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "nagyterem",
+      "terem",
+      "ki"
+     ]
+    },
+    "lift": {
+     "aliases": [
+      "felvonó",
+      "fülke",
+      "lift",
+      "be a fülkébe"
+     ],
+     "requires": {
+      "all": [
+       {
+        "not": {
+         "solved": "A pénzfelvonó"
+        }
+       },
+       {
+        "not": {
+         "player": "other",
+         "at": "lift"
+        }
+       }
+      ]
+     },
+     "otherwise": "A fülkébe csak egy ember fér, vagy a fülke már lent áll."
+    }
+   },
+   "details": [
+    "zöld lámpafény",
+    "papír- és tintaszag",
+    "csend"
+   ]
+  },
+  "lift": {
+   "name": "A felvonó fülkéje",
+   "into": "a fülkébe",
+   "inside": "a fülkében",
+   "image": "lift",
+   "text": "A pénzfelvonó fülkéje, szűk fadoboz, guggolva fértek el benne. A nyitott elején túl az akna téglafala. Fent valaki a hajtókarnál: a fülke csak az ő tekerésére mozdul.",
+   "exits": {
+    "cage": {
+     "aliases": [
+      "ki",
+      "pénztár",
+      "fel"
+     ],
+     "requires": {
+      "not": {
+       "solved": "A pénzfelvonó"
+      }
+     },
+     "otherwise": "A fülke már lent van."
+    },
+    "office": {
+     "aliases": [
+      "ki",
+      "kiszállok",
+      "iroda",
+      "pénzszámláló"
+     ],
+     "requires": {
+      "solved": "A pénzfelvonó"
+     },
+     "otherwise": "Még nem vagytok lent."
+    }
+   },
+   "aliases": [
+    "fülke",
+    "felvonó"
+   ],
+   "details": [
+    "szűk, sötét",
+    "nyikorgó kötél",
+    "hideg tégla"
+   ]
+  },
+  "corridor": {
+   "name": "Alsó folyosó",
+   "into": "az alsó folyosóra",
+   "inside": "az alsó folyosón",
+   "image": "corridor",
+   "text": "Az alsó folyosó, boltíves kőfolyosó a tenger szintjén. Balra a lépcső alja a kovácsoltvas ráccsal. A végén a kerek páncélajtó. Jobbra a mahagóni irodaajtó és a kerek ablakos csónakházajtó, balra egy alacsony, vasalt pinceajtó.",
+   "exits": {
+    "hall": {
+     "aliases": [
+      "fel",
+      "felfelé",
+      "lépcső",
+      "nagyterem"
+     ],
+     "requires": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "otherwise": "A lépcsőrács zárva; a retesze itt lent van."
+    },
+    "office": {
+     "aliases": [
+      "iroda"
+     ]
+    },
+    "cellar": {
+     "aliases": [
+      "pince"
+     ],
+     "requires": {
+      "has": "i_brass_key"
+     },
+     "otherwise": "A pinceajtó zárva."
+    },
+    "vault": {
+     "aliases": [
+      "páncélterem"
+     ],
+     "requires": {
+      "solved": "A páncélajtó"
+     },
+     "otherwise": "A páncélajtó zárva."
+    },
+    "boathouse": {
+     "aliases": [
+      "csónakház",
+      "darsena"
+     ],
+     "requires": {
+      "has": "i_key_darsena"
+     },
+     "otherwise": "A csónakház ajtaja zárva."
+    }
+   },
+   "aliases": [
+    "folyosó",
+    "lent"
+   ],
+   "details": [
+    "nyirkos kő",
+    "tengerszag",
+    "egyetlen függőlámpa"
+   ]
+  },
+  "office": {
+   "name": "Igazgatói iroda",
+   "into": "az irodába",
+   "inside": "az irodában",
+   "image": [
+    {
+     "if": {
+      "is": "sea_painting.open",
+      "eq": true
+     },
+     "image": "office_safe"
+    },
+    {
+     "image": "office"
+    }
+   ],
+   "text": "Conti igazgató irodája, mahagóni faburkolat. Középen a nagy íróasztal, a hátsó falon egy nagy tengeri csata aranykeretben, balra egy kisebb portré. Hátul a titkárnő asztala az írógéppel, jobbra a kulcsszekrény. Mögöttetek a pénzszámláló sarok, a felvonó aknájával. Az ajtó a folyosóra nyílik.",
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "iroda",
+    "direzione"
+   ],
+   "details": [
+    "bőr, szivar és viasz illata",
+    "zöld ernyős lámpák",
+    "vastag szőnyeg"
+   ]
+  },
+  "cellar": {
+   "name": "Pince",
+   "into": "a pincébe",
+   "inside": "a pincében",
+   "image": [
+    {
+     "if": {
+      "solved": "A nagy rulett"
+     },
+     "image": "cellar_now"
+    },
+    {
+     "image": "cellar"
+    }
+   ],
+   "text": "A pince, pont a nagyterem alatt. A mennyezetben a nagy rulett alja: rézrudak, tekercsek, kábelek. A falon egy fekete vezérlőpult, fölötte egy sárgaréz csengő. Balra kis asztal egy nyitott notesszel. Jobbra egy kilincs nélküli, vasalt ajtó, a páncélterem felőli falon.",
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    },
+    "timelock_chamber": {
+     "aliases": [
+      "átjáró",
+      "vasalt ajtó",
+      "kamra"
+     ],
+     "requires": {
+      "solved": "A nagy rulett"
+     },
+     "otherwise": "A vasalt ajtó meg sem mozdul."
+    }
+   },
+   "details": [
+    "nedves vakolat",
+    "ózonszag",
+    "egyetlen csupasz izzó"
+   ]
+  },
+  "timelock_chamber": {
+   "name": "Időzár-kamra",
+   "into": "a kamrába",
+   "inside": "a kamrában",
+   "image": "timelock_chamber",
+   "text": "Szűk kőkamra az átjáró végén, a páncélterem mögött. A falon három óramű üveg alatt: a páncélajtó időzárának hátoldala. Alattuk egy kurbli, a földön egy doboz tartalék fogaskerék, a szerkezeten egy kis réztábla. Tovább nincs út.",
+   "exits": {
+    "cellar": {
+     "aliases": [
+      "pince",
+      "vissza",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "kamra",
+    "átjáró"
+   ],
+   "details": [
+    "ketyegés",
+    "olaj és por",
+    "szűk, meleg"
+   ]
+  },
+  "vault": {
+   "name": "Páncélterem",
+   "into": "a páncélterembe",
+   "inside": "a páncélteremben",
+   "image": "vault",
+   "text": "A páncélterem, acélburkolat, polcok körben. Középen a földön két kövér pénzeszsák. A polcokon zsetonládák, a kaszinó ezüstje, és jobbra egy sötétvörös főkönyv.",
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "details": [
+    "hideg acél",
+    "olaj és por szaga",
+    "tompa csend"
+   ]
+  },
+  "boathouse": {
+   "name": "Csónakház",
+   "into": "a csónakházba",
+   "inside": "a csónakházban",
+   "image": [
+    {
+     "if": {
+      "is": "gate.open",
+      "eq": true
+     },
+     "image": "boathouse_now"
+    },
+    {
+     "image": "boathouse"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "gate.open",
+      "eq": true
+     },
+     "text": "A csónakház, kőfalak, gerendás mennyezet. Hátul a tengeri kapu kitárva, kint a holdfényes öböl. Jobbra a csörlő. Előttetek a vízen a mahagóni motorcsónak, mellette a stég; a falnál egy benzineskanna."
+    },
+    {
+     "text": "A csónakház, kőfalak, gerendás mennyezet, a víz a kapuig ér. Hátul a csukott deszkakapu vaspántokkal, jobbra a falon a fekete csörlő lánccal. Előttetek a vízen a mahagóni motorcsónak, mellette a stég; a falnál egy benzineskanna."
+    }
+   ],
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "folyosó",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "darsena",
+    "stég"
+   ],
+   "details": [
+    "víz loccsanása",
+    "só, kátrány és benzin",
+    "hideg tengeri levegő"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "i_letter",
+   "name": "Vittorio levele",
+   "location": "salon",
+   "text": "Vittorio levele, négyrét hajtva:\n\nKedves Barátaim,\n\nahogy megbeszéltük: szeptember 30-án, a szezon utolsó estéjén a hölgyek szalonjában várjátok meg a zárást. A ruhatárosnő tizenegykor kívülről bezárja az ajtót, és hazamegy. Utána csak Beppe marad, az éjjeliőr. Ő nem jön be soha, kint jár körbe a kertben, és a teraszról benéz a nagyterem ablakain. Ha meglát valamit, felkapcsolja a lámpáját, és reggel mindenkinek elmeséli.\n\nA pénz a páncélteremben van, lent, a tenger szintjén. A ládák a pénztárból a pénzfelvonóval mennek le. A felvonó főkapcsolójához ne nyúljatok: az a portán jelez. Van rajta kézi hajtókar.\n\nA páncélajtót két kulcs nyitja, és egy időzár, amit senki nem tud kijátszani. Mégis: az igazgató hétvégén is bejár, és hétfőn több pénz hiányzik, mint amennyit bárki kivehetett. Kell lennie egy másik útnak.\n\nÉs még valami: a nagy rulettnél valami nem stimmel. Nyolc évig álltam a bárban, láttam. Ha bizonyítékot találtok, hozzátok el.\n\nA csónakházban áll az igazgató motorcsónakja. Az öböl éjjel sötét.\n\n> V.",
+   "images": [
+    "letter"
+   ],
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "levél",
+    "vittorio",
+    "v."
+   ]
+  },
+  {
+   "id": "salon_door",
+   "name": "szalon ajtaja",
+   "location": "salon",
+   "aliases": [
+    "ajtó",
+    "kulcslyuk",
+    "zár",
+    "rés",
+    "ajtórés",
+    "kilincs"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    },
+    "paper": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "literal": true,
+   "text": [
+    {
+     "if": {
+      "is": "salon_door.open",
+      "eq": true
+     },
+     "text": "A szalon ajtaja nyitva; kint a nagyterem félhomálya."
+    },
+    {
+     "if": {
+      "is": "salon_door.paper",
+      "eq": true
+     },
+     "text": "Az ajtó alatt az újság fele kilóg a szalon felé, a másik fele a kinti márványon. A kulcslyukban még ott a kulcs."
+    },
+    {
+     "text": "Krémszínű, sima ajtólap, rézlemezen kilinccsel. Kívülről bezárták. A kulcslyukon át látszik a kulcs feje: kívülről benne hagyták. Az ajtó alatt egy ujjnyi rés, beszűrődik rajta a terem fénye."
+    }
+   ],
+   "images": [
+    "salon_door"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "has": "i_salon_key"
+     },
+     "otherwise": "Zárva, kívülről. A kilincs lenyomva sem enged.",
+     "set": {
+      "salon_door.open": true
+     },
+     "say": "A kulcs fordul, az ajtó halkan kinyílik. Kint a nagyterem.",
+     "images": [
+      "salon_door_now"
+     ]
+    },
+    "unlock": {
+     "requires": {
+      "has": "i_salon_key"
+     },
+     "otherwise": "Zárva, kívülről. A kilincs lenyomva sem enged.",
+     "set": {
+      "salon_door.open": true
+     },
+     "say": "A kulcs fordul, az ajtó halkan kinyílik. Kint a nagyterem.",
+     "images": [
+      "salon_door_now"
+     ]
+    },
+    "use:i_salon_key": {
+     "set": {
+      "salon_door.open": true
+     },
+     "say": "A kulcs fordul, az ajtó halkan kinyílik. Kint a nagyterem.",
+     "images": [
+      "salon_door_now"
+     ]
+    },
+    "force": {
+     "say": "Tömör ajtó, régi, jó zár. Ha betörnétek, Beppe a teraszról is hallaná."
+    },
+    "use:i_newspaper": {
+     "requires": {
+      "not": {
+       "is": "salon_door.paper",
+       "eq": true
+      }
+     },
+     "otherwise": "Az újság már az ajtó alatt van.",
+     "set": {
+      "salon_door.paper": true
+     },
+     "remove": [
+      "i_newspaper"
+     ],
+     "images": [
+      "salon_door_paper"
+     ],
+     "say": "Kihajtjátok az újságot, és a felét becsúsztatjátok az ajtó alatt, pont a kulcslyuk alá."
+    },
+    "use:i_hairpin": {
+     "requires": {
+      "is": "salon_door.paper",
+      "eq": true
+     },
+     "otherwise": "A hajtű belefér a kulcslyukba, és a kulcs mozdulna. De ha most kitolod, a kulcs a kinti márványra esik, és ott marad. Előbb kellene alá valami.",
+     "reveal": [
+      "i_salon_key"
+     ],
+     "take": [
+      "i_salon_key"
+     ],
+     "images": [
+      "salon_key"
+     ],
+     "say": "A hajtűvel óvatosan kitolod a kulcsot. Kint halk koppanás: papírra esett. Lassan visszahúzzátok az újságot, és rajta jön a kulcs is. A hajtű nem görbült el: hajlítható, erős acél."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "salon_door.open",
+      "eq": true
+     },
+     "images": [
+      "salon_door_now"
+     ]
+    },
+    {
+     "if": {
+      "is": "salon_door.paper",
+      "eq": true
+     },
+     "images": [
+      "salon_door_paper"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "i_salon_key",
+   "name": "szalonkulcs",
+   "location": "salon",
+   "text": "A szalon ajtajának kulcsa, régi sárgaréz.",
+   "images": [
+    "salon_key"
+   ],
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "kulcs"
+   ]
+  },
+  {
+   "id": "cart",
+   "name": "takarítókocsi",
+   "location": "salon",
+   "text": "A takarítónő kocsija: vödör facsaróval, felmosó, rongyok alul; fent egy összehajtott újság és egy csíptetős tábla, rajta a munkalap.",
+   "images": [
+    "cart"
+   ],
+   "aliases": [
+    "kocsi",
+    "vödör",
+    "felmosó",
+    "rongyok",
+    "facsaró"
+   ],
+   "details": [
+    "szappanszag",
+    "nedves rongy"
+   ]
+  },
+  {
+   "id": "i_newspaper",
+   "name": "újság",
+   "location": "cart",
+   "text": "Il Piccolo, szeptember 30. Összehajtva. Hosszú, erős papír, a címlapon a szezon búcsúbálja.",
+   "images": [
+    "newspaper"
+   ],
+   "rel": "on",
+   "carry": {},
+   "aliases": [
+    "il piccolo",
+    "lap",
+    "napilap"
+   ]
+  },
+  {
+   "id": "worksheet",
+   "name": "munkalap",
+   "location": "cart",
+   "text": "A takarítónő munkalapja a csíptetős táblán:\n\nBELVEDERE · TAKARÍTÁS · SZEPT. 30.\n\nSzalon: tükrök, pultok, szőnyeg.\nNagyterem: asztalok letakarva (a nagy rulett marad, igazgató úr kérésére).\nBár: poharak elmosva, jég ki.\n\nFIGYELEM: szombattól tavaszig zárva!\nAz éjjeliőr (Beppe) 22 órától félóránként körbejár, a teraszajtót kívülről nézi.\nKulcsokat a ruhatárban hagyni.\n\n> Marta",
+   "images": [
+    "worksheet"
+   ],
+   "rel": "on",
+   "literal": true,
+   "aliases": [
+    "csíptetős tábla",
+    "tábla",
+    "papír",
+    "lap"
+   ]
+  },
+  {
+   "id": "dressing_tables",
+   "name": "fésülködőasztalok",
+   "location": "salon",
+   "text": "Márványlapos fésülködőasztalok aranykeretes tükrökkel, rózsaszín ernyős falilámpák. Az egyiken egy fekete estélyi táska maradt.",
+   "aliases": [
+    "fésülködőasztal",
+    "tükör",
+    "tükrök",
+    "asztal",
+    "lámpa",
+    "lámpák"
+   ],
+   "details": [
+    "rózsaszín lámpafény",
+    "púder- és parfümillat"
+   ]
+  },
+  {
+   "id": "reticule",
+   "name": "retikül",
+   "location": "dressing_tables",
+   "text": "Elfelejtett fekete estélyi táska, nyitva: egy hosszú fekete hajtű, egy rúzs, egy púderdoboz és egy színházjegy.",
+   "images": [
+    "reticule"
+   ],
+   "rel": "on",
+   "aliases": [
+    "táska",
+    "estélyi táska",
+    "retikül"
+   ]
+  },
+  {
+   "id": "i_hairpin",
+   "name": "hajtű",
+   "location": "reticule",
+   "text": "Hosszú fekete hajtű. Hajlítható, erős acél.",
+   "images": [
+    "i_hairpin"
+   ],
+   "rel": "in",
+   "carry": {},
+   "aliases": [
+    "tű"
+   ],
+   "actions": {
+    "use:i_rake": {
+     "requires": {
+      "all": [
+       {
+        "has": "i_rake"
+       },
+       {
+        "has": "i_hairpin"
+       }
+      ]
+     },
+     "otherwise": "Ehhez mindkettő kell a kezetekbe.",
+     "remove": [
+      "i_rake",
+      "i_hairpin"
+     ],
+     "reveal": [
+      "i_hook_rake"
+     ],
+     "take": [
+      "i_hook_rake"
+     ],
+     "images": [
+      "i_hook_rake"
+     ],
+     "say": "A hajtűt a gereblye végére tekered, és meghajlítod: kis, erős kampó lett belőle."
+    }
+   }
+  },
+  {
+   "id": "lipstick",
+   "name": "rúzs",
+   "location": "reticule",
+   "text": "Piros rúzs aranyszínű tokban. Félig elhasználva.",
+   "rel": "in",
+   "aliases": [
+    "rúzsos tok"
+   ]
+  },
+  {
+   "id": "compact",
+   "name": "púderdoboz",
+   "location": "reticule",
+   "text": "Kerek púderdoboz kis tükörrel. A tükörben a saját arcotok, kicsit sápadtan.",
+   "rel": "in",
+   "aliases": [
+    "púder",
+    "kis tükör"
+   ]
+  },
+  {
+   "id": "ticket",
+   "name": "színházjegy",
+   "location": "reticule",
+   "text": "Színházjegy a trieszti Verdi Színházba, október 2-ra. Valaki nem megy el.",
+   "rel": "in",
+   "aliases": [
+    "jegy"
+   ]
+  },
+  {
+   "id": "chairs_salon",
+   "name": "bársonyfotelek",
+   "location": "salon",
+   "text": "Bordó bársonyfotelek aranyozott lábakon, a fésülködőasztalok előtt. Alattuk semmi.",
+   "aliases": [
+    "fotel",
+    "fotelek",
+    "szék"
+   ]
+  },
+  {
+   "id": "cloak_counter",
+   "name": "ruhatári pult",
+   "location": "salon",
+   "text": "A ruhatáros mahagóni pultja balra. Rajta egy elfelejtett nercstóla, mögötte a fogasokon ruhatári számok, elöl a borravalós tányér aprópénzzel.",
+   "aliases": [
+    "pult",
+    "ruhatár",
+    "fogas",
+    "ruhatári számok",
+    "számok"
+   ]
+  },
+  {
+   "id": "stole",
+   "name": "nercstóla",
+   "location": "cloak_counter",
+   "text": "Puha, ezüstös nercstóla. Szép, drága, és reggelre biztosan keresni fogják. Nem ezért jöttetek.",
+   "rel": "on",
+   "aliases": [
+    "stóla",
+    "bunda",
+    "szőrme"
+   ]
+  },
+  {
+   "id": "tips",
+   "name": "borravalós tányér",
+   "location": "cloak_counter",
+   "text": "Ezüsttányér néhány líra aprópénzzel. Nem ezért jöttetek.",
+   "rel": "on",
+   "aliases": [
+    "tányér",
+    "aprópénz",
+    "borravaló"
+   ]
+  },
+  {
+   "id": "big_roulette",
+   "name": "nagy rulett",
+   "location": "hall",
+   "aliases": [
+    "rulett",
+    "rulettasztal",
+    "kerék",
+    "golyó",
+    "asztal",
+    "posztó"
+   ],
+   "text": "A nagy rulett a terem elején: mahagóni és réz kerék kereszt alakú forgóval, zöld posztó, a kereket nem takarták le. A golyó a kerék peremén pihen.",
+   "images": [
+    "big_roulette"
+   ],
+   "details": [
+    "zöld posztó",
+    "fényes réz forgó",
+    "csillárfény a keréken"
+   ],
+   "panel": {
+    "id": "roulette",
+    "label": "A nagy rulett",
+    "if": {
+     "visited": "cellar"
+    }
+   },
+   "actions": {
+    "spin": {
+     "say": "Megpörgetitek a kereket, a golyó kering, pattog, és valahol megáll. Ahol akar."
+    },
+    "turn": {
+     "say": "Megpörgetitek a kereket, a golyó kering, pattog, és valahol megáll. Ahol akar."
+    },
+    "play": {
+     "say": "Megpörgetitek a kereket, a golyó kering, pattog, és valahol megáll. Ahol akar."
+    }
+   }
+  },
+  {
+   "id": "covered_tables",
+   "name": "letakart asztalok",
+   "location": "hall",
+   "text": "A terem túlsó végén, a képen kívül: a többi játékasztal fehér porlepedő alatt, a kis rulett, a chemin de fer, a black jack, a baccara. Mind letakarva, tavaszig.",
+   "aliases": [
+    "többi asztal",
+    "porlepedő",
+    "lepedő",
+    "kis rulett",
+    "black jack",
+    "baccara"
+   ]
+  },
+  {
+   "id": "bar",
+   "name": "bár",
+   "location": "hall",
+   "text": "A bár balra hátul: hosszú mahagóni pult, mögötte üvegek a polcon, a pulton egy jégvágó. Vittorio itt állt nyolc évig.",
+   "aliases": [
+    "bárpult",
+    "pult",
+    "üvegek",
+    "polc",
+    "italok"
+   ],
+   "details": [
+    "édes likőrillat",
+    "tükrös polcok"
+   ]
+  },
+  {
+   "id": "ice_pick",
+   "name": "jégvágó",
+   "location": "bar",
+   "text": "Rövid jégvágó fanyéllel. Jégre jó, zárra nem.",
+   "rel": "on",
+   "aliases": [
+    "jégtörő"
+   ]
+  },
+  {
+   "id": "wall_clock",
+   "name": "falióra",
+   "location": "hall",
+   "text": "Magas falióra a bár mellett, rézinga. Jár: fél tizenkettő múlt. A percmutató messziről is jól látszik.",
+   "aliases": [
+    "óra",
+    "inga"
+   ],
+   "literal": true
+  },
+  {
+   "id": "chandelier",
+   "name": "kristálycsillár",
+   "location": "hall",
+   "text": "Nagy kristálycsillár a terem közepe fölött. Éjjelre csak a fele ég.",
+   "aliases": [
+    "csillár"
+   ]
+  },
+  {
+   "id": "terrace_doors",
+   "name": "teraszajtó",
+   "location": "hall",
+   "text": "Mögöttetek a terem hosszában magas üvegajtók nyílnak a teraszra. Kívülről zárva. Aki a teraszon jár, mindent lát innen, a pénztár rácsát is.",
+   "aliases": [
+    "üvegajtó",
+    "ablakok",
+    "terasz",
+    "ablak",
+    "üvegajtók"
+   ]
+  },
+  {
+   "id": "cage_grille",
+   "name": "a pénztár rácsa",
+   "location": "hall",
+   "aliases": [
+    "rács",
+    "pénztár",
+    "pénztárrács",
+    "kulcstábla",
+    "cassa",
+    "kulcs",
+    "pult",
+    "biztonsági zár"
+   ],
+   "text": [
+    {
+     "if": {
+      "has": "i_key_cassa"
+     },
+     "text": "A pénztár aranyozott rácsa, előtte márványpult. A rács mögött a falon a kulcstábla, a harmadik kampó üres."
+    },
+    {
+     "text": "A pénztár aranyozott rácsa, előtte márványpult, a rácsajtón nagy biztonsági zár. A rácson át a pénztár hátsó falán egy kulcstábla látszik: a harmadik kampón egy kulcs, a címkéjén CASSA. Két méterre van a rácstól; kézzel nem éritek el."
+    }
+   ],
+   "images": [
+    "cage_grille"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "guard_round",
+    "label": "A CASSA kulcs",
+    "if": {
+     "all": [
+      {
+       "has": "i_hook_rake"
+      },
+      {
+       "not": {
+        "has": "i_key_cassa"
+       }
+      }
+     ]
+    }
+   },
+   "actions": {
+    "use:i_hairpin": {
+     "say": "A biztonsági zárba bele sem fér rendesen. Ez nem a szalon ajtaja."
+    },
+    "use:i_rake": {
+     "requires": {
+      "not": {
+       "has": "i_key_cassa"
+      }
+     },
+     "otherwise": "A kulcs már nálatok van.",
+     "say": "A gereblye átfér a rácson, és eléri a kulcstáblát. De a lapos fej csak lecsúszik a kulcskarikáról: nincs mibe beakadnia."
+    },
+    "open": {
+     "say": "A rácsajtó zárva. Biztonsági zár, ezt nem lehet kipiszkálni."
+    },
+    "force": {
+     "say": "A rácsajtó zárva. Biztonsági zár, ezt nem lehet kipiszkálni."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "has": "i_key_cassa"
+     },
+     "images": [
+      "cage_grille_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "i_key_cassa",
+   "name": "CASSA kulcs",
+   "location": "hall",
+   "text": "Sárgaréz kulcs karikán, üres fehér címkével, rajta tintával: CASSA. A pénztár ajtajáé.",
+   "images": [
+    "i_key_cassa"
+   ],
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "kulcs",
+    "cassa",
+    "pénztárkulcs"
+   ]
+  },
+  {
+   "id": "cage_door",
+   "name": "a pénztár ajtaja",
+   "location": "hall",
+   "aliases": [
+    "pénztárajtó",
+    "oldalajtó"
+   ],
+   "text": [
+    {
+     "if": {
+      "has": "i_key_cassa"
+     },
+     "text": "Keskeny mahagóniajtó a rács mellett. A CASSA kulcs illik bele."
+    },
+    {
+     "text": "Keskeny mahagóniajtó a rács mellett, zárva."
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "has": "i_key_cassa"
+     },
+     "otherwise": "Zárva. Kulcs kell hozzá.",
+     "goTo": "cage"
+    },
+    "enter": {
+     "requires": {
+      "has": "i_key_cassa"
+     },
+     "otherwise": "Zárva. Kulcs kell hozzá.",
+     "goTo": "cage"
+    },
+    "use:i_key_cassa": {
+     "goTo": "cage"
+    }
+   }
+  },
+  {
+   "id": "stair_grille",
+   "name": "lépcsőrács",
+   "location": "hall",
+   "aliases": [
+    "rács a lépcsőn",
+    "lépcső",
+    "boltív",
+    "lakat",
+    "lefelé"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "text": "A boltív alatt a kovácsoltvas rács kitárva. Mögötte a lépcső lefelé visz, a tenger szintjére."
+    },
+    {
+     "text": "Balra hátul boltív, benne padlótól a tetejéig kovácsoltvas rács. Mögötte sötét: ott vezet a lépcső lefelé. A lakatot innen fentről nem látjátok; a rács túloldalán, lent lóg. Csak alulról nyitható."
+    }
+   ],
+   "images": [
+    "stair_grille"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "otherwise": "A rács meg sem mozdul. A lakat lent van, a túloldalon.",
+     "goTo": "corridor"
+    },
+    "enter": {
+     "requires": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "otherwise": "A rács meg sem mozdul. A lakat lent van, a túloldalon.",
+     "goTo": "corridor"
+    },
+    "use:i_hairpin": {
+     "say": "A lakatot innen el sem éritek: a rács túloldalán, lent lóg."
+    },
+    "force": {
+     "say": "Kovácsoltvas, a falba ágyazva. Csak zajt csapnátok."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "images": [
+      "stair_grille_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "supervisor_chair",
+   "name": "felügyelői szék",
+   "location": "gallery",
+   "text": "A felügyelő magas mahagóniszéke piros bőrrel, rézlábtartóval, a korlátnál, pont a nagy rulett fölött. Széles karfák. A jobb karfa alja kopottabb, mint a többi fa.",
+   "images": [
+    "supervisor_chair"
+   ],
+   "aliases": [
+    "szék",
+    "magas szék",
+    "karfa",
+    "karfák"
+   ],
+   "details": [
+    "kopott vörös bőr",
+    "rézlábtartó"
+   ]
+  },
+  {
+   "id": "chair_button",
+   "name": "rézgomb",
+   "location": "supervisor_chair",
+   "rel": "part",
+   "aliases": [
+    "gomb",
+    "csengő gomb",
+    "karfa alja"
+   ],
+   "text": "A jobb karfa alatt egy kis kerek rézgomb. A fényezés le van kopva róla, mintha naponta nyomnák.",
+   "images": [
+    "chair_button"
+   ],
+   "actions": {
+    "press": {
+     "say": "Megnyomod. Fent semmi nem történik. Aztán mintha nagyon messziről, a padló alól, egy csengő szólna.",
+     "notify": {
+      "at": "cellar",
+      "text": "A fejetek fölött megszólal a csengő: egyet csönget."
+     }
+    },
+    "push": {
+     "say": "Megnyomod. Fent semmi nem történik. Aztán mintha nagyon messziről, a padló alól, egy csengő szólna.",
+     "notify": {
+      "at": "cellar",
+      "text": "A fejetek fölött megszólal a csengő: egyet csönget."
+     }
+    },
+    "use": {
+     "say": "Megnyomod. Fent semmi nem történik. Aztán mintha nagyon messziről, a padló alól, egy csengő szólna.",
+     "notify": {
+      "at": "cellar",
+      "text": "A fejetek fölött megszólal a csengő: egyet csönget."
+     }
+    }
+   }
+  },
+  {
+   "id": "gallery_windows",
+   "name": "magas ablakok",
+   "location": "gallery",
+   "text": "Három magas ablak a kertre. Lent a szökőkút, a rózsakert, jobbra a terasz. Néha egy lámpafény halad végig az ösvényen: Beppe.",
+   "images": [
+    "garden"
+   ],
+   "aliases": [
+    "ablak",
+    "ablakok",
+    "kert",
+    "szökőkút",
+    "rózsakert",
+    "lámpa",
+    "lámpafény",
+    "őr",
+    "beppe"
+   ],
+   "details": [
+    "holdfény a kerten",
+    "a szökőkút halk csobogása"
+   ]
+  },
+  {
+   "id": "bandstand",
+   "name": "zenekari dobogó",
+   "location": "gallery",
+   "text": "Kis dobogó a karzat végén, rajta egy fekete zongora, kottatartók. A szezon utolsó tangója után itt maradt egy kotta.",
+   "aliases": [
+    "dobogó",
+    "zongora",
+    "kotta",
+    "kottatartó"
+   ]
+  },
+  {
+   "id": "railing",
+   "name": "korlát",
+   "location": "gallery",
+   "text": "Aranyozott korlát. Lenéztek: alattatok a nagy rulett, a pénztár rácsa, a lépcső boltíve.",
+   "aliases": [
+    "karzat",
+    "lent"
+   ]
+  },
+  {
+   "id": "lockers",
+   "name": "szekrénysor",
+   "location": "staff",
+   "text": "Öt nyitott, kiürített öltözőszekrény, fölöttük névkártyák: GINO, PAOLO, SERGIO, FRANCO, ERNESTO. Gino szekrényében még van valami; Ernestóéban egy zakó lóg.",
+   "images": [
+    "lockers"
+   ],
+   "aliases": [
+    "szekrények",
+    "szekrény",
+    "névkártyák",
+    "paolo",
+    "sergio",
+    "franco",
+    "paolo szekrénye",
+    "sergio szekrénye",
+    "franco szekrénye"
+   ],
+   "actions": {
+    "search": {
+     "say": "Paolo, Sergio és Franco szekrénye üres: vállfák, egy elfelejtett gallérgomb. Szezonvégre kiürítették."
+    },
+    "open": {
+     "say": "Paolo, Sergio és Franco szekrénye üres: vállfák, egy elfelejtett gallérgomb. Szezonvégre kiürítették."
+    }
+   }
+  },
+  {
+   "id": "gino_locker",
+   "name": "Gino szekrénye",
+   "location": "lockers",
+   "text": "Gino szekrénye: a falon egy szentkép, alatta egy szerencsepatkó, a polcon egy összehajtott tétlap.",
+   "images": [
+    "gino_locker"
+   ],
+   "rel": "part",
+   "aliases": [
+    "gino",
+    "szentkép",
+    "patkó",
+    "szerencsepatkó"
+   ]
+  },
+  {
+   "id": "slip",
+   "name": "tétlap",
+   "location": "gino_locker",
+   "text": "Egy velencei kaszinó tétlapja:\n\nCASINÒ DI VENEZIA\nCa' Vendramin Calergi · Roulette\n\nTétlap · szeptember 19.\n\n( 7 )    ( 23 )    ( 32 )\n\n7 – 23 – 32, mindig így, sorban!\n\n> G.",
+   "images": [
+    "slip"
+   ],
+   "rel": "in",
+   "literal": true,
+   "aliases": [
+    "velencei tétlap",
+    "cetli",
+    "számok"
+   ]
+  },
+  {
+   "id": "ernesto_locker",
+   "name": "Ernesto szekrénye",
+   "location": "lockers",
+   "text": "Ernesto szekrénye: egy sötét felügyelői zakó vállfán. A mellzsebből kilóg egy összehajtott cetli.",
+   "images": [
+    "ernesto_locker"
+   ],
+   "rel": "part",
+   "aliases": [
+    "ernesto",
+    "zakó",
+    "mellzseb",
+    "zseb"
+   ]
+  },
+  {
+   "id": "ernesto_note",
+   "name": "Ernesto cetlije",
+   "location": "ernesto_locker",
+   "text": "Összehajtott cetli, Ernesto kézírása:\n\n17 = igazgató úr,\nzárás után",
+   "images": [
+    "ernesto_note"
+   ],
+   "rel": "in",
+   "literal": true,
+   "aliases": [
+    "cetli",
+    "papír"
+   ]
+  },
+  {
+   "id": "rake_rack",
+   "name": "gereblyetartó",
+   "location": "staff",
+   "text": "Fali tartó krupiégereblyékkel. Négy egyforma, és a jobb szélen egy jóval hosszabb: a nagy rulett gereblyéje.",
+   "images": [
+    "rake_rack"
+   ],
+   "aliases": [
+    "gereblyék",
+    "tartó",
+    "krupiégereblye"
+   ]
+  },
+  {
+   "id": "i_rake",
+   "name": "hosszú gereblye",
+   "location": "rake_rack",
+   "text": "A nagy rulett krupiégereblyéje: nagyon hosszú, vékony nyél, a végén kis lapos fej.",
+   "images": [
+    "i_rake"
+   ],
+   "rel": "on",
+   "carry": {},
+   "aliases": [
+    "gereblye",
+    "bot"
+   ],
+   "actions": {
+    "use:i_hairpin": {
+     "requires": {
+      "all": [
+       {
+        "has": "i_rake"
+       },
+       {
+        "has": "i_hairpin"
+       }
+      ]
+     },
+     "otherwise": "Ehhez mindkettő kell a kezetekbe.",
+     "remove": [
+      "i_rake",
+      "i_hairpin"
+     ],
+     "reveal": [
+      "i_hook_rake"
+     ],
+     "take": [
+      "i_hook_rake"
+     ],
+     "images": [
+      "i_hook_rake"
+     ],
+     "say": "A hajtűt a gereblye végére tekered, és meghajlítod: kis, erős kampó lett belőle."
+    }
+   }
+  },
+  {
+   "id": "i_hook_rake",
+   "name": "kampós gereblye",
+   "location": "staff",
+   "text": "A hosszú gereblye, a végére tekert hajtűvel: kis kampó áll ki belőle.",
+   "images": [
+    "i_hook_rake"
+   ],
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "gereblye",
+    "kampó"
+   ]
+  },
+  {
+   "id": "bin",
+   "name": "szemetes",
+   "location": "staff",
+   "text": "Fém szemetes a szék mellett. Gyűrt papírok, egy kávéscsésze-alátét, és egy hosszú, keskeny papírszalag.",
+   "aliases": [
+    "szemét",
+    "kuka",
+    "papírok"
+   ]
+  },
+  {
+   "id": "i_tape",
+   "name": "papírszalag",
+   "location": "bin",
+   "text": "Az őr ellenőrzőórájának szalagja, tegnapról:\n\nBEPPE · ELLENŐRZŐÓRA · IX. 29.\n22:00 KAPU · 22:06 SZÖKŐKÚT · 22:09 TERASZ · 22:12 TERASZAJTÓ · 22:15 RÓZSAKERT · 22:18 CSÓNAKHÁZ · 22:21 KILÁTÓ · 22:24 TERASZ\n22:30 KAPU · 22:36 SZÖKŐKÚT · 22:39 TERASZ · 22:42 TERASZAJTÓ · 22:45 RÓZSAKERT · 22:48 CSÓNAKHÁZ · 22:51 KILÁTÓ · 22:54 TERASZ\n23:00 KAPU · 23:06 SZÖKŐKÚT · 23:09 TERASZ · 23:12 TERASZAJTÓ · 23:15 RÓZSAKERT · …",
+   "images": [
+    "tape"
+   ],
+   "rel": "in",
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "szalag",
+    "ellenőrzőóra",
+    "őr szalagja",
+    "blokk"
+   ]
+  },
+  {
+   "id": "schedule",
+   "name": "beosztás",
+   "location": "staff",
+   "text": "A falon a krupiék beosztása, szeptember. Gino és Paolo a nagy rulettnél, Sergio a kis rulettnél, Franco a chemin de fer-nél. Ernesto neve mellett: „felügyelő, galéria, 21-től zárásig”.",
+   "literal": true,
+   "aliases": [
+    "tábla",
+    "lista",
+    "névsor"
+   ]
+  },
+  {
+   "id": "uniforms",
+   "name": "egyenruhák",
+   "location": "staff",
+   "text": "Néhány fehér ing és vörös mellény a fogason, tisztítóból visszahozva. Zsebükben semmi.",
+   "aliases": [
+    "ing",
+    "mellény",
+    "fogas"
+   ]
+  },
+  {
+   "id": "staff_mirror",
+   "name": "tükör",
+   "location": "staff",
+   "text": "Kis tükör a falon. Fáradt, elegáns tolvajok néznek vissza.",
+   "aliases": [
+    "pad"
+   ]
+  },
+  {
+   "id": "calendar",
+   "name": "naptár",
+   "location": "cage",
+   "text": "Rosa néni naptára a falon:\n\n1965 · SZEPTEMBER\n\n20. hétfő – fodrász 5-kor\n22. szerda – Gino szabadnapos\n25. szombat – nagy est, 2 pénztáros\n27. hétfő – borravalót elszámolni\n29. szerda – ezüst a páncélba\n\n30. csütörtök – ZÁRÁS!\nKazetta = Gino szerencseszámai\n(ne felejtsd el, Rosa!)",
+   "images": [
+    "calendar"
+   ],
+   "literal": true,
+   "aliases": [
+    "falinaptár",
+    "rosa naptára"
+   ]
+  },
+  {
+   "id": "cashbox",
+   "name": "pénzkazetta",
+   "location": "cage",
+   "aliases": [
+    "kazetta",
+    "doboz",
+    "tárcsák",
+    "számzár"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "solved": "Rosa néni kazettája"
+     },
+     "text": "Rosa néni zöld kazettája nyitva. Bent a holnapi aprópénz."
+    },
+    {
+     "text": "Zöld acél pénzkazetta Rosa néni asztalán, elöl hat számtárcsa. Csukva."
+    }
+   ],
+   "images": [
+    "cashbox"
+   ],
+   "panel": {
+    "id": "code_lock_cashbox",
+    "label": "Rosa néni kazettája",
+    "if": {
+     "not": {
+      "solved": "Rosa néni kazettája"
+     }
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Rosa néni kazettája"
+     },
+     "images": [
+      "cashbox_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "i_key_b",
+   "name": "B kulcs",
+   "location": "cashbox",
+   "text": "Nehéz acélkulcs, a címkéjén: CASSA – B. A páncélajtó egyik kulcsa.",
+   "images": [
+    "i_key_b"
+   ],
+   "rel": "in",
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "acélkulcs",
+    "páncélkulcs",
+    "b"
+   ]
+  },
+  {
+   "id": "change",
+   "name": "aprópénz",
+   "location": "cashbox",
+   "text": "Rolnikba csomagolt aprópénz a holnapi pénztárnyitáshoz. Nem ezért jöttetek.",
+   "rel": "in",
+   "hidden": true,
+   "aliases": [
+    "pénz",
+    "rolnik"
+   ]
+  },
+  {
+   "id": "ledger",
+   "name": "pénztárnapló",
+   "location": "cage",
+   "text": "A pénztárnapló, a szezon zsetonkönyvelése:\n\nZSETONKÖNYV · 1965. évi szezon · asztalonkénti záró eredmény (líra)\n\n1. Nagy rulett ............. 48 210 000\n2. Kis rulett ............... 9 640 000\n3. Chemin de fer ......... 11 300 000\n4. Black jack .............. 7 120 000\n5. Baccara ................. 8 870 000\n\nNagy rulett, óránként, a szezon összesen:\n21–22 h ...... 2 140 000\n22–23 h ...... 6 820 000\n23–24 h ..... 31 450 000\n24–01 h ...... 7 800 000\n\n> R. Bassi, pénztár",
+   "images": [
+    "ledger"
+   ],
+   "literal": true,
+   "aliases": [
+    "napló",
+    "könyv",
+    "zsetonkönyv",
+    "zsetonkönyvelés"
+   ]
+  },
+  {
+   "id": "chip_racks",
+   "name": "zsetonállvány",
+   "location": "cage",
+   "text": "Az állványon színes zsetonoszlopok. A pénztáron kívül egy líra sem érnek.",
+   "aliases": [
+    "zsetonok",
+    "zseton",
+    "állvány"
+   ]
+  },
+  {
+   "id": "cage_desk",
+   "name": "pénztárosasztal",
+   "location": "cage",
+   "text": "Rosa néni asztala zöld ernyős lámpával. Rajta a kazetta és a pénztárnapló.",
+   "aliases": [
+    "asztal",
+    "lámpa"
+   ]
+  },
+  {
+   "id": "keyboard",
+   "name": "kulcstábla",
+   "location": "cage",
+   "text": "A kis kulcstábla, ahonnan a CASSA kulcsot leakasztottátok.",
+   "aliases": [
+    "tábla",
+    "kampó",
+    "kampók"
+   ]
+  },
+  {
+   "id": "money_lift",
+   "name": "pénzfelvonó",
+   "location": "cage",
+   "aliases": [
+    "felvonó",
+    "lift",
+    "fülke",
+    "hajtókar",
+    "kar",
+    "csörlő",
+    "fék"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "A pénzfelvonó"
+     },
+     "text": "A pénzfelvonó aknája. A fülke lent áll, az alsó szinten."
+    },
+    {
+     "text": "A pénzfelvonó: acélajtó a falba süllyesztve, benne egy szűk fafülke, egy embernek, guggolva. Fölötte a kapcsolódoboz a főkapcsolóval, jobbra a kézi hajtókar dobbal és fékkel."
+    }
+   ],
+   "images": [
+    "money_lift"
+   ],
+   "panel": {
+    "id": "gauge_board_lift",
+    "label": "A pénzfelvonó",
+    "if": {
+     "not": {
+      "solved": "A pénzfelvonó"
+     }
+    }
+   },
+   "actions": {
+    "enter": {
+     "requires": {
+      "not": {
+       "solved": "A pénzfelvonó"
+      }
+     },
+     "otherwise": "A fülke lent áll. Innen már csak a lépcsőn mehettek le.",
+     "goTo": "lift"
+    }
+   }
+  },
+  {
+   "id": "main_switch",
+   "name": "főkapcsoló",
+   "location": "money_lift",
+   "text": "A felvonó főkapcsolója. Vittorio szerint a portán jelez, ha felkapcsolják.",
+   "rel": "part",
+   "aliases": [
+    "kapcsolódoboz",
+    "kapcsoló"
+   ],
+   "actions": {
+    "press": {
+     "say": "A kezetek megáll a kapcsolón. Ha ez felkattan, a portán kigyullad a jelzőlámpa, és Beppe öt perc múlva itt áll. Inkább a kézi hajtókar."
+    },
+    "turn_on": {
+     "say": "A kezetek megáll a kapcsolón. Ha ez felkattan, a portán kigyullad a jelzőlámpa, és Beppe öt perc múlva itt áll. Inkább a kézi hajtókar."
+    },
+    "switch": {
+     "say": "A kezetek megáll a kapcsolón. Ha ez felkattan, a portán kigyullad a jelzőlámpa, és Beppe öt perc múlva itt áll. Inkább a kézi hajtókar."
+    },
+    "use": {
+     "say": "A kezetek megáll a kapcsolón. Ha ez felkattan, a portán kigyullad a jelzőlámpa, és Beppe öt perc múlva itt áll. Inkább a kézi hajtókar."
+    },
+    "pull": {
+     "say": "A kezetek megáll a kapcsolón. Ha ez felkattan, a portán kigyullad a jelzőlámpa, és Beppe öt perc múlva itt áll. Inkább a kézi hajtókar."
+    }
+   }
+  },
+  {
+   "id": "lift_shaft",
+   "name": "akna",
+   "location": "lift",
+   "text": "A fülke nyitott elején túl az akna fala: tégla, régi habarcs. Félúton lefelé egy befalazott nyílás. Az alsó szint küszöbe lejjebb van.",
+   "aliases": [
+    "fal",
+    "téglafal",
+    "befalazott nyílás",
+    "nyílás",
+    "küszöb"
+   ],
+   "details": [
+    "hideg, nyirkos levegő",
+    "olaj- és porszag"
+   ]
+  },
+  {
+   "id": "grille_latch",
+   "name": "lépcsőrács retesze",
+   "location": "corridor",
+   "aliases": [
+    "rács",
+    "retesz",
+    "lakat",
+    "lépcső",
+    "lépcsőrács"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "stair_grille.open",
+      "eq": true
+     },
+     "text": "A lépcső alján a rács kitárva, a lakat a reteszen lóg."
+    },
+    {
+     "text": "A lépcső alján a kovácsoltvas rács. A lakat itt lent lóg, és nincs bezárva: csak a retesz tartja, belülről."
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "not": {
+       "is": "stair_grille.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "stair_grille.open": true
+     },
+     "images": [
+      "stair_grille_now"
+     ],
+     "say": "Félrehúzod a reteszt, és kitárod a rácsot. Fémes csattanás visszhangzik a lépcsőházban.",
+     "notify": {
+      "at": "hall",
+      "text": "Lentről fémes csattanás: a lépcsőrács kinyílt.",
+      "images": [
+       "stair_grille_now"
+      ]
+     }
+    },
+    "unlock": {
+     "requires": {
+      "not": {
+       "is": "stair_grille.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "stair_grille.open": true
+     },
+     "images": [
+      "stair_grille_now"
+     ],
+     "say": "Félrehúzod a reteszt, és kitárod a rácsot. Fémes csattanás visszhangzik a lépcsőházban.",
+     "notify": {
+      "at": "hall",
+      "text": "Lentről fémes csattanás: a lépcsőrács kinyílt.",
+      "images": [
+       "stair_grille_now"
+      ]
+     }
+    },
+    "push": {
+     "requires": {
+      "not": {
+       "is": "stair_grille.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "stair_grille.open": true
+     },
+     "images": [
+      "stair_grille_now"
+     ],
+     "say": "Félrehúzod a reteszt, és kitárod a rácsot. Fémes csattanás visszhangzik a lépcsőházban.",
+     "notify": {
+      "at": "hall",
+      "text": "Lentről fémes csattanás: a lépcsőrács kinyílt.",
+      "images": [
+       "stair_grille_now"
+      ]
+     }
+    },
+    "pull": {
+     "requires": {
+      "not": {
+       "is": "stair_grille.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "stair_grille.open": true
+     },
+     "images": [
+      "stair_grille_now"
+     ],
+     "say": "Félrehúzod a reteszt, és kitárod a rácsot. Fémes csattanás visszhangzik a lépcsőházban.",
+     "notify": {
+      "at": "hall",
+      "text": "Lentről fémes csattanás: a lépcsőrács kinyílt.",
+      "images": [
+       "stair_grille_now"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "id": "vault_door",
+   "name": "páncélajtó",
+   "location": "corridor",
+   "text": [
+    {
+     "if": {
+      "solved": "A páncélajtó"
+     },
+     "text": "A kerek páncélajtó kitárva."
+    },
+    {
+     "text": "A folyosó végén a kerek páncélajtó, közepén a nyitókerék. Két kulcslyuk, egymástól két méterre, bal és jobb szélen. Fölöttük rézlap: „A KULCSOKAT EGYSZERRE”."
+    }
+   ],
+   "images": [
+    "vault_door"
+   ],
+   "aliases": [
+    "páncélterem",
+    "kulcslyuk",
+    "kulcslyukak",
+    "kerék",
+    "rézlap",
+    "felirat"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "dual_word_vault",
+    "label": "A páncélajtó",
+    "if": {
+     "all": [
+      {
+       "has": "i_key_a"
+      },
+      {
+       "has": "i_key_b"
+      },
+      {
+       "not": {
+        "solved": "A páncélajtó"
+       }
+      }
+     ]
+    }
+   },
+   "actions": {
+    "use:i_key_a": {
+     "requires": {
+      "has": "i_key_b"
+     },
+     "otherwise": "A kulcs belefér a bal zárba, de egy kulcs kevés: a jobb oldalinak is kell a magáé.",
+     "panel": {
+      "id": "dual_word_vault",
+      "label": "A páncélajtó"
+     }
+    },
+    "use:i_key_b": {
+     "requires": {
+      "has": "i_key_a"
+     },
+     "otherwise": "A kulcs belefér a jobb zárba, de egy kulcs kevés: a bal oldalinak is kell a magáé.",
+     "panel": {
+      "id": "dual_word_vault",
+      "label": "A páncélajtó"
+     }
+    },
+    "force": {
+     "say": "Húsz centi acél. Erről szól az egész."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "A páncélajtó"
+     },
+     "images": [
+      "vault_door_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cellar_door",
+   "name": "pinceajtó",
+   "location": "corridor",
+   "text": [
+    {
+     "if": {
+      "has": "i_brass_key"
+     },
+     "text": "Alacsony, vasalt faajtó kis sárgaréz zárral. A sárgarézkulcs illik bele."
+    },
+    {
+     "text": "Alacsony, vasalt faajtó kis sárgaréz zárral. Zárva."
+    }
+   ],
+   "aliases": [
+    "alacsony ajtó",
+    "pince"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "has": "i_brass_key"
+     },
+     "otherwise": "Zárva. Kis sárgaréz zár.",
+     "goTo": "cellar"
+    },
+    "enter": {
+     "requires": {
+      "has": "i_brass_key"
+     },
+     "otherwise": "Zárva. Kis sárgaréz zár.",
+     "goTo": "cellar"
+    },
+    "use:i_brass_key": {
+     "goTo": "cellar"
+    }
+   }
+  },
+  {
+   "id": "boathouse_door",
+   "name": "csónakház ajtaja",
+   "location": "corridor",
+   "text": [
+    {
+     "if": {
+      "has": "i_key_darsena"
+     },
+     "text": "Kerek ablakos, vasalt ajtó a folyosó végén jobbra. Mögötte víz csobog. A DARSENA kulcs illik bele."
+    },
+    {
+     "text": "Kerek ablakos, vasalt ajtó a folyosó végén jobbra. Mögötte víz csobog. Zárva, régi nagy zár."
+    }
+   ],
+   "aliases": [
+    "kerek ablakos ajtó",
+    "csónakház",
+    "darsena"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "has": "i_key_darsena"
+     },
+     "otherwise": "Zárva. Nagy, régi kulcs kell hozzá.",
+     "goTo": "boathouse"
+    },
+    "enter": {
+     "requires": {
+      "has": "i_key_darsena"
+     },
+     "otherwise": "Zárva. Nagy, régi kulcs kell hozzá.",
+     "goTo": "boathouse"
+    },
+    "use:i_key_darsena": {
+     "goTo": "boathouse"
+    }
+   }
+  },
+  {
+   "id": "office_door",
+   "name": "iroda ajtaja",
+   "location": "corridor",
+   "text": "Mahagóniajtó, rézlap: DIREZIONE. Belülről kinyitottátok.",
+   "aliases": [
+    "iroda",
+    "direzione",
+    "mahagóniajtó"
+   ],
+   "actions": {
+    "open": {
+     "goTo": "office"
+    },
+    "enter": {
+     "goTo": "office"
+    }
+   }
+  },
+  {
+   "id": "desk",
+   "name": "íróasztal",
+   "location": "office",
+   "text": "Conti nagy mahagóni íróasztala: zöld itatós, tolltartó, hamutál, telefon, egy asztali naptár, és egy ezüstkeretes fénykép.",
+   "images": [
+    "desk"
+   ],
+   "aliases": [
+    "asztal",
+    "itatós",
+    "telefon",
+    "hamutál",
+    "tolltartó"
+   ],
+   "details": [
+    "szivar- és bőrszag",
+    "zöld lámpafény"
+   ]
+  },
+  {
+   "id": "livia_photo",
+   "name": "fénykép",
+   "location": "desk",
+   "text": "Ezüstkeretes fekete-fehér fotó: egy fiatal nő nevet a Lidón, mögötte csíkos kabinok. A jobb alsó sarokban kézzel: „Livia”.",
+   "images": [
+    "livia_photo"
+   ],
+   "rel": "on",
+   "aliases": [
+    "fotó",
+    "ezüstkeret",
+    "livia",
+    "nő"
+   ],
+   "literal": true
+  },
+  {
+   "id": "desk_calendar",
+   "name": "asztali naptár",
+   "location": "desk",
+   "text": "Conti asztali naptára. Március 3.-nál, piros tintával: „Giulia születésnapja – virág!”. Augusztus 14. üres; az oldal sarka kopott, mintha sokat lapozták volna oda.",
+   "rel": "on",
+   "aliases": [
+    "naptár",
+    "határidőnapló"
+   ],
+   "literal": true
+  },
+  {
+   "id": "giulia_portrait",
+   "name": "portré",
+   "location": "office",
+   "text": "Aranykeretes olajportré: elegáns asszony gyöngysorral, sötétkék estélyiben. A keret alján rézlap: „Giulia Conti, 1958”.",
+   "images": [
+    "giulia_portrait"
+   ],
+   "aliases": [
+    "olajportré",
+    "giulia",
+    "feleség",
+    "kép"
+   ],
+   "literal": true
+  },
+  {
+   "id": "sea_painting",
+   "name": "tengeri csata",
+   "location": "office",
+   "aliases": [
+    "festmény",
+    "nagy festmény",
+    "csata",
+    "keret",
+    "hajók"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "sea_painting.open",
+      "eq": true
+     },
+     "text": "A festmény kihajtva, mint egy ajtó. Mögötte a faburkolatban egy kis fali széf."
+    },
+    {
+     "text": "Nagy tengeri csata aranykeretben az íróasztal mögött: vitorlások, ágyúfüst. A keret jobb oldala egy hajszálnyit elemelkedik a faltól."
+    }
+   ],
+   "images": [
+    "sea_painting"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    },
+    "pull": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    },
+    "move": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    },
+    "lift": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    },
+    "turn": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    },
+    "search": {
+     "requires": {
+      "not": {
+       "is": "sea_painting.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már ki van hajtva.",
+     "set": {
+      "sea_painting.open": true
+     },
+     "reveal": [
+      "wall_safe"
+     ],
+     "images": [
+      "sea_painting_open"
+     ],
+     "say": "Megfogjátok a keret jobb szélét: a festmény halkan kifordul, mint egy ajtó. Mögötte egy kis fali széf."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "sea_painting.open",
+      "eq": true
+     },
+     "images": [
+      "sea_painting_open"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wall_safe",
+   "name": "fali széf",
+   "location": "office",
+   "hidden": true,
+   "aliases": [
+    "széf",
+    "tárcsák",
+    "számtárcsák"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "A fali széf"
+     },
+     "text": "A kis fali széf nyitva."
+    },
+    {
+     "text": "Kis acélszéf a falban, négy számtárcsával. Csukva."
+    }
+   ],
+   "images": [
+    "wall_safe"
+   ],
+   "panel": {
+    "id": "code_lock_safe",
+    "label": "A fali széf",
+    "if": {
+     "not": {
+      "solved": "A fali széf"
+     }
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "A fali széf"
+     },
+     "images": [
+      "wall_safe_now"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "i_key_a",
+   "name": "A kulcs",
+   "location": "wall_safe",
+   "text": "Nehéz acélkulcs, a címkéjén: DIREZIONE – A. A páncélajtó másik kulcsa.",
+   "images": [
+    "i_key_a"
+   ],
+   "rel": "in",
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "acélkulcs",
+    "páncélkulcs",
+    "a"
+   ]
+  },
+  {
+   "id": "i_brass_key",
+   "name": "sárgarézkulcs",
+   "location": "wall_safe",
+   "text": "Kis sárgarézkulcs, címke nélkül. Kopott, sokat használt.",
+   "images": [
+    "i_brass_key"
+   ],
+   "rel": "in",
+   "hidden": true,
+   "carry": {},
+   "aliases": [
+    "kis kulcs",
+    "rézkulcs"
+   ]
+  },
+  {
+   "id": "i_timecard",
+   "name": "időzárkártya",
+   "location": "wall_safe",
+   "text": "Kis fehér kártya:\n\nIDŐZÁR · BEÁLLÍTVA\n\nhétfő, október 4., 07:00\n\nA szerkezet a páncélajtó belső oldalán,\nkívülről hozzáférhetetlen.\n\nAlatta Conti ceruzájával: „hátulról: az átjárón”",
+   "images": [
+    "timecard"
+   ],
+   "rel": "in",
+   "hidden": true,
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "kártya",
+    "időzár kártya"
+   ]
+  },
+  {
+   "id": "envelope",
+   "name": "boríték",
+   "location": "wall_safe",
+   "text": "Boríték készpénzzel. Conti zsebpénze, nem a szezon. Hagyjátok.",
+   "rel": "in",
+   "hidden": true,
+   "aliases": [
+    "készpénz",
+    "pénz"
+   ]
+  },
+  {
+   "id": "secretary_desk",
+   "name": "titkárnői asztal",
+   "location": "office",
+   "text": "Hátul, a fal mellett a titkárnő asztala, rajta egy szürkészöld írógép, a hengerben nincs papír.",
+   "aliases": [
+    "írógépasztal"
+   ]
+  },
+  {
+   "id": "typewriter",
+   "name": "írógép",
+   "location": "secretary_desk",
+   "text": "Szürkészöld hordozható írógép. A kocsi üres, de a festékszalag tele van leütésekkel. Conti nem tud gépelni; a titkárnője írt mindent.",
+   "images": [
+    "typewriter"
+   ],
+   "rel": "on",
+   "aliases": [
+    "gép",
+    "szalag",
+    "festékszalag",
+    "henger"
+   ],
+   "panel": {
+    "id": "typewriter_ribbon",
+    "label": "Az írógép szalagja"
+   }
+  },
+  {
+   "id": "office_keyboard",
+   "name": "kulcsszekrény",
+   "location": "office",
+   "text": "Nyitott kulcsszekrény három sor kampóval: garázs, borospince, villa, fürdőkabin, címkével. Alul egy nagy, fekete kovácsoltvas kulcs DARSENA címkével, és egy csónakkulcs narancsszínű parafa úszón.",
+   "images": [
+    "office_keyboard"
+   ],
+   "aliases": [
+    "kulcsok",
+    "szekrény",
+    "kampók",
+    "garázs",
+    "borospince",
+    "villa",
+    "fürdőkabin"
+   ],
+   "literal": true
+  },
+  {
+   "id": "i_key_darsena",
+   "name": "DARSENA kulcs",
+   "location": "office_keyboard",
+   "text": "Nagy, fekete kovácsoltvas kulcs, két rézkarikán, címke: DARSENA. A csónakházé.",
+   "images": [
+    "i_key_darsena"
+   ],
+   "rel": "in",
+   "carry": {},
+   "aliases": [
+    "darsena",
+    "vaskulcs",
+    "csónakház kulcsa",
+    "nagy kulcs"
+   ]
+  },
+  {
+   "id": "i_boat_key",
+   "name": "csónakkulcs",
+   "location": "office_keyboard",
+   "text": "A motorcsónak indítókulcsa egy narancsszínű parafa úszón.",
+   "images": [
+    "i_boat_key"
+   ],
+   "rel": "in",
+   "carry": {},
+   "aliases": [
+    "indítókulcs",
+    "úszó"
+   ]
+  },
+  {
+   "id": "counting_corner",
+   "name": "pénzszámláló sarok",
+   "location": "office",
+   "text": "Mögöttetek a pénzszámláló sarok: hosszú asztal, pénzszámláló gép, és a falban a pénzfelvonó aknája. A fülke lent áll.",
+   "aliases": [
+    "pénzszámláló",
+    "számlálógép",
+    "akna",
+    "felvonó",
+    "fülke"
+   ]
+  },
+  {
+   "id": "control_panel",
+   "name": "vezérlőpult",
+   "location": "cellar",
+   "text": "Fekete vezérlőtábla a falon, felirat nélkül: balra egy nagy forgókapcsoló, mellette egy kisebb tárcsa, jobbra egy kar. Fölötte a csengő, és vastag kábelek futnak fel a mennyezetbe.",
+   "images": [
+    "control_panel"
+   ],
+   "aliases": [
+    "tábla",
+    "kapcsoló",
+    "forgókapcsoló",
+    "tárcsa",
+    "kar",
+    "mágnes",
+    "szektor",
+    "pult"
+   ],
+   "panel": {
+    "id": "roulette",
+    "label": "A nagy rulett"
+   }
+  },
+  {
+   "id": "bell",
+   "name": "csengő",
+   "location": "cellar",
+   "text": "Sárgaréz csengő fejmagasságban. A kábele felfelé fut, a galéria felé.",
+   "aliases": [
+    "harang"
+   ]
+  },
+  {
+   "id": "wheel_underside",
+   "name": "a kerék alja",
+   "location": "cellar",
+   "text": "A mennyezetben a nagy rulett alja: kör alakú nyílás, körben rézrudak és rézhuzalos tekercsek, harminchét darab. Fent van a terem.",
+   "aliases": [
+    "mennyezet",
+    "tekercsek",
+    "rézrudak",
+    "kerék",
+    "rulett",
+    "mágnesek"
+   ],
+   "details": [
+    "ózonszag",
+    "halk zúgás a tekercsekből"
+   ]
+  },
+  {
+   "id": "log_table",
+   "name": "kis asztal",
+   "location": "cellar",
+   "text": "Kis asztal a fal mellett, rajta egy nyitott fekete notesz és egy ceruza.",
+   "aliases": [
+    "asztal",
+    "ceruza"
+   ]
+  },
+  {
+   "id": "i_log",
+   "name": "pincei napló",
+   "location": "log_table",
+   "text": "A pincei kezelő naplója, évek óta minden este. Az utolsó oldal:\n\nszept. 27.  22:58 — 1 csengetés, A szektor — 650 000 megmentve\nszept. 27.  23:41 — 3 csengetés, C szektor — 1 800 000 megmentve\nszept. 28.  23:12 — 5 csengetés, E szektor — 920 000 megmentve\nszept. 28.  23:50 — 2 csengetés, B szektor — 2 300 000 megmentve\nszept. 29.  23:07 — 4 csengetés, D szektor — 1 150 000 megmentve\nszept. 29.  23:36 — 6 csengetés, F szektor — 3 100 000 megmentve\n\nszept. 29., zárás után:\n17 — átjáró (igazgató úr)",
+   "images": [
+    "cellar_log"
+   ],
+   "rel": "on",
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "napló",
+    "notesz",
+    "fekete notesz"
+   ]
+  },
+  {
+   "id": "iron_door",
+   "name": "vasalt ajtó",
+   "location": "cellar",
+   "text": [
+    {
+     "if": {
+      "solved": "A nagy rulett"
+     },
+     "text": "A vasalt ajtó kinyílt. Mögötte szűk átjáró visz a páncélterem felé."
+    },
+    {
+     "text": "Kilincs nélküli, vasalt ajtó a páncélterem felőli falon. Se kulcslyuk, se kilincs. Meg sem mozdul."
+    }
+   ],
+   "aliases": [
+    "ajtó",
+    "kilincs nélküli ajtó",
+    "átjáró"
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "solved": "A nagy rulett"
+     },
+     "otherwise": "Meg sem mozdul. Belülről reteszelik, valami szerkezet.",
+     "goTo": "timelock_chamber"
+    },
+    "enter": {
+     "requires": {
+      "solved": "A nagy rulett"
+     },
+     "otherwise": "Meg sem mozdul. Belülről reteszelik, valami szerkezet.",
+     "goTo": "timelock_chamber"
+    },
+    "push": {
+     "requires": {
+      "solved": "A nagy rulett"
+     },
+     "otherwise": "Meg sem mozdul. Belülről reteszelik, valami szerkezet.",
+     "goTo": "timelock_chamber"
+    },
+    "force": {
+     "say": "Vasalt tölgy, a falba ágyazva. Nincs mit feszíteni rajta."
+    }
+   }
+  },
+  {
+   "id": "clockworks",
+   "name": "óraművek",
+   "location": "timelock_chamber",
+   "text": "Három óramű üvegfedél alatt, egymás mellett: a páncélajtó időzárának hátoldala. Mindhárom mutató hétfő reggel hétig számol vissza.",
+   "images": [
+    "timelock_chamber"
+   ],
+   "aliases": [
+    "óramű",
+    "időzár",
+    "mutatók",
+    "mutató",
+    "üvegfedél",
+    "számlap"
+   ],
+   "details": [
+    "halk ketyegés",
+    "olajszag"
+   ]
+  },
+  {
+   "id": "crank",
+   "name": "kurbli",
+   "location": "timelock_chamber",
+   "text": "Kurbli az óraművek alatt, egy tengelyen. A tengelyén egy fogaskerék, mellette egy másik tengely az óraművekhez.",
+   "aliases": [
+    "tengely",
+    "hajtókar"
+   ],
+   "panel": {
+    "id": "gears_timelock",
+    "label": "Az időzár"
+   }
+  },
+  {
+   "id": "gear_box",
+   "name": "fogaskerekes doboz",
+   "location": "timelock_chamber",
+   "text": "Nyitott fadoboz tartalék fogaskerekekkel, a fedelén: „a szerkezet beállításához”.",
+   "aliases": [
+    "doboz",
+    "fogaskerekek",
+    "kerekek"
+   ]
+  },
+  {
+   "id": "plate",
+   "name": "réztábla",
+   "location": "timelock_chamber",
+   "text": "Kis réztábla a szerkezeten: „KÉZI UTÁNÁLLÍTÁS. A kurbli egy fordulatára az óraművek tengelye négyszer forduljon. Kisebb áttétellel a szerkezet nem old.”",
+   "aliases": [
+    "tábla",
+    "felirat"
+   ],
+   "literal": true
+  },
+  {
+   "id": "i_sacks",
+   "name": "pénzeszsákok",
+   "location": "vault",
+   "text": "Két kövér vászonzsák ólomplombával, rajtuk: BELVEDERE. A szezon bevétele. Mindkettőtöknek jut egy.",
+   "images": [
+    "money_sack"
+   ],
+   "carry": {},
+   "aliases": [
+    "zsák",
+    "zsákok",
+    "pénz",
+    "bevétel",
+    "pénzeszsák"
+   ]
+  },
+  {
+   "id": "i_book",
+   "name": "vörös főkönyv",
+   "location": "vault",
+   "text": "Vastag, sötétvörös bőrkötésű főkönyv rézcsattal: az igazgató saját könyve. Minden hétfő mellett egy összeg, ami a hivatalos könyvekből hiányzik, és egy oszlop: „a 17-ből”.",
+   "images": [
+    "director_book"
+   ],
+   "carry": {},
+   "literal": true,
+   "aliases": [
+    "főkönyv",
+    "könyv",
+    "igazgató könyve"
+   ]
+  },
+  {
+   "id": "chip_crates",
+   "name": "zsetonládák",
+   "location": "vault",
+   "text": "Zsetonládák a polcokon. Pénzt nem érnek.",
+   "aliases": [
+    "ládák",
+    "láda",
+    "polcok",
+    "polc"
+   ]
+  },
+  {
+   "id": "silver",
+   "name": "ezüst",
+   "location": "vault",
+   "text": "A kaszinó ezüstje: gyertyatartók, tálcák. Túl nehéz és túl ismerős.",
+   "aliases": [
+    "gyertyatartó",
+    "tálca",
+    "ezüstnemű"
+   ]
+  },
+  {
+   "id": "motorboat",
+   "name": "motorcsónak",
+   "location": "boathouse",
+   "aliases": [
+    "csónak",
+    "mahagóni",
+    "tank",
+    "üzemanyagtartály",
+    "benzintank"
+   ],
+   "props": {
+    "fuel": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "motorboat.fuel",
+      "eq": true
+     },
+     "text": "Lakkozott mahagóni motorcsónak, krémszínű bőrülések. A tank tele."
+    },
+    {
+     "text": "Lakkozott mahagóni motorcsónak, krémszínű bőrülések, króm. A benzinóra mutatója majdnem nullán: egy kanyarra elég, nem a nyílt vízre."
+    }
+   ],
+   "images": [
+    "motorboat"
+   ],
+   "details": [
+    "víz loccsanása a stégen",
+    "lakk- és benzinszag"
+   ],
+   "actions": {
+    "use:i_can": {
+     "requires": {
+      "not": {
+       "is": "motorboat.fuel",
+       "eq": true
+      }
+     },
+     "otherwise": "A tank már tele.",
+     "set": {
+      "motorboat.fuel": true
+     },
+     "remove": [
+      "i_can"
+     ],
+     "say": "Teletöltitek a tankot a kannából. A benzinóra mutatója feláll."
+    },
+    "start": {
+     "requires": {
+      "all": [
+       {
+        "is": "gate.open",
+        "eq": true
+       },
+       {
+        "is": "motorboat.fuel",
+        "eq": true
+       },
+       {
+        "has": "i_sacks"
+       },
+       {
+        "has": "i_boat_key"
+       }
+      ]
+     },
+     "otherwise": "Még nem indulhattok: nézzétek meg a kaput, a tankot, a zsákokat és az indítókulcsot.",
+     "panel": {
+      "id": "sequence_engine",
+      "label": "A motor"
+     }
+    },
+    "drive": {
+     "requires": {
+      "all": [
+       {
+        "is": "gate.open",
+        "eq": true
+       },
+       {
+        "is": "motorboat.fuel",
+        "eq": true
+       },
+       {
+        "has": "i_sacks"
+       },
+       {
+        "has": "i_boat_key"
+       }
+      ]
+     },
+     "otherwise": "Még nem indulhattok: nézzétek meg a kaput, a tankot, a zsákokat és az indítókulcsot.",
+     "panel": {
+      "id": "sequence_engine",
+      "label": "A motor"
+     }
+    },
+    "leave": {
+     "requires": {
+      "all": [
+       {
+        "is": "gate.open",
+        "eq": true
+       },
+       {
+        "is": "motorboat.fuel",
+        "eq": true
+       },
+       {
+        "has": "i_sacks"
+       },
+       {
+        "has": "i_boat_key"
+       }
+      ]
+     },
+     "otherwise": "Még nem indulhattok: nézzétek meg a kaput, a tankot, a zsákokat és az indítókulcsot.",
+     "panel": {
+      "id": "sequence_engine",
+      "label": "A motor"
+     }
+    }
+   }
+  },
+  {
+   "id": "boat_dash",
+   "name": "műszerfal",
+   "location": "motorboat",
+   "rel": "part",
+   "aliases": [
+    "gyújtás",
+    "szivató",
+    "gázkar",
+    "üzemanyagcsap",
+    "csap",
+    "pumpa",
+    "gumipumpa",
+    "órák"
+   ],
+   "text": "A műszerfal: gyújtáskulcs-nyílás, szivatógomb, gázkar, két óra; alatta az üzemanyagcsap és a pumpáló gumi. Üveg alatt a gyári indítási kártya.",
+   "images": [
+    "boat_dash"
+   ],
+   "panel": {
+    "id": "sequence_engine",
+    "label": "A motor",
+    "if": {
+     "all": [
+      {
+       "is": "gate.open",
+       "eq": true
+      },
+      {
+       "is": "motorboat.fuel",
+       "eq": true
+      },
+      {
+       "has": "i_sacks"
+      },
+      {
+       "has": "i_boat_key"
+      }
+     ]
+    }
+   },
+   "actions": {
+    "use:i_boat_key": {
+     "requires": {
+      "all": [
+       {
+        "is": "gate.open",
+        "eq": true
+       },
+       {
+        "is": "motorboat.fuel",
+        "eq": true
+       },
+       {
+        "has": "i_sacks"
+       },
+       {
+        "has": "i_boat_key"
+       }
+      ]
+     },
+     "otherwise": "A kulcs illik. De még nem indulhattok: a kapu, a tank és a zsákok.",
+     "panel": {
+      "id": "sequence_engine",
+      "label": "A motor"
+     }
+    }
+   }
+  },
+  {
+   "id": "start_card",
+   "name": "indítási kártya",
+   "location": "boat_dash",
+   "text": "A gyári indítási kártya üveg alatt: öt rajz egy sorban, mindegyik alatt egy rövid felirat. Balról jobbra: szivató: „Szivató ki: a pumpálás után.” / gázkar: „Gáz: csak ha a motor jár.” / üzemanyagcsap: „Csap nyit. Mindig ez az első.” / indítókulcs: „Kulcs: ha a szivató már kint van.” / pumpáló gumi: „Pumpáld keményre.”. A rajzok nem a sorrendben állnak.",
+   "images": [
+    "start_card_text"
+   ],
+   "rel": "part",
+   "aliases": [
+    "kártya",
+    "rajzok"
+   ],
+   "literal": true
+  },
+  {
+   "id": "i_can",
+   "name": "benzineskanna",
+   "location": "boathouse",
+   "text": "Piros fém benzineskanna a falnál. Tele.",
+   "carry": {},
+   "aliases": [
+    "kanna",
+    "benzin",
+    "üzemanyag"
+   ]
+  },
+  {
+   "id": "gate",
+   "name": "tengeri kapu",
+   "location": "boathouse",
+   "aliases": [
+    "kapu",
+    "deszkakapu",
+    "kapuszárny"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "gate.open",
+      "eq": true
+     },
+     "text": "A tengeri kapu kitárva. Kint a holdfényes öböl."
+    },
+    {
+     "text": "Hátul a nehéz deszkakapu vaspántokkal, a víz a kapuig ér. Jobbra a falon a csörlő lánca tartja."
+    }
+   ],
+   "images": [
+    "gate"
+   ],
+   "actions": {
+    "open": {
+     "say": "Kézzel meg sem mozdul. A csörlő húzza."
+    },
+    "push": {
+     "say": "Kézzel meg sem mozdul. A csörlő húzza."
+    },
+    "pull": {
+     "say": "Kézzel meg sem mozdul. A csörlő húzza."
+    }
+   },
+   "when": [
+    {
+     "if": {
+      "is": "gate.open",
+      "eq": true
+     },
+     "images": [
+      "gate_open"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "winch",
+   "name": "csörlő",
+   "location": "boathouse",
+   "aliases": [
+    "lánc",
+    "kerék",
+    "kurbli"
+   ],
+   "props": {
+    "turns": {
+     "initial": 0
+    }
+   },
+   "text": "Fekete öntöttvas csörlő a falon, a lánca a kapuhoz fut. Nehéz.",
+   "actions": {
+    "turn": {
+     "requires": {
+      "not": {
+       "is": "gate.open",
+       "eq": true
+      }
+     },
+     "otherwise": "A kapu már nyitva.",
+     "inc": {
+      "winch.turns": 1
+     },
+     "emit": "winch"
+    },
+    "use": {
+     "requires": {
+      "not": {
+       "is": "gate.open",
+       "eq": true
+      }
+     },
+     "otherwise": "A kapu már nyitva.",
+     "inc": {
+      "winch.turns": 1
+     },
+     "emit": "winch"
+    },
+    "crank": {
+     "requires": {
+      "not": {
+       "is": "gate.open",
+       "eq": true
+      }
+     },
+     "otherwise": "A kapu már nyitva.",
+     "inc": {
+      "winch.turns": 1
+     },
+     "emit": "winch"
+    },
+    "pull": {
+     "requires": {
+      "not": {
+       "is": "gate.open",
+       "eq": true
+      }
+     },
+     "otherwise": "A kapu már nyitva.",
+     "inc": {
+      "winch.turns": 1
+     },
+     "emit": "winch"
+    }
+   }
+  },
+  {
+   "id": "jetty",
+   "name": "stég",
+   "location": "boathouse",
+   "text": "Deszkastég a csónak mellett, kötelek, egy mentőöv. A víz sötétzöld, a mélyben kövek.",
+   "aliases": [
+    "kötél",
+    "kötelek",
+    "mentőöv",
+    "víz"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:A CASSA kulcs",
+   "do": {
+    "reveal": [
+     "i_key_cassa"
+    ],
+    "take": [
+     "i_key_cassa"
+    ],
+    "images": [
+     "cage_grille_now",
+     "i_key_cassa"
+    ],
+    "say": "A kampó a karika alá akad, a kulcs lecsúszik a kampóról, és csörrenés nélkül behúzzátok a rácson. CASSA. A pénztár ajtaja mellettetek."
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "8"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "9"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "7"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "8"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "6"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "7"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "5"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "6"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "4"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "5"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "3"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "4"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "2"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "3"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "1"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "2"
+    }
+   }
+  },
+  {
+   "on": "caught",
+   "if": {
+    "var": "riadalom",
+    "is": "0"
+   },
+   "do": {
+    "setVar": {
+     "riadalom": "1"
+    }
+   }
+  },
+  {
+   "on": "solved:Rosa néni kazettája",
+   "do": {
+    "reveal": [
+     "i_key_b",
+     "change"
+    ],
+    "take": [
+     "i_key_b"
+    ],
+    "images": [
+     "cashbox_now",
+     "i_key_b"
+    ],
+    "say": "A hat tárcsa a helyére kattan, a kazetta fedele felpattan. Bent rolnik aprópénz, és alatta egy nehéz acélkulcs: CASSA – B."
+   }
+  },
+  {
+   "on": "solved:A pénzfelvonó",
+   "do": {
+    "say": "A fülke padlója egy vonalban a küszöbbel, a fék tart. Lent vagytok: a fülke egy sötét pénzszámláló sarokba nyílik.",
+    "notify": {
+     "at": "cage",
+     "text": "A dob megáll, a kötél feszes. A fülke lent áll."
+    }
+   }
+  },
+  {
+   "on": "solved:A fali széf",
+   "do": {
+    "reveal": [
+     "i_key_a",
+     "i_brass_key",
+     "i_timecard",
+     "envelope"
+    ],
+    "take": [
+     "i_key_a",
+     "i_brass_key",
+     "i_timecard"
+    ],
+    "images": [
+     "wall_safe_now"
+    ],
+    "say": "A négy tárcsa beáll, a széf kinyílik. Bent egy nehéz acélkulcs (DIREZIONE – A), egy kis sárgarézkulcs címke nélkül, egy kis kártya, és egy boríték készpénz. A kulcsokat és a kártyát elteszitek."
+   }
+  },
+  {
+   "on": "solved:A nagy rulett",
+   "do": {
+    "images": [
+     "cellar_now"
+    ],
+    "say": "A golyó a 17-esbe hull. A pincében a vasalt ajtó mögött egy retesz kattan, és az ajtó résnyire kinyílik.",
+    "notify": {
+     "at": "hall",
+     "text": "A golyó a 17-esben áll. A padló alatt tompa kattanás."
+    }
+   }
+  },
+  {
+   "on": "timelock_run",
+   "do": {
+    "setVar": {
+     "timelock": "run"
+    },
+    "say": "Tekeritek a kurblit. A mutatók pörögni kezdenek, hétfő reggel hét felé, egyre gyorsabban, aztán nullára futnak. A páncélajtó mélyén, mint egy nagy óra: három kattanás.",
+    "notify": {
+     "at": "corridor",
+     "text": "A páncélajtó mélyén, mint egy nagy óra: három kattanás."
+    }
+   }
+  },
+  {
+   "on": "solved:A páncélajtó",
+   "do": {
+    "images": [
+     "vault_door_now"
+    ],
+    "say": "A két kulcs egyszerre fordul. A reteszek visszahúzódnak, és a kerek ajtó lassan, súlyosan kitárul."
+   }
+  },
+  {
+   "on": "winch",
+   "if": {
+    "all": [
+     {
+      "is": "winch.turns",
+      "gt": 2
+     },
+     {
+      "not": {
+       "is": "gate.open",
+       "eq": true
+      }
+     }
+    ]
+   },
+   "do": {
+    "set": {
+     "gate.open": true
+    },
+    "images": [
+     "gate_open"
+    ],
+    "say": "A lánc utolsót csikordul, és a kapu kitárul. Kint a holdfényes öböl, az út nyitva."
+   }
+  },
+  {
+   "on": "winch",
+   "if": {
+    "is": "winch.turns",
+    "eq": 2
+   },
+   "do": {
+    "say": "A kapu félig nyitva, a lánc csikorog. Kint, a lépcsőnél megáll egy lámpafény, aztán továbbmegy."
+   }
+  },
+  {
+   "on": "winch",
+   "if": {
+    "is": "winch.turns",
+    "eq": 1
+   },
+   "do": {
+    "say": "A csörlő nehezen indul, a kapu nyikorogva elmozdul egy arasznyit. Ketten gyorsabban menne."
+   }
+  }
+ ],
+ "onMessage": [
+  {
+   "match": "\\(GAME: GUARD CAUGHT\\)",
+   "do": {
+    "emit": "caught"
+   }
+  },
+  {
+   "match": "\\(GAME: TIMELOCK 48 12 ",
+   "do": {
+    "emit": "timelock_run"
+   }
+  }
+ ],
+ "inventory": [
+  {
+   "id": "i_letter",
+   "name": "Vittorio levele"
+  }
+ ],
+ "vars": {
+  "riadalom": "0",
+  "timelock": "set"
+ },
+ "status": "Riadalom: {riadalom} · Hely: {loc0} / {loc1}",
+ "panelTitles": {
+  "guard_round": "A CASSA kulcs",
+  "code_lock_cashbox": "Rosa néni kazettája",
+  "gauge_board_lift": "A pénzfelvonó",
+  "typewriter_ribbon": "Az írógép szalagja",
+  "code_lock_safe": "A fali széf",
+  "roulette": "A nagy rulett",
+  "gears_timelock": "Az időzár",
+  "dual_word_vault": "A páncélajtó",
+  "sequence_engine": "A motor"
+ },
+ "panelIds": [
+  "guard_round",
+  "code_lock_cashbox",
+  "gauge_board_lift",
+  "typewriter_ribbon",
+  "code_lock_safe",
+  "roulette",
+  "gears_timelock",
+  "dual_word_vault",
+  "sequence_engine"
+ ],
+ "panelAvail": {
+  "guard_round": {
+   "all": [
+    {
+     "has": "i_hook_rake"
+    },
+    {
+     "not": {
+      "has": "i_key_cassa"
+     }
+    },
+    {
+     "any": [
+      {
+       "player": "any",
+       "at": "gallery"
+      },
+      {
+       "player": "any",
+       "at": "hall"
+      }
+     ]
+    }
+   ]
+  },
+  "code_lock_cashbox": {
+   "all": [
+    {
+     "not": {
+      "solved": "Rosa néni kazettája"
+     }
+    },
+    {
+     "player": "any",
+     "at": "cage"
+    }
+   ]
+  },
+  "gauge_board_lift": {
+   "all": [
+    {
+     "not": {
+      "solved": "A pénzfelvonó"
+     }
+    },
+    {
+     "any": [
+      {
+       "player": "any",
+       "at": "cage"
+      },
+      {
+       "player": "any",
+       "at": "lift"
+      }
+     ]
+    }
+   ]
+  },
+  "typewriter_ribbon": {
+   "player": "any",
+   "at": "office"
+  },
+  "code_lock_safe": {
+   "all": [
+    {
+     "is": "sea_painting.open",
+     "eq": true
+    },
+    {
+     "not": {
+      "solved": "A fali széf"
+     }
+    },
+    {
+     "player": "any",
+     "at": "office"
+    }
+   ]
+  },
+  "roulette": {
+   "all": [
+    {
+     "visited": "cellar"
+    },
+    {
+     "not": {
+      "solved": "A nagy rulett"
+     }
+    },
+    {
+     "any": [
+      {
+       "player": "any",
+       "at": "cellar"
+      },
+      {
+       "player": "any",
+       "at": "hall"
+      }
+     ]
+    }
+   ]
+  },
+  "gears_timelock": {
+   "all": [
+    {
+     "not": {
+      "var": "timelock",
+      "is": "run"
+     }
+    },
+    {
+     "player": "any",
+     "at": "timelock_chamber"
+    }
+   ]
+  },
+  "dual_word_vault": {
+   "all": [
+    {
+     "has": "i_key_a"
+    },
+    {
+     "has": "i_key_b"
+    },
+    {
+     "not": {
+      "solved": "A páncélajtó"
+     }
+    },
+    {
+     "player": "any",
+     "at": "corridor"
+    }
+   ]
+  },
+  "sequence_engine": {
+   "all": [
+    {
+     "all": [
+      {
+       "is": "gate.open",
+       "eq": true
+      },
+      {
+       "is": "motorboat.fuel",
+       "eq": true
+      },
+      {
+       "has": "i_sacks"
+      },
+      {
+       "has": "i_boat_key"
+      }
+     ]
+    },
+    {
+     "player": "both",
+     "at": "boathouse"
+    }
+   ]
+  }
+ },
+ "mustReach": [
+  {
+   "solved": "A CASSA kulcs"
+  },
+  {
+   "solved": "Rosa néni kazettája"
+  },
+  {
+   "solved": "A pénzfelvonó"
+  },
+  {
+   "solved": "A fali széf"
+  },
+  {
+   "solved": "A nagy rulett"
+  },
+  {
+   "var": "timelock",
+   "is": "run"
+  },
+  {
+   "solved": "A páncélajtó"
+  },
+  {
+   "is": "gate.open",
+   "eq": true
+  }
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "kód",
+  "rejtett",
+  "titkos",
+  "mögötte",
+  "széf",
+  "mágnes",
+  "csalás",
+  "átjáró",
+  "kampó",
+  "17",
+  "livia",
+  "zseb",
+  "gomb",
+  "csengő"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

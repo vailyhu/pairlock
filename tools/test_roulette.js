@@ -1,0 +1,41 @@
+// Roulette module without the server, on a made-up wheel, sides by place. No game data.
+const Mod = require('../engine/modules');
+const pockets = [{ n: 0, color: 'green' }, { n: 7, color: 'red' }, { n: 3, color: 'black' }, { n: 9, color: 'red' }, { n: 4, color: 'black' }];
+const opts = { pockets, sectors: [{ label: 'I', pockets: [7, 3] }, { label: 'II', pockets: [9, 4, 0] }], target: 4, spinText: '{n} {color}', colorNames: { red: 'piros', black: 'fekete', green: 'zöld' }, doneText: 'nyert', notMagnetText: 'szerencse', labels: { sector: 'SZEKTOR', fine: 'FINOM', magnet: 'MÁGNES', spin: 'PÖRGET' }, awayText: 'messze' };
+const cfg = { type: 'roulette', title: 'R', sides: { a: { at: 'cellar' }, b: { at: 'hall' } }, options: opts };
+let bad = 0; const check = (n, got, want) => { const ok = JSON.stringify(got) === JSON.stringify(want); if (!ok) bad++; console.log(`${ok ? 'ok  ' : 'FAIL'} ${n}: ${JSON.stringify(got)}`); };
+Mod.setPush(() => {});
+const r = { solo: false, messages: [], world: { solved: {}, loc: ['cellar', 'hall'] } }, A = m => Mod.act(cfg, 'r', r, 0, m), B = m => Mod.act(cfg, 'r', r, 1, m), V = p => Mod.view(cfg, 'r', r, p).view;
+check('control side: switches, no wheel', [V(0).control.sectors, V(0).control.fineMax, !!V(0).wheel], [['I', 'II'], 3, false]);
+check('wheel side: pockets, no control', [V(1).wheel.pockets.length, !!V(1).control], [5, false]);
+check('no view holds the target', /target/.test(JSON.stringify(V(0)) + JSON.stringify(V(1))), false);
+check('the wheel cannot spin from the control side', A({ spin: true }).view.text, undefined);
+check('the wheel side cannot set the control', (B({ magnet: true }), B({ sector: 1 }), [V(0).control.magnet, V(0).control.sector]), [false, 0]);
+check('invalid settings ignored', (A({ sector: 5 }), A({ fine: 0 }), A({ fine: 4 }), [V(0).control.sector, V(0).control.fine]), [0, 1]);
+A({ sector: 0 }); A({ fine: 2 }); A({ magnet: true });
+let x = B({ spin: true }); check('magnet: lands where set, not the target, not bad', [x.view.text, x.view.wrong, x.msgs.length, V(1).wheel.history], ['3 fekete', false, 0, [3]]);
+check('the control side never sees results', JSON.stringify(V(0)).includes('fekete') || 'history' in V(0), false);
+A({ sector: 1 }); A({ fine: 3 }); x = B({ spin: true }); check('magnet on another pocket', V(1).wheel.history, [3, 0]);
+A({ magnet: false }); A({ fine: 2 });
+const rnd = Math.random; Math.random = () => 4.5 / 5;   // a random spin lands on the target pocket by luck
+x = B({ spin: true }); check('without the magnet the target does not count', [x.view.justSolved, x.view.text], [false, '4 fekete szerencse']);
+Math.random = () => 0.3; x = B({ spin: true }); check('without the magnet: random pocket', [V(1).wheel.history.at(-1), x.view.justSolved], [7, false]);
+Math.random = rnd;
+for (let i = 0; i < 6; i++) B({ spin: true }); check('only the last 8 results', V(1).wheel.history.length, 8);
+const r9 = { solo: false, messages: [], world: { solved: {}, loc: ['cellar', 'hall'] } };
+Mod.act({ ...cfg, title: 'S' }, 's', r9, 0, { magnet: true }); Mod.act({ ...cfg, title: 'S' }, 's', r9, 0, { fine: 3 });
+check('dial past the sector: the magnet holds nothing', (Math.random = () => 0, Mod.act({ ...cfg, title: 'S' }, 's', r9, 1, { spin: true }).view.text), '0 zöld'); Math.random = rnd;
+A({ magnet: true }); x = B({ spin: true });
+check('magnet on the target solves', [x.view.justSolved, x.msgs[0].text, x.view.text], [true, '(GAME: SOLVED, R)', 'nyert']);
+check('stays open on the winning spin, no more moves', [Mod.view(cfg, 'r', r, 1).keep, V(1).wheel.won, V(1).wheel.history.at(-1), (B({ spin: true }), V(1).wheel.history.length)], [true, true, 4, 8]);
+// alone: each half only where it stands
+const r2 = { solo: true, messages: [], world: { solved: {}, loc: ['hall', 'hall'] } }, S = m => Mod.act(cfg, 't', r2, 0, m), SV = () => Mod.view(cfg, 't', r2, 0).view;
+check('alone at the wheel: wheel only', [SV().side, !!SV().wheel, !!SV().control], ['b', true, false]);
+check('alone at the wheel: control moves ignored', (S({ magnet: true }), r2.mods.t.state.magnet), false);
+r2.world.loc[0] = 'cellar'; S({ sector: 1 }); S({ fine: 2 }); S({ magnet: true });
+check('alone at the control: no spin', S({ spin: true }).view.text, undefined);
+r2.world.loc[0] = 'hall'; check('alone: walk up and spin', S({ spin: true }).view.justSolved, true);
+r.world.loc[0] = 'attic'; check('elsewhere: away text', [V(0).side, Mod.view({ ...cfg, title: 'U' }, 'u', r, 0).view.awayText], [null, 'messze']);
+const plain = { ...cfg, sides: undefined, title: 'P' }, vb = Mod.view(plain, 'p', r2, 0).view;
+check('without sides alone: both halves', [vb.side, !!vb.control, !!vb.wheel], ['both', true, true]);
+console.log(bad ? `${bad} failed` : 'all passed'); process.exit(bad ? 1 : 0);

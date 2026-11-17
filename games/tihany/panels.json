@@ -1,0 +1,368 @@
+{
+ "gauge_board": {
+  "type": "gauge_board",
+  "title": "Kapcsolat",
+  "sidesByPlayer": true,
+  "talkAfterSolved": true,
+  "sides": {
+   "a": "1974: a rádió gombjai",
+   "b": "Ma: a rádió skálája"
+  },
+  "intro": "A rádió két korban szól. 1974-ben a gombokat lehet tekerni; ma csak a halványan derengő skála mutatja, mit fog a készülék.",
+  "hints": [
+   "Az egyikőtök tekeri a gombokat, a másik mondja, merre mozdulnak a mutatók.",
+   "Egyszerre csak egy gombot tekerjetek, és figyeljétek, melyik mutatót melyik irányba viszi.",
+   "Sáv 3, hangolás 4, finomhangolás 5."
+  ],
+  "options": {
+   "matrix": [
+    [
+     2,
+     -1,
+     1,
+     1
+    ],
+    [
+     -1,
+     2,
+     1,
+     -1
+    ]
+   ],
+   "band": [
+    8,
+    9
+   ],
+   "controls": [
+    "Sáv",
+    "Hangolás",
+    "Finomhangolás"
+   ],
+   "controlMax": 6,
+   "gaugeMax": 10,
+   "textA": "A rádió gombjai. Tekerd őket: a sercegés változik, de hogy közelebb vagy-e, azt csak a ma skáláján látni.",
+   "textB": "A felhős skála mögött két halvány mutató remeg. Ha mindkettő a jelölt sávba ér, tiszta a vonal.",
+   "confirmLabel": "📻 Tiszta a hang",
+   "okText": "A sercegés kitisztul. Halljátok egymást."
+  }
+ },
+ "code_lock": {
+  "type": "code_lock",
+  "title": "Az Ó. H. vonal",
+  "intro": "A központ aljzatai alatt üres címkecsíkok. Hogy melyik aljzat melyik mellék, azt csak a központos tudta.",
+  "hints": [
+   "A számozás 1974-ben senkinél nincs leírva. Ami ma maradt a központfülkében, az talán igen.",
+   "A mai központfülke falán egy kábelrajz lóg. Az egyik vonalat nem ismeritek.",
+   "241."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 3,
+   "button": "📞 Hívás",
+   "okText": "Kicseng.",
+   "badText": "Kicseng, senki nem veszi fel. Egy szokásos mellék, üres szobában.",
+   "answer": "241"
+  }
+ },
+ "logic_grid": {
+  "type": "logic_grid",
+  "title": "Szeptember 14., este",
+  "intro": "Ki hol volt 1974. szeptember 14-én este tízkor, és mikor hagyta el a házat? A táblát mindketten látjátok, mindkét korból.",
+  "hints": [
+   "Az egyik korban iratok vannak (vendégkönyv, napló), a másikban egy visszaemlékezés. Egyik sem elég magában.",
+   "A vendégkönyv megmondja, ki aludt ott és mikor ment el; a szakácsnő, ki hol volt tízkor. Akinek nincs távozása, az nem ment el.",
+   "Bodnár: kazánház, nem ment el. Kardos: kazánház, IX. 15. 5.00. Szekeres: udvar, IX. 15. 2.00. Vargáné: konyha, Tóth: étterem, mindketten IX. 14. 22.30."
+  ],
+  "options": {
+   "rowLabel": "Ki",
+   "rows": [
+    "Tóth Ferenc, sofőr",
+    "Kardos József, igazgató",
+    "Vargáné, szakácsnő",
+    "Bodnár Gyula, gondnok",
+    "Szekeres Pál, szb.-titkár"
+   ],
+   "columns": [
+    {
+     "label": "Este 10-kor",
+     "values": [
+      "Kazánház",
+      "Konyha",
+      "Étterem",
+      "Udvar"
+     ]
+    },
+    {
+     "label": "Távozás",
+     "values": [
+      "IX. 14. 22.30",
+      "IX. 15. 2.00",
+      "IX. 15. 5.00",
+      "Nem ment el"
+     ]
+    }
+   ],
+   "answer": {
+    "Tóth Ferenc, sofőr": [
+     "Étterem",
+     "IX. 14. 22.30"
+    ],
+    "Kardos József, igazgató": [
+     "Kazánház",
+     "IX. 15. 5.00"
+    ],
+    "Vargáné, szakácsnő": [
+     "Konyha",
+     "IX. 14. 22.30"
+    ],
+    "Bodnár Gyula, gondnok": [
+     "Kazánház",
+     "Nem ment el"
+    ],
+    "Szekeres Pál, szb.-titkár": [
+     "Udvar",
+     "IX. 15. 2.00"
+    ]
+   },
+   "checkLabel": "Kész",
+   "okText": "Minden a helyén.",
+   "badText": "Valami még nem stimmel.",
+   "countText": "{n} sor stimmel.",
+   "emptyLabel": "–",
+   "sharedNote": "Ezt a táblát mindketten látjátok és töltitek, a saját korotokból."
+  }
+ },
+ "puzzle": {
+  "type": "puzzle",
+  "title": "A kitépett lap",
+  "intro": "Egy vonalas lap, apróra tépve. Kézírás, dátumok. Rakjátok össze.",
+  "hints": [
+   "A piros margó a bal szélen van, a tépett szél is.",
+   "Kezdjétek a sarkokkal és a margóval.",
+   "A lap a brigádnaplóból hiányzik: a 14-i este."
+  ],
+  "options": {
+   "image": "images/log_page.jpg",
+   "cols": 3,
+   "rows": 4,
+   "jitter": 0.45,
+   "snap": 0.05,
+   "trayWidth": 0.5,
+   "okText": "Összeállt."
+  }
+ },
+ "pipes": {
+  "type": "pipes",
+  "title": "A tartalék ág",
+  "intro": "A kazán vizét a fővezeték viszi, a hátsó falon, a polc konzolján át. A tartalék ágon is el lehet vezetni a két fűtőkörhöz, ha a kötéseket jól forgatod. Nem maradhat nyitott csővég.",
+  "hints": [
+   "Mindkét fűtőkörnek, az étteremnek és az emeletnek is vizet kell kapnia.",
+   "A kazántól jobbra egyenesen indul, a harmadik elemnél ágazik le.",
+   "Felső sor egyenesen végig, a középső oszlop le, az alsó sor jobbra."
+  ],
+  "options": {
+   "grid": [
+    [
+     5,
+     5,
+     13,
+     5,
+     5
+    ],
+    [
+     3,
+     10,
+     10,
+     12,
+     5
+    ],
+    [
+     5,
+     14,
+     5,
+     3,
+     9
+    ],
+    [
+     6,
+     10,
+     6,
+     5,
+     10
+    ]
+   ],
+   "source": {
+    "row": 0,
+    "col": 0,
+    "side": 8
+   },
+   "exits": [
+    {
+     "row": 0,
+     "col": 4,
+     "side": 2
+    },
+    {
+     "row": 3,
+     "col": 4,
+     "side": 2
+    }
+   ],
+   "marks": [
+    {
+     "row": 0,
+     "col": 0,
+     "label": "Kazán",
+     "color": "#c0392b"
+    },
+    {
+     "row": 0,
+     "col": 4,
+     "label": "Étterem",
+     "color": "#e08a2e"
+    },
+    {
+     "row": 3,
+     "col": 4,
+     "label": "Emelet",
+     "color": "#e08a2e"
+    }
+   ],
+   "legend": "Kattints egy elemre, és negyedet fordul.",
+   "leakText": "Valahol nyitott a cső, a víz kifolyna.",
+   "progressText": "Fűtőkör vízzel: {reached} / {total}",
+   "okText": "Mindkét kör kap vizet, nincs szivárgás."
+  }
+ },
+ "time_capsule": {
+  "type": "time_capsule",
+  "title": "Időkapszula",
+  "sidesByPlayer": true,
+  "intro": "A füzet és a film ötven évet vár. Mibe csomagolod, és hová rejted?",
+  "hints": [
+   "Ötven év sok idő. Ami nedves helyen áll, annak légmentesen kell zárnia.",
+   "A padlás beázik, a kazánház vizes, az óvóhely száraz. Az üveg zár a legjobban.",
+   "A befőttesüveg, viasszal lezárva, bárhol kibírja. A filmtartó mindenképpen."
+  ],
+  "options": {
+   "containers": [
+    {
+     "id": "jar",
+     "label": "befőttesüveg, viasszal lezárva"
+    },
+    {
+     "id": "oilcloth",
+     "label": "viaszosvászon csomag"
+    },
+    {
+     "id": "tin",
+     "label": "kekszes doboz"
+    },
+    {
+     "id": "paper",
+     "label": "barna papírcsomag"
+    }
+   ],
+   "places": [
+    {
+     "id": "attic",
+     "label": "a padlás, a víztartály mögött"
+    },
+    {
+     "id": "boiler",
+     "label": "a kazánház, a szénrakás alatt"
+    },
+    {
+     "id": "shelter",
+     "label": "az óvóhely, a ládán"
+    }
+   ],
+   "textA": "Válaszd ki, mibe csomagolod a füzetet és a filmet, és hová rejted. Ötven évnek kell kibírnia.",
+   "textB": "A másik korban most döntik el, mibe és hová rejtik a bizonyítékot. Ezt nem te választod.",
+   "containerLabel": "Mibe",
+   "placeLabel": "Hová",
+   "button": "🫙 Elrejtem",
+   "doneText": "Elrejtve: {container}, {place}."
+  }
+ },
+ "report_form": {
+  "type": "report_form",
+  "title": "A felmérés lezárása",
+  "intro": "Az utolsó felmérés lezárása a tableten. Ezt a jelentést kapja meg a megrendelő, és bárki, akinek elküldöd.",
+  "hints": [
+   "Ami 1974-ben történt, azt a másik kor tudja: kérdezd a rádión.",
+   "Az esti tábla, a kitépett lap, a fekete füzet és a tableted üzenete mind elmond valamit.",
+   "Kardos igazgató; csempészáru; kiszabadult; Kardos unokájának cége."
+  ],
+  "options": {
+   "questions": [
+    {
+     "text": "Ki zárta be Bodnár Gyulát 1974. szeptember 14-én éjjel?",
+     "choices": [
+      "Kardos József igazgató",
+      "A szakszervezeti titkár",
+      "Senki, magától szökött el",
+      "Bodnár saját magát"
+     ],
+     "answer": "Kardos József igazgató"
+    },
+    {
+     "text": "Mit tároltak az óvóhelyen?",
+     "choices": [
+      "Nyugati csempészárut",
+      "Szenet a kazánhoz",
+      "Óvóhelyi élelmiszert",
+      "A gyár iratait"
+     ],
+     "answer": "Nyugati csempészárut"
+    },
+    {
+     "text": "Mi lett Bodnár Gyulával?",
+     "choices": [
+      "Kiszabadult, és hajnalban csónakkal elhagyta Tihanyt",
+      "Az óvóhelyen halt meg",
+      "Nyugatra szökött",
+      "Kardos kirúgta"
+     ],
+     "answer": "Kiszabadult, és hajnalban csónakkal elhagyta Tihanyt"
+    },
+    {
+     "text": "Ki bontatja le az épületet?",
+     "choices": [
+      "Kardos József unokájának cége",
+      "Az önkormányzat",
+      "Egy szállodalánc",
+      "Az Alföldi Szerszámgépgyár"
+     ],
+     "answer": "Kardos József unokájának cége"
+    }
+   ],
+   "choose": "Válassz…",
+   "missingText": "Minden kérdésre válaszolj.",
+   "button": "✍️ Lezárom és elküldöm",
+   "message": "JELENTÉS {good}/{total} {ledger}",
+   "okText": "A jelentés elküldve: {good} jó válasz a {total} kérdésből.",
+   "values": {
+    "ledger": [
+     {
+      "if": {
+       "var": "ledger_q",
+       "is": "good"
+      },
+      "value": "ép"
+     },
+     {
+      "if": {
+       "var": "ledger_q",
+       "is": "partial"
+      },
+      "value": "foltos"
+     },
+     {
+      "value": "ázott"
+     }
+    ]
+   }
+  }
+ }
+}

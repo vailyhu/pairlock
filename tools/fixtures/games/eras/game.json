@@ -1,0 +1,4 @@
+{ "title": "Eras test", "description": "Fixture for tools/test_eras_server.py", "goal": "-", "players": ["Anna", "Bea"], "eras": ["1974", "Now"], "first": "Start.",
+  "scripted": [{ "re": "\\(GAME: CAPSULE", "text": "SCENE" },
+    { "re": "\\(GAME: ALARM", "if": { "var": "alarm", "is": "high" }, "text": "LOUD END" },
+    { "re": "\\(GAME: ALARM", "if": { "var": "alarm", "is": "mid" }, "text": "MID END" }] }

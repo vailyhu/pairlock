@@ -1,0 +1,32 @@
+// Knocking module without the server, on made-up values (fast clock), and sides chosen by place. No game data.
+const Mod = require('../engine/modules');
+const T = { listen: 'listen', heard: 'heard:', silence: 'quiet', again: 'again' };
+const cfg = { type: 'knocking', title: 'K', sides: { a: { at: 'hall' }, b: { at: 'cellar' } }, closed: { solved: 'Box' }, closedText: 'still', options: { sequences: { a: [[2, 3], [1, 1]], b: [[3, 1]] }, knockMs: 20, groupPauseMs: 50, pairPauseMs: 80, texts: T } };
+let bad = 0; const check = (n, got, want) => { const ok = JSON.stringify(got) === JSON.stringify(want); if (!ok) bad++; console.log(`${ok ? 'ok  ' : 'FAIL'} ${n}: ${JSON.stringify(got)}`); };
+const sleep = ms => new Promise(f => setTimeout(f, ms));
+let pushes = 0; Mod.setPush(() => { pushes++; });
+(async () => {
+  const r = { solo: false, messages: [], world: { solved: {}, loc: ['hall', 'cellar'] } };
+  const A = (p, m) => Mod.act(cfg, 'k', r, p, m), V = p => Mod.view(cfg, 'k', r, p);
+  check('side by place, no picker', [V(0).side, V(1).side, V(0).fixedSide, V(0).otherSide], ['a', 'b', true, 'b']);
+  check('picking a side is ignored', (A(0, { side: 'b' }), V(0).side), 'a');
+  check('view holds no sequence', JSON.stringify(V(0)).includes('sequences') || JSON.stringify(V(0).view.channels).includes('[2,3]'), false);
+  A(0, { listen: true }); await sleep(30);
+  let c = V(0).view.channels; check('first knocks: partial pair, own side only', [c.length, c[0].side, c[0].playing, c[0].current, c[0].heard], [1, 'a', true, [2, 0], []]);
+  check('other side hears nothing yet', V(1).view.channels[0].knocks, 0);
+  await sleep(200); c = V(0).view.channels[0]; check('first pair heard', c.heard, [[2, 3]]);
+  await sleep(250); c = V(0).view.channels[0]; check('all heard, stopped, list stays', [c.heard, c.playing, c.knocks], [[[2, 3], [1, 1]], false, 7]);
+  check('timer pushed on knocks', pushes >= 7, true);
+  A(0, { listen: true }); check('listening again starts from the beginning', V(0).view.channels[0].heard, []);
+  A(1, { listen: true }); await sleep(30); check('both sides at once', [V(0).view.channels[0].knocks > 0, V(1).view.channels[0].knocks > 0], [true, true]);
+  Mod.leaveAll({ panels: { k: cfg } }, r, 1); check('leaving stops a running playback', V(1).view.channels[0].knocks, 0);
+  r.world.loc[1] = 'kitchen'; check('elsewhere: no side, silence', [V(1).side, V(1).view.channels, A(1, { listen: true }).view.text], [null, [], 'quiet']);
+  r.world.loc = ['cellar', 'hall']; check('sides follow the players when they swap places', [V(0).side, V(1).side], ['b', 'a']);
+  r.world.solved.Box = true; check('closed by one condition with closedText', [V(0).closed, V(0).view], ['still', null]);
+  const r2 = { solo: true, messages: [], world: { solved: {}, loc: ['cellar', 'cellar'] } };
+  check('alone: side by place too', Mod.view(cfg, 'k', r2, 0).side, 'b');
+  const plain = { ...cfg, sides: undefined, closed: [{ if: { solved: 'Box' }, text: 'x' }] };
+  check('without sides alone: both channels', Mod.view(plain, 'k2', r2, 0).view.channels.map(c => c.side), ['a', 'b']);
+  await sleep(300);
+  console.log(bad ? `${bad} failed` : 'all passed'); process.exit(bad ? 1 : 0);
+})();

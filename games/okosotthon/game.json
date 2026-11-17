@@ -1,0 +1,124 @@
+{
+ "title": "Az Okosotthon",
+ "description": "Egy üveg-beton villa a budai erdő szélén, viharos hétvége után. A tulajdonos eltűnt, a ház zárlatban van, és a házrendszer, ÍRISZ, udvariasan, de szigorúan bezárt titeket. Jogról jogra visszaszerzitek a hozzáférést, és kiderítitek, mi történt vasárnap hajnalban. Nyomozós szabadulószoba két játékosnak.",
+ "goal": "Derítsétek ki, hol van Kardos Benedek, és mi történt vasárnap hajnalban. A játék akkor ér véget, amikor a ház kinyitja a bejárati ajtót.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "Hétfő reggel, november. Egy viharos hétvége után a Budai-hegység erdeje csöpög, az ég szürke.\n\n[img:exterior]\n\nA Hárshegyi villa üveg, beton és tölgy. Tavasszal ti ketten telepítettétek bele ÍRISZ-t, a házrendszert. A távfelügyeleti oldalatok szerint a villa vasárnap hajnal óta riasztási zárlatban van. Kardos Benedek, a tulajdonos, nem ment el a hétfői tárgyalására, és nem veszi fel a telefont. Az asszisztense titeket hívott.\n\nA régi szervizkódotokkal bejöttök. Az ajtó halkan becsukódik mögöttetek, a zár kattan.\n\n[img:entry]\n\nÍRISZ hangja, udvariasan: „Jó reggelt. A ház vasárnap 02:13 óta zárlatban van. Zárlat alatt senki nem hagyhatja el az épületet. Az önök jogosultsága: vendég. Elnézést a kellemetlenségért.”\n\nNálatok van az átadási jegyzőkönyv és a két szervizkártyátok. Nézzetek körül.\n\n```\nÍRISZ: vendég · Hely: Előtér / Előtér\n```",
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "help": "Ti vagytok a ház két telepítője. ÍRISZ jogosultságai lépésenként nyílnak (vendég → szerviz → lakó → rendszergazda), az állapotsorban látszik, hol tartotok. A szerverszobából minden kamera látszik, de semmihez nem lehet hozzányúlni: gyakran kell szétválni, az egyik a monitoroknál, a másik a házban. Beszéljetek. A szerkezetek gombok a chatben; a 💡 Tipp a szerkezetek ablakában van. Időkorlát nincs, semmi nem zárul el végleg.",
+ "panelDone": {
+  "code_lock": "\\(GAME: SOLVED, Biztonsági kérdés\\)",
+  "camera_guide": "\\(GAME: SOLVED, Kulcskereső\\)",
+  "logic_grid": "\\(GAME: SOLVED, Mozgásnapló\\)",
+  "dual_word": "\\(GAME: SOLVED, Vészhelyzeti átadás\\)",
+  "report_form": "\\(GAME: REPORT \\d/4\\)"
+ },
+ "scripted": [
+  {
+   "re": "\\(GAME: REPORT 4/4\\)",
+   "text": "Aláírjátok. ÍRISZ egy pillanatig hallgat, aztán: „Incidens lezárva. Ok: háziállat. Behatoló: nem volt. Köszönöm a türelmüket.”\n\nA garázsban kattan valami. A polcfal egy része lassan kifordul, mint egy ajtó. Mögötte kis, meleg fényű betonszoba: prics, takaró, vizes palackok, egy üres kekszes doboz.\n\n[img:garage_open]\n\nKardos Benedek pislogva lép ki, takaróba csavarva, szemüveg nélkül, hunyorogva. Pixel a lábához szalad, és hangosan panaszkodni kezd.\n\n„Azt hittem, betörő” – mondja rekedten. – „Bezárkóztam, és a szoba nem engedett ki, amíg ÍRISZ riasztást jelzett. A segélyvonal… azt felmondtam.” Lenéz a macskára. „Te voltál, ugye?”\n\nFönt kinyílik a bejárati ajtó. ÍRISZ: „Jó reggelt, Benedek. A riasztást lezártam.”\n\nMindent értetek: a macska, a pohár, a porszívó, a felmondott távfelügyelet, és egy ember, aki egy egész napot töltött a saját biztonsági szobájában."
+  },
+  {
+   "re": "\\(GAME: REPORT [0-3]/4\\)",
+   "text": "Aláírjátok. ÍRISZ: „Incidens lezárva. Köszönöm a türelmüket.”\n\nA garázsban kattan valami. A polcfal egy része lassan kifordul, mint egy ajtó. Mögötte kis, meleg fényű betonszoba: prics, takaró, vizes palackok.\n\n[img:garage_open]\n\nKardos Benedek pislogva lép ki, takaróba csavarva, szemüveg nélkül. Pixel a lábához szalad. „Azt hittem, betörő” – mondja rekedten. – „És a szoba nem engedett ki, amíg riasztás volt.”\n\nFönt kinyílik a bejárati ajtó. ÍRISZ: „Jó reggelt, Benedek. A riasztást lezártam.”\n\nBenedek a jelentést olvassa a telefonján, és itt-ott felhúzza a szemöldökét. Néhány dolgot másképp írtatok, mint ahogy történt; de előkerült, és ez a lényeg."
+  }
+ ],
+ "endPattern": "\\(GAME: REPORT \\d/4\\)",
+ "tailRules": [
+  {
+   "if": "\\(GAME: REPORT \\d/4\\)",
+   "text": "THE GAME IS OVER. The ending has already been told. If the players ask anything, answer openly in plain Hungarian, outside the story: the cat Pixel knocked Vera's wine glass off the table at 02:13, the glass-break sensor raised the alarm, the robot vacuum got stuck in the spill; Benedek thought it was a burglar, hid in the safe room behind the garage shelves, which opens from inside only when no alarm is active; only an administrator (himself) could clear the alarm, and he had cancelled the monitoring contract at the end of October. Vera had left at 22:41 and had nothing to do with it."
+  }
+ ],
+ "colorize": {
+  "on": false,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Modern architecture, glass, exposed concrete, oak, cold LED light, a grey November morning after a storm. Calm, precise, slightly uneasy. Short sentences."
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg ott, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "exterior": "A villa",
+  "entry": "Előtér",
+  "entry_now": "Előtér",
+  "entry_panel_screen": "Fali panel",
+  "entry_panel_white": "Fali panel",
+  "parcel": "Csomag",
+  "protocol": "Átadási jegyzőkönyv",
+  "i_service_card": "Szervizkártya",
+  "living": "Nappali",
+  "shelf": "Falipolc",
+  "photo_robot": "Fénykép",
+  "photo_back": "A fénykép hátoldala",
+  "coffee_table": "Dohányzóasztal",
+  "vacuum": "Robotporszívó",
+  "cat_tree": "Macskafa",
+  "pixel_sofa": "A kanapé alatt",
+  "garden": "Kert",
+  "kitchen": "Konyha",
+  "fridge_screen": "Hűtő",
+  "tablet_locked": "Falitablet",
+  "tablet_map": "Takarítási térkép",
+  "dock_label": "Dokkoló",
+  "feeder": "Macskaetető",
+  "feeder_now": "Macskaetető",
+  "pixel_feeder": "Pixel",
+  "i_catfood": "Macskatáp",
+  "server_lit": "Szerverszoba",
+  "rack": "Rack",
+  "rack_unplugged": "A router",
+  "monitor_wall": "Monitorfal",
+  "monitor_wall_thermal": "Monitorfal, hőkép",
+  "cam_entry": "Kamera: előtér",
+  "cam_living": "Kamera: nappali",
+  "cam_kitchen": "Kamera: konyha",
+  "cam_wellness": "Kamera: wellness",
+  "cam_garage": "Kamera: garázs",
+  "cam_garden": "Kamera: kert",
+  "cam_garden_fox": "Kamera: kert, vas. 02:10",
+  "cam_wellness_mark": "Kulcskereső",
+  "console_service": "Konzol",
+  "console_local": "Konzol",
+  "console_resident": "Konzol",
+  "console_handover": "Konzol",
+  "console_admin": "Konzol",
+  "thermal_garage": "Hőkép: garázs",
+  "wellness": "Wellness",
+  "towel_shelf": "Törölközőpolc",
+  "i_fob": "Ilona kulcsa",
+  "garage": "Garázs",
+  "shelf_wall": "Polcfal",
+  "garage_open": "A polcfal mögött",
+  "bedroom": "Hálószoba",
+  "nightstand": "Éjjeliszekrény",
+  "phone_screen": "Telefon",
+  "office_board": "Dolgozószoba",
+  "desk_office": "Íróasztal",
+  "letter": "Levél",
+  "whiteboard_written": "Fehértábla",
+  "pixel_drawing": "Macskarajz",
+  "pixel_drawing_open": "A rajz mögött",
+  "card": "Kártya",
+  "manual": "Kezelési útmutató"
+ }
+}

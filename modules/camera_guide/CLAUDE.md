@@ -1,0 +1,11 @@
+# camera_guide: guide a tap by a picture only the other player sees
+
+"Eye and hand": one player (side a) sees a picture with a mark on it (a camera image with a ring, a map with a cross); the other (side b) stands at the place and must tap the marked spot on their own picture of it, without the mark. They guide each other by talking. Built for Az Okosotthon (2026-11-16); generic (map and terrain, telescope and garden, radio guidance). Shared contract: `../CLAUDE.md`.
+
+- Two-sided: `sides: {a: {at: <watching room>}, b: {at: <target room>}}` (or labels to pick, or `sidesByPlayer`). Each side sees only its own picture. Alone: with `at` sides the side follows where the player stands (walk between the two places); without `sides`, alone, the side is `both` and both pictures show, the tap goes on imageB.
+- `options`: see `types.ts`. `imageA` (side a, the mark is usually already drawn on it by the builder; `marker: {x, y, r}` lets the module draw a ring instead), `imageB` (side b), `target` (`[left, top, right, bottom]` or `{x, y, w, h}` in shares of imageB; stays on the server), `okText`, `missText`, `waitText`, `hintLine` (under imageA on side a), `labelA`/`labelB`, `awayText`, `showOnA`, `dirTexts`, `missIsBad`, `flashMs`.
+- `move`: `{x, y}` in shares of imageB, side b or `both` only. With two players, side b cannot tap while side a's place is empty (`waitText`, shown on both sides while the partner is not at the other place; views refresh when someone changes rooms).
+- After each tap both sides see it flash for `flashMs` (default 2500): on imageB, and on imageA at the same shares unless `showOnA: false` (set it when the two pictures do not line up). Side b only learns hit or miss (`missText`). Side a also gets a sentence from `dirTexts` if given: `line` with `{dir}` (where the tap fell from the target, e.g. "left, up") and `{dist}` (`near` under 0.08 of the picture, `mid` under 0.2, else `far`); without `dirTexts` side a only sees the dot.
+- Solved when a tap falls inside `target`: `(GAME: SOLVED, title)`; the world gives the reward. A miss is a wrong attempt only with `missIsBad`.
+- The view never holds `target`; the direction words reach side a only, after a miss.
+- Test: `node tools/test_camera_guide.js`.

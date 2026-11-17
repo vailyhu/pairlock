@@ -1,0 +1,128 @@
+{
+ "title": "A Szeánsz",
+ "description": "Budapest, Rózsadomb, 1930. Egy híres médium villája, amelyet hét éve, egy szeánsz közepén történt eltűnése óta senki nem nyitott ki. Csendes, gyertyafényes nyomozás két játékosnak, trükkökkel, kopogással és egy kérdéssel, amelyre nincs magyarázat.",
+ "goal": "Derítsétek ki, hová tűnt Ilosvay Vera 1923. november 2-án este, és zárjátok le az utolsó szeánszt. A játék akkor ér véget, amikor a betűtáblán kimondtátok a választ.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "Budapest, Rózsadomb, 1930 ősze. Ilosvay Vera, a húszas évek leghíresebb pesti médiuma, 1923 halottak napján egy szeánsz közepén eltűnt: beült a függönyös szellemkabinetbe, és amikor a vendégek elhúzták a függönyt, üres volt. Hét év után a bíróság holtnak nyilvánította, és a villa rátok száll, mint legközelebbi rokonokra.\n\n[img:garden]\n\nAz ügyvéd átadta a kulcsokat, egy leltárt és egy régi újságcikket. A villát 1923 óta senki nem nyitotta ki. Leltározni jöttetek, alkonyatkor.\n\nNézzetek körül: mondjátok meg, ki mit vizsgál.\n\n```\nHely: A kert / A kert\n```\nLeltár: Kulcskarika, Leltár, Újságcikk",
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "help": "Együtt kezdtek, és végig együtt is mehettek. Néhány dologhoz viszont az kell, hogy az egyikőtök a szeánszteremben legyen, a másik máshol: amit az egyik csinál, azt a másik gyakran máshonnan látja vagy hallja. Beszéljetek. A zárak és szerkezetek gombok a chatben; a 💡 Tipp a szerkezetek ablakában van. Időkorlát nincs.",
+ "panelDone": {
+  "logic_grid": "\\(GAME: SOLVED, Az ültetés\\)",
+  "code_lock_box": "\\(GAME: SOLVED, Az ékszerdoboz\\)",
+  "darkroom": "\\(GAME: SOLVED, Az utolsó lemez\\)",
+  "planchette": "\\(GAME: SOLVED, Az utolsó szeánsz\\)"
+ },
+ "panelDoneLabel": {},
+ "scripted": [
+  {
+   "re": "\\(GAME: SOLVED, Az utolsó szeánsz\\)",
+   "text": "A mutató lassan végigcsúszik a betűkön: B, É, C, S. Aztán: W, E, N, D, T. Aztán megáll a VISZLÁT fölött.\n\nElengeditek. A mutató nem áll meg.\n\nMagától csúszik tovább, lassan, betűről betűre: K, Ö, S, Z, Ö, N, Ö, M.\n\nAztán visszacsúszik az E betűre, és ott marad. A gyertyák egyszerre kialszanak.\n\n[img:ending]\n\nIlosvay Vera 1923. november 2-án este a kabinet csapóajtaján át lement a falak közé, és kiment a kertbe. Másnap reggel a bécsi gyorsra ült. Wendt Erzsébet néven élt tovább Bécsben, messze Kardos leleplezésétől és Bárczy kölcsönétől. A trükköket egész pályáján a bátyja, Ernő működtette a falak közül.\n\nErnő 1922 áprilisában meghalt.\n\nAzon az estén mégis kopogott valaki a falban. Valaki exponálta a lemezt. És Vera egy évvel később megköszönte valakinek, hogy ott volt.\n\nHajnalodik. A villa csendes."
+  }
+ ],
+ "endPattern": "\\(GAME: SOLVED, Az utolsó szeánsz\\)",
+ "tailRules": [
+  {
+   "if": "\\(GAME: SOLVED, Az utolsó szeánsz\\)",
+   "text": "THE GAME IS OVER. The ending has already been told in the chat. If the players ask anything, answer openly in plain Hungarian, as yourself outside the story, and do not continue the story or invent new events. Never explain who knocked or who stood on the plate: nobody knows."
+  }
+ ],
+ "model": {
+  "temperature": 1,
+  "top_p": 0.95,
+  "frequency_penalty": 0.3,
+  "presence_penalty": 0.2,
+  "max_tokens": 500
+ },
+ "colorize": {
+  "on": false,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Quiet, cold, candle-lit; a medium's villa in Budapest sealed since 1923; soft horror, never gory; short plain sentences."
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg abban a szobában, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "garden": "A villa",
+  "hall": "Előcsarnok",
+  "portrait_vera": "Vera portréja",
+  "guestbook": "Vendégkönyv",
+  "guestbook_first": "A vendégkönyv első oldala",
+  "guestbook_last": "Az utolsó este",
+  "coat": "Kabát a fogason",
+  "i_press_card": "Sajtóigazolvány",
+  "mail": "Postakupac",
+  "postcard_front": "Bécsi képeslap",
+  "postcard_back": "A képeslap hátulja",
+  "salon": "Szalon",
+  "salon_open": "Szalon, nyitott szekrénnyel",
+  "cabinet_liquor": "Likőrösszekrény",
+  "cabinet_liquor_open": "A kifordult szekrény",
+  "spirit_wall": "Fényképek a falon",
+  "photo_group": "Csoportkép, 1923. november 2.",
+  "spirit_1": "Szellemfotó I.",
+  "spirit_2": "Szellemfotó II.",
+  "spirit_3": "Szellemfotó III.",
+  "gramophone": "Gramofon",
+  "seance": "Szeánszterem",
+  "seance_open": "Szeánszterem, nyitott kabinettel",
+  "seance_trapdoor": "Szeánszterem, nyitott csapóajtóval",
+  "seance_changed": "Szeánszterem",
+  "table": "Szeánszasztal",
+  "cabinet": "Szellemkabinet",
+  "cabinet_open": "A nyitott kabinet",
+  "cabinet_trapdoor": "A csapóajtó",
+  "props": "Kellékek",
+  "chair5": "Az ötös szék",
+  "notebook": "Kardos notesze",
+  "passage": "Járat a falak között",
+  "pulleys": "Zsinóros deszka",
+  "camera": "Fényképezőgép",
+  "i_plate_holder": "Lemezkazetta",
+  "peephole": "Kukucskáló",
+  "knock_wall": "Ceruzás rács",
+  "trapdoor_below": "A kabinet alatt",
+  "i_glove": "Kesztyű",
+  "office": "Dolgozószoba",
+  "desk": "Íróasztal",
+  "erno_photo": "Ernő fényképe",
+  "ledger": "Főkönyv",
+  "letter_kardos": "Kardos levele",
+  "letter_barczy": "Bárczy levele",
+  "boudoir": "Vera öltözője",
+  "vanity": "Fésülködőasztal",
+  "jewelbox": "Ékszerdoboz",
+  "jewelbox_open": "A nyitott ékszerdoboz",
+  "i_basement_key": "Pincekulcs",
+  "death_notice": "Gyászjelentés",
+  "timetable": "Menetrend",
+  "darkroom": "Sötétkamra",
+  "darkroom_red": "Sötétkamra, vörös fényben",
+  "enlarger": "Pult",
+  "recipe": "Ernő receptje",
+  "plate_last": "Az utolsó lemez",
+  "i_keyring": "Kulcskarika",
+  "inventory": "Leltár",
+  "article": "Újságcikk",
+  "ending": "Hajnal",
+  "ouija": "Betűtábla"
+ }
+}

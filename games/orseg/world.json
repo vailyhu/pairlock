@@ -1,0 +1,1454 @@
+{
+ "start": "lako",
+ "rooms": {
+  "lako": {
+   "name": "Lakószoba",
+   "aliases": [
+    "földszint",
+    "alsó szint",
+    "lakótér"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Lépcsőajtó"
+     },
+     "text": "A szobában ezt látjátok: {contents}. A lépcső felé a nehéz vasajtó, a retesze nyitva."
+    },
+    {
+     "text": "A szobában ezt látjátok: {contents}. A lépcső felé a nehéz vasajtó, zárva."
+    }
+   ],
+   "exits": {
+    "orszoba": {
+     "requires": {
+      "solved": "Lépcsőajtó"
+     },
+     "otherwise": "A vasajtó zárva, a retesz négy számtárcsára jár.",
+     "panel": {
+      "id": "code_lock_stairs",
+      "label": "Lépcsőajtó zára"
+     },
+     "aliases": [
+      "csigalépcső",
+      "lépcső",
+      "fel",
+      "felfelé"
+     ]
+    }
+   },
+   "details": [
+    "nyirkos kőfalak",
+    "petróleum és sós víz szaga",
+    "odakint süvít a szél",
+    "a kályha körül hűvös a levegő"
+   ]
+  },
+  "orszoba": {
+   "name": "Őrszoba",
+   "aliases": [
+    "emelet",
+    "középső szint",
+    "őrhely"
+   ],
+   "firstText": "A csigalépcső az Őrszobába visz.",
+   "image": "szoba_orszoba",
+   "text": [
+    {
+     "if": {
+      "item": "hatch",
+      "state": "open"
+     },
+     "text": "A szobában ezt látjátok: {contents}. Vaslétra vezet a nyitott csapóajtóhoz, fent a Lámpatér."
+    },
+    {
+     "text": "A szobában ezt látjátok: {contents}. Vaslétra vezet a mennyezeti csapóajtóhoz."
+    }
+   ],
+   "exits": {
+    "lako": {
+     "aliases": [
+      "csigalépcső",
+      "lépcső",
+      "le",
+      "lefelé"
+     ]
+    },
+    "lampater": {
+     "requires": {
+      "item": "hatch",
+      "state": "open"
+     },
+     "otherwise": "A csapóajtó zárva, kulcslyuk van rajta.",
+     "aliases": [
+      "létra",
+      "vaslétra",
+      "fel",
+      "felfelé"
+     ]
+    }
+   },
+   "details": [
+    "kerek kőfal",
+    "sárgaréz és gépolaj szaga",
+    "a vihar tompán dübörög a falakon"
+   ]
+  },
+  "lampater": {
+   "name": "Lámpatér",
+   "aliases": [
+    "lámpaterem",
+    "lámpaház",
+    "torony teteje",
+    "felső szint"
+   ],
+   "firstText": "A létra a Lámpatérbe visz.",
+   "image": "szoba_lampater",
+   "text": [
+    {
+     "if": {
+      "item": "lamp_seat",
+      "state": "fitted"
+     },
+     "text": "A szobában ezt látjátok: a nagy lencsedob a fekete lemezeivel, benne az égőfej a helyén, és a falon egy kis ismétlőlámpa."
+    },
+    {
+     "text": "A szobában ezt látjátok: a nagy lencsedob a fekete lemezeivel, benne a lámpa helye, és a falon egy kis ismétlőlámpa."
+    }
+   ],
+   "exits": {
+    "orszoba": {
+     "aliases": [
+      "létra",
+      "le",
+      "lefelé"
+     ]
+    }
+   },
+   "details": [
+    "körben üvegfal, mögötte fekete éjszaka",
+    "eső veri az üveget",
+    "hideg huzat"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "table",
+   "name": "asztal",
+   "location": "lako",
+   "text": "Az asztal háromszemélyes: két tányéron félbehagyott hal és kenyér, a harmadik tiszta, az evőeszköz érintetlen.",
+   "images": [
+    "asztal"
+   ],
+   "aliases": [
+    "tányér",
+    "teríték",
+    "hal"
+   ],
+   "mention": "megterített asztal",
+   "details": [
+    "kerek, sötét fa",
+    "zománcos bögrék"
+   ],
+   "literal": true
+  },
+  {
+   "id": "stove",
+   "name": "kályha",
+   "location": "lako",
+   "text": "A kályha ajtaja nyitva, a hamu kihűlt, benne néhány megpörkölődött papírdarab.",
+   "images": [
+    "kalyha"
+   ],
+   "aliases": [
+    "hamu",
+    "papírdarabok"
+   ],
+   "mention": "kályha",
+   "panel": {
+    "id": "puzzle",
+    "label": "Égett levéldarabok összerakása"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Égett levél"
+     },
+     "text": "A kályha ajtaja nyitva, a hamu kihűlt. A papírdarabokat már kiszedtétek.",
+     "panel": null
+    }
+   ],
+   "actions": {
+    "touch_fire": {
+     "say": "A kályha kihűlt, nincs benne tűz."
+    },
+    "light": {
+     "forbidden": "Nincs mivel begyújtani, és a papírdarabok is odavesznének."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "pegs",
+   "name": "fogas",
+   "location": "lako",
+   "text": "Három vasfogas: az elsőn egy sárga olajkabát és egy kalap, a másik kettő üres.",
+   "images": [
+    "fogas"
+   ],
+   "aliases": [
+    "kabát",
+    "olajkabát",
+    "kalap"
+   ],
+   "mention": "fogas",
+   "details": [
+    "vasfogasok a kőfalban",
+    "sárga olajkabát"
+   ],
+   "literal": true
+  },
+  {
+   "id": "calendar",
+   "name": "falinaptár",
+   "location": "lako",
+   "text": "A naptár a falon lóg:",
+   "images": [
+    "naptar"
+   ],
+   "aliases": [
+    "naptár"
+   ],
+   "mention": "falinaptár",
+   "literal": true
+  },
+  {
+   "id": "clock",
+   "name": "falióra",
+   "location": "lako",
+   "text": "A falióra áll, a mutatói nem mozognak:",
+   "images": [
+    "ora"
+   ],
+   "aliases": [
+    "óra"
+   ],
+   "mention": "falióra",
+   "actions": {
+    "check_own_watch": {
+     "say": "A te órád rendesen jár, a falióra nem."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "printed",
+   "name": "nyomtatott papír",
+   "location": "lako",
+   "text": "Az ajtó mellett egy nyomtatott táblázat van kifüggesztve:",
+   "images": [
+    "gyujtasi"
+   ],
+   "aliases": [
+    "táblázat",
+    "papír az ajtó mellett"
+   ],
+   "mention": "egy nyomtatott papír az ajtó mellett",
+   "literal": true
+  },
+  {
+   "id": "schedule",
+   "name": "kézzel írt papír",
+   "location": "lako",
+   "text": "A priccsek fölött egy kézzel írt beosztás lóg. Magatokkal vihetitek.",
+   "images": [
+    "beosztas"
+   ],
+   "aliases": [
+    "beosztás",
+    "papír a priccsek fölött"
+   ],
+   "mention": "egy kézzel írt papír a priccsek fölött",
+   "pickable": {
+    "id": "beosztas",
+    "name": "Őrségbeosztás"
+   },
+   "literal": true
+  },
+  {
+   "id": "flags",
+   "name": "zászlósor",
+   "location": "lako",
+   "text": "Kis zászlók sora lóg egy kötélen a kályha fölött, mintha száradni tették volna ki.",
+   "images": [
+    "zaszlok"
+   ],
+   "aliases": [
+    "zászlók"
+   ],
+   "mention": "zászlósor a kályha fölött",
+   "literal": true
+  },
+  {
+   "id": "chests",
+   "name": "három láda",
+   "location": "lako",
+   "text": "Három tengeri láda áll egymás mellett a priccsek lábánál, monogrammal: V.B., H.M., K.A.",
+   "images": [
+    "ladak"
+   ],
+   "aliases": [
+    "ládák",
+    "láda"
+   ],
+   "mention": "három láda egymás mellett",
+   "details": [
+    "vasalt sarkú tengeri ládák",
+    "festett monogramok"
+   ],
+   "literal": true
+  },
+  {
+   "id": "chest_vb",
+   "name": "V.B. ládája",
+   "location": "chests",
+   "text": "Négytárcsás sárgaréz számzár van rajta.",
+   "rel": "part",
+   "aliases": [
+    "V.B. láda",
+    "számzáras láda",
+    "első láda"
+   ],
+   "panel": {
+    "id": "code_lock_chest",
+    "label": "V.B. ládájának zára"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "V.B. ládája"
+     },
+     "text": "A ládában egy kis zsebkönyv és egy nehéz vaskulcs volt.",
+     "panel": null
+    }
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "A zár nem enged erőnek, ez a láda csak a számokra nyílik."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "chest_hm",
+   "name": "H.M. ládája",
+   "location": "chests",
+   "text": "A lakatja nyitva lóg, a ládában csak régi ruhák vannak.",
+   "rel": "part",
+   "aliases": [
+    "H.M. láda",
+    "második láda"
+   ]
+  },
+  {
+   "id": "chest_ka",
+   "name": "K.A. ládája",
+   "location": "chests",
+   "text": "Nincs lezárva. Rendezett holmi, és egy összehajtott takaró alatt egy cédula.",
+   "images": [
+    "ante_cedula"
+   ],
+   "rel": "part",
+   "aliases": [
+    "K.A. láda",
+    "harmadik láda",
+    "takaró"
+   ],
+   "onLook": {
+    "give": [
+     {
+      "id": "ante_cedula",
+      "name": "Kis cédula"
+     }
+    ]
+   },
+   "literal": true
+  },
+  {
+   "id": "bunks",
+   "name": "priccsek",
+   "location": "lako",
+   "text": "Keskeny priccsek, szalmazsákkal és takaróval.",
+   "aliases": [
+    "ágy",
+    "szalmazsák"
+   ],
+   "mention": "három priccs",
+   "details": [
+    "durva szalmazsák",
+    "szürke gyapjútakarók"
+   ]
+  },
+  {
+   "id": "shelf",
+   "name": "könyvespolc",
+   "location": "lako",
+   "text": "Régi hajózási kézikönyvek, semmi érdekes.",
+   "aliases": [
+    "polc",
+    "könyvek"
+   ],
+   "mention": "könyvespolc",
+   "details": [
+    "kopott gerincű kézikönyvek",
+    "sós párától hullámos lapok"
+   ]
+  },
+  {
+   "id": "windows",
+   "name": "ablakok",
+   "location": "lako",
+   "aliases": [
+    "ablak"
+   ],
+   "mention": [
+    {
+     "if": {
+      "item": "windows",
+      "state": "open"
+     },
+     "text": "két ablak, az egyik nyitva"
+    },
+    {
+     "text": "két ablak"
+    }
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Odakint vihar és fekete tenger.",
+    "open": "Az ablak nyitva, odakint vihar és fekete tenger."
+   },
+   "actions": {
+    "open": {
+     "setState": "open",
+     "say": "Kinyitjátok az ablakot. Besüvít a szél, és hirtelen hideg lesz a szobában."
+    },
+    "close": {
+     "setState": "closed",
+     "say": "Becsukjátok az ablakot, a szél zaja elhalkul."
+    },
+    "climb": {
+     "forbidden": "Az ablakon túl csak a szikla és a hullámok vannak, arra nincs út."
+    }
+   },
+   "details": [
+    "sós pára az üvegen",
+    "a vihar zúgása"
+   ]
+  },
+  {
+   "id": "stair_door",
+   "name": "vasajtó",
+   "text": "Nehéz vasajtó, a reteszén négy számtárcsával. Egy cédula van rátűzve.",
+   "images": [
+    "ajto",
+    "cedula"
+   ],
+   "kind": "door",
+   "between": [
+    "lako",
+    "orszoba"
+   ],
+   "aliases": [
+    "ajtó",
+    "cédula",
+    "retesz"
+   ],
+   "panel": {
+    "id": "code_lock_stairs",
+    "label": "Lépcsőajtó zára"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Lépcsőajtó"
+     },
+     "text": "A retesz nyitva, mögötte szűk csigalépcső indul felfelé.",
+     "images": [
+      "ajto",
+      "cedula"
+     ],
+     "panel": null
+    }
+   ],
+   "actions": {
+    "force": {
+     "forbidden": "A vas vastag, ezt erővel nem lehet kinyitni."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "cistern",
+   "name": "kerek vasfedél",
+   "location": "lako",
+   "aliases": [
+    "fedél",
+    "ciszterna",
+    "ciszterna fedele"
+   ],
+   "mention": [
+    {
+     "if": {
+      "item": "cistern",
+      "state": "open"
+     },
+     "text": "a ciszterna nyitott fedele a padlóban a kályha mellett"
+    },
+    {
+     "text": "egy kerek vasfedél a padlóban a kályha mellett"
+    }
+   ],
+   "state": {
+    "initial": "closed",
+    "values": [
+     "closed",
+     "open"
+    ]
+   },
+   "text": {
+    "closed": "Kerek vasfedél a padlóban, a kályha mellett. Le van csukva, így nem látszik, mi van alatta.",
+    "open": "A vízgyűjtő ciszterna fedele nyitva. Alatta fekete víz, nem látni benne semmit."
+   },
+   "when": [
+    {
+     "if": {
+      "all": [
+       {
+        "item": "cistern",
+        "state": "open"
+       },
+       {
+        "var": "cistern_rope",
+        "is": "up"
+       }
+      ]
+     },
+     "text": "A ciszterna fedele nyitva. A kötél üresen lóg a perem alatti kampóról, a víz alatta fekete."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "item": "cistern",
+        "state": "open"
+       },
+       {
+        "solved": "A szalag üzenete"
+       }
+      ]
+     },
+     "text": "Most már tudjátok, hogy itt kell keresni. Hason fekve, vállig a vízbe nyúlva, jóval a perem alatt egy kampót tapintotok ki, rajta egy kötél. Felhúzva egy lezárt bádogdoboz jön vele. Benne az égőfej és egy levél.",
+     "images": [
+      "ciszterna",
+      "bedoboz",
+      "ante_vege"
+     ],
+     "do": {
+      "give": [
+       {
+        "id": "i_egofej",
+        "name": "Égőfej"
+       },
+       {
+        "id": "ante_vege",
+        "name": "Kružić levele"
+       }
+      ],
+      "setVar": {
+       "cistern_rope": "up"
+      }
+     }
+    }
+   ],
+   "actions": {
+    "open": {
+     "requires": {
+      "item": "cistern",
+      "state": "closed"
+     },
+     "otherwise": "A fedél már nyitva van.",
+     "setState": "open",
+     "say": "Nagy nehezen felemelitek a vasfedelet. Alatta fekete víz, nem látni benne semmit."
+    },
+    "close": {
+     "setState": "closed",
+     "say": "Visszaengeditek a fedelet a helyére."
+    },
+    "climb_in": {
+     "requires": {
+      "item": "cistern",
+      "state": "open"
+     },
+     "otherwise": "A fedél le van csukva.",
+     "forbidden": "A nyílás szűk, a víz jéghideg és fekete. Ide nem mész be, onnan senki nem jönne ki."
+    },
+    "reach_in": {
+     "requires": {
+      "item": "cistern",
+      "state": "open"
+     },
+     "otherwise": "A fedél le van csukva.",
+     "emit": "cistern_reach"
+    },
+    "search": {
+     "requires": {
+      "item": "cistern",
+      "state": "open"
+     },
+     "otherwise": "A fedél le van csukva.",
+     "emit": "cistern_reach"
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "log",
+   "name": "nagy őrnapló",
+   "location": "desk",
+   "text": "A nagy őrnapló az asztalon. Magatokkal vihetitek.",
+   "images": [
+    "naplo"
+   ],
+   "rel": "on",
+   "mention": "egy nagy naplóval",
+   "aliases": [
+    "napló"
+   ],
+   "pickable": {
+    "id": "i_naplo",
+    "name": "Őrnapló"
+   },
+   "literal": true
+  },
+  {
+   "id": "booklet",
+   "name": "vékony füzet",
+   "location": "desk",
+   "text": "Vékony nyomtatott füzet, a Fényjegyzék. Magatokkal vihetitek.",
+   "images": [
+    "fenyjegyzek"
+   ],
+   "rel": "on",
+   "mention": "egy vékony füzettel",
+   "aliases": [
+    "fényjegyzék",
+    "füzet"
+   ],
+   "pickable": {
+    "id": "i_fenyjegyzek",
+    "name": "Fényjegyzék"
+   },
+   "literal": true
+  },
+  {
+   "id": "chart",
+   "name": "tengeri térkép",
+   "location": "orszoba",
+   "text": "Tengeri térkép a falon. Magatokkal vihetitek.",
+   "images": [
+    "terkep"
+   ],
+   "aliases": [
+    "térkép"
+   ],
+   "mention": "tengeri térkép a falon",
+   "pickable": {
+    "id": "i_terkep",
+    "name": "Tengeri térkép"
+   },
+   "literal": true
+  },
+  {
+   "id": "desk",
+   "name": "íróasztal",
+   "location": "orszoba",
+   "text": "Íróasztal{contents: }. Egy fiókja van.",
+   "aliases": [
+    "asztal"
+   ],
+   "mention": "íróasztal{contents@desk: }",
+   "details": [
+    "sötét fa",
+    "tintafoltok a lapján"
+   ]
+  },
+  {
+   "id": "desk_drawer",
+   "name": "az íróasztal fiókja",
+   "location": "desk",
+   "text": "A fiókban tintásüveg és tollszár, semmi érdekes.",
+   "rel": "part",
+   "aliases": [
+    "fiók",
+    "tintásüveg",
+    "tollszár"
+   ]
+  },
+  {
+   "id": "toolchest",
+   "name": "szerszámláda",
+   "location": "orszoba",
+   "text": "Szerszámláda, a fedelébe vésve A.K., elöl öt betűtárcsa.",
+   "images": [
+    "szerszam"
+   ],
+   "aliases": [
+    "láda"
+   ],
+   "mention": [
+    {
+     "if": {
+      "solved": "Szerszámláda"
+     },
+     "text": "a kinyitott szerszámláda"
+    },
+    {
+     "text": "egy lezárt szerszámláda"
+    }
+   ],
+   "panel": {
+    "id": "code_lock_toolbox",
+    "label": "Szerszámláda zára"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Szerszámláda"
+     },
+     "text": "A ládában egy szelepkerék, tartalék fogaskerekek és egy jelkönyv volt.",
+     "panel": null
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "tank",
+   "name": "olajtartály",
+   "location": "orszoba",
+   "mention": "olajtartály rézcsövekkel",
+   "aliases": [
+    "tartály",
+    "szelepszár",
+    "rézcsövek"
+   ],
+   "state": {
+    "initial": "no_wheel",
+    "values": [
+     "no_wheel",
+     "fitted"
+    ]
+   },
+   "text": {
+    "no_wheel": "Tele van olajjal, de a szelepszárról hiányzik a kerék.",
+    "fitted": "Tele van olajjal, a szelepkerék a helyén."
+   },
+   "images": [
+    "tartaly"
+   ],
+   "when": [
+    {
+     "if": {
+      "all": [
+       {
+        "solved": "Olajvezeték"
+       },
+       {
+        "not": {
+         "solved": "Olajnyomás"
+        }
+       },
+       {
+        "item": "hatch",
+        "state": "open"
+       }
+      ]
+     },
+     "text": "A vezeték zárt. Most a nyomást kell beállítani: egyikőtöknek itt, a szelepeknél, a másiknak a Lámpatérben, a mérőknél.",
+     "images": [
+      "tartaly"
+     ],
+     "panel": {
+      "id": "gauge_board",
+      "label": "Olajnyomás"
+     }
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "solved": "Olajvezeték"
+       },
+       {
+        "not": {
+         "solved": "Olajnyomás"
+        }
+       }
+      ]
+     },
+     "text": "Tele van olajjal, a vezeték zárt.",
+     "images": [
+      "tartaly"
+     ],
+     "panel": null
+    },
+    {
+     "if": {
+      "solved": "Olajnyomás"
+     },
+     "text": "A nyomás rendben.",
+     "images": [
+      "tartaly"
+     ],
+     "panel": null
+    },
+    {
+     "if": {
+      "item": "tank",
+      "state": "fitted"
+     },
+     "panel": {
+      "id": "pipes",
+      "label": "Olajvezeték"
+     }
+    }
+   ],
+   "actions": {
+    "use:i_szelep": {
+     "requires": {
+      "has": "i_szelep"
+     },
+     "otherwise": "Nincs nálatok szelepkerék.",
+     "setState": "fitted",
+     "remove": [
+      "i_szelep"
+     ],
+     "say": "A szelepkerék a helyére kerül.",
+     "panel": {
+      "id": "pipes",
+      "label": "Olajvezeték"
+     }
+    }
+   },
+   "details": [
+    "szegecselt sárgaréz",
+    "nyomásmérő óra a tetején"
+   ]
+  },
+  {
+   "id": "clockwork",
+   "name": "hajtómű",
+   "location": "orszoba",
+   "text": "A hajtómű két tengelyen egy pár fogaskerékkel van összekapcsolva, és ép. A kar a gyújtáskor kell, addig nem érdemes tekerni.",
+   "images": [
+    "hajtomu"
+   ],
+   "aliases": [
+    "fogaskerekek",
+    "kar",
+    "súlydob"
+   ],
+   "mention": "a lámpát forgató hajtómű",
+   "panel": {
+    "id": "gears",
+    "label": "Hajtómű kerekei",
+    "if": {
+     "has": "i_kerekek"
+    }
+   },
+   "actions": {
+    "turn": {
+     "say": "A kar megmozdul, de amíg nincs gyújtás, nincs értelme tekerni."
+    },
+    "use:i_kerekek": {
+     "requires": {
+      "has": "i_kerekek"
+     },
+     "say": "A tartalék kerekekkel ezen a szerkezeten lehet dolgozni.",
+     "panel": {
+      "id": "gears",
+      "label": "Hajtómű kerekei"
+     }
+    }
+   },
+   "details": [
+    "sárgaréz fogaskerekek",
+    "súly a láncon",
+    "olajszag"
+   ]
+  },
+  {
+   "id": "plate",
+   "name": "réztábla",
+   "location": "clockwork",
+   "text": "Szegecselt réztábla a hajtóművön:",
+   "images": [
+    "tabla"
+   ],
+   "rel": "part",
+   "aliases": [
+    "tábla"
+   ],
+   "literal": true
+  },
+  {
+   "id": "reader",
+   "name": "szalagolvasó",
+   "location": "orszoba",
+   "text": "Kis papírszalag-olvasó a falon, karral és tekerccsel. A szalag jelei kézzel nem olvashatók, a készülék a jelet a falban futó dróton a Lámpatér ismétlőlámpájára küldi.",
+   "images": [
+    "morze"
+   ],
+   "aliases": [
+    "szalag",
+    "olvasó"
+   ],
+   "mention": "egy kis szalagolvasó a falon",
+   "when": [
+    {
+     "if": {
+      "solved": "A szalag üzenete"
+     },
+     "text": "A szalag a végére ért.",
+     "panel": {
+      "id": "morse",
+      "label": "Szalagolvasó és ismétlőlámpa"
+     }
+    },
+    {
+     "if": {
+      "item": "hatch",
+      "state": "open"
+     },
+     "panel": {
+      "id": "morse",
+      "label": "Szalagolvasó és ismétlőlámpa"
+     }
+    },
+    {
+     "if": {
+      "not": {
+       "item": "hatch",
+       "state": "open"
+      }
+     },
+     "text": "Kis papírszalag-olvasó a falon, karral és tekerccsel. A szalag jelei kézzel nem olvashatók, a készülék a jelet a falban futó dróton a Lámpatér ismétlőlámpájára küldi. Az ismétlőlámpa odafent van, a csapóajtó mögött."
+    }
+   ],
+   "details": [
+    "papírszalag-tekercs",
+    "sárgaréz keret"
+   ]
+  },
+  {
+   "id": "tube",
+   "name": "szócső",
+   "location": "orszoba",
+   "text": "Réz szócső, a szintek közt lehet rajta beszélni.",
+   "images": [
+    "szocso"
+   ],
+   "mention": "szócső",
+   "details": [
+    "sárgaréz tölcsér",
+    "a kőfalból nyúlik ki"
+   ]
+  },
+  {
+   "id": "hatch",
+   "name": "csapóajtó",
+   "kind": "door",
+   "between": [
+    "orszoba",
+    "lampater"
+   ],
+   "aliases": [
+    "vaslétra",
+    "létra",
+    "mennyezeti ajtó",
+    "kulcslyuk"
+   ],
+   "state": {
+    "initial": "locked",
+    "values": [
+     "locked",
+     "open"
+    ]
+   },
+   "text": {
+    "locked": "Vaslétra a mennyezeti csapóajtóhoz. A csapóajtón kulcslyuk van.",
+    "open": "Vaslétra a nyitott csapóajtóhoz, fent a Lámpatér."
+   },
+   "images": [
+    "csapoajto"
+   ],
+   "actions": {
+    "use:i_kulcs": {
+     "requires": {
+      "has": "i_kulcs"
+     },
+     "otherwise": "Nincs nálatok kulcs.",
+     "setState": "open",
+     "remove": [
+      "i_kulcs"
+     ],
+     "say": "A kulcs elfordul, a csapóajtó nyitva. Fent a Lámpatér.",
+     "emit": "maybe_pressure"
+    },
+    "force": {
+     "forbidden": "A vasat nem lehet feszíteni, kulcs kell hozzá."
+    }
+   }
+  },
+  {
+   "id": "lens",
+   "name": "lencsedob",
+   "location": "lampater",
+   "text": "A lencsedobon nyolc fekete lemez van, így találtátok: három egymás melletti nyitva, a többi zárva.",
+   "images": [
+    "lencse"
+   ],
+   "aliases": [
+    "lencse",
+    "lemezek",
+    "dob"
+   ],
+   "panel": {
+    "id": "shutter_lamp",
+    "label": "Lencsedob és gyújtás",
+    "if": {
+     "all": [
+      {
+       "solved": "Olajvezeték"
+      },
+      {
+       "solved": "Olajnyomás"
+      },
+      {
+       "item": "lamp_seat",
+       "state": "fitted"
+      }
+     ]
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "lamp_seat",
+   "name": "a lámpa helye",
+   "location": "lens",
+   "rel": "part",
+   "aliases": [
+    "lámpa",
+    "égőfej helye"
+   ],
+   "state": {
+    "initial": "empty",
+    "values": [
+     "empty",
+     "fitted"
+    ]
+   },
+   "text": {
+    "empty": "A lámpa helye üres, az égőfej hiányzik.",
+    "fitted": "Az égőfej a helyén van."
+   },
+   "images": [
+    "egoszek"
+   ],
+   "actions": {
+    "use:i_egofej": {
+     "requires": {
+      "has": "i_egofej"
+     },
+     "otherwise": "Nincs nálatok égőfej.",
+     "setState": "fitted",
+     "remove": [
+      "i_egofej"
+     ],
+     "say": "Az égőfej a helyére kerül.",
+     "emit": "maybe_ready"
+    },
+    "light": {
+     "say": "A lámpa nem így gyullad meg: ehhez minden szerkezetnek készen kell állnia."
+    }
+   },
+   "details": [
+    "sárgaréz foglalat"
+   ]
+  },
+  {
+   "id": "repeater",
+   "name": "ismétlőlámpa",
+   "location": "lampater",
+   "text": "Kis ismétlőlámpa, a dróton kap jelet az Őrszobából. Csak akkor világít, ha lent valaki tartja az olvasó karját.",
+   "images": [
+    "ismetlo"
+   ],
+   "panel": {
+    "id": "morse",
+    "label": "Szalagolvasó és ismétlőlámpa"
+   },
+   "details": [
+    "kis sárgaréz lámpa",
+    "domború üveg"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "on": "cistern_reach",
+   "if": {
+    "not": {
+     "solved": "A szalag üzenete"
+    }
+   },
+   "do": {
+    "say": "A víz jéghideg. Ameddig a karod ér, csak síkos követ tapintasz. A ciszterna mély és sötét, így vakon, találomra ennél többet nem tudsz átnézni."
+   }
+  },
+  {
+   "on": "cistern_reach",
+   "if": {
+    "var": "cistern_rope",
+    "is": "up"
+   },
+   "do": {
+    "say": "A ciszterna fedele nyitva. A kötél üresen lóg a perem alatti kampóról, a víz alatta fekete."
+   }
+  },
+  {
+   "on": "cistern_reach",
+   "if": {
+    "all": [
+     {
+      "solved": "A szalag üzenete"
+     },
+     {
+      "not": {
+       "var": "cistern_rope",
+       "is": "up"
+      }
+     }
+    ]
+   },
+   "do": {
+    "say": "Most már tudjátok, hogy itt kell keresni. Hason fekve, vállig a vízbe nyúlva, jóval a perem alatt egy kampót tapintotok ki, rajta egy kötél. Felhúzva egy lezárt bádogdoboz jön vele. Benne az égőfej és egy levél.",
+    "images": [
+     "ciszterna",
+     "bedoboz",
+     "ante_vege"
+    ],
+    "give": [
+     {
+      "id": "i_egofej",
+      "name": "Égőfej"
+     },
+     {
+      "id": "ante_vege",
+      "name": "Kružić levele"
+     }
+    ],
+    "setVar": {
+     "cistern_rope": "up"
+    }
+   }
+  },
+  {
+   "on": "solved:Égett levél",
+   "do": {
+    "say": "A papírdarabok összeálltak.",
+    "images": [
+     "level_egesz"
+    ],
+    "give": [
+     {
+      "id": "level_egesz",
+      "name": "Égett levél"
+     }
+    ]
+   }
+  },
+  {
+   "on": "solved:V.B. ládája",
+   "do": {
+    "say": "A ládában egy kis zsebkönyv és egy nehéz vaskulcs van.",
+    "images": [
+     "fokonyv"
+    ],
+    "give": [
+     {
+      "id": "i_fokonyv",
+      "name": "Zsebkönyv"
+     },
+     {
+      "id": "i_kulcs",
+      "name": "Vaskulcs"
+     }
+    ]
+   }
+  },
+  {
+   "on": "solved:Lépcsőajtó",
+   "do": {
+    "say": "A retesz enged, mögötte szűk csigalépcső indul felfelé."
+   }
+  },
+  {
+   "on": "solved:Szerszámláda",
+   "do": {
+    "say": "A ládában egy szelepkerék, tartalék fogaskerekek és egy jelkönyv van, két megjelölt oldallal.",
+    "images": [
+     "jelkonyv",
+     "morzetabla"
+    ],
+    "give": [
+     {
+      "id": "i_szelep",
+      "name": "Szelepkerék"
+     },
+     {
+      "id": "i_kerekek",
+      "name": "Tartalék fogaskerekek"
+     },
+     {
+      "id": "i_jelkonyv",
+      "name": "Jelkönyv"
+     }
+    ]
+   }
+  },
+  {
+   "on": "solved:Olajvezeték",
+   "do": {
+    "say": "A vezeték zárt.",
+    "emit": "maybe_pressure"
+   }
+  },
+  {
+   "on": "maybe_pressure",
+   "if": {
+    "all": [
+     {
+      "solved": "Olajvezeték"
+     },
+     {
+      "not": {
+       "solved": "Olajnyomás"
+      }
+     },
+     {
+      "item": "hatch",
+      "state": "open"
+     }
+    ]
+   },
+   "do": {
+    "say": "A vezeték zárt. Most a nyomást kell beállítani: egyikőtöknek itt, a szelepeknél, a másiknak a Lámpatérben, a mérőknél.",
+    "panel": {
+     "id": "gauge_board",
+     "label": "Olajnyomás"
+    }
+   }
+  },
+  {
+   "on": "solved:Olajnyomás",
+   "do": {
+    "say": "A nyomás rendben.",
+    "emit": "maybe_ready"
+   }
+  },
+  {
+   "on": "solved:A szalag üzenete",
+   "do": {
+    "say": "A szalag a végére ért. Ciszterna. Talán alaposabban át kellene nézni."
+   }
+  },
+  {
+   "on": "maybe_ready",
+   "if": {
+    "all": [
+     {
+      "solved": "Olajvezeték"
+     },
+     {
+      "solved": "Olajnyomás"
+     },
+     {
+      "item": "lamp_seat",
+      "state": "fitted"
+     }
+    ]
+   },
+   "do": {
+    "say": "Minden készen áll a gyújtásra: egyikőtök a hajtóműnél, a másik itt, a dobnál.",
+    "panel": {
+     "id": "shutter_lamp",
+     "label": "Lencsedob és gyújtás",
+     "if": {
+      "all": [
+       {
+        "solved": "Olajvezeték"
+       },
+       {
+        "solved": "Olajnyomás"
+       },
+       {
+        "item": "lamp_seat",
+        "state": "fitted"
+       }
+      ]
+     }
+    }
+   }
+  }
+ ],
+ "inventory": [
+  {
+   "id": "megbizas",
+   "name": "Megbízólevél"
+  }
+ ],
+ "vars": {
+  "miles": "12",
+  "light": "nem ég",
+  "ignition": "none"
+ },
+ "status": "Hely: {loc0} / {loc1} · Zrínyi: {miles} mérföld\nFény: {light}",
+ "onMessage": [
+  {
+   "match": "\\(Zrínyi: (\\d+) mérföld\\)",
+   "setVar": {
+    "miles": "$1"
+   }
+  },
+  {
+   "match": "\\(GAME: GYÚJTÁS",
+   "setVar": {
+    "light": "ég"
+   }
+  },
+  {
+   "match": "\\(GAME: GYÚJTÁS K-20",
+   "setVar": {
+    "ignition": "true"
+   }
+  },
+  {
+   "match": "\\(GAME: GYÚJTÁS K-31",
+   "setVar": {
+    "ignition": "first_false"
+   }
+  },
+  {
+   "match": "\\(GAME: GYÚJTÁS K-32",
+   "setVar": {
+    "ignition": "false"
+   }
+  },
+  {
+   "match": "\\(GAME: hajtómű beállítva",
+   "do": {
+    "say": "A kerekek a helyükön."
+   }
+  }
+ ],
+ "panelTitles": {
+  "puzzle": "Égett levél",
+  "code_lock_chest": "V.B. ládája",
+  "code_lock_stairs": "Lépcsőajtó",
+  "code_lock_toolbox": "Szerszámláda",
+  "pipes": "Olajvezeték",
+  "gauge_board": "Olajnyomás",
+  "morse": "A szalag üzenete"
+ },
+ "panelAvail": {
+  "gauge_board": {
+   "item": "hatch",
+   "state": "open"
+  },
+  "morse": {
+   "item": "hatch",
+   "state": "open"
+  },
+  "gears": {
+   "has": "i_kerekek"
+  },
+  "shutter_lamp": {
+   "all": [
+    {
+     "solved": "Olajvezeték"
+    },
+    {
+     "solved": "Olajnyomás"
+    },
+    {
+     "item": "lamp_seat",
+     "state": "fitted"
+    }
+   ]
+  }
+ },
+ "mustReach": [
+  {
+   "all": [
+    {
+     "solved": "Olajvezeték"
+    },
+    {
+     "solved": "Olajnyomás"
+    },
+    {
+     "item": "lamp_seat",
+     "state": "fitted"
+    }
+   ]
+  }
+ ],
+ "panelIds": [
+  "puzzle",
+  "code_lock_chest",
+  "code_lock_stairs",
+  "code_lock_toolbox",
+  "pipes",
+  "gauge_board",
+  "morse",
+  "gears",
+  "shutter_lamp",
+  "report_form"
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "kód",
+  "cédula",
+  "ciszterna",
+  "titkos",
+  "rejtett",
+  "üzenet",
+  "papírdarab",
+  "zászló"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

@@ -1,0 +1,4099 @@
+{
+ "start": [
+  "lobby74",
+  "lobby"
+ ],
+ "inventoryPerPlayer": true,
+ "knowledge": "perPlayer",
+ "rooms": {
+  "lobby74": {
+   "name": "Előcsarnok (1974)",
+   "aliases": [
+    "porta",
+    "bejárat",
+    "előtér"
+   ],
+   "text": "Az előcsarnokban ezt látjátok: üveges bejárati ajtó, a porta pultja egy nyitott vendégkönyvvel és néhány képeslappal, mögötte a kulcstábla, fölötte egy falióra, a hátsó falon a faliújság, két narancssárga karosszék, egy gumifa, és a széles lépcső fel az emeletre.",
+   "exits": {
+    "lounge74": {
+     "aliases": [
+      "társalgó"
+     ]
+    },
+    "dining_room74": {
+     "aliases": [
+      "étterem"
+     ]
+    },
+    "caretaker_office74": {
+     "aliases": [
+      "iroda"
+     ]
+    },
+    "switchboard_room74": {
+     "aliases": [
+      "központ"
+     ]
+    },
+    "corridor74": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    },
+    "veranda74": {
+     "aliases": [
+      "veranda"
+     ]
+    },
+    "exterior74": {
+     "aliases": [
+      "ki",
+      "bejárati ajtó",
+      "kint"
+     ]
+    }
+   },
+   "image": "lobby74",
+   "details": [
+    "terrazzo padló",
+    "padlóviasz és cigarettafüst szaga",
+    "a falióra hangos ketyegése",
+    "napfény az üvegfalon át"
+   ]
+  },
+  "lounge74": {
+   "name": "Társalgó (1974)",
+   "aliases": [
+    "tévészoba"
+   ],
+   "text": "A társalgóban ezt látjátok: nagy ablakok a tóra, faliszekrény egy tévével, mellette egy Orion rádió egy alacsony szekrényen, hat karosszék körben, az ablaknál sakkasztal, a falhoz csukva egy pingpongasztal, és egy halom újság a dohányzóasztalon.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "lounge74",
+   "details": [
+    "parkettás padló",
+    "tüllfüggönyök, mögöttük a tó",
+    "teakfa karosszékek",
+    "délelőtti napfény csíkjai"
+   ]
+  },
+  "dining_room74": {
+   "name": "Étterem (1974)",
+   "aliases": [
+    "ebédlő",
+    "étkező"
+   ],
+   "text": "Az étteremben ezt látjátok: nyolc megterített asztal, egyiken üres üdítősüvegek, a falon az étkezési rend és egy falióra, a végében kis színpad egy pianínóval, hátul a tálalóablak a konyha felé.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "kitchen74": {
+     "aliases": [
+      "konyha"
+     ]
+    }
+   },
+   "image": "dining_room74",
+   "details": [
+    "fehér abroszok",
+    "fémvázas székek",
+    "nagy ablakok a tóra",
+    "piros drapéria a színpad fölött"
+   ]
+  },
+  "kitchen74": {
+   "name": "Konyha (1974)",
+   "aliases": [],
+   "text": "A konyhában ezt látjátok: nagy gáztűzhely, fazekak a rúdon, egy hosszú acél munkaasztal, két mosogató, jobbra a kamraajtó, és egy lépcső le a kazánházba.",
+   "exits": {
+    "dining_room74": {
+     "aliases": [
+      "étterem"
+     ]
+    },
+    "boiler_room74": {
+     "aliases": [
+      "pince",
+      "le"
+     ]
+    }
+   },
+   "image": "kitchen74",
+   "details": [
+    "fehér csempe",
+    "rozsdamentes acél mindenütt",
+    "mosogatószer és hagyma szaga"
+   ]
+  },
+  "caretaker_office74": {
+   "name": "Gondnoki iroda (1974)",
+   "aliases": [
+    "iroda",
+    "gondnoki"
+   ],
+   "text": "A gondnoki irodában ezt látjátok: íróasztal telefonnal és asztali lámpával, egy kiterített tervrajz, egy szürke irattartó szekrény, keskeny vaságy, fogason egy kék munkaköpeny, a falon szerszámtábla és egy naptár.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "caretaker_office74",
+   "details": [
+    "bézs falak",
+    "gépolaj és dohány szaga",
+    "kis ablak az udvarra"
+   ]
+  },
+  "switchboard_room74": {
+   "name": "Központfülke (1974)",
+   "aliases": [
+    "telefonközpont",
+    "fülke"
+   ],
+   "text": "A központfülkében ezt látjátok: a dugaszolós telefonközpont zsinórokkal, előtte egy szék, egy fejhallgató a kampón, és egy polc dossziékkal.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "switchboard_room74",
+   "details": [
+    "szűk, ablaktalan fülke",
+    "fémernyős lámpa fénye",
+    "por és régi papír szaga"
+   ]
+  },
+  "corridor74": {
+   "name": "Emeleti folyosó (1974)",
+   "aliases": [
+    "folyosó",
+    "emelet",
+    "fent"
+   ],
+   "text": "Az emeleti folyosón ezt látjátok: hat számozott ajtó, mind zárva, csak a 6-os résnyire nyitva, piros futószőnyeg, egy tűzcsapszekrény, és egy létra fel a padlásra.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "guest_room74": {
+     "aliases": [
+      "6-os szoba",
+      "hatos"
+     ]
+    },
+    "attic74": {
+     "aliases": [
+      "padlás",
+      "létra"
+     ]
+    }
+   },
+   "image": "corridor74",
+   "details": [
+    "piros linóleum",
+    "gömb mennyezeti lámpák",
+    "a folyosó végén ablak a tóra"
+   ]
+  },
+  "guest_room74": {
+   "name": "6-os szoba (1974)",
+   "aliases": [
+    "szoba",
+    "hatos szoba",
+    "vendégszoba",
+    "6-os"
+   ],
+   "text": "A 6-os szobában ezt látjátok: két keskeny ágy, közöttük kancsó és két pohár, egy furnér szekrény, mosdó tükörrel, és az erkélyajtó a tóra.",
+   "exits": {
+    "corridor74": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    }
+   },
+   "image": "guest_room74",
+   "details": [
+    "tiszta, mosószerszagú szoba",
+    "kilátás a tóra",
+    "világos fa bútorok"
+   ]
+  },
+  "veranda74": {
+   "name": "Üveges veranda (1974)",
+   "aliases": [
+    "veranda",
+    "terasz"
+   ],
+   "text": "Az üveges verandán ezt látjátok: hat csíkos nyugszék, két asztal összecsukott napernyővel, az egyik ablakpárkányon egy zöld termosz, kint a nád és a tó, egy fehér vitorlással.",
+   "exits": {
+    "lobby74": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "exterior74": {
+     "aliases": [
+      "ki",
+      "kint"
+     ]
+    }
+   },
+   "image": "veranda74",
+   "details": [
+    "napfény a betonlapokon",
+    "a nád susogása",
+    "fehér vitorla a tavon"
+   ]
+  },
+  "boiler_room74": {
+   "name": "Kazánház (1974)",
+   "aliases": [
+    "pince",
+    "alagsor",
+    "kazán"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "text": "A kazánházban ezt látjátok: a hűlő szénkazán, a vörös szelep elzárva, a szénrakás, a munkapad, és a hátsó falnál félrehúzott polc mögött a nyitott acélajtó."
+    },
+    {
+     "if": {
+      "is": "shelf74.moved",
+      "eq": true
+     },
+     "text": "A kazánházban ezt látjátok: a szénkazán, a vörös szelep, a szénrakás, a munkapad, és a hátsó falnál a félrehúzott polc mögött egy keskeny, szürke acélajtó."
+    },
+    {
+     "text": "A kazánházban ezt látjátok: a duruzsoló szénkazán, a fővezetéken egy vörös szelepkerék, a szénrakás egy lapáttal, a magas ablak alatt egy munkapad, és a hátsó téglafalnál egy magas polc festékes dobozokkal."
+    }
+   ],
+   "exits": {
+    "kitchen74": {
+     "aliases": [
+      "konyha"
+     ]
+    },
+    "shelter74": {
+     "aliases": [
+      "óvóhely",
+      "acélajtó"
+     ],
+     "door": "door74"
+    }
+   },
+   "image": "boiler_room74",
+   "details": [
+    "szénpor szaga",
+    "a kazán meleg zúgása",
+    "csupasz téglafalak",
+    "kis ablak magasan a fal tetején"
+   ],
+   "props": {
+    "hot": {
+     "initial": true,
+     "values": [
+      true,
+      false
+     ],
+     "public": true
+    }
+   }
+  },
+  "shelter74": {
+   "name": "Óvóhely (1974)",
+   "aliases": [
+    "óvóhely",
+    "bunker",
+    "kis szoba",
+    "ó. h."
+   ],
+   "text": "Az óvóhelyen ezt látjátok: nyers beton, egy csupasz körte rácsban, egy vaspriccs összehajtott pokróccal, egyetlen faláda, a falon szellőzőcső kézi forgattyúval, és egy zöld mentőláda a polcon.",
+   "exits": {
+    "boiler_room74": {
+     "aliases": [
+      "kazánház",
+      "ki",
+      "vissza"
+     ]
+    }
+   },
+   "details": [
+    "nyers beton",
+    "dohos, hideg levegő",
+    "rácsos lámpa fénye"
+   ],
+   "image": "room_b",
+   "firstText": "Az ajtó nehezen enged. Odabent dohos, hideg levegő, és a priccs szélén egy szürke arcú, borostás férfi ül, a szeme káprázik a fénytől. Bodnár Gyula, a gondnok. Rekedten szól: „Kardos zárt be… tegnap este. Azt hittem, itt maradok.” Felkel, megtámaszkodik a falban. „A ládákat éjjel elvitték. De a füzet és a film megvan: a mentőládában. Ha nálam találják, eltüntetik. Itt kell elrejteni, valakinek, aki majd megtalálja.” Aztán kibotorkál, és leül a kazánház lépcsőjére, a kulacsból iszik."
+  },
+  "attic74": {
+   "name": "Padlás (1974)",
+   "aliases": [
+    "tetőtér"
+   ],
+   "text": "A padláson ezt látjátok: gerendák, egy kis tetőablak, összecsukott nyugszékek, feltekert matracok, egy vaságy, dobozok, a kémény, és jobbra egy víztartály faállványon.",
+   "exits": {
+    "corridor74": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    }
+   },
+   "image": "attic74",
+   "details": [
+    "fagerendák",
+    "meleg, poros levegő",
+    "a tetőablakon beeső fény"
+   ]
+  },
+  "exterior74": {
+   "name": "Az üdülő kívülről (1974)",
+   "aliases": [
+    "kint",
+    "udvar",
+    "kert",
+    "épület"
+   ],
+   "text": "Kint ezt látjátok: a fehér, háromszintes üdülő hosszú erkélyekkel, a bejárat mellett a cégtábla, nyírt gyep, jegenyék, a zászlórúd, a tó csillog mögötte. Egy autó sincs a ház előtt.",
+   "exits": {
+    "veranda74": {
+     "aliases": [
+      "veranda"
+     ]
+    },
+    "lobby74": {
+     "aliases": [
+      "be",
+      "bejárat"
+     ]
+    }
+   },
+   "image": "exterior74",
+   "details": [
+    "jegenyék",
+    "nyírt gyep",
+    "a tó csillogása",
+    "szélcsend"
+   ]
+  },
+  "lobby": {
+   "name": "Előcsarnok (Ma)",
+   "aliases": [
+    "porta",
+    "bejárat",
+    "előtér"
+   ],
+   "text": "Az előcsarnokban ezt látjátok: belülről bedeszkázott bejárati ajtó, a porta pultja egy ázott vendégkönyvvel, mögötte a kulcstábla üres kampókkal{contents@key_board:, csak }, a hátsó falon a penészes faliújság, a karosszékek helye, egy kiszáradt gumifa, és a lépcső fel az emeletre.",
+   "exits": {
+    "lounge": {
+     "aliases": [
+      "társalgó"
+     ]
+    },
+    "dining_room": {
+     "aliases": [
+      "étterem"
+     ]
+    },
+    "caretaker_office": {
+     "aliases": [
+      "iroda"
+     ]
+    },
+    "switchboard_room": {
+     "aliases": [
+      "központ"
+     ]
+    },
+    "corridor": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    },
+    "veranda": {
+     "aliases": [
+      "veranda"
+     ]
+    },
+    "exterior": {
+     "aliases": [
+      "ki",
+      "bejárati ajtó",
+      "kint"
+     ],
+     "door": "front_door"
+    }
+   },
+   "image": "lobby",
+   "details": [
+    "törmelék és száraz levelek a terrazzón",
+    "beázásfoltok a mennyezeten",
+    "dohos csend"
+   ],
+   "firstText": "A verandán, a kitört üvegen át jöttél be. A bejárati ajtót belülről bedeszkázták."
+  },
+  "lounge": {
+   "name": "Társalgó (Ma)",
+   "aliases": [
+    "tévészoba"
+   ],
+   "text": "A társalgóban ezt látjátok: repedt ablakok, az üres faliszekrény, mellette a régi rádió poros szekrényen, néhány kopott, törött karosszék, szürke függönyfoszlányok, és egy halom ázott újság.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "lounge",
+   "details": [
+    "felpúposodott parketta",
+    "foszló függönyök",
+    "vastag por mindenen"
+   ]
+  },
+  "dining_room": {
+   "name": "Étterem (Ma)",
+   "aliases": [
+    "ebédlő",
+    "étkező"
+   ],
+   "text": "Az étteremben ezt látjátok: az asztalok még sorban állnak, szürkére porosodott abroszokkal, a falon a megsárgult étkezési rend, egy megállt falióra és egy kiragasztott laminált lap, a színpadon a poros pianínó, hátul a tálalóablak.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "kitchen": {
+     "aliases": [
+      "konyha"
+     ]
+    }
+   },
+   "image": "dining_room",
+   "details": [
+    "piszkos ablakok, mögöttük a nád",
+    "dohos levegő",
+    "hámló festék"
+   ]
+  },
+  "kitchen": {
+   "name": "Konyha (Ma)",
+   "aliases": [],
+   "text": "A konyhában ezt látjátok: rozsdás tűzhely, üres rúd, penészes csempe, egy törött mosogató, egy vetemedett kamraajtó, és a lépcső le a kazánházba.",
+   "exits": {
+    "dining_room": {
+     "aliases": [
+      "étterem"
+     ]
+    },
+    "boiler_room": {
+     "aliases": [
+      "pince",
+      "le"
+     ]
+    }
+   },
+   "image": "kitchen",
+   "details": [
+    "hiányos csempe",
+    "fekete penész a sarkokban",
+    "rozsdás acél"
+   ]
+  },
+  "caretaker_office": {
+   "name": "Gondnoki iroda (Ma)",
+   "aliases": [
+    "iroda",
+    "gondnoki"
+   ],
+   "text": "A gondnoki irodában ezt látjátok: vetemedett íróasztal, rajta egy kinyomtatott felmérési terv, egy rozsdás, üres irattartó, egy csupasz ágyváz, egy üres fogas, és a szerszámtábla, rajta csak a szerszámok festett körvonala.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "caretaker_office",
+   "details": [
+    "hámló falak",
+    "vetemedett bútorok",
+    "nyirkos szag"
+   ]
+  },
+  "switchboard_room": {
+   "name": "Központfülke (Ma)",
+   "aliases": [
+    "telefonközpont",
+    "fülke"
+   ],
+   "text": "A központfülkében ezt látjátok: a halott telefonközpont foszló zsinórokkal, egy leszakadt polc, és a falon egy kifakult kék kábelrajz.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    }
+   },
+   "image": "switchboard_room",
+   "details": [
+    "hámló vakolat",
+    "csak a nyitott bejárat felől jön fény",
+    "por és penész szaga"
+   ]
+  },
+  "corridor": {
+   "name": "Emeleti folyosó (Ma)",
+   "aliases": [
+    "folyosó",
+    "emelet",
+    "fent"
+   ],
+   "text": "Az emeleti folyosón ezt látjátok: a hat ajtó csukva, a futószőnyeg elrohadt, a mennyezet egy része beomlott. Egy létra fel a padlásra.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "guest_room": {
+     "aliases": [
+      "6-os szoba",
+      "hatos"
+     ]
+    },
+    "attic": {
+     "aliases": [
+      "padlás",
+      "létra"
+     ]
+    }
+   },
+   "image": "corridor",
+   "details": [
+    "kilógó lécek a beszakadt mennyezetből",
+    "törmelék a padlón",
+    "deszkával fedett ablak a végén"
+   ]
+  },
+  "guest_room": {
+   "name": "6-os szoba (Ma)",
+   "aliases": [
+    "szoba",
+    "hatos szoba",
+    "vendégszoba",
+    "6-os"
+   ],
+   "text": "A 6-os szobában ezt látjátok: rozsdás ágyvázak, ajtó nélküli szekrény, vak tükör, repedt mosdó, és a félig nyitva beragadt erkélyajtó.",
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    }
+   },
+   "image": "guest_room",
+   "details": [
+    "csíkokban lógó tapéta",
+    "nyirkos levegő",
+    "huzat a beragadt erkély felől"
+   ]
+  },
+  "veranda": {
+   "name": "Üveges veranda (Ma)",
+   "aliases": [
+    "veranda",
+    "terasz"
+   ],
+   "text": "Az üveges verandán ezt látjátok: kitört üvegek, behajlott keretek, repkény, egyetlen rozsdás nyugszékváz, kint magas nád és a szürke tó. A kitört üvegen át ki lehet jutni a szabadba.",
+   "exits": {
+    "lobby": {
+     "aliases": [
+      "előcsarnok",
+      "porta"
+     ]
+    },
+    "exterior": {
+     "aliases": [
+      "ki",
+      "kint"
+     ]
+    }
+   },
+   "image": "veranda",
+   "details": [
+    "repkény a kereteken",
+    "szél süvít át a kereteken",
+    "a nád zúgása"
+   ]
+  },
+  "boiler_room": {
+   "name": "Kazánház (Ma)",
+   "aliases": [
+    "pince",
+    "alagsor",
+    "kazán"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "text": "A kazánházban ezt látjátok: vizes padló, a rozsdás kazán, a rozsdás szelep, a leszakadt munkapad, a korhadt polcmaradvány mögött egy félig nyitott, rozsdás acélajtó{contents:. A szénrakás porában }."
+    },
+    {
+     "if": {
+      "is": "shelf.searched",
+      "eq": true
+     },
+     "text": "A kazánházban ezt látjátok: vizes padló, a rozsdás kazán, a rozsdás szelep, a leszakadt munkapad, és a korhadt polcmaradvány mögött egy berozsdált acélajtó{contents:. A szénrakás porában }."
+    },
+    {
+     "text": "A kazánházban ezt látjátok: vizes padló, a rozsdás, néma kazán, a rozsdás szelepkerék, a leszakadt munkapad, és a hátsó téglafalnál egy korhadt polc rozsdás dobozokkal{contents:. A szénrakás porában }."
+    }
+   ],
+   "exits": {
+    "kitchen": {
+     "aliases": [
+      "konyha"
+     ]
+    },
+    "shelter": {
+     "aliases": [
+      "óvóhely",
+      "acélajtó"
+     ],
+     "door": "door"
+    }
+   },
+   "image": "boiler_room",
+   "details": [
+    "vizes betonpadló",
+    "rozsdaszag",
+    "csöpögő víz hangja"
+   ],
+   "props": {
+    "measured": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   }
+  },
+  "shelter": {
+   "name": "Óvóhely (Ma)",
+   "aliases": [
+    "óvóhely",
+    "bunker",
+    "kis szoba",
+    "ó. h."
+   ],
+   "text": "Az óvóhelyen ezt látjátok: rozsda és mész a falakon, egy rozsdás emeletes priccs, fölötte a fal tiszta és üres, egy fáradt fémláda a polcon, és egy korhadt fáláda{contents:. A ládán }.",
+   "exits": {
+    "boiler_room": {
+     "aliases": [
+      "kazánház",
+      "ki",
+      "vissza"
+     ]
+    }
+   },
+   "details": [
+    "mész és rozsda a falakon",
+    "hideg, dohos levegő"
+   ],
+   "firstText": "A rozsdás ajtó nyikorogva enged. Lehajolsz, és belépsz."
+  },
+  "attic": {
+   "name": "Padlás (Ma)",
+   "aliases": [
+    "tetőtér"
+   ],
+   "text": "A padláson ezt látjátok: betört tetőablak, beázásfoltok a gerendákon, átázott dobozok, penészes matracok, a kémény, és a rozsdás víztartály{contents:. A víztartály mögött }.",
+   "exits": {
+    "corridor": {
+     "aliases": [
+      "emelet",
+      "fel"
+     ]
+    }
+   },
+   "image": "attic",
+   "details": [
+    "nyirkos fa szaga",
+    "szürke fény a tetőablakon át"
+   ]
+  },
+  "exterior": {
+   "name": "Az üdülő kívülről (Ma)",
+   "aliases": [
+    "kint",
+    "udvar",
+    "kert",
+    "épület"
+   ],
+   "text": "Kint ezt látjátok: a szürkére mállott romépület bedeszkázott ablakokkal, a bejárat mellett a rozsdás cégtábla, derékig érő gaz, a háttérben egy sárga kotrógép várja a reggelt.",
+   "exits": {
+    "veranda": {
+     "aliases": [
+      "veranda"
+     ]
+    },
+    "lobby": {
+     "aliases": [
+      "be",
+      "bejárat"
+     ],
+     "door": "front_door"
+    }
+   },
+   "image": "exterior",
+   "details": [
+    "derékig érő gaz",
+    "drótkerítés",
+    "szürke ég a tó fölött"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "counter74",
+   "name": "portapult",
+   "location": "lobby74",
+   "text": "Fényesre lakkozott portapult, rajta a nyitott vendégkönyv és néhány képeslap. A pult mögött a kulcstábla.",
+   "aliases": [
+    "pult",
+    "porta"
+   ],
+   "details": [
+    "fényesre lakkozott fa",
+    "kis portásablak"
+   ]
+  },
+  {
+   "id": "guest_register74",
+   "name": "vendégkönyv",
+   "location": "counter74",
+   "text": "Vendégkönyv, szeptember. A 14-i oldalon a vendégek délután négyig mind kijelentkeztek. Két sor maradt a személyzet után: „4-es szoba – Szekeres Pál, szb.-titkár – távozás: IX. 15. 2.00” és „6-os szoba – Kardos József igazgató – távozás: IX. 15. 5.00”. Mindkettő Kardos kézírása.",
+   "images": [
+    "guest_register"
+   ],
+   "rel": "on",
+   "aliases": [
+    "vendégek",
+    "könyv",
+    "nyilvántartás"
+   ],
+   "panel": {
+    "id": "logic_grid",
+    "label": "Ki hol volt este?"
+   },
+   "literal": true
+  },
+  {
+   "id": "postcards74",
+   "name": "képeslapok",
+   "location": "counter74",
+   "text": "Négy színes képeslap legyezőben. A legfelsőn vitorlások és a félsziget: „Üdvözlet Tihanyból!”. A hátuk üres.",
+   "images": [
+    "postcards_lake"
+   ],
+   "rel": "on",
+   "aliases": [
+    "képeslap",
+    "lapok"
+   ],
+   "actions": {
+    "take": {
+     "say": "Megnézed a képeslapokat. Visszateszed."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "key_board74",
+   "name": "kulcstábla",
+   "location": "lobby74",
+   "text": "Fa kulcstábla tizenkét sárgaréz kampóval, két sorban. Minden kampón egy kulcs, színes műanyag bilétával.",
+   "images": [
+    "key_board"
+   ],
+   "aliases": [
+    "kulcsok",
+    "kampók",
+    "kulcstartó"
+   ],
+   "actions": {
+    "take": {
+     "say": "A szobakulcsok. Egyik sem a pincéé: azokat a gondnok tartja külön."
+    }
+   },
+   "details": [
+    "színes műanyag biléták",
+    "sárgaréz kampók két sorban"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wall_clock74",
+   "name": "falióra",
+   "location": "lobby74",
+   "text": "Kerek, fehér intézményi falióra alumíniumkeretben. Hangosan ketyeg a csendben.",
+   "images": [
+    "wall_clock"
+   ],
+   "aliases": [
+    "óra"
+   ],
+   "details": [
+    "fehér számlap, alumínium keret"
+   ]
+  },
+  {
+   "id": "notice_board74",
+   "name": "faliújság",
+   "location": "lobby74",
+   "text": "Parafa faliújság. Középen egy gépelt lap: „FIGYELEM! A szezon szeptember 15-én zárul.” Körülötte két csoportkép mosolygó üdülőkkel, néhány üres kártya és egy kis piros zászló.",
+   "images": [
+    "notice_board"
+   ],
+   "aliases": [
+    "hirdetőtábla",
+    "figyelem",
+    "csoportkép"
+   ],
+   "literal": true
+  },
+  {
+   "id": "armchairs74",
+   "name": "karosszékek",
+   "location": "lobby74",
+   "text": "Két alacsony, narancssárga műbőr karosszék, köztük egy kerek asztalka. Senki nem ült bennük ma reggel.",
+   "aliases": [
+    "karosszék",
+    "fotel",
+    "gumifa"
+   ],
+   "details": [
+    "narancssárga műbőr",
+    "kerek asztalka közöttük"
+   ]
+  },
+  {
+   "id": "radio74",
+   "name": "Orion rádió",
+   "location": "lounge74",
+   "text": "Orion csöves rádió diófa szekrényben: hosszú, borostyánszínű skála, két nagy bakelitgomb és egy finomhangoló, négy elefántcsont nyomógomb. Halkan zúg, a skála melegen dereng.",
+   "images": [
+    "radio"
+   ],
+   "aliases": [
+    "rádió",
+    "orion",
+    "skála",
+    "gomb",
+    "gombok"
+   ],
+   "panel": {
+    "id": "gauge_board",
+    "label": "A rádió"
+   },
+   "actions": {
+    "listen": {
+     "say": "A Kossuth Rádió szól, halkan, valami tánczene. Aztán a zene alatt sercegés, mintha valaki a hangolás szélén beszélne."
+    }
+   },
+   "details": [
+    "diófa szekrény",
+    "borostyánszínű skála",
+    "elefántcsont nyomógombok",
+    "meleg, zümmögő csövek"
+   ]
+  },
+  {
+   "id": "tv74",
+   "name": "tévé",
+   "location": "lounge74",
+   "text": "Videoton tévé a faliszekrényben, kikapcsolva. A mai adás csak este kezdődik.",
+   "aliases": [
+    "televízió",
+    "videoton",
+    "faliszekrény"
+   ],
+   "details": [
+    "domború képernyő",
+    "fa burkolat"
+   ]
+  },
+  {
+   "id": "chess74",
+   "name": "sakk",
+   "location": "lounge74",
+   "text": "Összecsukott sakkdoboz az ablaknál, mellette egy kis dobozban összevissza a bábuk. Valaki félbehagyta.",
+   "images": [
+    "chess_set"
+   ],
+   "aliases": [
+    "sakkasztal",
+    "bábuk",
+    "sakktábla"
+   ],
+   "actions": {
+    "play": {
+     "say": "Felállítasz néhány bábut, aztán abbahagyod. Egyedül nem az igazi."
+    }
+   },
+   "details": [
+    "fényezett fa doboz",
+    "esztergált fa bábuk"
+   ]
+  },
+  {
+   "id": "paddles74",
+   "name": "pingpongütők",
+   "location": "lounge74",
+   "text": "A falhoz csukott pingpongasztal zöld lapján két kopott ütő és egy fehér labda.",
+   "images": [
+    "paddles"
+   ],
+   "aliases": [
+    "ütők",
+    "pingpong",
+    "pingpongasztal",
+    "labda"
+   ],
+   "actions": {
+    "play": {
+     "say": "Pattogtatod a labdát az ütőn. A koppanások visszhangzanak az üres házban."
+    }
+   },
+   "details": [
+    "piros gumiborítás",
+    "zöld asztallap fehér szegéllyel"
+   ]
+  },
+  {
+   "id": "magazines74",
+   "name": "újságok",
+   "location": "lounge74",
+   "text": "Ludas Matyi, három szám a dohányzóasztalon, a legfelső 1974. szeptember 11-i. A címlapon egy kövér úr szalmakalapban, vitorláson.",
+   "images": [
+    "magazine"
+   ],
+   "aliases": [
+    "újság",
+    "ludas matyi",
+    "újságkupac",
+    "magazin"
+   ],
+   "actions": {
+    "read": {
+     "say": "Átlapozod. Viccek, karikatúrák, semmi, ami ide tartozna."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "meal_rota74",
+   "name": "étkezési rend",
+   "location": "dining_room74",
+   "text": "Keretezett, gépelt lap a falon: „ÉTKEZÉSI REND – Reggeli 7.30–8.30, Ebéd 12.30–13.30, Vacsora 18.30–19.30.” Ma reggel senki nem jött reggelizni.",
+   "images": [
+    "meal_rota"
+   ],
+   "aliases": [
+    "rend",
+    "étrend",
+    "napirend"
+   ],
+   "literal": true
+  },
+  {
+   "id": "soda74",
+   "name": "üdítősüvegek",
+   "location": "dining_room74",
+   "text": "Három üres Bambis üveg egy asztalon, mellettük a kupakok. Valaki tegnap még itt üldögélt.",
+   "images": [
+    "soda_bottles"
+   ],
+   "aliases": [
+    "bambi",
+    "üvegek",
+    "üdítő"
+   ],
+   "details": [
+    "narancssárga címkék",
+    "üres üvegek"
+   ]
+  },
+  {
+   "id": "dining_clock74",
+   "name": "falióra",
+   "location": "dining_room74",
+   "text": "Kerek falióra a tálalóablak fölött. Pontosan jár.",
+   "images": [
+    "wall_clock"
+   ],
+   "aliases": [
+    "óra"
+   ],
+   "details": [
+    "fehér számlap"
+   ]
+  },
+  {
+   "id": "piano74",
+   "name": "pianínó",
+   "location": "dining_room74",
+   "text": "Kopott pianínó a kis színpadon, fölötte üres vörös drapéria.",
+   "aliases": [
+    "zongora",
+    "színpad"
+   ],
+   "actions": {
+    "play": {
+     "say": "Leütsz néhány hangot. Kicsit hamis, a hang végiggurul az üres étteremben."
+    }
+   },
+   "details": [
+    "sötét furnér",
+    "piros drapéria fölötte"
+   ]
+  },
+  {
+   "id": "pantry74",
+   "name": "kamra",
+   "location": "kitchen74",
+   "text": "Keskeny kamra polcokkal: lisztes zsák, befőttek, üres üvegek{contents:. A polcon }.",
+   "aliases": [
+    "kamraajtó",
+    "polc",
+    "polcok",
+    "befőttek"
+   ],
+   "details": [
+    "lisztszag",
+    "befőttek sorai a polcon"
+   ]
+  },
+  {
+   "id": "preserve_jar74",
+   "name": "befőttesüveg",
+   "location": "pantry74",
+   "text": "Üres befőttesüveg csatos fémfedővel, a pereme körül piros gyertyaviasszal lezárható. Légmentesen zár.",
+   "images": [
+    "preserve_jar"
+   ],
+   "rel": "on",
+   "mention": "egy üres befőttesüveg csatos fedővel",
+   "aliases": [
+    "üveg",
+    "befőttesüveg",
+    "csatos üveg"
+   ],
+   "details": [
+    "vastag, tiszta üveg",
+    "csatos fémfedő"
+   ]
+  },
+  {
+   "id": "biscuit_tin74",
+   "name": "kekszes doboz",
+   "location": "pantry74",
+   "text": "Szögletes bádogdoboz, a fedelén festett balatoni tó és egy vitorlás. Üres, csak morzsák vannak benne.",
+   "images": [
+    "biscuit_tin"
+   ],
+   "rel": "on",
+   "mention": "egy kekszes doboz balatoni vitorlással a fedelén",
+   "aliases": [
+    "doboz",
+    "bádogdoboz",
+    "kekszesdoboz"
+   ],
+   "details": [
+    "festett bádog, kék tó és fehér vitorla"
+   ]
+  },
+  {
+   "id": "work_table74",
+   "name": "munkaasztal",
+   "location": "kitchen74",
+   "text": "Hosszú rozsdamentes munkaasztal{contents:. Rajta }.",
+   "aliases": [
+    "asztal",
+    "acélasztal"
+   ],
+   "details": [
+    "rozsdamentes acél",
+    "hideg, fényes lap"
+   ]
+  },
+  {
+   "id": "oilcloth74",
+   "name": "viaszosvászon",
+   "location": "work_table74",
+   "text": "Kockás viaszosvászon, egy asztalterítő maradéka, madzaggal. Nem ereszti át a vizet.",
+   "images": [
+    "oilcloth"
+   ],
+   "rel": "on",
+   "mention": "egy összehajtott kockás viaszosvászon",
+   "aliases": [
+    "vászon",
+    "terítő",
+    "viaszos vászon"
+   ],
+   "details": [
+    "piros-fehér kockás minta",
+    "fényes, vízálló felület"
+   ]
+  },
+  {
+   "id": "stove74",
+   "name": "tűzhely",
+   "location": "kitchen74",
+   "text": "Hatlapos gáztűzhely acél elszívóval. Hideg.",
+   "aliases": [
+    "gáztűzhely",
+    "fazekak",
+    "mosogató"
+   ],
+   "details": [
+    "hat égő",
+    "acél elszívó"
+   ]
+  },
+  {
+   "id": "desk74",
+   "name": "íróasztal",
+   "location": "caretaker_office74",
+   "text": "Nehéz fa íróasztal, rajta egy fekete telefon, egy asztali lámpa és a kiterített tervrajz.",
+   "aliases": [
+    "asztal",
+    "lámpa"
+   ],
+   "details": [
+    "nehéz fa",
+    "fekete asztali lámpa"
+   ]
+  },
+  {
+   "id": "desk_phone74",
+   "name": "telefon",
+   "location": "desk74",
+   "text": "Fekete bakelit tárcsás telefon. Felveszed: búgó hang. Belső mellék, minden hívás a portán, a központon át megy.",
+   "images": [
+    "desk_phone"
+   ],
+   "rel": "on",
+   "aliases": [
+    "telefonkészülék",
+    "kagyló"
+   ],
+   "actions": {
+    "call": {
+     "say": "Tárcsázol, de csak kattogás felel. A belső hívásokat a központfülkében kell kapcsolni."
+    }
+   },
+   "details": [
+    "fekete bakelit",
+    "tekercselt zsinór"
+   ],
+   "literal": true
+  },
+  {
+   "id": "official_plan74",
+   "name": "tervrajz",
+   "location": "desk74",
+   "text": "Az üdülő hivatalos tervrajza, 1968, pecsétekkel. Az alagsorban a kazánház: a lépcsőtől a hátsó falig 9,40 méter. A hátsó fal mögé szaggatott vonallal egy kis helyiség van rajzolva, mellette: „Ó. H. (óvóhely) – II. ütem”. Rajta piros bélyegző: „NEM ÉPÜL MEG”, alatta egy aláírás: Kardos.",
+   "images": [
+    "official_plan"
+   ],
+   "rel": "on",
+   "aliases": [
+    "terv",
+    "alaprajz",
+    "hivatalos terv",
+    "tervrajzok"
+   ],
+   "literal": true
+  },
+  {
+   "id": "brigade_log74",
+   "name": "brigádnapló",
+   "location": "caretaker_office74",
+   "text": "Brigádnapló, a Kazán–Karbantartó Brigád naplója. Az utolsó beírt oldalon: „IX. 14. 16.00 – A vendégek elutaztak, a szezon lezárva.” Utána egy lapot tőből kitéptek, csak a csonkja maradt. A következő oldalon más kézzel, sietve: „IX. 15. 5.00 – Bodnár Gy. gondnok szolgálati helyét engedély nélkül elhagyta. – K.”",
+   "images": [
+    "brigade_log"
+   ],
+   "aliases": [
+    "napló",
+    "piros könyv",
+    "brigád",
+    "csonk"
+   ],
+   "panel": {
+    "id": "logic_grid",
+    "label": "Ki hol volt este?"
+   },
+   "literal": true
+  },
+  {
+   "id": "filing74",
+   "name": "irattartó",
+   "location": "caretaker_office74",
+   "text": "Szürke acél irattartó, négy fiók: számlák, leltárívek, munkalapok. Rendben, ahogy Bodnár hagyta.",
+   "aliases": [
+    "irattartó szekrény",
+    "fiókok",
+    "iratok",
+    "számlák"
+   ],
+   "details": [
+    "szürke acél",
+    "négy fiók"
+   ]
+  },
+  {
+   "id": "bed74",
+   "name": "vaságy",
+   "location": "caretaker_office74",
+   "text": "Keskeny vaságy szürke pokróccal, gondosan bevetve. Az éjjel nem aludt benne senki.",
+   "aliases": [
+    "ágy",
+    "pokróc"
+   ],
+   "details": [
+    "vaskeret",
+    "szürke pokróc"
+   ]
+  },
+  {
+   "id": "camera74",
+   "name": "fényképezőgép",
+   "location": "caretaker_office74",
+   "text": "Zenit fényképezőgép barna bőrtokban, a polcon. A számláló nullán áll: a filmet kivették belőle.",
+   "images": [
+    "camera"
+   ],
+   "aliases": [
+    "zenit",
+    "gép",
+    "fényképező"
+   ],
+   "actions": {
+    "take": {
+     "say": "Kézbe veszed a gépet. Üres. Visszateszed."
+    }
+   },
+   "details": [
+    "barna bőrtok",
+    "króm és fekete"
+   ]
+  },
+  {
+   "id": "flashlight74",
+   "name": "zseblámpa",
+   "location": "caretaker_office74",
+   "text": "Horpadt, piros-krómozott zseblámpa a polcon. Világít.",
+   "images": [
+    "old_flashlight"
+   ],
+   "aliases": [
+    "lámpa",
+    "elemlámpa"
+   ],
+   "details": [
+    "piros bádog, krómozott fej"
+   ]
+  },
+  {
+   "id": "coat74",
+   "name": "munkaköpeny",
+   "location": "caretaker_office74",
+   "text": "Kék munkaköpeny a fogason, Bodnár neve a zsebe fölé hímezve. A zsebei üresek: a gondnok a kulcscsomóját mindig magánál hordta, este sem tette le.",
+   "images": [
+    "wardrobe_coat"
+   ],
+   "aliases": [
+    "köpeny",
+    "fogas",
+    "zseb",
+    "zsebek",
+    "kabát"
+   ],
+   "actions": {
+    "search": {
+     "say": "Végigtapogatod a zsebeket. Egy ceruzacsonk, egy cigarettapapír. Kulcs nincs."
+    }
+   },
+   "details": [
+    "kék vászon",
+    "kifakult könyökök"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wastebasket74",
+   "name": "papírkosár",
+   "location": "caretaker_office74",
+   "text": "Drótpapírkosár az íróasztal mellett. Benne egy apróra tépett, összegyűrt lap darabjai, vonalas papír, kézírás.",
+   "aliases": [
+    "kosár",
+    "szemetes",
+    "darabok",
+    "tépett lap",
+    "papírdarabok"
+   ],
+   "panel": {
+    "id": "puzzle",
+    "label": "A tépett lap darabjai"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "A kitépett lap"
+     },
+     "text": "A papírkosár üres. A lapot összeraktátok.",
+     "images": [
+      "log_page"
+     ],
+     "panel": null
+    }
+   ],
+   "details": [
+    "drótfonat"
+   ],
+   "literal": true
+  },
+  {
+   "id": "tool_board74",
+   "name": "szerszámtábla",
+   "location": "caretaker_office74",
+   "text": "Szerszámtábla, minden szerszám a festett helyén. Csak a csavarhúzók helye üres.",
+   "aliases": [
+    "szerszámok",
+    "tábla"
+   ],
+   "details": [
+    "festett körvonalak a szerszámok mögött"
+   ]
+  },
+  {
+   "id": "switchboard74",
+   "name": "telefonközpont",
+   "location": "switchboard_room74",
+   "text": "Kis dugaszolós telefonközpont: négy sor aljzat, alattuk üres címkecsíkok, öt zsinór sárgaréz dugóval, kapcsolók, oldalt a fejhallgató. Hogy melyik aljzat melyik mellék, azt csak a központos tudta fejből.",
+   "images": [
+    "switchboard"
+   ],
+   "aliases": [
+    "központ",
+    "aljzatok",
+    "zsinórok",
+    "tábla",
+    "fejhallgató",
+    "dugaszolós"
+   ],
+   "panel": {
+    "id": "code_lock",
+    "label": "A telefonközpont"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "Az Ó. H. vonal"
+     },
+     "text": "A telefonközpont. A 241-es aljzatban még ott a dugó. Most már tudjátok: van egy vonal, ami a hivatalos terven nem épült meg."
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "hydrant74",
+   "name": "tűzcsapszekrény",
+   "location": "corridor74",
+   "text": "Piros tűzcsapszekrény, benne a feltekert tömlő. Plombával lezárva.",
+   "aliases": [
+    "tűzcsap",
+    "tömlő"
+   ],
+   "details": [
+    "piros festés",
+    "üveges előlap"
+   ]
+  },
+  {
+   "id": "beds74",
+   "name": "ágyak",
+   "location": "guest_room74",
+   "text": [
+    {
+     "if": {
+      "solved": "Szeptember 14., este"
+     },
+     "text": "Két keskeny ágy. Az egyikben aludtak: a takaró gyűrött, a párna behorpadt. Itt töltötte az éjszakát Kardos, a kulcsokkal."
+    },
+    {
+     "text": "Két keskeny ágy csíkos takaróval, az egyik kicsit gyűrött. Közöttük egy kancsó és két pohár, az egyik használt."
+    }
+   ],
+   "aliases": [
+    "ágy",
+    "kancsó",
+    "poharak",
+    "matrac",
+    "párna",
+    "takaró"
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Szeptember 14., este"
+       },
+       {
+        "where": "keyring74",
+        "at": "beds74"
+       }
+      ]
+     },
+     "reveal": [
+      "keyring74"
+     ],
+     "take": [
+      "keyring74"
+     ],
+     "images": [
+      "keyring"
+     ],
+     "otherwise": [
+      {
+       "if": {
+        "not": {
+         "solved": "Szeptember 14., este"
+        }
+       },
+       "text": "Felemeled a takarókat. Egy ottfelejtett zsebkendő, más semmi. Nem tudod, mit keresnél egy kitakarított szobában."
+      },
+      {
+       "text": "Már átnézted. Más nincs itt."
+      }
+     ],
+     "say": "Ha Kardos itt aludt a kulcsokkal, és hajnalban sietve ment el… Felemeled a gyűrött ágy matracát. A matrac és a rugók közé csúszva egy vaskarika kilenc kulccsal: a gondnok kulcscsomója."
+    },
+    "lift": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Szeptember 14., este"
+       },
+       {
+        "where": "keyring74",
+        "at": "beds74"
+       }
+      ]
+     },
+     "reveal": [
+      "keyring74"
+     ],
+     "take": [
+      "keyring74"
+     ],
+     "images": [
+      "keyring"
+     ],
+     "otherwise": [
+      {
+       "if": {
+        "not": {
+         "solved": "Szeptember 14., este"
+        }
+       },
+       "text": "Felemeled a takarókat. Egy ottfelejtett zsebkendő, más semmi. Nem tudod, mit keresnél egy kitakarított szobában."
+      },
+      {
+       "text": "Már átnézted. Más nincs itt."
+      }
+     ],
+     "say": "Ha Kardos itt aludt a kulcsokkal, és hajnalban sietve ment el… Felemeled a gyűrött ágy matracát. A matrac és a rugók közé csúszva egy vaskarika kilenc kulccsal: a gondnok kulcscsomója."
+    }
+   },
+   "details": [
+    "csíkos takarók",
+    "keskeny vaskeret"
+   ],
+   "literal": true
+  },
+  {
+   "id": "keyring74",
+   "name": "kulcscsomó",
+   "location": "beds74",
+   "rel": "under",
+   "hidden": true,
+   "carry": {
+    "name": "Kulcscsomó"
+   },
+   "aliases": [
+    "kulcsok",
+    "kulcskarika",
+    "gondnoki kulcsok"
+   ],
+   "text": "Vaskarika kilenc régi kulccsal és egy sárgaréz bilétával: „GONDNOK – ALAGSOR”.",
+   "images": [
+    "keyring"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wardrobe74",
+   "name": "szekrény",
+   "location": "guest_room74",
+   "text": "Furnér szekrény, üres vállfák. Kitakarították.",
+   "aliases": [
+    "vállfák",
+    "ruhásszekrény"
+   ]
+  },
+  {
+   "id": "balcony74",
+   "name": "erkély",
+   "location": "guest_room74",
+   "text": "Az erkélyről a tó: vitorlások, nád, a túlparton a tihanyi apátság tornyai.",
+   "aliases": [
+    "erkélyajtó",
+    "kilátás"
+   ],
+   "details": [
+    "vaskorlát",
+    "kilátás a tóra"
+   ]
+  },
+  {
+   "id": "thermos74",
+   "name": "termosz",
+   "location": "veranda74",
+   "text": "Magas zöld zománcos termosz az ablakpárkányon. Langyos tea van benne.",
+   "images": [
+    "thermos"
+   ],
+   "aliases": [
+    "tea"
+   ],
+   "actions": {
+    "drink": {
+     "say": "Iszol egy kortyot. Langyos, édes tea. Visszateszed."
+    }
+   },
+   "details": [
+    "zöld zománc",
+    "fém kupak-pohár"
+   ]
+  },
+  {
+   "id": "deckchairs74",
+   "name": "nyugszékek",
+   "location": "veranda74",
+   "text": "Hat csíkos vászonnyugszék sorban, a tó felé fordítva. Üresek.",
+   "aliases": [
+    "nyugszék",
+    "napernyők",
+    "asztalok"
+   ],
+   "details": [
+    "csíkos vászon",
+    "összecsukható fa váz"
+   ]
+  },
+  {
+   "id": "water_tank74",
+   "name": "víztartály",
+   "location": "attic74",
+   "text": "Horganyzott víztartály faállványon. Csöpög, alatta nedves a padló: idefent semmi nem marad száraz sokáig.",
+   "aliases": [
+    "tartály"
+   ],
+   "details": [
+    "horganyzott bádog",
+    "faállvány"
+   ]
+  },
+  {
+   "id": "attic_boxes74",
+   "name": "dobozok",
+   "location": "attic74",
+   "text": "Kartondobozok: régi zászlók, dekorációk, egy doboz pingponglabda{contents:, és mellettük }.",
+   "aliases": [
+    "doboz",
+    "kartondobozok",
+    "matracok"
+   ],
+   "details": [
+    "kartondobozok",
+    "por a fedeleken"
+   ]
+  },
+  {
+   "id": "paper_parcel74",
+   "name": "papírcsomag",
+   "location": "attic_boxes74",
+   "text": "Barna csomagolópapír fehér madzaggal, üres csomagnak hajtva. Sima, közönséges papír.",
+   "images": [
+    "paper_parcel"
+   ],
+   "rel": "on",
+   "mention": "egy barna papírcsomag madzaggal",
+   "aliases": [
+    "csomag",
+    "papír",
+    "csomagolópapír"
+   ],
+   "details": [
+    "barna csomagolópapír",
+    "fehér madzag"
+   ]
+  },
+  {
+   "id": "boiler74",
+   "name": "kazán",
+   "location": "boiler_room74",
+   "text": [
+    {
+     "if": {
+      "is": "boiler_room74.hot",
+      "eq": false
+     },
+     "text": "A nagy öntöttvas szénkazán. A szelep elzárva, a csövek lassan hűlnek."
+    },
+    {
+     "text": "A nagy öntöttvas szénkazán duruzsol, a mérőóra mutatója a piros felé jár. A fővezeték forró, a polc tartókonzolja is rajta van. A fővezeték mellett egy tartalék ág fut, szelepekkel."
+    }
+   ],
+   "aliases": [
+    "szénkazán",
+    "mérőóra",
+    "csövek",
+    "cső",
+    "fővezeték",
+    "szénrakás",
+    "lapát"
+   ],
+   "details": [
+    "fekete öntöttvas",
+    "kerek mérőóra"
+   ],
+   "literal": true
+  },
+  {
+   "id": "valve74",
+   "name": "szelepkerék",
+   "location": "boiler_room74",
+   "text": [
+    {
+     "if": {
+      "is": "boiler_room74.hot",
+      "eq": false
+     },
+     "text": "A vörös szelepkerék elzárva. A fővezeték lassan hűl."
+    },
+    {
+     "text": "Vörösre festett öntöttvas szelepkerék a fővezetéken, nyitva."
+    }
+   ],
+   "images": [
+    "valve_wheel"
+   ],
+   "aliases": [
+    "szelep",
+    "vörös kerék",
+    "kerék",
+    "tolózár",
+    "szelepek",
+    "tartalék ág",
+    "csőkötések"
+   ],
+   "panel": {
+    "id": "pipes",
+    "label": "A kazán szelepei"
+   },
+   "when": [
+    {
+     "if": {
+      "solved": "A tartalék ág"
+     },
+     "panel": null
+    }
+   ],
+   "actions": {
+    "close": {
+     "requires": {
+      "not": {
+       "solved": "A tartalék ág"
+      }
+     },
+     "otherwise": "A víz a tartalék ágon kering, a fővezeték hűl. Így jó.",
+     "say": "Ha a fővezetéket elzárod, a két fűtőkör víz nélkül marad, és a kazán felrobbanhat. A vizet előbb át kell terelni a tartalék ágon.",
+     "panel": {
+      "id": "pipes",
+      "label": "A kazán szelepei"
+     }
+    },
+    "turn": {
+     "requires": {
+      "not": {
+       "solved": "A tartalék ág"
+      }
+     },
+     "otherwise": "A víz a tartalék ágon kering, a fővezeték hűl. Így jó.",
+     "say": "Ha a fővezetéket elzárod, a két fűtőkör víz nélkül marad, és a kazán felrobbanhat. A vizet előbb át kell terelni a tartalék ágon.",
+     "panel": {
+      "id": "pipes",
+      "label": "A kazán szelepei"
+     }
+    },
+    "open": {
+     "requires": {
+      "not": {
+       "solved": "A tartalék ág"
+      }
+     },
+     "otherwise": "A víz a tartalék ágon kering, a fővezeték hűl. Így jó.",
+     "say": "Ha a fővezetéket elzárod, a két fűtőkör víz nélkül marad, és a kazán felrobbanhat. A vizet előbb át kell terelni a tartalék ágon.",
+     "panel": {
+      "id": "pipes",
+      "label": "A kazán szelepei"
+     }
+    }
+   },
+   "details": [
+    "vörösre festett öntöttvas",
+    "öt küllő"
+   ],
+   "literal": true
+  },
+  {
+   "id": "workbench74",
+   "name": "munkapad",
+   "location": "boiler_room74",
+   "text": "Munkapad a magas ablak alatt: satu, olajos rongyok, csavarok egy dobozban{contents:. Rajta }.",
+   "aliases": [
+    "pad",
+    "satu"
+   ],
+   "details": [
+    "olajos fa lap",
+    "satu"
+   ]
+  },
+  {
+   "id": "screwdrivers74",
+   "name": "szerszámtekercs",
+   "location": "workbench74",
+   "rel": "on",
+   "mention": "egy kigöngyölt szerszámtekercs csavarhúzókkal",
+   "carry": {
+    "name": "Csavarhúzók"
+   },
+   "aliases": [
+    "csavarhúzó",
+    "csavarhúzók",
+    "szerszám",
+    "fogó"
+   ],
+   "text": "Kopott vászon szerszámtekercs: öt fanyelű csavarhúzó és egy fogó.",
+   "images": [
+    "screwdriver_set"
+   ],
+   "details": [
+    "vászon tekercs",
+    "fanyelű csavarhúzók"
+   ]
+  },
+  {
+   "id": "shelf74",
+   "name": "polc",
+   "location": "boiler_room74",
+   "aliases": [
+    "magas polc",
+    "festékes dobozok",
+    "dobozok",
+    "hátsó fal",
+    "fal",
+    "konzol",
+    "csavarok"
+   ],
+   "props": {
+    "moved": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "shelf74.moved",
+      "eq": true
+     },
+     "text": "A polc félrehúzva, a festékes dobozok a földön. Mögötte a keskeny acélajtó."
+    },
+    {
+     "text": "Magas fapolc a hátsó téglafalnál, tele festékes dobozzal. Felül a fővezeték tartókonzoljához van csavarozva, a csavarfejek a forró cső mellett."
+    }
+   ],
+   "actions": {
+    "move": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az Ó. H. vonal"
+       },
+       {
+        "is": "boiler_room74.hot",
+        "eq": false
+       },
+       {
+        "has": "screwdrivers74"
+       },
+       {
+        "is": "shelf74.moved",
+        "eq": false
+       }
+      ]
+     },
+     "otherwise": [
+      {
+       "if": {
+        "is": "shelf74.moved",
+        "eq": true
+       },
+       "text": "A polc már félre van húzva."
+      },
+      {
+       "if": {
+        "not": {
+         "solved": "Az Ó. H. vonal"
+        }
+       },
+       "text": "Nehéz, tele van festékkel, és a csőhöz van csavarozva. Ok nélkül nem bontjátok meg a gondnok polcát."
+      },
+      {
+       "if": {
+        "is": "boiler_room74.hot",
+        "eq": true
+       },
+       "text": "A konzol csavarjai a fővezeték mellett vannak. Hozzáérsz: égetően forró. Amíg a fővezetékben kering a víz, nem lehet hozzányúlni."
+      },
+      {
+       "text": "A konzol már hűl, de a csavarok szorosak. Puszta kézzel nem mennek, csavarhúzó kell."
+      }
+     ],
+     "set": {
+      "shelf74.moved": true
+     },
+     "images": [
+      "door_a"
+     ],
+     "say": "Kicsavarozod a konzolt, lepakolod a dobozokat, és félrehúzod a polcot. Mögötte a téglafalba vágva egy keskeny, szürke acélajtó, gumitömítéssel, nagy karral."
+    },
+    "push": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az Ó. H. vonal"
+       },
+       {
+        "is": "boiler_room74.hot",
+        "eq": false
+       },
+       {
+        "has": "screwdrivers74"
+       },
+       {
+        "is": "shelf74.moved",
+        "eq": false
+       }
+      ]
+     },
+     "otherwise": [
+      {
+       "if": {
+        "is": "shelf74.moved",
+        "eq": true
+       },
+       "text": "A polc már félre van húzva."
+      },
+      {
+       "if": {
+        "not": {
+         "solved": "Az Ó. H. vonal"
+        }
+       },
+       "text": "Nehéz, tele van festékkel, és a csőhöz van csavarozva. Ok nélkül nem bontjátok meg a gondnok polcát."
+      },
+      {
+       "if": {
+        "is": "boiler_room74.hot",
+        "eq": true
+       },
+       "text": "A konzol csavarjai a fővezeték mellett vannak. Hozzáérsz: égetően forró. Amíg a fővezetékben kering a víz, nem lehet hozzányúlni."
+      },
+      {
+       "text": "A konzol már hűl, de a csavarok szorosak. Puszta kézzel nem mennek, csavarhúzó kell."
+      }
+     ],
+     "set": {
+      "shelf74.moved": true
+     },
+     "images": [
+      "door_a"
+     ],
+     "say": "Kicsavarozod a konzolt, lepakolod a dobozokat, és félrehúzod a polcot. Mögötte a téglafalba vágva egy keskeny, szürke acélajtó, gumitömítéssel, nagy karral."
+    },
+    "unscrew": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az Ó. H. vonal"
+       },
+       {
+        "is": "boiler_room74.hot",
+        "eq": false
+       },
+       {
+        "has": "screwdrivers74"
+       },
+       {
+        "is": "shelf74.moved",
+        "eq": false
+       }
+      ]
+     },
+     "otherwise": [
+      {
+       "if": {
+        "is": "shelf74.moved",
+        "eq": true
+       },
+       "text": "A polc már félre van húzva."
+      },
+      {
+       "if": {
+        "not": {
+         "solved": "Az Ó. H. vonal"
+        }
+       },
+       "text": "Nehéz, tele van festékkel, és a csőhöz van csavarozva. Ok nélkül nem bontjátok meg a gondnok polcát."
+      },
+      {
+       "if": {
+        "is": "boiler_room74.hot",
+        "eq": true
+       },
+       "text": "A konzol csavarjai a fővezeték mellett vannak. Hozzáérsz: égetően forró. Amíg a fővezetékben kering a víz, nem lehet hozzányúlni."
+      },
+      {
+       "text": "A konzol már hűl, de a csavarok szorosak. Puszta kézzel nem mennek, csavarhúzó kell."
+      }
+     ],
+     "set": {
+      "shelf74.moved": true
+     },
+     "images": [
+      "door_a"
+     ],
+     "say": "Kicsavarozod a konzolt, lepakolod a dobozokat, és félrehúzod a polcot. Mögötte a téglafalba vágva egy keskeny, szürke acélajtó, gumitömítéssel, nagy karral."
+    },
+    "pull": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Az Ó. H. vonal"
+       },
+       {
+        "is": "boiler_room74.hot",
+        "eq": false
+       },
+       {
+        "has": "screwdrivers74"
+       },
+       {
+        "is": "shelf74.moved",
+        "eq": false
+       }
+      ]
+     },
+     "otherwise": [
+      {
+       "if": {
+        "is": "shelf74.moved",
+        "eq": true
+       },
+       "text": "A polc már félre van húzva."
+      },
+      {
+       "if": {
+        "not": {
+         "solved": "Az Ó. H. vonal"
+        }
+       },
+       "text": "Nehéz, tele van festékkel, és a csőhöz van csavarozva. Ok nélkül nem bontjátok meg a gondnok polcát."
+      },
+      {
+       "if": {
+        "is": "boiler_room74.hot",
+        "eq": true
+       },
+       "text": "A konzol csavarjai a fővezeték mellett vannak. Hozzáérsz: égetően forró. Amíg a fővezetékben kering a víz, nem lehet hozzányúlni."
+      },
+      {
+       "text": "A konzol már hűl, de a csavarok szorosak. Puszta kézzel nem mennek, csavarhúzó kell."
+      }
+     ],
+     "set": {
+      "shelf74.moved": true
+     },
+     "images": [
+      "door_a"
+     ],
+     "say": "Kicsavarozod a konzolt, lepakolod a dobozokat, és félrehúzod a polcot. Mögötte a téglafalba vágva egy keskeny, szürke acélajtó, gumitömítéssel, nagy karral."
+    },
+    "search": {
+     "say": "Festékes dobozok, ecsetek, egy doboz szög. A polc mögül hideg huzat jön, mintha üres tér lenne ott."
+    },
+    "knock": {
+     "say": "Kopogsz a falon a polc mellett. Tompa, tömör tégla. A polc mögött másképp kong."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "door74",
+   "kind": "door",
+   "name": "acélajtó",
+   "between": [
+    "boiler_room74",
+    "shelter74"
+   ],
+   "visibleIf": {
+    "is": "shelf74.moved",
+    "eq": true
+   },
+   "aliases": [
+    "ajtó",
+    "szürke ajtó",
+    "vasajtó",
+    "kar",
+    "zár",
+    "óvóhely"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "closedText": "Az acélajtó zárva. A kar nem mozdul, a zárban nincs kulcs.",
+   "text": [
+    {
+     "if": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "text": "A keskeny acélajtó tárva-nyitva."
+    },
+    {
+     "text": "Keskeny, szürke acélajtó a téglafalban, gumitömítéssel és nagy karral. Zárva. Erős, régi zár: kulcs kell hozzá."
+    }
+   ],
+   "images": [
+    "door_a"
+   ],
+   "actions": {
+    "use:keyring74": {
+     "requires": {
+      "not": {
+       "is": "door74.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Már nyitva van.",
+     "set": {
+      "door74.open": true,
+      "door.open": true
+     },
+     "say": "Próbálod a kulcsokat, egyiket a másik után. A hetedik fordul. A kar nagy nehezen lefordul, az ajtó tömítése cuppanva enged.",
+     "goTo": "shelter74"
+    },
+    "open": {
+     "requires": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "otherwise": "Zárva. A kar nem mozdul, a zárban nincs kulcs. Kulcs kell hozzá.",
+     "goTo": "shelter74"
+    },
+    "force": {
+     "forbidden": "Acél, betonba ágyazva. Ezt nem lehet feltörni, csak kinyitni."
+    },
+    "knock": {
+     "requires": {
+      "not": {
+       "is": "door74.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Az ajtó nyitva.",
+     "say": "Kopogsz. Sokára, odabentről, három gyenge koppanás felel."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "bunk74",
+   "name": "priccs",
+   "location": "shelter74",
+   "text": "Keskeny vaspriccs, a végén összehajtott szürke pokróc. Itt töltötte az éjszakát.",
+   "aliases": [
+    "pokróc",
+    "vaspriccs",
+    "ágy"
+   ],
+   "details": [
+    "emeletes vaspriccs",
+    "szürke pokróc"
+   ]
+  },
+  {
+   "id": "crate74",
+   "name": "láda",
+   "location": "shelter74",
+   "text": "Egyetlen üres fáláda maradt. A betonon friss nyomok: éjjel a többit kihúzták és elvitték.",
+   "aliases": [
+    "fáláda",
+    "ládák",
+    "nyomok"
+   ],
+   "details": [
+    "durva fenyődeszkák"
+   ],
+   "literal": true
+  },
+  {
+   "id": "vent74",
+   "name": "szellőzőcső",
+   "location": "shelter74",
+   "text": "Szellőzőcső kézi forgattyúval. Bodnár ezzel szellőztetett, különben megfulladt volna.",
+   "aliases": [
+    "forgattyú",
+    "szellőző"
+   ],
+   "details": [
+    "kézi forgattyú",
+    "horganyzott cső"
+   ]
+  },
+  {
+   "id": "box74",
+   "name": "mentőláda",
+   "location": "shelter74",
+   "aliases": [
+    "zöld láda",
+    "elsősegély",
+    "mentődoboz",
+    "doboz"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "images": [
+    "box_a"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "box74.open",
+      "eq": true
+     },
+     "text": "Olajzöld mentőláda fehér kereszttel, nyitva. Gézek, kötszer{contents:, és }."
+    },
+    {
+     "text": "Olajzöld mentőláda fehér kereszttel a polcon, csukva."
+    }
+   ],
+   "actions": {
+    "open": {
+     "set": {
+      "box74.open": true
+     },
+     "show": [
+      "box74"
+     ]
+    },
+    "search": {
+     "set": {
+      "box74.open": true
+     },
+     "show": [
+      "box74"
+     ]
+    }
+   },
+   "details": [
+    "olajzöld bádog",
+    "fehér kereszt a fedelén"
+   ]
+  },
+  {
+   "id": "ledger74",
+   "name": "fekete füzet",
+   "location": "box74",
+   "mention": "egy vékony fekete füzet gumipánttal",
+   "carry": {
+    "name": "Fekete füzet"
+   },
+   "aliases": [
+    "füzet",
+    "számlakönyv",
+    "másolat",
+    "könyv"
+   ],
+   "text": "Bodnár Gyula másolata Kardos igazgató füzetéből, gondos ceruzaírással:\n„VI. 20. – 40 db farmernadrág (Bécs), 12 db kazettás magnó\nVII. 18. – 200 kg kávé, 30 doboz nyugati cigaretta\nVIII. 22. – 15 db táskarádió, 60 db farmer\nÁtvette: K. (ig.), Sz. (szakszervezet). Tárolva: Ó. H.”",
+   "images": [
+    "ledger_a"
+   ],
+   "literal": true
+  },
+  {
+   "id": "film74",
+   "name": "filmtartó",
+   "location": "box74",
+   "mention": "egy kis alumínium filmtartó",
+   "carry": {
+    "name": "Filmtartó"
+   },
+   "aliases": [
+    "film",
+    "filmtekercs",
+    "tekercs"
+   ],
+   "text": "Hüvelykujjnyi alumínium filmtartó, csavaros fedővel. Benne Bodnár exponált filmje: a ládákat fotózta le, mielőtt elvitték őket.",
+   "images": [
+    "film_can"
+   ],
+   "literal": true
+  },
+  {
+   "id": "sign74",
+   "name": "cégtábla",
+   "location": "exterior74",
+   "text": "Hosszú zománctábla a bejárat mellett, sötétkéken fehérrel: „ALFÖLDI SZERSZÁMGÉPGYÁR – Vállalati Üdülő”.",
+   "images": [
+    "sign"
+   ],
+   "aliases": [
+    "tábla",
+    "felirat"
+   ],
+   "literal": true
+  },
+  {
+   "id": "lake74",
+   "name": "tó",
+   "location": "exterior74",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "var": "capsule_p",
+       "is": "none"
+      }
+     },
+     "text": "A mólónál egy kis csónak ring, benne Bodnár bőröndje. Ő a parton áll, a félsziget felé néz. Rád vár."
+    },
+    {
+     "text": "A Balaton, szélcsend. A mólónál egy kis evezős csónak, a túlparton a tihanyi apátság tornyai."
+    }
+   ],
+   "aliases": [
+    "balaton",
+    "móló",
+    "csónak",
+    "part",
+    "víz"
+   ],
+   "literal": true
+  },
+  {
+   "id": "headlamp",
+   "name": "fejlámpa",
+   "location": "lobby",
+   "carry": {
+    "name": "Fejlámpa"
+   },
+   "aliases": [
+    "lámpa",
+    "elemlámpa"
+   ],
+   "text": "A fekete LED-fejlámpád, gumipánttal.",
+   "images": [
+    "new_flashlight_now"
+   ],
+   "details": [
+    "fekete gumipánt",
+    "erős fehér fény"
+   ]
+  },
+  {
+   "id": "laser",
+   "name": "lézeres távolságmérő",
+   "location": "lobby",
+   "carry": {
+    "name": "Távolságmérő"
+   },
+   "aliases": [
+    "távolságmérő",
+    "lézer",
+    "mérő",
+    "mérőeszköz"
+   ],
+   "text": "Sárga-fekete lézeres távolságmérő. Rá kell fogni a falra, és mér.",
+   "images": [
+    "laser_meter_now"
+   ],
+   "actions": {
+    "use": {
+     "say": "Körbemérsz itt-ott. A számok rendben vannak, semmi különös."
+    }
+   },
+   "details": [
+    "sárga-fekete ház",
+    "kis kijelző"
+   ]
+  },
+  {
+   "id": "tablet",
+   "name": "tablet",
+   "location": "lobby",
+   "carry": {
+    "name": "Tablet"
+   },
+   "aliases": [
+    "munkatablet",
+    "megrendelés",
+    "üzenet",
+    "e-mail"
+   ],
+   "text": "A munkatabletted. A megrendelés: „Tihany, volt Alföldi Szerszámgépgyár üdülője. Utolsó felmérés, holnap 7.00-kor bontás. Megrendelő: KRD Bontó Kft.” Alatta a főnököd üzenete: „Bence vagyok. A nagyapám, Kardos József építtette, neki volt kedves ez a ház. Ne húzd el, holnap reggel jön a gép.”",
+   "images": [
+    "tablet_now"
+   ],
+   "panel": {
+    "id": "report_form",
+    "label": "A felmérés lezárása",
+    "if": {
+     "has": "capsule"
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "counter",
+   "name": "portapult",
+   "location": "lobby",
+   "text": "A porta pultja, vetemedett lakk, rajta az ázott vendégkönyv.",
+   "aliases": [
+    "pult",
+    "porta"
+   ],
+   "details": [
+    "vetemedett lakk",
+    "por"
+   ]
+  },
+  {
+   "id": "guest_register",
+   "name": "vendégkönyv",
+   "location": "counter",
+   "text": "A vendégkönyv megdagadt a nedvességtől, a tinta szétfolyt. Nevek, dátumok, egyik sem olvasható.",
+   "images": [
+    "guest_register_now"
+   ],
+   "rel": "on",
+   "aliases": [
+    "vendégek",
+    "könyv"
+   ],
+   "literal": true
+  },
+  {
+   "id": "key_board",
+   "name": "kulcstábla",
+   "location": "lobby",
+   "aliases": [
+    "kampók",
+    "kulcstartó",
+    "utolsó kampó"
+   ],
+   "images": [
+    "key_board_now"
+   ],
+   "text": [
+    {
+     "if": {
+      "where": "old_key",
+      "at": "key_board"
+     },
+     "text": "A kulcstábla kiszáradt, repedezett. A kampók csupaszok és rozsdásak, csak az alsó sor utolsó kampóján lóg még egy rozsdás kulcs."
+    },
+    {
+     "text": "A kulcstábla kiszáradt, repedezett, minden kampója csupasz."
+    }
+   ],
+   "details": [
+    "repedezett, szürkére fakult fa",
+    "rozsdás kampók"
+   ],
+   "literal": true
+  },
+  {
+   "id": "old_key",
+   "name": "rozsdás kulcs",
+   "location": "key_board",
+   "rel": "on",
+   "mention": "egyetlen rozsdás kulcs az utolsó kampón",
+   "carry": {
+    "name": "Rozsdás kulcs"
+   },
+   "aliases": [
+    "kulcs",
+    "utolsó kulcs"
+   ],
+   "text": "Rozsdás laposkulcs, a bilétája régen leesett. A bejárati ajtó zárjához való.",
+   "images": [
+    "old_key_now"
+   ],
+   "literal": true
+  },
+  {
+   "id": "front_door",
+   "kind": "door",
+   "name": "bejárati ajtó",
+   "between": [
+    "lobby",
+    "exterior"
+   ],
+   "aliases": [
+    "ajtó",
+    "bedeszkázott ajtó",
+    "deszkák",
+    "kijárat"
+   ],
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "closedText": "A bejárati ajtót belülről bedeszkázták, és zárva van. Arra nem jutsz ki, csak a verandán át.",
+   "text": [
+    {
+     "if": {
+      "is": "front_door.open",
+      "eq": true
+     },
+     "text": "A bejárati ajtó nyitva, a deszkák a földön."
+    },
+    {
+     "text": "Az üveges bejárati ajtót belülről rétegelt lemezzel bedeszkázták. A deszkák csak be vannak ékelve, de a zár be van zárva."
+    }
+   ],
+   "actions": {
+    "use:old_key": {
+     "requires": {
+      "has": "capsule"
+     },
+     "otherwise": "A kulcs fordul a zárban. Ki is mehetnél, de még nem végeztél odabent.",
+     "set": {
+      "front_door.open": true
+     },
+     "say": "Kifeszíted a deszkákat, a rozsdás kulcs nagy nehezen fordul. Az ajtó kinyílik, beárad a délutáni fény. Mielőtt kilépsz, a tableten lezárod a felmérést.",
+     "panel": {
+      "id": "report_form",
+      "label": "A felmérés lezárása"
+     }
+    },
+    "force": {
+     "forbidden": "A deszkákat le tudnád feszíteni, de a zár akkor is zárva marad. Kulcs kell hozzá."
+    },
+    "open": {
+     "requires": {
+      "is": "front_door.open",
+      "eq": true
+     },
+     "otherwise": "Zárva, és bedeszkázva. Kulcs kell hozzá.",
+     "say": "Nyitva van."
+    }
+   }
+  },
+  {
+   "id": "notice_board",
+   "name": "faliújság",
+   "location": "lobby",
+   "text": "A parafa fekete a penésztől. Csak a középső gépelt lap maradt, megsárgulva, felpöndörödve: „FIGYELEM! A szezon szeptember 15-én zárul.”",
+   "images": [
+    "notice_board_now"
+   ],
+   "aliases": [
+    "hirdetőtábla",
+    "figyelem"
+   ],
+   "literal": true
+  },
+  {
+   "id": "armchair",
+   "name": "karosszékek helye",
+   "location": "lobby",
+   "text": "A karosszékeket elvitték, csak a helyük látszik a koszos terrazzón. Mellettük egy kiszáradt gumifa a cserépben.",
+   "aliases": [
+    "fotel",
+    "karosszék",
+    "gumifa"
+   ],
+   "details": [
+    "koszos terrazzó"
+   ]
+  },
+  {
+   "id": "radio",
+   "name": "rádió",
+   "location": "lounge",
+   "text": "A régi Orion rádió, porosan, kifakult furnérral. Áram nincs a házban, a zsinórja elszakadt. Mégis: a felhős skála mögött halványan dereng valami, és a tű remeg.",
+   "images": [
+    "radio_now"
+   ],
+   "aliases": [
+    "orion",
+    "skála",
+    "tű",
+    "gomb"
+   ],
+   "panel": {
+    "id": "gauge_board",
+    "label": "A rádió"
+   },
+   "actions": {
+    "listen": {
+     "say": "Közel hajolsz. Halk sercegés, mintha nagyon messziről valaki gombokat tekerne."
+    }
+   },
+   "details": [
+    "kifakult diófa furnér",
+    "felhős skálaüveg",
+    "vastag por a tetején"
+   ]
+  },
+  {
+   "id": "magazines",
+   "name": "újságok",
+   "location": "lounge",
+   "text": "Egy köteg összeragadt, ázott humorlap. A legfelső címlapján még kibetűzhető: „LUDAS MATYI”. Egerek jártak rajta.",
+   "images": [
+    "magazine_now"
+   ],
+   "aliases": [
+    "újság",
+    "ludas matyi"
+   ],
+   "details": [
+    "összeragadt lapok",
+    "kifakult színek"
+   ]
+  },
+  {
+   "id": "wall_unit",
+   "name": "faliszekrény",
+   "location": "lounge",
+   "text": "Üres polcok. A tévé helyén csak egy világosabb folt.",
+   "aliases": [
+    "tévé",
+    "polc",
+    "karosszékek"
+   ],
+   "details": [
+    "üres polcok",
+    "por"
+   ]
+  },
+  {
+   "id": "meal_rota",
+   "name": "étkezési rend",
+   "location": "dining_room",
+   "text": "A keretezett lap megsárgult, az üveg megrepedt, de még olvasható: „ÉTKEZÉSI REND – Reggeli 7.30–8.30, Ebéd 12.30–13.30, Vacsora 18.30–19.30.”",
+   "images": [
+    "meal_rota_now"
+   ],
+   "aliases": [
+    "rend",
+    "étrend"
+   ],
+   "literal": true
+  },
+  {
+   "id": "wall_clock",
+   "name": "falióra",
+   "location": "dining_room",
+   "text": "Megsárgult számlap, repedt üveg. A mutatók megálltak.",
+   "images": [
+    "wall_clock_now"
+   ],
+   "aliases": [
+    "óra"
+   ],
+   "details": [
+    "megsárgult számlap",
+    "repedt üveg"
+   ]
+  },
+  {
+   "id": "piano",
+   "name": "pianínó",
+   "location": "dining_room",
+   "text": "A pianínó poros, a billentyűk megsárgultak. Néhány még szól, fakón.",
+   "aliases": [
+    "zongora",
+    "színpad"
+   ],
+   "actions": {
+    "play": {
+     "say": "Leütsz egy billentyűt. Fakó, recsegő hang, aztán csend."
+    }
+   },
+   "details": [
+    "poros furnér",
+    "sárga billentyűk"
+   ]
+  },
+  {
+   "id": "memoir",
+   "name": "laminált lap",
+   "location": "dining_room",
+   "text": "Laminált lap, a Tihanyi Helytörténeti Kör kiállításáról, 2009. Egy idős asszony fényképe, alatta: „Vargáné Kiss Rózsa, az üdülő szakácsnője visszaemlékezik.” „Az utolsó estén, 1974. szeptember 14-én fél tizenegyig mosogattam a konyhában. Tóth Feri, a sofőr, az étteremben várt rám egy sörrel, aztán fél tizenegykor hazavitt Aszófőre. Tíz óra előtt láttam, hogy Kardos igazgató elvtárs lemegy a pincébe Bodnár Gyula után, azt mondta, megnézik a kazánt. Szekeres elvtárs, a szakszervezetis, közben az udvaron ládákat pakolt a kocsijába. Bodnárt soha többé nem láttam. Azt mondták, átszökött Ausztriába. Én ezt sosem hittem el.”",
+   "images": [
+    "memoir_now"
+   ],
+   "aliases": [
+    "lap",
+    "visszaemlékezés",
+    "kiállítás",
+    "fénykép",
+    "vargáné",
+    "helytörténet"
+   ],
+   "panel": {
+    "id": "logic_grid",
+    "label": "Ki hol volt este?"
+   },
+   "literal": true
+  },
+  {
+   "id": "tables",
+   "name": "asztalok",
+   "location": "dining_room",
+   "text": "Az asztalok úgy maradtak, ahogy utoljára megterítették őket, csak az abroszok szürkültek el a portól. Semmi nincs rajtuk.",
+   "aliases": [
+    "asztal",
+    "székek"
+   ],
+   "details": [
+    "szürkére porosodott abroszok"
+   ]
+  },
+  {
+   "id": "pantry",
+   "name": "kamra",
+   "location": "kitchen",
+   "text": "A vetemedett kamraajtó nehezen nyílik. Bent leszakadt polcok, cserepek, üvegszilánkok. Ami itt maradt, régen tönkrement.",
+   "aliases": [
+    "kamraajtó",
+    "polcok"
+   ],
+   "details": [
+    "penészszag"
+   ]
+  },
+  {
+   "id": "stove",
+   "name": "tűzhely",
+   "location": "kitchen",
+   "text": "Rozsdás tűzhely, lógó elszívó. Fekete penész a sarkokban.",
+   "aliases": [
+    "mosogató",
+    "csempe"
+   ],
+   "details": [
+    "rozsdás acél"
+   ]
+  },
+  {
+   "id": "survey_plan",
+   "name": "felmérési terv",
+   "location": "caretaker_office",
+   "text": "A KRD Bontó Kft. felmérési terve, a régi tervek alapján rajzolva. Alagsor, kazánház: a lépcsőtől a hátsó falig 9,40 méter. Melletted piros tollal a te jegyzeteid: a mérést még ki kell pipálni.",
+   "images": [
+    "survey_plan_now"
+   ],
+   "aliases": [
+    "terv",
+    "alaprajz",
+    "tervrajz",
+    "felmérés",
+    "nyomtatás"
+   ],
+   "literal": true
+  },
+  {
+   "id": "brigade_log",
+   "name": "brigádnapló",
+   "location": "caretaker_office",
+   "text": "A brigádnapló, vizesen, penészesen. A lapok összeragadtak, a legtöbb olvashatatlan. Egy töredék az utolsó oldalról: „…sori kulcsokat Kardos ig. elvtárs magáh…” és lejjebb: „…engedély nélkül elhagyta. – K.”",
+   "images": [
+    "brigade_log_now"
+   ],
+   "aliases": [
+    "napló",
+    "piros könyv"
+   ],
+   "literal": true
+  },
+  {
+   "id": "filing",
+   "name": "irattartó",
+   "location": "caretaker_office",
+   "text": "Rozsdás irattartó, a fiókjai üresek. Csak a brigádnapló maradt a tetején.",
+   "aliases": [
+    "fiókok",
+    "szekrény"
+   ],
+   "details": [
+    "rozsdás szürke acél"
+   ]
+  },
+  {
+   "id": "desk",
+   "name": "íróasztal",
+   "location": "caretaker_office",
+   "text": "Vetemedett íróasztal. A telefon helyén egy porfolt.",
+   "aliases": [
+    "asztal"
+   ],
+   "details": [
+    "vetemedett lap"
+   ]
+  },
+  {
+   "id": "switchboard",
+   "name": "telefonközpont",
+   "location": "switchboard_room",
+   "text": "A halott központ, kifakult címkék, foszló zsinórok, néhány aljzatlap hiányzik. A számokat innen már nem lehet leolvasni.",
+   "images": [
+    "switchboard_now"
+   ],
+   "aliases": [
+    "központ",
+    "aljzatok",
+    "zsinórok"
+   ],
+   "details": [
+    "kifakult címkék",
+    "foszló vászonzsinórok"
+   ]
+  },
+  {
+   "id": "cable_diagram",
+   "name": "kábelrajz",
+   "location": "switchboard_room",
+   "text": "A kifakult kék kábelrajz a falon. A vonalak listája halványan még olvasható: 201 Porta · 202 Gondnoki iroda · 203 Konyha · 204 Étterem · 205 Kazánház · 211–216 Vendégszobák · 220 Padlás · 241 Ó. H.",
+   "images": [
+    "cable_diagram_now"
+   ],
+   "aliases": [
+    "rajz",
+    "kék rajz",
+    "tervrajz",
+    "kábelek",
+    "vonalak",
+    "lista"
+   ],
+   "literal": true
+  },
+  {
+   "id": "ceiling",
+   "name": "beomlott mennyezet",
+   "location": "corridor",
+   "text": "A mennyezet egy része beszakadt, kilátszanak a lécek. Alatta törmelék.",
+   "aliases": [
+    "mennyezet",
+    "törmelék",
+    "ajtók"
+   ],
+   "details": [
+    "kilógó lécek",
+    "vakolatpor"
+   ]
+  },
+  {
+   "id": "beds",
+   "name": "ágyvázak",
+   "location": "guest_room",
+   "text": "Rozsdás ágyvázak, matrac nélkül. Az erkélyajtón át elszáradt repkény nőtt be.",
+   "aliases": [
+    "ágy",
+    "tükör",
+    "erkély",
+    "szekrény"
+   ],
+   "details": [
+    "rozsdás rugók"
+   ]
+  },
+  {
+   "id": "glass",
+   "name": "kitört üvegek",
+   "location": "veranda",
+   "text": "Kitört üvegtáblák, behajlott alumíniumkeretek. Itt jöttél be.",
+   "aliases": [
+    "üveg",
+    "ablak",
+    "keretek",
+    "nyugszék"
+   ],
+   "details": [
+    "repkény a kereteken",
+    "üvegszilánkok a padlón"
+   ]
+  },
+  {
+   "id": "water_tank",
+   "name": "víztartály",
+   "location": "attic",
+   "text": "Rozsdabarna víztartály, a lába elkorhadt. A tetőn át ide esik be az eső.",
+   "aliases": [
+    "tartály"
+   ],
+   "details": [
+    "rozsdabarna bádog"
+   ]
+  },
+  {
+   "id": "holes",
+   "name": "betört tetőablak",
+   "location": "attic",
+   "text": "A tetőablak üvege betört, rajta át a szürke ég és az eső. Alatta a deszkák feketék a nedvességtől.",
+   "aliases": [
+    "tető",
+    "tetőablak",
+    "gerendák",
+    "lyuk"
+   ],
+   "details": [
+    "betört üveg",
+    "nedves deszkák"
+   ]
+  },
+  {
+   "id": "boiler",
+   "name": "kazán",
+   "location": "boiler_room",
+   "text": "A rozsdás kazán néma, a mérőóra üvege kitört. A csövekről rongyokban lóg a szigetelés.",
+   "aliases": [
+    "szénkazán",
+    "csövek",
+    "szénrakás"
+   ],
+   "details": [
+    "rozsdás öntöttvas",
+    "betört mérőóra-üveg"
+   ]
+  },
+  {
+   "id": "valve",
+   "name": "szelepkerék",
+   "location": "boiler_room",
+   "text": "Rozsdás szelepkerék, a festék lepattogzott. Nem mozdul.",
+   "images": [
+    "valve_wheel_now"
+   ],
+   "aliases": [
+    "szelep",
+    "kerék"
+   ],
+   "actions": {
+    "turn": {
+     "say": "Nekifeszülsz. Meg sem moccan, rozsdás az egész."
+    }
+   },
+   "details": [
+    "lepattogzott vörös festék"
+   ]
+  },
+  {
+   "id": "back_wall",
+   "name": "hátsó fal",
+   "location": "boiler_room",
+   "aliases": [
+    "fal",
+    "téglafal",
+    "hátsó téglafal"
+   ],
+   "text": [
+    {
+     "if": {
+      "is": "boiler_room.measured",
+      "eq": true
+     },
+     "text": "A hátsó téglafal. A lézerrel mérve 6,10 méterre van a lépcsőtől. A terv szerint 9,40 kellene."
+    },
+    {
+     "text": "A hátsó téglafal, előtte a korhadt polc."
+    }
+   ],
+   "actions": {
+    "measure": {
+     "requires": {
+      "has": "laser"
+     },
+     "otherwise": "Mivel mérnéd?",
+     "set": {
+      "boiler_room.measured": true
+     },
+     "say": "A lépcső aljáról a hátsó falra fogod a lézert. A kijelző: 6,10 m. Kétszer is megméred. 6,10."
+    },
+    "use:laser": {
+     "requires": {
+      "has": "laser"
+     },
+     "otherwise": "Mivel mérnéd?",
+     "set": {
+      "boiler_room.measured": true
+     },
+     "say": "A lépcső aljáról a hátsó falra fogod a lézert. A kijelző: 6,10 m. Kétszer is megméred. 6,10."
+    },
+    "knock": {
+     "say": "Kopogsz a falon. Tömör tégla, csak a polc mögött kong másképp."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "shelf",
+   "name": "korhadt polc",
+   "location": "boiler_room",
+   "aliases": [
+    "polc",
+    "polcmaradvány",
+    "dobozok",
+    "rozsdás dobozok"
+   ],
+   "props": {
+    "searched": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "shelf.searched",
+      "eq": true
+     },
+     "text": "A korhadt polcmaradvány félrehúzva. Mögötte a rozsdás acélajtó."
+    },
+    {
+     "text": "A hátsó falnál egy elkorhadt fapolc, rajta rozsdás festékesdobozok. Ötven éve nem nyúlt hozzá senki."
+    }
+   ],
+   "actions": {
+    "search": {
+     "requires": {
+      "any": [
+       {
+        "is": "boiler_room.measured",
+        "eq": true
+       },
+       {
+        "solved": "Az Ó. H. vonal"
+       }
+      ]
+     },
+     "reveal": [
+      "door"
+     ],
+     "set": {
+      "shelf.searched": true
+     },
+     "images": [
+      "door_a_now"
+     ],
+     "otherwise": "Rozsdás dobozok, korhadt deszkák. Mögötte a téglafal, legalábbis úgy tűnik. Nem tudod, mit keresnél itt.",
+     "say": "Félrerángatod a korhadt deszkákat. A polc mögött nem tégla van: egy keskeny, rozsdás acélajtó, betonba ágyazva."
+    },
+    "move": {
+     "requires": {
+      "any": [
+       {
+        "is": "boiler_room.measured",
+        "eq": true
+       },
+       {
+        "solved": "Az Ó. H. vonal"
+       }
+      ]
+     },
+     "reveal": [
+      "door"
+     ],
+     "set": {
+      "shelf.searched": true
+     },
+     "images": [
+      "door_a_now"
+     ],
+     "otherwise": "Rozsdás dobozok, korhadt deszkák. Mögötte a téglafal, legalábbis úgy tűnik. Nem tudod, mit keresnél itt.",
+     "say": "Félrerángatod a korhadt deszkákat. A polc mögött nem tégla van: egy keskeny, rozsdás acélajtó, betonba ágyazva."
+    },
+    "push": {
+     "requires": {
+      "any": [
+       {
+        "is": "boiler_room.measured",
+        "eq": true
+       },
+       {
+        "solved": "Az Ó. H. vonal"
+       }
+      ]
+     },
+     "reveal": [
+      "door"
+     ],
+     "set": {
+      "shelf.searched": true
+     },
+     "images": [
+      "door_a_now"
+     ],
+     "otherwise": "Rozsdás dobozok, korhadt deszkák. Mögötte a téglafal, legalábbis úgy tűnik. Nem tudod, mit keresnél itt.",
+     "say": "Félrerángatod a korhadt deszkákat. A polc mögött nem tégla van: egy keskeny, rozsdás acélajtó, betonba ágyazva."
+    },
+    "pull": {
+     "requires": {
+      "any": [
+       {
+        "is": "boiler_room.measured",
+        "eq": true
+       },
+       {
+        "solved": "Az Ó. H. vonal"
+       }
+      ]
+     },
+     "reveal": [
+      "door"
+     ],
+     "set": {
+      "shelf.searched": true
+     },
+     "images": [
+      "door_a_now"
+     ],
+     "otherwise": "Rozsdás dobozok, korhadt deszkák. Mögötte a téglafal, legalábbis úgy tűnik. Nem tudod, mit keresnél itt.",
+     "say": "Félrerángatod a korhadt deszkákat. A polc mögött nem tégla van: egy keskeny, rozsdás acélajtó, betonba ágyazva."
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "door",
+   "kind": "door",
+   "name": "rozsdás acélajtó",
+   "between": [
+    "boiler_room",
+    "shelter"
+   ],
+   "hidden": true,
+   "props": {
+    "open": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "aliases": [
+    "acélajtó",
+    "ajtó",
+    "rés",
+    "kar",
+    "óvóhely"
+   ],
+   "closedText": "A rozsdás acélajtó nem mozdul. A kar beragadt.",
+   "text": [
+    {
+     "if": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "text": "A rozsdás acélajtó félig nyitva áll, be lehet bújni rajta."
+    },
+    {
+     "text": "Keskeny acélajtó, vastag rozsda, a kar beragadt. A tömítés elporladt: a peremén egy ujjnyi rés, rajta át hideg levegő jön. Be lehetne nézni."
+    }
+   ],
+   "images": [
+    "door_a_now"
+   ],
+   "actions": {
+    "peek": {
+     "requires": {
+      "not": {
+       "is": "door74.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Az ajtó félig nyitva, bebújhatsz rajta.",
+     "images": [
+      "room_a_now"
+     ],
+     "say": "A fejlámpát a réshez tartod. Odabent egy kis betonszoba: rozsdás priccs, rongyokká rohadt pokróc, összeomlott, üres ládák, egy bádogbögre. A priccs fölött, a betonfalba karcolva rovátkák, ötösével áthúzva: tizenegy. Alattuk, reszkető betűkkel: „B. GY. – 1974. IX. 14. – KARDOS”."
+    },
+    "look_through": {
+     "requires": {
+      "not": {
+       "is": "door74.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Az ajtó félig nyitva, bebújhatsz rajta.",
+     "images": [
+      "room_a_now"
+     ],
+     "say": "A fejlámpát a réshez tartod. Odabent egy kis betonszoba: rozsdás priccs, rongyokká rohadt pokróc, összeomlott, üres ládák, egy bádogbögre. A priccs fölött, a betonfalba karcolva rovátkák, ötösével áthúzva: tizenegy. Alattuk, reszkető betűkkel: „B. GY. – 1974. IX. 14. – KARDOS”."
+    },
+    "use:headlamp": {
+     "requires": {
+      "not": {
+       "is": "door74.open",
+       "eq": true
+      }
+     },
+     "otherwise": "Az ajtó félig nyitva, bebújhatsz rajta.",
+     "images": [
+      "room_a_now"
+     ],
+     "say": "A fejlámpát a réshez tartod. Odabent egy kis betonszoba: rozsdás priccs, rongyokká rohadt pokróc, összeomlott, üres ládák, egy bádogbögre. A priccs fölött, a betonfalba karcolva rovátkák, ötösével áthúzva: tizenegy. Alattuk, reszkető betűkkel: „B. GY. – 1974. IX. 14. – KARDOS”."
+    },
+    "open": {
+     "requires": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "otherwise": "A kar beragadt, az ajtó berozsdásodott. Ötven éve nem nyitotta ki senki. Innen nem megy.",
+     "goTo": "shelter"
+    },
+    "force": {
+     "requires": {
+      "is": "door74.open",
+      "eq": true
+     },
+     "otherwise": "Nekifeszülsz, rángatod a kart. Meg sem mozdul. Ezt az ajtót nem ma kellett volna kinyitni.",
+     "goTo": "shelter"
+    }
+   },
+   "literal": true
+  },
+  {
+   "id": "bunk",
+   "name": "priccs",
+   "location": "shelter",
+   "text": "Rozsdás priccs, pokróc nincs rajta. A fölötte lévő falon nincs semmi, csak a mész.",
+   "aliases": [
+    "fal",
+    "ágy"
+   ],
+   "details": [
+    "rozsdás vaskeret"
+   ]
+  },
+  {
+   "id": "box",
+   "name": "mentőláda",
+   "location": "shelter",
+   "text": "Rozsdás, olajzöld mentőláda a polcon. Kinyitod: üres, csak egy porrá vált gézcsomag.",
+   "images": [
+    "box_a_now"
+   ],
+   "aliases": [
+    "zöld láda",
+    "doboz"
+   ],
+   "details": [
+    "rozsdafoltos zöld bádog"
+   ]
+  },
+  {
+   "id": "crate",
+   "name": "fáláda",
+   "location": "shelter",
+   "text": "Egy korhadt fáláda, a többinek nyoma sincs{contents:. Rajta }.",
+   "aliases": [
+    "láda"
+   ],
+   "details": [
+    "korhadt deszkák"
+   ]
+  },
+  {
+   "id": "capsule",
+   "name": "időkapszula",
+   "location": "shelter",
+   "visibleIf": {
+    "not": {
+     "var": "capsule_p",
+     "is": "none"
+    }
+   },
+   "carry": {
+    "name": "Időkapszula"
+   },
+   "aliases": [
+    "befőttesüveg",
+    "üveg",
+    "csomag",
+    "doboz",
+    "kekszes doboz",
+    "papírcsomag",
+    "viaszosvászon",
+    "bizonyíték",
+    "kapszula"
+   ],
+   "mention": [
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "jar"
+     },
+     "text": "egy viaszpecsétes befőttesüveg"
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "oilcloth"
+     },
+     "text": "egy viaszosvászon csomag"
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "tin"
+     },
+     "text": "egy rozsdás kekszes doboz"
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "paper"
+     },
+     "text": "egy barna papírcsomag maradványa"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "jar"
+       },
+       {
+        "var": "capsule_p",
+        "is": "attic"
+       }
+      ]
+     },
+     "text": "Egy viaszpecsétes befőttesüveg, amit 1974-ben itt hagytak neked. Benne a fekete füzet, épen, szárazon. Minden sor olvasható: a szállítások, a dátumok, és alul: „Átvette: K. (ig.), Sz. (szakszervezet). Tárolva: Ó. H.” Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "jar"
+       },
+       {
+        "var": "capsule_p",
+        "is": "boiler"
+       }
+      ]
+     },
+     "text": "Egy viaszpecsétes befőttesüveg, amit 1974-ben itt hagytak neked. Benne a fekete füzet, épen, szárazon. Minden sor olvasható: a szállítások, a dátumok, és alul: „Átvette: K. (ig.), Sz. (szakszervezet). Tárolva: Ó. H.” Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "jar"
+       },
+       {
+        "var": "capsule_p",
+        "is": "shelter"
+       }
+      ]
+     },
+     "text": "Egy viaszpecsétes befőttesüveg, amit 1974-ben itt hagytak neked. Benne a fekete füzet, épen, szárazon. Minden sor olvasható: a szállítások, a dátumok, és alul: „Átvette: K. (ig.), Sz. (szakszervezet). Tárolva: Ó. H.” Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "oilcloth"
+       },
+       {
+        "var": "capsule_p",
+        "is": "attic"
+       }
+      ]
+     },
+     "text": "Egy viaszosvászon csomag, amit 1974-ben itt hagytak neked. Benne a fekete füzet, foltosan, hullámos lapokkal. A sorok fele elmosódott, de a dátumok és az aláírás még olvasható: „Átvette: K. (ig.)”. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "oilcloth"
+       },
+       {
+        "var": "capsule_p",
+        "is": "boiler"
+       }
+      ]
+     },
+     "text": "Egy viaszosvászon csomag, amit 1974-ben itt hagytak neked. Benne a fekete füzet, foltosan, hullámos lapokkal. A sorok fele elmosódott, de a dátumok és az aláírás még olvasható: „Átvette: K. (ig.)”. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "oilcloth"
+       },
+       {
+        "var": "capsule_p",
+        "is": "shelter"
+       }
+      ]
+     },
+     "text": "Egy viaszosvászon csomag, amit 1974-ben itt hagytak neked. Benne a fekete füzet, épen, szárazon. Minden sor olvasható: a szállítások, a dátumok, és alul: „Átvette: K. (ig.), Sz. (szakszervezet). Tárolva: Ó. H.” Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "tin"
+       },
+       {
+        "var": "capsule_p",
+        "is": "attic"
+       }
+      ]
+     },
+     "text": "Egy rozsdás kekszes doboz, amit 1974-ben itt hagytak neked. A füzetből csak barna, összeragadt pép maradt, egy betű sem olvasható. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "tin"
+       },
+       {
+        "var": "capsule_p",
+        "is": "boiler"
+       }
+      ]
+     },
+     "text": "Egy rozsdás kekszes doboz, amit 1974-ben itt hagytak neked. A füzetből csak barna, összeragadt pép maradt, egy betű sem olvasható. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "tin"
+       },
+       {
+        "var": "capsule_p",
+        "is": "shelter"
+       }
+      ]
+     },
+     "text": "Egy rozsdás kekszes doboz, amit 1974-ben itt hagytak neked. Benne a fekete füzet, foltosan, hullámos lapokkal. A sorok fele elmosódott, de a dátumok és az aláírás még olvasható: „Átvette: K. (ig.)”. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "paper"
+       },
+       {
+        "var": "capsule_p",
+        "is": "attic"
+       }
+      ]
+     },
+     "text": "Egy barna papírcsomag maradványa, amit 1974-ben itt hagytak neked. A füzetből csak barna, összeragadt pép maradt, egy betű sem olvasható. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "paper"
+       },
+       {
+        "var": "capsule_p",
+        "is": "boiler"
+       }
+      ]
+     },
+     "text": "Egy barna papírcsomag maradványa, amit 1974-ben itt hagytak neked. A füzetből csak barna, összeragadt pép maradt, egy betű sem olvasható. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    },
+    {
+     "if": {
+      "all": [
+       {
+        "var": "capsule_c",
+        "is": "paper"
+       },
+       {
+        "var": "capsule_p",
+        "is": "shelter"
+       }
+      ]
+     },
+     "text": "Egy barna papírcsomag maradványa, amit 1974-ben itt hagytak neked. Benne a fekete füzet, foltosan, hullámos lapokkal. A sorok fele elmosódott, de a dátumok és az aláírás még olvasható: „Átvette: K. (ig.)”. Mellette a kis alumínium filmtartó, a fedele még mindig szorosan rajta. Az előhívatlan film ötven év után is ott van benne."
+    }
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "jar"
+     },
+     "images": [
+      "preserve_jar_now",
+      "film_can_now"
+     ]
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "oilcloth"
+     },
+     "images": [
+      "oilcloth_now",
+      "film_can_now"
+     ]
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "tin"
+     },
+     "images": [
+      "biscuit_tin_now",
+      "film_can_now"
+     ]
+    },
+    {
+     "if": {
+      "var": "capsule_c",
+      "is": "paper"
+     },
+     "images": [
+      "paper_parcel_now",
+      "film_can_now"
+     ]
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "sign",
+   "name": "cégtábla",
+   "location": "exterior",
+   "text": "A zománctábla lepattogzott, rozsdacsíkok futnak le a csavaroktól, de olvasható: „ALFÖLDI SZERSZÁMGÉPGYÁR – Vállalati Üdülő”.",
+   "images": [
+    "sign_now"
+   ],
+   "aliases": [
+    "tábla",
+    "felirat"
+   ],
+   "literal": true
+  },
+  {
+   "id": "excavator",
+   "name": "kotrógép",
+   "location": "exterior",
+   "text": "Sárga kotrógép a gazban, oldalán: „KRD Bontó Kft.”. Holnap reggel hétkor indul.",
+   "aliases": [
+    "gép",
+    "markoló",
+    "krd"
+   ],
+   "details": [
+    "sárga festék",
+    "sáros lánctalp"
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:Kapcsolat",
+   "do": {
+    "say": "A sercegés hirtelen kitisztul, és egy hang szól a rádióból. A másikotok hangja. Pár zavart mondat után kiderül: ugyanabban az épületben vagytok, ugyanabban a társalgóban, ugyanannál a rádiónál. Csak ötven év van köztetek. Mostantól a rádión át beszélhettek."
+   }
+  },
+  {
+   "on": "solved:Az Ó. H. vonal",
+   "do": {
+    "say": "Bedugod a zsinórt a 241-es aljzatba, és tekered a hívókart. Sokáig semmi. Aztán kattanás: valaki felvette. Senki nem szól, csak nehéz, szaggatott légzés. Aztán három gyenge koppanás, mintha valaki a kagylóval a falon kopogna. A vonal elnémul. A 241-es mellék létezik, és valaki van ott."
+   }
+  },
+  {
+   "on": "solved:Szeptember 14., este",
+   "do": {
+    "say": "A tábla összeállt. Este tízkor ketten voltak lent az alagsorban: Bodnár és Kardos. Bodnár onnan nem jött fel. Kardos a kulcsokkal a 6-os szobában töltötte az éjszakát, és hajnali ötkor utolsóként hajtott el."
+   }
+  },
+  {
+   "on": "solved:A kitépett lap",
+   "do": {
+    "say": "A darabok összeállnak: a kitépett lap, Bodnár saját kézírásával. „IX. 14. 21.30 – Bodnár Gy.: kazán és alagsor ellenőrzése. 22.15 – Az alagsori kulcsokat Kardos ig. elvtárs magához vette. 22.30 – Vargáné, Tóth F. hazamentek.” Az utolsó bejegyzést nem Bodnár írta: azt kitépték.",
+    "images": [
+     "log_page"
+    ]
+   }
+  },
+  {
+   "on": "solved:A tartalék ág",
+   "do": {
+    "set": {
+     "boiler_room74.hot": false
+    },
+    "say": "A tartalék ág megtelik, a két fűtőkör kap vizet. Most már elzárhatod a fővezetéket: a vörös kerék nyikorogva fordul, a cső sziszeg, és lassan hűlni kezd."
+   }
+  },
+  {
+   "on": "set:door74.open",
+   "do": {
+    "say": "Valahol, ötven évvel később, egy berozsdált ajtó résnyire kinyílik."
+   }
+  },
+  {
+   "on": "take:ledger74",
+   "if": {
+    "has": "film74"
+   },
+   "do": {
+    "say": "A füzet és a film nálad van. Bodnár szerint itt kell elrejteni, valakinek, aki majd megtalálja.",
+    "panel": {
+     "id": "time_capsule",
+     "label": "Időkapszula"
+    }
+   }
+  },
+  {
+   "on": "take:film74",
+   "if": {
+    "has": "ledger74"
+   },
+   "do": {
+    "say": "A füzet és a film nálad van. Bodnár szerint itt kell elrejteni, valakinek, aki majd megtalálja.",
+    "panel": {
+     "id": "time_capsule",
+     "label": "Időkapszula"
+    }
+   }
+  },
+  {
+   "on": "take:capsule",
+   "do": {
+    "say": "Becsúsztatod a táskádba. Ezzel kimehetsz innen."
+   }
+  },
+  {
+   "on": "enter:shelter",
+   "once": true,
+   "if": {
+    "all": [
+     {
+      "var": "capsule_c",
+      "is": "jar"
+     },
+     {
+      "var": "capsule_p",
+      "is": "shelter"
+     }
+    ]
+   },
+   "do": {
+    "images": [
+     "room_b_now"
+    ]
+   }
+  },
+  {
+   "on": "enter:shelter",
+   "once": true,
+   "if": {
+    "not": {
+     "all": [
+      {
+       "var": "capsule_c",
+       "is": "jar"
+      },
+      {
+       "var": "capsule_p",
+       "is": "shelter"
+      }
+     ]
+    }
+   },
+   "do": {
+    "images": [
+     "room_b_empty"
+    ]
+   }
+  }
+ ],
+ "onMessage": [
+  {
+   "match": "\\(GAME: CAPSULE jar attic\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "jar",
+     "capsule_p": "attic",
+     "ledger_q": "good"
+    },
+    "moveTo": {
+     "capsule": "attic"
+    },
+    "remove": [
+     "preserve_jar74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE jar boiler\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "jar",
+     "capsule_p": "boiler",
+     "ledger_q": "good"
+    },
+    "moveTo": {
+     "capsule": "boiler_room"
+    },
+    "remove": [
+     "preserve_jar74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE jar shelter\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "jar",
+     "capsule_p": "shelter",
+     "ledger_q": "good"
+    },
+    "moveTo": {
+     "capsule": "shelter"
+    },
+    "remove": [
+     "preserve_jar74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE oilcloth attic\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "oilcloth",
+     "capsule_p": "attic",
+     "ledger_q": "partial"
+    },
+    "moveTo": {
+     "capsule": "attic"
+    },
+    "remove": [
+     "oilcloth74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE oilcloth boiler\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "oilcloth",
+     "capsule_p": "boiler",
+     "ledger_q": "partial"
+    },
+    "moveTo": {
+     "capsule": "boiler_room"
+    },
+    "remove": [
+     "oilcloth74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE oilcloth shelter\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "oilcloth",
+     "capsule_p": "shelter",
+     "ledger_q": "good"
+    },
+    "moveTo": {
+     "capsule": "shelter"
+    },
+    "remove": [
+     "oilcloth74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE tin attic\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "tin",
+     "capsule_p": "attic",
+     "ledger_q": "bad"
+    },
+    "moveTo": {
+     "capsule": "attic"
+    },
+    "remove": [
+     "biscuit_tin74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE tin boiler\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "tin",
+     "capsule_p": "boiler",
+     "ledger_q": "bad"
+    },
+    "moveTo": {
+     "capsule": "boiler_room"
+    },
+    "remove": [
+     "biscuit_tin74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE tin shelter\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "tin",
+     "capsule_p": "shelter",
+     "ledger_q": "partial"
+    },
+    "moveTo": {
+     "capsule": "shelter"
+    },
+    "remove": [
+     "biscuit_tin74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE paper attic\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "paper",
+     "capsule_p": "attic",
+     "ledger_q": "bad"
+    },
+    "moveTo": {
+     "capsule": "attic"
+    },
+    "remove": [
+     "paper_parcel74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE paper boiler\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "paper",
+     "capsule_p": "boiler",
+     "ledger_q": "bad"
+    },
+    "moveTo": {
+     "capsule": "boiler_room"
+    },
+    "remove": [
+     "paper_parcel74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  },
+  {
+   "match": "\\(GAME: CAPSULE paper shelter\\)",
+   "do": {
+    "setVar": {
+     "capsule_c": "paper",
+     "capsule_p": "shelter",
+     "ledger_q": "partial"
+    },
+    "moveTo": {
+     "capsule": "shelter"
+    },
+    "remove": [
+     "paper_parcel74",
+     "ledger74",
+     "film74"
+    ],
+    "say": "Gondosan becsomagolod a fekete füzetet és a filmtartót, és elrejted. Bodnár bólint: „Aki ötven év múlva a rádiónál ül, megtalálja.” Aztán a móló felé indul, a csónakhoz. Mondd el a rádión, hová tetted."
+   }
+  }
+ ],
+ "inventory": [
+  {
+   "id": "headlamp",
+   "name": "Fejlámpa",
+   "p": 1
+  },
+  {
+   "id": "laser",
+   "name": "Távolságmérő",
+   "p": 1
+  },
+  {
+   "id": "tablet",
+   "name": "Tablet",
+   "p": 1
+  }
+ ],
+ "vars": {
+  "capsule_c": "none",
+  "capsule_p": "none",
+  "ledger_q": "none"
+ },
+ "status": "Hely: {loc0} / {loc1}",
+ "panelTitles": {
+  "gauge_board": "Kapcsolat",
+  "code_lock": "Az Ó. H. vonal",
+  "logic_grid": "Szeptember 14., este",
+  "puzzle": "A kitépett lap",
+  "pipes": "A tartalék ág",
+  "time_capsule": "Időkapszula",
+  "report_form": "A felmérés lezárása"
+ },
+ "panelIds": [
+  "gauge_board",
+  "code_lock",
+  "logic_grid",
+  "puzzle",
+  "pipes",
+  "time_capsule",
+  "report_form"
+ ],
+ "panelAvail": {
+  "gauge_board": {
+   "any": [
+    {
+     "player": 0,
+     "at": "lounge74"
+    },
+    {
+     "player": 1,
+     "at": "lounge"
+    },
+    {
+     "solved": "Kapcsolat"
+    }
+   ]
+  },
+  "code_lock": {
+   "player": 0,
+   "at": "switchboard_room74"
+  },
+  "logic_grid": {
+   "any": [
+    {
+     "seen": "guest_register74"
+    },
+    {
+     "seen": "brigade_log74"
+    },
+    {
+     "seen": "memoir"
+    }
+   ]
+  },
+  "puzzle": {
+   "player": 0,
+   "at": "caretaker_office74"
+  },
+  "pipes": {
+   "player": 0,
+   "at": "boiler_room74"
+  },
+  "time_capsule": {
+   "all": [
+    {
+     "has": "ledger74"
+    },
+    {
+     "has": "film74"
+    }
+   ]
+  },
+  "report_form": {
+   "has": "capsule"
+  }
+ },
+ "mustReach": [
+  {
+   "has": "capsule"
+  },
+  {
+   "is": "door74.open",
+   "eq": true
+  }
+ ],
+ "sensitiveWords": [
+  "kulcs",
+  "óvóhely",
+  "rejtett",
+  "titkos",
+  "rovátk",
+  "bunker",
+  "fal mögött",
+  "Bodnár",
+  "Kardos",
+  "acélajtó",
+  "résen",
+  "kapszula"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáld a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

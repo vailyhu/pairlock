@@ -1,0 +1,2514 @@
+{
+ "start": "ferry",
+ "rooms": {
+  "ferry": {
+   "name": "A komp",
+   "into": "a kompba",
+   "inside": "a kompban",
+   "image": "ferry",
+   "text": "A mentőkomp kabinjában ezt látjátok: két ülés, az ívelt konzol a Dél-7 állomás vonalával, egy ellátódoboz, és az ablakon túl a bázis.",
+   "exits": {
+    "pad": {
+     "aliases": [
+      "ki",
+      "kifelé",
+      "leszállóhely",
+      "felszín"
+     ]
+    }
+   },
+   "aliases": [
+    "komp",
+    "kabin"
+   ],
+   "details": [
+    "szűk, csendes kabin",
+    "a konzol halk fénye",
+    "a sisakok a tartóban"
+   ]
+  },
+  "pad": {
+   "name": "Leszállóhely",
+   "into": "a leszállóhelyre",
+   "inside": "a leszállóhelyen",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "pad_power"
+    },
+    {
+     "image": "pad"
+    }
+   ],
+   "text": "A leszállóhelyen ezt látjátok: a komp, mögötte a Hajnal bázis öt modulja, a hangár kapuja, a napelemegységek, távolban a kráter peremén a Vakond, és a Föld a horizont fölött.",
+   "exits": {
+    "ferry": {
+     "aliases": [
+      "komp",
+      "mentőkomp",
+      "be a kompba"
+     ]
+    },
+    "airlock": {
+     "aliases": [
+      "bázis",
+      "zsilip",
+      "be"
+     ]
+    },
+    "solar": {
+     "aliases": [
+      "napelemek",
+      "napelemmező"
+     ]
+    },
+    "hangar_out": {
+     "aliases": [
+      "hangár",
+      "hangárkapu",
+      "kapu"
+     ]
+    },
+    "rim": {
+     "aliases": [
+      "kráterperem",
+      "perem",
+      "vakond",
+      "kráter"
+     ]
+    }
+   },
+   "aliases": [
+    "felszín",
+    "leszállóhely",
+    "kint"
+   ],
+   "details": [
+    "szürke por",
+    "koromfekete árnyékok",
+    "csillagos fekete ég",
+    "tökéletes csend"
+   ]
+  },
+  "airlock": {
+   "name": "Légzsilip",
+   "into": "a zsilipbe",
+   "inside": "a zsilipben",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "airlock"
+    },
+    {
+     "image": "airlock_dim"
+    }
+   ],
+   "text": "A zsilipben ezt látjátok: a kerek külső ajtó a vészhelyzeti nyitóval, a kijelző, a szkafanderállvány a töltőkkel, egy pad, és a belső ajtó a vezérlő felé.",
+   "exits": {
+    "pad": {
+     "requires": {
+      "all": [
+       {
+        "solved": "Életfenntartás"
+       },
+       {
+        "any": [
+         {
+          "player": "any",
+          "at": "control"
+         },
+         {
+          "var": "crew_id",
+          "is": "on"
+         }
+        ]
+       }
+      ]
+     },
+     "otherwise": "A zsilip kifelé nem indul. Kell hozzá valaki a vezérlő kézi pultjánál, és a szkafanderekben oxigén.",
+     "aliases": [
+      "ki",
+      "kifelé",
+      "felszín",
+      "leszállóhely"
+     ]
+    },
+    "control": {
+     "aliases": [
+      "be",
+      "befelé",
+      "vezérlő",
+      "belső ajtó"
+     ]
+    }
+   },
+   "aliases": [
+    "zsilip",
+    "öltöző"
+   ],
+   "firstText": "A vészhelyzeti nyitóval beléptek: befelé a zsilip mindig enged. Sziszeg a levegő, a belső ajtó kinyílik.",
+   "details": [
+    "a levegő sziszegése",
+    "por a rácson",
+    "hideg fém illata"
+   ]
+  },
+  "control": {
+   "name": "Vezérlő",
+   "into": "a vezérlőbe",
+   "inside": "a vezérlőben",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "control"
+    },
+    {
+     "image": "control_dim"
+    }
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A vezérlőben ezt látjátok: a rádiós pult, az energiatábla és alatta a napelemek kijelzője, az életfenntartás kijelzője, a zsilip kézi pultja, a kameramonitorok, a naplóterminál, a hangár vezérlése, a bányagép távvezérlése. Minden él."
+    },
+    {
+     "text": "A vezérlőben ezt látjátok: a rádiós pult, az energiatábla és alatta a napelemek kijelzője, az életfenntartás kijelzője, a zsilip kézi pultja, sötét kameramonitorok, a naplóterminál, a hangár vezérlése, a bányagép távvezérlése. Halvány tartalékfény."
+    }
+   ],
+   "exits": {
+    "airlock": {
+     "aliases": [
+      "zsilip"
+     ]
+    },
+    "hab": {
+     "requires": {
+      "any": [
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "power_hab",
+        "is": "on"
+       }
+      ]
+     },
+     "otherwise": "A lakómodul ajtaja sötét, nem mozdul: a modul nem kap áramot.",
+     "aliases": [
+      "lakómodul",
+      "lakrész",
+      "konyha"
+     ]
+    },
+    "utility": {
+     "requires": {
+      "any": [
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "power_utility",
+        "is": "on"
+       }
+      ]
+     },
+     "otherwise": "A gépház ajtaja nem mozdul, a kijelzője sötét: a modul nem kap áramot.",
+     "aliases": [
+      "gépház"
+     ]
+    },
+    "lab": {
+     "requires": {
+      "any": [
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "power_lab",
+        "is": "on"
+       }
+      ]
+     },
+     "otherwise": "A labor motoros tolóajtaja nem mozdul, a kijelzője sötét. A résen át a fagyasztó kék jelzőfénye látszik.",
+     "aliases": [
+      "labor"
+     ]
+    },
+    "storage": {
+     "requires": {
+      "any": [
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "power_storage",
+        "is": "on"
+       }
+      ]
+     },
+     "otherwise": "A raktár ajtaja nem mozdul, a kijelzője sötét: a modul nem kap áramot.",
+     "aliases": [
+      "raktár"
+     ]
+    }
+   },
+   "aliases": [
+    "vezérlő",
+    "irányító"
+   ],
+   "details": [
+    "halk ventilátorzúgás",
+    "a képernyők hideg fénye",
+    "ívelt asztal"
+   ]
+  },
+  "hab": {
+   "name": "Lakómodul",
+   "into": "a lakómodulba",
+   "inside": "a lakómodulban",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "hab"
+    },
+    {
+     "image": "hab_dim"
+    }
+   ],
+   "text": "A lakómodulban ezt látjátok: a konyhasarok az asztallal és egy fiókkal, Ilona hálófülkéje, két másik behúzott függönyös fülke, egy salátatartó, egy gitár a falon, egy futópad.",
+   "exits": {
+    "control": {
+     "aliases": [
+      "vezérlő",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "lakómodul",
+    "lakrész"
+   ],
+   "firstText": "A lakómodul. Félbehagyott vacsora az asztalon, mintha Ilona csak egy percre ment volna ki.",
+   "details": [
+    "kihűlt étel szaga",
+    "puha szövetborítás",
+    "a salátalámpa zöldes fénye"
+   ]
+  },
+  "utility": {
+   "name": "Gépház",
+   "into": "a gépházba",
+   "inside": "a gépházban",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "utility"
+    },
+    {
+     "image": "utility_dim"
+    }
+   ],
+   "text": "A gépházban ezt látjátok: a hátsó falon az életfenntartás szeleptáblája, oxigéntartályok, a puffertartály, levegőtisztítók.",
+   "exits": {
+    "control": {
+     "aliases": [
+      "vezérlő",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "gépház"
+   ],
+   "details": [
+    "egyenletes zúgás",
+    "hűvös, száraz levegő"
+   ]
+  },
+  "lab": {
+   "name": "Labor",
+   "into": "a laborba",
+   "inside": "a laborban",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "lab"
+    },
+    {
+     "image": "lab_dim"
+    }
+   ],
+   "text": "A laborban ezt látjátok: a kihúzott mintafagyasztó, a pulton a spektrométer, a falon a fúrási térkép, a terminál, a motoros tolóajtó.",
+   "exits": {
+    "control": {
+     "aliases": [
+      "vezérlő",
+      "ki"
+     ]
+    }
+   },
+   "aliases": [
+    "labor"
+   ],
+   "details": [
+    "fagyasztó hidege",
+    "tiszta, fehér felületek"
+   ]
+  },
+  "storage": {
+   "name": "Raktár",
+   "into": "a raktárba",
+   "inside": "a raktárban",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "storage"
+    },
+    {
+     "image": "storage_dim"
+    }
+   ],
+   "text": "A raktárban ezt látjátok: a hátsó falon a hangár kerek válaszfala a „HANGAR” felirattal, mellette egy szerszámtábla, a munkapadon egy alkatrészdoboz, magas polcok, rakományládák.",
+   "exits": {
+    "control": {
+     "aliases": [
+      "vezérlő",
+      "ki"
+     ]
+    },
+    "hangar": {
+     "requires": {
+      "solved": "A hangár nyomásolása"
+     },
+     "otherwise": "A válaszfal zárva: túloldalt vákuum.",
+     "aliases": [
+      "hangár",
+      "válaszfal"
+     ]
+    }
+   },
+   "aliases": [
+    "raktár"
+   ],
+   "details": [
+    "rendezett polcok",
+    "hűvös levegő"
+   ]
+  },
+  "hangar": {
+   "name": "Hangár",
+   "into": "a hangárba",
+   "inside": "a hangárban",
+   "image": "hangar",
+   "text": "A hangárban ezt látjátok: a Teve rover nyitott kabinajtóval, szerszámállványok, egy töltőkábel, a zárt külső kapu.",
+   "exits": {
+    "storage": {
+     "aliases": [
+      "raktár",
+      "vissza"
+     ]
+    }
+   },
+   "aliases": [
+    "hangár"
+   ],
+   "details": [
+    "hideg pára",
+    "dér a falakon"
+   ]
+  },
+  "solar": {
+   "name": "Napelemmező",
+   "into": "a napelemekhez",
+   "inside": "a napelemeknél",
+   "image": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "image": "solar_turned"
+    },
+    {
+     "image": "solar"
+    }
+   ],
+   "text": "A napelemeknél ezt látjátok: három egyforma napelemegység egy vonalban, a legközelebbi az 1-es, a legtávolabbi a 3-as; jobbra elöl a kábelszekrény, a kábelcsatorna.",
+   "exits": {
+    "pad": {
+     "aliases": [
+      "vissza",
+      "leszállóhely",
+      "bázis"
+     ]
+    }
+   },
+   "aliases": [
+    "napelemek",
+    "napelemmező"
+   ],
+   "details": [
+    "hosszú árnyékok",
+    "puha por a csizma alatt"
+   ]
+  },
+  "hangar_out": {
+   "name": "A hangár kapuja",
+   "into": "a hangár kapujához",
+   "inside": "a hangár kapujánál",
+   "image": [
+    {
+     "if": {
+      "is": "hangar_door.closed",
+      "eq": true
+     },
+     "image": "hangar_out_closed"
+    },
+    {
+     "image": "hangar_out"
+    }
+   ],
+   "text": "A hangár kapujánál ezt látjátok: a széles kapu a „HANGAR” felirattal, mellette a vészhelyzeti aljzat, keréknyomok.",
+   "exits": {
+    "pad": {
+     "aliases": [
+      "vissza",
+      "leszállóhely"
+     ]
+    }
+   },
+   "aliases": [
+    "hangárkapu",
+    "kapu"
+   ],
+   "details": [
+    "széles fal",
+    "keréknyomok a porban"
+   ]
+  },
+  "rim": {
+   "name": "Kráterperem",
+   "into": "a kráterperemre",
+   "inside": "a kráterperemen",
+   "image": [
+    {
+     "if": {
+      "var": "vakond",
+      "is": "on"
+     },
+     "image": "rim_lit"
+    },
+    {
+     "image": "rim"
+    }
+   ],
+   "text": "A kráter peremén ezt látjátok: a Vakond, alatta a kráter koromsötét mélye, egy jelzőkaró, visszanézve a bázis és a Föld.",
+   "exits": {
+    "pad": {
+     "aliases": [
+      "vissza",
+      "leszállóhely",
+      "bázis"
+     ]
+    }
+   },
+   "aliases": [
+    "perem",
+    "kráter"
+   ],
+   "firstText": "Felsétáltok a kráter peremére. Csend, csak a saját lélegzetetek a sisakban.",
+   "details": [
+    "a kráter sötétje",
+    "végtelen csend"
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "ferry_seats",
+   "name": "ülések",
+   "location": "ferry",
+   "text": "Két párnázott pilótaülés egymás mellett, a hevederek kicsatolva.",
+   "aliases": [
+    "ülés",
+    "heveder",
+    "pilótaülés"
+   ]
+  },
+  {
+   "id": "ferry_console",
+   "name": "a komp konzolja",
+   "location": "ferry",
+   "aliases": [
+    "konzol",
+    "kijelző",
+    "rádió",
+    "a komp rádiója",
+    "jelentés",
+    "állomás",
+    "dél-7"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "crew_id",
+      "is": "on"
+     },
+     "text": "A komp ívelt érintőkonzolja. A Dél-7 állomás vonala nyitva: a felszállás előtt jelentést kérnek arról, mi történt a bázison."
+    },
+    {
+     "text": "A komp ívelt érintőkonzolja. A Dél-7 állomás vonalán csend: azt várják, hogy jelentkezzetek, ha megtaláltátok a bázis emberét."
+    }
+   ],
+   "panel": {
+    "id": "report_form",
+    "label": "Jelentés a Dél-7 állomásnak",
+    "if": {
+     "var": "crew_id",
+     "is": "on"
+    }
+   }
+  },
+  {
+   "id": "ferry_box",
+   "name": "ellátódoboz",
+   "location": "ferry",
+   "text": "Fehér ellátódoboz a falra szíjazva: elsősegély, víz, hőtakarók.",
+   "aliases": [
+    "doboz",
+    "elsősegély",
+    "hőtakaró"
+   ],
+   "actions": {
+    "open": {
+     "say": "Kinyitjátok: elsősegélycsomag, vizes tasakok, összehajtott hőtakarók. Ilonának jól jönnek majd."
+    }
+   }
+  },
+  {
+   "id": "ferry_window",
+   "name": "a komp ablaka",
+   "location": "ferry",
+   "text": "Széles ablak a holdfelszínre: szürke por, fekete ég, és a bázis modulja a közelben.",
+   "aliases": [
+    "ablak"
+   ]
+  },
+  {
+   "id": "base_modules",
+   "name": "a bázis",
+   "location": "pad",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A Hajnal bázis öt összekötött hengeres modulja. Most minden ablak fényesen világít."
+    },
+    {
+     "text": "A Hajnal bázis öt összekötött hengeres modulja, a legnagyobbon a „HAJNAL” felirat. Az ablakok csak halványan derengenek, mintha tartalékáramon menne."
+    }
+   ],
+   "aliases": [
+    "modulok",
+    "bázis",
+    "hajnal",
+    "ablakok",
+    "zsilip",
+    "modul"
+   ],
+   "literal": true
+  },
+  {
+   "id": "pad_solar",
+   "name": "napelemek a távolban",
+   "location": "pad",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A napelemegységek most a Nap felé fordulnak, a cellák kéken csillognak."
+    },
+    {
+     "text": "A bázis mögött a napelemegységek. Furcsán állnak: a Nap oldalról, majdnem a hátuk mögül süt rájuk."
+    }
+   ],
+   "aliases": [
+    "napelem",
+    "napelemek",
+    "napelemmező",
+    "táblák"
+   ],
+   "literal": true
+  },
+  {
+   "id": "pad_tracks",
+   "name": "nyomok a porban",
+   "location": "pad",
+   "text": "Lábnyomok és keréknyomok a porban. Egy friss keréknyom a hangár kapujához vezet.",
+   "aliases": [
+    "lábnyomok",
+    "keréknyomok",
+    "nyom",
+    "por"
+   ],
+   "literal": true
+  },
+  {
+   "id": "earth",
+   "name": "a Föld",
+   "location": "pad",
+   "text": "A Föld kéken és fehéren lóg a horizont fölött. Valahol ott van Zsófi is, akit még nem ismertek.",
+   "aliases": [
+    "föld",
+    "ég",
+    "horizont"
+   ]
+  },
+  {
+   "id": "pad_vakond",
+   "name": "a Vakond a távolban",
+   "location": "pad",
+   "text": "Messze, a kráter peremén áll a Vakond, a nagy lánctalpas bányagép. Nem mozdul.",
+   "aliases": [
+    "vakond",
+    "bányagép",
+    "kráter"
+   ]
+  },
+  {
+   "id": "lander",
+   "name": "a komp",
+   "location": "pad",
+   "text": "A mentőkompotok, a D7-03, négy lábon a porban. Lejárójára visszaléphettek bármikor.",
+   "images": [
+    "lander"
+   ],
+   "aliases": [
+    "komp",
+    "mentőkomp",
+    "d7-03",
+    "leszállóegység"
+   ]
+  },
+  {
+   "id": "outer_hatch",
+   "name": "külső zsilipajtó",
+   "location": "airlock",
+   "text": "A kerek, nehéz külső ajtó, ablakán át a szürke por látszik. Mellette sárga-fekete keretes vészhelyzeti nyitó.",
+   "aliases": [
+    "külső ajtó",
+    "vészhelyzeti nyitó",
+    "nyitó",
+    "kar"
+   ]
+  },
+  {
+   "id": "airlock_display",
+   "name": "a zsilip kijelzője",
+   "location": "airlock",
+   "text": [
+    {
+     "if": {
+      "var": "crew_id",
+      "is": "on"
+     },
+     "text": "A kijelző zölden: „Személyzeti azonosító elfogadva. Automata ciklus.”"
+    },
+    {
+     "text": "A kijelzőn: „Automata ciklus: személyzeti azonosító szükséges. Kézi mód: a vezérlőből.” Kifelé tehát csak akkor indul, ha valaki a vezérlőben ül."
+    }
+   ],
+   "aliases": [
+    "kijelző",
+    "zsilip kijelzője",
+    "ciklus"
+   ],
+   "literal": true
+  },
+  {
+   "id": "suit_station",
+   "name": "szkafanderállvány",
+   "location": "airlock",
+   "aliases": [
+    "szkafander",
+    "szkafanderek",
+    "töltő",
+    "oxigén",
+    "tartály",
+    "állvány",
+    "tartályjelző"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Életfenntartás"
+     },
+     "text": "A szkafanderállvány. A töltőcsatlakozók jelzőfénye zöld: a ti két szkafanderetek is tele oxigénnel."
+    },
+    {
+     "text": "A szkafanderállvány három hellyel: az egyiken egy tartalék szkafander, kettő üres. A töltőcsatlakozók jelzőfénye piros: nem jön oxigén. A ti szkafanderetek tartályjelzője sárga: idáig elég volt, újra kimenni így nem lehet."
+    }
+   ],
+   "images": [
+    "suit_station"
+   ],
+   "literal": true
+  },
+  {
+   "id": "airlock_bench",
+   "name": "pad és sisaktartók",
+   "location": "airlock",
+   "text": "Egy keskeny pad, felette sisaktartók. A rácson finom szürke por a sok ki-be járástól.",
+   "aliases": [
+    "pad",
+    "sisak",
+    "sisaktartó",
+    "rács"
+   ]
+  },
+  {
+   "id": "energy_panel",
+   "name": "energiatábla",
+   "location": "control",
+   "aliases": [
+    "energia",
+    "áram",
+    "energiaelosztó",
+    "elosztó",
+    "tartalékáram"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "Az energiatábla: mindhárom napelemegység teljesítménye zöld, a bázis teljes áramon."
+    },
+    {
+     "if": {
+      "is": "cabinet.fixed",
+      "eq": true
+     },
+     "text": "Az energiatábla: tartalékáram, 6%. A napelemek mindhárom egysége szinte semmit nem ad. Az elosztó: egyszerre csak három modul kaphat áramot."
+    },
+    {
+     "text": "Az energiatábla: tartalékáram, 6%. A napelemek mindhárom egysége szinte semmit nem ad, a 3. egységnél figyelmeztetés: „tápmodul hiba, csere a kültéri kábelszekrényben”. Az elosztó: egyszerre csak három modul kaphat áramot."
+    }
+   ],
+   "images": [
+    "power_panel"
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "images": [
+      "power_panel_full"
+     ]
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "power_router",
+    "label": "Energiaelosztás"
+   }
+  },
+  {
+   "id": "solar_display",
+   "name": "a napelemek kijelzője",
+   "location": "control",
+   "text": "Az energiatábla alatt külön kijelző a három napelemegység teljesítményének. Innen lehet bemondani annak, aki kint forgatja őket.",
+   "aliases": [
+    "napelem kijelző",
+    "teljesítmény"
+   ],
+   "panel": {
+    "id": "gauge_board_solar",
+    "label": "A napelemek teljesítménye"
+   }
+  },
+  {
+   "id": "life_display",
+   "name": "életfenntartás kijelzője",
+   "location": "control",
+   "text": "A modulok nyomása és az oxigén: a lakómodulé rendben, a zsilip szkafandertöltője nullán.",
+   "aliases": [
+    "életfenntartás",
+    "oxigénszint",
+    "nyomás"
+   ],
+   "panel": {
+    "id": "gauge_board_life",
+    "label": "Az életfenntartás mérői"
+   }
+  },
+  {
+   "id": "airlock_control",
+   "name": "a zsilip kézi pultja",
+   "location": "control",
+   "text": [
+    {
+     "if": {
+      "var": "crew_id",
+      "is": "on"
+     },
+     "text": "A zsilip pultja zölden: automata mód, Ilona azonosítójával."
+    },
+    {
+     "text": "A zsilip kézi pultja. Innen indítható a kézi ciklus: aki a zsilipben áll, kimehet, amíg valaki itt ül. Visszafelé a zsilip mindig enged."
+    }
+   ],
+   "aliases": [
+    "zsilip pultja",
+    "kézi pult",
+    "zsilip vezérlése",
+    "érintőpanel"
+   ],
+   "literal": true,
+   "actions": {
+    "use": {
+     "say": "Készenlétbe teszitek a kézi ciklust. Aki a zsilipben áll, kimehet, amíg itt valaki a pultnál marad."
+    },
+    "press": {
+     "say": "Készenlétbe teszitek a kézi ciklust. Aki a zsilipben áll, kimehet, amíg itt valaki a pultnál marad."
+    },
+    "cycle": {
+     "say": "Készenlétbe teszitek a kézi ciklust. Aki a zsilipben áll, kimehet, amíg itt valaki a pultnál marad."
+    }
+   }
+  },
+  {
+   "id": "radio_console",
+   "name": "rádiós pult",
+   "location": "control",
+   "aliases": [
+    "rádió",
+    "mikrofon",
+    "fejhallgató",
+    "hangszóró",
+    "pult",
+    "adó"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "relay",
+      "is": "on"
+     },
+     "text": "A rádiós pult. A Dél-7 állomás vonala nyitva, a továbbítás él."
+    },
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A rádiós pult él. A Föld felől egy élő üzenet vár, késleltetve. Az archívumban öt régi felvétel, sérült időbélyeggel. A pult előtt az asztalba süllyesztve egy kis szürke fedél."
+    },
+    {
+     "if": {
+      "var": "power_radio",
+      "is": "on"
+     },
+     "text": "A rádiós pult tartalékáramon: csak sistereg, a képernyő sötét. A pult előtt az asztalba süllyesztve egy kis szürke fedél."
+    },
+    {
+     "text": "A rádiós pult sötét: nem kap áramot. A pult előtt az asztalba süllyesztve egy kis szürke fedél."
+    }
+   ],
+   "images": [
+    "radio_console"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "sequence",
+    "label": "A felvételek",
+    "if": {
+     "var": "power",
+     "is": "full"
+    }
+   },
+   "actions": {
+    "use": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "A rádió tartalékáramon csak sistereg. Ehhez áram kell.",
+     "say": "A Föld felől, 2,6 másodperc késéssel, udvarias férfihang: „Itt Halmos Bence, Lunaris üzemirányítás. Ilona biztosan a Vakondnál bütyköl valamit. Indítsák újra a bányagépet távolról, a vezérlőben ott a gomb. A hangárral ne foglalkozzanak, karbantartás miatt zárolva van.”"
+    },
+    "listen": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "A rádió tartalékáramon csak sistereg. Ehhez áram kell.",
+     "say": "A Föld felől, 2,6 másodperc késéssel, udvarias férfihang: „Itt Halmos Bence, Lunaris üzemirányítás. Ilona biztosan a Vakondnál bütyköl valamit. Indítsák újra a bányagépet távolról, a vezérlőben ott a gomb. A hangárral ne foglalkozzanak, karbantartás miatt zárolva van.”"
+    },
+    "call": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "A rádió tartalékáramon csak sistereg. Ehhez áram kell.",
+     "say": "A Föld felől, 2,6 másodperc késéssel, udvarias férfihang: „Itt Halmos Bence, Lunaris üzemirányítás. Ilona biztosan a Vakondnál bütyköl valamit. Indítsák újra a bányagépet távolról, a vezérlőben ott a gomb. A hangárral ne foglalkozzanak, karbantartás miatt zárolva van.”"
+    }
+   }
+  },
+  {
+   "id": "relay_cover",
+   "name": "a kis szürke fedél",
+   "location": "radio_console",
+   "rel": "part",
+   "aliases": [
+    "fedél",
+    "kapcsoló",
+    "relé",
+    "piros kapcsoló",
+    "továbbítás"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "relay",
+      "is": "on"
+     },
+     "text": "A fedél felhajtva, a kis piros kapcsoló felkapcsolva: TOVÁBBÍTÁS ENGEDÉLYEZVE."
+    },
+    {
+     "if": {
+      "solved": "A felvételek"
+     },
+     "text": "A fedél alatt a kis piros kapcsoló lefelé áll. Most már tudjátok, mi ez: a továbbító relé, TILTVA."
+    },
+    {
+     "text": "Egy kis süllyesztett szürke fedél a pult előtt. Alatta egy kis piros kapcsoló, felirat nélkül. Nem tudjátok, mit kapcsol, és vakon nem mertek hozzányúlni."
+    }
+   ],
+   "images": [
+    "radio_console"
+   ],
+   "when": [
+    {
+     "if": {
+      "solved": "A felvételek"
+     },
+     "images": [
+      "relay_switch"
+     ]
+    }
+   ],
+   "literal": true,
+   "actions": {
+    "switch": {
+     "requires": {
+      "all": [
+       {
+        "solved": "A felvételek"
+       },
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "relay",
+        "is": "off"
+       }
+      ]
+     },
+     "otherwise": "Nem tudjátok, mit kapcsol ez a kapcsoló. Előbb értsétek meg, mire való.",
+     "setVar": {
+      "relay": "on",
+      "lockdown": "off"
+     },
+     "say": "Felkapcsoljátok. A pult hangszórója recseg, aztán tiszta női hang: „Hajnal bázis, itt a Dél-7 állomás! Végre! Napok óta nem hallunk titeket.” Elmondjátok, mit láttok a hangár kamerájában. Rövid csend. „Látjuk a képet. Vészhelyzeti protokoll: a hangár zárolását feloldjuk, az önök felelősségére. Nyomásolják vissza, és hozzák ki.”",
+     "images": [
+      "relay_switch"
+     ]
+    },
+    "flip": {
+     "requires": {
+      "all": [
+       {
+        "solved": "A felvételek"
+       },
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "relay",
+        "is": "off"
+       }
+      ]
+     },
+     "otherwise": "Nem tudjátok, mit kapcsol ez a kapcsoló. Előbb értsétek meg, mire való.",
+     "setVar": {
+      "relay": "on",
+      "lockdown": "off"
+     },
+     "say": "Felkapcsoljátok. A pult hangszórója recseg, aztán tiszta női hang: „Hajnal bázis, itt a Dél-7 állomás! Végre! Napok óta nem hallunk titeket.” Elmondjátok, mit láttok a hangár kamerájában. Rövid csend. „Látjuk a képet. Vészhelyzeti protokoll: a hangár zárolását feloldjuk, az önök felelősségére. Nyomásolják vissza, és hozzák ki.”",
+     "images": [
+      "relay_switch"
+     ]
+    },
+    "use": {
+     "requires": {
+      "all": [
+       {
+        "solved": "A felvételek"
+       },
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "relay",
+        "is": "off"
+       }
+      ]
+     },
+     "otherwise": "Nem tudjátok, mit kapcsol ez a kapcsoló. Előbb értsétek meg, mire való.",
+     "setVar": {
+      "relay": "on",
+      "lockdown": "off"
+     },
+     "say": "Felkapcsoljátok. A pult hangszórója recseg, aztán tiszta női hang: „Hajnal bázis, itt a Dél-7 állomás! Végre! Napok óta nem hallunk titeket.” Elmondjátok, mit láttok a hangár kamerájában. Rövid csend. „Látjuk a képet. Vészhelyzeti protokoll: a hangár zárolását feloldjuk, az önök felelősségére. Nyomásolják vissza, és hozzák ki.”",
+     "images": [
+      "relay_switch"
+     ]
+    },
+    "press": {
+     "requires": {
+      "all": [
+       {
+        "solved": "A felvételek"
+       },
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "relay",
+        "is": "off"
+       }
+      ]
+     },
+     "otherwise": "Nem tudjátok, mit kapcsol ez a kapcsoló. Előbb értsétek meg, mire való.",
+     "setVar": {
+      "relay": "on",
+      "lockdown": "off"
+     },
+     "say": "Felkapcsoljátok. A pult hangszórója recseg, aztán tiszta női hang: „Hajnal bázis, itt a Dél-7 állomás! Végre! Napok óta nem hallunk titeket.” Elmondjátok, mit láttok a hangár kamerájában. Rövid csend. „Látjuk a képet. Vészhelyzeti protokoll: a hangár zárolását feloldjuk, az önök felelősségére. Nyomásolják vissza, és hozzák ki.”",
+     "images": [
+      "relay_switch"
+     ]
+    },
+    "open": {
+     "requires": {
+      "all": [
+       {
+        "solved": "A felvételek"
+       },
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "relay",
+        "is": "off"
+       }
+      ]
+     },
+     "otherwise": "Nem tudjátok, mit kapcsol ez a kapcsoló. Előbb értsétek meg, mire való.",
+     "setVar": {
+      "relay": "on",
+      "lockdown": "off"
+     },
+     "say": "Felkapcsoljátok. A pult hangszórója recseg, aztán tiszta női hang: „Hajnal bázis, itt a Dél-7 állomás! Végre! Napok óta nem hallunk titeket.” Elmondjátok, mit láttok a hangár kamerájában. Rövid csend. „Látjuk a képet. Vészhelyzeti protokoll: a hangár zárolását feloldjuk, az önök felelősségére. Nyomásolják vissza, és hozzák ki.”",
+     "images": [
+      "relay_switch"
+     ]
+    }
+   }
+  },
+  {
+   "id": "cameras",
+   "name": "kameramonitorok",
+   "location": "control",
+   "aliases": [
+    "kamera",
+    "kamerák",
+    "monitor",
+    "monitorok",
+    "hangár kamerája"
+   ],
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A kameramonitorok élnek. Az egyiken a kráterperem a Vakonddal. A másikon a hangár: sötét, deres, a roveren belül, a kabinban halvány lámpa ég, az ablak bepárásodott. Valaki lehet ott."
+    },
+    {
+     "text": "A kameramonitorok sötétek: tartalékon nem kapnak áramot."
+    }
+   ],
+   "when": [
+    {
+     "if": {
+      "all": [
+       {
+        "var": "power",
+        "is": "full"
+       },
+       {
+        "var": "vakond",
+        "is": "on"
+       }
+      ]
+     },
+     "images": [
+      "cam_vakond_lit",
+      "cam_hangar"
+     ]
+    },
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "images": [
+      "cam_vakond",
+      "cam_hangar"
+     ]
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "vakond_control",
+   "name": "a bányagép távvezérlése",
+   "location": "control",
+   "text": [
+    {
+     "if": {
+      "var": "vakond",
+      "is": "on"
+     },
+     "text": "A Vakond távvezérlése: a fényei égnek, a hibaüzenet: „Fúrófej: nincs rakomány.”"
+    },
+    {
+     "text": "A Vakond, a bányagép távvezérlése: egy újraindítás gomb, és a gép állapota: „Áll.”"
+    }
+   ],
+   "aliases": [
+    "vakond",
+    "bányagép",
+    "újraindítás",
+    "gomb",
+    "távvezérlés"
+   ],
+   "literal": true,
+   "actions": {
+    "restart": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "Tartalékon a távvezérlés nem működik.",
+     "setVar": {
+      "vakond": "on"
+     },
+     "say": "Megnyomjátok az újraindítást. A kamerán a Vakond fényei felgyulladnak a kráter peremén, a gép zümmög, aztán megáll. Hibaüzenet: „Fúrófej: nincs rakomány.” Ennyi.",
+     "images": [
+      "cam_vakond_lit"
+     ]
+    },
+    "press": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "Tartalékon a távvezérlés nem működik.",
+     "setVar": {
+      "vakond": "on"
+     },
+     "say": "Megnyomjátok az újraindítást. A kamerán a Vakond fényei felgyulladnak a kráter peremén, a gép zümmög, aztán megáll. Hibaüzenet: „Fúrófej: nincs rakomány.” Ennyi.",
+     "images": [
+      "cam_vakond_lit"
+     ]
+    },
+    "use": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "Tartalékon a távvezérlés nem működik.",
+     "setVar": {
+      "vakond": "on"
+     },
+     "say": "Megnyomjátok az újraindítást. A kamerán a Vakond fényei felgyulladnak a kráter peremén, a gép zümmög, aztán megáll. Hibaüzenet: „Fúrófej: nincs rakomány.” Ennyi.",
+     "images": [
+      "cam_vakond_lit"
+     ]
+    },
+    "start": {
+     "requires": {
+      "var": "power",
+      "is": "full"
+     },
+     "otherwise": "Tartalékon a távvezérlés nem működik.",
+     "setVar": {
+      "vakond": "on"
+     },
+     "say": "Megnyomjátok az újraindítást. A kamerán a Vakond fényei felgyulladnak a kráter peremén, a gép zümmög, aztán megáll. Hibaüzenet: „Fúrófej: nincs rakomány.” Ennyi.",
+     "images": [
+      "cam_vakond_lit"
+     ]
+    }
+   }
+  },
+  {
+   "id": "hangar_console",
+   "name": "a hangár vezérlése",
+   "location": "control",
+   "text": [
+    {
+     "if": {
+      "solved": "A hangár nyomásolása"
+     },
+     "text": "A hangár vezérlése: nyomás 101 kPa, a válaszfal nyitva."
+    },
+    {
+     "if": {
+      "var": "lockdown",
+      "is": "off"
+     },
+     "text": "A hangár vezérlése: a zárolás feloldva. A szivattyú és a kiegyenlítő szelep kezelhető; a válaszfalat a raktárból kell kezelni."
+    },
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A hangár vezérlése: „Karbantartási zárolás – Lunaris központ.” Semmi nem kezelhető."
+    },
+    {
+     "text": "A hangár vezérlése sötét, tartalékon nem működik."
+    }
+   ],
+   "aliases": [
+    "hangár",
+    "szivattyú",
+    "hangár vezérlése",
+    "zárolás"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "airlock",
+    "label": "A hangár nyomásolása"
+   }
+  },
+  {
+   "id": "log_terminal",
+   "name": "naplóterminál",
+   "location": "control",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A naplóterminál: a Vakond szállításai. Ugyanez a laborban is olvasható."
+    },
+    {
+     "text": "A naplóterminál: „Nincs elég energia.”"
+    }
+   ],
+   "aliases": [
+    "terminál",
+    "napló",
+    "rakománynapló"
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "images": [
+      "cargo_log"
+     ]
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "control_chairs",
+   "name": "székek",
+   "location": "control",
+   "text": "Két forgószék az ívelt asztal előtt.",
+   "aliases": [
+    "szék",
+    "forgószék",
+    "asztal"
+   ]
+  },
+  {
+   "id": "kitchen_table",
+   "name": "konyhaasztal",
+   "location": "hab",
+   "text": "A kis asztalon egy tányér félig megevett, kihűlt tészta és egy bögre tea. Mintha Ilona csak felállt volna.",
+   "aliases": [
+    "asztal",
+    "tányér",
+    "tészta",
+    "bögre",
+    "tea",
+    "vacsora",
+    "konyhasarok",
+    "konyha"
+   ],
+   "literal": true
+  },
+  {
+   "id": "kitchen_drawer",
+   "name": "konyhai fiók",
+   "location": "hab",
+   "text": "A fiókban evőeszközök, egy olló, egy ceruza.",
+   "aliases": [
+    "fiók",
+    "evőeszköz",
+    "ceruza",
+    "olló"
+   ]
+  },
+  {
+   "id": "bunk",
+   "name": "Ilona hálófülkéje",
+   "location": "hab",
+   "text": "Ilona hálófülkéje: a polcon egy fotókártya, az ágy lábánál a pokrócon egy nyitott papírfüzet ceruzával, a párnán egy táblagép. Egy plüssnyuszi és egy kötött sál a sarokban.",
+   "images": [
+    "bunk"
+   ],
+   "aliases": [
+    "hálófülke",
+    "ágy",
+    "fülke",
+    "polc",
+    "pokróc",
+    "párna",
+    "nyuszi",
+    "sál",
+    "függöny"
+   ],
+   "literal": true
+  },
+  {
+   "id": "photo",
+   "name": "fotókártya",
+   "location": "bunk",
+   "rel": "on",
+   "aliases": [
+    "fénykép",
+    "fotó",
+    "kép",
+    "torta",
+    "kártya",
+    "e-papír"
+   ],
+   "text": "Egy e-papír fotókártya: papírnak látszik, de digitális. Születésnapi torta, rajta két kis égő gyertya: 1 és 2.",
+   "images": [
+    "photo"
+   ],
+   "literal": true,
+   "actions": {
+    "touch": {
+     "say": "Megérintitek, és a kártya megfordul a kezetekben: a hátoldalán egy sor jelenik meg.",
+     "images": [
+      "photo_back"
+     ]
+    },
+    "turn": {
+     "say": "Megérintitek, és a kártya megfordul a kezetekben: a hátoldalán egy sor jelenik meg.",
+     "images": [
+      "photo_back"
+     ]
+    },
+    "flip": {
+     "say": "Megérintitek, és a kártya megfordul a kezetekben: a hátoldalán egy sor jelenik meg.",
+     "images": [
+      "photo_back"
+     ]
+    },
+    "press": {
+     "say": "Megérintitek, és a kártya megfordul a kezetekben: a hátoldalán egy sor jelenik meg.",
+     "images": [
+      "photo_back"
+     ]
+    }
+   }
+  },
+  {
+   "id": "tablet",
+   "name": "táblagép",
+   "location": "bunk",
+   "rel": "on",
+   "aliases": [
+    "tablet",
+    "tábla",
+    "zárképernyő",
+    "képernyő"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "Ilona táblagépe"
+     },
+     "text": "Ilona táblagépe, feloldva."
+    },
+    {
+     "text": "Ilona táblagépe a párnán. A zárképernyőn ugyanaz a tortás kép, mint a polcon, és egy négyjegyű kód mezője."
+    }
+   ],
+   "images": [
+    "tablet"
+   ],
+   "when": [
+    {
+     "if": {
+      "solved": "Ilona táblagépe"
+     },
+     "images": [
+      "tablet_screen"
+     ]
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "code_lock",
+    "label": "A táblagép kódja"
+   }
+  },
+  {
+   "id": "notebook",
+   "name": "papírfüzet",
+   "location": "bunk",
+   "rel": "on",
+   "aliases": [
+    "füzet",
+    "jegyzetfüzet",
+    "lap",
+    "barázdák",
+    "kitépett lap",
+    "csonk"
+   ],
+   "props": {
+    "rubbed": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "notebook.rubbed",
+      "eq": true
+     },
+     "text": "A füzet satírozott lapján fehéren előjöttek az átnyomódott sorok."
+    },
+    {
+     "text": "Egy papírfüzet, régimódi, Ilona saját emléke. Az utolsó teleírt lapját kitépték, csak egy rongyos csonk maradt a gerincnél. A következő lap üres, de ferde fényben finom barázdák látszanak rajta, mintha az előző lapon erősen írtak volna. Mellette egy ceruza."
+    }
+   ],
+   "images": [
+    "notebook_bed"
+   ],
+   "when": [
+    {
+     "if": {
+      "is": "notebook.rubbed",
+      "eq": true
+     },
+     "images": [
+      "notebook_rubbed"
+     ]
+    }
+   ],
+   "literal": true,
+   "actions": {
+    "rub": {
+     "set": {
+      "notebook.rubbed": true
+     },
+     "say": "A ceruzát laposan tartva átsatírozzátok a lapot. A szürke grafitban fehéren előjönnek az átnyomódott sorok.",
+     "images": [
+      "notebook_rubbed"
+     ]
+    },
+    "shade": {
+     "set": {
+      "notebook.rubbed": true
+     },
+     "say": "A ceruzát laposan tartva átsatírozzátok a lapot. A szürke grafitban fehéren előjönnek az átnyomódott sorok.",
+     "images": [
+      "notebook_rubbed"
+     ]
+    },
+    "use": {
+     "set": {
+      "notebook.rubbed": true
+     },
+     "say": "A ceruzát laposan tartva átsatírozzátok a lapot. A szürke grafitban fehéren előjönnek az átnyomódott sorok.",
+     "images": [
+      "notebook_rubbed"
+     ]
+    },
+    "draw": {
+     "set": {
+      "notebook.rubbed": true
+     },
+     "say": "A ceruzát laposan tartva átsatírozzátok a lapot. A szürke grafitban fehéren előjönnek az átnyomódott sorok.",
+     "images": [
+      "notebook_rubbed"
+     ]
+    }
+   }
+  },
+  {
+   "id": "salad",
+   "name": "salátatartó",
+   "location": "hab",
+   "text": "Hidropónikus tálca zöld salátával egy kis lámpa alatt. A cserepen Ilona neve.",
+   "aliases": [
+    "saláta",
+    "tálca",
+    "növény"
+   ]
+  },
+  {
+   "id": "guitar",
+   "name": "gitár",
+   "location": "hab",
+   "text": "Akusztikus gitár a falon, egy húrja hiányzik.",
+   "aliases": [
+    "hangszer"
+   ],
+   "actions": {
+    "play": {
+     "say": "Megpendítitek. A hiányzó húr helyén csend, a többi hamisan zeng a csendes modulban."
+    }
+   }
+  },
+  {
+   "id": "treadmill",
+   "name": "futópad",
+   "location": "hab",
+   "text": "Kompakt futópad hevederekkel, a gyenge gravitációhoz.",
+   "aliases": [
+    "pad",
+    "heveder"
+   ]
+  },
+  {
+   "id": "other_bunks",
+   "name": "a többi hálófülke",
+   "location": "hab",
+   "text": "Két másik hálófülke, behúzott függönnyel, üresen. A nappalos műszak hetek óta lent van a Földön.",
+   "aliases": [
+    "fülkék",
+    "többi fülke"
+   ],
+   "literal": true
+  },
+  {
+   "id": "valves",
+   "name": "szeleptábla",
+   "location": "utility",
+   "text": "Az életfenntartás szeleptáblája: négy színes cső, HAB (zöld), EVA (kék), LAB (sárga), BUF (narancs), mindegyiken egy forgatható szelep. A mérők nem itt, hanem a vezérlőben vannak.",
+   "images": [
+    "valves"
+   ],
+   "aliases": [
+    "szelep",
+    "szelepek",
+    "cső",
+    "csövek",
+    "hab",
+    "eva",
+    "lab",
+    "buf"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "gauge_board_life",
+    "label": "Az életfenntartás szelepei"
+   }
+  },
+  {
+   "id": "tanks",
+   "name": "oxigéntartályok",
+   "location": "utility",
+   "text": "Két karcsú fehér oxigéntartály és egy nagyobb puffertartály, a narancs csőre kötve.",
+   "aliases": [
+    "tartály",
+    "tartályok",
+    "puffertartály",
+    "puffer"
+   ]
+  },
+  {
+   "id": "scrubbers",
+   "name": "levegőtisztítók",
+   "location": "utility",
+   "text": "Levegőtisztítók és a víz-újrahasznosító, halkan zúgnak.",
+   "aliases": [
+    "levegőtisztító",
+    "víz",
+    "zúgás"
+   ]
+  },
+  {
+   "id": "freezer",
+   "name": "mintafagyasztó",
+   "location": "lab",
+   "text": "A kihúzott fagyasztófiókban sorban a jégmintacsövek, lyukanként címkézve: K-3, K-5, K-7, K-9.",
+   "images": [
+    "core_freezer"
+   ],
+   "aliases": [
+    "fagyasztó",
+    "minták",
+    "furatminták",
+    "csövek",
+    "jégminták"
+   ],
+   "literal": true
+  },
+  {
+   "id": "spectrometer",
+   "name": "spektrométer",
+   "location": "lab",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A spektrométer a minták jégtartalmát mutatja, lyukanként."
+    },
+    {
+     "text": "A spektrométer kijelzője sötét."
+    }
+   ],
+   "images": [
+    "spectrometer"
+   ],
+   "aliases": [
+    "mérő",
+    "jégtartalom"
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "images": [
+      "core_readings"
+     ]
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "drill_map",
+   "name": "fúrási térkép",
+   "location": "lab",
+   "text": "A falon a kráter domborzati térképe, rajta a fúrólyukak: K-3, K-5, K-7, K-9.",
+   "images": [
+    "drill_map"
+   ],
+   "aliases": [
+    "térkép",
+    "fúrólyukak",
+    "lyukak"
+   ],
+   "literal": true
+  },
+  {
+   "id": "lab_terminal",
+   "name": "labor terminál",
+   "location": "lab",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A labor terminálja: a Vakond utolsó szállításai, lyukanként."
+    },
+    {
+     "text": "A labor terminálja tartalékon nem indul."
+    }
+   ],
+   "aliases": [
+    "terminál",
+    "napló",
+    "szállítások"
+   ],
+   "when": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "images": [
+      "cargo_log"
+     ]
+    }
+   ],
+   "literal": true
+  },
+  {
+   "id": "lab_door",
+   "name": "tolóajtó",
+   "location": "lab",
+   "text": "A labor motoros tolóajtaja.",
+   "aliases": [
+    "ajtó"
+   ]
+  },
+  {
+   "id": "bulkhead",
+   "name": "a hangár válaszfala",
+   "location": "storage",
+   "aliases": [
+    "válaszfal",
+    "ajtó",
+    "hangár",
+    "ablak",
+    "tenyérnyom",
+    "kerek ajtó",
+    "nyomásálló ajtó"
+   ],
+   "text": [
+    {
+     "if": {
+      "solved": "A hangár nyomásolása"
+     },
+     "text": "A válaszfal nyitva, a hangárból hideg pára árad."
+    },
+    {
+     "text": "Nehéz, kerek nyomásálló ajtó, fölötte piros fény és a „HANGAR” felirat: „Túloldal: vákuum.” A kis kerek ablak bepárásodott, jeges. A jégen, belülről, egy tenyérnyom, mintha valaki letörölte volna."
+    }
+   ],
+   "images": [
+    "bulkhead_hand"
+   ],
+   "when": [
+    {
+     "if": {
+      "solved": "A hangár nyomásolása"
+     },
+     "images": [
+      "bulkhead_open"
+     ]
+    }
+   ],
+   "literal": true,
+   "panel": {
+    "id": "airlock",
+    "label": "A válaszfal"
+   },
+   "actions": {
+    "knock": {
+     "say": "Kopogtok. Vákuumban nem terjed a hang: csak a saját kopogásotokat halljátok."
+    },
+    "force": {
+     "forbidden": "Túloldalt vákuum van. Ez az ajtó nem nyílik erővel, és jó, hogy nem."
+    }
+   }
+  },
+  {
+   "id": "parts_box",
+   "name": "alkatrészdoboz",
+   "location": "storage",
+   "aliases": [
+    "doboz",
+    "munkapad",
+    "pad"
+   ],
+   "text": [
+    {
+     "if": {
+      "where": "i_power_module",
+      "at": "parts_box"
+     },
+     "text": "A munkapadon egy nyitott alkatrészdoboz, benne egy tartalék tápmodul."
+    },
+    {
+     "text": "A munkapadon az üres alkatrészdoboz."
+    }
+   ],
+   "images": [
+    "fuse"
+   ]
+  },
+  {
+   "id": "toolboard",
+   "name": "szerszámtábla",
+   "location": "storage",
+   "aliases": [
+    "tábla",
+    "tartó",
+    "tartók"
+   ],
+   "text": "Fehér szerszámtábla a falon, két jelölt tartóval{contents:: }.",
+   "images": [
+    "toolboard"
+   ]
+  },
+  {
+   "id": "shelves",
+   "name": "polcok",
+   "location": "storage",
+   "text": "Magas polcok alkatrészdobozokkal és fehér rakományládákkal. Csupa rutin: szűrők, tömítések, kábelek.",
+   "aliases": [
+    "polc",
+    "ládák",
+    "rakományládák",
+    "alkatrészek"
+   ]
+  },
+  {
+   "id": "rover",
+   "name": "a rover",
+   "location": "hangar",
+   "text": "A Teve, a nagy hatkerekű rover. A kabin ajtaja nyitva, bent a takaró és a sisak.",
+   "images": [
+    "rover"
+   ],
+   "aliases": [
+    "teve",
+    "kabin",
+    "rover kabinja"
+   ]
+  },
+  {
+   "id": "hangar_racks",
+   "name": "szerszámállványok",
+   "location": "hangar",
+   "text": "Szerszámállványok, egy töltőkábel a mennyezetről, egy üres beálló.",
+   "aliases": [
+    "állvány",
+    "töltőkábel",
+    "beálló"
+   ]
+  },
+  {
+   "id": "solar_units",
+   "name": "napelemegységek",
+   "location": "solar",
+   "text": [
+    {
+     "if": {
+      "var": "power",
+      "is": "full"
+     },
+     "text": "A három napelemegység most a Nap felé fordul. A legközelebbi az 1-es, a középső a 2-es, a legtávolabbi a 3-as."
+    },
+    {
+     "text": "Három egyforma napelemegység egy vonalban: a legközelebbi az 1-es, a középső a 2-es, a legtávolabbi a 3-as. Mind rossz irányba néz, a Nap majdnem a hátuk mögül süt. Az árnyékuk hosszú. Ha jól állnak, a saját árnyékuk a legrövidebb."
+    }
+   ],
+   "aliases": [
+    "napelem",
+    "napelemek",
+    "táblák",
+    "egységek",
+    "forgatás",
+    "árnyék"
+   ],
+   "literal": true,
+   "panel": {
+    "id": "gauge_board_solar",
+    "label": "A napelemek forgatása"
+   }
+  },
+  {
+   "id": "cabinet",
+   "name": "kábelszekrény",
+   "location": "solar",
+   "aliases": [
+    "szekrény",
+    "tápmodul",
+    "modulok",
+    "sorok"
+   ],
+   "props": {
+    "fixed": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "cabinet.fixed",
+      "eq": true
+     },
+     "text": "A kábelszekrény: a 3. sorban az új tápmodul zölden világít."
+    },
+    {
+     "text": "A kábelszekrény ajtaja nyitva: három sor tápmodul, 1, 2, 3. A 3. sorban az egyik kormos, kiégett, a jelzőfénye nem ég."
+    }
+   ],
+   "images": [
+    "cable_cabinet"
+   ],
+   "when": [
+    {
+     "if": {
+      "is": "cabinet.fixed",
+      "eq": true
+     },
+     "images": [
+      "cable_cabinet_fixed"
+     ]
+    }
+   ],
+   "literal": true,
+   "actions": {
+    "use:i_power_module": {
+     "requires": {
+      "is": "cabinet.fixed",
+      "eq": false
+     },
+     "otherwise": "Már kicseréltétek.",
+     "set": {
+      "cabinet.fixed": true
+     },
+     "remove": [
+      "i_power_module"
+     ],
+     "say": "Kihúzzátok a kiégett modult, és a helyére toljátok a tartalékot. A jelzőfénye zölden felgyullad.",
+     "images": [
+      "cable_cabinet_fixed"
+     ]
+    },
+    "repair": {
+     "requires": {
+      "has": "i_power_module"
+     },
+     "otherwise": "A kiégett tápmodult ki kellene cserélni. Tartalék a raktárban van.",
+     "set": {
+      "cabinet.fixed": true
+     },
+     "remove": [
+      "i_power_module"
+     ],
+     "say": "Kihúzzátok a kiégett modult, és a helyére toljátok a tartalékot. A jelzőfénye zölden felgyullad.",
+     "images": [
+      "cable_cabinet_fixed"
+     ]
+    }
+   }
+  },
+  {
+   "id": "cable_channel",
+   "name": "kábelcsatorna",
+   "location": "solar",
+   "text": "Fedett kábelcsatorna fut a napelemektől a kábelszekrényig.",
+   "aliases": [
+    "csatorna",
+    "kábel",
+    "kábelek"
+   ]
+  },
+  {
+   "id": "hangar_door",
+   "name": "a hangár kapuja",
+   "location": "hangar_out",
+   "aliases": [
+    "kapu",
+    "hangárkapu",
+    "rés",
+    "sín",
+    "por",
+    "aljzat"
+   ],
+   "props": {
+    "clean": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    },
+    "closed": {
+     "initial": false,
+     "values": [
+      false,
+      true
+     ]
+    }
+   },
+   "text": [
+    {
+     "if": {
+      "is": "hangar_door.closed",
+      "eq": true
+     },
+     "text": "A hangár kapuja szorosan zárva."
+    },
+    {
+     "if": {
+      "is": "hangar_door.clean",
+      "eq": true
+     },
+     "text": "A kapu sínje tiszta. A két szárny még egy arasznyira nyitva; a kapu motorja áram nélkül áll, de mellette ott a vészhelyzeti aljzat."
+    },
+    {
+     "text": "A hangár széles kapuja: a két szárny között egy arasznyi rés, a sínben vastagon áll a por, attól nem zárt be. Mellette egy fedett aljzat egy vészhelyzeti kapumozgatónak. A résen át bent, a sötétben, mintha egy halvány lámpa égne a rover kabinjában."
+    }
+   ],
+   "images": [
+    "hangar_out"
+   ],
+   "when": [
+    {
+     "if": {
+      "is": "hangar_door.closed",
+      "eq": true
+     },
+     "images": [
+      "hangar_out_closed"
+     ]
+    }
+   ],
+   "literal": true,
+   "actions": {
+    "use:i_dust_wand": {
+     "requires": {
+      "is": "hangar_door.clean",
+      "eq": false
+     },
+     "otherwise": "A sín már tiszta.",
+     "set": {
+      "hangar_door.clean": true
+     },
+     "say": "Végighúzzátok a porpálcát a sínen. A por elektromosan rátapad, a sín kitisztul."
+    },
+    "clean": {
+     "requires": {
+      "has": "i_dust_wand"
+     },
+     "otherwise": "Kézzel nem megy, a por rátapad mindenre. Valami eszköz kellene, a raktárban láttatok.",
+     "set": {
+      "hangar_door.clean": true
+     },
+     "say": "Végighúzzátok a porpálcát a sínen. A por elektromosan rátapad, a sín kitisztul."
+    },
+    "use:i_door_drive": {
+     "requires": {
+      "all": [
+       {
+        "is": "hangar_door.clean",
+        "eq": true
+       },
+       {
+        "is": "hangar_door.closed",
+        "eq": false
+       }
+      ]
+     },
+     "otherwise": "A kapumozgató nekifeszül, de a sínben álló por megakasztja a szárnyakat. Előbb a sínt kellene megtisztítani.",
+     "set": {
+      "hangar_door.closed": true
+     },
+     "say": "Bedugjátok a kapumozgatót az aljzatba. Zümmög, és a két szárny lassan, egyenletesen összecsúszik. Zárva.",
+     "images": [
+      "hangar_out_closed"
+     ],
+     "notify": {
+      "at": "control",
+      "text": "A hangár vezérlésén egy jelzés zöldre vált: „Külső kapu zárva.”"
+     }
+    },
+    "close": {
+     "requires": {
+      "all": [
+       {
+        "has": "i_door_drive"
+       },
+       {
+        "is": "hangar_door.clean",
+        "eq": true
+       }
+      ]
+     },
+     "otherwise": "Kézzel nem mozdul, a motor áram nélkül áll, és a sín is poros. Kell a vészhelyzeti kapumozgató, és tiszta sín.",
+     "set": {
+      "hangar_door.closed": true
+     },
+     "say": "Bedugjátok a kapumozgatót az aljzatba. Zümmög, és a két szárny lassan összecsúszik. Zárva.",
+     "images": [
+      "hangar_out_closed"
+     ],
+     "notify": {
+      "at": "control",
+      "text": "A hangár vezérlésén egy jelzés zöldre vált: „Külső kapu zárva.”"
+     }
+    }
+   }
+  },
+  {
+   "id": "rim_vakond",
+   "name": "a Vakond",
+   "location": "rim",
+   "text": [
+    {
+     "if": {
+      "var": "vakond",
+      "is": "on"
+     },
+     "text": "A Vakond közelről: a fényei égnek, a kráter lejtőjére világítanak. A gép áll."
+    },
+    {
+     "text": "A Vakond közelről: hatalmas, poros lánctalpak, a fúrókar összehajtva. Áll."
+    }
+   ],
+   "aliases": [
+    "vakond",
+    "bányagép",
+    "fúrókar"
+   ],
+   "literal": true
+  },
+  {
+   "id": "crater",
+   "name": "a kráter",
+   "location": "rim",
+   "text": "A Shackleton-kráter belseje koromsötét: oda sosem süt be a Nap. Egy jelzőkarón a felirat: K-7.",
+   "aliases": [
+    "kráter",
+    "jelzőkaró",
+    "karó",
+    "k-7",
+    "mélység"
+   ]
+  },
+  {
+   "id": "view_back",
+   "name": "visszanézve",
+   "location": "rim",
+   "text": "Visszanézve a bázis kicsinek látszik a por szürkéjében, fölötte a Föld.",
+   "aliases": [
+    "bázis",
+    "kilátás",
+    "föld"
+   ]
+  },
+  {
+   "id": "i_power_module",
+   "name": "tartalék tápmodul",
+   "location": "parts_box",
+   "rel": "in",
+   "aliases": [
+    "tápmodul",
+    "modul",
+    "tartalék"
+   ],
+   "mention": "egy tartalék tápmodul",
+   "text": "Egy kis zárt, fehér tápmodul, jelzőfénnyel: tartalék a kültéri kábelszekrénybe.",
+   "images": [
+    "i_power_module"
+   ],
+   "carry": {
+    "name": "Tápmodul"
+   }
+  },
+  {
+   "id": "i_dust_wand",
+   "name": "porpálca",
+   "location": "toolboard",
+   "rel": "on",
+   "aliases": [
+    "pálca",
+    "elektrosztatikus pálca",
+    "kefe"
+   ],
+   "mention": "egy porpálca",
+   "text": "Elektrosztatikus porpálca: a végén a szürke tisztítófej magához vonzza a holdport.",
+   "images": [
+    "i_dust_wand"
+   ],
+   "carry": {
+    "name": "Porpálca"
+   }
+  },
+  {
+   "id": "i_door_drive",
+   "name": "kapumozgató",
+   "location": "toolboard",
+   "rel": "on",
+   "aliases": [
+    "vészhelyzeti kapumozgató",
+    "szerszám",
+    "csavarozó",
+    "kurbli"
+   ],
+   "mention": "egy akkus kapumozgató",
+   "text": "Akkus vészhelyzeti kapumozgató, hatszögletű fejjel: áram nélkül is mozgatja a kapukat.",
+   "images": [
+    "i_door_drive"
+   ],
+   "carry": {
+    "name": "Kapumozgató"
+   }
+  },
+  {
+   "id": "i_k7",
+   "name": "K-7 mintatartó",
+   "location": "rover",
+   "rel": "in",
+   "aliases": [
+    "mintatartó",
+    "minta",
+    "k-7",
+    "tartó"
+   ],
+   "mention": "Ilona K-7 mintatartója",
+   "text": "Fehér mintatartó, a címkén: K-7. Ilona hozta fel a kráterből a saját kezével. Száraz por van benne, egy szem jég sincs.",
+   "images": [
+    "i_k7"
+   ],
+   "carry": {
+    "name": "K-7 minta"
+   }
+  }
+ ],
+ "rules": [
+  {
+   "on": "solved:Életfenntartás",
+   "do": {
+    "say": "A szkafandertöltő jelzőfénye zöldre vált: a puffertartály segítségével a zsilip is kap oxigént, és a lakómodul nyomása is rendben. A szkafanderek tele vannak, és tele is maradnak.",
+    "notify": {
+     "at": "airlock",
+     "text": "A szkafanderállvány töltőcsatlakozóinak jelzőfénye zöldre vált."
+    }
+   }
+  },
+  {
+   "on": "solved:A napelemek",
+   "do": {
+    "setVar": {
+     "power": "full",
+     "power_hab": "on",
+     "power_lab": "on",
+     "power_radio": "on",
+     "power_utility": "on",
+     "power_storage": "on"
+    },
+    "images": [
+     "power_panel_full"
+    ],
+    "say": "A három sáv zöldre vált az energiatáblán. A bázis teljes áramot kap: a modulokban felgyulladnak a lámpák, a monitorok életre kelnek, a motoros ajtók kinyílnak.",
+    "notify": {
+     "at": "solar",
+     "text": "A napelemegységek mind a Nap felé fordulnak, és a sisakrádióban a társad hangja: „Megvan! Zöld mind a három!” Visszafelé a bázis ablakai most fényesen világítanak.",
+     "images": [
+      "solar_turned"
+     ]
+    }
+   }
+  },
+  {
+   "on": "solved:Ilona táblagépe",
+   "do": {
+    "say": "A táblagép feloldódik. Ilona üzenetei:",
+    "images": [
+     "tablet_screen"
+    ]
+   }
+  },
+  {
+   "on": "solved:A hangár nyomásolása",
+   "do": {
+    "setVar": {
+     "crew_id": "on"
+    }
+   }
+  },
+  {
+   "on": "solved:A felvételek",
+   "do": {
+    "say": "Most már érthető: Ilona kérdezett a K-7 súlyairól, Halmos hallgatást kért, Ilona a keringő állomással fenyegetőzött, és utána jött a „karbantartás”: a relét letiltották. Ilona utolsó felvétele szerint a továbbítás kapcsolója a rádiópult fedele alatt van."
+   }
+  }
+ ],
+ "onMessage": [
+  {
+   "match": "^\\(GAME: POWER hab (on|off)\\)$",
+   "setVar": {
+    "power_hab": "$1"
+   }
+  },
+  {
+   "match": "^\\(GAME: POWER lab (on|off)\\)$",
+   "setVar": {
+    "power_lab": "$1"
+   }
+  },
+  {
+   "match": "^\\(GAME: POWER radio (on|off)\\)$",
+   "setVar": {
+    "power_radio": "$1"
+   }
+  },
+  {
+   "match": "^\\(GAME: POWER utility (on|off)\\)$",
+   "setVar": {
+    "power_utility": "$1"
+   }
+  },
+  {
+   "match": "^\\(GAME: POWER storage (on|off)\\)$",
+   "setVar": {
+    "power_storage": "$1"
+   }
+  }
+ ],
+ "inventory": [],
+ "vars": {
+  "power": "reserve",
+  "power_hab": "on",
+  "power_lab": "on",
+  "power_radio": "on",
+  "power_utility": "off",
+  "power_storage": "off",
+  "crew_id": "off",
+  "lockdown": "on",
+  "relay": "off",
+  "vakond": "off"
+ },
+ "status": "Hely: {loc0} / {loc1}",
+ "panelTitles": {
+  "power_router": "Energiaelosztás",
+  "code_lock": "Ilona táblagépe",
+  "gauge_board_life": "Életfenntartás",
+  "gauge_board_solar": "A napelemek",
+  "sequence": "A felvételek",
+  "airlock": "A hangár nyomásolása",
+  "report_form": "Jelentés"
+ },
+ "panelIds": [
+  "power_router",
+  "code_lock",
+  "gauge_board_life",
+  "gauge_board_solar",
+  "sequence",
+  "airlock",
+  "report_form"
+ ],
+ "panelAvail": {
+  "power_router": {
+   "visited": "control"
+  },
+  "code_lock": {
+   "visited": "hab"
+  },
+  "gauge_board_life": {
+   "any": [
+    {
+     "visited": "utility"
+    },
+    {
+     "visited": "control"
+    }
+   ]
+  },
+  "gauge_board_solar": {
+   "is": "cabinet.fixed",
+   "eq": true
+  },
+  "sequence": {
+   "var": "power",
+   "is": "full"
+  },
+  "airlock": {
+   "var": "lockdown",
+   "is": "off"
+  },
+  "report_form": {
+   "var": "crew_id",
+   "is": "on"
+  }
+ },
+ "mustReach": [
+  {
+   "solved": "A hangár nyomásolása"
+  }
+ ],
+ "sensitiveWords": [
+  "kód",
+  "kulcs",
+  "rejtett",
+  "titkos",
+  "relé",
+  "kapcsoló",
+  "minta",
+  "k-7",
+  "jelszó",
+  "zárolás"
+ ],
+ "texts": {
+  "notHere": "Nincs ilyen itt.",
+  "noWay": "Arra nincs út.",
+  "usePanel": "Próbáljátok a szerkezeten:",
+  "clue": "Ezt nektek kell kideríteni."
+ }
+}

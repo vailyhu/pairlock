@@ -1,0 +1,490 @@
+{
+ "logic_grid": {
+  "type": "logic_grid",
+  "title": "Az ültetés",
+  "intro": "Ki hol ült 1923. november 2-án este? A vendégkönyv ültetési rajza számozza a székeket.",
+  "hints": [
+   "A csoportképen mindenki jól látszik; a nevekhez az újságcikk, a vendégkönyv, a főkönyv és a fogason hagyott kabát ad támpontot.",
+   "Gyászfátyol: az özvegy. Kalap: a színésznő. Bot: a tanár. Monokli: a bankár (főkönyv). Szemüveg: a kabát gazdája.",
+   "Az ültetési rajz szerint balról jobbra 1-től 6-ig: Ráczné, Bárczy, Szirmay, Halmos, Kardos, Berzeviczyné."
+  ],
+  "options": {
+   "rowLabel": "Vendég",
+   "rows": [
+    "özv. Rácz Gáborné",
+    "Bárczy Gedeon",
+    "Szirmay Lili",
+    "dr. Halmos Ödön",
+    "Kardos Pál",
+    "Berzeviczy Tivadarné"
+   ],
+   "columns": [
+    {
+     "label": "Szék",
+     "values": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ]
+    }
+   ],
+   "answer": {
+    "özv. Rácz Gáborné": [
+     "1"
+    ],
+    "Bárczy Gedeon": [
+     "2"
+    ],
+    "Szirmay Lili": [
+     "3"
+    ],
+    "dr. Halmos Ödön": [
+     "4"
+    ],
+    "Kardos Pál": [
+     "5"
+    ],
+    "Berzeviczy Tivadarné": [
+     "6"
+    ]
+   },
+   "checkLabel": "Ellenőrzés",
+   "okText": "Így ültek.",
+   "badText": "Nem így ültek.",
+   "countText": "{n} vendég helye stimmel.",
+   "emptyLabel": "–",
+   "sharedNote": "Mindketten ugyanazt a táblát töltitek."
+  }
+ },
+ "knocking": {
+  "type": "knocking",
+  "title": "A kopogás",
+  "keepAfterSolved": true,
+  "intro": "Kopogás a falban, lassan, csoportokban. Valaki a fal túloldalán? Mindketten mást hallotok.",
+  "hints": [
+   "Kardos notesze megmondja, hogyan kell olvasni a kopogást.",
+   "Két csoport egy betű: sor, aztán oszlop. Mondjátok be egymásnak, amit hallotok, előbb a szeánszterem, aztán a járat.",
+   "E, R, N, O: ERNŐ."
+  ],
+  "sides": {
+   "a": {
+    "at": "seance"
+   },
+   "b": {
+    "at": "passage"
+   }
+  },
+  "closed": {
+   "solved": "Az ékszerdoboz"
+  },
+  "closedText": "A fal csendes.",
+  "options": {
+   "sequences": {
+    "a": [
+     [
+      1,
+      5
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "b": [
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   },
+   "knockMs": 650,
+   "groupPauseMs": 1400,
+   "pairPauseMs": 3000,
+   "texts": {
+    "listen": "👂 Hallgatózom",
+    "heard": "Eddig hallottad:",
+    "silence": "Csend. Csak akkor kopog, ha egyikőtök a szeánszteremben, a másik a járatban áll.",
+    "again": "Elölről"
+   }
+  }
+ },
+ "code_lock_box": {
+  "type": "code_lock",
+  "title": "Az ékszerdoboz",
+  "intro": "Négy betűhenger Vera ékszerdobozán.",
+  "hints": [
+   "Négy betű, és valaki már bekopogta nektek.",
+   "Egy név a házból.",
+   "ERNŐ."
+  ],
+  "options": {
+   "kind": "letters",
+   "n": 4,
+   "button": "🔓 Próba",
+   "okText": "Kattan.",
+   "badText": "Nem nyílik.",
+   "answer": "ERNŐ"
+  }
+ },
+ "darkroom": {
+  "type": "darkroom",
+  "title": "Az utolsó lemez",
+  "intro": "A lemezkazetta a pulton. Ernő receptje a falon. Egy játékbeli perc itt két másodperc.",
+  "hints": [
+   "Ernő receptje a falon van.",
+   "Vörös fénynél, a recept sorrendjében és idejével.",
+   "Fehér lámpa ki, vörös be; hívó 5 perc, megszakító 1 perc, fixír 10 perc, aztán mosás."
+  ],
+  "options": {
+   "trays": [
+    {
+     "id": "dev",
+     "name": "Hívó"
+    },
+    {
+     "id": "stop",
+     "name": "Megszakító"
+    },
+    {
+     "id": "fix",
+     "name": "Fixír"
+    },
+    {
+     "id": "wash",
+     "name": "Mosás"
+    }
+   ],
+   "steps": [
+    {
+     "tray": "dev",
+     "minutes": 5,
+     "tolerance": 1
+    },
+    {
+     "tray": "stop",
+     "minutes": 1,
+     "tolerance": 0.5
+    },
+    {
+     "tray": "fix",
+     "minutes": 10,
+     "tolerance": 2
+    },
+    {
+     "tray": "wash",
+     "minutes": 5,
+     "tolerance": 5
+    }
+   ],
+   "light": "red",
+   "secondsPerMinute": 2,
+   "result": "images/plate_last.jpg",
+   "texts": {
+    "white": "Fehér lámpa",
+    "red": "Vörös lámpa",
+    "off": "Sötét",
+    "dip": "Bele",
+    "lift": "Ki",
+    "reset": "Új próba",
+    "minutes": "{m} perc",
+    "fogged": "A lemez elfátyolosodott. Szerencsére a kazettában volt egy tartalék is: újrakezded.",
+    "stepOk": "Rendben.",
+    "done": "A kép előtűnt.",
+    "wrongTray": "Nem ez jön a recept szerint.",
+    "whiteFog": "Fehér fényben a lemez megfeketedik.",
+    "tooShort": "Túl korán vetted ki.",
+    "tooLong": "Túl sokáig volt benne."
+   }
+  }
+ },
+ "planchette": {
+  "type": "planchette",
+  "title": "Az utolsó szeánsz",
+  "intro": "Ketten ültök az asztalnál, az ujjatok a mutatón. Az egyikőtök vízszintesen, a másik függőlegesen vezeti. Vera szabálya: mondjátok ki, hol van, akit kerestek, milyen néven, aztán köszönjetek el.",
+  "hints": [
+   "Vera szabálya a vendégkönyv első oldalán áll.",
+   "A város a bélyegzőn és a bőröndcímkén van, a név a képeslapon, kopogó ábécével.",
+   "BÉCS, WENDT, VISZLÁT (a táblán nincs ékezet)."
+  ],
+  "sides": {
+   "a": {
+    "axis": "x",
+    "label": "Vízszintesen vezetem"
+   },
+   "b": {
+    "axis": "y",
+    "label": "Függőlegesen vezetem"
+   }
+  },
+  "options": {
+   "board": "images/ouija.jpg",
+   "aspect": 1.4545454545454546,
+   "cells": [
+    {
+     "label": "A",
+     "x": 0.1182,
+     "y": 0.4517,
+     "r": 0.035
+    },
+    {
+     "label": "B",
+     "x": 0.1542,
+     "y": 0.3918,
+     "r": 0.035
+    },
+    {
+     "label": "C",
+     "x": 0.2045,
+     "y": 0.339,
+     "r": 0.035
+    },
+    {
+     "label": "D",
+     "x": 0.267,
+     "y": 0.2956,
+     "r": 0.035
+    },
+    {
+     "label": "E",
+     "x": 0.3391,
+     "y": 0.2631,
+     "r": 0.035
+    },
+    {
+     "label": "F",
+     "x": 0.4178,
+     "y": 0.2431,
+     "r": 0.035
+    },
+    {
+     "label": "G",
+     "x": 0.5,
+     "y": 0.2364,
+     "r": 0.035
+    },
+    {
+     "label": "H",
+     "x": 0.5822,
+     "y": 0.2431,
+     "r": 0.035
+    },
+    {
+     "label": "I",
+     "x": 0.6609,
+     "y": 0.2631,
+     "r": 0.035
+    },
+    {
+     "label": "J",
+     "x": 0.733,
+     "y": 0.2956,
+     "r": 0.035
+    },
+    {
+     "label": "K",
+     "x": 0.7955,
+     "y": 0.339,
+     "r": 0.035
+    },
+    {
+     "label": "L",
+     "x": 0.8458,
+     "y": 0.3918,
+     "r": 0.035
+    },
+    {
+     "label": "M",
+     "x": 0.8818,
+     "y": 0.4517,
+     "r": 0.035
+    },
+    {
+     "label": "N",
+     "x": 0.1946,
+     "y": 0.6007,
+     "r": 0.035
+    },
+    {
+     "label": "O",
+     "x": 0.2234,
+     "y": 0.5525,
+     "r": 0.035
+    },
+    {
+     "label": "P",
+     "x": 0.2636,
+     "y": 0.51,
+     "r": 0.035
+    },
+    {
+     "label": "Q",
+     "x": 0.3136,
+     "y": 0.475,
+     "r": 0.035
+    },
+    {
+     "label": "R",
+     "x": 0.3713,
+     "y": 0.4488,
+     "r": 0.035
+    },
+    {
+     "label": "S",
+     "x": 0.4343,
+     "y": 0.4327,
+     "r": 0.035
+    },
+    {
+     "label": "T",
+     "x": 0.5,
+     "y": 0.4273,
+     "r": 0.035
+    },
+    {
+     "label": "U",
+     "x": 0.5657,
+     "y": 0.4327,
+     "r": 0.035
+    },
+    {
+     "label": "V",
+     "x": 0.6287,
+     "y": 0.4488,
+     "r": 0.035
+    },
+    {
+     "label": "W",
+     "x": 0.6864,
+     "y": 0.475,
+     "r": 0.035
+    },
+    {
+     "label": "X",
+     "x": 0.7364,
+     "y": 0.51,
+     "r": 0.035
+    },
+    {
+     "label": "Y",
+     "x": 0.7766,
+     "y": 0.5525,
+     "r": 0.035
+    },
+    {
+     "label": "Z",
+     "x": 0.8054,
+     "y": 0.6007,
+     "r": 0.035
+    },
+    {
+     "label": "1",
+     "x": 0.225,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "2",
+     "x": 0.2863,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "3",
+     "x": 0.3475,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "4",
+     "x": 0.4088,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "5",
+     "x": 0.47,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "6",
+     "x": 0.5312,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "7",
+     "x": 0.5925,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "8",
+     "x": 0.6538,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "9",
+     "x": 0.715,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "0",
+     "x": 0.7762,
+     "y": 0.7727,
+     "r": 0.035
+    },
+    {
+     "label": "IGEN",
+     "x": 0.1187,
+     "y": 0.1091,
+     "r": 0.035
+    },
+    {
+     "label": "NEM",
+     "x": 0.8938,
+     "y": 0.1091,
+     "r": 0.035
+    },
+    {
+     "label": "VISZLÁT",
+     "x": 0.5,
+     "y": 0.9,
+     "r": 0.035
+    }
+   ],
+   "words": [
+    "BECS",
+    "WENDT",
+    "VISZLAT"
+   ],
+   "afterWords": "KOSZONOM",
+   "msPerLetter": 1400,
+   "wrongText": "A mutató megakad, a betűk elmosódnak. Kezdjétek újra a szót.",
+   "wordOkText": {
+    "BECS": "Bécs.",
+    "WENDT": "Wendt.",
+    "VISZLAT": "Viszlát."
+   },
+   "texts": {
+    "ready": "Kész",
+    "waiting": "A másik még nem nyomta meg.",
+    "written": "Eddig kiírtátok:",
+    "left": "◀",
+    "right": "▶",
+    "up": "▲",
+    "down": "▼",
+    "clear": "Újra"
+   }
+  }
+ }
+}

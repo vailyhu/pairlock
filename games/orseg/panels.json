@@ -1,0 +1,486 @@
+{
+ "code_lock_stairs": {
+  "type": "code_lock",
+  "title": "Lépcsőajtó",
+  "intro": "Négy számtárcsa a retesz fölött.",
+  "hints": [
+   "A cédula nem ma íródott. Mikor járt itt utoljára valaki?",
+   "A naptár a napot adja, a táblázat az időt. Olvassátok el a táblázat alját is.",
+   "A naptár szerint november 14. A táblázatból 16:43, plusz a szirten érvényes 6 perc: 1649."
+  ],
+  "hintCost": "−1 mérföld",
+  "options": {
+   "kind": "digits",
+   "n": 4,
+   "button": "🔓 Próba",
+   "okText": "Kattan. Nyitva.",
+   "badText": "Nem nyílik. Az idő telik: a Zrínyi egy mérfölddel közelebb.",
+   "answer": "1649"
+  }
+ },
+ "code_lock_toolbox": {
+  "type": "code_lock",
+  "title": "Szerszámláda",
+  "intro": "A fedélbe vésve: A.K. Öt betűtárcsa.",
+  "hints": [
+   "Az A.K. betűk Kružić Antéra utalnak. Volt tőle egy cédula a ládájában. Mit írt?",
+   "A naplóban nincs aláírás, de az Őrségbeosztás megmondja, melyik sor az övé. Az ő soraiban a megjegyzés első betűje számít.",
+   "Kružić őrségei: nov. 11. 20–24, nov. 12. 16–20, nov. 12. 4–8, nov. 13. 0–4, nov. 14. 20–24. A kód: HAMIS."
+  ],
+  "hintCost": "−1 mérföld",
+  "options": {
+   "kind": "letters",
+   "n": 5,
+   "button": "🔓 Próba",
+   "okText": "Kattan. Nyitva.",
+   "badText": "Nem nyílik. Az idő telik: a Zrínyi egy mérfölddel közelebb.",
+   "answer": "HAMIS"
+  }
+ },
+ "code_lock_chest": {
+  "type": "code_lock",
+  "title": "V.B. ládája",
+  "intro": "Sárgaréz számzár, négy tárcsa.",
+  "hints": [
+   "A zászlók nem száradni vannak kint. Kell hozzá a Jelkönyv.",
+   "A zászlók sorban betűket adnak, az üres kötéldarabok választják el a szavakat. Három szám jön ki, szavakkal írva.",
+   "TIZ NULLA KILENC: 1009."
+  ],
+  "hintCost": "−1 mérföld",
+  "options": {
+   "kind": "digits",
+   "n": 4,
+   "button": "🔓 Próba",
+   "okText": "Kattan. Nyitva.",
+   "badText": "Nem nyílik. Az idő telik: a Zrínyi egy mérfölddel közelebb.",
+   "answer": "1009"
+  }
+ },
+ "morse": {
+  "type": "morse",
+  "title": "A szalag üzenete",
+  "intro": "A szalagon jelek vannak, de a papír olvashatatlanná ázott. A készülék még végigolvassa, és a jelet felküldi az ismétlőlámpára.",
+  "sides": {
+   "a": "⚙️ Az Őrszobában, a karnál",
+   "b": "💡 A Lámpatérben, a lámpánál"
+  },
+  "hints": [
+   "Valakinek lent tartania kell a kart, a másiknak fent figyelnie és jegyzetelnie.",
+   "A Jelkönyvben van a morzetábla. A rövid és hosszú felvillanásokat betűnként írjátok fel, a szünet választja el őket.",
+   "A szó: CISZTERNA."
+  ],
+  "hintCost": "−1 mérföld",
+  "options": {
+   "pattern": "-.-. .. ... --.. - . .-. -. .-",
+   "unit": 0.5,
+   "textA": "Amíg tartod a kart, a szalag fut. Innen semmit nem látsz belőle, a jel a Lámpatér lámpájára megy.",
+   "textB": "A lámpa csak akkor villog, amíg lent valaki tartja a kart. Rövid és hosszú felvillanások, a végén hosszú szünet, utána újra.",
+   "holdLabel": "⚙️ Tartsd a szalagolvasó karját",
+   "badText": "Nem ez az üzenet. A Zrínyi egy mérfölddel közelebb.",
+   "guessLabel": "A megfejtett szó",
+   "button": "📝 Beírom",
+   "runText": "A lámpa kap jelet.",
+   "idleText": "A lámpa nem kap jelet: lent senki nem tartja a kart.",
+   "traceLabel": "Az eddigi villanások",
+   "answer": "CISZTERNA"
+  }
+ },
+ "gauge_board": {
+  "type": "gauge_board",
+  "title": "Olajnyomás",
+  "intro": "Három szelep lent, három nyomásmérő fent. Mindhárom mutatónak a zöld mezőben kell állnia.",
+  "hints": [
+   "Egyszerre csak egy szelepet állítsatok, és a másik mondja meg, melyik mutató mozdult.",
+   "Az 1. szelep az 1. mérőt emeli és a 3.-at csökkenti, a 2. az 1.-t és a 2.-at emeli, a 3. a 2.-at és a 3.-at emeli.",
+   "1. szelep: 7, 2. szelep: 3, 3. szelep: 5."
+  ],
+  "hintCost": "−1 mérföld",
+  "sides": {
+   "a": "🔧 Az Őrszobában, a szelepeknél",
+   "b": "🌡️ A Lámpatérben, a mérőknél"
+  },
+  "options": {
+   "matrix": [
+    [
+     6,
+     4,
+     0,
+     -4
+    ],
+    [
+     0,
+     5,
+     5,
+     10
+    ],
+    [
+     -3,
+     0,
+     7,
+     36
+    ]
+   ],
+   "band": [
+    46,
+    54
+   ],
+   "controls": [
+    "1. szelep",
+    "2. szelep",
+    "3. szelep"
+   ],
+   "controlMax": 9,
+   "gaugeMax": 100,
+   "textA": "Három szelep, 0-tól 9-ig. Mérőt innen nem látsz: csak a társad tudja, mit csináltál.",
+   "textB": "Három mutató. Szelep nincs itt: csak a társadon keresztül tudsz állítani.",
+   "confirmLabel": "✅ Nyomás rögzítése"
+  }
+ },
+ "puzzle": {
+  "type": "puzzle",
+  "title": "Égett levél",
+  "intro": "A kályhából kiszedett papírdarabok. Húzd őket a helyükre, a jó helyen megállnak.",
+  "options": {
+   "image": "images/level_egesz.jpg",
+   "cols": 3,
+   "rows": 4,
+   "jitter": 0.5,
+   "snap": 0.05,
+   "trayWidth": 1,
+   "okText": "Összeállt.",
+   "sharedNote": "Közös tábla: a társad is ezt látja, és élőben mozgatja a darabokat."
+  }
+ },
+ "pipes": {
+  "type": "pipes",
+  "title": "Olajvezeték",
+  "intro": "Valaki szétforgatta a csőtoldókat. Kattints egy elemre: negyedet fordul.",
+  "hints": [
+   "Először csak a tartály felől indulj el, a többi elem nem számít.",
+   "Két végpontot kell táplálni, tehát egy T elágazás kell. A szétágazó T a harmadik sorban, a negyedik oszlopban van."
+  ],
+  "hintCost": "−1 mérföld",
+  "options": {
+   "grid": [
+    [
+     5,
+     6,
+     12,
+     5,
+     12,
+     5
+    ],
+    [
+     12,
+     6,
+     5,
+     9,
+     3,
+     3
+    ],
+    [
+     12,
+     10,
+     6,
+     14,
+     12,
+     10
+    ],
+    [
+     3,
+     5,
+     5,
+     6,
+     10,
+     10
+    ],
+    [
+     10,
+     9,
+     6,
+     6,
+     14,
+     6
+    ]
+   ],
+   "source": {
+    "row": 0,
+    "col": 0,
+    "side": 8
+   },
+   "exits": [
+    {
+     "row": 4,
+     "col": 5,
+     "side": 2
+    },
+    {
+     "row": 4,
+     "col": 0,
+     "side": 4
+    }
+   ],
+   "marks": [
+    {
+     "row": 0,
+     "col": 0,
+     "label": "tartály",
+     "color": "#7fc8ff"
+    },
+    {
+     "row": 4,
+     "col": 5,
+     "label": "égő",
+     "color": "#ffb060"
+    },
+    {
+     "row": 4,
+     "col": 0,
+     "label": "mérő",
+     "color": "#9fdc8a"
+    }
+   ],
+   "legend": "Bal felső sarok: tartály (balról jön az olaj). Jobb alsó sarok: égő (jobbra megy ki). Bal alsó sarok: nyomásmérő (lefelé megy ki). Nyitott csővég nem maradhat a rendszerben, ami nincs rákötve, az nem számít.",
+   "leakText": "Az olaj valahol szabadon folyna: nyitott csővég van a rendszerben.",
+   "progressText": "Eljut: {reached}/{total} végpont.",
+   "okText": "Zárt rendszer, minden fogyasztó kap olajat.",
+   "sharedNote": "Közös tábla: a társad is ezt látja."
+  }
+ },
+ "gears": {
+  "type": "gears",
+  "title": "Hajtómű kerekei",
+  "intro": "A két tengelyre egy-egy kerék kerül. Bal: a súlydob tengelye. Jobb: a lencsedob tengelye. A most beszerelt pár látszik.",
+  "hints": [
+   "Mit akartok elérni? A dobnak olyan gyorsan kell fordulnia, ahogy a Hatóság szerint ismétlődik a fény. Nézzétek meg a nyomtatott térképet.",
+   "A tábla szerint a súlydob 60 másodperc alatt fordul körbe. A lencsedob fordulata: 60 × (jobb oldali fog) / (bal oldali fog). A két fogszám összege 72.",
+   "20 másodperc kell: a bal kerék 54, a jobb 18 fogú."
+  ],
+  "hintCost": "−1 mérföld",
+  "closed": [
+   {
+    "if": {
+     "any": [
+      {
+       "var": "ignition",
+       "is": "true"
+      },
+      {
+       "var": "ignition",
+       "is": "false"
+      },
+      {
+       "var": "miles",
+       "is": "0"
+      }
+     ]
+    },
+    "text": "A gyújtás után a hajtómű már nem módosítható."
+   }
+  ],
+  "options": {
+   "teeth": [
+    18,
+    24,
+    32,
+    36,
+    40,
+    48,
+    54
+   ],
+   "sum": 72,
+   "start": [
+    48,
+    24
+   ],
+   "base": 60,
+   "var": "drumPeriod",
+   "labelA": "Súlydob tengelye: ",
+   "labelB": "Lencsedob tengelye: ",
+   "meshText": "A két kerék összekapcsolódik.",
+   "tooBigText": "Túl nagyok: nem férnek el a tengelytávon.",
+   "tooSmallText": "Túl kicsik: nem érnek össze.",
+   "button": "⚙️ Beszerelés",
+   "message": "hajtómű beállítva, {a} és {b} fog, a lencsedob egy fordulata {period} másodperc"
+  }
+ },
+ "shutter_lamp": {
+  "type": "shutter_lamp",
+  "title": "Lencsedob és gyújtás",
+  "intro": "Nyolc lemez a dob körül. Ahol nyitva van, ott egy villanást lát a tengeren, aki kívülről nézi, amikor a dob körbefordul.",
+  "hints": [
+   "Az őrök könyve és a nyomtatott térkép nem ugyanazt mondja. Melyiket lehet utólag átírni?",
+   "A térkép jele: Fl(2) 20s, ami 2 villanás, 20 másodpercenként. Ehhez a hajtóművön is állítani kell.",
+   "Két szomszédos lemez nyitva, a többi zárva, a hajtóműben bal 54 és jobb 18 fog."
+  ],
+  "hintCost": "−1 mérföld",
+  "sides": {
+   "a": "⚙️ Az Őrszobában, a hajtókarnál",
+   "b": "🔥 A Lámpatérben, a dobnál"
+  },
+  "closed": [
+   {
+    "if": {
+     "any": [
+      {
+       "var": "ignition",
+       "is": "true"
+      },
+      {
+       "var": "ignition",
+       "is": "false"
+      }
+     ]
+    },
+    "text": "A lámpa már ég."
+   },
+   {
+    "if": {
+     "var": "miles",
+     "is": "0"
+    },
+    "text": "A Zrínyi már itt van, a gyújtásnak nincs értelme."
+   }
+  ],
+  "options": {
+   "start": [
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   "goal": {
+    "runs": [
+     2
+    ],
+    "period": 20
+   },
+   "periodVar": "drumPeriod",
+   "startPeriod": 30,
+   "textA": "A súlydob hajtókarja. Tartsd, amíg fent gyújtanak: csak addig lehet gyújtani. Innen nem látod, mit állítottak be fent.",
+   "holdLabel": "⚙️ Tartsd a súlydob hajtókarját",
+   "textB": "Kattints egy lemezre: nyit vagy zár.",
+   "centerLabel": "lámpa",
+   "patterns": {
+    "none": "0 villanás",
+    "steady": "folyamatos fény ({open} zsalu)",
+    "single": "{n} villanás",
+    "uneven": "egyenetlen, {runs} villanás"
+   },
+   "lookText": "Kívülről így látszana: {pattern}. A dob most {period} másodperc alatt fordul körbe (a csík két teljes fordulatot mutat).",
+   "readyText": "Lent tekerik a súlydobot: most lehet gyújtani!",
+   "waitText": "Gyújtani csak akkor lehet, amíg lent valaki tartja a hajtókart.",
+   "button": "🔥 Gyújtás",
+   "message": "GYÚJTÁS {code}, zsaluk: {shutters}, kívülről {pattern}, {period} másodpercenként ismétlődik",
+   "codes": {
+    "good": "K-20",
+    "firstBad": "K-31",
+    "bad": "K-32"
+   }
+  }
+ },
+ "report_form": {
+  "type": "report_form",
+  "title": "Jegyzőkönyv",
+  "intro": "M. kir. Tengerészeti Hatóság, Fiume. Aláírás után már nem javítható.",
+  "options": {
+   "questions": [
+    {
+     "text": "Ki állította át a fényjelet a hamis jelre?",
+     "choices": [
+      "Vidović és Hollós",
+      "Kružić egyedül",
+      "A mentőtársaság embere az őrök tudta nélkül",
+      "Senki, szerkezeti hiba volt"
+     ],
+     "answer": "Vidović és Hollós"
+    },
+    {
+     "text": "Melyik fényt utánozta a hamis jel?",
+     "choices": [
+      "Porto Re",
+      "Szent Márk-zátony, bejárat",
+      "Kraljevica móló",
+      "Egyiket sem"
+     ],
+     "answer": "Szent Márk-zátony, bejárat"
+    },
+    {
+     "text": "Melyik volt az utolsó hajó, amely emiatt elveszett?",
+     "choices": [
+      "Hertha",
+      "Stella",
+      "Anna",
+      "Zrínyi"
+     ],
+     "answer": "Anna"
+    },
+    {
+     "text": "Ki oltotta el a lámpát november 14-én?",
+     "choices": [
+      "Vidović",
+      "Hollós",
+      "Kružić",
+      "A vihar oltotta el"
+     ],
+     "answer": "Kružić"
+    },
+    {
+     "text": "Mi történt Kružić Antéval?",
+     "choices": [
+      "A két társa a tengerbe lökte",
+      "A társasággal együtt szökött meg",
+      "Csónakkal elindult Fiume felé, hogy jelentsen",
+      "A ciszternába rejtőzött"
+     ],
+     "answer": "Csónakkal elindult Fiume felé, hogy jelentsen"
+    }
+   ],
+   "choose": "– válassz –",
+   "missingText": "Minden sort ki kell tölteni.",
+   "button": "✒️ Aláírás (csak egyszer lehet)",
+   "message": "jegyzőkönyv aláírva, {good}/{total} helyes, fény: {light}",
+   "okText": "Jegyzőkönyv aláírva: {good}/{total} helyes.",
+   "values": {
+    "light": [
+     {
+      "if": {
+       "var": "ignition",
+       "is": "true"
+      },
+      "value": "igaz"
+     },
+     {
+      "if": {
+       "any": [
+        {
+         "var": "ignition",
+         "is": "false"
+        },
+        {
+         "var": "ignition",
+         "is": "first_false"
+        }
+       ]
+      },
+      "value": "hamis"
+     },
+     {
+      "if": {
+       "var": "miles",
+       "is": "0"
+      },
+      "value": "sotet"
+     },
+     {
+      "value": "hamis"
+     }
+    ]
+   }
+  }
+ }
+}

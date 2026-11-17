@@ -1,0 +1,2 @@
+:root{--bg:#1d140c;--panel:#2a1d12;--panel2:#352416;--ink:#f1e2c8;--muted:#bfa27e;--line:#5a3f26;--accent:#e08a2e;--send:#a2481b;--tool:#3d2a18;--view:#140d07;--serif:Georgia,"Times New Roman",serif;--radius:10px}
+body{font-family:var(--serif)} h1,h2,h3{font-family:var(--serif);color:var(--accent)}

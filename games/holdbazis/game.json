@@ -1,0 +1,136 @@
+{
+ "title": "A Holdbázis",
+ "description": "2090, a Hold déli pólusa. A Hajnal jégbányász-bázis egyetlen ügyeletese órák óta nem jelentkezik, és ti vagytok a legközelebbi mentőkomp legénysége. Csendes, magányos sci-fi nyomozás két játékosnak.",
+ "goal": "Találjátok meg Varga Ilonát, és indítsátok el a visszautat. A játék akkor ér véget, amikor a komp felszáll.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "2090, a Hold déli pólusa. A Hajnal bázis egyetlen ügyeletese, Varga Ilona technikus órák óta nem jelentkezik.\n\nTi vagytok a legközelebbi mentőkomp legénysége. A komp leszállt a bázis mellett. A Dél-7 állomás a rádióban: „Keressétek meg Ilonát, és hozzátok haza. A szkafanderetekben annyi oxigén van, hogy a bázisig bőven elég; a visszaúthoz ott töltsétek fel.”\n\n[img:lander]\n\nA kabin ablakán túl a bázis modulja, a Föld a horizont fölött, és csend.\n\n[img:ferry]\n\n```\nHely: A komp / A komp\n```\nLeltár: ",
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "help": "Együtt is végigmehettek mindenen. A zsilip vendégeknek csak kézzel, a vezérlőből indul kifelé: aki kimegy, annak a társa bent marad. Bent is van két feladat, amely két helyiségből megy. A zárak és szerkezetek gombok a chatben, bármikor megnyithatók; a 💡 Tipp a szerkezetek ablakában van, és ingyenes. Időkorlát nincs, az oxigén nem fogy el.",
+ "panelDone": {
+  "code_lock": "\\(GAME: SOLVED, Ilona táblagépe\\)",
+  "gauge_board_life": "\\(GAME: SOLVED, Életfenntartás\\)",
+  "gauge_board_solar": "\\(GAME: SOLVED, A napelemek\\)",
+  "sequence": "\\(GAME: SOLVED, A felvételek\\)",
+  "airlock": "\\(GAME: SOLVED, A hangár nyomásolása\\)"
+ },
+ "panelDoneLabel": {},
+ "scripted": [
+  {
+   "re": "\\(GAME: SOLVED, A hangár nyomásolása\\)",
+   "text": "A reteszek kattannak, a válaszfal kinyílik. Hideg pára árad ki a hangárból. A Teve rover kabinjában halvány lámpa ég. Feltépitek a kabin vészfogantyúját.\n\n[img:rover_cabin]\n\nBent Ilona, ezüst hőtakaróba csavarva, félálomban. Kinyitja a szemét. „Zsófi?… Nem… Ti hallottátok a jelet?” Megrázza a fejét, mosolyog. „Persze hogy nem. A relé.”\n\nLassan felül. „A K-7 száraz. Hónapok óta száraz. Ott a mintatartó a lábamnál, a saját kezemmel hoztam fel. Vigyétek, kérlek. A naplót a Földről írják át.”\n\nFeláll, megtámaszkodik. „Kiengedlek titeket. Az én azonosítómmal a zsilip mindkettőtöket egyszerre kienged, aztán én is jövök.”"
+  },
+  {
+   "re": "\\(GAME: REPORT 5/5\\)",
+   "text": "Aláírjátok a jelentést. A Dél-7 állomás csendben veszi, aztán: „Értettük. A K-7 adatait továbbítjuk a felügyeletnek, a Lunaris ellen vizsgálat indul. Ilona, hazavárnak.”\n\nA komp felszáll. Alattatok a bázis ablakai fényesen világítanak, a napelemek a Nap felé fordulnak.\n\n[img:ending]\n\nIlona hátradől az ülésben, kezében a fotókártya. Zsófi tortája most már nem csak egy kép lesz.\n\nVége."
+  },
+  {
+   "re": "\\(GAME: REPORT [0-4]/5\\)",
+   "text": "Aláírjátok a jelentést. A Dél-7 állomás veszi: „Értettük. A többit majd kiderítjük.”\n\nA komp felszáll. Alattatok a bázis ablakai fényesen világítanak, a napelemek a Nap felé fordulnak.\n\n[img:ending]\n\nIlona hátradől az ülésben. Haza megy. Hogy a K-7-tel mi lesz, azt már nem ti döntitek el.\n\nVége."
+  }
+ ],
+ "endPattern": "\\(GAME: REPORT \\d/5\\)",
+ "tailRules": [
+  {
+   "if": "\\(GAME: REPORT \\d/5\\)",
+   "text": "THE GAME IS OVER. The ending has already been told. If the players ask anything, answer openly in plain Hungarian, outside the story: hole K-7 had been dry for months and the Lunaris operations manager, Halmos Bence, overwrote the cargo log from Earth; when Ilona asked questions the company disabled the base relay under the name of maintenance; she went down for a sample herself, got trapped in the rover cabin when the hangar lost pressure. Do not continue the story."
+  }
+ ],
+ "model": {
+  "temperature": 1,
+  "top_p": 0.95,
+  "frequency_penalty": 0.3,
+  "presence_penalty": 0.2,
+  "max_tokens": 500
+ },
+ "colorize": {
+  "on": false,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Quiet, lonely, precise; a modern, tidy lunar mining base in 2090 at the Moon's south pole; short plain sentences."
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg abban a helyiségben, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "lander": "A komp",
+  "ferry": "A komp kabinja",
+  "pad": "Leszállóhely",
+  "pad_power": "Leszállóhely, teljes áram",
+  "airlock": "Légzsilip",
+  "airlock_dim": "Légzsilip, tartalékfény",
+  "suit_station": "Szkafanderállvány",
+  "control": "Vezérlő",
+  "control_dim": "Vezérlő, tartalékfény",
+  "radio_console": "Rádiós pult",
+  "relay_switch": "A fedél alatt",
+  "power_panel": "Energiatábla",
+  "power_panel_full": "Energiatábla, teljes áram",
+  "cam_vakond": "Kamera: a Vakond",
+  "cam_vakond_lit": "Kamera: a Vakond fényei",
+  "cam_hangar": "Kamera: a hangár",
+  "cargo_log": "Rakománynapló",
+  "hab": "Lakómodul",
+  "hab_dim": "Lakómodul, tartalékfény",
+  "bunk": "Ilona hálófülkéje",
+  "photo": "Fotókártya",
+  "photo_back": "A fotókártya hátoldala",
+  "tablet": "Táblagép",
+  "tablet_screen": "Ilona üzenetei",
+  "notebook_bed": "Papírfüzet",
+  "notebook_rubbed": "A satírozott lap",
+  "utility": "Gépház",
+  "utility_dim": "Gépház, tartalékfény",
+  "valves": "Szeleptábla",
+  "lab": "Labor",
+  "lab_dim": "Labor, tartalékfény",
+  "core_freezer": "Mintafagyasztó",
+  "spectrometer": "Spektrométer",
+  "core_readings": "A minták jégtartalma",
+  "drill_map": "Fúrási térkép",
+  "storage": "Raktár",
+  "storage_dim": "Raktár, tartalékfény",
+  "bulkhead_hand": "A hangár válaszfala",
+  "bulkhead_open": "A nyitott válaszfal",
+  "fuse": "Alkatrészdoboz",
+  "toolboard": "Szerszámtábla",
+  "hangar": "Hangár",
+  "rover": "A Teve rover",
+  "rover_cabin": "A rover kabinja",
+  "solar": "Napelemmező",
+  "solar_turned": "A napelemek a Nap felé",
+  "cable_cabinet": "Kábelszekrény",
+  "cable_cabinet_fixed": "Kábelszekrény, új modullal",
+  "hangar_out": "A hangár kapuja",
+  "hangar_out_closed": "A zárt hangárkapu",
+  "rim": "Kráterperem",
+  "rim_lit": "Kráterperem, a Vakond fényeivel",
+  "ending": "Felszállás",
+  "i_power_module": "Tápmodul",
+  "i_dust_wand": "Porpálca",
+  "i_door_drive": "Kapumozgató",
+  "i_k7": "K-7 mintatartó",
+  "rec_a": "Felvétel",
+  "rec_b": "Felvétel",
+  "rec_c": "Felvétel",
+  "rec_d": "Felvétel",
+  "rec_e": "Felvétel"
+ }
+}

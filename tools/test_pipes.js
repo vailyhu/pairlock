@@ -1,0 +1,27 @@
+// Pipes module without the server: a made-up network, plus a solvability check of the real game's grid that prints only yes or no.
+const Mod = require('../engine/modules'), { flow, isClosed } = require('../modules/pipes/server.ts'), solve = require('./pipes_solver');
+const opt = { grid: [[5, 3], [10, 12]], source: { row: 0, col: 0, side: 8 }, exits: [{ row: 1, col: 1, side: 2 }], leakText: 'leak', progressText: '{reached}/{total}', okText: 'ok', sharedNote: 'shared', marks: [{ row: 0, col: 0, label: 'in', color: '#fff' }] }, cfg = { type: 'pipes', title: 'O', options: opt };
+let bad = 0; const check = (n, got, want) => { const ok = JSON.stringify(got) === JSON.stringify(want); if (!ok) bad++; console.log(`${ok ? 'ok  ' : 'FAIL'} ${n}: ${JSON.stringify(got)}`); };
+Mod.setPush(() => {});
+const rot = m => ((m << 1) & 15) | (m >> 3);
+check('source cell alone does not leak', flow({ ...opt, exits: [] }, [[8, 0], [0, 0]]).leak, false);
+check('source side closed means no flow', flow(opt, [[1, 0], [0, 0]]).wet.length, 0);
+check('pipe to the wall leaks', flow(opt, [[9, 0], [0, 0]]).leak, true);
+check('pipe to a closed neighbour leaks', flow(opt, [[10, 1], [0, 0]]).leak, true);
+check('closed network counts its exit', [flow(opt, [[12, 0], [3, 10]]).reached, flow(opt, [[12, 0], [3, 10]]).leak], [1, false]);
+check('dead end is not a leak but reaches nothing', [flow(opt, [[12, 0], [3, 8]]).reached, flow(opt, [[12, 0], [3, 8]]).leak], [0, false]);
+const good = solve(opt); check('solver solves the made-up network', isClosed(opt, flow(opt, good)), true);
+const r = { solo: false, messages: [], world: { solved: {} } }, A = m => Mod.act(cfg, 'p', r, 0, m), view = () => Mod.view(cfg, 'p', r, 0).view;
+check('starts from the given grid', view().grid, opt.grid);
+check('does not change the options', (A({ row: 0, col: 0 }), opt.grid[0][0]), 5);
+check('click turns a quarter', view().grid[0][0], 10);
+check('solo game has no note', Mod.view({ ...cfg, options: opt }, 'p', { ...r, solo: true }, 0).view.note, undefined);
+A({ row: 9, col: 9 }); A({}); check('bad clicks are ignored', view().grid[0][0], 10);
+check('marks are plain data', view().marks[0].label, 'in');
+check('progress text is filled', /^\d+\/1$/.test(view().status) || view().status === 'leak', true);
+let last; for (const [row, cells] of good.entries()) for (const [col, want] of cells.entries()) for (let i = 0; i < 4 && r.mods.p.state.grid[row][col] !== want && !last?.view?.justSolved; i++) last = A({ row, col });
+check('closing the network solves it', [last.view.justSolved, last.msgs[0].text], [true, '(GAME: SOLVED, O)']);
+check('state is plain JSON', JSON.parse(JSON.stringify(r.mods.p.state)).grid.length, 2);
+const real = require('../games/orseg/panels.json').pipes.options;
+check('the real game grid can be solved', !!solve(real), true);
+console.log(bad ? `${bad} failed` : 'all passed'); process.exit(bad ? 1 : 0);

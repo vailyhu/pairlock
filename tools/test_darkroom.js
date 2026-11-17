@@ -1,0 +1,21 @@
+// Darkroom module without the server, on made-up values (fast clock). No game data.
+const Mod = require('../engine/modules');
+const T = { white: 'w', red: 'r', off: 'o', dip: 'in', lift: 'out', reset: 'new', minutes: '{m}', fogged: 'FOG', stepOk: 'ok', done: 'done', wrongTray: 'wrongtray', whiteFog: 'white', tooShort: 'short', tooLong: 'long' };
+const cfg = { type: 'darkroom', title: 'D', options: { trays: [{ id: 'dev', name: 'Dev' }, { id: 'fix', name: 'Fix' }], steps: [{ tray: 'dev', minutes: 4, tolerance: 1 }, { tray: 'fix', minutes: 2, tolerance: 1 }], light: 'red', secondsPerMinute: 0.02, result: 'images/res.png', texts: T } };
+let bad = 0; const check = (n, got, want) => { const ok = JSON.stringify(got) === JSON.stringify(want); if (!ok) bad++; console.log(`${ok ? 'ok  ' : 'FAIL'} ${n}: ${JSON.stringify(got)}`); };
+const wait = ms => { const t = Date.now() + ms; while (Date.now() < t); };
+const r = { solo: true, messages: [], world: { solved: {} } }; Mod.setPush(() => {});
+const A = m => Mod.act(cfg, 'd', r, 0, m), V = () => Mod.view(cfg, 'd', r, 0).view;
+check('view holds no recipe', ['minutes":4', 'tolerance', 'steps'].some(s => JSON.stringify(V()).includes(s)), false);
+check('no picture before developing', V().result, undefined);
+check('dipping under white light fogs', A({ dip: 'dev' }).view.text, 'white FOG');
+A({ reset: true }); A({ light: 'red' });
+check('wrong tray first fogs', A({ dip: 'fix' }).view.text, 'wrongtray FOG');
+A({ reset: true }); A({ dip: 'dev' }); check('picture shows in the developer', V().result, 'images/res.png');
+check('lifted too early fogs', A({ lift: true }).view.text, 'short FOG');
+A({ reset: true }); A({ dip: 'dev' }); wait(80); A({ lift: true }); check('first step done', V().done, 1);
+A({ dip: 'fix' }); A({ light: 'white' }); check('white light mid-work fogs', V().fogged, true);
+A({ reset: true }); A({ light: 'red' }); A({ dip: 'dev' }); wait(80); A({ lift: true }); A({ dip: 'fix' }); wait(130); check('too long fogs', A({ lift: true }).view.text, 'long FOG');
+A({ reset: true }); A({ dip: 'dev' }); wait(80); A({ lift: true }); A({ dip: 'fix' }); wait(40);
+const w = A({ lift: true }); check('recipe followed: solved', [w.view.justSolved, w.msgs[0].text], [true, '(GAME: SOLVED, D)']);
+console.log(bad ? `${bad} failed` : 'all passed'); process.exit(bad ? 1 : 0);

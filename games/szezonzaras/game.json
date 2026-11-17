@@ -1,0 +1,332 @@
+{
+ "title": "Szezonzárás",
+ "description": "Belvedere Kaszinó, Porto Lieto, 1965. szeptember 30., a szezon utolsó éjszakája. Ti ketten elegáns tolvajok vagytok, egy volt alkalmazott levelével a zsebetekben. Fent a játéktermek, lent a páncélterem és a csónakház; az őr kint köröz a kertben. Szabadulós betörés két játékosnak.",
+ "goal": "Jussatok ki a szezon bevételével. A játék akkor ér véget, amikor a kaszinó csónakházából motorcsónakon kifuttok a sötét öbölbe. Ha a ház titkának bizonyítékát is kihozzátok, más lesz a vége.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "Porto Lieto, 1965. szeptember 30., csütörtök. A szezon utolsó éjszakája.\n\n[img:exterior]\n\nA Belvedere Kaszinó a sziklán áll a sötét öböl fölött. Fent a játéktermek, lent, a tenger szintjén az irodák, a páncélterem és a csónakház. Ma éjjel tavaszig lelakatolják, és a szezon teljes bevétele a páncélteremben várja a hétfői pénzszállítót.\n\nTi ketten zárás előtt a hölgyek szalonjában maradtatok. Tizenegykor a ruhatárosnő kívülről bezárta az ajtót, a léptei elhaltak. Odakint, a kertben, egy lámpafény jár körbe.\n\n[img:salon]\n\nA zsebetekben Vittorio levele. Nézzetek körül.\n\n```\nRiadalom: 0 · Hely: Hölgyek szalonja / Hölgyek szalonja\n```",
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "help": "Ti vagytok a két tolvaj. Az őrrel nem találkoztok: csak a lámpáját látjátok és a lépteit halljátok. Ha rajtakap valamin, elbújtok, és az a lépés újrakezdődik; a riadalom számláló eggyel nő (az állapotsorban látszik), de semmi nem zárul el. Néhány helyen érdemes szétválni: aki figyel, olyat lát, amit a dolgozó nem. Beszéljetek. A szerkezetek gombok a chatben; a 💡 Tipp a szerkezetek ablakában van. Időkorlát nincs.",
+ "panelDone": {
+  "guard_round": "\\(GAME: SOLVED, A CASSA kulcs\\)",
+  "code_lock_cashbox": "\\(GAME: SOLVED, Rosa néni kazettája\\)",
+  "gauge_board_lift": "\\(GAME: SOLVED, A pénzfelvonó\\)",
+  "typewriter_ribbon": "\\(GAME: SOLVED, Az írógép szalagja\\)",
+  "code_lock_safe": "\\(GAME: SOLVED, A fali széf\\)",
+  "roulette": "\\(GAME: SOLVED, A nagy rulett\\)",
+  "dual_word_vault": "\\(GAME: SOLVED, A páncélajtó\\)",
+  "sequence_engine": "\\(GAME: SOLVED, A motor\\)",
+  "gears_timelock": "\\(GAME: TIMELOCK 48 12 "
+ },
+ "scripted": [
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "any": [
+       {
+        "has": "i_log"
+       },
+       {
+        "has": "i_book"
+       }
+      ]
+     },
+     {
+      "var": "riadalom",
+      "is": "0"
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending_evidence]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, és mellettük a bizonyíték. Egy hét múlva a címlapokon: „Csalás a Belvedere-ben: elektromágnes a nagy rulett alatt”. Conti igazgatót a saját páncélterme előtt tartóztatják le. Vittorio egy velencei bárban olvassa az újságot, és egyedül koccint.\n\nBeppe reggel semmit nem vett észre."
+  },
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "any": [
+       {
+        "has": "i_log"
+       },
+       {
+        "has": "i_book"
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "var": "riadalom",
+        "is": "1"
+       },
+       {
+        "var": "riadalom",
+        "is": "2"
+       }
+      ]
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending_evidence]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, és mellettük a bizonyíték. Egy hét múlva a címlapokon: „Csalás a Belvedere-ben: elektromágnes a nagy rulett alatt”. Conti igazgatót a saját páncélterme előtt tartóztatják le. Vittorio egy velencei bárban olvassa az újságot, és egyedül koccint.\n\nBeppe reggel megesküszik, hogy éjjel árnyakat látott a nagyteremben."
+  },
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "any": [
+       {
+        "has": "i_log"
+       },
+       {
+        "has": "i_book"
+       }
+      ]
+     },
+     {
+      "not": {
+       "any": [
+        {
+         "var": "riadalom",
+         "is": "0"
+        },
+        {
+         "any": [
+          {
+           "var": "riadalom",
+           "is": "1"
+          },
+          {
+           "var": "riadalom",
+           "is": "2"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending_evidence]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, és mellettük a bizonyíték. Egy hét múlva a címlapokon: „Csalás a Belvedere-ben: elektromágnes a nagy rulett alatt”. Conti igazgatót a saját páncélterme előtt tartóztatják le. Vittorio egy velencei bárban olvassa az újságot, és egyedül koccint.\n\nA rendőrség már délben a parton keres egy hölgyet és egy urat."
+  },
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "not": {
+       "any": [
+        {
+         "has": "i_log"
+        },
+        {
+         "has": "i_book"
+        }
+       ]
+      }
+     },
+     {
+      "var": "riadalom",
+      "is": "0"
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, BELVEDERE felirattal. Délre minden lap címlapján ott lesz: „Rejtélyes rablás a Belvedere Kaszinóban”. Hogy Conti igazgató mit mond majd a részvényeseknek a páncélajtóról, amit senki nem nyithatott ki, azt már nem tudjátok meg.\n\nBeppe reggel semmit nem vett észre."
+  },
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "not": {
+       "any": [
+        {
+         "has": "i_log"
+        },
+        {
+         "has": "i_book"
+        }
+       ]
+      }
+     },
+     {
+      "any": [
+       {
+        "var": "riadalom",
+        "is": "1"
+       },
+       {
+        "var": "riadalom",
+        "is": "2"
+       }
+      ]
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, BELVEDERE felirattal. Délre minden lap címlapján ott lesz: „Rejtélyes rablás a Belvedere Kaszinóban”. Hogy Conti igazgató mit mond majd a részvényeseknek a páncélajtóról, amit senki nem nyithatott ki, azt már nem tudjátok meg.\n\nBeppe reggel megesküszik, hogy éjjel árnyakat látott a nagyteremben."
+  },
+  {
+   "re": "\\(GAME: SOLVED, A motor\\)",
+   "if": {
+    "all": [
+     {
+      "not": {
+       "any": [
+        {
+         "has": "i_log"
+        },
+        {
+         "has": "i_book"
+        }
+       ]
+      }
+     },
+     {
+      "not": {
+       "any": [
+        {
+         "var": "riadalom",
+         "is": "0"
+        },
+        {
+         "any": [
+          {
+           "var": "riadalom",
+           "is": "1"
+          },
+          {
+           "var": "riadalom",
+           "is": "2"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "text": "A motor mélyen dorombol. Eloldjátok a kötelet, a csónak kicsúszik a kapun, és a sziklák árnyékában kifuttok a sötét öbölbe. Mögöttetek a Belvedere ablakai sötétek; a kertben egy lámpafény áll, aztán továbbmegy.\n\n[img:ending]\n\nHajnalban már messze jártok. A hátsó ülésen két kövér vászonzsák, BELVEDERE felirattal. Délre minden lap címlapján ott lesz: „Rejtélyes rablás a Belvedere Kaszinóban”. Hogy Conti igazgató mit mond majd a részvényeseknek a páncélajtóról, amit senki nem nyithatott ki, azt már nem tudjátok meg.\n\nA rendőrség már délben a parton keres egy hölgyet és egy urat."
+  }
+ ],
+ "endPattern": "\\(GAME: SOLVED, A motor\\)",
+ "tailRules": [
+  {
+   "if": "\\(GAME: SOLVED, A motor\\)",
+   "text": "THE GAME IS OVER. The ending has already been told. If the players ask anything, answer openly in plain Hungarian, outside the story: director Aurelio Conti had rigged the big roulette in 1961 with electromagnets under the pockets; the supervisor Ernesto rang a bell to the cellar from his chair, and the operator pulled the ball to the sector with the smallest bets. Setting the wheel to 17 also unlatched a hidden passage to the back of the vault time lock, which is how Conti took money out on weekends. Vittorio, the barman sacked in August, wrote the letter; the cashier Rosa wrote her code as \"Gino's lucky numbers\"; the safe was set to the day Conti met his lover Livia, 14 August."
+  }
+ ],
+ "colorize": {
+  "on": false,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "A 1960s Riviera casino at night after closing: cream marble, green baize, crystal, brass, mahogany, moonlight and the sea. Elegant, quiet, tense. Short sentences."
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg ott, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "exterior": "A Belvedere",
+  "salon": "Hölgyek szalonja",
+  "salon_now": "Hölgyek szalonja",
+  "salon_door": "Az ajtó",
+  "salon_door_now": "Az ajtó",
+  "salon_door_paper": "Az ajtó",
+  "salon_key": "Szalonkulcs",
+  "cart": "Takarítókocsi",
+  "newspaper": "Újság",
+  "worksheet": "Munkalap",
+  "reticule": "Retikül",
+  "i_hairpin": "Hajtű",
+  "letter": "Vittorio levele",
+  "hall": "Nagyterem",
+  "hall_now": "Nagyterem",
+  "big_roulette": "Nagy rulett",
+  "cage_grille": "A pénztár rácsa",
+  "cage_grille_now": "A pénztár rácsa",
+  "i_key_cassa": "CASSA kulcs",
+  "stair_grille": "Lépcsőrács",
+  "stair_grille_now": "Lépcsőrács",
+  "gallery": "Galéria",
+  "garden": "A kert",
+  "supervisor_chair": "Felügyelői szék",
+  "chair_button": "A karfa alja",
+  "staff": "Öltöző",
+  "lockers": "Szekrénysor",
+  "gino_locker": "Gino szekrénye",
+  "slip": "Tétlap",
+  "ernesto_locker": "Ernesto szekrénye",
+  "ernesto_note": "Cetli",
+  "rake_rack": "Gereblyetartó",
+  "i_rake": "Gereblye",
+  "i_hook_rake": "Kampós gereblye",
+  "tape": "Ellenőrzőóra-szalag",
+  "cage": "Pénztár",
+  "calendar": "Naptár",
+  "cashbox": "Kazetta",
+  "cashbox_now": "Kazetta",
+  "i_key_b": "B kulcs",
+  "ledger": "Pénztárnapló",
+  "money_lift": "Pénzfelvonó",
+  "lift": "A fülke",
+  "corridor": "Alsó folyosó",
+  "vault_door": "Páncélajtó",
+  "vault_door_now": "Páncélajtó",
+  "office": "Igazgatói iroda",
+  "office_safe": "Igazgatói iroda",
+  "desk": "Íróasztal",
+  "livia_photo": "Fénykép",
+  "giulia_portrait": "Portré",
+  "sea_painting": "Tengeri csata",
+  "sea_painting_open": "A festmény mögött",
+  "wall_safe": "Fali széf",
+  "wall_safe_now": "Fali széf",
+  "i_key_a": "A kulcs",
+  "i_brass_key": "Sárgarézkulcs",
+  "timecard": "Időzárkártya",
+  "typewriter": "Írógép",
+  "office_keyboard": "Kulcsszekrény",
+  "i_key_darsena": "DARSENA kulcs",
+  "i_boat_key": "Csónakkulcs",
+  "cellar": "Pince",
+  "cellar_now": "Pince",
+  "control_panel": "Vezérlőpult",
+  "cellar_log": "Pincei napló",
+  "timelock_chamber": "Időzár-kamra",
+  "vault": "Páncélterem",
+  "money_sack": "Pénzeszsák",
+  "director_book": "Vörös főkönyv",
+  "boathouse": "Csónakház",
+  "boathouse_now": "Csónakház",
+  "motorboat": "Motorcsónak",
+  "boat_dash": "Műszerfal",
+  "start_card_text": "Indítási kártya",
+  "gate": "Tengeri kapu",
+  "gate_open": "Tengeri kapu",
+  "ending": "Hajnal",
+  "ending_evidence": "Hajnal",
+  "step_tap": "üzemanyagcsap",
+  "step_bulb": "pumpáló gumi",
+  "step_choke": "szivató",
+  "step_key": "indítókulcs",
+  "step_throttle": "gázkar"
+ }
+}

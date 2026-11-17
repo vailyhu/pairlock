@@ -1,0 +1,11 @@
+/* A Szeánsz: 1920s Budapest, candlelight, deep red velvet, old gold, black. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Alegreya+Sans:wght@400;500;700&display=swap');
+:root {
+  --bg:#0b0807; --panel:#15100e; --panel2:#221816; --ink:#efe4d2; --muted:#a99a8a; --line:#3a2a25; --accent:#c9a45a; --ok:#9fc28a;
+  --send:#6e1f24; --send-line:#a3343b; --send-ink:#fbeee8; --tool:#2a2014; --tool-line:#a8853f; --tool-ink:#f1e0b8; --view:#050403;
+  --serif:"Cormorant Garamond",Georgia,serif; --ui:"Alegreya Sans","Avenir Next",system-ui,sans-serif; --radius:3px;
+}
+body { font-size:17.5px; }
+header h1 { font-family:var(--serif); font-size:24px; letter-spacing:.04em; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

@@ -1,0 +1,374 @@
+{
+ "typewriter_ribbon": {
+  "type": "typewriter_ribbon",
+  "title": "Az írógépszalag",
+  "keepAfterSolved": true,
+  "intro": "A használt írógépszalagon fordítva, egymásba csúszva látszanak az utolsó leütések. Tekerjétek, és olvassátok ki, mit gépelt Hale utoljára.",
+  "hints": [
+   "A szalag emlékszik az utolsó leütésekre.",
+   "Fordítva látszik: tükrözni kell, és a sorok egymásba csúsznak.",
+   "Tekerjétek a szalagot az elejéig, kapcsoljátok be a tükrözést, és olvassátok soronként. A hely: a zongora."
+  ],
+  "options": {
+   "text": "HA EZT OLVASOD: A FILM A SZALON ZONGORÁJÁBAN. VOGT. A GÉPÉSZ IS.",
+   "lineLength": 22,
+   "noise": 0.35,
+   "answer": "ZONGORA",
+   "image": "images/ribbon.jpg",
+   "answerLabel": "Mit gépelt Hale? Írjátok be, hol van a film.",
+   "answerButton": "Ez áll rajta",
+   "mirrorLabel": "⇋ Tükrözés",
+   "help": "A nyilakkal tekeritek a szalagot, a tükrözéssel megfordítjátok a betűket.",
+   "okText": "Ez az. Hale üzenete kiolvasva.",
+   "badText": "Nem ez áll a szalagon."
+  }
+ },
+ "code_lock_salon": {
+  "type": "code_lock",
+  "title": "A szalon lakatja",
+  "intro": "Háromjegyű számzáras lakat a szalonkocsi ajtajának láncán.",
+  "hints": [
+   "Mihajlo blokkja megmondja, mi a kód.",
+   "A 11-es asztal számlája két darabban van, két helyen. Az étlapon az árak.",
+   "Párosítsátok a fogásokat az étlap áraival, szorozzátok a darabszámmal, és adjátok össze."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 3,
+   "button": "🔓 Próba",
+   "okText": "Kattan. Nyitva.",
+   "badText": "Nem nyílik.",
+   "answer": "472"
+  }
+ },
+ "logic_grid": {
+  "type": "logic_grid",
+  "title": "A félbehagyott parti",
+  "intro": "A félbehagyott parti: ki ült melyik helyen, és hányadik lett? Mindenki hagyott valamit a helyén.",
+  "hints": [
+   "Mindenki hagyott valamit a helyén. A pontozólapon monogramok vannak, a menetlevélen nevek.",
+   "Szivar Vogt fülkéjében, sör a kalauzfülkében, szilvórium Mihajlo blokkján, pipa a menetlevél hátoldalán.",
+   "Szivar: Vogt, 1. — Sör: Szabó, 2. — Pipa: Petrović, 3. — Szilvórium: Mihajlo, 4."
+  ],
+  "options": {
+   "rowLabel": "Hely",
+   "rows": [
+    "A szivar helye",
+    "A sörösüveg helye",
+    "A pipa helye",
+    "A szilvórium helye"
+   ],
+   "columns": [
+    {
+     "label": "Ki ült ott",
+     "values": [
+      "Mihajlo",
+      "Petrović",
+      "Szabó",
+      "Vogt"
+     ]
+    },
+    {
+     "label": "Helyezés",
+     "values": [
+      "1.",
+      "2.",
+      "3.",
+      "4."
+     ]
+    }
+   ],
+   "answer": {
+    "A szivar helye": [
+     "Vogt",
+     "1."
+    ],
+    "A sörösüveg helye": [
+     "Szabó",
+     "2."
+    ],
+    "A pipa helye": [
+     "Petrović",
+     "3."
+    ],
+    "A szilvórium helye": [
+     "Mihajlo",
+     "4."
+    ]
+   },
+   "checkLabel": "Kész",
+   "okText": "Ez az. Most már tudjátok, ki nyert, és hol ült.",
+   "badText": "Valami még nem stimmel.",
+   "emptyLabel": "–",
+   "sharedNote": "Ezt a táblát mindketten látjátok és töltitek."
+  }
+ },
+ "code_lock_vogt": {
+  "type": "code_lock",
+  "title": "Vogt bőröndje",
+  "intro": "Háromtárcsás számzár Vogt bőröndjén.",
+  "hints": [
+   "Hale cetlije szerint a kártyák mondják meg.",
+   "A nyertes helyén lefordítva hagyott lapok.",
+   "Hét, ász, kilenc."
+  ],
+  "options": {
+   "kind": "digits",
+   "n": 3,
+   "button": "🔓 Próba",
+   "okText": "Kattan. Nyitva.",
+   "badText": "Nem nyílik.",
+   "answer": "719"
+  }
+ },
+ "locomotive": {
+  "type": "locomotive",
+  "title": "A mozdony",
+  "intro": "A mozdony előtt öt pályaszakasz a hídig. Mindegyikhez egyszer kell beállítani a karokat, aztán: tovább. Az egyikőtök a szabályozót és a homokolót kezeli, a másik a fékszelepet.",
+  "sides": {
+   "a": "Szabályozó és homokoló",
+   "b": "Fékszelep"
+  },
+  "hints": [
+   "Két irat kell: a gyári utasítás a fülke falán, és a pálya leírása Vogt térképének hátoldalán.",
+   "Minden szakaszhoz keressétek meg a pálya jellegét, és nézzétek meg, mit mond rá az utasítás.",
+   "Szabályozó zárva, fék 3; erős lejtőn 4; ívben marad 4; jégen előbb homok, fék 4; az utolsó egyenesben 5."
+  ],
+  "options": {
+   "controls": {
+    "a": [
+     {
+      "id": "regulator",
+      "label": "Szabályozó",
+      "values": [
+       [
+        "open",
+        "Nyitva"
+       ],
+       [
+        "half",
+        "Félig"
+       ],
+       [
+        "closed",
+        "Zárva"
+       ]
+      ],
+      "initial": "open"
+     },
+     {
+      "id": "sander",
+      "label": "Homokoló",
+      "values": [
+       [
+        "off",
+        "Ki"
+       ],
+       [
+        "on",
+        "Be"
+       ]
+      ],
+      "initial": "off"
+     }
+    ],
+    "b": [
+     {
+      "id": "brake",
+      "label": "Fékszelep",
+      "values": [
+       [
+        "off",
+        "Oldva"
+       ],
+       [
+        "3",
+        "3 atm"
+       ],
+       [
+        "4",
+        "4 atm"
+       ],
+       [
+        "5",
+        "5 atm"
+       ]
+      ],
+      "initial": "off"
+     }
+    ]
+   },
+   "segments": [
+    {
+     "km": "20–16",
+     "track": "straight_gentle",
+     "right": {
+      "regulator": "closed",
+      "sander": "off",
+      "brake": "3"
+     }
+    },
+    {
+     "km": "16–12",
+     "track": "steep",
+     "right": {
+      "regulator": "closed",
+      "sander": "off",
+      "brake": "4"
+     }
+    },
+    {
+     "km": "12–9",
+     "track": "curve",
+     "right": {
+      "regulator": "closed",
+      "sander": "off",
+      "brake": "4"
+     }
+    },
+    {
+     "km": "9–5",
+     "track": "ice",
+     "right": {
+      "regulator": "closed",
+      "sander": "on",
+      "brake": "4"
+     }
+    },
+    {
+     "km": "5–0",
+     "track": "straight_stop",
+     "right": {
+      "regulator": "closed",
+      "sander": "any",
+      "brake": "5"
+     }
+    }
+   ],
+   "faults": [
+    {
+     "if": {
+      "regulator": [
+       "open",
+       "half"
+      ],
+      "brake": [
+       "3",
+       "4",
+       "5"
+      ]
+     },
+     "text": "A kerekek sikoltanak, a fék nem fog: nyitott gőzzel fékeztek."
+    },
+    {
+     "if": {
+      "brake": [
+       "off"
+      ]
+     },
+     "text": "Semmi nem lassít. A vonat gyorsul a lejtőn."
+    },
+    {
+     "if": {
+      "track": [
+       "ice"
+      ],
+      "sander": [
+       "off"
+      ]
+     },
+     "text": "A jeges sínen a kerekek megcsúsznak, a mozdony megremeg. Homok nélkül a fék nem fog."
+    },
+    {
+     "if": {
+      "track": [
+       "straight_gentle",
+       "steep",
+       "curve",
+       "ice"
+      ],
+      "brake": [
+       "5"
+      ]
+     },
+     "text": "A kerekek blokkolnak, a kocsik egymásnak torlódnak. Ez túl korai vészfék."
+    },
+    {
+     "if": {
+      "track": [
+       "curve"
+      ],
+      "brake": [
+       "3"
+      ]
+     },
+     "text": "Az ívben gyorsultok. A szakasz elején még kevesebb fék volt, mint kellett volna."
+    },
+    {
+     "if": {
+      "track": [
+       "steep",
+       "curve",
+       "ice"
+      ],
+      "brake": [
+       "3"
+      ]
+     },
+     "text": "Az erős lejtőn a 3 atm kevés: gyorsultok."
+    },
+    {
+     "if": {
+      "track": [
+       "straight_gentle"
+      ],
+      "brake": [
+       "4"
+      ]
+     },
+     "text": "Az enyhe lejtőn túl erős a fék, a kerekek csúsznak."
+    },
+    {
+     "if": {
+      "track": [
+       "straight_stop"
+      ],
+      "brake": [
+       "3",
+       "4"
+      ]
+     },
+     "text": "A híd egyre közelebb. Ez nem elég, hogy megálljatok."
+    }
+   ],
+   "texts": {
+    "segmentOk": [
+     "Egyenletesen lassultok, a lejtő végére jó tempóban értek.",
+     "A fék fog, a lejtőn sem gyorsultok.",
+     "Az ív kanyarog, a kocsik nyugodtan követnek.",
+     "A homok csikorog a jégen, a kerekek fognak.",
+     "A fék teljes erővel fog. A vonat lassul, lassul, és megáll."
+    ],
+    "bad": "Valami nem stimmel, a vonat nem úgy megy, ahogy kellene.",
+    "ready": "Beállítottam",
+    "go": "Tovább",
+    "segment": "{n}. szakasz az ötből · km {km}",
+    "speed": "Sebesség: {speed} km/h",
+    "partner": "a társadnál",
+    "waiting": "A társad még állít…",
+    "stopped": "A vonat áll."
+   },
+   "gauges": {
+    "speedStart": 72,
+    "speedOk": [
+     60,
+     48,
+     40,
+     30,
+     0
+    ],
+    "speedBad": 80
+   }
+  }
+ }
+}

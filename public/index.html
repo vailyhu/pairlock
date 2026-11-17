@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>pAIr-lock</title><link rel="icon" href="/public/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/public/favicon.png"><link rel="stylesheet" href="/public/style.css"></head>
+<body class="homebody"><header class="site"><h1><img src="/public/header.jpg" alt="pAIr-lock"></h1><button id="setb" class="setb" data-s="settings.open"></button></header><div class="home">
+<div id="games" class="stack"></div>
+</div>
+<dialog id="newdlg" class="pick"><h2 id="newtitle"></h2><div id="newbody"></div></dialog>
+<dialog id="resdlg" class="pick"><h2 id="restitle"></h2><div id="reslist" class="stack scroll"></div><div class="row"><button id="resclose" data-s="home.close"></button></div></dialog>
+<dialog id="delask"><h2 data-s="home.deleteAsk"></h2><p id="deltext"></p><div class="row"><button id="delno" data-s="home.cancel"></button><button id="delok" class="dng" data-s="home.confirmDelete"></button></div></dialog>
+<dialog id="settings" class="settings"><h2 data-s="settings.title"></h2>
+<p><span class="meta" data-s="settings.provider"></span> <b data-s="settings.deepseek"></b></p>
+<p><span class="meta" data-s="settings.key"></span> <span id="keystate"></span></p>
+<div id="keyedit" class="row"><input id="newkey" type="password" autocomplete="off" spellcheck="false" data-s-aria="settings.newKey" data-s-placeholder="settings.newKey"><button id="savekey" class="primary" data-s="settings.saveKey"></button><button id="clearkey" data-s="settings.clearKey"></button></div>
+<p class="meta" data-s="settings.keyNote"></p>
+<p><label><span class="meta" data-s="settings.model"></span> <select id="model"></select></label></p>
+<p><span class="meta" data-s="settings.balance"></span> <span id="balance">–</span></p>
+<p id="setmsg" class="meta" aria-live="polite"></p>
+<div class="row"><button id="check" data-s="settings.check"></button><form method="dialog"><button data-s="settings.close"></button></form></div></dialog>
+<script src="/public/strings.js"></script><script src="/public/home.js"></script><script src="/public/tip.js"></script></body></html>

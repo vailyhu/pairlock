@@ -1,0 +1,177 @@
+{
+ "panelDone": {
+  "puzzle": "\\(GAME: SOLVED, Égett levél\\)",
+  "code_lock_chest": "\\(GAME: SOLVED, V\\.B\\. ládája\\)",
+  "code_lock_stairs": "\\(GAME: SOLVED, Lépcsőajtó\\)",
+  "code_lock_toolbox": "\\(GAME: SOLVED, Szerszámláda\\)",
+  "pipes": "\\(GAME: SOLVED, Olajvezeték\\)",
+  "gauge_board": "\\(GAME: SOLVED, Olajnyomás\\)",
+  "morse": "\\(GAME: SOLVED, A szalag üzenete\\)",
+  "gears": "\\(GAME: hajtómű beállítva",
+  "shutter_lamp": "\\(GAME: GYÚJTÁS",
+  "report_form": "\\(GAME: jegyzőkönyv aláírva"
+ },
+ "panelDoneLabel": {
+  "gears": "beállítva",
+  "shutter_lamp": "meggyújtva",
+  "report_form": "aláírva"
+ },
+ "description": "Vihar-szirt, 1908. A világítótorony három napja sötét, az őrök eltűntek, és éjfél körül erre tart a Zrínyi gőzhajó. Nyomozás két játékosnak, három szinten, sok kattintós feladattal.",
+ "goal": "Találjátok ki, mi történt az őrökkel, gyújtsátok meg a lámpát a helyes jellel, és töltsétek ki a jegyzőkönyvet. A jegyzőkönyv aláírása a játék vége.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "first": "A Hatóság motorosa csak addig mert a szirt mellett maradni, amíg kiugrottatok a lépcsőre. Mire felértetek, a következő hullám már a bejárati ajtónak vágta magát, és az nem is nyílik többé. Fent, a torony tetején, semmi fény.\n\n[img:kulso]\n\nA zsebetekben a megbízólevél, ennyit tudtok az egészről:\n\n[img:megbizas]\n\nA lakószobában ég még a viharlámpa, amit magatokkal hoztatok. Hideg van, és senki nem válaszolt a kiáltásotokra.\n\n[img:szoba_lako]\n\nNézzetek körül: mondjátok meg, ki mit vizsgál. Bármelyik lehet egyszerre.\n\n```\nHely: Lakószoba / Lakószoba · Zrínyi: 12 mérföld\nFény: nem ég\n```\nLeltár: [i:megbizas|Megbízólevél]",
+ "autoPass": 20,
+ "imageNames": {
+  "szoba_lako": "Lakószoba",
+  "szoba_orszoba": "Őrszoba",
+  "szoba_lampater": "Lámpatér",
+  "asztal": "Asztal",
+  "kalyha": "Kályha",
+  "fogas": "Fogas",
+  "ladak": "Ládák",
+  "ajto": "Vasajtó",
+  "cedula": "Cédula",
+  "naptar": "Naptár",
+  "ora": "Falióra",
+  "gyujtasi": "Nyomtatott táblázat",
+  "beosztas": "Beosztás",
+  "zaszlok": "Zászlók",
+  "ciszterna": "Ciszterna",
+  "hajtomu": "Hajtómű",
+  "tartaly": "Olajtartály",
+  "lencse": "Lencse",
+  "egoszek": "Lámpa helye",
+  "ismetlo": "Ismétlőlámpa",
+  "morze": "Szalagolvasó",
+  "szerszam": "Szerszámláda",
+  "szocso": "Szócső",
+  "csapoajto": "Csapóajtó",
+  "naplo": "Őrnapló",
+  "fenyjegyzek": "Fényjegyzék",
+  "terkep": "Tengeri térkép",
+  "jelkonyv": "Jelkönyv",
+  "morzetabla": "Morzetábla",
+  "tabla": "Réztábla",
+  "fokonyv": "Zsebkönyv",
+  "kulso": "A torony",
+  "megbizas": "Megbízólevél"
+ },
+ "scripted": [
+  {
+   "re": "\\(GAME: GYÚJTÁS K-20",
+   "text": "A láng megkapaszkodik a kanócon, a dob megindul, és a torony fölött kinyílik a fény. Két villanás. Húsz másodperc sötét. Két villanás.\n\n[img:veg_igaz]\n\nMessze kint a Zrínyi lámpái nem változtatnak irányt. A hajó tartja a biztos utat, és lassan elvonul a Fog-zátony mellett. Aki a hídján áll, soha nem fogja megtudni, mi történt ma éjjel.\n\nMár csak egy dolog van hátra. Hajnalig van időtök: nézzétek át a nyomokat, ameddig kedvetek tartja, aztán töltsétek ki a jegyzőkönyvet.\n\n[panel:report_form|Jegyzőkönyv]",
+   "lit": true
+  },
+  {
+   "re": "\\(GAME: GYÚJTÁS K-31",
+   "text": "A láng megkapaszkodik a kanócon, a dob megindul, és a torony fölött kinyílik a fény. Egy pillanatig úgy érzitek, sikerült.\n\nAztán a galériáról észreveszitek: messze kint a Zrínyi lámpái lassan elfordulnak. Nem a biztos út felé. Felétek.\n\nValami nem jó, és nincs sok időtök. A szerkezet még a kezetek alatt van.\n\n[panel:shutter_lamp|Lencsedob és gyújtás]",
+   "lit": true
+  },
+  {
+   "re": "\\(GAME: GYÚJTÁS K-32",
+   "text": "A fény megint kicsap a viharba, de a Zrínyi nem fordul vissza. A lámpái egyre közelebb jönnek, aztán megállnak, és furcsán megdőlnek.\n\n[img:veg_hamis]\n\nA szél felett is idáig hallatszik a törés. Rakéták szállnak fel a zátony fölött, egyik a másik után. Innen semmit nem tudtok tenni. Csak nézni tudjátok, és a jegyzőkönyvet megírni, amikor már nem bírjátok nézni.\n\n[panel:report_form|Jegyzőkönyv]",
+   "lit": true
+  },
+  {
+   "re": "\\(Zrínyi: 0 mérföld\\)",
+   "text": "Felsír a gőzkürt, közel, túl közel. A Zrínyi megérkezett, és a torony fölött nincs fény.\n\n[img:veg_sotet]\n\nA hajó lámpái megállnak. A kapitány, aki ott, ahol fénynek kellene lennie, nem lát semmit, leállítja a gépeket, és megvárja a hajnalt. Az éjszaka elmúlik, a Zrínyi megmenekül, a lámpát viszont nem sikerült meggyújtanotok.\n\nMég hátravan a jegyzőkönyv. Nézzétek át a nyomokat, ameddig kedvetek tartja.\n\n[panel:report_form|Jegyzőkönyv]",
+   "lit": false
+  },
+  {
+   "re": "jegyzőkönyv aláírva, 5/5 helyes, fény: igaz",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi már rég kikötött Fiuméban, és soha nem tudta meg, milyen közel járt.\n\nNéhány nappal később távirat érkezik a Hatósághoz: krki halászok félig megfagyva, de élve találtak egy fiatalembert a parton, az evezők még a kezében voltak. A jegyzőkönyvetek alapján Triesztben letartóztatják Vidovićot és Hollóst, a mentőtársaság irodáit lepecsételik.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [34]/5 helyes, fény: igaz",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi már rég kikötött Fiuméban, és soha nem tudta meg, milyen közel járt.\n\nNéhány nappal később távirat érkezik: krki halászok élve találták Kružić Antét. A jegyzőkönyvetek elég a vizsgálathoz, de nem minden áll benne helyesen: az egyik bűnös időben eltűnik, és soha nem kerül a Hatóság kezére.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [012]/5 helyes, fény: igaz",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi már rég kikötött Fiuméban, és soha nem tudta meg, milyen közel járt.\n\nA jegyzőkönyvetek rossz nyomra viszi a vizsgálatot. A Hatóság sokáig szökött őrként keresi Kružić Antét, és aki valóban felelős, annak van ideje eltűnni. Valamit nem vettetek észre ezen az éjszakán.\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, 5/5 helyes, fény: hamis",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi roncsa ott ül a Fog-zátonyon: a csónakok a legtöbb embert partra vitték, de nem mindenkit. Az igazi jel ma éjjel csak két villanás lett volna, húsz másodpercenként.\n\nNéhány nappal később távirat érkezik a Hatósághoz: krki halászok félig megfagyva, de élve találtak egy fiatalembert a parton, az evezők még a kezében voltak. A jegyzőkönyvetek alapján Triesztben letartóztatják Vidovićot és Hollóst, a mentőtársaság irodáit lepecsételik.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [34]/5 helyes, fény: hamis",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi roncsa ott ül a Fog-zátonyon: a csónakok a legtöbb embert partra vitték, de nem mindenkit. Az igazi jel ma éjjel csak két villanás lett volna, húsz másodpercenként.\n\nNéhány nappal később távirat érkezik: krki halászok élve találták Kružić Antét. A jegyzőkönyvetek elég a vizsgálathoz, de nem minden áll benne helyesen: az egyik bűnös időben eltűnik, és soha nem kerül a Hatóság kezére.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [012]/5 helyes, fény: hamis",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi roncsa ott ül a Fog-zátonyon: a csónakok a legtöbb embert partra vitték, de nem mindenkit. Az igazi jel ma éjjel csak két villanás lett volna, húsz másodpercenként.\n\nA jegyzőkönyvetek rossz nyomra viszi a vizsgálatot. A Hatóság sokáig szökött őrként keresi Kružić Antét, és aki valóban felelős, annak van ideje eltűnni. Valamit nem vettetek észre ezen az éjszakán.\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": true
+  },
+  {
+   "re": "jegyzőkönyv aláírva, 5/5 helyes, fény: sotet",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi sértetlenül, késve fut be Fiuméba: a kapitánya pontosan azt tette, amire Kružić számított, amikor eloltotta a lámpát.\n\nNéhány nappal később távirat érkezik a Hatósághoz: krki halászok félig megfagyva, de élve találtak egy fiatalembert a parton, az evezők még a kezében voltak. A jegyzőkönyvetek alapján Triesztben letartóztatják Vidovićot és Hollóst, a mentőtársaság irodáit lepecsételik.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": false
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [34]/5 helyes, fény: sotet",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi sértetlenül, késve fut be Fiuméba: a kapitánya pontosan azt tette, amire Kružić számított, amikor eloltotta a lámpát.\n\nNéhány nappal később távirat érkezik: krki halászok élve találták Kružić Antét. A jegyzőkönyvetek elég a vizsgálathoz, de nem minden áll benne helyesen: az egyik bűnös időben eltűnik, és soha nem kerül a Hatóság kezére.\n\n[img:veg_hajnal]\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": false
+  },
+  {
+   "re": "jegyzőkönyv aláírva, [012]/5 helyes, fény: sotet",
+   "text": "Az aláírás alatt már száraz a tinta, mire a keleti ég szürkülni kezd. Még egyszer átnézitek a lapokat, és összeáll a kép.\n\nVidović és Hollós évek óta pénzt kapott az Adria Mentő Társaságtól. A megbeszélt éjszakákon átállították a lemezeket és a kerekeket, és a Vihar-szirt a Szent Márk-bejárat jelét mutatta. A kapitány azt hitte, a biztos út felé tart, és a Fog-zátonyra futott. Így veszett oda a Hertha, a Stella és az Anna. A Zrínyi lett volna a következő, ma éjjel.\n\nKružić rájött. A posta az ő kezükön ment át, ezért csak egyetlen névtelen levelet küldhetett Fiuméből, a többit a saját naplósoraiba rejtette. November 14-én, a saját őrségében eloltotta a lámpát, az égőfejet a ciszternába süllyesztette, hogy hamis fény többé ne éghessen, és még azon az éjszakán csónakba ült. A sötét toronnyal mentette meg a következő hajót. A másik kettőért két nappal később eljött a kutter.\n\nHajnalban visszajön a Hatóság motorosa. A Zrínyi sértetlenül, késve fut be Fiuméba: a kapitánya pontosan azt tette, amire Kružić számított, amikor eloltotta a lámpát.\n\nA jegyzőkönyvetek rossz nyomra viszi a vizsgálatot. A Hatóság sokáig szökött őrként keresi Kružić Antét, és aki valóban felelős, annak van ideje eltűnni. Valamit nem vettetek észre ezen az éjszakán.\n\nVége.\n\n(Ha valamire kíváncsiak vagytok az ügyből, kérdezzetek: a játéknak vége, már mindenre válaszolok.)",
+   "lit": false
+  }
+ ],
+ "statusLit": [
+  "Fény: nem ég",
+  "Fény: ég"
+ ],
+ "help": "A narrátor akkor válaszol, ha mindketten léptetek vagy passzoltatok. A zárak és szerkezetek gombok a chatben, bármikor megnyithatók. A 💡 Tipp a szerkezetek ablakában van, és 1 mérföldbe kerül, a rossz próba is. Egyes szerkezeteket csak ketten, két emeleten lehet működtetni.",
+ "endPattern": "\\(GAME: jegyzőkönyv aláírva",
+ "title": "Az utolsó őrség",
+ "model": {
+  "temperature": 1,
+  "top_p": 0.95,
+  "frequency_penalty": 0.3,
+  "presence_penalty": 0.2,
+  "max_tokens": 500
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztetek még meg azon a szinten, ahol vagytok.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "tailRules": [
+  {
+   "if": "\\(GAME: jegyzőkönyv aláírva",
+   "text": "THE GAME IS OVER. The ending has already been told in the chat, and it contains the whole truth of the case. If the players ask anything, answer openly in plain Hungarian, as yourself outside the story, and do not continue the story or invent new events. The status block is no longer needed."
+  }
+ ],
+ "colorize": {
+  "on": true,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Stormy night, 1908, a lighthouse; tense and sober; short plain sentences, no exaggeration."
+ },
+ "cover": "images/cover.jpg",
+ "panelRetryUntil": {
+  "gears": "\\(GAME: GYÚJTÁS K-(20|32)|\\(Zrínyi: 0 mérföld\\)",
+  "shutter_lamp": "\\(GAME: GYÚJTÁS K-(20|32)|\\(Zrínyi: 0 mérföld\\)"
+ }
+}

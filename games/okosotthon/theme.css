@@ -1,0 +1,11 @@
+/* Az Okosotthon: glass, exposed concrete and oak on a grey November morning; ÍRISZ's cold white LED and red alarm ring. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;700&display=swap');
+:root {
+  --bg:#0d0f11; --panel:#16191c; --panel2:#1f2327; --ink:#e8eaec; --muted:#9aa3ab; --line:#2c3238; --accent:#e2534a; --ok:#8fd6c2;
+  --send:#2a3036; --send-line:#c9d4dc; --send-ink:#f4f7f9; --tool:#2b2119; --tool-line:#b98a5e; --tool-ink:#f3e6d8; --view:#060708;
+  --serif:"Space Grotesk",system-ui,sans-serif; --ui:"Inter","Avenir Next",system-ui,sans-serif; --radius:4px;
+}
+body { font-size:17px; }
+header h1 { font-family:var(--serif); font-weight:300; font-size:22px; letter-spacing:.12em; text-transform:uppercase; }
+.m.n { border-left-color:var(--tool-line); }
+#inventory .l { color:var(--accent); }

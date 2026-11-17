@@ -1,0 +1,179 @@
+{
+ "title": "A Tihany Üdülő",
+ "description": "Egy vállalati üdülő a Balaton partján, két korban: egyikőtök 1974 szeptemberében jár benne, a másik ma, a bontás előtti napon. Csak egy öreg rádión át hallják egymást. Nyomozás két játékosnak, két idősíkban.",
+ "goal": "Derítsétek ki, mi történt Bodnár Gyula gondnokkal 1974. szeptember 14-én éjjel. A játék akkor ér véget, amikor a mai játékos lezárja a felmérést és kilép az épületből.",
+ "players": [
+  "Jancsi",
+  "Juliska"
+ ],
+ "eras": [
+  "1974",
+  "Ma"
+ ],
+ "first": [
+  "Tihany, a tóparti vállalati üdülő, 1974. szeptember 15., reggel.\n\n[img:exterior74]\n\nA szezon tegnap zárult. Te vagy a konyhai segéd, ma még egyszer bejöttél a béredért, de a ház üres: se vendég, se igazgató, és Bodnár Gyula, a gondnok sincs sehol. A portán azt mondták, éjjel elszökött. Bodnár nem az a fajta.\n\nBelépsz az üveges ajtón. Az előcsarnokban állsz.\n\n[img:lobby74]\n\nInnen nyílik a társalgó, ott áll egy Orion rádió.",
+  "Tihany, a tóparti vállalati üdülő, ma, ötven évvel később.\n\n[img:exterior]\n\nA bontócég felmérője vagy: holnap reggel hétkor jön a kotrógép, addig le kell zárnod az utolsó felmérést. A helyiek szerint itt tűnt el egy gondnok 1974-ben, és sosem került elő.\n\nA verandán, a kitört üvegen át mászol be. Az előcsarnokban állsz.\n\n[img:lobby]\n\nInnen nyílik a társalgó, ott áll egy régi rádió."
+ ],
+ "autoPass": 20,
+ "cover": "images/cover.jpg",
+ "colorize": {
+  "on": true,
+  "kinds": [
+   "room",
+   "look",
+   "move"
+  ],
+  "timeoutMs": 4000,
+  "style": "Two eras of one Balaton holiday home: 1974 warm, brown and orange, lived in; today damp, silent, decaying. Short plain sentences, no exaggeration."
+ },
+ "help": "Két korban játszotok, mindenki a saját szálán halad, nem kell egymásra várni. A két kor csak a rádión át ér össze: ha egyszer behangoltátok, a rádió ablakában bármikor beszélhettek. Egyedül játszva a név melletti „Váltás” linkkel léptek át a másik korba. A szerkezetek gombok a chatben, a 💡 Tipp a szerkezetek ablakában van.",
+ "panelDone": {
+  "gauge_board": "\\(GAME: SOLVED, Kapcsolat\\)",
+  "code_lock": "\\(GAME: SOLVED, Az Ó. H. vonal\\)",
+  "logic_grid": "\\(GAME: SOLVED, Szeptember 14., este\\)",
+  "puzzle": "\\(GAME: SOLVED, A kitépett lap\\)",
+  "pipes": "\\(GAME: SOLVED, A tartalék ág\\)",
+  "time_capsule": "\\(GAME: CAPSULE ",
+  "report_form": "\\(GAME: JELENTÉS "
+ },
+ "panelDoneLabel": {},
+ "scripted": [
+  {
+   "re": "\\(GAME: JELENTÉS \\d+/\\d+ ép\\)",
+   "text": "Kilépsz a délutáni fénybe, a táskádban az ötvenéves csomag. A kotrógép ott áll a gazban, holnap reggel hétkor indul. A jelentésed már úton van.\n\n1974. szeptember 16., hajnal. Köd ül a vízen. Bodnár Gyula a csónakban, mellette a bőröndje, a segéd elold. Evez, a félsziget felé, és nem néz vissza.\n\n[img:ending_a]\n\nA füzet minden sora olvasható, és a film is előhívható. Holnap reggel a gép helyett egy újságíró és két rendőr áll a kapuban. Kardos József neve ötven év után újra ott van, ahol a helye: a füzet utolsó során."
+  },
+  {
+   "re": "\\(GAME: JELENTÉS \\d+/\\d+ foltos\\)",
+   "text": "Kilépsz a délutáni fénybe, a táskádban az ötvenéves csomag. A kotrógép ott áll a gazban, holnap reggel hétkor indul. A jelentésed már úton van.\n\n1974. szeptember 16., hajnal. Köd ül a vízen. Bodnár Gyula a csónakban, mellette a bőröndje, a segéd elold. Evez, a félsziget felé, és nem néz vissza.\n\n[img:ending_a]\n\nA füzet fele elmosódott, de a dátumok és Kardos kézjegye olvasható, a film pedig előhívható. Elég ahhoz, hogy holnap reggel a bontás helyett valaki kérdéseket tegyen fel."
+  },
+  {
+   "re": "\\(GAME: JELENTÉS \\d+/\\d+ ázott\\)",
+   "text": "Kilépsz a délutáni fénybe, a táskádban az ötvenéves csomag. A kotrógép ott áll a gazban, holnap reggel hétkor indul. A jelentésed már úton van.\n\n1974. szeptember 16., hajnal. Köd ül a vízen. Bodnár Gyula a csónakban, mellette a bőröndje, a segéd elold. Evez, a félsziget felé, és nem néz vissza.\n\n[img:ending_a]\n\nA füzetből csak pép maradt. De a filmtartó kibírta: a laborban előhívják, és a képeken ott vannak a ládák, a feliratok, a dátum. Bodnár fényképei elég bizonyítékot adnak."
+  }
+ ],
+ "endPattern": "\\(GAME: JELENTÉS ",
+ "tailRules": [
+  {
+   "if": "\\(GAME: JELENTÉS ",
+   "text": "THE GAME IS OVER. The ending has already been told in the chat, and it contains the whole truth of the story. If the players ask anything, answer openly in plain Hungarian, as yourself outside the story, and do not continue the story or invent new events. The status block is no longer needed."
+  }
+ ],
+ "model": {
+  "temperature": 1,
+  "top_p": 0.95,
+  "frequency_penalty": 0.3,
+  "presence_penalty": 0.2,
+  "max_tokens": 500
+ },
+ "buttons": [
+  {
+   "label": "🧭 Segítségkérés",
+   "title": "Felsorolja, mit nem néztél még meg abban a szobában, ahol vagy.\nA motor tudja, nem a narrátor, és nem kerül semmibe.",
+   "place": "help",
+   "message": "(OOC: unseen)"
+  },
+  {
+   "label": "🧩 Szerkezetek",
+   "title": "A már megtalált zárak és szerkezetek listája.",
+   "local": "panels"
+  }
+ ],
+ "imageNames": {
+  "lobby74": "Előcsarnok (1974)",
+  "lobby": "Előcsarnok (Ma)",
+  "lounge74": "Társalgó (1974)",
+  "lounge": "Társalgó (Ma)",
+  "dining_room74": "Étterem (1974)",
+  "dining_room": "Étterem (Ma)",
+  "kitchen74": "Konyha (1974)",
+  "kitchen": "Konyha (Ma)",
+  "caretaker_office74": "Gondnoki iroda (1974)",
+  "caretaker_office": "Gondnoki iroda (Ma)",
+  "switchboard_room74": "Központfülke (1974)",
+  "switchboard_room": "Központfülke (Ma)",
+  "corridor74": "Emeleti folyosó (1974)",
+  "corridor": "Emeleti folyosó (Ma)",
+  "guest_room74": "6-os szoba (1974)",
+  "guest_room": "6-os szoba (Ma)",
+  "veranda74": "Üveges veranda (1974)",
+  "veranda": "Üveges veranda (Ma)",
+  "boiler_room74": "Kazánház (1974)",
+  "boiler_room": "Kazánház (Ma)",
+  "attic74": "Padlás (1974)",
+  "attic": "Padlás (Ma)",
+  "exterior74": "Az üdülő kívülről (1974)",
+  "exterior": "Az üdülő kívülről (Ma)",
+  "radio": "Orion rádió",
+  "radio_now": "A rádió ma",
+  "switchboard": "Telefonközpont",
+  "switchboard_now": "A központ ma",
+  "cable_diagram_now": "Kábelrajz",
+  "notice_board": "Faliújság",
+  "notice_board_now": "Faliújság ma",
+  "key_board": "Kulcstábla",
+  "key_board_now": "Kulcstábla ma",
+  "guest_register": "Vendégkönyv",
+  "guest_register_now": "Vendégkönyv ma",
+  "brigade_log": "Brigádnapló",
+  "brigade_log_now": "Brigádnapló ma",
+  "meal_rota": "Étkezési rend",
+  "meal_rota_now": "Étkezési rend ma",
+  "official_plan": "Tervrajz",
+  "survey_plan_now": "Felmérési terv",
+  "sign": "Cégtábla",
+  "sign_now": "Cégtábla ma",
+  "wall_clock": "Falióra",
+  "wall_clock_now": "Falióra ma",
+  "desk_phone": "Telefon",
+  "valve_wheel": "Szelepkerék",
+  "valve_wheel_now": "Szelepkerék ma",
+  "old_flashlight": "Zseblámpa",
+  "new_flashlight_now": "Fejlámpa",
+  "laser_meter_now": "Távolságmérő",
+  "tablet_now": "Tablet",
+  "screwdriver_set": "Csavarhúzók",
+  "keyring": "Kulcscsomó",
+  "camera": "Fényképezőgép",
+  "film_can": "Filmtartó",
+  "film_can_now": "Filmtartó",
+  "biscuit_tin": "Kekszes doboz",
+  "biscuit_tin_now": "Kekszes doboz",
+  "preserve_jar": "Befőttesüveg",
+  "preserve_jar_now": "Befőttesüveg",
+  "oilcloth": "Viaszosvászon",
+  "oilcloth_now": "Viaszosvászon csomag",
+  "paper_parcel": "Papírcsomag",
+  "paper_parcel_now": "Papírcsomag",
+  "thermos": "Termosz",
+  "chess_set": "Sakk",
+  "paddles": "Pingpongütők",
+  "soda_bottles": "Üdítősüvegek",
+  "postcards_lake": "Képeslapok",
+  "magazine": "Ludas Matyi",
+  "magazine_now": "Újságok",
+  "wardrobe_coat": "Munkaköpeny",
+  "box_a": "Mentőláda",
+  "box_a_now": "Mentőláda ma",
+  "ledger_a": "Fekete füzet",
+  "door_a": "Acélajtó",
+  "door_a_now": "Rozsdás acélajtó",
+  "room_a_now": "A résen át",
+  "room_b_empty": "Óvóhely (Ma)",
+  "old_key_now": "Rozsdás kulcs",
+  "memoir_now": "Laminált lap",
+  "log_page": "A kitépett lap",
+  "room_b": "Óvóhely (1974)",
+  "room_b_now": "Óvóhely (Ma)",
+  "ending_a": "Hajnal",
+  "room_a": "Óvóhely",
+  "keyring74": "Kulcscsomó",
+  "screwdrivers74": "Csavarhúzók",
+  "ledger74": "Fekete füzet",
+  "film74": "Filmtartó",
+  "headlamp": "Fejlámpa",
+  "laser": "Távolságmérő",
+  "tablet": "Tablet",
+  "old_key": "Rozsdás kulcs",
+  "capsule": "Időkapszula"
+ }
+}
