@@ -59,7 +59,7 @@ Van három felnőtteknek szóló, erotikus játék is. Ezekben is csak nyomoztok
 ## Ami kell hozzá
 
 - [Node.js](https://nodejs.org/) 22.18 vagy újabb. Más függőség nincs, `npm install` sem kell.
-- Egy [DeepSeek](https://platform.deepseek.com/) API-kulcs, feltöltött egyenleggel. A játék ezt használja a szövegértéshez és a meséléshez, a te egyenlegedből.
+- Egy [DeepSeek](https://platform.deepseek.com/) API-kulcs, feltöltött egyenleggel. A játék ezt használja a szövegértéshez és a meséléshez, a te egyenlegedből. Az alapértelmezett, olcsó és gyors `deepseek-flash` modell bőven elég; tapasztalatunk szerint egy teljes játék kb. 1–2 cent (dollárcent). A modell a ⚙️ Beállításokban váltható.
 
 ## Indítás
 
@@ -118,7 +118,7 @@ Seven games: *Az utolsó őrség* (a lighthouse, 1908), *Az Éjszakai Expressz* 
 ## Requirements
 
 - [Node.js](https://nodejs.org/) 22.18 or newer. No other dependencies, no `npm install`.
-- A [DeepSeek](https://platform.deepseek.com/) API key with credit. It is used for understanding and narration, on your credit.
+- A [DeepSeek](https://platform.deepseek.com/) API key with credit. It is used for understanding and narration, on your credit. The default, cheap and fast `deepseek-flash` model is plenty; in our experience a full game costs about 1–2 US cents. The model can be changed in ⚙️ Beállítások (Settings).
 
 ## Running
 
