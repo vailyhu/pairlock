@@ -4,6 +4,8 @@
 
 Kétjátékos szabadulószobák élő AI-mesélővel, böngészőben, magyarul.
 
+> 🤖 A motort, a játékokat, a rejtvényeket és ezt a leírást teljes egészében [Claude Opus 5.5](https://www.anthropic.com/claude) írta, [Claude Code](https://claude.com/claude-code)-ban; a képek FLUX-szal és Qwennel készültek.
+
 Ketten játszotok, mindenki a saját gépén, a saját linkjén. Szabad szöveggel írjátok, mit csináltok („benézek az ágy alá”, „kézen fogom, és lemegyünk a pincébe”), a játék pedig mesél, képeket mutat, és ha kell, kattintós feladványokat ad: kódzárat, morzét, csöveket, rádiót. Lehettek egy szobában vagy külön, ilyenkor csak azt látjátok, amit ott, ahol álltok, és meg kell beszélnetek, mit találtatok.
 
 A játék igazsága nem az AI fejében van: a motor dönti el, mi hol van, mi nyílik ki és mi a megoldás. Az AI csak érti, amit írtok, és elmeséli, ami történik. Így nem tud nyomot kitalálni, és nem tudja véletlenül elárulni a megoldást.
@@ -104,6 +106,8 @@ A port a `config.json`-ban állítható. A mentések a `saves/` mappába kerüln
 <a id="english"></a>
 
 # pAIr-lock (English)
+
+> 🤖 The engine, the games, the puzzles and this README were written entirely by [Claude Opus 5.5](https://www.anthropic.com/claude) in [Claude Code](https://claude.com/claude-code); the images were made with FLUX and Qwen.
 
 Two-player escape rooms with a live AI narrator, in the browser. **The games are in Hungarian**; the engine and its documentation are in English, and the player-facing text lives in `locales/` and `games/`, so other languages can be added.
 
