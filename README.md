@@ -44,7 +44,7 @@ A játék igazsága nem az AI fejében van: a motor dönti el, mi hol van, mi ny
 
 ## 18+ játékok
 
-Van három felnőtteknek szóló, erotikus játék is. Ezekben is csak nyomoztok: a hangulatot a hely és a nyomok adják, minden ábrázolt szereplő felnőtt. **Nem ebben a repóban vannak**, és a szerver alapból nélkülük indul. A `--nsfw` kapcsolóval (`node server.js --nsfw`) a szerver induláskor letölti a hiányzó fájlokat (a lista: `games/nsfw.json`), ellenőrzi őket, és betölti ezeket a játékokat is. A fájlok a Hugging Face-en vannak: [vaily/pair-lock-nsfw](https://huggingface.co/datasets/vaily/pair-lock-nsfw).
+Van három felnőtteknek szóló, erotikus játék is, és egy véres horror. Ezekben is csak nyomoztok: a hangulatot a hely és a nyomok adják, minden ábrázolt szereplő felnőtt. **Nem ebben a repóban vannak**, és a szerver alapból nélkülük indul. A `--nsfw` kapcsolóval (`node server.js --nsfw`) a szerver induláskor letölti a hiányzó fájlokat (a lista: `games/nsfw.json`), ellenőrzi őket, és betölti ezeket a játékokat is. A fájlok a Hugging Face-en vannak: [vaily/pair-lock-nsfw](https://huggingface.co/datasets/vaily/pair-lock-nsfw).
 
 <img src="docs/banners/a_modell.jpg" alt="A Modell" width="720">
 
@@ -57,6 +57,10 @@ Van három felnőtteknek szóló, erotikus játék is. Ezekben is csak nyomoztok
 <img src="docs/banners/szimulacio.jpg" alt="A Szerelmi Szimuláció" width="720">
 
 **A Szerelmi Szimuláció.** Budapest, 2045. Egy luxus VR-szolgáltatás ügyfele bent rekedt a fantáziák között.
+
+<img src="docs/banners/preparator.jpg" alt="A Preparátor" width="720">
+
+**A Preparátor.** Somogy, 1938 ősze. Egy híres állatpreparátor kúriája és a gyűjteménye, amely nem egyezik a katalógussal. Véres horror, nyers, valósághű képekkel.
 
 ## Ami kell hozzá
 
