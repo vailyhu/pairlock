@@ -1,6 +1,6 @@
 {
  "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
- "revision": "d30ed83867bcac30c92f500f6b98009f0b1d716a",
+ "revision": "e3687ee8d78653b550f316cdeaf8cf5bc8ac97d4",
  "games": {
   "a_modell": {
    "GAME.md": [
@@ -753,7 +753,7 @@
    ],
    "game.json": [
     9057,
-    "0333a3a9343cd6623b79d426ce5a1090f37431f68a35b859148ebebcb0e7054b"
+    "3e69a1610850f754ebef40536a81b91f15ef241934345f9c81c42076946fec4b"
    ],
    "icons/i_apron.png": [
     114039,
@@ -910,10 +910,6 @@
    "images/exterior.jpg": [
     451386,
     "c70729f4e504732615ad85e86c779aac383e11be39a3205dc0b4cf981120d004"
-   ],
-   "images/exterior_lamp.jpg": [
-    214659,
-    "bc995cdb9220261ecc0d63f3509bdcd87938830bb09200f6c83c1656859bdf95"
    ],
    "images/eye_drawers.jpg": [
     240075,
@@ -1111,6 +1107,10 @@
     208521,
     "13855d5fc808e287f4eac0819f00d412423c3be0a6db7a2c9ce0efedeb2760ab"
    ],
+   "images/peephole_view.jpg": [
+    145128,
+    "76be2bef78cb836bc3512b0bd41ceb6960d92673b1abc5515a5807bdc80aeff4"
+   ],
    "images/photo_1937.jpg": [
     330146,
     "6676a3787a96e804f4985cb7ab23b913b0b9b0446910bdad6232dd075691c09f"
@@ -1285,7 +1285,7 @@
    ],
    "world.json": [
     79517,
-    "2710dcc6d7afd9b722e48b1bb88e969037fa952edbb1fafe6afb8687c38299b1"
+    "a8807265b6988f7524834e80f1ab93e34ad1a0e899e0fb84791acdf96461c029"
    ]
   },
   "szimulacio": {
