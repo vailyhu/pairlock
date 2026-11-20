@@ -1,6 +1,6 @@
 {
  "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
- "revision": "52c8ba3d24135ea23f41856dbadcd4f4d1d8db28",
+ "revision": "077fecbdeb5e34bfba356023840c019ee07c1e12",
  "games": {
   "a_modell": {
    "GAME.md": [
@@ -744,6 +744,472 @@
    "world.json": [
     60457,
     "ac85ad52a5ecd890d3c06164ac73d4ad5b00b054fd11d72ddd2819fe33c24cf4"
+   ]
+  },
+  "preparator": {
+   "GAME.md": [
+    2545,
+    "9b2801bb3da344f7bc96487885de2f1223e16b2f7f14f4e9bad54138de9d4868"
+   ],
+   "game.json": [
+    9023,
+    "acc9eb0fa6d461a5f47ce9b2fee9e5486bc1514c579956437158817d3351f6ca"
+   ],
+   "icons/i_apron.png": [
+    114039,
+    "f91db03350c9e339639a700a2408bb42ef7b63aee81bdd9c0644172a906e3c86"
+   ],
+   "icons/i_bottle.png": [
+    66655,
+    "f80a10e05a283eaa7e08c170754fd2de679a694d5ca688dc017d6e48e9e4d017"
+   ],
+   "icons/i_catalogue.png": [
+    79526,
+    "05f1e4f13edb28e8c2ef15123a6cec674ac14aceb32537908bb8f5f6f043c6b6"
+   ],
+   "icons/i_crypt_key.png": [
+    90211,
+    "4e97fc6c9fd111bf60a47afb6168f2e8af3a9da91f025bf807327215e80ee38c"
+   ],
+   "icons/i_glass_plate.png": [
+    72192,
+    "48cc36018b66a5b233af36317f3db623560274b0f821e05f28e7f3d7c81c6d60"
+   ],
+   "icons/i_horn.png": [
+    85374,
+    "cd92a22d2fb50e7e28aa95af9af7b46097b583ee87111a470d1fb052835d3631"
+   ],
+   "icons/i_journal.png": [
+    82814,
+    "25da34db5496ceec92f5c234cda12f50b660e93b5327db7b0c3ec2d9cd2059d9"
+   ],
+   "icons/i_key_chem.png": [
+    83321,
+    "4d6dd3909b88d52a7de9ccc84e36ab0749ecef2ef017379fe3d8bc49c935b3ad"
+   ],
+   "icons/i_key_library.png": [
+    86878,
+    "f6ff2416300855f9adc04fc1bf9a91d28779e778809d6faa4a0e98bc11228b51"
+   ],
+   "icons/i_key_workshop.png": [
+    91892,
+    "ab00e14cea7d97a16d7b1f174274ed0a4b873cd98b74c434f403359d91ba7b43"
+   ],
+   "icons/i_mandate.png": [
+    62138,
+    "6b50db5f472620c6628b490562a4ea57f7077df7f3ca27f327c800124aec1bf9"
+   ],
+   "icons/i_pattern_book.png": [
+    84265,
+    "1fc82abbbe2257e77ad54603e0cc79350db76819a386121fb88055e3e288bb0b"
+   ],
+   "icons/i_photo_1937.png": [
+    83291,
+    "4a0895367e777cf42039ee2860682208212d460746e0239b1560da56205c8565"
+   ],
+   "icons/i_photo_household.png": [
+    85574,
+    "7f110eaaff850060f3df667dae9e6af679760c0ee026cff24ec64816c462b023"
+   ],
+   "icons/i_rasp_file.png": [
+    84651,
+    "9ec64c7674c1d2ac41b719507704c0f3f79678c43fc6a5f8d97b31524f6c6edf"
+   ],
+   "icons/i_soap.png": [
+    83140,
+    "fb3973019b43b65e6b7ee6c6fccbb68994f6b75c22c2f5cc44989a3cd15b4567"
+   ],
+   "icons/i_true_catalogue.png": [
+    87448,
+    "9e7ce3724da30b789af42cc614082ac1b00b15d57517e19385796429b6dc8d0b"
+   ],
+   "icons/i_wood_lamp.png": [
+    90549,
+    "776bdc0075112b0c3616d4b1b70d93b704cca19a3b9adcbb21e1de5e640b23f5"
+   ],
+   "images/atlas.jpg": [
+    211954,
+    "9a5a501cd8a3a386d388f7c9492c33410847435ea17de14be50ef60143e0a868"
+   ],
+   "images/bear.jpg": [
+    216860,
+    "b38bdc1065a1147dc582d206b995031e5f927d79c4231501369e9c02403698c9"
+   ],
+   "images/bloody_apron.jpg": [
+    215873,
+    "c898bfcb7ca1e19a28351ecfe844bd6d26d8947e5b9a901542c9c18658aa9385"
+   ],
+   "images/bognar_note.jpg": [
+    185357,
+    "6525dda09f367226d84cdcfbf3b241cf9c10062404503c4495bda8c6b34aa90e"
+   ],
+   "images/bookcase_closed.jpg": [
+    279191,
+    "4e8d7a0aae9abca9c4d2521eed46a97427f6f60f5905c69825959ddbd9a82a03"
+   ],
+   "images/bookcase_open.jpg": [
+    272157,
+    "4e0896fb056ab48c45970b7d20218f0374a62ecc2c89988bcf40a6e9398017ac"
+   ],
+   "images/catalogue_note.jpg": [
+    241624,
+    "b43ee210decc3aea61b45a2fca4c578ef8a7dbdd4d50446d57b12d26bfc5716a"
+   ],
+   "images/catalogue_page.jpg": [
+    237724,
+    "a5602384ec6abf30d9c13f751f57bd0419f9043d4e18f738b6650b0b8082c563"
+   ],
+   "images/clipping_ad.jpg": [
+    262597,
+    "8a33aaa963a93551c7f179072388ba069c5b604004bfee1d474f431fe146da4c"
+   ],
+   "images/coats.jpg": [
+    174310,
+    "e175c63cd3d0e008fbdb9cbbf2cfd448dffc68ebe4a0f38c55af77066fc94239"
+   ],
+   "images/cover.jpg": [
+    135937,
+    "e849bee0129cb385c72a303d0bd07f78599f14fdc0973465cb7c1b47f6f47ea5"
+   ],
+   "images/crate_k.jpg": [
+    169127,
+    "e5d6dccbed2613b4c855dd5c488c308105869ac36b8e51085c3dda5d3a4396cf"
+   ],
+   "images/crypt_key.jpg": [
+    151087,
+    "a21d66ee225c6327a3e31ed411a21eab7335259816a55a386ad1615c362c2a7f"
+   ],
+   "images/death_cert.jpg": [
+    198769,
+    "d30ff94524bf063e4bd6dfc6ad59fab1a2a5eb5ef44bd07f382db747827dc07d"
+   ],
+   "images/delivery.jpg": [
+    202915,
+    "d35cf78cabfe9743254e9faa5abb542280c177b05a8c22d9a3659f9b3a7ef240"
+   ],
+   "images/delivery_back.jpg": [
+    164301,
+    "bdcc4837c0e2428dab08317048d1596dfa61d8ab5f48b791cd0f80051a237dab"
+   ],
+   "images/drawer_lamp.jpg": [
+    168876,
+    "5f412ba32b8eee23bb0f2a13ec100e51b74634c1d33ea7d6fa5dc50c26efd1d4"
+   ],
+   "images/eloszoba.jpg": [
+    264602,
+    "defe6566e60f662eb460b224e04f2adf7298065052330692a20d463731897adb"
+   ],
+   "images/ending_window.jpg": [
+    392136,
+    "eef0f7461399c1619cdb4336605b481775ec2947dc86c7c624da2241c10edae4"
+   ],
+   "images/estate_papers.jpg": [
+    156921,
+    "466be7daf616323ccca70df5806f5e548b4f0ccbce614b6dd30423552e9e9335"
+   ],
+   "images/exterior.jpg": [
+    451386,
+    "c70729f4e504732615ad85e86c779aac383e11be39a3205dc0b4cf981120d004"
+   ],
+   "images/exterior_lamp.jpg": [
+    214659,
+    "bc995cdb9220261ecc0d63f3509bdcd87938830bb09200f6c83c1656859bdf95"
+   ],
+   "images/eye_drawers.jpg": [
+    240075,
+    "16ef0cba326420f70cae9cfbaa019ca1e9b647586fd7ed7787f971543eca908d"
+   ],
+   "images/eyes_human.jpg": [
+    140741,
+    "c67aa4a7f4d1198dd330c33b4b7b2d575cc557f1df3454a5ed8e279c66fe1072"
+   ],
+   "images/fresh_basin.jpg": [
+    201089,
+    "27580f87b06901cf7a7d00db9c26990dd16777db87e8c40252450b474e5e0187"
+   ],
+   "images/funeral_bill.jpg": [
+    179272,
+    "0bbf4e753cb53cfe8f532c3d5191c5173180187d725391fd4858ffa4e364a545"
+   ],
+   "images/gallery_a.jpg": [
+    279577,
+    "bdb9e29e25263f048afc7bc3b02406c8647ff50c32d6c155ad1068646155428f"
+   ],
+   "images/gallery_b.jpg": [
+    287016,
+    "50b4e2b353de26c3a72166930b71924f983aabe273d0cd721b6b05f8a006a9fb"
+   ],
+   "images/glass_plate.jpg": [
+    161133,
+    "252e636218d7c1e77201ae036b1091b8107a43e2ae3bf93b57d269986f1fe00c"
+   ],
+   "images/hall_clock.jpg": [
+    223608,
+    "88607a0a132d290118669dce5bc4b0c1f6ebfe24fcd3fcaca4eb42e7055e7add"
+   ],
+   "images/hunting_horn.jpg": [
+    152357,
+    "131080378b9e798807ab19771c66e283298fc031527ba10346fab566b85ff9bf"
+   ],
+   "images/ice_door.jpg": [
+    314859,
+    "b44e2b385e8d57e75f02ddfe694d8dee8ba55a757a5ad41c277149173777af26"
+   ],
+   "images/ice_tunnel.jpg": [
+    359272,
+    "d4f35cf3bd5c22e0580631a2256797b878caf819fccd8497db5a3deba6694ba8"
+   ],
+   "images/invoices.jpg": [
+    170507,
+    "8116378445171ee82952ab4bf9dff7146395c91679b7826b9c712a86ad27331c"
+   ],
+   "images/iron_door.jpg": [
+    304903,
+    "873d6d76c006f7b6e8e4913918e83148d92eed08bf0a8f1be1b416dc312a3520"
+   ],
+   "images/jar_shelf.jpg": [
+    232826,
+    "7cd579b060a94b5c2cc9b80a4fe389cfd7f8614657bc68a44256e94b777970d0"
+   ],
+   "images/jar_shelf_moved.jpg": [
+    245912,
+    "baf3752c61a45504bfa99382d389d93527f85aa4e95ec07c9ceb12728a83c2db"
+   ],
+   "images/journal_1.jpg": [
+    250097,
+    "231be2768d745b55abd08be859325453b25403df11ab726a967b5d6bb7a6d8ef"
+   ],
+   "images/journal_2.jpg": [
+    252584,
+    "545098b37e4aac7a81ab1d63392f8576aaa803c394b0b8eb41be2adc1ca8b347"
+   ],
+   "images/key_board.jpg": [
+    229652,
+    "a422e7089543c3ab81541ee265e4bd885724c692a5ed4bcbacc29fece2adfc2d"
+   ],
+   "images/key_chem.jpg": [
+    113405,
+    "083e912a6854cbfe1f51843d4b8d8c45a1ed01e4945336f3aa83a761c3bf2ddd"
+   ],
+   "images/key_library.jpg": [
+    141774,
+    "f1d2df3c60840d2be2616ddeeab134e508d243bee91a0a5181e6f6b9165307c1"
+   ],
+   "images/key_workshop.jpg": [
+    155329,
+    "5bf00fdb2d0128c310e49b25652b6d80f4652bee389a0108347d475588c7d4a0"
+   ],
+   "images/konyvtar.jpg": [
+    238969,
+    "a1a4336d0c0a11a3b332556ece6655843551d80657990f5ab18814bd3f26dfe8"
+   ],
+   "images/konyvtar_open.jpg": [
+    260671,
+    "689ee10335be3648698801e1e25b6abe203588b34ce5d7f0a451e2d8564d6d3d"
+   ],
+   "images/ledger.jpg": [
+    177543,
+    "69d73d52a3dfc73a0a54428c9103d998e245115b2dfcf7ba40809c0a6bc87add"
+   ],
+   "images/mandate.jpg": [
+    220763,
+    "a99fc66b1dec2bb4a6e2f9e901360e7b653cead1af534a206f7285effcd5aee0"
+   ],
+   "images/muhely.jpg": [
+    262506,
+    "f37c9ca975875155bfa9b2fc073b58ad7c95a079475ccdeadc4c9a1a8cdadab3"
+   ],
+   "images/niche_empty.jpg": [
+    257364,
+    "76058a435ae38104be4279e71c57c4be1ab1b2e06e583ea3a1c9ed21d39b012f"
+   ],
+   "images/p_barakonyi.jpg": [
+    149739,
+    "4ea300ff83ed889522c2f5b973161aecb80e20a59aa8b9ee062bd56264265f15"
+   ],
+   "images/p_bognar.jpg": [
+    150304,
+    "f9cd1ce2fc8dac6c8ff88a6eae09fff601d8ffbc260f10984b08be40b272b2a5"
+   ],
+   "images/padlock_door.jpg": [
+    267344,
+    "30bbebc6aef9a816241c0fa7a7e5da122a2faf543d413d41e7174937ee1c9fa4"
+   ],
+   "images/pattern_page.jpg": [
+    208521,
+    "13855d5fc808e287f4eac0819f00d412423c3be0a6db7a2c9ce0efedeb2760ab"
+   ],
+   "images/photo_1937.jpg": [
+    330146,
+    "6676a3787a96e804f4985cb7ab23b913b0b9b0446910bdad6232dd075691c09f"
+   ],
+   "images/photo_household.jpg": [
+    160935,
+    "e91fa5a431702028d935245fb87a4f2079f794919d67805742bb488cec102cf3"
+   ],
+   "images/pince.jpg": [
+    375778,
+    "6213efcf2fb3d2362b715981f889f052432bdfe2107ee67ab17897e5b3aebd74"
+   ],
+   "images/pince_open.jpg": [
+    312841,
+    "672bb655115a70ab8e1cba8b55bec50fef00875a1a13be2b095e4dc483573578"
+   ],
+   "images/pipe_plan.jpg": [
+    207387,
+    "87850a4b2fdfa4afcd6b175f4eb8c1a1a86b5463e632feea7419c45dbbe2439a"
+   ],
+   "images/plate_camera.jpg": [
+    175965,
+    "f8343c005aa92f0dc7e80b934c7f67a2f12ae81c3280a90b9c2b0e9bcbc6bc1b"
+   ],
+   "images/plate_photo.jpg": [
+    187692,
+    "07bd984ccc57a9cf7244d80e43ac478702ede02dc015c0f1d618b2a599fb080e"
+   ],
+   "images/prep_table.jpg": [
+    218440,
+    "2e3e285fb7761eb7ef3b4166eaf8417cc52d21801fc265410d44e86853a44443"
+   ],
+   "images/rasp_file.jpg": [
+    137248,
+    "c55986849dc28a3343925709e7c62f445b8f6921a7ab0efe0b4223b556a8b0a0"
+   ],
+   "images/soap_jar.jpg": [
+    150621,
+    "0233d72054f6c6e6c652295132bac23a8f5ede0d37a70f3ea0ec3bc3f32d7f2a"
+   ],
+   "images/spec_1.jpg": [
+    301802,
+    "5efd974868c869bbd4bfce5d1e1580dca9ba84c0abcc10a40cbdf9a41324f5db"
+   ],
+   "images/spec_2.jpg": [
+    269003,
+    "b24c39eba877870eccfd67d93ed3798e29be241067024e46d173ca59f94d24c5"
+   ],
+   "images/spec_3.jpg": [
+    262330,
+    "3740b1261e20a111b01226d02466c643e41bdd502cb7aa8f3c6b6816dbd2b158"
+   ],
+   "images/spec_4.jpg": [
+    171055,
+    "0973ed4d61775e1d8c014daeb0b74db87db3242fed9ec6c0c1d3d48d53ea5177"
+   ],
+   "images/spec_5.jpg": [
+    279837,
+    "1e1c35bf79af28a70df858010e05b4aac6cce0b7f48a35d0c6b1a2e4f22e4059"
+   ],
+   "images/spec_6.jpg": [
+    296130,
+    "be19b0a7237b429f1be2cc18ec62ab81db21f98680711f88ced5eb3fe209b30d"
+   ],
+   "images/spec_7.jpg": [
+    271026,
+    "58ea1686cb2af695e1c8493efb81e2a7c99807858d2424620d3a279b7eb5c959"
+   ],
+   "images/spec_8.jpg": [
+    125606,
+    "e8e85c21e3c90faa9e8b15e22c5c032e12a5f7d28e2595843242d0f83d084388"
+   ],
+   "images/st_chain.jpg": [
+    233975,
+    "b09e9ee4fe8e95a09b1dc375502322a16681b84b96dc1d1dd093ece881bda72e"
+   ],
+   "images/st_cross.jpg": [
+    218326,
+    "5ee506d8095a61af6e733bb8d354f3fb0ae64cbd80968f3b3f5be3de501e77ba"
+   ],
+   "images/st_hidden.jpg": [
+    222599,
+    "d2d00bfb9413e4c9214bb0a79c11e3b46c039aae795af1660e92b8b5eab6bfde"
+   ],
+   "images/st_loop.jpg": [
+    201180,
+    "f9d82236bb78def4556ce7a7429fb74dcface5f1cb3e8eecc0a73a4ae4127302"
+   ],
+   "images/st_mattress.jpg": [
+    250480,
+    "f4ca177710446da9695e1f0dfcccc4f15d1e20c333ce5fbab96c0073219a7c86"
+   ],
+   "images/st_surgical.jpg": [
+    220869,
+    "e4f6fc905610bec17e580757bc1d0107718ebb90feef2a594db4e0460633d581"
+   ],
+   "images/stag_stitch.jpg": [
+    298526,
+    "d43cd93893a202554e861abc6ee02963a2404afe7e838296d99be74991da975d"
+   ],
+   "images/szalon.jpg": [
+    225367,
+    "ec3e7236f54b8ac2d3693ffe504a11e5c51a779b701d21398f073e583af8ffde"
+   ],
+   "images/szalon_moved.jpg": [
+    224583,
+    "54df477826d6ce9bb2e1f487eda6033a0bc509d810416647b640ecfa73150da0"
+   ],
+   "images/trofeaterem.jpg": [
+    242974,
+    "eb509289428353132572887cdbd113aa47fa6163f17dc02bbfdec6681c9695d8"
+   ],
+   "images/tub_contents.jpg": [
+    227817,
+    "f0ff01b19d8528c870dec2721f705b3993e2bb7ef88e08d332b9aee348842c83"
+   ],
+   "images/valve_panel.jpg": [
+    232626,
+    "9729ac489bc8ae2804d06a8181cc449aa099cf3f767b2be37502615418cfbd37"
+   ],
+   "images/vegyszerkamra.jpg": [
+    247247,
+    "f9d30200ad0987aeb52f16f8e263b91ed0d74a10353d118cff61c5ab7320fe4c"
+   ],
+   "images/vegyszerkamra_open.jpg": [
+    245613,
+    "1fd32a5e463d9654ad3b8678bba7973fce56b4bc0a61b032e8284f79ea761b2b"
+   ],
+   "images/vitrine_boar.jpg": [
+    231020,
+    "c2e745a9ddc53b8c3197540479f1e29c0158041f27f3f4e6e6ad56e0e576acc7"
+   ],
+   "images/vitrine_fox.jpg": [
+    193598,
+    "da50950889ef3999e70e7b2e7d5c979cdae1a77b6a05bd30a6707abafbfd973e"
+   ],
+   "images/vitrine_lynx.jpg": [
+    227598,
+    "b549558a7662d12c52e08f4982691a8e7e017bc093bd0c2d00fa4d5f203a5985"
+   ],
+   "images/vitrine_owl.jpg": [
+    233038,
+    "0862b28e76d3c830774927a02a1144f4666fb44fc1aeeb81fa0c4bacd2b4b16b"
+   ],
+   "images/vitrine_stag.jpg": [
+    234370,
+    "fa9ce75eda8caf5fdbe2fcfdc95ec4e26c294a045da8dacdecc97d90e4ebd954"
+   ],
+   "images/will.jpg": [
+    221855,
+    "7016e26fe686cc82a06e8504aebd53c408e4ee3384751162b0bed9d750f2215d"
+   ],
+   "images/wine_bottle.jpg": [
+    128794,
+    "c2162ed835ae094c5a0ee5de90db69ee999db94019b281b0ccfe66752e8b1034"
+   ],
+   "images/workbench.jpg": [
+    233023,
+    "ae27be60556b8e77e13598fd7501538feb70bbce3bb1a7e776e88ec182265176"
+   ],
+   "panels.json": [
+    22100,
+    "2633e29f443a4918dfd73d42ecc14c400f9a0c93150a7cc067b3a656f41234c1"
+   ],
+   "theme.css": [
+    884,
+    "7592756bb44f1f7aad7f21f183a66787edbe07c5eb0b74a641d0a47b9edd3038"
+   ],
+   "world.json": [
+    79969,
+    "9bfaf5584cf6ede99b62a0b34105940deb2338b7e0e59febbfe91aa824a8a49e"
    ]
   },
   "szimulacio": {
