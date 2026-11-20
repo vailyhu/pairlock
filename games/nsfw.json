@@ -1,6 +1,6 @@
 {
  "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
- "revision": "077fecbdeb5e34bfba356023840c019ee07c1e12",
+ "revision": "d30ed83867bcac30c92f500f6b98009f0b1d716a",
  "games": {
   "a_modell": {
    "GAME.md": [
@@ -752,8 +752,8 @@
     "9b2801bb3da344f7bc96487885de2f1223e16b2f7f14f4e9bad54138de9d4868"
    ],
    "game.json": [
-    9023,
-    "acc9eb0fa6d461a5f47ce9b2fee9e5486bc1514c579956437158817d3351f6ca"
+    9057,
+    "0333a3a9343cd6623b79d426ce5a1090f37431f68a35b859148ebebcb0e7054b"
    ],
    "icons/i_apron.png": [
     114039,
@@ -951,6 +951,78 @@
     152357,
     "131080378b9e798807ab19771c66e283298fc031527ba10346fab566b85ff9bf"
    ],
+   "images/i_apron.jpg": [
+    248129,
+    "843a1050ea80d571cd66b661e8df5acd1f04c525173d2a7762a9660a1a56998e"
+   ],
+   "images/i_bottle.jpg": [
+    108364,
+    "84c6573b384b05e612611ac04cc5563292b9694e4d8c0ac6b8f499f247e07e8c"
+   ],
+   "images/i_catalogue.jpg": [
+    187102,
+    "f1e0a04becb1d0b7c1a06c134afc7be4b7ad8cb9fc9128af9da5ef5df3b858dd"
+   ],
+   "images/i_crypt_key.jpg": [
+    207029,
+    "4c9832c99e015d2e5d08ad346d21ca12a53b0a99e4c587bf445e94e0bd134acc"
+   ],
+   "images/i_glass_plate.jpg": [
+    135002,
+    "94cdb742623bc5739cd1c71e08da0bd6416a90b008aee2b42d76aad062d18777"
+   ],
+   "images/i_horn.jpg": [
+    150292,
+    "08b40c84c42ae829e67fe97d0790cf1a0ee771136fc6525374c7960e410817ca"
+   ],
+   "images/i_journal.jpg": [
+    181580,
+    "94d192b1d11f04336d91638692ac7f1b82f9f319c0c7b3d594709decbf47e48b"
+   ],
+   "images/i_key_chem.jpg": [
+    147558,
+    "40e81f5d921731b1238f480b4d51fdba0d9c605d5719decba39c523aa7eeab26"
+   ],
+   "images/i_key_library.jpg": [
+    147835,
+    "1eca8d6916c48516e664273fb543d54215a804fc228afa849c53a44618a55258"
+   ],
+   "images/i_key_workshop.jpg": [
+    185796,
+    "a93bdc26e33129d7154f646bbe3967cad649d8e2d1328ff90ec732d096602291"
+   ],
+   "images/i_mandate.jpg": [
+    106763,
+    "80d36275124715868ca473e3385d87622d5b20e48a9cac29746333de2d77e402"
+   ],
+   "images/i_pattern_book.jpg": [
+    220171,
+    "d2c03d07252db4cb16f8b2f6180665bfb7c5dbad794dad37deeeb4b264588f4d"
+   ],
+   "images/i_photo_1937.jpg": [
+    330146,
+    "6676a3787a96e804f4985cb7ab23b913b0b9b0446910bdad6232dd075691c09f"
+   ],
+   "images/i_photo_household.jpg": [
+    160935,
+    "e91fa5a431702028d935245fb87a4f2079f794919d67805742bb488cec102cf3"
+   ],
+   "images/i_rasp_file.jpg": [
+    179254,
+    "1fd54b377842e2fed2450d7a5715d75d6794b8ed2f7f5a29c185cf4b749d09a7"
+   ],
+   "images/i_soap.jpg": [
+    161187,
+    "b83ecc787838a54b5b87467df3660aa9b0eea019cbf9b785b951bd16c73000bb"
+   ],
+   "images/i_true_catalogue.jpg": [
+    193619,
+    "c3696ba59c9416962856bcb07ec8340268756b779a0e712083285fe385d93520"
+   ],
+   "images/i_wood_lamp.jpg": [
+    179842,
+    "b5cccbbdeb90c001e611e6d9895c7c5a96da3793680da5f8a118181d2496625d"
+   ],
    "images/ice_door.jpg": [
     314859,
     "b44e2b385e8d57e75f02ddfe694d8dee8ba55a757a5ad41c277149173777af26"
@@ -1147,6 +1219,10 @@
     224583,
     "54df477826d6ce9bb2e1f487eda6033a0bc509d810416647b640ecfa73150da0"
    ],
+   "images/szalon_moved_empty.jpg": [
+    254891,
+    "bb2536bd252dfe3854f162ac333cde98c94109d994fef917a230c3cfb941a248"
+   ],
    "images/trofeaterem.jpg": [
     242974,
     "eb509289428353132572887cdbd113aa47fa6163f17dc02bbfdec6681c9695d8"
@@ -1208,8 +1284,8 @@
     "7592756bb44f1f7aad7f21f183a66787edbe07c5eb0b74a641d0a47b9edd3038"
    ],
    "world.json": [
-    79969,
-    "9bfaf5584cf6ede99b62a0b34105940deb2338b7e0e59febbfe91aa824a8a49e"
+    79517,
+    "2710dcc6d7afd9b722e48b1bb88e969037fa952edbb1fafe6afb8687c38299b1"
    ]
   },
   "szimulacio": {
