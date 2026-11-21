@@ -84,3 +84,13 @@ dialog.pick .names #swapnames{align-self:flex-end} .who .era{color:var(--muted);
 /* home page: games in two columns on wide screens (banners shrink with the column) */
 .home{max-width:1400px} #games{grid-template-columns:repeat(auto-fill,minmax(min(100%,560px),1fr));gap:16px;align-items:stretch}
 #games .card{display:flex;flex-direction:column;gap:9px} #games .card>.row:last-child{margin-top:auto}
+
+/* highlighted names in fixed room and look texts: only their colour differs, no underline; a click looks at the thing */
+.m.n button.hl{display:inline;font:inherit;color:var(--accent);background:none;border:0;border-radius:0;padding:0;margin:0;cursor:pointer;white-space:inherit} .m.n button.hl:hover{filter:brightness(1.25)}
+/* found panels not usable now (solved, or elsewhere): still listed, faded */
+.pbtn.locked{opacity:.5}
+/* waiting toggle in the header; the partner's new message flashes briefly */
+#waitb{font-size:13px;padding:5px 10px} #waitb.off{border-color:var(--accent);color:var(--accent)}
+.m.u.fresh{animation:fresh 2.5s ease-out} @keyframes fresh{0%{box-shadow:0 0 0 2px var(--accent)}100%{box-shadow:0 0 0 2px transparent}}
+/* content warning of a game (game.json contentWarning) on its card and in the new game dialog */
+.cwarn{margin:0;padding:6px 10px;border-left:3px solid var(--err);background:rgba(200,60,60,.08);font-size:14px} .cwarn b{color:var(--err)}

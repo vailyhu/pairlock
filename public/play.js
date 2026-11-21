@@ -11,10 +11,12 @@ function parse(text, live) {
   const st = [...text.matchAll(/```[a-z]*\n?([\s\S]*?)```/g)].pop(); const invRe = new RegExp(`^${M().inventory}:(.*)$`, 'gm'), lt = [...text.matchAll(invRe)].pop();
   let body = text.replace(/```[\s\S]*?(```|$)/g, '').replace(invRe, '');
   if (live) body = body.replace(/\[[^\]]*$/, '');
+  // [view:p:id]: player p's image pane turns to this picture (a room entered again), nothing shows in the text
+  const views = [...body.matchAll(/\[view:(\d):([a-z_0-9]+)\]\n?/g)].map(m => ({ p: +m[1], id: m[2] })); body = body.replace(/\[view:\d:[a-z_0-9]+\]\n?/g, '');
   const imgs = [...body.matchAll(/\[img:([a-z_0-9]+)\]/g)].map(m => m[1]);
   const inv = lt ? [...lt[1].matchAll(/\[i:([a-z_0-9]+)\|([^\]]+)\]/g)].map(m => ({ id: m[1], name: m[2] })) : null;
-  const html = esc(body).replace(/\[img:([a-z_0-9]+)\][ \t]*\n?/g, (_, i) => `<button class="tmb" data-show="${i}" title="${esc(name(i))}"><img src="${IMG(i)}" alt="${esc(name(i))}"></button>`).replace(/\[i:[a-z_0-9]+\|([^\]]+)\]/g, '<b>$1</b>').replace(/\[panel:([a-z_0-9]+)\|([^\]]*)\]\n?/g, '<button class="pbtn" data-j="$1">🔧 $2</button>').replace(/\*/g, '').trim().replace(/\n{3,}/g, '\n\n');
-  return { status: st ? st[1].trim() : null, inv, imgs, html };
+  const html = esc(body).replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g, (_, w, id) => `<button class="hl" data-look="${id}" title="${esc(t('play.lookTip'))}">${w}</button>`).replace(/\[img:([a-z_0-9]+)\][ \t]*\n?/g, (_, i) => `<button class="tmb" data-show="${i}" title="${esc(name(i))}"><img src="${IMG(i)}" alt="${esc(name(i))}"></button>`).replace(/\[i:[a-z_0-9]+\|([^\]]+)\]/g, '<b>$1</b>').replace(/\[panel:([a-z_0-9]+)\|([^\]]*)\]\n?/g, '<button class="pbtn" data-j="$1">🔧 $2</button>').replace(/\*/g, '').trim().replace(/\n{3,}/g, '\n\n');
+  return { status: st ? st[1].trim() : null, inv, imgs, views, html };
 }
 /** A player's pass, as the server writes it from the pass marker. */
 const passRe = () => new RegExp('^' + (M().pass || '').replace(/[.*+?^$()|[\]\\]/g, '\\$&').replace('{name}', '.*') + '$');
@@ -38,6 +40,7 @@ function apply(m, isNew) {
   if (p.status) { $('#chips').innerHTML = p.status.split('\n').map(l => l.split(' · ').filter(x => !(S.rooms && x.startsWith(M().place + ': '))).map(x => { const i = x.indexOf(': '); return i < 0 ? esc(x) : `<span>${esc(x.slice(0, i))}: <b>${esc(x.slice(i + 2))}</b></span>`; }).join('')).join(''); }
   if (p.inv) renderInv(p.inv);
   if (p.imgs.length) { for (const i of p.imgs) if (!gal.includes(i)) { gal.push(i); if (isNew) fresh.add(i); } cur = [...new Set(p.imgs)]; if (isNew || !S._init) { renderView(); } renderStrip(); }
+  else { const v = p.views.filter(x => x.p === me).pop(); if (v) { if (!gal.includes(v.id)) gal.push(v.id); cur = [v.id]; if (isNew || !S._init) renderView(); renderStrip(); } }
 }
 let invList = [];
 function renderInv(list) { invList = list.map(x => x.id); const b = $('#inventory'); b.innerHTML = `<span class="l">${esc(t('page.inventory'))}</span>` + list.map(x => `<button data-zoom="${esc(x.id)}" data-src="inv" title="${esc(x.name)}\n${esc(t('play.zoomHint'))}"><img src="${ICO(x.id)}" alt="${esc(x.name)}" onerror="this.src='${IMG(x.id)}'"></button>`).join(''); }
@@ -70,10 +73,11 @@ let autoEnd = null, otherTyping = 0;
 function setAuto() { autoEnd = S.autoIn != null ? Date.now() + S.autoIn : null; }
 function roundLine() {
   const r = $('#round'), o = 1 - me, ow = G.players[o]; r.className = '';
-  $('#passb').hidden = !!S.apart;
+  $('#passb').hidden = !!S.apart || (!S.solo && S.wait === false);
   if (S.writing && !S.writing.includes(me)) { r.textContent = t('play.partnerWriting'); return; }
   if (S.busy) { r.textContent = t('play.narratorWriting'); r.className = 'go'; return; }
   if (S.apart) { r.textContent = t('play.apart'); r.className = 'go'; return; }
+  if (!S.solo && S.wait === false) { r.textContent = t('play.noWait'); r.className = 'go'; return; }
   if (S.solo) { r.textContent = t('play.yourTurn'); return; }
   const left = autoEnd ? Math.max(0, Math.ceil((autoEnd - Date.now()) / 1000)) : null, uneven = S.pending[me] !== S.pending[o];
   if (!uneven) { r.textContent = Date.now() < otherTyping ? t('play.typing', { name: ow }) : t('play.writeBoth'); return; }
@@ -98,13 +102,13 @@ async function load() {
   const button = (b, i) => `<button data-b="${i}" title="${esc(b.title)}">${esc(b.label)}</button>`, gs = (G.buttons || []).map((b, i) => [b, i]);
   $('#gb').innerHTML = gs.filter(([b]) => b.place !== 'help').map(([b, i]) => button(b, i)).join(''); $('#hbtns').innerHTML = gs.filter(([b]) => b.place === 'help').map(([b, i]) => button(b, i)).join('');
   log.innerHTML = ''; gal = []; cur = []; S._init = true; for (const m of S.messages) { log.append(msgEl(m)); apply(m, false); } S._init = false;
-  cur = cur.slice(-1); renderView(); renderStrip(); setAuto(); setClock(); roundLine(); who(); const end = () => { log.scrollTop = log.scrollHeight; }; end(); document.fonts?.ready.then(end); setTimeout(end, 400);
+  cur = cur.slice(-1); renderView(); renderStrip(); setAuto(); setClock(); roundLine(); who(); waitButton(); const end = () => { log.scrollTop = log.scrollHeight; }; end(); document.fonts?.ready.then(end); setTimeout(end, 400);
 }
 function connect() {
   const es = new EventSource(`/api/p/${T}/events`);
-  es.addEventListener('round', e => { Object.assign(S, JSON.parse(e.data)); setAuto(); setClock(); roundLine(); who(); });
+  es.addEventListener('round', e => { const was = S.wait; Object.assign(S, JSON.parse(e.data)); if (was !== undefined && was !== S.wait && S.waitBy != null) sysLine(t(S.wait ? 'play.waitTurnedOn' : 'play.waitTurnedOff', { name: G.players[S.waitBy] })); setAuto(); setClock(); roundLine(); who(); waitButton(); });
   es.addEventListener('stream', e => { const d = JSON.parse(e.data), end = atEnd(); if (!liveEl) { liveEl = document.createElement('div'); log.append(liveEl); } liveEl.replaceWith(liveEl = msgEl({ role: 'assistant', text: d.text }, true)); if (end) log.scrollTop = log.scrollHeight; });
-  es.addEventListener('msg', e => { const m = JSON.parse(e.data), end = atEnd() || m.role === 'assistant'; if (S.messages.some(x => x.id === m.id)) return; S.messages.push(m); if (m.role === 'assistant' && liveEl) { liveEl.remove(); liveEl = null; } log.append(msgEl(m)); apply(m, true); if (end) log.scrollTop = log.scrollHeight; });
+  es.addEventListener('msg', e => { const m = JSON.parse(e.data), end = atEnd() || m.role === 'assistant'; if (S.messages.some(x => x.id === m.id)) return; S.messages.push(m); if (m.role === 'assistant' && liveEl) { liveEl.remove(); liveEl = null; } const el = msgEl(m); log.append(el); apply(m, true); if (end) log.scrollTop = log.scrollHeight; if (fromPartner(m)) nudge(el); });
   es.addEventListener('remove', e => { const { id } = JSON.parse(e.data); S.messages = S.messages.filter(m => m.id !== id); log.querySelector(`[data-id="${id}"]`)?.remove(); });
   es.addEventListener('error', e => { if (e.data) { const d = document.createElement('div'); d.className = 'm sys'; d.style.color = 'var(--err)'; d.textContent = t('play.error', { text: JSON.parse(e.data).text }); log.append(d); liveEl?.remove(); liveEl = null; } });
   es.addEventListener('mod', e => DuoModules.push(JSON.parse(e.data)));
@@ -128,9 +132,23 @@ function showGoto() {
   const l = S.travel?.[me] || [];
   $('#golist').innerHTML = l.length ? l.map(x => `<button class="pbtn" data-go="${esc(x.id)}">${esc(x.name)}</button>`).join('') : `<p>${esc(t('play.noRoutes'))}</p>`; $('#goto').showModal();
 }
+/** Every panel found so far; those not usable now (solved, or elsewhere) stay in the list, faded. */
 function showPanels() {
-  const l = foundPanels().filter(([id]) => !(S.locked || []).includes(id)).map(([id, n]) => ({ id, n, done: panelDone(id), again: panelDone(id) && panelOpenAgain(id) })).sort((a, b) => a.done - b.done);
-  $('#plist').innerHTML = l.length ? l.map(x => `<button class="pbtn${x.again ? ' again' : x.done ? ' done' : ''}" data-j="${esc(x.id)}" title="${esc(t(x.again ? 'play.panelAgain' : x.done ? 'play.panelDone' : 'play.panelOpen'))}">${x.done ? '✓' : '🔧'} ${esc(x.n)}${x.done ? ` <small>${esc(G.panelDoneLabel?.[x.id] || t('play.solvedLabel'))}</small>` : ''}</button>`).join('') : `<p>${esc(t('play.noPanels'))}</p>`; $('#panels').showModal();
+  const locked = id => (S.locked || []).includes(id);
+  const l = foundPanels().map(([id, n]) => ({ id, n, done: panelDone(id), locked: locked(id), again: !locked(id) && panelDone(id) && panelOpenAgain(id) })).sort((a, b) => a.locked - b.locked || a.done - b.done);
+  $('#plist').innerHTML = l.length ? l.map(x => `<button class="pbtn${x.locked ? ' locked' : ''}${x.again ? ' again' : x.done ? ' done' : ''}" data-j="${esc(x.id)}" title="${esc(t(x.locked ? (x.done ? 'play.panelDone' : 'play.lockedTip') : x.again ? 'play.panelAgain' : x.done ? 'play.panelDone' : 'play.panelOpen'))}">${x.done ? '✓' : '🔧'} ${esc(x.n)}${x.done ? ` <small>${esc(G.panelDoneLabel?.[x.id] || t('play.solvedLabel'))}</small>` : ''}</button>`).join('') : `<p>${esc(t('play.noPanels'))}</p>`; $('#panels').showModal();
+}
+/** A local line in the story, not saved (e.g. the waiting toggle changed). */
+function sysLine(text) { const d = document.createElement('div'); d.className = 'm sys'; d.textContent = text; const end = atEnd(); log.append(d); if (end) log.scrollTop = log.scrollHeight; }
+/** The waiting toggle in the header: shared by both players, saved on the run. */
+function waitButton() { const b = $('#waitb'); b.hidden = !!S.solo; b.textContent = t(S.wait === false ? 'page.waitOff' : 'page.waitOn'); b.classList.toggle('off', S.wait === false); }
+const fromPartner = m => !S.solo && m.role === 'user' && !m.kind && m.text.startsWith(G.players[1 - me] + ': ');
+/** The partner's new message: a short highlight, and with waiting off also a soft tone, so it is not missed. */
+let actx = null;
+function nudge(el) {
+  el.classList.add('fresh'); setTimeout(() => el.classList.remove('fresh'), 2500);
+  if (S.wait !== false) return;
+  try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); const o = actx.createOscillator(), g = actx.createGain(); o.frequency.value = 660; g.gain.setValueAtTime(0.0001, actx.currentTime); g.gain.exponentialRampToValueAtTime(0.08, actx.currentTime + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, actx.currentTime + 0.35); o.connect(g).connect(actx.destination); o.start(); o.stop(actx.currentTime + 0.4); } catch { }
 }
 function sendIt(pass) { const i = $('#in'), v = i.value.trim(); if (!v && !pass) return; api('say', { text: pass ? '' : v }); if (!pass) i.value = ''; }
 document.addEventListener('click', e => {
@@ -138,11 +156,12 @@ document.addEventListener('click', e => {
   if (t.dataset.show) { cur = [t.dataset.show]; renderView(); document.body.dataset.tab = 'stage'; }
   else if (t.dataset.zoom) zoom(t.dataset.zoom, t.dataset.src === 'inv' ? invList : gal);
   else if (t.dataset.go) { $('#goto').close(); api('go', { room: t.dataset.go }); }
-  else if (t.dataset.j) { $('#panels').close(); if ((S.locked || []).includes(t.dataset.j)) { t.disabled = true; t.dataset.tip = DuoStr.t('play.lockedTip'); t.title = ''; const d = document.createElement('div'); d.className = 'm sys'; d.textContent = DuoStr.t('play.locked'); log.append(d); log.scrollTop = log.scrollHeight; } else if (G.modPanels?.includes(t.dataset.j)) DuoModules.open(t.dataset.j, api, p => `/g/${G.id}/${p}`); }
+  else if (t.dataset.look) api('look', { id: t.dataset.look }).then(r => { if (r?.error) sysLine(r.error); });
+  else if (t.dataset.j) { $('#panels').close(); if ((S.locked || []).includes(t.dataset.j)) { sysLine(DuoStr.t(panelDone(t.dataset.j) ? 'play.lockedDone' : 'play.locked')); log.scrollTop = log.scrollHeight; } else if (G.modPanels?.includes(t.dataset.j)) DuoModules.open(t.dataset.j, api, p => `/g/${G.id}/${p}`); }
   else if (t.dataset.b) { const x = G.buttons[t.dataset.b]; if (x.place === 'help') $('#help').close(); if (x.local === 'panels') showPanels(); else api('message', { text: x.message }); }
   else if (t.dataset.t) document.body.dataset.tab = t.dataset.t;
 });
-$('#gotob').onclick = showGoto; $('#sendb').onclick = () => sendIt(); $('#passb').onclick = () => sendIt(true); $('#prev').onclick = () => page(-1); $('#next').onclick = () => page(1); $('#helpb').onclick = () => $('#help').showModal();
+$('#gotob').onclick = showGoto; $('#lookb').onclick = () => api('look', {}); $('#waitb').onclick = () => api('wait', { on: S.wait === false }); $('#sendb').onclick = () => sendIt(); $('#passb').onclick = () => sendIt(true); $('#prev').onclick = () => page(-1); $('#next').onclick = () => page(1); $('#helpb').onclick = () => $('#help').showModal();
 $('#in').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendIt(); } });
 let tyT = 0; $('#in').addEventListener('input', () => { if (Date.now() - tyT > 2000) { tyT = Date.now(); api('typing', {}); } });
 document.addEventListener('keydown', e => { if (/TEXTAREA|INPUT/.test(document.activeElement.tagName)) return; if (e.key === 'ArrowLeft') page(-1); if (e.key === 'ArrowRight') page(1); });

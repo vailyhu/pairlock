@@ -41,5 +41,5 @@ async function colorize(key, model, prompt, input) {
   const c = JSON.parse(r.choices[0].message.content); return { blocks: c.blocks || [], usage: r.usage, ms: Date.now() - t0 };
 }
 /** Removes markup and the status and inventory lines from model text. marker: the inventory line's label in the game's language. */
-const clean = (t, marker) => t.replace(/```[\s\S]*?(```|$)/g, '').replace(new RegExp(`^${marker}:.*$`, 'gm'), '').replace(/\[[^\]]*\]/g, '').replace(/\*/g, '').trim();
+const clean = (t, marker) => t.replace(/```[\s\S]*?(```|$)/g, '').replace(new RegExp(`^${marker}:.*$`, 'gm'), '').replace(/\[\[([^|\]]+)\|[^\]]*\]\]/g, '$1').replace(/\[[^\]]*\]/g, '').replace(/\*/g, '').trim();
 module.exports = { interpret, narrate, colorize, clean };

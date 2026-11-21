@@ -14,11 +14,13 @@ function runCard(x) {
 <div class="links">${x.players.map((p, i) => `<div class="lnk"><span class="dot ${x.online[i] ? 'on' : ''}" title="${esc(t(x.online[i] ? 'home.online' : 'home.offline'))}"></span><b>${esc(p)}</b><a href="/p/${x.tokens[i]}" target="_blank">${esc(t('home.open'))}</a><button data-copy="${url(x.tokens[i])}">${esc(t('home.copyLink'))}</button><code>${esc(url(x.tokens[i]))}</code></div>`).join('')}</div>
 <div class="row"><button data-regen="${esc(x.id)}" title="${esc(t('home.regenTitle'))}">${esc(t('home.regen'))}</button><button data-branch="${esc(x.id)}" title="${esc(t('home.branchTitle'))}">${esc(t('home.branch'))}</button><button class="dng" data-del="${esc(x.id)}" title="${esc(t('home.deleteTitle'))}">${esc(t('home.delete'))}</button></div></details>`;
 }
+/** A game's content warning (game.json contentWarning), on its card and before starting it. */
+const warnOf = g => g.contentWarning ? `<p class="cwarn"><b>⚠ ${esc(t('home.contentWarning'))}</b> ${esc(g.contentWarning)}</p>` : '';
 const runsOf = id => R.filter(r => r.game === id).sort((a, b) => (b.updated || b.created) - (a.updated || a.created));
 function draw() {
   $('#games').innerHTML = G.map(g => {
     const n = runsOf(g.id).length;
-    return `<article class="card">${g.cover ? `<img class="cover" src="${esc(g.cover)}" alt="">` : ''}<h3 class="${g.cover ? 'sr' : ''}">${esc(g.title)}</h3><p>${esc(g.description)}</p><p class="goal"><b>${esc(t('home.goal'))}</b> ${esc(g.goal)}</p><div class="row"><button class="primary" data-new="${esc(g.id)}">${esc(t('home.newGame'))}</button>${n ? `<button data-resume="${esc(g.id)}">${esc(t('home.resumeGame'))}</button><span class="meta">${esc(t('home.saves', { n }))}</span>` : ''}</div></article>`;
+    return `<article class="card">${g.cover ? `<img class="cover" src="${esc(g.cover)}" alt="">` : ''}<h3 class="${g.cover ? 'sr' : ''}">${esc(g.title)}</h3>${warnOf(g)}<p>${esc(g.description)}</p><p class="goal"><b>${esc(t('home.goal'))}</b> ${esc(g.goal)}</p><div class="row"><button class="primary" data-new="${esc(g.id)}">${esc(t('home.newGame'))}</button>${n ? `<button data-resume="${esc(g.id)}">${esc(t('home.resumeGame'))}</button><span class="meta">${esc(t('home.saves', { n }))}</span>` : ''}</div></article>`;
   }).join('') || `<p class="meta">${esc(t('home.noGames'))}</p>`;
   drawResume();
 }
@@ -40,7 +42,7 @@ const genderBtn = (g, n) => { const x = genderOf(g, n); return `<button type="bu
 function drawNew(err) {
   const g = G.find(x => x.id === newGame);
   $('#newtitle').textContent = `${t('home.newTitle')}: ${g.title}`;
-  $('#newbody').innerHTML = `<p class="meta">${esc(t('home.namesAsk'))}</p><div class="names">${g.players.map((p, n) => `<label>${esc(g.eras ? t('home.eraName', { era: g.eras[n] }) : t('home.playerName', { n: n + 1 }))}<span class="nameline"><input id="nn${n}" maxlength="24" value="${esc(val(g.id, 'n' + n, lastNames()[n] || g.players[n] || ''))}" placeholder="${esc(t('home.namePlaceholder', { n: n + 1 }))}" autocomplete="off">${genderBtn(g.id, n)}</span></label>`).join('')}${g.eras ? `<button id="swapnames" type="button" title="${esc(t('home.swapErasTitle'))}">${esc(t('home.swapEras'))}</button>` : ''}</div>
+  $('#newbody').innerHTML = `${warnOf(g)}<p class="meta">${esc(t('home.namesAsk'))}</p><div class="names">${g.players.map((p, n) => `<label>${esc(g.eras ? t('home.eraName', { era: g.eras[n] }) : t('home.playerName', { n: n + 1 }))}<span class="nameline"><input id="nn${n}" maxlength="24" value="${esc(val(g.id, 'n' + n, lastNames()[n] || g.players[n] || ''))}" placeholder="${esc(t('home.namePlaceholder', { n: n + 1 }))}" autocomplete="off">${genderBtn(g.id, n)}</span></label>`).join('')}${g.eras ? `<button id="swapnames" type="button" title="${esc(t('home.swapErasTitle'))}">${esc(t('home.swapEras'))}</button>` : ''}</div>
 <div class="row"><label><input type="checkbox" id="nsolo" ${val(g.id, 'solo', false) ? 'checked' : ''}> ${esc(t('home.soloLabel'))}</label></div>${err ? `<p class="error">${esc(err)}</p>` : ''}
 <div class="row" style="margin-top:12px"><button id="newno">${esc(t('home.cancel'))}</button><button id="newok" class="primary">${esc(t('home.start'))}</button></div>`;
   setTimeout(() => $('#nn0')?.focus());

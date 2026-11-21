@@ -16,7 +16,7 @@ for (const [lang, L] of Object.entries(locales)) {
   check(`${lang}: markers`, ['inventory', 'place', 'pass'].every(k => typeof L.ui.markers?.[k] === 'string') && L.ui.markers.pass.includes('{name}'));
 }
 const HU = /[áéíóöőúüűÁÉÍÓÖŐÚÜŰ]/;
-for (const f of ['public/play.js', 'public/home.js', 'public/modules.js', 'public/play.html', 'public/index.html', 'engine/world.js', 'engine/ai.js', 'server.js', ...fs.readdirSync('modules').filter(d => fs.existsSync(`modules/${d}/client.js`)).map(d => `modules/${d}/client.js`)]) {
+for (const f of ['public/play.js', 'public/home.js', 'public/modules.js', 'public/play.html', 'public/index.html', 'engine/world.js', 'engine/ai.js', 'engine/highlight.js', 'engine/grammar.js', 'server.js', ...fs.readdirSync('modules').filter(d => fs.existsSync(`modules/${d}/client.js`)).map(d => `modules/${d}/client.js`)]) {
   const lines = read(f).split('\n').map((l, i) => [i + 1, l]).filter(([, l]) => HU.test(l) && !/Őrség/.test(l) && !(f === 'engine/ai.js' && /^- |Match items/.test(l)));
   check(`no Hungarian text in ${f}`, !lines.length, lines.map(([n]) => n).join(','));
 }

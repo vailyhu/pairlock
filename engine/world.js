@@ -165,8 +165,9 @@ function enterRoom(w, s, p, room, res, who) {
   const from = s.loc[p], first = !s.visited[room]; s.loc[p] = room; s.visited[room] = true; const R = w.rooms[room];
   if (first && R.firstText) res.fixed.push({ text: resolveText(w, s, R.firstText) });
   // the picture on the first visit, and again whenever the room looks different from the last time it was shown (e.g. the power came back);
+  // otherwise the entering player's image pane still turns to the room's picture ({view}: [view:p:id] in the reply, not shown in the text)
   // a save from before roomImg has no record, so its rooms show a changed picture only from the next change on
-  const img = roomImage(w, s, room), prev = s.roomImg[room]; if (img && (first || (prev !== undefined && prev !== img))) res.fixed.push({ images: [img] }); if (img) s.roomImg[room] = img;
+  const img = roomImage(w, s, room), prev = s.roomImg[room]; if (img && (first || (prev !== undefined && prev !== img))) res.fixed.push({ images: [img] }); else if (img) res.fixed.push({ view: img, p }); if (img) s.roomImg[room] = img;
   res.fixed.push({ text: roomText(w, s, room), kind: 'room', room, p, said: s._said });
   for (const line of avatarLines(w, s, room, [p, 1 - p].filter(q => s.loc[q] === room), res)) res.fixed.push({ text: line });
   if (from !== room) { fire(w, s, `leave:${from}`, res, who); fire(w, s, `enter:${room}`, res, who); }
@@ -278,6 +279,7 @@ function compose(w, s, res, names, prose, p) {
   for (const f of res.fixed) {
     if (f.text && !L.includes(f.text)) L.push(f.text);
     for (const i of f.images || []) if (!seen.has(i)) { seen.add(i); L.push(`[img:${i}]`); }
+    if (f.view && !seen.has(f.view)) { seen.add(f.view); L.push(`[view:${f.p ?? 0}:${f.view}]`); }
     if (f.panel && !seen.has('p:' + f.panel.id)) { seen.add('p:' + f.panel.id); s.lastPanel = f.panel.id; L.push(`[panel:${f.panel.id}|${f.panel.label}]`); }
   }
   if (prose) L.push(prose);
@@ -351,6 +353,8 @@ function validate(w, images, panels) {
     for (const [t, x] of Object.entries(r.exits || {})) { if (!rooms.has(t)) E.push(`room ${id}: no such exit: ${t}`); if (x.door && !ids.has(x.door)) E.push(`room ${id}: no such door: ${x.door}`); chkC(x.requires, `room ${id}`); chkP(x.panel, `room ${id}`); }
   }
   for (const r of w.rules || []) { chkC(r.if, 'rule ' + r.on); chkA(r.do, 'rule ' + r.on); }
+  // hand highlight marks in world texts: [[word|id]] must name an item (or "-": never highlighted)
+  for (const m of JSON.stringify({ rooms: w.rooms, items: w.items, rules: w.rules || [] }).matchAll(/\[\[[^|\]]+\|([^\]]*)\]\]/g)) if (m[1] !== '-' && !ids.has(m[1])) E.push(`highlight mark: no such item: ${m[1]}`);
   for (const it of w.items) if (it.hidden && !reveals.has(it.id)) E.push(`item ${it.id}: hidden, but nothing reveals it`);
   // details (colorizer): plain mood facts; they may not name a hidden thing or a sensitive word (world.sensitiveWords)
   const low = x => String(x).toLowerCase(), secretOf = it => [it.name, ...(it.aliases || [])].filter(x => x && x.length >= 4).map(low);

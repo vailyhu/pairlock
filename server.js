@@ -1,6 +1,6 @@
 // pAIr-lock: one Node process serves the home page and both players and calls the model. No dependencies.
 const os = require('os'), http = require('http'), https = require('https'), fs = require('fs'), path = require('path'), crypto = require('crypto');
-const Color = require('./engine/colorize'), Str = require('./engine/strings'), Settings = require('./engine/settings'), W = require('./engine/world'), AI = require(process.env.DUO_AI_FIXTURE ? './engine/ai_replay' : './engine/ai');
+const Color = require('./engine/colorize'), H = require('./engine/highlight'), Grammar = require('./engine/grammar'), Str = require('./engine/strings'), Settings = require('./engine/settings'), W = require('./engine/world'), AI = require(process.env.DUO_AI_FIXTURE ? './engine/ai_replay' : './engine/ai');
 const ROOT = __dirname, cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8')), LANG = cfg.lang || 'hu', fmt = Str.fmt;
 /** Strings of the server's own language, for pages and errors not tied to a game. */
 const L0 = Str.forLang(LANG);
@@ -86,6 +86,8 @@ const BOTH = [0, 1];
 const apart = r => (!r.solo || !!games[r.game]?.eras) && !!r.world && r.world.loc[0] !== r.world.loc[1];
 /** Who a new message from player p is for. */
 const audOf = (r, p) => apart(r) ? [p] : BOTH;
+/** Waiting switched off (the header toggle, saved on the run, on by default): together, every message gets its reply at once in the shared thread, like apart. */
+const noWait = r => r.wait === false && !r.solo;
 const sees = (m, p) => !m.to || m.to.includes(p);
 /** The opening: one shared message, or (game.json "first" as a list, e.g. two eras) one message per player in their own thread. */
 const openingOf = (g, names) => Array.isArray(g.first) ? g.first.map((text, p) => ({ id: p, role: 'assistant', text: withNames(g, names, text), to: [p], opening: true })) : [{ id: 0, role: 'assistant', text: withNames(g, names, g.first), opening: true }];
@@ -94,7 +96,7 @@ const send = (r, ev, data, except) => { const s = `event: ${ev}\ndata: ${JSON.st
 const lockedPanels = r => { const w = games[r.game]?.world; return w && r.world ? Object.entries(w.panelAvail || {}).filter(([, c]) => !W.test(c, r.world, w)).map(([id]) => id) : []; };
 const roomsOf = r => { const w = games[r.game]?.world; return w && r.world ? r.world.loc.map(id => w.rooms[id]?.name || null) : null; };
 const travelOf = r => { const w = games[r.game]?.world; return w && r.world ? [0, 1].map(p => W.routes(w, r.world, p).map(id => ({ id, name: w.rooms[id].name }))) : null; };
-const pub = r => ({ rooms: roomsOf(r), travel: travelOf(r), locked: lockedPanels(r), playMs: playMs(r), clockOn: !!r.clockStart, ended: !!r.ended, pending: r.pending, busy: r.busy, writing: r.writing || null, apart: apart(r), autoIn: r.autoAt ? Math.max(0, r.autoAt - Date.now()) : null, autoPaused: !!r.autoPaused, online: [0, 1].map(p => r.clients.some(c => c.player === p)) });
+const pub = r => ({ rooms: roomsOf(r), travel: travelOf(r), locked: lockedPanels(r), playMs: playMs(r), clockOn: !!r.clockStart, ended: !!r.ended, pending: r.pending, busy: r.busy, writing: r.writing || null, apart: apart(r), autoIn: r.autoAt ? Math.max(0, r.autoAt - Date.now()) : null, autoPaused: !!r.autoPaused, wait: r.wait !== false, waitBy: r.waitBy ?? null, online: [0, 1].map(p => r.clients.some(c => c.player === p)) });
 const status = r => send(r, 'round', pub(r));
 // Each player receives a module's live state in their own view.
 Mod.setPush((r, id) => { const c = games[r.game]?.panels[id]; if (c) for (const x of r.clients) x.res.write(`event: mod\ndata: ${JSON.stringify(Mod.view(c, id, r, x.player))}\n\n`); });
@@ -109,14 +111,15 @@ async function pump(r) {
   while (r.queue.length) { try { await r.queue.shift()(); } catch (e) { console.error(e); send(r, 'error', { text: e.noKey ? games[r.game].L.engine.errors.noKey : e.status ? fmt(games[r.game].L.engine.errors.model, { status: e.status }) : String(e.message || e) }); } saveRun(r); }
   r.busy = false; status(r);
 }
-function roundIfReady(r) { if (r.solo || r.pending.every(Boolean)) { r.pending = [false, false]; clearTimeout(r.timer); r.autoAt = null; r.autoPaused = false; r.owed = BOTH; enqueue(r, () => generate(r, BOTH)); } else armAuto(r); status(r); }
-function move(r, p, text) {
-  const name = namesOf(r)[p], t = (text || '').trim();
+function roundIfReady(r) { if (r.solo || noWait(r) || r.pending.every(Boolean)) { r.pending = [false, false]; clearTimeout(r.timer); r.autoAt = null; r.autoPaused = false; r.owed = BOTH; enqueue(r, () => generate(r, BOTH)); } else armAuto(r); status(r); }
+/** A player's message. direct: an action that skips the interpreter ({type: 'look_around'} or {type: 'look', target}), from the page's buttons. */
+function move(r, p, text, direct) {
+  const name = namesOf(r)[p], t = (text || '').trim(), extra = direct ? { direct } : undefined;
   enqueue(r, async () => {
     // Decided when the move's turn comes, after earlier moves have run: the player may have just walked away or arrived.
     const aud = audOf(r, p);
-    if (aud.length === 1) { if (!t) return; add(r, 'user', `${name}: ${t}`, aud); r.movedAt = Date.now(); await generate(r, aud); return; }
-    add(r, 'user', t ? `${name}: ${t}` : fmt(games[r.game].L.ui.markers.pass, { name })); r.pending[p] = true; r.movedAt = Date.now(); saveRun(r); roundIfReady(r);
+    if (aud.length === 1 || noWait(r)) { if (!t) return; add(r, 'user', `${name}: ${t}`, aud, extra); r.movedAt = Date.now(); await generate(r, aud); return; }
+    add(r, 'user', t ? `${name}: ${t}` : fmt(games[r.game].L.ui.markers.pass, { name }), BOTH, t ? extra : undefined); r.pending[p] = true; r.movedAt = Date.now(); saveRun(r); roundIfReady(r);
   });
 }
 /** A panel or button message. aud: who it is for; a joint one also ends the current round. */
@@ -124,7 +127,7 @@ function gameMsg(r, text, silent, aud = BOTH) { enqueue(r, async () => { add(r, 
 /** Auto-pass: the deadline counts from the other player's move or the late player's last activity, and pauses while a panel is open. */
 function armAuto(r) {
   clearTimeout(r.timer); r.autoAt = null; r.autoPaused = false;
-  if (apart(r)) return;
+  if (apart(r) || noWait(r)) return;
   const s = games[r.game].autoPass, p = r.pending.findIndex(x => !x);
   if (!s || r.solo || p < 0 || !r.pending[1 - p]) return;
   if (r.panelOpen[p]) { r.autoPaused = true; return; }
@@ -148,7 +151,9 @@ async function worldTurn(r, aud) {
     if (/^\(GAME: /.test(m.text)) { W.gameEvent(w, s, m.text, res, m.to?.length === 1 ? m.to[0] : undefined); continue; }
     if (m.text === '(OOC: unseen)') { wantUnseen = true; continue; }
     const p = names.findIndex(n => m.text.startsWith(n + ': ')); if (p < 0) continue;
-    const said = m.text.slice(names[p].length + 2), to = said.match(g.goRe), room = to && Object.keys(w.rooms).find(id => w.rooms[id].name === to[1]);
+    const said = m.text.slice(names[p].length + 2);
+    if (m.direct) { walk.push({ player: p, type: m.direct.type, target: m.direct.target, text: said }); continue; }   // the page's look buttons: no interpreter
+    const to = said.match(g.goRe), room = to && Object.keys(w.rooms).find(id => w.rooms[id].name === to[1]);
     if (room) walk.push({ player: p, type: 'go', target: room, text: said }); else lines.push({ player: 'AB'[p], text: said });
   }
   // A scripted event (the end, a ship in sight) happens to everyone, even when one player caused it alone. Its `if` is tested after the panel message has run.
@@ -174,14 +179,16 @@ async function worldTurn(r, aud) {
     prose = AI.clean(a.text, g.L.ui.markers.inventory); const u = a.usage || {}; Object.assign(stat, { ms: a.ms, in: u.prompt_tokens, hit: u.prompt_cache_hit_tokens, out: u.completion_tokens });
   }
   const color = colorJob && await colorJob;
-  if (color) { for (const c of color.changes) res.fixed[c.i] = { ...res.fixed[c.i], text: c.text }; stat.colorMs = color.ms; stat.colorOk = color.changes.length; stat.colorFail = color.log.filter(x => x.fail).length; }
+  if (color) { for (const c of color.changes) res.fixed[c.i] = { ...res.fixed[c.i], text: c.text, orig: res.fixed[c.i].text }; stat.colorMs = color.ms; stat.colorOk = color.changes.length; stat.colorFail = color.log.filter(x => x.fail).length; }
   stat.ms = Date.now() - start; r.stats.push(stat); console.log(`[${r.id}] round ${stat.ms} ms, interpreter ${stat.parseMs || 0} ms, prompt ${stat.in || 0}, cache ${stat.hit || 0}${color ? `, colorizer ${color.changes.length} ok ${stat.colorFail} fixed (${color.ms || 0} ms)` : ''}`);
   // notify: something heard or seen in another room; a player of this thread standing there gets it in this reply, one in the other thread as a notice
   const far = [];
   for (const n of res.notify || []) for (const q of BOTH) { if (r.solo && q === 1 && s.loc[0] === s.loc[1]) continue; if (s.loc[q] !== n.at) continue;
     if (aud.includes(q)) { if (!res.fixed.some(f => f.text === n.text)) res.fixed.push({ text: n.text }, ...(n.images ? [{ images: n.images }] : [])); } else far.push([q, n]); }
+  // highlights: the names of things the player can act on now, in room and look texts (engine/highlight.js); game.json "highlight": false turns them off
+  for (const f of res.fixed) if (f.text) f.text = g.highlight === false ? H.plain(f.text) : H.forFixed(W, w, s, f, aud.length === 1 ? aud[0] : 0, g.L.engine.grammar);
   finish(W.compose(w, s, res, names, prose, aud.length === 1 ? aud[0] : undefined), aud, color?.log.length ? { color: color.log } : undefined);
-  for (const [q, n] of far) add(r, 'user', [n.text, ...(n.images || []).map(i => `[img:${i}]`)].join('\n\n'), [q], { done: true, kind: 'notice' });
+  for (const [q, n] of far) add(r, 'user', [H.plain(n.text), ...(n.images || []).map(i => `[img:${i}]`)].join('\n\n'), [q], { done: true, kind: 'notice' });
 }
 /** After a thread's turn: a player outside it learns, without the model, that the other came or went. Together again, the round starts fresh. */
 function notices(r, aud, before) {
@@ -230,7 +237,7 @@ const server = http.createServer(async (req, res) => {
       return json(res, { ...Settings.status(), canEdit: true });
     }
     if (P === '/api/strings') return json(res, { lang: L0.lang, dateLocale: L0.dateLocale, ...L0.ui });
-    if (P === '/api/games') return json(res, Object.values(games).map(g => ({ id: g.id, title: g.title, description: g.description, goal: g.goal, players: g.players, eras: g.eras || null, cover: g.cover ? `/g/${g.id}/${g.cover}` : null })));
+    if (P === '/api/games') return json(res, Object.values(games).map(g => ({ id: g.id, title: g.title, description: g.description, goal: g.goal, contentWarning: g.contentWarning || null, players: g.players, eras: g.eras || null, cover: g.cover ? `/g/${g.id}/${g.cover}` : null })));
     if (P === '/api/runs' && req.method === 'GET') return json(res, Object.values(runs).filter(r => games[r.game]).sort((a, b) => (b.updated || b.created) - (a.updated || a.created)).map(runInfo));
     if (P === '/api/runs' && req.method === 'POST') { const b = await readBody(req); if (!games[b.game]) return json(res, { error: L0.engine.errors.noGame }, 400); const c = checkNames(games[b.game], b.names); if (c.error) return json(res, c, 400); const r = newRun(b.game, b.solo, c.names, b.genders); if (b.remember) try { Settings.saveLastPlayers(c.names, b.genders, b.solo); } catch (e) { console.error('last players not saved:', e.message); } return json(res, runInfo(r)); }
     if (P === '/api/players/last') return json(res, Settings.lastPlayers());
@@ -269,6 +276,24 @@ const server = http.createServer(async (req, res) => {
       }
       const b = await readBody(req); r.activity[p] = Date.now(); const lag = !r.pending[p] && r.pending[1 - p];
       if (act === 'say') { move(r, p, b.text); return json(res, { ok: true }); }
+      if (act === 'look') {
+        // "Look around" button (no id) or a click on a highlighted name (id): a varying sentence in the player's name, no interpreter
+        const E = g.L.engine, pick = a => a[Math.floor(Math.random() * a.length)];
+        if (!b.id) { move(r, p, pick(E.lookAround), { type: 'look_around' }); return json(res, { ok: true }); }
+        const id = String(b.id), vis = W.visibleItems(g.world, r.world, p).find(i => i.id === id), inv = W.invOf(g.world, r.world, p).find(i => i.id === id);
+        if (!vis && !inv) return json(res, { error: g.world.texts.notHere }, 400);
+        const it = vis || g.world.items.find(i => i.id === id), nm = String(inv?.name || it?.name || id).replace(/\s*\(.*\)$/, '');
+        // an item's optional "acc" (accusative form without the article) also allows "I look at the …" sentences
+        const opts = [...E.lookAt.map(x => fmt(x, { name: nm })), ...(it?.acc ? E.lookAtAcc.map(x => fmt(x, { acc: Grammar.withArticle(it.acc, E.grammar) })) : [])];
+        move(r, p, pick(opts), { type: 'look', target: id }); return json(res, { ok: true });
+      }
+      if (act === 'wait') {
+        if (r.solo) return json(res, { error: 'solo' }, 400);
+        r.wait = !!b.on; r.waitBy = p;
+        // switched off while one player already moved: their message gets its reply now
+        if (!r.wait && r.pending.some(Boolean)) roundIfReady(r); else armAuto(r);
+        saveRun(r); status(r); return json(res, { ok: true });
+      }
       if (act === 'go') { const t = travelOf(r)?.[p].find(x => x.id === b.room); if (!t) return json(res, { error: g.L.engine.errors.noRoute }, 400); move(r, p, `${g.L.engine.goAlone}: ${t.name}.`); return json(res, { ok: true }); }
       if (act === 'message') {
         // Game messages come only from the server's panels; this endpoint is for the game's buttons.

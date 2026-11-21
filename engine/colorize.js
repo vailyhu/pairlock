@@ -19,6 +19,8 @@ For every block write a new Hungarian text with exactly the same facts as "text"
 Output JSON only: {"blocks":[{"id":1,"text":"..."}]}`;
 
 const low = x => String(x || '').toLowerCase();
+/** Hand highlight marks of world texts ([[word|id]], engine/highlight.js) never reach the model: it gets the plain words. */
+const plain = t => String(t ?? '').replace(/\[\[([^|\]]+)\|[^\]]*\]\]/g, '$1');
 const words = t => low(t).split(/[^0-9a-záéíóöőúüű]+/).filter(Boolean);
 /** The forms a word's start may take when Hungarian endings are added: levél → level-, tükör → tükr-, kréta → krétá-. */
 const SHORT = { 'á': 'a', 'é': 'e', 'ó': 'o', 'ő': 'ö', 'ú': 'u', 'ű': 'ü', 'í': 'i' }, LONG = { 'a': 'á', 'e': 'é' }, VOWEL = /[aáeéiíoóöőuúüű]/;
@@ -97,13 +99,14 @@ async function colorize({ w, s, res, names, aud, cfg = {}, L = {}, ai }) {
   const pointer = [...(L?.emphasis || []), ...(w.emphasisWords || [])].map(low);
   res.fixed.forEach((f, i) => {
     if (!f.text || !kinds.includes(f.kind)) return;
-    if (f.kind !== 'move' && pointer.some(x => low(f.text).includes(x))) return;   // the author points at something on purpose: the exact words stay
+    const text = plain(f.text);
+    if (f.kind !== 'move' && pointer.some(x => low(text).includes(x))) return;   // the author points at something on purpose: the exact words stay
     const p = f.kind === 'move' ? f.move?.p : f.p, key = `${p}:${f.kind}:${f.room || f.ent || ''}`;
     if (f.kind !== 'move') s.colorCount[key] = (s.colorCount[key] || 0) + 1;
     const ent = f.kind === 'look' ? w.items.find(x => x.id === f.ent) : null, room = f.kind === 'room' ? w.rooms[f.room] : null;
-    const b = { id: blocks.length + 1, kind: f.kind, text: f.text, p, room: f.room, move: f.move, details: (ent || room)?.details || [], audience: aud.length === 1 ? 'you' : 'names' };
+    const b = { id: blocks.length + 1, kind: f.kind, text, p, room: f.room, move: f.move, details: (ent || room)?.details || [], audience: aud.length === 1 ? 'you' : 'names' };
     const R = rules(w, s, b, L); R.roomNames = Object.fromEntries(Object.entries(w.rooms).map(([id, r]) => [id, [r.name.replace(/\s*\(.*\)$/, ''), ...(r.aliases || [])]]));
-    blocks.push({ id: b.id, kind: f.kind, who: names[p], said: f.said || '', text: f.text, keep: R.keep, details: (ent || room)?.details || [], nth: s.colorCount[key] || 1,
+    blocks.push({ id: b.id, kind: f.kind, who: names[p], said: f.said || '', text, keep: R.keep, details: (ent || room)?.details || [], nth: s.colorCount[key] || 1,
                   ...(f.move ? { move: { who: names[f.move.p], other: names[f.move.q], outcome: f.move.outcome, to: w.rooms[f.move.to]?.name, otherTo: f.move.otherTo ? w.rooms[f.move.otherTo]?.name : null, from: w.rooms[f.move.from]?.name } } : {}) });
     meta.push({ i, b, R });
   });
@@ -124,4 +127,4 @@ async function colorize({ w, s, res, names, aud, cfg = {}, L = {}, ai }) {
   if (s.colorUsed.length > 200) s.colorUsed = s.colorUsed.slice(-200);
   return { changes, log, ms: got?.ms, usage: got?.usage };
 }
-module.exports = { colorize, check, rules, hasTerm, PROMPT };
+module.exports = { colorize, check, rules, hasTerm, forms, wordIn, PROMPT };

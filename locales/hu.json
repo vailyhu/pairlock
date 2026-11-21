@@ -39,7 +39,12 @@
    "close": "Bezárás",
    "gotoHead": "Hová mész?",
    "panelsHead": "Megtalált szerkezetek",
-   "switchEra": "⇄ Váltás: {era}"
+   "switchEra": "⇄ Váltás: {era}",
+   "lookAround": "👁 Körülnézek",
+   "lookAroundTitle": "Körülnézel ott, ahol most állsz",
+   "waitOn": "⏳ Várunk egymásra: be",
+   "waitOff": "⏳ Várunk egymásra: ki",
+   "waitTitle": "Bekapcsolva egy szobában a kör megvárja mindkettőtöket.\nKikapcsolva minden üzenet azonnal választ kap, a közös szálba.\nBármelyikőtök átállíthatja."
   },
   "play": {
    "zoomHint": "Kattints a nagyításhoz",
@@ -66,13 +71,18 @@
    "panelOpen": "Még nincs elvégezve.",
    "solvedLabel": "megoldva",
    "noPanels": "Még nem találtatok szerkezetet.",
-   "lockedTip": "Ehhez még nem jutottatok el.",
-   "locked": "Ez a szerkezet még nem használható: ehhez még nem jutottatok el.",
+   "lockedTip": "Most nem használható.",
+   "locked": "Ez a szerkezet innen most nem használható.",
    "partnerEdited": "{name} módosította",
    "saving": "Mentés…",
    "saved": "Elmentve",
    "apart": "Külön helyen vagytok: írj nyugodtan, nem kell a társadra várnod.",
-   "partnerWriting": "A narrátor most a társadnak válaszol, utána jön a tiéd."
+   "partnerWriting": "A narrátor most a társadnak válaszol, utána jön a tiéd.",
+   "lockedDone": "Ezt már elvégeztétek, most nem kell hozzányúlni.",
+   "noWait": "Nem vártok egymásra: írj nyugodtan, a válasz rögtön jön, és a társad is látja.",
+   "waitTurnedOn": "{name} bekapcsolta az egymásra várást: a kör megvárja mindkettőtöket.",
+   "waitTurnedOff": "{name} kikapcsolta az egymásra várást: minden üzenet rögtön választ kap.",
+   "lookTip": "Kattints, és közelebbről megnézed"
   },
   "frame": {
    "close": "Bezárás",
@@ -137,7 +147,8 @@
    "swapErasTitle": "Ki melyik korban játszik: a két név helyet cserél.",
    "genderTitle": "Nem: kattints a váltáshoz",
    "genderFemale": "Nő",
-   "genderMale": "Férfi"
+   "genderMale": "Férfi",
+   "contentWarning": "Figyelem:"
   },
   "settings": {
    "open": "⚙️ Beállítások",
@@ -257,6 +268,35 @@
     "mindkét",
     "mindhárom"
    ]
+  },
+  "lookAround": [
+   "Körülnézek.",
+   "Körbenézek.",
+   "Körbenézek a szobában.",
+   "Megnézem, mit látok magam körül.",
+   "Szétnézek egy kicsit.",
+   "Alaposan körülnézek."
+  ],
+  "lookAt": [
+   "Megnézem közelebbről: {name}.",
+   "Megvizsgálom: {name}.",
+   "Közelebb lépek, és megnézem: {name}.",
+   "Szemügyre veszem: {name}."
+  ],
+  "lookAtAcc": [
+   "Megnézem {acc}.",
+   "Közelebbről megnézem {acc}.",
+   "Megvizsgálom {acc}.",
+   "Szemügyre veszem {acc}."
+  ],
+  "grammar": {
+   "article": {
+    "vowel": "az",
+    "consonant": "a",
+    "vowels": "aáeéiíoóöőuúüű",
+    "numbers": "hu"
+   },
+   "endings": "^(?:[aeoöáé]?(?:k|i|ai|ei|jai|jei)?(?:[aeoö]?(?:m|d|nk|tok|tek|tök|juk|jük|uk|ük|ja|je|a|e|á|é|ik))?(?:[aeoöáé]?(?:t|n|ban|ben|ba|be|ból|ből|nak|nek|nál|nél|hoz|hez|höz|tól|től|ra|re|ról|ről|val|vel|ig|ért|ként|kor|ul|ül|s|i)|[bcdfgjklmnprstvz]?(?:al|el|á|é))?)$"
   }
  }
 }
