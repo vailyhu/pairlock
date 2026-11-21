@@ -1,6 +1,6 @@
 {
  "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
- "revision": "0f6e5e39011bc3132b5706c40fe8ebd31a46f73d",
+ "revision": "01bc6440c5949759bcbfa39b2673b514ac1b2ab0",
  "games": {
   "a_modell": {
    "GAME.md": [
@@ -1290,8 +1290,8 @@
   },
   "szimulacio": {
    "GAME.md": [
-    2271,
-    "7bdea5aaf4c439f63060c26b51d41d1e81a534be0f71e3d38ab0d59294dcea2c"
+    2633,
+    "4f2f00c9722019c39002d813a7ebc66d13ed2255281ee5bc4748cf3ef95d532e"
    ],
    "game.json": [
     6000,
@@ -1425,9 +1425,25 @@
     163854,
     "da0022a1fadf61541b83751e5d8a4270f837b3797bc9214e9730e1849ce72577"
    ],
+   "images/i_crop.jpg": [
+    112860,
+    "2517048f70b6e2b553e6bc3b3277d38c7506f1fcb5001306b48842ae80620172"
+   ],
    "images/i_envelope.jpg": [
     142490,
     "735169c5871035518699fcf553b6235268e56d57ef54a61f957d79a955cf9b57"
+   ],
+   "images/i_keycard.jpg": [
+    83639,
+    "34ac072ba423d938d2c1db606b22ad990d146790645d42fede5b2db8ed3ed33c"
+   ],
+   "images/i_polaroid.jpg": [
+    201578,
+    "e11245355afc07beaf459c1d2ae448b27b4eead374e0a9496382f447bd82b0ac"
+   ],
+   "images/i_wristband.jpg": [
+    93985,
+    "740520e1b3d780395f5e64d316fa4e7548cf5a5c4cf5373f43f7c635868ccd81"
    ],
    "images/island_closer.jpg": [
     201348,
@@ -1634,8 +1650,8 @@
     "ddd0b5f9b73cd1b68e2394906b5d78e06ee443ac8da8ec76a9822928c720d751"
    ],
    "world.json": [
-    59310,
-    "aaf1a71567eadb909c58970c2fecbcf2e77ef14dce500e6ee0dfc365a599aa7e"
+    60275,
+    "595e028e97ad846a67b4545ce4509c934f7af0ff4f87a5d254894efed5ecd252"
    ]
   }
  }
