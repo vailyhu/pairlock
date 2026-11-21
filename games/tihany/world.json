@@ -3739,6 +3739,123 @@
      "room_b_empty"
     ]
    }
+  },
+  {
+   "on": "look:keyring74",
+   "if": {
+    "where": "keyring74",
+    "at": "beds74"
+   },
+   "do": {
+    "take": [
+     "keyring74"
+    ],
+    "say": "Kulcscsomó: elteszitek."
+   }
+  },
+  {
+   "on": "look:screwdrivers74",
+   "if": {
+    "where": "screwdrivers74",
+    "at": "workbench74"
+   },
+   "do": {
+    "take": [
+     "screwdrivers74"
+    ],
+    "say": "Csavarhúzók: elteszitek."
+   }
+  },
+  {
+   "on": "look:ledger74",
+   "if": {
+    "where": "ledger74",
+    "at": "box74"
+   },
+   "do": {
+    "take": [
+     "ledger74"
+    ],
+    "say": "Fekete füzet: elteszitek."
+   }
+  },
+  {
+   "on": "look:film74",
+   "if": {
+    "where": "film74",
+    "at": "box74"
+   },
+   "do": {
+    "take": [
+     "film74"
+    ],
+    "say": "Filmtartó: elteszitek."
+   }
+  },
+  {
+   "on": "look:headlamp",
+   "if": {
+    "where": "headlamp",
+    "at": "lobby"
+   },
+   "do": {
+    "take": [
+     "headlamp"
+    ],
+    "say": "Fejlámpa: elteszitek."
+   }
+  },
+  {
+   "on": "look:laser",
+   "if": {
+    "where": "laser",
+    "at": "lobby"
+   },
+   "do": {
+    "take": [
+     "laser"
+    ],
+    "say": "Távolságmérő: elteszitek."
+   }
+  },
+  {
+   "on": "look:tablet",
+   "if": {
+    "where": "tablet",
+    "at": "lobby"
+   },
+   "do": {
+    "take": [
+     "tablet"
+    ],
+    "say": "Tablet: elteszitek."
+   }
+  },
+  {
+   "on": "look:old_key",
+   "if": {
+    "where": "old_key",
+    "at": "key_board"
+   },
+   "do": {
+    "take": [
+     "old_key"
+    ],
+    "say": "Rozsdás kulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:capsule",
+   "if": {
+    "where": "capsule",
+    "at": "shelter"
+   },
+   "do": {
+    "take": [
+     "capsule"
+    ],
+    "say": "Időkapszula: elteszitek."
+   }
   }
  ],
  "onMessage": [
