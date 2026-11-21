@@ -2388,6 +2388,58 @@
    "do": {
     "say": "Most már érthető: Ilona kérdezett a K-7 súlyairól, Halmos hallgatást kért, Ilona a keringő állomással fenyegetőzött, és utána jött a „karbantartás”: a relét letiltották. Ilona utolsó felvétele szerint a továbbítás kapcsolója a rádiópult fedele alatt van."
    }
+  },
+  {
+   "on": "look:i_power_module",
+   "if": {
+    "where": "i_power_module",
+    "at": "parts_box"
+   },
+   "do": {
+    "take": [
+     "i_power_module"
+    ],
+    "say": "Tápmodul: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_dust_wand",
+   "if": {
+    "where": "i_dust_wand",
+    "at": "toolboard"
+   },
+   "do": {
+    "take": [
+     "i_dust_wand"
+    ],
+    "say": "Porpálca: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_door_drive",
+   "if": {
+    "where": "i_door_drive",
+    "at": "toolboard"
+   },
+   "do": {
+    "take": [
+     "i_door_drive"
+    ],
+    "say": "Kapumozgató: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_k7",
+   "if": {
+    "where": "i_k7",
+    "at": "rover"
+   },
+   "do": {
+    "take": [
+     "i_k7"
+    ],
+    "say": "K-7 minta: elteszitek."
+   }
   }
  ],
  "onMessage": [
