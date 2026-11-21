@@ -632,7 +632,20 @@
    "id": "keyhole",
    "name": "kulcslyuk",
    "location": "door_12",
-   "text": "Belenézel a kulcslyukba. Kintről benne hagytak egy kulcsot: egy sárgaréz négyszögkulcs szára tölti ki a lyukat, a fogója kint lóg a folyosón.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_square_key",
+       "at": "keyhole"
+      }
+     },
+     "text": "Belenézel a kulcslyukba: üres, a folyosó félhomálya látszik rajta át."
+    },
+    {
+     "text": "Belenézel a kulcslyukba. Kintről benne hagytak egy kulcsot: egy sárgaréz négyszögkulcs szára tölti ki a lyukat, a fogója kint lóg a folyosón."
+    }
+   ],
    "images": [
     "keyhole"
    ],
@@ -2848,6 +2861,162 @@
     "setVar": {
      "km": "0"
     }
+   }
+  },
+  {
+   "on": "look:i_newspaper",
+   "if": {
+    "where": "i_newspaper",
+    "at": "window_table_12"
+   },
+   "do": {
+    "take": [
+     "i_newspaper"
+    ],
+    "say": "Újság: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_pen",
+   "if": {
+    "where": "i_pen",
+    "at": "window_table_12"
+   },
+   "do": {
+    "take": [
+     "i_pen"
+    ],
+    "say": "Töltőtoll: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_order",
+   "if": {
+    "where": "i_order",
+    "at": "coat"
+   },
+   "do": {
+    "take": [
+     "i_order"
+    ],
+    "say": "Szolgálati utasítás: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_bill_left",
+   "if": {
+    "where": "i_bill_left",
+    "at": "hale_jacket"
+   },
+   "do": {
+    "take": [
+     "i_bill_left"
+    ],
+    "say": "Félszámla, a fogások: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_bill_right",
+   "if": {
+    "where": "i_bill_right",
+    "at": "ashtray"
+   },
+   "do": {
+    "take": [
+     "i_bill_right"
+    ],
+    "say": "Félszámla, az árak: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_brake_handle",
+   "if": {
+    "where": "i_brake_handle",
+    "at": "toolbox"
+   },
+   "do": {
+    "take": [
+     "i_brake_handle"
+    ],
+    "say": "Fékkar: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_square_key",
+   "if": {
+    "where": "i_square_key",
+    "at": "keyhole"
+   },
+   "do": {
+    "take": [
+     "i_square_key"
+    ],
+    "say": "Négyszögkulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_film",
+   "if": {
+    "where": "i_film",
+    "at": "piano"
+   },
+   "do": {
+    "take": [
+     "i_film"
+    ],
+    "say": "Filmdoboz: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_hale_note",
+   "if": {
+    "where": "i_hale_note",
+    "at": "piano"
+   },
+   "do": {
+    "take": [
+     "i_hale_note"
+    ],
+    "say": "Hale cetlije: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_map",
+   "if": {
+    "where": "i_map",
+    "at": "vogt_case"
+   },
+   "do": {
+    "take": [
+     "i_map"
+    ],
+    "say": "Térkép: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_mail_key",
+   "if": {
+    "where": "i_mail_key",
+    "at": "vogt_case"
+   },
+   "do": {
+    "take": [
+     "i_mail_key"
+    ],
+    "say": "Postakulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_chain_key",
+   "if": {
+    "where": "i_chain_key",
+    "at": "vogt_case"
+   },
+   "do": {
+    "take": [
+     "i_chain_key"
+    ],
+    "say": "Kis lakatkulcs: elteszitek."
    }
   }
  ],
