@@ -1218,7 +1218,20 @@
    "id": "pantry",
    "name": "kamraszekrény",
    "location": "kitchen",
-   "text": "Az egyik magas tölgyszekrény kamra: konzervek, tészta, kávé, és egy barna papírzacskó macskatáp.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_catfood",
+       "at": "pantry"
+      }
+     },
+     "text": "Az egyik magas tölgyszekrény kamra: konzervek, tészta, kávé. A macskatápot elvettétek."
+    },
+    {
+     "text": "Az egyik magas tölgyszekrény kamra: konzervek, tészta, kávé, és egy barna papírzacskó macskatáp."
+    }
+   ],
    "aliases": [
     "kamra",
     "tölgyszekrény",
@@ -3325,6 +3338,84 @@
      "at": "office",
      "text": "ÍRISZ hangja szól minden hangszóróból: „Vészhelyzeti átadás elfogadva. Jogosultság: rendszergazda. Benedek nem válaszol; bízom önökben.”"
     }
+   }
+  },
+  {
+   "on": "look:i_protocol",
+   "if": {
+    "where": "i_protocol",
+    "at": "entry"
+   },
+   "do": {
+    "take": [
+     "i_protocol"
+    ],
+    "say": "átadási jegyzőkönyv: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_service_card",
+   "if": {
+    "where": "i_service_card",
+    "at": "entry"
+   },
+   "do": {
+    "take": [
+     "i_service_card"
+    ],
+    "say": "szervizkártyák: elteszitek."
+   }
+  },
+  {
+   "on": "look:robot_photo",
+   "if": {
+    "where": "robot_photo",
+    "at": "shelf"
+   },
+   "do": {
+    "take": [
+     "robot_photo"
+    ],
+    "say": "robotos fénykép: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_catfood",
+   "if": {
+    "where": "i_catfood",
+    "at": "pantry"
+   },
+   "do": {
+    "take": [
+     "i_catfood"
+    ],
+    "say": "macskatáp: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_fob",
+   "if": {
+    "where": "i_fob",
+    "at": "robes"
+   },
+   "do": {
+    "take": [
+     "i_fob"
+    ],
+    "say": "Ilona kulcsa: elteszitek."
+   }
+  },
+  {
+   "on": "look:emergency_card",
+   "if": {
+    "where": "emergency_card",
+    "at": "office"
+   },
+   "do": {
+    "take": [
+     "emergency_card"
+    ],
+    "say": "vészhelyzeti kártya: elteszitek."
    }
   }
  ],
