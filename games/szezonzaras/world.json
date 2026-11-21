@@ -431,7 +431,48 @@
    "into": "a páncélterembe",
    "inside": "a páncélteremben",
    "image": "vault",
-   "text": "A páncélterem, acélburkolat, polcok körben. Középen a földön két kövér pénzeszsák. A polcokon zsetonládák, a kaszinó ezüstje, és jobbra egy sötétvörös főkönyv.",
+   "text": [
+    {
+     "if": {
+      "all": [
+       {
+        "not": {
+         "where": "i_sacks",
+         "at": "vault"
+        }
+       },
+       {
+        "not": {
+         "where": "i_book",
+         "at": "vault"
+        }
+       }
+      ]
+     },
+     "text": "A páncélterem, acélburkolat, polcok körben. A polcokon zsetonládák, a kaszinó ezüstje."
+    },
+    {
+     "if": {
+      "not": {
+       "where": "i_sacks",
+       "at": "vault"
+      }
+     },
+     "text": "A páncélterem, acélburkolat, polcok körben. A polcokon zsetonládák, a kaszinó ezüstje, és jobbra egy sötétvörös főkönyv."
+    },
+    {
+     "if": {
+      "not": {
+       "where": "i_book",
+       "at": "vault"
+      }
+     },
+     "text": "A páncélterem, acélburkolat, polcok körben. Középen a földön két kövér pénzeszsák. A polcokon zsetonládák, a kaszinó ezüstje."
+    },
+    {
+     "text": "A páncélterem, acélburkolat, polcok körben. Középen a földön két kövér pénzeszsák. A polcokon zsetonládák, a kaszinó ezüstje, és jobbra egy sötétvörös főkönyv."
+    }
+   ],
    "exits": {
     "corridor": {
      "aliases": [
@@ -468,10 +509,10 @@
       "is": "gate.open",
       "eq": true
      },
-     "text": "A csónakház, kőfalak, gerendás mennyezet. Hátul a tengeri kapu kitárva, kint a holdfényes öböl. Jobbra a csörlő. Előttetek a vízen a mahagóni motorcsónak, mellette a stég; a falnál egy benzineskanna."
+     "text": "A csónakház, kőfalak, gerendás mennyezet. Hátul a tengeri kapu kitárva, kint a holdfényes öböl. Jobbra a csörlő. Előttetek a vízen a mahagóni motorcsónak, mellette a stég{contents:; a falnál }."
     },
     {
-     "text": "A csónakház, kőfalak, gerendás mennyezet, a víz a kapuig ér. Hátul a csukott deszkakapu vaspántokkal, jobbra a falon a fekete csörlő lánccal. Előttetek a vízen a mahagóni motorcsónak, mellette a stég; a falnál egy benzineskanna."
+     "text": "A csónakház, kőfalak, gerendás mennyezet, a víz a kapuig ér. Hátul a csukott deszkakapu vaspántokkal, jobbra a falon a fekete csörlő lánccal. Előttetek a vízen a mahagóni motorcsónak, mellette a stég{contents:; a falnál }."
     }
    ],
    "exits": {
@@ -676,7 +717,20 @@
    "id": "cart",
    "name": "takarítókocsi",
    "location": "salon",
-   "text": "A takarítónő kocsija: vödör facsaróval, felmosó, rongyok alul; fent egy összehajtott újság és egy csíptetős tábla, rajta a munkalap.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_newspaper",
+       "at": "cart"
+      }
+     },
+     "text": "A takarítónő kocsija: vödör facsaróval, felmosó, rongyok alul; fent egy csíptetős tábla, rajta a munkalap."
+    },
+    {
+     "text": "A takarítónő kocsija: vödör facsaróval, felmosó, rongyok alul; fent egy összehajtott újság és egy csíptetős tábla, rajta a munkalap."
+    }
+   ],
    "images": [
     "cart"
    ],
@@ -747,7 +801,20 @@
    "id": "reticule",
    "name": "retikül",
    "location": "dressing_tables",
-   "text": "Elfelejtett fekete estélyi táska, nyitva: egy hosszú fekete hajtű, egy rúzs, egy púderdoboz és egy színházjegy.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_hairpin",
+       "at": "reticule"
+      }
+     },
+     "text": "Elfelejtett fekete estélyi táska, nyitva: egy rúzs, egy púderdoboz és egy színházjegy. A hajtűt elvettétek."
+    },
+    {
+     "text": "Elfelejtett fekete estélyi táska, nyitva: egy hosszú fekete hajtű, egy rúzs, egy púderdoboz és egy színházjegy."
+    }
+   ],
    "images": [
     "reticule"
    ],
@@ -1467,7 +1534,20 @@
    "id": "bin",
    "name": "szemetes",
    "location": "staff",
-   "text": "Fém szemetes a szék mellett. Gyűrt papírok, egy kávéscsésze-alátét, és egy hosszú, keskeny papírszalag.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_tape",
+       "at": "bin"
+      }
+     },
+     "text": "Fém szemetes a szék mellett. Gyűrt papírok, egy kávéscsésze-alátét."
+    },
+    {
+     "text": "Fém szemetes a szék mellett. Gyűrt papírok, egy kávéscsésze-alátét, és egy hosszú, keskeny papírszalag."
+    }
+   ],
    "aliases": [
     "szemét",
     "kuka",
@@ -2426,7 +2506,20 @@
    "id": "office_keyboard",
    "name": "kulcsszekrény",
    "location": "office",
-   "text": "Nyitott kulcsszekrény három sor kampóval: garázs, borospince, villa, fürdőkabin, címkével. Alul egy nagy, fekete kovácsoltvas kulcs DARSENA címkével, és egy csónakkulcs narancsszínű parafa úszón.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_boat_key",
+       "at": "office_keyboard"
+      }
+     },
+     "text": "Nyitott kulcsszekrény három sor kampóval: garázs, borospince, villa, fürdőkabin, címkével. Alul egy nagy, fekete kovácsoltvas kulcs DARSENA címkével; a csónakkulcs kampója üres."
+    },
+    {
+     "text": "Nyitott kulcsszekrény három sor kampóval: garázs, borospince, villa, fürdőkabin, címkével. Alul egy nagy, fekete kovácsoltvas kulcs DARSENA címkével, és egy csónakkulcs narancsszínű parafa úszón."
+    }
+   ],
    "images": [
     "office_keyboard"
    ],
@@ -2946,6 +3039,7 @@
    "location": "boathouse",
    "text": "Piros fém benzineskanna a falnál. Tele.",
    "carry": {},
+   "mention": "egy benzineskanna",
    "aliases": [
     "kanna",
     "benzin",
@@ -3117,7 +3211,8 @@
    "do": {
     "setVar": {
      "riadalom": "9"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3129,7 +3224,8 @@
    "do": {
     "setVar": {
      "riadalom": "8"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3141,7 +3237,8 @@
    "do": {
     "setVar": {
      "riadalom": "7"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3153,7 +3250,8 @@
    "do": {
     "setVar": {
      "riadalom": "6"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3165,7 +3263,8 @@
    "do": {
     "setVar": {
      "riadalom": "5"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3177,7 +3276,8 @@
    "do": {
     "setVar": {
      "riadalom": "4"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3189,7 +3289,8 @@
    "do": {
     "setVar": {
      "riadalom": "3"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3201,7 +3302,8 @@
    "do": {
     "setVar": {
      "riadalom": "2"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3213,7 +3315,8 @@
    "do": {
     "setVar": {
      "riadalom": "1"
-    }
+    },
+    "say": "A teraszon megáll a lámpafény. Lapultok, amíg továbbmegy. A kulcs visszalendült: elölről kell kezdeni."
    }
   },
   {
@@ -3342,6 +3445,240 @@
    },
    "do": {
     "say": "A csörlő nehezen indul, a kapu nyikorogva elmozdul egy arasznyit. Ketten gyorsabban menne."
+   }
+  },
+  {
+   "on": "look:i_letter",
+   "if": {
+    "where": "i_letter",
+    "at": "salon"
+   },
+   "do": {
+    "take": [
+     "i_letter"
+    ],
+    "say": "Vittorio levele: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_salon_key",
+   "if": {
+    "where": "i_salon_key",
+    "at": "salon"
+   },
+   "do": {
+    "take": [
+     "i_salon_key"
+    ],
+    "say": "szalonkulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_newspaper",
+   "if": {
+    "where": "i_newspaper",
+    "at": "cart"
+   },
+   "do": {
+    "take": [
+     "i_newspaper"
+    ],
+    "say": "újság: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_hairpin",
+   "if": {
+    "where": "i_hairpin",
+    "at": "reticule"
+   },
+   "do": {
+    "take": [
+     "i_hairpin"
+    ],
+    "say": "hajtű: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_key_cassa",
+   "if": {
+    "where": "i_key_cassa",
+    "at": "hall"
+   },
+   "do": {
+    "take": [
+     "i_key_cassa"
+    ],
+    "say": "CASSA kulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_rake",
+   "if": {
+    "where": "i_rake",
+    "at": "rake_rack"
+   },
+   "do": {
+    "take": [
+     "i_rake"
+    ],
+    "say": "hosszú gereblye: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_hook_rake",
+   "if": {
+    "where": "i_hook_rake",
+    "at": "staff"
+   },
+   "do": {
+    "take": [
+     "i_hook_rake"
+    ],
+    "say": "kampós gereblye: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_tape",
+   "if": {
+    "where": "i_tape",
+    "at": "bin"
+   },
+   "do": {
+    "take": [
+     "i_tape"
+    ],
+    "say": "papírszalag: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_key_b",
+   "if": {
+    "where": "i_key_b",
+    "at": "cashbox"
+   },
+   "do": {
+    "take": [
+     "i_key_b"
+    ],
+    "say": "B kulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_key_a",
+   "if": {
+    "where": "i_key_a",
+    "at": "wall_safe"
+   },
+   "do": {
+    "take": [
+     "i_key_a"
+    ],
+    "say": "A kulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_brass_key",
+   "if": {
+    "where": "i_brass_key",
+    "at": "wall_safe"
+   },
+   "do": {
+    "take": [
+     "i_brass_key"
+    ],
+    "say": "sárgarézkulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_timecard",
+   "if": {
+    "where": "i_timecard",
+    "at": "wall_safe"
+   },
+   "do": {
+    "take": [
+     "i_timecard"
+    ],
+    "say": "időzárkártya: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_key_darsena",
+   "if": {
+    "where": "i_key_darsena",
+    "at": "office_keyboard"
+   },
+   "do": {
+    "take": [
+     "i_key_darsena"
+    ],
+    "say": "DARSENA kulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_boat_key",
+   "if": {
+    "where": "i_boat_key",
+    "at": "office_keyboard"
+   },
+   "do": {
+    "take": [
+     "i_boat_key"
+    ],
+    "say": "csónakkulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_log",
+   "if": {
+    "where": "i_log",
+    "at": "log_table"
+   },
+   "do": {
+    "take": [
+     "i_log"
+    ],
+    "say": "pincei napló: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_sacks",
+   "if": {
+    "where": "i_sacks",
+    "at": "vault"
+   },
+   "do": {
+    "take": [
+     "i_sacks"
+    ],
+    "say": "pénzeszsákok: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_book",
+   "if": {
+    "where": "i_book",
+    "at": "vault"
+   },
+   "do": {
+    "take": [
+     "i_book"
+    ],
+    "say": "vörös főkönyv: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_can",
+   "if": {
+    "where": "i_can",
+    "at": "boathouse"
+   },
+   "do": {
+    "take": [
+     "i_can"
+    ],
+    "say": "benzineskanna: elteszitek."
    }
   }
  ],
