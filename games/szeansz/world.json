@@ -281,7 +281,7 @@
    "into": "a kabinet alá",
    "inside": "a kabinet alatt",
    "image": "trapdoor_below",
-   "text": "A kabinet alatt ezt látjátok: meredek, keskeny lépcső, por, egy elejtett fekete kesztyű és egy elszakadt bőröndcímke. Lent a falak közé vezet, a kert felé.",
+   "text": "A kabinet alatt ezt látjátok: meredek, keskeny lépcső, por{contents:, }. Lent a falak közé vezet, a kert felé.",
    "exits": {
     "seance": {
      "aliases": [
@@ -610,7 +610,20 @@
      ]
     }
    },
-   "text": "Hét év postája a levélbedobó alatt: megsárgult borítékok, számlák, részvétlevelek, néhány képeslap.",
+   "text": [
+    {
+     "if": {
+      "not": {
+       "where": "i_postcard",
+       "at": "mail"
+      }
+     },
+     "text": "Hét év postája a levélbedobó alatt: megsárgult borítékok, számlák, részvétlevelek."
+    },
+    {
+     "text": "Hét év postája a levélbedobó alatt: megsárgult borítékok, számlák, részvétlevelek, néhány képeslap."
+    }
+   ],
    "images": [
     "mail"
    ],
@@ -2728,6 +2741,123 @@
      "at": "seance",
      "text": "A szeánszteremben halk súrlódás: a betűtáblán a mutató megmozdul, és felcsúszik a betűkre. A gyertyák lángja meg sem rezdül."
     }
+   }
+  },
+  {
+   "on": "look:i_press_card",
+   "if": {
+    "where": "i_press_card",
+    "at": "coat"
+   },
+   "do": {
+    "take": [
+     "i_press_card"
+    ],
+    "say": "Sajtóigazolvány: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_postcard",
+   "if": {
+    "where": "i_postcard",
+    "at": "mail"
+   },
+   "do": {
+    "take": [
+     "i_postcard"
+    ],
+    "say": "Bécsi képeslap: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_notebook",
+   "if": {
+    "where": "i_notebook",
+    "at": "chair_5"
+   },
+   "do": {
+    "take": [
+     "i_notebook"
+    ],
+    "say": "Kardos notesze: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_plate_holder",
+   "if": {
+    "where": "i_plate_holder",
+    "at": "camera"
+   },
+   "do": {
+    "take": [
+     "i_plate_holder"
+    ],
+    "say": "Lemezkazetta: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_glove",
+   "if": {
+    "where": "i_glove",
+    "at": "crawl"
+   },
+   "do": {
+    "take": [
+     "i_glove"
+    ],
+    "say": "Kesztyű: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_label",
+   "if": {
+    "where": "i_label",
+    "at": "crawl"
+   },
+   "do": {
+    "take": [
+     "i_label"
+    ],
+    "say": "Bőröndcímke: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_basement_key",
+   "if": {
+    "where": "i_basement_key",
+    "at": "jewelbox"
+   },
+   "do": {
+    "take": [
+     "i_basement_key"
+    ],
+    "say": "Pincekulcs: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_death_notice",
+   "if": {
+    "where": "i_death_notice",
+    "at": "jewelbox"
+   },
+   "do": {
+    "take": [
+     "i_death_notice"
+    ],
+    "say": "Gyászjelentés: elteszitek."
+   }
+  },
+  {
+   "on": "look:i_timetable",
+   "if": {
+    "where": "i_timetable",
+    "at": "vanity"
+   },
+   "do": {
+    "take": [
+     "i_timetable"
+    ],
+    "say": "Menetrend: elteszitek."
    }
   }
  ],
