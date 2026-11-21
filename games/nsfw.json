@@ -1,6 +1,6 @@
 {
  "source": "https://huggingface.co/datasets/vaily/pair-lock-nsfw",
- "revision": "01bc6440c5949759bcbfa39b2673b514ac1b2ab0",
+ "revision": "a760aa029a91bf8d4dfcbf4e496e293b794dd590",
  "games": {
   "a_modell": {
    "GAME.md": [
@@ -752,12 +752,8 @@
     "bb69db498a2ed7623da4a347775ea57ee3725c6327e8f3d623c9e071226ba7a7"
    ],
    "game.json": [
-    9330,
-    "a63de511b763ef5cdf7e8f406c1bc98d14eee1f45699015babf1f8434e3584e6"
-   ],
-   "icons/i_apron.png": [
-    114039,
-    "f91db03350c9e339639a700a2408bb42ef7b63aee81bdd9c0644172a906e3c86"
+    9405,
+    "588e60c87f3bf67dcc1835e3707f2b90c9408220bef6efa701321de878b12ca0"
    ],
    "icons/i_bottle.png": [
     66655,
@@ -815,6 +811,10 @@
     84651,
     "9ec64c7674c1d2ac41b719507704c0f3f79678c43fc6a5f8d97b31524f6c6edf"
    ],
+   "icons/i_shears.png": [
+    91698,
+    "f141d273b89c89a96b8d2798d16c49768b38b52b8fbc394a4dcd66deaa49e100"
+   ],
    "icons/i_soap.png": [
     83140,
     "fb3973019b43b65e6b7ee6c6fccbb68994f6b75c22c2f5cc44989a3cd15b4567"
@@ -827,6 +827,10 @@
     90549,
     "776bdc0075112b0c3616d4b1b70d93b704cca19a3b9adcbb21e1de5e640b23f5"
    ],
+   "images/alcove_view.jpg": [
+    305781,
+    "5d6dd955352eb35743de020bbf91ab2e0f42ef1a8222212b5e574483b4ce46a6"
+   ],
    "images/atlas.jpg": [
     211954,
     "9a5a501cd8a3a386d388f7c9492c33410847435ea17de14be50ef60143e0a868"
@@ -836,20 +840,20 @@
     "b38bdc1065a1147dc582d206b995031e5f927d79c4231501369e9c02403698c9"
    ],
    "images/bloody_apron.jpg": [
-    215873,
-    "c898bfcb7ca1e19a28351ecfe844bd6d26d8947e5b9a901542c9c18658aa9385"
+    278237,
+    "644d6af43fe6495201f9ec5a75ff52a991e7fb77bd86358982195fbb013daf07"
    ],
    "images/bognar_note.jpg": [
     185357,
     "6525dda09f367226d84cdcfbf3b241cf9c10062404503c4495bda8c6b34aa90e"
    ],
    "images/bookcase_closed.jpg": [
-    279191,
-    "4e8d7a0aae9abca9c4d2521eed46a97427f6f60f5905c69825959ddbd9a82a03"
+    275520,
+    "dc7cb14c1209dd9df70055d1d815c59a231346e917be69eeb0e13976ed63430e"
    ],
    "images/bookcase_open.jpg": [
-    272157,
-    "4e0896fb056ab48c45970b7d20218f0374a62ecc2c89988bcf40a6e9398017ac"
+    262898,
+    "754e622759d8678e252a3c9ad8caa3805c09ad7029fa2290c0587dd0dd77bf37"
    ],
    "images/catalogue_note.jpg": [
     241624,
@@ -915,9 +919,9 @@
     240075,
     "16ef0cba326420f70cae9cfbaa019ca1e9b647586fd7ed7787f971543eca908d"
    ],
-   "images/eyes_human.jpg": [
-    140741,
-    "c67aa4a7f4d1198dd330c33b4b7b2d575cc557f1df3454a5ed8e279c66fe1072"
+   "images/eyes_trays.jpg": [
+    157405,
+    "cc7ae3acf3cf0dbc942e0ee2beb172c3c192f50ca1ef67591b095932cfe72d8f"
    ],
    "images/fresh_basin.jpg": [
     201089,
@@ -928,8 +932,8 @@
     "0bbf4e753cb53cfe8f532c3d5191c5173180187d725391fd4858ffa4e364a545"
    ],
    "images/gallery_a.jpg": [
-    279577,
-    "bdb9e29e25263f048afc7bc3b02406c8647ff50c32d6c155ad1068646155428f"
+    277901,
+    "3689a3506db16b1b130e66a8832a9c63c17e370695dc2237193f05b7166758ed"
    ],
    "images/gallery_b.jpg": [
     287016,
@@ -946,10 +950,6 @@
    "images/hunting_horn.jpg": [
     152357,
     "131080378b9e798807ab19771c66e283298fc031527ba10346fab566b85ff9bf"
-   ],
-   "images/i_apron.jpg": [
-    215873,
-    "c898bfcb7ca1e19a28351ecfe844bd6d26d8947e5b9a901542c9c18658aa9385"
    ],
    "images/i_bottle.jpg": [
     128794,
@@ -1007,6 +1007,10 @@
     137248,
     "c55986849dc28a3343925709e7c62f445b8f6921a7ab0efe0b4223b556a8b0a0"
    ],
+   "images/i_shears.jpg": [
+    278237,
+    "644d6af43fe6495201f9ec5a75ff52a991e7fb77bd86358982195fbb013daf07"
+   ],
    "images/i_soap.jpg": [
     150621,
     "0233d72054f6c6e6c652295132bac23a8f5ede0d37a70f3ea0ec3bc3f32d7f2a"
@@ -1020,8 +1024,8 @@
     "5f412ba32b8eee23bb0f2a13ec100e51b74634c1d33ea7d6fa5dc50c26efd1d4"
    ],
    "images/ice_door.jpg": [
-    314859,
-    "b44e2b385e8d57e75f02ddfe694d8dee8ba55a757a5ad41c277149173777af26"
+    291485,
+    "91af33891d02565a6893254694f04fc1f9d27b0082ef4fb10a7200711551ec09"
    ],
    "images/ice_tunnel.jpg": [
     359272,
@@ -1068,12 +1072,12 @@
     "5bf00fdb2d0128c310e49b25652b6d80f4652bee389a0108347d475588c7d4a0"
    ],
    "images/konyvtar.jpg": [
-    238969,
-    "a1a4336d0c0a11a3b332556ece6655843551d80657990f5ab18814bd3f26dfe8"
+    242782,
+    "72bfa259992d731da4d6eb34506039124c376a2b187971eddeb4115a729f3e99"
    ],
    "images/konyvtar_open.jpg": [
-    260671,
-    "689ee10335be3648698801e1e25b6abe203588b34ce5d7f0a451e2d8564d6d3d"
+    262535,
+    "15f53fdeb8f7de0331986975dec7dd1d3625ec4ffd7efac2a6dbbb74dfb8b6fb"
    ],
    "images/ledger.jpg": [
     177543,
@@ -1100,8 +1104,8 @@
     "f9cd1ce2fc8dac6c8ff88a6eae09fff601d8ffbc260f10984b08be40b272b2a5"
    ],
    "images/padlock_door.jpg": [
-    267344,
-    "30bbebc6aef9a816241c0fa7a7e5da122a2faf543d413d41e7174937ee1c9fa4"
+    194103,
+    "09444543abd6345ef354425d60fe369fbfa88e32d6f86c112ed60f3486a43e7e"
    ],
    "images/pattern_page.jpg": [
     208521,
@@ -1120,12 +1124,12 @@
     "e91fa5a431702028d935245fb87a4f2079f794919d67805742bb488cec102cf3"
    ],
    "images/pince.jpg": [
-    375778,
-    "6213efcf2fb3d2362b715981f889f052432bdfe2107ee67ab17897e5b3aebd74"
+    366787,
+    "bd788bf1c0401eebeb28122bb05ed809d187c7101a3e61b89708a79ad371262c"
    ],
    "images/pince_open.jpg": [
-    312841,
-    "672bb655115a70ab8e1cba8b55bec50fef00875a1a13be2b095e4dc483573578"
+    306367,
+    "feac69900ba6a826108a135f942da3ba8db1808c0d48ba1f937b4872b432db97"
    ],
    "images/pipe_plan.jpg": [
     207387,
@@ -1147,21 +1151,25 @@
     137248,
     "c55986849dc28a3343925709e7c62f445b8f6921a7ab0efe0b4223b556a8b0a0"
    ],
+   "images/shroud_figure.jpg": [
+    106731,
+    "5bb964914921873f016a32844452e29bcf2456c078b68f456f9a589c69de7f03"
+   ],
    "images/soap_jar.jpg": [
     150621,
     "0233d72054f6c6e6c652295132bac23a8f5ede0d37a70f3ea0ec3bc3f32d7f2a"
    ],
    "images/spec_1.jpg": [
-    301802,
-    "5efd974868c869bbd4bfce5d1e1580dca9ba84c0abcc10a40cbdf9a41324f5db"
+    307489,
+    "d3ccd558706f10f96406e07aa3185000edf2e28c00b19fb31361729dca286034"
    ],
    "images/spec_2.jpg": [
     269003,
     "b24c39eba877870eccfd67d93ed3798e29be241067024e46d173ca59f94d24c5"
    ],
    "images/spec_3.jpg": [
-    262330,
-    "3740b1261e20a111b01226d02466c643e41bdd502cb7aa8f3c6b6816dbd2b158"
+    260744,
+    "d605d2c0adf0efd4e2a00dba89c57437a5637305d5c0c57bfe4b931086b03425"
    ],
    "images/spec_4.jpg": [
     171055,
@@ -1176,8 +1184,8 @@
     "be19b0a7237b429f1be2cc18ec62ab81db21f98680711f88ced5eb3fe209b30d"
    ],
    "images/spec_7.jpg": [
-    271026,
-    "58ea1686cb2af695e1c8493efb81e2a7c99807858d2424620d3a279b7eb5c959"
+    262405,
+    "b648c4f9f9a81b182f8676e88fc95632ac92297350244137b46ccc86df66b92c"
    ],
    "images/spec_8.jpg": [
     125606,
@@ -1284,8 +1292,8 @@
     "7592756bb44f1f7aad7f21f183a66787edbe07c5eb0b74a641d0a47b9edd3038"
    ],
    "world.json": [
-    96491,
-    "f369009b9c3ce0bd48cfaf18aa8e42e5e6296e1ca31bc9056fc1e1c516225f73"
+    98106,
+    "7f2fdc873a31337aaf1ae23797da85f733e635b00e99116754efd062e8a4c621"
    ]
   },
   "szimulacio": {
