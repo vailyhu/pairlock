@@ -90,7 +90,7 @@ A port a `config.json`-ban állítható. A mentések a `saves/` mappába kerüln
 
 ## Fejlesztőknek
 
-- `CLAUDE.md`: a teljes műszaki leírás (felépítés, világmodell, AI-réteg, modulok, tesztek). Angolul.
+- `CLAUDE.md` és a mappák `CLAUDE.md`/`*.md` fájljai: a teljes műszaki leírás (felépítés, világmodell, AI-réteg, modulok, tesztek). Angolul.
 - `modules/`: a kattintós feladványok, mindegyik saját leírással.
 - Tesztek modellhívás és költség nélkül: `python3 tools/test_playthrough.py` (teljes végigjátszás), `node tools/test_world_v2.js`, és a `tools/test_*.js` modultesztek.
 - A kód angol, a játékosnak szóló szöveg a `locales/` és a `games/` mappában van, így más nyelv is hozzáadható.
@@ -147,7 +147,7 @@ The port is set in `config.json`; saves go to `saves/` and any game can be conti
 
 ## Development
 
-The full technical description (structure, world model, AI layer, modules, tests) is in `CLAUDE.md`. Tests without model calls or cost: `python3 tools/test_playthrough.py`, `node tools/test_world_v2.js` and the `tools/test_*.js` module tests.
+The full technical description (structure, world model, AI layer, modules, tests) starts at `CLAUDE.md`, which points to the topic files (`engine/`, `modules/`, `public/`, `games/`, `tools/`). Tests without model calls or cost: `python3 tools/test_playthrough.py`, `node tools/test_world_v2.js` and the `tools/test_*.js` module tests.
 
 ## AI and images
 

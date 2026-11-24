@@ -1,5 +1,5 @@
 // World model: entities (rooms, things, parts, doors) with properties, actions and conditions. Inventory and state live here; the narrator only words things.
-// Fields and principles: CLAUDE.md, World model. Every new field is optional, so worlds written for the first model run unchanged.
+// Fields and principles: engine/world.md. Every new field is optional, so worlds written for the first model run unchanged.
 // Item: { id, name, aliases?, location (room or parent item id), rel?:'in'|'on'|'under'|'behind'|'part', kind?:'door', between?:[room,room], closedText?,
 //         text: string | {state:text} | [{if?,text}], mention?, details?, images?, state?:{initial,values}, props?:{name:{initial,values?,public?}|value},
 //         hidden?, visibleIf?, glows?, pickable?:{id,name}, carry?:{name?}, panel?:{id,label,if?}, when?:[{if,text,images,panel,do}], onLook?:Action, actions?:{verb:Action} }

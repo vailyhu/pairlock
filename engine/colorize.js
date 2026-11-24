@@ -1,5 +1,5 @@
 // Colorizer: rewords the engine's fixed room, look and move texts with one model call per turn, keeping every fact.
-// Decisions: CLAUDE.md, AI layer, Colorizer. Anything the checks do not like, a model error or a timeout leaves the fixed text.
+// Decisions: engine/colorize.md. Anything the checks do not like, a model error or a timeout leaves the fixed text.
 // Off unless game.json "colorize": {"on": true, "kinds": ["room", "look", "move"], "timeoutMs": 4000, "style": "..."}.
 // Word lists in the game's language come from locales/<lang>.json engine.colorize; the world may add sensitiveWords and emphasisWords.
 const W = require('./world');
